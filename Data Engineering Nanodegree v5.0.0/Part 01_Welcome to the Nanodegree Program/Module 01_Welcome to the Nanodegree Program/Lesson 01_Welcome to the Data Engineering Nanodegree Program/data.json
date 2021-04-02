@@ -1,0 +1,475 @@
+{
+  "data": {
+    "lesson": {
+      "id": 816754,
+      "key": "42bc312a-38dd-4953-8695-3735a251b1db",
+      "title": "Welcome to the Data Engineering Nanodegree Program",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn to design data models, build data warehouses and data lakes, automate data pipelines, and work with massive datasets. ",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/42bc312a-38dd-4953-8695-3735a251b1db/816754/1556146829903/Welcome+to+the+Data+Engineering+Nanodegree+Program+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/42bc312a-38dd-4953-8695-3735a251b1db/816754/1556146825702/Welcome+to+the+Data+Engineering+Nanodegree+Program+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 816763,
+          "key": "3ca7b764-9fe7-4f31-9a36-9784509345d3",
+          "title": "Program Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3ca7b764-9fe7-4f31-9a36-9784509345d3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840626,
+              "key": "3b6474e4-d318-47e8-84c2-fb4bf40af42a",
+              "title": "Welcome DEND",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "R5o2UFujjq0",
+                "china_cdn_id": "R5o2UFujjq0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 816765,
+          "key": "919426fc-bfd2-4be1-a5d8-b9d174ca1137",
+          "title": "Projects",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "919426fc-bfd2-4be1-a5d8-b9d174ca1137",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841963,
+              "key": "432e8d29-4e8c-4ca8-b8a1-862f226f1890",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/April/5ca2e5d4_capture/capture.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/432e8d29-4e8c-4ca8-b8a1-862f226f1890",
+              "caption": "",
+              "alt": "",
+              "width": 430,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 816768,
+              "key": "ec89d204-dae1-4289-b2a7-d793133b3546",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Portfolio\nReal-world projects are integral to every Udacity Nanodegree program. They become the foundation for a job-ready portfolio to help learners advance their careers in their chosen field. The projects in the Data Engineer Nanodegree program were designed in collaboration with a group of highly talented industry professionals to ensure you develop the most in-demand skills. Every project in a Nanodegree program is human-graded by a member of Udacity’s mentor and reviewer network. These project reviews include detailed, personalized feedback on how you can improve their work. Udacity graduates consistently rate projects and project reviews as one of the best parts of their experience with Udacity.\n\n### The Project Journey\nThe projects will take you on a journey where you’ll assume the role of a Data Engineer at a fabricated data streaming company called “Sparkify” as it scales its data engineering in both size and sophistication. You’ll work with simulated data of listening behavior, as well as a wealth of metadata related to songs and artists. You’ll start working with a small amount of data, with low complexity, processed and stored on a single machine. By the end, you’ll develop a sophisticated set of data pipelines to work with massive amounts of data processed and stored on the cloud.  There are five projects in the program. Below is a description of each.\n\n### Project 1 - Data Modeling \nIn this project, you’ll model user activity data for a music streaming app called Sparkify. The project is done in two parts. You’ll create a database and import data stored in CSV and JSON files, and model the data. You’ll do this first with a relational model in Postgres, then with a NoSQL data model with Apache Cassandra. You’ll design the data models to optimize queries for understanding what songs users are listening to. For PostgreSQL, you will also define Fact and Dimension tables and insert data into your new tables. For Apache Cassandra, you will model your data to help the data team at Sparkify answer queries about app usage. You will set up your Apache Cassandra database tables in ways to optimize writes of transactional data on user sessions.\n\n### Project 2 - Cloud Data Warehousing\nIn this project, you’ll move to the cloud as you work with larger amounts of data. You are tasked with building an ELT pipeline that extracts Sparkify’s data from S3, Amazon’s popular storage system. From there, you’ll stage the data in Amazon Redshift and transform it into a set of fact and dimensional tables for the Sparkify analytics team to continue finding insights in what songs their users are listening to.\n\n### Project 3 - Data Lakes with Apache Spark\nIn this project, you'll build an ETL pipeline for a data lake. The data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in the app. You will load data from S3, process the data into analytics tables using Spark, and load them back into S3. You'll deploy this Spark process on a cluster using AWS.\n\n### Project 4 - Data Pipelines with Apache Airflow\nIn this project, you’ll continue your work on Sparkify’s data infrastructure by creating and automating a set of data pipelines. You’ll use the up-and-coming tool Apache Airflow, developed and open-sourced by Airbnb and the Apache Foundation. You’ll configure and schedule data pipelines with Airflow, setting dependencies, triggers, and quality checks as you would in a production setting.\n\n### Project 5 - Data Engineering Capstone\nThe capstone project is an opportunity for you to combine what you've learned throughout the program into a more self-driven project. In this project, you'll define the scope of the project and the data you'll be working with. We'll provide guidelines, suggestions, tips, and resources to help you be successful, but your project will be unique to you. You'll gather data from several different data sources; transform, combine, and summarize it; and create a clean database for others to analyze. \n\nWe're excited to see what you build!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 816949,
+          "key": "e8cbc7f3-d81d-47c7-927b-74fd2b4a6a2c",
+          "title": "Pre-requisites",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e8cbc7f3-d81d-47c7-927b-74fd2b4a6a2c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 816950,
+              "key": "f1822b5d-9647-4dcf-a97a-fc7e9442bfaf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Prerequisites\n## Before you begin, please check the following Nanodegree Program prerequisite requirements to make sure you have the skills to succeed in this program.\n\n### **To succeed in this program, you should have _intermediate or advanced skills_ in the following languages and tools:**\n\n---- \n\n#### In **Python**,  you need to have __intermediate skills__  and should be able to do the following to pass the projects:\n* ##### Define functions\n* ##### Use loops and conditional statements\n* ##### Write and use classes in your functions\n* ##### Work with various data structures\n* ##### Use data-related libraries, like NumPy and Pandas for ETL purposes \n* ##### Read and parse CSV and JSON file formats\n\n\n#### In **SQL**, you should be able to do the following:\n* ##### Write advanced SQL join functions\n* ##### Aggregate data\n* ##### Write subqueries\n\n#### In the **Command Line**, you should be able to:\n* ##### Navigate through folders and files\n* ##### Run scripts from the command line\n* ##### Install packages\n\n#### In **Github**, you should be able to:\n* ##### Create and clone repositories\n* ##### Make commits to a repository\n\n### Additional Resources\nYou can find the following courses in the extracurricular section,  if you would like to brush up on the above skills.\n* Intro to Python \n* SQL for Data Analysis\n* Command Line Essentials\n* Git and Github\n\n#### All of these courses are available in the [Programming for Data Science Nanodegree Program](https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104) and in our free course catalog. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 816772,
+          "key": "72cb3d7a-2e28-4343-aa6a-2b0cb6596487",
+          "title": "Meet Your Instructors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "72cb3d7a-2e28-4343-aa6a-2b0cb6596487",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 816789,
+              "key": "e386fbcd-a9e0-4a76-a37e-6e67e9a16dd6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Meet Your Instructors\nWe have a great group of instructors for each of the courses of the Nanodegree program. For some courses, you'll hear from just one, and others include multiple instructors. Each of them brings expertise from working in the field and experience teaching others. Below is a short bio of each instructor, and you'll learn more about them during the courses they teach.\n\n### Course 1 - Data Modeling",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827491,
+              "key": "d9d69744-1868-40cb-8cae-77b6790b07ae",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6c7e65_img-9665/img-9665.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d9d69744-1868-40cb-8cae-77b6790b07ae",
+              "caption": "",
+              "alt": "",
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 827265,
+              "key": "b0368315-0dcf-40e8-9381-54d28cf5caef",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Amanda Moran, Developer Advocate at Datastax\n\nAmanda has six years of experience as a Software Engineer at HP, Esgyn, Lockheed Martin, and Teradata. She's an Apache Committer and on the Project Management Committee for Apache Trafodion. She's currently a Developer Advocate at Datastax. A developer advocate is a software engineer that is the middle layer between the internal engineering organization and external users. Amanda is proficient in four different distributed databases and focuses primarily on Cassandra in her current role. She has an M.S. in Computer Science and Engineering from Santa Clara University and a B.S. in Biology from University of Washington.\n\n### Course 2 - Cloud Data Warehouses",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827237,
+              "key": "16419bf5-c7fa-4487-87f1-201f48e29926",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6c3f59_sameh/sameh.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/16419bf5-c7fa-4487-87f1-201f48e29926",
+              "caption": "",
+              "alt": "",
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 827262,
+              "key": "eab661b6-5ddb-47bd-9401-80b641724011",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Sameh El-Ansary, CEO at Novelari and Professor at Nile University\nSameh is an all around Big Data expert. He's founded three big data focused companies, one of which he's currently the CEO. At Novelari, he consults for companies on big data initiatives and helps shape their data engineering strategies. He's also an assistant professor at Nile University, where he teaches data engineering courses, such as Spark and Kafka. Sameh has a PhD in Computer Science from KTH Royal Institute of Technology.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827232,
+              "key": "4d0f9e20-b3f4-4ddd-9747-6c7b3e2d9a3e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b60e9f0_screen-shot-2018-03-19-at-2.30.59-pm/screen-shot-2018-03-19-at-2.30.59-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4d0f9e20-b3f4-4ddd-9747-6c7b3e2d9a3e",
+              "caption": "",
+              "alt": "",
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 827261,
+              "key": "cedff192-d441-4abb-96db-74a0cd56cf49",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Juno Lee, Content Developer at Udacity\nJuno is a content developer at Udacity, where she creates projects and courses and coaches other instructors who partner with Udacity. Prior to Udacity, Juno was a data scientist at Looplist where she built a recommendation engine to personalize online shopping experiences; computer vision and natural language processing models to analyze product data; and tools to generate insight into user behavior. Juno is a graduate from the Galvanize Data Science program.\n\n### Course 3 - Data Lakes with Spark",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827251,
+              "key": "b9bff399-0142-49f4-9a92-80074c58c2bf",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6c40e5_david/david.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b9bff399-0142-49f4-9a92-80074c58c2bf",
+              "caption": "",
+              "alt": "",
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 827259,
+              "key": "2499f81d-2e5e-4de1-b170-dd249dd45ee0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### David Drummond, VP of Engineering at Insight\nDavid is the VP of Engineering at Insight, which mentors recent M.A. and PhD grads into tech jobs at top companies. He has mentored dozens of students into data engineering jobs at some of the most data-driven companies in the world. At Insight, David helped develop the core curriculum for the Data Engineering program and led Insight's expansion from Silicon Valley to New York City. He joined Insight as a fellow and has progressed into his current role. David has a PhD in Theoretical and Mathematical Physics from University of California, Riverside.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827253,
+              "key": "59a2ea5b-dac0-40b5-9001-9217f0420ac0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6c4108_judit/judit.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/59a2ea5b-dac0-40b5-9001-9217f0420ac0",
+              "caption": "",
+              "alt": "",
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 827257,
+              "key": "321fec88-a0e9-4ad5-a693-7854dee2cbde",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Judit Lantos, Data Infrastructure Engineering at Split\nJudit is a data infrastructure engineer at Split where she work's extensively with Spark to handle big data tasks. Prior to Split, she led the Data Engineering team at Insight’s Silicon Valley office. She also has extensive experience in medical imaging research at Stanford and Mediso Medical Imaging Systems. Judit earned her M.A. in Engineering Physics from Budapest University of Technology and Economics.\n\n\nYou'll also hear again from Sameh during this course.\n\n### Course 4 - Data Pipelines \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827493,
+              "key": "f717587e-9c7d-4621-89da-47e5722187a1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6c7e92_img-9507/img-9507.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f717587e-9c7d-4621-89da-47e5722187a1",
+              "caption": "",
+              "alt": "",
+              "width": 250,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 827495,
+              "key": "6ed86bb9-42b4-4fcd-9eb0-46955b6c307b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Ben Goldberg, Staff Engineer at SpotHero\n\nBen spent the beginning of his career working on computer vision, teaching airborne systems to understand and parse the world around them. He also worked at an artificial intelligence startup transforming raw data sets into written language. He is currently a Staff Engineer at SpotHero. At SpotHero he founded, built, and led the Data Engineering team. He's also a contributor to Apache Airflow and one of the three original contributors to the Airflow Kubernetes Executor. Ben has a B.S. in computer science from University of Wisconsin.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 229392,
+          "key": "792f0fd7-68f7-4843-aefd-abf5cc43490d",
+          "title": "Meet the Careers Team",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "792f0fd7-68f7-4843-aefd-abf5cc43490d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 442242,
+              "key": "a48839d1-f8d5-4fb5-8076-88d24c716e33",
+              "title": "Meet the Careers Team",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "#### Resources\n\n* Explore [Your Career Portal](https://classroom.udacity.com/career/)\n* Find Your [Career Services](https://www.udacity.com/career-services)",
+              "video": {
+                "youtube_id": "cuKecPpZ7PM",
+                "china_cdn_id": "cuKecPpZ7PM.mp4"
+              }
+            },
+            {
+              "id": 728556,
+              "key": "993520a7-40e1-4534-bbf6-62e0fa8113d0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Career Service: No Resubmission Required\n\nIn this Nanodegree program, you can get personalized feedback on your LinkedIn and GitHub profiles. **Unlike other Nanodegree projects, you submit to a Career Service once to get feedback and do not need to meet specifications to continue on in your program.** \n\nThe value of Career Service reviews is not in meeting specifications on subjective rubric items, but in getting honest, personalized guidance from a Career Mentor. Learning from this guidance is what will guide you on the path to truly improving your job search materials. \n\n We highly encourage you to take advantage of this guidance. Most Alumni who report jobs and other opportunities (such as collaboration) attribute their success to networking.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 440370,
+          "key": "6c7f9ba9-b49e-4915-ae23-050bacff6326",
+          "title": "Access Your Career Portal",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6c7f9ba9-b49e-4915-ae23-050bacff6326",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 440384,
+              "key": "d9034285-f932-4a33-bd00-a3193c80b7c8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# The Career Portal: Your Path to Getting Hired\nIn your **Career Portal**, you'll find a personalized job search guide that includes 1:1 reviews of your resume, LinkedIn profile, and more.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 440383,
+              "key": "a4856ff4-9db2-4d35-a1a3-81c70543916d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59f3a027_get-hired-with-the-udacity-career-portal/get-hired-with-the-udacity-career-portal.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a4856ff4-9db2-4d35-a1a3-81c70543916d",
+              "caption": "",
+              "alt": "Career Portal",
+              "width": 1040,
+              "height": 640,
+              "instructor_notes": null
+            },
+            {
+              "id": 440381,
+              "key": "82ae1cf8-98d5-4906-9c20-845948d480a0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## How Do I Get To My Career Portal?\nTo access the Career Portal, look for the briefcase icon in your left-hand sidebar when you're logged into your [Udacity classroom](https://classroom.udacity.com/me).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 440373,
+              "key": "d43325be-ae2a-4637-9890-ffa00eb71360",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59f39c10_screen-shot-2017-10-27-at-1.49.58-pm/screen-shot-2017-10-27-at-1.49.58-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d43325be-ae2a-4637-9890-ffa00eb71360",
+              "caption": "",
+              "alt": "Udacity classroom left-hand sidebar",
+              "width": 203,
+              "height": 281,
+              "instructor_notes": null
+            },
+            {
+              "id": 440382,
+              "key": "d60fb33c-f423-4647-95ea-5d3fe1d9d50d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Unable to find your Career Portal?\nNot seeing the Career Portal icon? Write into [career-support@udacity.com](mailto:career-support@udacity.com) for help getting access.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 593946,
+          "key": "1610c6b5-bffe-4771-aeeb-fc8575e62c6e",
+          "title": "How to Succeed",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1610c6b5-bffe-4771-aeeb-fc8575e62c6e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 752749,
+              "key": "832b28db-6ba7-47a8-8086-b433a0ce1c98",
+              "title": "L1 06学习建议",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JRnZOZR97QQ",
+                "china_cdn_id": "JRnZOZR97QQ.mp4"
+              }
+            },
+            {
+              "id": 967248,
+              "key": "53ab1211-d885-4445-8153-e11f4fcc966e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "At ~1:20 Juno mentions mobile apps - while there is no current iOS or Android Udacity app, Udacity does have a mobile web app optimized for viewing on a mobile device (which you reach by going to the main Udacity website on your phone).",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

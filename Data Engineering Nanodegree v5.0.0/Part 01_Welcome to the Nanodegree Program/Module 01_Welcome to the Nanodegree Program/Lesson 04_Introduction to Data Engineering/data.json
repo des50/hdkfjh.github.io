@@ -1,0 +1,202 @@
+{
+  "data": {
+    "lesson": {
+      "id": 816946,
+      "key": "d37f55b9-2519-4f65-8d99-92eb5a2c06d3",
+      "title": "Introduction to Data Engineering",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "What does it mean to be a Data Engineer?  ",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/d37f55b9-2519-4f65-8d99-92eb5a2c06d3/816946/1556146803449/Introduction+to+Data+Engineering+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/d37f55b9-2519-4f65-8d99-92eb5a2c06d3/816946/1556146800765/Introduction+to+Data+Engineering+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 816947,
+          "key": "4ee88bde-47e1-40d2-94b3-0f7f14f82226",
+          "title": "What is Data Engineering?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4ee88bde-47e1-40d2-94b3-0f7f14f82226",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841916,
+              "key": "9a2da545-819d-4afe-afa0-67727fe3ebff",
+              "title": "DataEngineering",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UElMM606i4U",
+                "china_cdn_id": "UElMM606i4U.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 816948,
+          "key": "8d951997-8b53-41c4-9f8a-1c6e3365e897",
+          "title": "What do Data Engineers do?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8d951997-8b53-41c4-9f8a-1c6e3365e897",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840628,
+              "key": "1f2d4640-6c7c-4200-8a3d-9264e3f87e2b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## From Ben Goldberg, Data Engineer at SpotHero",
+              "instructor_notes": ""
+            },
+            {
+              "id": 840627,
+              "key": "ae170a2c-6728-46cd-92cc-c0079d8db69d",
+              "title": "Ben Goldberg Role",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Nrglv5DedVw",
+                "china_cdn_id": "Nrglv5DedVw.mp4"
+              }
+            },
+            {
+              "id": 840629,
+              "key": "a63efed7-9c04-46b5-8ebf-ceb90d7fb17b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## From Amanda Moran, Developer Advocate at DataStax",
+              "instructor_notes": ""
+            },
+            {
+              "id": 840630,
+              "key": "5d3071cd-0c2a-49e0-a642-93f7a1de20bd",
+              "title": "Amanda Moran Role",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hirKldUuXXc",
+                "china_cdn_id": "hirKldUuXXc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 816954,
+          "key": "9384799d-e894-49f3-a306-2b6c4c7960ec",
+          "title": "A Brief History",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9384799d-e894-49f3-a306-2b6c4c7960ec",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 817117,
+              "key": "0464cc41-646a-4adc-961a-10c1ad89530c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Data Engineering: A brief history",
+              "instructor_notes": ""
+            },
+            {
+              "id": 817118,
+              "key": "848c2440-16be-4529-82a2-6b34318b8259",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/January/5c537a96_noun-history-669173-000000/noun-history-669173-000000.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/848c2440-16be-4529-82a2-6b34318b8259",
+              "caption": "",
+              "alt": "",
+              "width": 300,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 816958,
+              "key": "a6fa09ac-e97b-4374-9dba-939464442efd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Knowing a bit of the history of data engineering will help you understand how certain tools were developed, and give you more context when choosing between tools and frameworks. There are two readings we suggest.\n\n1) [On the Evolution of Data Engineering](https://medium.com/analytics-and-data/on-the-evolution-of-data-engineering-c5e56d273e37): This short read (~5 minutes) focuses on the recent change from managing SQL databases to working with massive datasets in real time. It was written by Julien Kervizic, an experienced analytics expert from the Netherlands.\n\n2) [Data Engineering Introduction and Epochs](https://learn.panoply.io/hubfs/Data%20Engineering%20-%20Introduction%20and%20Epochs.pdf): This slightly longer read (~20 minutes) goes further back in time to the birth of computers. It walks through four \"epochs\" of data engineering, and the major advances over the past 70 years. It was written by Panopoly, a data engineering platform provider.\n\nEnjoy!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 816955,
+          "key": "f5daaf61-979c-40f2-92a3-5003cc70fe25",
+          "title": "Data Engineering Tools",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f5daaf61-979c-40f2-92a3-5003cc70fe25",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 816959,
+              "key": "8dfd1438-deee-4a18-a982-4a78ddb3ab92",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Data Engineering Tools\n\nFeel free to look at these resources and infographic describing the different tools used by Data Engineers.\n\n* https://www.burtchworks.com/2018/09/10/the-rise-of-data-engineering-common-skills-and-tools/\n* https://www.analyticsindiamag.com/data-engineering-101-top-tools-and-framework-resources/\n* https://joviam.com/this-infographic-of-big-data-tools-will-blow-your-mind-infographic/\n* https://datafloq.com/big-data-open-source-tools/os-home/",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}
