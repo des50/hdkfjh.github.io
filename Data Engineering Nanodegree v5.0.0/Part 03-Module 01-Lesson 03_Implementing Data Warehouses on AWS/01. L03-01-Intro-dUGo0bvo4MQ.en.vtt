@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.905
+Welcome to Lesson Three,
+
+00:00:01.905 --> 00:00:05.384
+Data Warehouse on Amazon Web Services.
+
+00:00:05.384 --> 00:00:09.179
+In this lesson, our objective is to be able to implement
+
+00:00:09.179 --> 00:00:13.333
+a data warehouse on AWS and that includes the storage,
+
+00:00:13.333 --> 00:00:17.984
+the ETL, the design of the tables and the query optimization.
+
+00:00:17.984 --> 00:00:20.594
+The prerequisites for this lesson is
+
+00:00:20.594 --> 00:00:23.399
+a basic knowledge of relational database design and SQL,
+
+00:00:23.399 --> 00:00:25.969
+a bit of programming in Python, Lesson One,
+
+00:00:25.969 --> 00:00:29.299
+which was actually dimensional modeling and creating OLAP cubes.
+
+00:00:29.300 --> 00:00:35.000
+Basic ETL in Python like moving data from a table to another table and changing
+
+00:00:35.000 --> 00:00:42.375
+the the modeling and also basic knowledge of Amazon Web Services,
+
+00:00:42.375 --> 00:00:44.729
+the IAM service, the VPC,
+
+00:00:44.729 --> 00:00:48.269
+the virtual private cloud, S3 and EC2.
+
+00:00:48.270 --> 00:00:52.400
+Okay, so this is our agenda for this course.
+
+00:00:52.399 --> 00:00:54.500
+Basically we need to understand what would be
+
+00:00:54.500 --> 00:00:57.350
+the motivation of moving a data warehouse to the cloud
+
+00:00:57.350 --> 00:01:03.325
+and the product of Amazon which is known as Redshift,
+
+00:01:03.325 --> 00:01:05.609
+what's the architecture of that product,
+
+00:01:05.609 --> 00:01:08.929
+which is going to be a central piece of our architecture.
+
+00:01:08.930 --> 00:01:13.115
+Then we will go through basic general ETL concepts.
+
+00:01:13.114 --> 00:01:19.329
+Then we will focus on ETL in the concept of Redshift and then we'll
+
+00:01:19.329 --> 00:01:25.609
+have two demos where we build a Redshift cluster in two different ways.
+
+00:01:25.609 --> 00:01:27.739
+Then finally we go in little bit more into
+
+00:01:27.739 --> 00:01:31.989
+an advanced part where we review the design of the tables.
+

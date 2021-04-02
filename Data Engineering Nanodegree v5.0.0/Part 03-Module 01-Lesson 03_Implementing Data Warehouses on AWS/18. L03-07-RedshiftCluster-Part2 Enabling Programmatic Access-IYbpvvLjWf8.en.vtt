@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.660
+Our choice for the demo or the thing you're going to work
+
+00:00:03.660 --> 00:00:06.810
+with is actually the Python because it's closer to
+
+00:00:06.809 --> 00:00:09.089
+the set of skills that we have here in
+
+00:00:09.089 --> 00:00:13.849
+the engineering nano degree and we are going to use a Python AWS SDK,
+
+00:00:13.849 --> 00:00:16.245
+it's also known as boto3.
+
+00:00:16.245 --> 00:00:17.775
+For this to work,
+
+00:00:17.774 --> 00:00:20.084
+we will actually have to create an IAM user,
+
+00:00:20.085 --> 00:00:21.539
+you can call it whatever you like,
+
+00:00:21.539 --> 00:00:24.884
+and we're calling that user dwhadmin,
+
+00:00:24.885 --> 00:00:28.290
+and we will give that admin privileges.
+
+00:00:28.289 --> 00:00:31.049
+So, it's going to have the same privileges as if you are in
+
+00:00:31.050 --> 00:00:35.609
+your full power EC2 Console or Amazon console in general.
+
+00:00:35.609 --> 00:00:38.570
+I would advise you after examples and
+
+00:00:38.570 --> 00:00:41.960
+exercises here to actually just not give it admin privileges,
+
+00:00:41.960 --> 00:00:44.390
+just give it enough privileges for the thing that you
+
+00:00:44.390 --> 00:00:47.179
+want for the simplicity of explanation here.
+
+00:00:47.179 --> 00:00:51.034
+It would be easier for us to actually give it admin privileges.
+
+00:00:51.034 --> 00:00:52.519
+Why do we do that?
+
+00:00:52.520 --> 00:00:56.510
+Because this admin user will have an associated access
+
+00:00:56.509 --> 00:01:00.769
+token and secret that we are going to use to build the cluster,
+
+00:01:00.770 --> 00:01:02.990
+and we're actually going to show you how to get
+
+00:01:02.990 --> 00:01:05.030
+the access token and secrets and hopefully,
+
+00:01:05.030 --> 00:01:08.420
+that would be the one and only click-and-fill part,
+
+00:01:08.420 --> 00:01:10.915
+and after that, we do everything in code.
+
+00:01:10.915 --> 00:01:17.265
+So, you go and find the IAM services and choose users.
+
+00:01:17.265 --> 00:01:19.709
+Once you go into users here or for example,
+
+00:01:19.709 --> 00:01:21.329
+we're starting from a fresh account,
+
+00:01:21.329 --> 00:01:22.784
+so there are no users,
+
+00:01:22.784 --> 00:01:27.179
+so we add the user and we call it dwhadmin.
+
+00:01:27.180 --> 00:01:32.270
+The most important thing here is to access this programmatic access.
+
+00:01:32.269 --> 00:01:33.844
+Once we do that,
+
+00:01:33.844 --> 00:01:37.554
+we have to go and say attach existing policies directly,
+
+00:01:37.555 --> 00:01:40.580
+and we're giving administrator access.
+
+00:01:40.579 --> 00:01:45.814
+We click next, we're going to have an tags and we create that user.
+
+00:01:45.814 --> 00:01:47.489
+Once the user is created,
+
+00:01:47.489 --> 00:01:48.704
+it's going to tell you success,
+
+00:01:48.704 --> 00:01:53.730
+it was created, and you're going to see here an access key and a secret key.
+
+00:01:53.730 --> 00:01:56.785
+You have to copy those with you.
+
+00:01:56.784 --> 00:02:01.149
+You can also say show and once this one is shown, actually here,
+
+00:02:01.150 --> 00:02:03.170
+we're hiding it to give you the idea that
+
+00:02:03.170 --> 00:02:06.094
+this secret key and access key should be hidden.
+
+00:02:06.094 --> 00:02:07.969
+They should never, never, never,
+
+00:02:07.969 --> 00:02:12.439
+ever be committed in Git or shared publicly because effectively,
+
+00:02:12.439 --> 00:02:18.689
+you're giving away the access to your whole Amazon account if that got compromised.
+

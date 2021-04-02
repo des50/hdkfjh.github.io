@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.000
+Okay. So here is the sorting key or a visualization of the sorting key,
+
+00:00:06.000 --> 00:00:09.419
+where we have a fact table and the idea will not merely
+
+00:00:09.419 --> 00:00:14.099
+be the 100 percent distribution or load balancing,
+
+00:00:14.099 --> 00:00:20.085
+but the focus is going to be on having the sorting key and now that being the dimension
+
+00:00:20.085 --> 00:00:27.030
+date being sorted inside each slice so that when we actually try to serve this,
+
+00:00:27.030 --> 00:00:28.815
+forget about the join now,
+
+00:00:28.815 --> 00:00:31.080
+you will figure out the join maybe if you do
+
+00:00:31.079 --> 00:00:34.699
+here all and join here and you have ordered by,
+
+00:00:34.700 --> 00:00:37.100
+you'll get no shuffling and nice performance.
+
+00:00:37.100 --> 00:00:39.755
+You might get a little bit of a hit because you did this.
+
+00:00:39.755 --> 00:00:44.250
+So it's actually a subtle art and you might get a little bit of trade-offs.
+
+00:00:44.250 --> 00:00:47.615
+But the point is if you do order by a field a lot,
+
+00:00:47.615 --> 00:00:52.015
+you might want to mark it as a sort key.
+
+00:00:52.015 --> 00:00:53.780
+Here's the syntax.
+
+00:00:53.780 --> 00:00:59.164
+Here is for example the order date and you would mark it as a sort key,
+
+00:00:59.164 --> 00:01:07.185
+and perhaps the primary key of the dimension table could be a sort key and a dist key.
+
+00:01:07.185 --> 00:01:11.359
+Finally, actually we're going to do a demo together where are we going to see
+
+00:01:11.359 --> 00:01:16.700
+the gains or the performance improvements of establishing a strategy like this.
+
+00:01:16.700 --> 00:01:21.230
+So we're going to have a number of queries and depending on the nature of the query and
+
+00:01:21.230 --> 00:01:27.289
+what pattern of access does it actually perform on the partition tables for example,
+
+00:01:27.289 --> 00:01:28.594
+here you see the blue ones.
+
+00:01:28.594 --> 00:01:35.245
+This is the time for each query when we did not specify any dist key and sort key,
+
+00:01:35.245 --> 00:01:40.905
+and the orange one is when we apply actually a little bit of dist key and sort key.
+
+00:01:40.905 --> 00:01:44.960
+Here we're measuring those into performance and we're getting
+
+00:01:44.959 --> 00:01:49.000
+close to 70 percent improvement on one of the quiz,
+
+00:01:49.000 --> 00:01:51.495
+and if I'm not mistaken,
+
+00:01:51.495 --> 00:01:53.219
+we're going through the demo.
+
+00:01:53.219 --> 00:01:55.620
+But actually, if I remember correctly,
+
+00:01:55.620 --> 00:02:01.900
+this was a fact table and we're doing like grouping by three dimensions.
+
+00:02:01.900 --> 00:02:03.515
+So that's a lot of join.
+
+00:02:03.515 --> 00:02:05.915
+So if we did it without any distribution,
+
+00:02:05.915 --> 00:02:08.705
+is going to be really a lot of work,
+
+00:02:08.705 --> 00:02:12.695
+but if we actually did the broadcasting for all the dimensions,
+
+00:02:12.694 --> 00:02:15.479
+that goes really fast.
+

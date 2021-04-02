@@ -1,0 +1,169 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.089
+So, let's take a closer look at
+
+00:00:03.089 --> 00:00:10.080
+the Amazon Redshift corner stone product of Amazon in our data warehouse.
+
+00:00:10.080 --> 00:00:11.955
+For liquid that technology,
+
+00:00:11.955 --> 00:00:19.484
+we are aware a little bit of the idea of columnar storage or column-oriented storage.
+
+00:00:19.484 --> 00:00:23.699
+Basically, the idea is we have the ability of picking
+
+00:00:23.699 --> 00:00:28.619
+one column and doing one aggregation operation on it.
+
+00:00:28.620 --> 00:00:32.070
+Of course, that is very nice because sometimes,
+
+00:00:32.070 --> 00:00:34.079
+that could be a big fact.
+
+00:00:34.079 --> 00:00:39.420
+They will lose lots and lots of columns and when we try to add one column,
+
+00:00:39.420 --> 00:00:43.755
+we don't want actually to look from the other columns.
+
+00:00:43.755 --> 00:00:47.980
+So, that actually works out as a very nice performance boost.
+
+00:00:47.979 --> 00:00:53.479
+Actually, internally, Redshift is a postgres SQL with
+
+00:00:53.479 --> 00:00:59.244
+modified extensions for custom columnar storage.
+
+00:00:59.244 --> 00:01:02.539
+So, let's take a closer look at Amazon Redshift.
+
+00:01:02.539 --> 00:01:03.799
+To be able to explain this,
+
+00:01:03.799 --> 00:01:10.405
+we need to explain the concurrency that would happen in normalization databases.
+
+00:01:10.405 --> 00:01:12.210
+So, most relational databases,
+
+00:01:12.209 --> 00:01:17.679
+they execute multiple queries in parallel if they have access to many cores or servers.
+
+00:01:17.680 --> 00:01:25.880
+Actually, one can have a database server on one machine or can have a database cluster.
+
+00:01:25.879 --> 00:01:33.024
+But if you have a database cluster for most of the normal SQL or RDBMS,
+
+00:01:33.025 --> 00:01:35.155
+you will find that every query,
+
+00:01:35.155 --> 00:01:39.019
+you can have many queries at the same time but each query,
+
+00:01:39.019 --> 00:01:43.609
+each single query, actually runs on one CPU.
+
+00:01:43.609 --> 00:01:45.530
+So, if at a point in time,
+
+00:01:45.530 --> 00:01:48.150
+I have one query running,
+
+00:01:48.150 --> 00:01:50.234
+it doesn't matter how many CPUs do I have,
+
+00:01:50.234 --> 00:01:54.144
+because I am always going to run it on one CPU.
+
+00:01:54.144 --> 00:01:59.439
+However, if I have lots of concurrent users running those queries,
+
+00:01:59.439 --> 00:02:01.834
+I can schedule those ones on
+
+00:02:01.834 --> 00:02:05.629
+the CPUs and that's actually very nice for OLTP because indeed,
+
+00:02:05.629 --> 00:02:12.269
+we have lots of concurrent users and each query on itself is not that long.
+
+00:02:12.270 --> 00:02:13.490
+It doesn't do something major.
+
+00:02:13.490 --> 00:02:16.610
+It's either like an update or a few rows retrieved.
+
+00:02:16.610 --> 00:02:20.020
+So, that's actually well suited for OLTP.
+
+00:02:20.020 --> 00:02:24.775
+But then, we have the other, I would say,
+
+00:02:24.775 --> 00:02:27.680
+like species of databases which is
+
+00:02:27.680 --> 00:02:33.295
+the massively parallel processing databases or MPP databases.
+
+00:02:33.294 --> 00:02:37.625
+The idea of the MPP databases is that they parallelize the execution
+
+00:02:37.625 --> 00:02:42.020
+of a single query on multiple CPUs or I mean,
+
+00:02:42.020 --> 00:02:45.460
+those CPUs that naturally could be on multiple machines as well.
+
+00:02:45.460 --> 00:02:50.710
+The idea is that tables in those MPP databases,
+
+00:02:50.710 --> 00:02:55.750
+one table would be actually partitioned into smaller partitions and
+
+00:02:55.750 --> 00:02:59.349
+distributed across those CPUs
+
+00:02:59.349 --> 00:03:03.594
+where actually each CPU would also have its associated storage.
+
+00:03:03.594 --> 00:03:05.844
+So, when one query comes,
+
+00:03:05.844 --> 00:03:11.080
+that query can process this whole table in parallel where
+
+00:03:11.080 --> 00:03:17.335
+each CPU would be basically crunching one partition of the data.
+
+00:03:17.335 --> 00:03:21.985
+So, Amazon Redshift is actually, it's Cloud-managed,
+
+00:03:21.985 --> 00:03:24.560
+and it is column oriented,
+
+00:03:24.560 --> 00:03:27.580
+and it's also an MPP database.
+
+00:03:27.580 --> 00:03:32.510
+It's not the only product on the market which has these nice properties.
+
+00:03:32.509 --> 00:03:35.569
+There are other products from other vendors and
+
+00:03:35.569 --> 00:03:39.739
+Redshift is actually the champion of Amazon web service.
+
+00:03:39.740 --> 00:03:41.990
+If you are working in Amazon,
+
+00:03:41.990 --> 00:03:44.750
+that would be your go-to solution.
+

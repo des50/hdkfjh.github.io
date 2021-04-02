@@ -1,0 +1,118 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.000
+Now, if we go a little bit closer to Amazon,
+
+00:00:03.000 --> 00:00:10.035
+we will find that we can go and have an EC2 machine where we have our server and
+
+00:00:10.035 --> 00:00:18.375
+indeed that one can copy from one SQL server to another SQL server.
+
+00:00:18.375 --> 00:00:20.114
+In that particular case,
+
+00:00:20.114 --> 00:00:21.375
+I mean the case at hand,
+
+00:00:21.375 --> 00:00:25.379
+the most common would be that we have MySQL or Postgres
+
+00:00:25.379 --> 00:00:29.689
+or one of those relational databases in RDS,
+
+00:00:29.690 --> 00:00:31.859
+let's say in Amazon a relational data-store.
+
+00:00:31.859 --> 00:00:35.850
+We have Redshift on the other side and we want to do this.
+
+00:00:35.850 --> 00:00:40.230
+The question would be, "Would we need to
+
+00:00:40.229 --> 00:00:46.004
+take all our CSVs in the storage of this server?''
+
+00:00:46.005 --> 00:00:49.790
+Well, naturally in the on-prime we might be doing something like that.
+
+00:00:49.789 --> 00:00:52.640
+As we said either locally on our network attached
+
+00:00:52.640 --> 00:00:56.645
+storage to this machine or number of machines.
+
+00:00:56.645 --> 00:01:00.290
+But actually in the Amazon architecture we have
+
+00:01:00.289 --> 00:01:04.234
+something nice which is we can actually connect to
+
+00:01:04.234 --> 00:01:11.825
+the Amazon RDS and issue a command pointing RDS to a bucket and telling RDS,
+
+00:01:11.825 --> 00:01:18.835
+''Hey, just go and take your stuff here'' Similarly,
+
+00:01:18.834 --> 00:01:22.219
+after the data has been copied successfully to S3,
+
+00:01:22.219 --> 00:01:25.340
+we can go and issue a command to Amazon Redshift saying,
+
+00:01:25.340 --> 00:01:27.605
+''Hey, Amazon I am going to point you to
+
+00:01:27.605 --> 00:01:32.115
+an S3 bucket and you go and get your stuff and move them here.''
+
+00:01:32.114 --> 00:01:34.829
+With that actually the ETL server here,
+
+00:01:34.829 --> 00:01:37.709
+only that maybe we still are interested in
+
+00:01:37.709 --> 00:01:41.104
+the scheduling capabilities of that server but we are not
+
+00:01:41.105 --> 00:01:44.960
+interested a lot in this server having a lot of storage
+
+00:01:44.959 --> 00:01:48.939
+because S3 works as what is known as a staging area.
+
+00:01:48.939 --> 00:01:51.209
+An important question might arise would be,
+
+00:01:51.209 --> 00:01:53.669
+''But what if you have here,
+
+00:01:53.670 --> 00:01:55.500
+may be an EC2 machine,
+
+00:01:55.500 --> 00:01:58.489
+was a server that does not have this capability?''
+
+00:01:58.489 --> 00:01:59.914
+Well, at that point,
+
+00:01:59.915 --> 00:02:05.540
+you will actually revert to the initial design of taking the data into
+
+00:02:05.540 --> 00:02:12.170
+the local storage of the ETL server than moving it again to Amazon S3 to do that.
+
+00:02:12.169 --> 00:02:15.269
+But in general, there are many products,
+
+00:02:15.270 --> 00:02:17.370
+most of the products in Amazon,
+
+00:02:17.370 --> 00:02:19.724
+especially the managed services.
+
+00:02:19.724 --> 00:02:26.159
+They all know how to go and talk directly to S3.
+

@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.115
+Coming to the big picture here,
+
+00:00:02.115 --> 00:00:05.160
+we find that this is the Redshift cluster that we want to do.
+
+00:00:05.160 --> 00:00:06.480
+But in our case,
+
+00:00:06.480 --> 00:00:10.335
+there is a couple of small problems with our quickly launched cluster.
+
+00:00:10.335 --> 00:00:14.040
+So, from all backward we are actually concerned
+
+00:00:14.039 --> 00:00:18.000
+in our exercise here with these two connections.
+
+00:00:18.000 --> 00:00:19.739
+So, what's with that?
+
+00:00:19.739 --> 00:00:25.184
+So, the idea is that we said the Redshift is going to pull data from S3.
+
+00:00:25.184 --> 00:00:26.804
+Now, S3 is sitting there,
+
+00:00:26.804 --> 00:00:28.679
+doesn't know actually who's coming,
+
+00:00:28.679 --> 00:00:31.890
+and finally, find a read request from Amazon Redshift.
+
+00:00:31.890 --> 00:00:34.725
+And who's Amazon Redshift? It doesn't know.
+
+00:00:34.725 --> 00:00:40.500
+So, Amazon Redshift needs actually to do what's known as impersonating a role,
+
+00:00:40.500 --> 00:00:44.715
+impersonating someone who has access to S3.
+
+00:00:44.715 --> 00:00:48.460
+So, we have to configure Amazon Redshift to do that.
+
+00:00:48.460 --> 00:00:51.530
+We basically do that by creating an IAM role,
+
+00:00:51.530 --> 00:00:53.600
+which you should have covered in lesson two,
+
+00:00:53.600 --> 00:00:59.030
+and you need to have an IAM role that actually has the privilege or has a policy,
+
+00:00:59.030 --> 00:01:02.554
+to have at least read only access to S3.
+
+00:01:02.554 --> 00:01:05.450
+The second problem actually is by default,
+
+00:01:05.450 --> 00:01:09.170
+the Amazon Redshift is only available security wise to
+
+00:01:09.170 --> 00:01:12.409
+other nodes inside the virtual and private cluster
+
+00:01:12.409 --> 00:01:14.664
+or virtual private cloud we said the VPC.
+
+00:01:14.665 --> 00:01:17.745
+So, Amazon Redshift is launched within a VPC,
+
+00:01:17.745 --> 00:01:20.660
+and the default security group settings is
+
+00:01:20.659 --> 00:01:25.045
+actually for that this Redshift to be visible within the security group.
+
+00:01:25.045 --> 00:01:30.719
+We are going to run our work from Jupyter Notebooks to access this one.
+
+00:01:30.719 --> 00:01:33.618
+So, we need to be able to access from the outside
+
+00:01:33.618 --> 00:01:36.469
+and not only for the sake of our exercises,
+
+00:01:36.469 --> 00:01:38.810
+in many occasions you would be also interested
+
+00:01:38.810 --> 00:01:41.915
+in accessing the warehouse from the outside.
+
+00:01:41.915 --> 00:01:44.450
+I would say that also in other cases you wouldn't
+
+00:01:44.450 --> 00:01:47.284
+want to do that and you want to have that tight security.
+
+00:01:47.284 --> 00:01:49.728
+But if you want to access it from the outside,
+
+00:01:49.728 --> 00:01:52.760
+you need to open a TCP port here to be able to
+
+00:01:52.760 --> 00:01:56.484
+establish a connection from the outside to the inside.
+
+00:01:56.484 --> 00:01:58.454
+So, to sum it up,
+
+00:01:58.454 --> 00:02:02.679
+building a Redshift cluster using the quick launcher,
+
+00:02:02.680 --> 00:02:05.990
+is fully functioning but we need a little bit more functionality.
+
+00:02:05.989 --> 00:02:08.299
+So, we need the security settings.
+
+00:02:08.300 --> 00:02:10.640
+We need to actually lower the node just a
+
+00:02:10.639 --> 00:02:13.609
+bit to be able to access the cloud from the outside,
+
+00:02:13.610 --> 00:02:19.560
+and we also need to impersonate a user who has read access to S3.
+

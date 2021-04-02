@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.620
+So, let's take a look at a common prefix example.
+
+00:00:04.620 --> 00:00:07.830
+The way you do this is that you say copy,
+
+00:00:07.830 --> 00:00:15.705
+and that would be the target table in Redshift from a particular S3 bucket.
+
+00:00:15.705 --> 00:00:17.144
+If you look closely here,
+
+00:00:17.144 --> 00:00:18.644
+that's an S3 bucket,
+
+00:00:18.644 --> 00:00:23.550
+then you have a key here that actually constitutes a path,
+
+00:00:23.550 --> 00:00:26.789
+then at the end, you have part.
+
+00:00:26.789 --> 00:00:30.704
+That part now is actually not a file.
+
+00:00:30.704 --> 00:00:36.599
+If you look at the structure of this tickets/split,
+
+00:00:36.600 --> 00:00:40.230
+you will find that part is actually 10 files,
+
+00:00:40.229 --> 00:00:45.000
+and these 10 files have the common prefix part.
+
+00:00:45.670 --> 00:00:50.210
+As we said, once it sees that,
+
+00:00:50.210 --> 00:00:54.795
+once the thread shift sees that you have actually that bit of paralyze,
+
+00:00:54.795 --> 00:00:57.484
+it starts as spinning a number of workers and
+
+00:00:57.484 --> 00:01:02.369
+your compute nodes can entirely go and start fetching a file.
+
+00:01:02.450 --> 00:01:04.659
+You would actually need,
+
+00:01:04.659 --> 00:01:07.369
+and we're going to speak about this a little bit more closely,
+
+00:01:07.370 --> 00:01:14.030
+some credentials to be able to access Amazon S3 from
+
+00:01:14.030 --> 00:01:17.420
+Redshift because remember that it's Redshift which is
+
+00:01:17.420 --> 00:01:22.219
+initiating a connection to S3 in an attempt to fetch the data.
+
+00:01:22.219 --> 00:01:28.189
+You can also here declare that we are actually working with gzip,
+
+00:01:28.189 --> 00:01:30.185
+if you can see it here,
+
+00:01:30.185 --> 00:01:34.269
+and that you have a custom delimiter as semicolon into those,
+
+00:01:34.269 --> 00:01:40.715
+and you actually would like to get that from the US West Region.
+
+00:01:40.715 --> 00:01:44.320
+The other way, if you do not want to depend on
+
+00:01:44.319 --> 00:01:47.904
+this prefix things and you want to be more explicit,
+
+00:01:47.905 --> 00:01:51.460
+is actually you can go and say,
+
+00:01:51.459 --> 00:02:01.239
+copy into this table from a manifest file and you say,
+
+00:02:01.239 --> 00:02:05.319
+I'm specifying the manifest method here.
+
+00:02:06.200 --> 00:02:09.310
+Once you do that,
+
+00:02:11.840 --> 00:02:15.740
+you see that you get those explicit files.
+
+00:02:15.740 --> 00:02:18.800
+There's no guessing anymore.
+

@@ -1,0 +1,166 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.714
+Okay. Now that we understand the basic architecture of Redshift,
+
+00:00:05.714 --> 00:00:09.839
+let us go into some general ETL concepts before
+
+00:00:09.839 --> 00:00:14.714
+delving into the details of ETL associated with Redshift in particular.
+
+00:00:14.714 --> 00:00:17.640
+So, this is the mental image that we have.
+
+00:00:17.640 --> 00:00:19.695
+We have the data sources, we want to do ETL.
+
+00:00:19.695 --> 00:00:24.240
+We want the built dimension model and get the data out and build lots of insights.
+
+00:00:24.239 --> 00:00:28.059
+But let's go a little bit back and be a little bit very basic.
+
+00:00:28.059 --> 00:00:31.469
+So, let's say we have a SQL table.
+
+00:00:31.469 --> 00:00:35.479
+We want to load it into another SQL table after some transformation.
+
+00:00:35.479 --> 00:00:41.299
+So, that's like select the fact one and fact two into a new fact from table,
+
+00:00:41.299 --> 00:00:42.679
+from an old fact table.
+
+00:00:42.679 --> 00:00:46.490
+That's basically what you do while actually doing your,
+
+00:00:46.490 --> 00:00:51.050
+going from third normal form schema into a star schema for instance.
+
+00:00:51.049 --> 00:00:53.309
+So, assuming for simplicity,
+
+00:00:53.310 --> 00:00:56.480
+which is something we actually covered in lesson one,
+
+00:00:56.479 --> 00:01:00.574
+that the facts table is in the same database which is kind of naive.
+
+00:01:00.575 --> 00:01:03.380
+That's Hello World of dimensional modeling that we
+
+00:01:03.380 --> 00:01:06.579
+assume that both are in the same database.
+
+00:01:06.579 --> 00:01:11.284
+So, select into is actually a good solution for that.
+
+00:01:11.284 --> 00:01:15.170
+Now, what do we do if we want to copy the results of
+
+00:01:15.170 --> 00:01:19.870
+a query to another table on a totally different database server?
+
+00:01:19.870 --> 00:01:27.530
+So, our intention would be to select a couple of facts into another Server.newFactTable.
+
+00:01:27.530 --> 00:01:31.719
+So, we want a new fact table but we want it on another server.
+
+00:01:31.719 --> 00:01:37.355
+So, we want to move the data from here to there. How do we do that?
+
+00:01:37.355 --> 00:01:39.320
+That's actually not very simple.
+
+00:01:39.319 --> 00:01:44.414
+In fact, if both servers were using the same RDBMS,
+
+00:01:44.415 --> 00:01:46.140
+you might actually find a way,
+
+00:01:46.140 --> 00:01:49.609
+it's actually common nowadays in
+
+00:01:49.609 --> 00:01:54.079
+most modern databases that you find a way to do select into another server.
+
+00:01:54.079 --> 00:02:02.200
+But hey, usually, we agreed that the data sources are rather heterogeneous, and well,
+
+00:02:02.200 --> 00:02:07.370
+is every vendor going to implement like the combinatorial explosion
+
+00:02:07.370 --> 00:02:12.495
+of all sources and sinks for all the different database servers?
+
+00:02:12.495 --> 00:02:14.185
+That's not very realistic.
+
+00:02:14.185 --> 00:02:16.780
+Actually, when we take it from here to there,
+
+00:02:16.780 --> 00:02:18.210
+probably want to do something in the middle.
+
+00:02:18.210 --> 00:02:21.370
+I mean, if we keep ourselves to this problem, it's already a problem.
+
+00:02:21.370 --> 00:02:26.860
+But adding to that is that we might want to also do something in the middle.
+
+00:02:26.860 --> 00:02:33.500
+So, a more general solution for this SQL to SQL ETL is that we actually put
+
+00:02:33.500 --> 00:02:36.275
+what is known as an ETL server in the middle
+
+00:02:36.275 --> 00:02:39.955
+or many of them actually have lots of workloads.
+
+00:02:39.955 --> 00:02:43.705
+So, this first server would have the client,
+
+00:02:43.705 --> 00:02:46.640
+a software client of that database server.
+
+00:02:46.639 --> 00:02:48.259
+So, if this one was my SQL,
+
+00:02:48.259 --> 00:02:53.399
+the ETL server would have MySQL client and can talk to that database server.
+
+00:02:53.400 --> 00:02:55.980
+Thus in select statement, gets the data.
+
+00:02:55.979 --> 00:02:59.179
+The data actually gets dumped here as CSVs in
+
+00:02:59.180 --> 00:03:04.015
+the local storage or network attached storage of that ETL server.
+
+00:03:04.014 --> 00:03:12.349
+Symmetrically, you would go and insert or copy those ones into the new database server,
+
+00:03:12.349 --> 00:03:15.669
+which is for our example Postgres let's say.
+
+00:03:15.669 --> 00:03:18.464
+So, that's a very nice technique.
+
+00:03:18.465 --> 00:03:22.580
+Actually, you will need lots of storage in the middle for that,
+
+00:03:22.580 --> 00:03:25.400
+but if you have just a machine doing
+
+00:03:25.400 --> 00:03:29.254
+this with a product maybe that can automate this process,
+
+00:03:29.254 --> 00:03:34.039
+that actually work and simplifies the problem of SQL to SQL ETL.
+

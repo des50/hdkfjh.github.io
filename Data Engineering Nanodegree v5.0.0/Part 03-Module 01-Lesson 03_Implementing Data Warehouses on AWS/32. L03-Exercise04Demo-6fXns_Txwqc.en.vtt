@@ -1,0 +1,523 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.974
+Finally, in this exercise we're going to work with optimizing redshift table design.
+
+00:00:06.974 --> 00:00:10.094
+As in the previous exercise,
+
+00:00:10.095 --> 00:00:16.635
+we also know that we have used the exercise two to create
+
+00:00:16.635 --> 00:00:25.060
+a redshift cluster with an end point and ARN role.
+
+00:00:29.170 --> 00:00:32.704
+I would like to start at this point that maybe
+
+00:00:32.704 --> 00:00:36.759
+you went in this back-to-back exercise two,
+
+00:00:36.759 --> 00:00:41.515
+three and four or maybe you paused and came back and in case you paused,
+
+00:00:41.515 --> 00:00:45.630
+I actually advice you in exercise two
+
+00:00:45.630 --> 00:00:51.719
+to clean up your redshift cluster
+
+00:00:51.719 --> 00:00:54.784
+and then when the time comes for you to do exercise four,
+
+00:00:54.784 --> 00:00:57.929
+you can launch your cluster again.
+
+00:00:58.479 --> 00:01:02.479
+So, I go ahead and run.
+
+00:01:02.479 --> 00:01:05.649
+I should run from the beginning.
+
+00:01:14.079 --> 00:01:17.254
+Connect to the cluster.
+
+00:01:17.254 --> 00:01:26.164
+Here the dataset we're using is this line or the star schema benchmark.
+
+00:01:26.165 --> 00:01:29.855
+This is a famous dataset for benchmarking data warehouses,
+
+00:01:29.855 --> 00:01:39.130
+which Amazon has provided actually loaded in a public bucket for us.
+
+00:01:40.609 --> 00:01:43.724
+If you look here, you have one fact table,
+
+00:01:43.724 --> 00:01:49.229
+which is the line order and you have the revenue, the taxes,
+
+00:01:49.230 --> 00:01:52.204
+the discounts and the prices and the quantity here
+
+00:01:52.204 --> 00:01:55.549
+are your facts and then you have some dimensions here,
+
+00:01:55.549 --> 00:01:56.840
+like the part, the supplier,
+
+00:01:56.840 --> 00:01:59.260
+the customer and the date.
+
+00:01:59.260 --> 00:02:02.990
+Actually, some of the things here are actually on
+
+00:02:02.989 --> 00:02:08.870
+the Redshift Amazon tutorial but we are actually giving you a lab environment for them,
+
+00:02:08.870 --> 00:02:14.305
+so you can see this, actually do it with your own hands.
+
+00:02:14.305 --> 00:02:20.219
+So, I want to explain a little bit the point of
+
+00:02:20.219 --> 00:02:26.000
+this exercise and the idea is that we want to create basically two databases.
+
+00:02:26.000 --> 00:02:29.310
+One of them has optimized design,
+
+00:02:29.310 --> 00:02:33.509
+the other has a non-optimal design.
+
+00:02:33.509 --> 00:02:35.310
+So, one design is naive,
+
+00:02:35.310 --> 00:02:40.259
+where we didn't do any distort sort keys and the other one we did distance sort keys.
+
+00:02:41.419 --> 00:02:45.479
+If you remember to do that,
+
+00:02:45.479 --> 00:02:52.174
+we have a little bit of logistics and you can see that in the past exercise,
+
+00:02:52.175 --> 00:02:56.240
+changed the finding, and this is going to complicate things a lot
+
+00:02:56.240 --> 00:03:00.200
+here if we start to to change all those tables and do two versions of them.
+
+00:03:00.199 --> 00:03:06.414
+So, instead, we use the functionality of the schema, which is basically,
+
+00:03:06.414 --> 00:03:11.319
+inside one database, you can create two schemas and inside each schema,
+
+00:03:11.319 --> 00:03:14.185
+you can create tables with the same names.
+
+00:03:14.185 --> 00:03:16.289
+So, we created two schemas,
+
+00:03:16.289 --> 00:03:18.209
+one called dist and one nodist.
+
+00:03:18.210 --> 00:03:21.435
+So, we go first and do the nodist schema.
+
+00:03:21.435 --> 00:03:25.740
+Here we say, create schema if not exist nodist and you say like this,
+
+00:03:25.740 --> 00:03:27.555
+set search path to nodist.
+
+00:03:27.555 --> 00:03:31.655
+This means all the SQL statements that are going to run now,
+
+00:03:31.655 --> 00:03:39.099
+are going to be executed within the context of the nodist schema.
+
+00:03:39.099 --> 00:03:42.710
+Well, we just clean up in case we're running this for
+
+00:03:42.710 --> 00:03:46.219
+the second time or so and we create the table part, the supplier part,
+
+00:03:46.219 --> 00:03:48.500
+the customer part, the date part,
+
+00:03:48.500 --> 00:03:56.405
+the line order part and we do that and all of them run normally here.
+
+00:03:56.405 --> 00:03:59.314
+Then we create a dist schema.
+
+00:03:59.314 --> 00:04:05.414
+The dist schema, we do the same and we create them as well,
+
+00:04:05.414 --> 00:04:10.064
+except that we for the part table we put a sort key and a dist key.
+
+00:04:10.064 --> 00:04:12.359
+For the supplier, we put a sort key.
+
+00:04:12.360 --> 00:04:15.900
+For the table, we put a sort key and for the date,
+
+00:04:15.900 --> 00:04:18.970
+we put a sort key and then for the fact itself,
+
+00:04:18.970 --> 00:04:23.390
+we put a sort key here.
+
+00:04:23.389 --> 00:04:29.764
+So, almost all of them we were doing some sort key and on some of them we do a dist key.
+
+00:04:29.764 --> 00:04:34.789
+Basically, we put the dist key on the big tables.
+
+00:04:34.790 --> 00:04:38.150
+You can already spot here that we're putting a dist key on
+
+00:04:38.149 --> 00:04:43.549
+the joining key between the line order and the part.
+
+00:04:44.800 --> 00:04:50.660
+One difference is actually that all the dimensions are quite small and
+
+00:04:50.660 --> 00:04:56.740
+the part dimensions is quite a big table.
+
+00:04:56.740 --> 00:05:03.259
+So, we will not be able to do a dist style all on this one.
+
+00:05:03.259 --> 00:05:09.714
+The only optimization we can do is to put sort and a dist key on the part key.
+
+00:05:09.714 --> 00:05:11.294
+The supplier is small,
+
+00:05:11.295 --> 00:05:13.665
+so we're going to make dist style all.
+
+00:05:13.665 --> 00:05:15.210
+The customer is small,
+
+00:05:15.209 --> 00:05:21.299
+so we're going to make dist style all and here the dwdate is small,
+
+00:05:21.300 --> 00:05:23.829
+so we're going to do dist style all.
+
+00:05:24.050 --> 00:05:28.600
+Of course the line order is big, nodist style all.
+
+00:05:29.180 --> 00:05:32.055
+Then we are going to copy our tables.
+
+00:05:32.055 --> 00:05:41.009
+Here we're not going to compare between a single file or multiple smaller files.
+
+00:05:41.009 --> 00:05:43.789
+No, we have established this in the previous exercise.
+
+00:05:43.790 --> 00:05:51.220
+So, the large tables are already split into smaller files already.
+
+00:05:51.220 --> 00:05:58.775
+Now, the intention of us is to go for each table and load it like this.
+
+00:05:58.774 --> 00:06:00.019
+We put the bucket,
+
+00:06:00.019 --> 00:06:04.904
+the path and we put the role and so forth.
+
+00:06:04.904 --> 00:06:09.063
+Since we are going to do this two times,
+
+00:06:09.064 --> 00:06:14.810
+we actually scripted this to load into the different schemas.
+
+00:06:14.810 --> 00:06:17.274
+So, we want to do three things.
+
+00:06:17.274 --> 00:06:20.839
+Number one, we want to make sure that the role ARN is there.
+
+00:06:20.839 --> 00:06:23.974
+The second thing is that we want to perform the data loading
+
+00:06:23.975 --> 00:06:27.810
+twice once in each schema the dist and the nodist,
+
+00:06:27.810 --> 00:06:33.889
+and third we want to collect timing statistics about how long each one take.
+
+00:06:33.889 --> 00:06:39.919
+So, we made a function called loadTable here and it does all that.
+
+00:06:39.920 --> 00:06:47.405
+If we run this function here and start loading the data,
+
+00:06:47.404 --> 00:06:51.784
+we give it the list of tables and it's going to run twice.
+
+00:06:51.785 --> 00:06:58.050
+I have to warn you that this is going to take at least 10 minutes each.
+
+00:06:58.509 --> 00:07:02.824
+You might even want to split them,
+
+00:07:02.824 --> 00:07:07.399
+split this line and this line in order for you not to wait 20 seconds just to be sure.
+
+00:07:07.399 --> 00:07:15.339
+That would take some time and you're going to see some results.
+
+00:07:15.339 --> 00:07:19.974
+So, once we get this nodist stats and dist stats,
+
+00:07:19.975 --> 00:07:24.890
+this is going to give us all the statistics about what has happened.
+
+00:07:24.889 --> 00:07:28.909
+Let's look at the load time of the dist and load time of the nodist.
+
+00:07:28.910 --> 00:07:31.445
+They care that this is the load time.
+
+00:07:31.444 --> 00:07:34.709
+This is something we're going to do once.
+
+00:07:34.930 --> 00:07:43.324
+You will see here that the load time for the nodist is actually less than the dist,
+
+00:07:43.324 --> 00:07:48.019
+which means our optimized schema took a little bit longer to
+
+00:07:48.019 --> 00:07:53.219
+load and its actually looks almost the case for all tables, large or small.
+
+00:07:53.220 --> 00:07:54.730
+Actually, this is quite normal,
+
+00:07:54.730 --> 00:07:59.735
+because when you take things naively and put them you're not doing anything at all.
+
+00:07:59.735 --> 00:08:03.185
+When you do dist, you're doing sorting, you're doing distribution.
+
+00:08:03.185 --> 00:08:05.644
+So, you're spending a lot of time actually
+
+00:08:05.644 --> 00:08:09.560
+doing a pre-shuffling to put things in a nice order.
+
+00:08:09.560 --> 00:08:10.655
+So, that's okay.
+
+00:08:10.654 --> 00:08:17.464
+But our hopes is the reward is going to be much bigger actually for query time.
+
+00:08:17.464 --> 00:08:20.779
+This graph is also nice because it shows you
+
+00:08:20.779 --> 00:08:25.979
+the ratio of the facts to the dimension which is actually should always be like this.
+
+00:08:32.240 --> 00:08:37.610
+I mean, usually, the facts are way way way bigger table than the dimensions.
+
+00:08:37.610 --> 00:08:40.490
+So, we compare here the queries.
+
+00:08:40.490 --> 00:08:43.715
+We have a number of queries here.
+
+00:08:43.715 --> 00:08:48.180
+I'm going to show you the results of the queries first.
+
+00:08:48.179 --> 00:08:52.370
+We also done this compare query times for you.
+
+00:08:52.370 --> 00:08:55.639
+So, you have them here the nodist query times and the dist
+
+00:08:55.639 --> 00:09:00.004
+query times and we plot the results.
+
+00:09:00.004 --> 00:09:03.980
+You see here that now
+
+00:09:03.980 --> 00:09:11.440
+the query nodist is taking much longer than the query dist.
+
+00:09:11.440 --> 00:09:15.080
+We are actually starting to seeing gains here.
+
+00:09:15.210 --> 00:09:19.490
+In another style, we actually instead of showing times like this,
+
+00:09:19.490 --> 00:09:22.460
+we compare this Delta and see
+
+00:09:22.460 --> 00:09:26.960
+the percentage improvement and you have here depending on the run.
+
+00:09:26.960 --> 00:09:29.060
+Here for example, it's 55.
+
+00:09:29.059 --> 00:09:31.969
+Those exact numbers are going to differ a little bit.
+
+00:09:31.970 --> 00:09:36.274
+So, you can run this multiple times because of different loads and so on.
+
+00:09:36.274 --> 00:09:38.209
+If you run them multiple times,
+
+00:09:38.210 --> 00:09:41.720
+you will see slightly different ranges.
+
+00:09:41.720 --> 00:09:46.440
+But we have seen 70 percent on that green one actually.
+
+00:09:46.700 --> 00:09:51.945
+Let's go a little bit back and look at this big one,
+
+00:09:51.945 --> 00:09:54.800
+the one was largest improvement which is called the drill.
+
+00:09:54.799 --> 00:09:58.799
+So, we have a query on one-dimension,
+
+00:09:58.799 --> 00:10:00.524
+a query on two-dimensions,
+
+00:10:00.524 --> 00:10:04.894
+a drill in one-dimension, same distribution.
+
+00:10:04.894 --> 00:10:07.889
+Let's take a look here.
+
+00:10:10.279 --> 00:10:14.174
+So, one thing also we are doing while profiling,
+
+00:10:14.174 --> 00:10:17.104
+is that we say enable result cache for session to off.
+
+00:10:17.105 --> 00:10:19.295
+What happens is if you run a query,
+
+00:10:19.294 --> 00:10:24.724
+the results of the query redshift automatically without you telling anything,
+
+00:10:24.725 --> 00:10:26.404
+just keeps this cached.
+
+00:10:26.404 --> 00:10:28.475
+So, if you run it again,
+
+00:10:28.475 --> 00:10:30.965
+it would be like, Let's get this from the cache.
+
+00:10:30.965 --> 00:10:33.200
+In our cases here, we're profiling.
+
+00:10:33.200 --> 00:10:38.375
+So, we don't want to see the effect of caching,
+
+00:10:38.375 --> 00:10:42.879
+we want to make sure that everything is like the first time performance.
+
+00:10:42.879 --> 00:10:45.659
+So, we select here.
+
+00:10:45.659 --> 00:10:47.370
+If you look at this one,
+
+00:10:47.370 --> 00:10:56.465
+this is the fact table being joined on one-dimension summing the revenue.
+
+00:10:56.465 --> 00:11:01.580
+Here we're doing a little bit of
+
+00:11:01.580 --> 00:11:06.800
+filtering on the year and the discount in a certain range and the quantity.
+
+00:11:06.799 --> 00:11:09.870
+So, to do something less than 24,
+
+00:11:09.870 --> 00:11:14.700
+you will have to do a little bit of search and do a little bit of search and so on.
+
+00:11:15.279 --> 00:11:26.769
+So, that is one dimension join and you get on that good 45 percent improvement.
+
+00:11:26.899 --> 00:11:33.939
+Remember that where the improvement came from in the naive version,
+
+00:11:33.940 --> 00:11:37.395
+you would actually join those two and we'll get a shuffle.
+
+00:11:37.394 --> 00:11:43.679
+Actually, in the other one,
+
+00:11:43.679 --> 00:11:45.704
+where dwdate is copy,
+
+00:11:45.705 --> 00:11:47.759
+you don't get any shuffle.
+
+00:11:47.759 --> 00:11:52.500
+So, you're seeing the performance difference here.
+
+00:11:52.879 --> 00:11:56.304
+The second one which is the two dimensions here,
+
+00:11:56.304 --> 00:12:00.559
+we have the fact table being joined with three of them.
+
+00:12:00.559 --> 00:12:05.609
+But take care that this part alone is not
+
+00:12:06.220 --> 00:12:15.125
+copied with an all dist and we are doing grouping on two of the dimensions.
+
+00:12:15.125 --> 00:12:21.669
+So, we're seeing here the result is not fantastic,
+
+00:12:21.669 --> 00:12:24.044
+because we have a mix of both.,
+
+00:12:24.044 --> 00:12:27.519
+the ones that could be joined and the one that cannot be joined.
+
+00:12:29.120 --> 00:12:34.580
+The third one, we are actually doing line join with two
+
+00:12:34.580 --> 00:12:41.405
+here and we are using the order and group by with the sort keys.
+
+00:12:41.404 --> 00:12:49.404
+So, here the nodist version is going to be really suffering joining with two of them.
+
+00:12:49.404 --> 00:12:59.595
+Thus we see also the large improvement here compared to the nodist.
+
+00:12:59.595 --> 00:13:04.460
+Finally, here we have a simple one where we do a part key.
+
+00:13:04.460 --> 00:13:08.435
+With a part key, line order was part key and here
+
+00:13:08.434 --> 00:13:12.589
+both of them are going to be joined on the same key.
+
+00:13:12.590 --> 00:13:19.170
+So, we should also get some nice improvements.
+

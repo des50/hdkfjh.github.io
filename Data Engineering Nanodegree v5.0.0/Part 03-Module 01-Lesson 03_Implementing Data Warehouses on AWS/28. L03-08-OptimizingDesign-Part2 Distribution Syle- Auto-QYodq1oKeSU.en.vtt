@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.615
+Now, we understand the point of the even,
+
+00:00:03.615 --> 00:00:05.910
+start distribution strategy and
+
+00:00:05.910 --> 00:00:11.475
+the all distribution strategy and how the all actually minimizes traveling.
+
+00:00:11.474 --> 00:00:13.219
+We have actually another,
+
+00:00:13.220 --> 00:00:16.565
+a third distribution style which is actually auto.
+
+00:00:16.565 --> 00:00:20.535
+An Auto actually leaves the decision to Redshift.
+
+00:00:20.535 --> 00:00:24.440
+So, the small enough tables are distributed with an old structure.
+
+00:00:24.440 --> 00:00:31.155
+They are replicated and actually Redshift does the heuristics into saying actually,
+
+00:00:31.155 --> 00:00:37.935
+if these are indeed replicatable or small enough to be replicated or broadcasts.
+
+00:00:37.935 --> 00:00:42.040
+Otherwise, the large table as done with even.
+

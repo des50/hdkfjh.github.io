@@ -1,0 +1,166 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.940
+Okay. So, now that we have built a cluster using the Quick Launch button,
+
+00:00:04.940 --> 00:00:07.140
+we're going to see something a little bit more involved.
+
+00:00:07.139 --> 00:00:10.439
+Naturally, like everything else in Amazon Web Services,
+
+00:00:10.439 --> 00:00:14.219
+we can go through lots of those screenshots and videos or
+
+00:00:14.220 --> 00:00:18.195
+click and fill instructions like we did a little bit here also previously.
+
+00:00:18.195 --> 00:00:21.449
+But that said, I would actually say that it's an opportunity to introduce
+
+00:00:21.449 --> 00:00:24.589
+another skill which is actually rather crucial
+
+00:00:24.589 --> 00:00:28.039
+for a modern data engineers who set up complex infrastructures on
+
+00:00:28.039 --> 00:00:32.229
+the Cloud which is the ability to do infrastructure as code.
+
+00:00:32.229 --> 00:00:35.269
+The advantage of being in the Cloud actually is
+
+00:00:35.270 --> 00:00:38.810
+the ability to create infrastructures namely a set of machines user,
+
+00:00:38.810 --> 00:00:41.929
+roles, folders and processes using code.
+
+00:00:41.929 --> 00:00:47.640
+So, IaC lets you create machines as easy as you open a file and with this idea,
+
+00:00:47.640 --> 00:00:49.140
+you can automate, you can maintain,
+
+00:00:49.140 --> 00:00:50.789
+you can deploy, you can replicate,
+
+00:00:50.789 --> 00:00:55.579
+you can share complex infrastructures as easily as you maintain your code and of course,
+
+00:00:55.579 --> 00:00:58.489
+we can debate about on-prem versus Cloud but that's
+
+00:00:58.490 --> 00:01:01.550
+one of the things that is undreamt off in an on-premise deployment.
+
+00:01:01.549 --> 00:01:04.759
+You create a deployment with all the configurations, all the machines,
+
+00:01:04.760 --> 00:01:07.175
+and you just go and tear down and
+
+00:01:07.174 --> 00:01:10.114
+set it up again or replicate it for migration or for staging.
+
+00:01:10.114 --> 00:01:11.479
+It's rather powerful.
+
+00:01:11.480 --> 00:01:16.189
+To be honest, IaC is borderline data engineering DevOps and actually,
+
+00:01:16.189 --> 00:01:18.200
+modern data engineers do a little bit.
+
+00:01:18.200 --> 00:01:20.480
+There is a point of intersection here and I
+
+00:01:20.480 --> 00:01:23.299
+believe that's an important point of intersection.
+
+00:01:23.299 --> 00:01:26.000
+I have to do infrastructure as code in AWS.
+
+00:01:26.000 --> 00:01:31.040
+You can actually go and work with a command line called aws-cli, the client,
+
+00:01:31.040 --> 00:01:33.350
+and you can write scripts or you can go with
+
+00:01:33.349 --> 00:01:38.289
+the AWS SDKs or you can work with what's known as the Amazon Cloud formation.
+
+00:01:38.290 --> 00:01:41.355
+So, the infrastructure as code script, what you do is,
+
+00:01:41.355 --> 00:01:46.320
+you go and you issue commands like that and what happens is,
+
+00:01:46.319 --> 00:01:49.219
+here for example, you start an instance that goes very
+
+00:01:49.219 --> 00:01:53.275
+nice like you would actually touch a file in bash.
+
+00:01:53.275 --> 00:01:59.825
+Your second option would be to use an SDK and the Amazon SDKs are available in Java,
+
+00:01:59.825 --> 00:02:01.880
+in.NET, in NodeJS, in Ruby,
+
+00:02:01.879 --> 00:02:03.109
+Python, you name it here.
+
+00:02:03.109 --> 00:02:05.269
+I mean, you have lots of programming languages to
+
+00:02:05.269 --> 00:02:07.789
+work with and this is a little bit more power
+
+00:02:07.790 --> 00:02:10.085
+because you can do this not from a script or
+
+00:02:10.085 --> 00:02:12.950
+a bunch of serial commands like that or sequential commands,
+
+00:02:12.949 --> 00:02:16.599
+but you can actually go and create an S3 bucket and upload things in it,
+
+00:02:16.599 --> 00:02:19.549
+like.put_object in something and do if
+
+00:02:19.550 --> 00:02:23.260
+statements and configuration files and you name it.
+
+00:02:23.259 --> 00:02:28.159
+Your third option is known as Amazon Cloud formation and that's
+
+00:02:28.159 --> 00:02:31.460
+a Json description of lots of resources on permissions and
+
+00:02:31.460 --> 00:02:34.835
+constraint and the beauty of that one is its atomicity.
+
+00:02:34.835 --> 00:02:39.170
+So, the idea is, this whole Json description forms what's known as a stack.
+
+00:02:39.169 --> 00:02:42.439
+So, you start your stack and either everything in
+
+00:02:42.439 --> 00:02:46.405
+your stack succeeds or there is a failure and the stack doesn't launch.
+
+00:02:46.405 --> 00:02:48.680
+So, you're sure when I stack launches,
+
+00:02:48.680 --> 00:02:52.135
+that everything that you specified is actually working correctly.
+
+00:02:52.134 --> 00:02:54.604
+When you want to tear down that stack,
+
+00:02:54.604 --> 00:02:58.560
+you know that you've cleaned up all resources very nicely.
+

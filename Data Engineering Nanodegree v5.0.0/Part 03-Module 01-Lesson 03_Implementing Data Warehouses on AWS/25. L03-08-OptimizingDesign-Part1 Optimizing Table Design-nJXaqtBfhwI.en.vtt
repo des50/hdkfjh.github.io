@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.235
+Now, we are very handy with our Redshift cluster.
+
+00:00:05.235 --> 00:00:10.800
+Actually, the click and fill away or the more sophisticated,
+
+00:00:10.800 --> 00:00:13.080
+the Infrastructure as Code way.
+
+00:00:13.080 --> 00:00:15.419
+We know how to fill data,
+
+00:00:15.419 --> 00:00:21.254
+we know how to migrate data or ingest inside redshift with all the associated tricks.
+
+00:00:21.254 --> 00:00:25.049
+Now, we're moving into a part where we want to optimize
+
+00:00:25.050 --> 00:00:29.010
+the design of our tables where we ingest data,
+
+00:00:29.010 --> 00:00:32.340
+and that's basically for speeding up queries.
+
+00:00:32.340 --> 00:00:34.710
+So, when a table is partitioned,
+
+00:00:34.710 --> 00:00:36.570
+we understand we have a big tables,
+
+00:00:36.570 --> 00:00:41.600
+and the tables are partitioned into smaller partitions so that we
+
+00:00:41.600 --> 00:00:46.885
+can access them in parallel or we can parallelize them on slides.
+
+00:00:46.884 --> 00:00:52.015
+But, the idea is when we chop up those tables,
+
+00:00:52.015 --> 00:00:55.825
+the default way is actually to do them blindly.
+
+00:00:55.825 --> 00:01:01.880
+So, if one has an idea about the frequent access pattern of a table,
+
+00:01:01.880 --> 00:01:05.120
+one can choose a more clever strategy.
+
+00:01:05.120 --> 00:01:10.025
+The two possible strategies are distribution style and sorting key.
+
+00:01:10.025 --> 00:01:13.130
+So let's speak about those.
+

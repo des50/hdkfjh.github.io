@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.495
+So let's take a closer look at the Redshift architecture.
+
+00:00:03.495 --> 00:00:07.815
+So a redshift is actually a cluster and the cluster would be composed
+
+00:00:07.815 --> 00:00:12.330
+of one leader node and one or more compute nodes.
+
+00:00:12.330 --> 00:00:15.044
+Actually you can start from a single node if you like.
+
+00:00:15.044 --> 00:00:21.839
+So the leader node is the one actually which interacts with the outside world.
+
+00:00:21.839 --> 00:00:27.629
+So all your client applications actually talk to the leader node using protocols like
+
+00:00:27.629 --> 00:00:34.259
+JDBC or ODBC and to them that that's actually like any other normal database.
+
+00:00:34.259 --> 00:00:41.849
+However under the hood the leader node has under its command a number of compute nodes.
+
+00:00:41.850 --> 00:00:46.564
+The leader node coordinates the work of those compute nodes together.
+
+00:00:46.564 --> 00:00:50.375
+It handles also external communication as we said.
+
+00:00:50.375 --> 00:00:52.369
+And it optimizes query execution.
+
+00:00:52.369 --> 00:00:57.744
+So it puts a plan on what goes where and how they should work together.
+
+00:00:57.744 --> 00:01:04.009
+The compute node each has own CPU memory and disk and one can
+
+00:01:04.010 --> 00:01:10.385
+actually configure how much powerful the cluster one wishes to construct will be.
+
+00:01:10.385 --> 00:01:12.980
+And basically it's up to you to
+
+00:01:12.980 --> 00:01:16.210
+configure a little bit whether you want to scale up or you scale out.
+
+00:01:16.209 --> 00:01:19.684
+When you scale up that means you might not get a lot of nodes.
+
+00:01:19.685 --> 00:01:20.960
+You get a few of them,
+
+00:01:20.959 --> 00:01:25.669
+but you get extremely powerful ones or you can say no I'm not going to get the most
+
+00:01:25.670 --> 00:01:30.409
+powerful but I'm going to get lots of kind of medium ones.
+
+00:01:30.409 --> 00:01:35.424
+And there are trade-offs and a little bit of art of design here to handle this.
+
+00:01:35.424 --> 00:01:39.709
+What's important to mention here is that each node each
+
+00:01:39.709 --> 00:01:45.664
+compute nodes is logically divided into a number of slices.
+
+00:01:45.665 --> 00:01:51.245
+For simplicity you can consider that a slice is a CPU
+
+00:01:51.245 --> 00:01:56.719
+and that each CPU has a bunch of disks kind of dedicated to its work.
+
+00:01:56.719 --> 00:02:03.760
+So a cluster with N slices can process N partitions of a table simultaneously.
+
+00:02:03.760 --> 00:02:07.219
+And it doesn't matter whether these slices
+
+00:02:07.219 --> 00:02:10.745
+are on one machine or many machines I mean we think of the sum of
+
+00:02:10.745 --> 00:02:19.259
+all slices across all compute nodes and that would be our unit of parallelization.
+

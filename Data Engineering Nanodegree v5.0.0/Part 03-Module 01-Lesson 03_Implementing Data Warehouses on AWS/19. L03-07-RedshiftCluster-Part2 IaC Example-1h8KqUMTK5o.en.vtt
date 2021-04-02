@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.965
+So you save the access key and secret axis somewhere safe.
+
+00:00:04.965 --> 00:00:07.455
+Once you have those handy here,
+
+00:00:07.455 --> 00:00:09.120
+we assume that we have loaded them into
+
+00:00:09.120 --> 00:00:13.770
+a Python variable called Key and Secret respectively.
+
+00:00:13.770 --> 00:00:18.195
+Here you can see that we can get this boto3 library, and we say, oh,
+
+00:00:18.195 --> 00:00:22.875
+I want to Redshift client and I want to work in the US western region,
+
+00:00:22.875 --> 00:00:25.350
+and here are my credentials.
+
+00:00:25.350 --> 00:00:26.910
+I get the Redshift client,
+
+00:00:26.910 --> 00:00:29.175
+I go to that Redshift client here,
+
+00:00:29.175 --> 00:00:32.625
+and I create a cluster like that.
+
+00:00:32.625 --> 00:00:35.985
+You remember the parameters that we've inserted in the GUI,
+
+00:00:35.985 --> 00:00:38.115
+but we have inserted them here exactly.
+
+00:00:38.115 --> 00:00:41.265
+Once that trans, we have a cluster just like that.
+
+00:00:41.265 --> 00:00:44.540
+The only additional thing here that we were not doing from
+
+00:00:44.540 --> 00:00:47.990
+the GUI is actually to use a role.
+
+00:00:47.990 --> 00:00:53.090
+So we are going to go through actually in creating and adding this role.
+
+00:00:53.090 --> 00:00:55.855
+In a similar spirit to what we have done,
+
+00:00:55.855 --> 00:00:58.200
+we go and say i'am.create_role,
+
+00:00:58.200 --> 00:01:00.015
+and i'am is also i'am client,
+
+00:01:00.015 --> 00:01:01.430
+like a Redshift clients,
+
+00:01:01.430 --> 00:01:10.165
+and we create a role and we say this role actually is for impersonating Redshifts.
+
+00:01:10.165 --> 00:01:11.985
+Once we create the role,
+
+00:01:11.985 --> 00:01:17.700
+we go and attach the role's policy, which is AmazonS3ReadOnlyAccess.
+
+00:01:17.700 --> 00:01:19.240
+Once we've done that,
+
+00:01:19.240 --> 00:01:22.925
+we should actually do this step before doing the previous step.
+
+00:01:22.925 --> 00:01:25.745
+So the idea is that we create the role and attach the policy
+
+00:01:25.745 --> 00:01:29.675
+prior to creating the Redshift cluster.
+
+00:01:29.675 --> 00:01:35.760
+I know here the syntax here might look a little bit with lots of details and so on,
+
+00:01:35.760 --> 00:01:38.590
+but I assure you that these are boilerplates,
+
+00:01:38.590 --> 00:01:44.180
+and the point here is not actually to make you memorize that API,
+
+00:01:44.180 --> 00:01:48.530
+the point here is for you to understand that whatever you do by clicking,
+
+00:01:48.530 --> 00:01:54.405
+you can have the luxury of reproducing it systematically using codes.
+
+00:01:54.405 --> 00:01:57.720
+Finally, we can open TCP port,
+
+00:01:57.720 --> 00:01:58.980
+we can go and say, "Oh,
+
+00:01:58.980 --> 00:02:01.680
+here's our cluster, it exists in VPC,
+
+00:02:01.680 --> 00:02:03.820
+in a Virtual Private Clouds.
+
+00:02:03.820 --> 00:02:06.620
+So let me get all the security groups and
+
+00:02:06.620 --> 00:02:09.860
+get the first one of them that's going to be the default security group,
+
+00:02:09.860 --> 00:02:16.235
+and let's authorize some ingress traffic that from any IP,
+
+00:02:16.235 --> 00:02:21.290
+I can access using TCP the specified data warehouse ports.
+
+00:02:21.290 --> 00:02:23.270
+You can give it a range of ports actually,
+
+00:02:23.270 --> 00:02:26.690
+and here we don't need the range, we just need one.
+

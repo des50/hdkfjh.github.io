@@ -1,0 +1,139 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.230
+Another point worth mentioning here is the compression.
+
+00:00:04.230 --> 00:00:07.530
+So, each column, if it's a text column,
+
+00:00:07.530 --> 00:00:10.140
+or a binary column, or a blog,
+
+00:00:10.140 --> 00:00:18.100
+or whatever you have here as in your columnar storage,
+
+00:00:20.719 --> 00:00:28.239
+you can compress each type in a different way that is optimal for this particular column.
+
+00:00:28.239 --> 00:00:33.109
+Redshift actually gives you control over that if you want to specify in
+
+00:00:33.109 --> 00:00:35.750
+your schema when you create the table which type
+
+00:00:35.750 --> 00:00:38.659
+of compression you want to use, that's fine.
+
+00:00:38.659 --> 00:00:40.924
+However, the copy commands makes
+
+00:00:40.924 --> 00:00:45.009
+automatic best effort compression decisions for each column,
+
+00:00:45.009 --> 00:00:46.939
+and that's actually a very nice feature.
+
+00:00:46.939 --> 00:00:53.634
+You can check actually later what are the changes done.
+
+00:00:53.634 --> 00:00:56.750
+We're not going to delve into this in details a lot,
+
+00:00:56.750 --> 00:01:00.409
+but it's just worth mentioning that actually,
+
+00:01:00.409 --> 00:01:03.589
+the copy command is doing some work for you.
+
+00:01:03.590 --> 00:01:08.710
+Now, we know that we can get from the S3 staging area,
+
+00:01:08.709 --> 00:01:12.744
+but it's also possible to get from other sources.
+
+00:01:12.745 --> 00:01:15.430
+I mean, it's also possible to ingest directly using
+
+00:01:15.430 --> 00:01:18.265
+secure shell from EC2 machine storage.
+
+00:01:18.265 --> 00:01:19.900
+So, you can go from Redshift,
+
+00:01:19.900 --> 00:01:23.475
+initiate a secure shell connection to an EC2 machine,
+
+00:01:23.474 --> 00:01:26.439
+and pull data from there.
+
+00:01:27.469 --> 00:01:29.704
+Other than that, basically,
+
+00:01:29.704 --> 00:01:33.579
+S3 would need to be the staging area and you would need as we said
+
+00:01:33.579 --> 00:01:35.980
+an EC2 ETL worker to run
+
+00:01:35.980 --> 00:01:40.170
+those ingestion jobs orchestrated by dataflow product like Airflow,
+
+00:01:40.170 --> 00:01:43.090
+or Luigi, or NiFi, or StreamSets,
+
+00:01:43.250 --> 00:01:48.629
+one of those tools.
+
+00:01:48.629 --> 00:01:53.444
+Finally, you do not only want to take ETL out of Redshift.
+
+00:01:53.444 --> 00:01:58.169
+You do not want only to get data inside Redshift.
+
+00:01:58.170 --> 00:02:02.180
+The point of that is actually to prepare it to be presented
+
+00:02:02.180 --> 00:02:06.555
+to business intelligence applications and decision-making, right?
+
+00:02:06.555 --> 00:02:08.840
+So, the idea is that at one point in time,
+
+00:02:08.840 --> 00:02:09.860
+you want to get them out.
+
+00:02:09.860 --> 00:02:12.235
+So, there are two ways to get these out.
+
+00:02:12.235 --> 00:02:17.890
+If a BI app would connect directly to the Redshift,
+
+00:02:17.889 --> 00:02:26.044
+it would connect like any relational database on JDBC or ODBC source.
+
+00:02:26.044 --> 00:02:29.674
+So, that's actually the natural way of using Redshift.
+
+00:02:29.675 --> 00:02:35.320
+But as we said, we might sometime want to export out some aggregations
+
+00:02:35.319 --> 00:02:40.914
+or something and the command for that is unload.
+
+00:02:40.914 --> 00:02:42.400
+Actually, in some databases,
+
+00:02:42.400 --> 00:02:45.090
+it's copy to, but here in Redshift,
+
+00:02:45.090 --> 00:02:52.640
+it's unload that query for example to that bucket and path,
+
+00:02:52.639 --> 00:02:55.489
+and we still also need credentials and in that case,
+
+00:02:55.490 --> 00:03:00.370
+the credential is going to be write credentials not read credentials.
+

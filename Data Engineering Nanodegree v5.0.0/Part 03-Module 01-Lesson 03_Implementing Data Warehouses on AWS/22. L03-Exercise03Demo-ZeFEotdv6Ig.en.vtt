@@ -1,0 +1,256 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.370
+In this exercise, we will actually do what we created the cluster four which
+
+00:00:05.370 --> 00:00:11.350
+is doing the loading of the data inside the Redshift cluster.
+
+00:00:11.480 --> 00:00:15.750
+The point here is that we assume we
+
+00:00:15.750 --> 00:00:20.265
+already created a cluster here and we've got in step 2.2,
+
+00:00:20.265 --> 00:00:22.170
+the end point and the ARN.
+
+00:00:22.170 --> 00:00:29.170
+So, I'm going to go ahead take these with me from the second exercise and put them here.
+
+00:00:39.920 --> 00:00:44.289
+Just take this along everything.
+
+00:00:51.109 --> 00:00:54.939
+Then I'm going to connect to the cluster.
+
+00:01:00.049 --> 00:01:05.859
+Connected. Now, again I'm going to use this s3 client,
+
+00:01:05.859 --> 00:01:16.484
+and here I'm pointing at a different bucket where data is already loaded.
+
+00:01:16.484 --> 00:01:20.670
+Here we get another dataset called the tickets data.
+
+00:01:20.670 --> 00:01:23.379
+The tickets data actually has two parts.
+
+00:01:23.379 --> 00:01:27.114
+It has one file called full.csv as one file,
+
+00:01:27.114 --> 00:01:30.579
+and another file which is the same file but
+
+00:01:30.579 --> 00:01:37.609
+actually done like split with the part suffix here.
+
+00:01:37.609 --> 00:01:41.390
+A prefix I mean. So, what we're going to
+
+00:01:41.390 --> 00:01:46.230
+do is we're going to go ahead and create the table.
+
+00:01:46.420 --> 00:01:52.980
+If you haven't used the SQL with Jupiter before,
+
+00:01:52.980 --> 00:01:58.454
+when we load this extension called ipython-sql,
+
+00:01:58.454 --> 00:02:00.929
+we first load it like so.
+
+00:02:00.930 --> 00:02:06.320
+Then we can have two versions.
+
+00:02:06.319 --> 00:02:11.155
+Either we can go right percent sql, a single percent.
+
+00:02:11.155 --> 00:02:13.729
+Then we can write a one liner here.
+
+00:02:13.729 --> 00:02:16.909
+In that one liner with a dollar sign,
+
+00:02:16.909 --> 00:02:18.924
+we can access python.
+
+00:02:18.925 --> 00:02:26.564
+Or we can have a multi-line sql if we do percent percent sql instead.
+
+00:02:26.564 --> 00:02:28.740
+Here if we do that version,
+
+00:02:28.740 --> 00:02:33.890
+we cannot access Python using the dollar sign.
+
+00:02:33.889 --> 00:02:40.729
+So, either one liner and we can access a sql query we constructed in Python
+
+00:02:40.729 --> 00:02:50.209
+or double percent percent sql and we have a multi-line sql.
+
+00:02:50.210 --> 00:02:52.010
+So, here we're going to create the table,
+
+00:02:52.009 --> 00:02:59.074
+sporting_event _ticket like that using our connection.
+
+00:02:59.074 --> 00:03:01.629
+Okay. It is done.
+
+00:03:01.629 --> 00:03:05.120
+We're going to load a partitioned data into the cluster.
+
+00:03:05.120 --> 00:03:08.990
+So, we're going to load the ticket split apart.
+
+00:03:08.990 --> 00:03:11.719
+There is no file called part.
+
+00:03:11.719 --> 00:03:14.389
+There is no file called parts.
+
+00:03:14.389 --> 00:03:19.519
+What exists is multiple files here that all share
+
+00:03:19.520 --> 00:03:25.594
+the line part from one to nine.
+
+00:03:25.594 --> 00:03:28.189
+But they have this common prefix.
+
+00:03:28.189 --> 00:03:30.560
+We do that and here
+
+00:03:30.560 --> 00:03:35.645
+the most important thing is that we are having the credentials like that.
+
+00:03:35.645 --> 00:03:39.875
+You see here. So, these are the credentials.
+
+00:03:39.875 --> 00:03:42.625
+Here I am using the I am role,
+
+00:03:42.625 --> 00:03:47.659
+this I am role that we got in the past exercise,
+
+00:03:47.659 --> 00:03:51.579
+and which we filled also up here.
+
+00:03:51.580 --> 00:03:56.965
+So, here I am constructing a query using a multi-line Python string.
+
+00:03:56.965 --> 00:04:00.805
+This is a normal multi-line Python string.
+
+00:04:00.805 --> 00:04:04.090
+I'm using the format to insert this here.
+
+00:04:04.090 --> 00:04:08.325
+I'm saying we're working with a gzip format and the delimeter
+
+00:04:08.324 --> 00:04:13.689
+of these files is a semi colon and region us-west-2.
+
+00:04:14.900 --> 00:04:22.605
+The percent sql query here is a one liner where we constructed this here.
+
+00:04:22.605 --> 00:04:28.000
+Now, the question also might be what is this?
+
+00:04:28.000 --> 00:04:30.720
+Since we are profiling performance,
+
+00:04:30.720 --> 00:04:36.950
+we are saying this compression update off means please do not do
+
+00:04:36.949 --> 00:04:43.099
+any your automatic compression optimizations because we want to
+
+00:04:43.100 --> 00:04:50.575
+just profile here the difference between parallel load and one time load from a big file.
+
+00:04:50.574 --> 00:04:55.129
+So, we do not want to have something else mess up our statistics.
+
+00:04:55.129 --> 00:04:57.680
+But in generally, wouldn't supply this.
+
+00:04:57.680 --> 00:05:00.004
+So, let's go ahead and run.
+
+00:05:00.004 --> 00:05:03.094
+So, that's 15 seconds.
+
+00:05:03.095 --> 00:05:09.360
+I use the percent percent time here to measure the time.
+
+00:05:09.699 --> 00:05:12.784
+Good, these were the split ones.
+
+00:05:12.785 --> 00:05:15.170
+Now, they were loaded in parallel.
+
+00:05:15.170 --> 00:05:21.230
+We want to afterwards load the full one,
+
+00:05:21.230 --> 00:05:25.835
+the single file that's going to be fetched in sequence not in parallel.
+
+00:05:25.834 --> 00:05:29.089
+So, we create the table for non partition data.
+
+00:05:29.089 --> 00:05:31.859
+We're going to call it sporting-event-ticket-full.
+
+00:05:35.329 --> 00:05:39.069
+Here again, I'm creating the table.
+
+00:05:41.689 --> 00:05:48.079
+Then again because I want actually to construct a Python string,
+
+00:05:48.079 --> 00:05:52.404
+multi-line string, and inserts my credentials here.
+
+00:05:52.404 --> 00:05:59.339
+Here I'm going to put the full.csv.gz and see what happens to the 15 seconds.
+
+00:05:59.339 --> 00:06:02.549
+Okay, 23 seconds.
+
+00:06:02.550 --> 00:06:06.710
+So actually, we can see here that this one takes longer.
+
+00:06:06.709 --> 00:06:12.379
+The data actually we are putting here is not trivial data,
+
+00:06:12.379 --> 00:06:17.670
+but this just shows you the ratio.
+
+00:06:17.670 --> 00:06:20.980
+If you put big large datasets,
+
+00:06:20.980 --> 00:06:24.439
+actually this is going to matter even more substantially.
+
+00:06:24.439 --> 00:06:27.120
+I mean sometimes we will see in exercise four,
+
+00:06:27.120 --> 00:06:30.590
+we have data that takes 10 minutes to load.
+
+00:06:30.589 --> 00:06:38.729
+So, this factor is going to be actually multiplied into I mean on the bigger size,
+
+00:06:38.730 --> 00:06:42.314
+and you will see a substantial difference.
+
+00:06:42.314 --> 00:06:48.904
+With that, we have shown in this exercise that you can actually do parallel
+
+00:06:48.904 --> 00:06:57.869
+or single-threaded ETL or loading actually mostly the loads into a Redshift.
+

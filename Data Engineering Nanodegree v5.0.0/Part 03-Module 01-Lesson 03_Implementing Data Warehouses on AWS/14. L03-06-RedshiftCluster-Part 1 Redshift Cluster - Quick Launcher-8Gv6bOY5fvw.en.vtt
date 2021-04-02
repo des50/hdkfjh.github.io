@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.899
+Now, we understand the Redshift architecture,
+
+00:00:03.899 --> 00:00:08.820
+we understand how ETL is going to work to Redshift.
+
+00:00:08.820 --> 00:00:13.260
+We want to focus a little bit on actually building the actual cluster.
+
+00:00:13.259 --> 00:00:15.719
+So, let's build our first Redshift cluster,
+
+00:00:15.720 --> 00:00:16.949
+and to do that,
+
+00:00:16.949 --> 00:00:19.739
+we can actually simply do it with the click of a button
+
+00:00:19.739 --> 00:00:23.445
+almost and that will be your first exercise In this lesson.
+
+00:00:23.445 --> 00:00:25.530
+I will also try to demo it for you.
+
+00:00:25.530 --> 00:00:29.250
+For all our work is very important that we assume that they're going to be working in
+
+00:00:29.250 --> 00:00:33.179
+the Oregon AWS region and in the us-west-2.
+
+00:00:33.179 --> 00:00:37.439
+So, the idea is you go and pick the Redshift service,
+
+00:00:37.439 --> 00:00:40.619
+and there you click quick launch.
+
+00:00:40.619 --> 00:00:43.599
+Okay. So, once you hit quick launch button,
+
+00:00:43.600 --> 00:00:46.880
+you come here and the most important thing to note here is
+
+00:00:46.880 --> 00:00:50.570
+the type of machine you are choosing for the cluster.
+
+00:00:50.570 --> 00:00:53.480
+Actually, we're going to work with the dc2 large,
+
+00:00:53.479 --> 00:00:55.414
+that's actually the cheapest of them,
+
+00:00:55.414 --> 00:00:58.625
+and we're going to have actually here four machines.
+
+00:00:58.625 --> 00:01:00.890
+Actually, in the beginning for the quick launch cluster
+
+00:01:00.890 --> 00:01:03.450
+because we're going to spin it and close it down,
+
+00:01:03.450 --> 00:01:04.890
+even one or two would be okay,
+
+00:01:04.890 --> 00:01:07.219
+but for all the exercises actually,
+
+00:01:07.219 --> 00:01:08.390
+if we're going to do real work,
+
+00:01:08.390 --> 00:01:10.504
+we're going to spend four of these.
+
+00:01:10.504 --> 00:01:12.979
+You can put a cluster identifier,
+
+00:01:12.980 --> 00:01:14.450
+your username and password,
+
+00:01:14.450 --> 00:01:16.060
+and that's the port,
+
+00:01:16.060 --> 00:01:19.530
+and you just click launch cluster.
+
+00:01:19.530 --> 00:01:21.090
+Once you do that,
+
+00:01:21.090 --> 00:01:24.109
+it takes three or four minutes for this to turn on.
+
+00:01:24.109 --> 00:01:27.340
+Then, you will have a button here called the query editor,
+
+00:01:27.340 --> 00:01:28.659
+and you open it,
+
+00:01:28.659 --> 00:01:29.780
+and once you open it,
+
+00:01:29.780 --> 00:01:32.570
+you will find a sequel window here where you
+
+00:01:32.569 --> 00:01:36.929
+can actually start executing your statements.
+

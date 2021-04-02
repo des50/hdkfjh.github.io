@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.355
+So, let's see the big picture here.
+
+00:00:02.355 --> 00:00:08.400
+We would have our data sources as all this jungle of initially norm,
+
+00:00:08.400 --> 00:00:14.880
+actually normal CSV's in that were natively born as files.
+
+00:00:14.880 --> 00:00:16.755
+They are not in a database.
+
+00:00:16.754 --> 00:00:22.754
+We have our managed and unmanaged relational data stores.
+
+00:00:22.754 --> 00:00:26.079
+We would have some columnar storage,
+
+00:00:26.079 --> 00:00:29.954
+also managed and unmanaged like Cassandra and DynamoDB.
+
+00:00:29.954 --> 00:00:32.359
+Maybe we have lots of EC2 machines here,
+
+00:00:32.359 --> 00:00:37.679
+well we have a diverse number of sources.
+
+00:00:37.679 --> 00:00:41.820
+Then, we would have our ETL machines here.
+
+00:00:41.820 --> 00:00:46.969
+Here we would have a class of products that actually do all the calls.
+
+00:00:46.969 --> 00:00:55.219
+So, this ones would actually be taking the data from the sources and into the staging,
+
+00:00:55.219 --> 00:00:59.450
+and they would be only issuing the command to those sources
+
+00:00:59.450 --> 00:01:03.675
+to come here to the S3 for the most part.
+
+00:01:03.674 --> 00:01:07.715
+Again, issuing another command to redshift to actually go
+
+00:01:07.715 --> 00:01:13.495
+and pull these files into redshift.
+
+00:01:13.495 --> 00:01:20.630
+As I said, if one of the sources does not know how to copy things directly into S3,
+
+00:01:20.629 --> 00:01:25.099
+you will have to go through the hassle of the data going to ETL first locally,
+
+00:01:25.099 --> 00:01:29.339
+then to staging, then to redshift, for instance.
+
+00:01:29.340 --> 00:01:31.500
+Once the data is into redshifts,
+
+00:01:31.500 --> 00:01:35.750
+basically our main desire
+
+00:01:35.750 --> 00:01:40.489
+here is to be able to connect BI apps with business intelligence apps and visualizations,
+
+00:01:40.489 --> 00:01:45.034
+and so forth and that we can do directly to Amazon Redshift.
+
+00:01:45.034 --> 00:01:50.265
+However, sometimes or actually many, many, many times,
+
+00:01:50.265 --> 00:01:53.689
+very frequently we aren't interested in aggregations like
+
+00:01:53.689 --> 00:01:58.209
+big aggregations that would take a lot of time to compute each time we need them.
+
+00:01:58.209 --> 00:02:02.984
+So, what do we do? We actually pre-aggregate those.
+
+00:02:02.984 --> 00:02:05.730
+For example, data cubes,
+
+00:02:05.730 --> 00:02:09.844
+we pick those data cubes and we can materialize them
+
+00:02:09.844 --> 00:02:15.159
+into Amazon S3 files that could be loaded here directly,
+
+00:02:15.159 --> 00:02:20.139
+or we can put them into columnar storage or relational storage,
+
+00:02:20.139 --> 00:02:23.659
+and in some time now it's also very trendy actually to put them
+
+00:02:23.659 --> 00:02:28.354
+into in-memory stores for low latency.
+
+00:02:28.354 --> 00:02:31.849
+So, after that we can go to the BI apps.
+
+00:02:31.849 --> 00:02:36.215
+So, the BI apps could work from directly from the Redshift or
+
+00:02:36.215 --> 00:02:41.920
+actually a little bit fast from those pre-aggregated OLAP cubes.
+

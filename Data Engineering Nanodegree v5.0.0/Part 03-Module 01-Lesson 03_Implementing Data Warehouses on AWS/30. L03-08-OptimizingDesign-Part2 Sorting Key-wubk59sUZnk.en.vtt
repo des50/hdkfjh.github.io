@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.134
+Now we go into another trick which is the sorting key.
+
+00:00:03.134 --> 00:00:07.184
+One can actually define columns as a sort key,
+
+00:00:07.184 --> 00:00:10.184
+and if we chose one column to be as a sort key,
+
+00:00:10.185 --> 00:00:12.480
+what does that mean that upon loading,
+
+00:00:12.480 --> 00:00:16.304
+rows are sorted before distribution to slices.
+
+00:00:16.304 --> 00:00:20.594
+So that minimizes the query time since each node
+
+00:00:20.594 --> 00:00:25.320
+already has contiguous ranges of rows based on the sorting keys.
+
+00:00:25.320 --> 00:00:29.519
+It's useful for columns that you order or buy a lot.
+
+00:00:29.519 --> 00:00:33.015
+A column can be both a disk key and a sort key, it can happen.
+
+00:00:33.015 --> 00:00:34.710
+Or you can have different ones,
+
+00:00:34.710 --> 00:00:37.219
+and actually sometimes they can work against each other.
+
+00:00:37.219 --> 00:00:39.229
+But the point of this is that,
+
+00:00:39.229 --> 00:00:41.659
+if you're going to do a lot of order or buy,
+
+00:00:41.659 --> 00:00:43.969
+you probably be better mark that as
+
+00:00:43.969 --> 00:00:48.239
+a sort key and usually that happens in the fact tables.
+

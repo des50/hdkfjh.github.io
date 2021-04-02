@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.490
+The first trick in our bag of tricks or in the distribution styles would be,
+
+00:00:05.490 --> 00:00:09.375
+to do something called an all distribution style.
+
+00:00:09.375 --> 00:00:15.554
+That would be that the small tables would be replicated on all slices to speed up joints.
+
+00:00:15.554 --> 00:00:18.314
+So, we say to ourselves, "Hey, well,
+
+00:00:18.315 --> 00:00:22.320
+these are 50 rows or 40 rows and why don't we just take
+
+00:00:22.320 --> 00:00:27.149
+these and copy them four times to all CPUs.
+
+00:00:27.149 --> 00:00:29.699
+Okay, we're going to waste a little bit of space,
+
+00:00:29.699 --> 00:00:31.649
+but who cares, that's not big."
+
+00:00:31.649 --> 00:00:33.434
+How common is that case?
+
+00:00:33.435 --> 00:00:37.760
+Actually, most of the dimension tables are not very big.
+
+00:00:37.759 --> 00:00:41.210
+Some of them might be large dimension tables.
+
+00:00:41.210 --> 00:00:48.710
+But in general, there are not lots of rows in dimension tables compared to fact tables.
+
+00:00:48.710 --> 00:00:51.715
+That's actually known as broadcasting.
+
+00:00:51.715 --> 00:00:54.540
+So, let's see now what would happen,
+
+00:00:54.539 --> 00:00:56.100
+the fact sales table,
+
+00:00:56.100 --> 00:00:59.910
+the big table which was done in an even way, is still the same here.
+
+00:00:59.909 --> 00:01:01.814
+One, two, three, four, five.
+
+00:01:01.814 --> 00:01:05.114
+Three, two and so forth.
+
+00:01:05.114 --> 00:01:07.079
+Five, six, seven, eight.
+
+00:01:07.079 --> 00:01:09.719
+However, these tables were replicated.
+
+00:01:09.719 --> 00:01:14.209
+All the store dimension was replicated all of it.
+
+00:01:14.209 --> 00:01:16.549
+In that case, to do the join,
+
+00:01:16.549 --> 00:01:18.289
+we would look here,
+
+00:01:18.290 --> 00:01:19.520
+the two we have it,
+
+00:01:19.519 --> 00:01:20.989
+the three we have it,
+
+00:01:20.989 --> 00:01:23.119
+the three we have it, the two we have it,
+
+00:01:23.120 --> 00:01:27.710
+the four we have it, the five we have it and sometimes this is known as
+
+00:01:27.709 --> 00:01:33.339
+a lookup table because you can actually access that very quickly.
+

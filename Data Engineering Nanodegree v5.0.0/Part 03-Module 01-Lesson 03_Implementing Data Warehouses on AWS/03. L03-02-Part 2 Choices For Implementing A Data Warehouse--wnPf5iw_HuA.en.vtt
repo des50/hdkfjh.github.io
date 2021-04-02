@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.790
+So, what are the ways to go? What are our choices?
+
+00:00:02.790 --> 00:00:06.599
+Well, basically, we have either the cloud or the on-premise,
+
+00:00:06.599 --> 00:00:08.679
+or on-prem for short.
+
+00:00:08.679 --> 00:00:10.744
+If we take the on-prem road,
+
+00:00:10.744 --> 00:00:13.834
+we have to think about heterogeneity,
+
+00:00:13.835 --> 00:00:16.719
+scalability, and elasticity of the tools.
+
+00:00:16.719 --> 00:00:23.179
+While heterogeneity is rather clear and scalability because we're going to add and add.
+
+00:00:23.179 --> 00:00:29.550
+Over time, our data storage is going to become bigger or will have bigger needs.
+
+00:00:29.550 --> 00:00:36.704
+Elasticity means the idea that you actually one day you need that you can not only grow,
+
+00:00:36.704 --> 00:00:41.714
+but you can grow and shrink the amount of resources that you need.
+
+00:00:41.715 --> 00:00:45.330
+Of course, you should not also think of the resources only,
+
+00:00:45.329 --> 00:00:53.625
+but you should think of the IT staff skills and all the location as we said previously.
+
+00:00:53.625 --> 00:00:56.835
+Most importantly, the cost of ownership.
+
+00:00:56.835 --> 00:01:00.120
+I mean, this is the road where you buy stuff.
+
+00:01:00.119 --> 00:01:03.140
+As opposed to the cloud road where you have
+
+00:01:03.140 --> 00:01:08.120
+a lower barrier to entry because you don't buy, effectively, you rent.
+
+00:01:08.120 --> 00:01:11.410
+You can always change your opinion if you don't like something.
+
+00:01:11.409 --> 00:01:12.804
+You made a wrong decision,
+
+00:01:12.805 --> 00:01:14.590
+we can change it easily.
+
+00:01:14.590 --> 00:01:17.540
+Of course, scalability and elasticity are out of the box.
+
+00:01:17.540 --> 00:01:21.505
+We can simply add and remove resources.
+
+00:01:21.504 --> 00:01:24.769
+Usually, a clear criticism sometimes for
+
+00:01:24.769 --> 00:01:27.739
+the cloud is the idea that the operational costs are high.
+
+00:01:27.739 --> 00:01:31.324
+So, this is to compare for example if you rent an apartment,
+
+00:01:31.325 --> 00:01:33.890
+you might be paying a high rent that
+
+00:01:33.890 --> 00:01:37.594
+you might as well have bought an apartment from scratch.
+
+00:01:37.594 --> 00:01:40.265
+That might indeed be the case of course.
+
+00:01:40.265 --> 00:01:42.620
+The complexity and heterogeneity
+
+00:01:42.620 --> 00:01:45.200
+is not going to disappear because we went through the cloud.
+

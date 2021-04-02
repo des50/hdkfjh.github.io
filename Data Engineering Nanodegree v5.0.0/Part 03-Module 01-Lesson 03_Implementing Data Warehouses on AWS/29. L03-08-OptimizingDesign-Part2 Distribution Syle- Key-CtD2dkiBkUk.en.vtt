@@ -1,0 +1,187 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.530
+That leaves us with one final strategy which is known as,
+
+00:00:04.530 --> 00:00:06.450
+one final distribution style,
+
+00:00:06.450 --> 00:00:09.929
+which is known as the key distribution strategy.
+
+00:00:09.929 --> 00:00:15.705
+Here, what happens is that rows having similar values are placed in the same slice.
+
+00:00:15.705 --> 00:00:17.355
+So take a look here,
+
+00:00:17.355 --> 00:00:22.214
+we can decide that we are going to distribute that table,
+
+00:00:22.214 --> 00:00:28.125
+that fact table, this fact table on the dimStore key, this key.
+
+00:00:28.125 --> 00:00:30.945
+If we do that, what happens?
+
+00:00:30.945 --> 00:00:33.255
+When we copy the file here,
+
+00:00:33.255 --> 00:00:35.115
+we get the two,
+
+00:00:35.115 --> 00:00:39.750
+two, two, two together here, all the keys here.
+
+00:00:39.750 --> 00:00:43.140
+Actually the three, three here and the four here,
+
+00:00:43.140 --> 00:00:44.890
+and the five here, and it continue.
+
+00:00:44.890 --> 00:00:47.119
+I mean, if we have more keys,
+
+00:00:47.119 --> 00:00:53.155
+you will find that all the keys are grouped like that and placed here.
+
+00:00:53.155 --> 00:00:56.298
+You might wonder why would we do such a thing,
+
+00:00:56.298 --> 00:00:59.130
+and whether this is actually even sane to do.
+
+00:00:59.130 --> 00:01:02.029
+The idea is that this can lead to a skewed distribution,
+
+00:01:02.029 --> 00:01:05.435
+if some values of the key are more frequent than others,
+
+00:01:05.435 --> 00:01:07.475
+we know that, that's a possibility actually.
+
+00:01:07.474 --> 00:01:10.559
+So, the useful trick here,
+
+00:01:10.560 --> 00:01:13.625
+despite the possibility of a skewed distribution,
+
+00:01:13.625 --> 00:01:17.689
+is that we can have a fact and a dimension table,
+
+00:01:17.689 --> 00:01:23.659
+where the dimension table is the rare case where it is actually rather big,
+
+00:01:23.659 --> 00:01:26.229
+so we cannot do the ALL trick.
+
+00:01:26.230 --> 00:01:28.645
+So, we will in that case,
+
+00:01:28.644 --> 00:01:32.899
+take each one of those tables and distribute it using the key we used to
+
+00:01:32.900 --> 00:01:37.865
+join them together and if these two tables are distributed on the joining keys,
+
+00:01:37.864 --> 00:01:42.064
+the redshift co-locates the rows from both tables on the same slices.
+
+00:01:42.064 --> 00:01:44.060
+Let's see a visualization of that.
+
+00:01:44.060 --> 00:01:47.885
+In that case, that fact table here,
+
+00:01:47.885 --> 00:01:48.980
+we assume that this one,
+
+00:01:48.980 --> 00:01:51.680
+we got one which is really really big that we
+
+00:01:51.680 --> 00:01:54.840
+cannot do an ALL and that's here we're doing this key.
+
+00:01:54.840 --> 00:01:57.380
+So instead, we go on the idea of
+
+00:01:57.379 --> 00:02:03.655
+that dimension table and we actually do a distribution by this ID.
+
+00:02:03.655 --> 00:02:09.485
+We go on the factSales table and we do a distribution on that key.
+
+00:02:09.485 --> 00:02:13.010
+So, all the rows that have two inter-dimensional store come here,
+
+00:02:13.009 --> 00:02:17.769
+all the threes come here and all the fours come here, all the fives come here.
+
+00:02:17.770 --> 00:02:21.014
+Actually, you will see also,
+
+00:02:21.014 --> 00:02:24.570
+Redshift understands that these, the ID,
+
+00:02:24.569 --> 00:02:28.530
+this is like the primer in the foreign key or that's where we join
+
+00:02:28.530 --> 00:02:33.530
+them and actually starts to put the two's also of that table here.
+
+00:02:33.530 --> 00:02:35.090
+Actually, you will have one two,
+
+00:02:35.090 --> 00:02:37.759
+but it will be put here.
+
+00:02:37.759 --> 00:02:43.699
+Also similarly, you will see that you will be able to do the join without any shuffling.
+
+00:02:43.699 --> 00:02:46.030
+You eliminate totally the shuffling.
+
+00:02:46.030 --> 00:02:48.784
+So, you have two ways of eliminating the shuffling.
+
+00:02:48.784 --> 00:02:52.234
+You either do an even for the fact,
+
+00:02:52.235 --> 00:02:55.085
+with ALL for the dimensions,
+
+00:02:55.085 --> 00:03:02.000
+or you would do a key and key on the joining keys for the fact and the dimensions.
+
+00:03:02.000 --> 00:03:03.219
+When do we do that?
+
+00:03:03.219 --> 00:03:06.770
+If the dimension table was too big.
+
+00:03:06.770 --> 00:03:09.980
+So let's see a little bit. The syntax here is the fact table.
+
+00:03:09.979 --> 00:03:11.405
+Here's a dimension table.
+
+00:03:11.405 --> 00:03:14.805
+These are orders and these are the dimensions,
+
+00:03:14.805 --> 00:03:16.860
+which are the, or one dimension,
+
+00:03:16.860 --> 00:03:18.405
+which is the part dimension.
+
+00:03:18.405 --> 00:03:24.895
+We can see we do the normal trade table and after the not null we just say this key here,
+
+00:03:24.895 --> 00:03:28.969
+and we say this key here and these ones are actually used to
+
+00:03:28.969 --> 00:03:34.349
+join the tables and we do the magic trick that we just described.
+

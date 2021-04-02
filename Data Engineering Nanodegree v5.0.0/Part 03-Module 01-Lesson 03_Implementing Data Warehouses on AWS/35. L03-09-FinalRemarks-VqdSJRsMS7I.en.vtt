@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.970
+I have a couple of final remarks at
+
+00:00:02.970 --> 00:00:06.315
+the end of this lesson and the idea being the following;
+
+00:00:06.315 --> 00:00:08.339
+Where should we go from here?
+
+00:00:08.339 --> 00:00:12.044
+I believe we covered with enough depth all the cornerstones
+
+00:00:12.044 --> 00:00:16.379
+of a data warehouse and its implementation on Amazon Web Services.
+
+00:00:16.379 --> 00:00:19.439
+That said there is a part which is the data flow tools.
+
+00:00:19.440 --> 00:00:21.600
+The data flow tools actually deserve
+
+00:00:21.600 --> 00:00:25.470
+their own focus and there would be an upcoming lesson on this.
+
+00:00:25.469 --> 00:00:27.265
+So apart from the data flow tools,
+
+00:00:27.265 --> 00:00:29.609
+we have actually covered the storage,
+
+00:00:29.609 --> 00:00:32.214
+the table design, optimizing the table design,
+
+00:00:32.215 --> 00:00:36.840
+optimizing the ETL all the context of how things work for ETL,
+
+00:00:36.840 --> 00:00:39.545
+in general the sources and so on.
+
+00:00:39.545 --> 00:00:42.640
+How to build your cluster automated by using the GUI.
+
+00:00:42.640 --> 00:00:46.954
+That part deserves its own attention and you would see in an upcoming lecture,
+
+00:00:46.954 --> 00:00:49.094
+the data flow tools.
+
+00:00:49.094 --> 00:00:53.780
+After that when we master data flow tools which we complete the picture with,
+
+00:00:53.780 --> 00:00:58.549
+actually the data warehouse is a very mature and I don't want to say old.
+
+00:00:58.549 --> 00:01:01.619
+I want to say mature because there are lots of architecture,
+
+00:01:01.619 --> 00:01:04.034
+lots of books, lots of people trained,
+
+00:01:04.034 --> 00:01:06.390
+lots of companies, lots of technologies.
+
+00:01:06.390 --> 00:01:12.575
+However, the nature of big data was larger volumes, more unstructured data,
+
+00:01:12.575 --> 00:01:15.140
+higher speed and lower quality,
+
+00:01:15.140 --> 00:01:19.355
+and the classical data warehouse is actually evolving.
+
+00:01:19.355 --> 00:01:23.000
+So, we studied the architecture
+
+00:01:23.000 --> 00:01:27.439
+as the other classic architecture when it moved to the Cloud.
+
+00:01:27.439 --> 00:01:30.170
+But I want to stress here that actually there is actually
+
+00:01:30.170 --> 00:01:34.204
+a very strong evolution going on to the data warehouse.
+
+00:01:34.204 --> 00:01:37.640
+Namely the concept of a data lake and you will know
+
+00:01:37.640 --> 00:01:41.269
+about that also in an upcoming lesson. Thank you.
+
