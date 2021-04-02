@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.610 --> 00:00:10.080
+This issue is known as data skew and it's a major headache in big data.
+
+00:00:10.080 --> 00:00:12.705
+The problem is not the overall size of the data,
+
+00:00:12.705 --> 00:00:17.024
+but the skewed distribution of data that can bring down your Spark cluster.
+
+00:00:17.024 --> 00:00:20.609
+A big chunk of the data comes from a small number of songs
+
+00:00:20.609 --> 00:00:24.939
+and because we're dividing the workload for each worker by the song,
+
+00:00:24.940 --> 00:00:27.800
+those workers are slowing down the whole group.
+
+00:00:27.800 --> 00:00:30.500
+Data skew comes up in many domains.
+
+00:00:30.500 --> 00:00:34.310
+Sometimes 80 percent of your data comes from 20 percent of your users
+
+00:00:34.310 --> 00:00:38.765
+and this effect happens so often that it's called the Pareto principle.
+
+00:00:38.765 --> 00:00:42.170
+How do you know if you will encounter Pareto's 80-20 rule?
+
+00:00:42.170 --> 00:00:45.140
+Occasionally, you know this ahead of time because you're familiar with
+
+00:00:45.140 --> 00:00:49.549
+your users or you have an intuition about the distribution of your data.
+
+00:00:49.549 --> 00:00:51.169
+But the best way to catch this,
+
+00:00:51.170 --> 00:00:54.320
+is to run a quick Spark job to get a summary of your data.
+
+00:00:54.320 --> 00:00:57.500
+Even if you just sample 5 percent of your data,
+
+00:00:57.500 --> 00:01:01.445
+you can usually avoid a long Spark job that would have crashed your program.
+
+00:01:01.445 --> 00:01:04.099
+Once you've identified data skew in your data,
+
+00:01:04.099 --> 00:01:05.890
+there are two main ways to solve it;
+
+00:01:05.890 --> 00:01:08.269
+the first is to change the way you divide up
+
+00:01:08.269 --> 00:01:10.564
+the workload for the computers in your cluster.
+
+00:01:10.564 --> 00:01:13.370
+Instead of splitting the data by the song title,
+
+00:01:13.370 --> 00:01:17.070
+divvy up the data by another field like user, or timestamp.
+
+00:01:17.069 --> 00:01:20.823
+The other approach is to simply break the data into smaller parts,
+
+00:01:20.823 --> 00:01:23.164
+which Spark calls partitions.
+
+00:01:23.165 --> 00:01:27.500
+By splitting the data into smaller pieces and spreading those pieces around,
+
+00:01:27.500 --> 00:01:31.370
+you reduce the chance that a single machine gets stuck with the bulk of the work.
+
+00:01:31.370 --> 00:01:34.960
+Let's try both of these approaches to fix our Spark job.
+

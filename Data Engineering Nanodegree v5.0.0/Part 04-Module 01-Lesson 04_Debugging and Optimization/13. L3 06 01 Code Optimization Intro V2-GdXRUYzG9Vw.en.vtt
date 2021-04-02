@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.370 --> 00:00:09.519
+Up to now, the issues you've debugged have been traditional coding difficulties,
+
+00:00:09.519 --> 00:00:12.355
+problems with the Spark syntax or settings.
+
+00:00:12.355 --> 00:00:17.050
+Even when there were mistakes in the data like an error and a few lines of the logs,
+
+00:00:17.050 --> 00:00:21.925
+these are similar to the input errors you might run into while using traditional Python.
+
+00:00:21.925 --> 00:00:26.679
+You'll now debug some issues that are unique to working with big data.
+
+00:00:26.679 --> 00:00:29.710
+For these issues, your code would work fine on
+
+00:00:29.710 --> 00:00:34.509
+small or medium datasets but will fail when you try to scale up the data.
+
+00:00:34.509 --> 00:00:39.309
+In these cases, you'll have to optimize your code to find a better approach.
+
+00:00:39.310 --> 00:00:43.120
+Let's check out a few common issues and learn how to solve them.
+

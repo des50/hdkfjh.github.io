@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.578
+Using log piles is a bit more difficult when you are running Spark in a cluster,
+
+00:00:05.578 --> 00:00:08.339
+compared to when you are running it locally.
+
+00:00:08.339 --> 00:00:13.050
+The log pile is just as everything else as spread across the different nodes.
+
+00:00:13.050 --> 00:00:17.350
+Fortunately, the Spark UI provides a convenient way to look them up,
+
+00:00:17.350 --> 00:00:21.950
+so you don't need to directly access the various workers via SSH,
+
+00:00:21.949 --> 00:00:25.734
+for example, but just can use the white soc.
+
+00:00:25.734 --> 00:00:33.009
+If we had a cluster rather than a local Spark running here,
+
+00:00:33.009 --> 00:00:39.079
+we would have another column called logs with two links to
+
+00:00:39.079 --> 00:00:45.229
+the standard out and standard error files for each of the workers they had.
+
+00:00:45.229 --> 00:00:50.244
+In this case since this is a local Spark application,
+
+00:00:50.244 --> 00:00:54.224
+we only have the thread dump for the driver.
+
+00:00:54.225 --> 00:00:59.524
+Spark uses Log4j, a standard GBM library, for logging.
+
+00:00:59.524 --> 00:01:05.730
+You can configure the logging level two different ways: you can
+
+00:01:05.730 --> 00:01:11.859
+either at the Log4j properties file in the comp directory,
+
+00:01:11.859 --> 00:01:15.875
+or you can set it in this Spark context.
+
+00:01:15.875 --> 00:01:22.310
+So if we run set log level on the Spark context to error,
+
+00:01:22.310 --> 00:01:27.185
+then we will only see error messages in the log files.
+
+00:01:27.185 --> 00:01:31.855
+If you would like to have more verbose logging,
+
+00:01:31.855 --> 00:01:35.698
+you can set this level to info, for example,
+
+00:01:35.698 --> 00:01:41.099
+and then you will get a lot more information about your application.
+

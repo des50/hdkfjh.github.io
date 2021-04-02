@@ -1,0 +1,169 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.875
+In a previous video,
+
+00:00:01.875 --> 00:00:07.485
+we have identified the corrupt records in our logs3 data frame,
+
+00:00:07.485 --> 00:00:12.150
+but we were not sure that there aren't any other rules that
+
+00:00:12.150 --> 00:00:17.880
+the timestamp might not be a proper long way.
+
+00:00:17.879 --> 00:00:19.933
+So in the next few minutes,
+
+00:00:19.934 --> 00:00:23.339
+maybe I create an accumulator and count the number of
+
+00:00:23.339 --> 00:00:27.524
+lines for the verification of the timestamp fails.
+
+00:00:27.524 --> 00:00:31.394
+Let's start with defining an accumulator.
+
+00:00:31.394 --> 00:00:36.094
+The accumulators initial value should be zero, and so it is.
+
+00:00:36.094 --> 00:00:41.339
+The second step is to create a function that will increment
+
+00:00:41.340 --> 00:00:47.195
+this accumulator at incorrect record will do just that.
+
+00:00:47.195 --> 00:00:52.730
+Now, we just need a user-defined function that we can apply to
+
+00:00:52.729 --> 00:00:59.024
+the DataFrame and check the timestamp values in each row.
+
+00:00:59.024 --> 00:01:07.405
+Correct, this is a function now that returns one if the value is a digit,
+
+00:01:07.405 --> 00:01:13.564
+or increments the incorrect record number, otherwise.
+
+00:01:13.564 --> 00:01:19.234
+Let's add a new column called ts_digit to
+
+00:01:19.234 --> 00:01:27.569
+logs3 by applying the correct ts function to the timestamp column in logs3.
+
+00:01:27.569 --> 00:01:35.144
+So this should give us a one in case the time stamp is a digit,
+
+00:01:35.144 --> 00:01:39.000
+and should increment the counter, otherwise.
+
+00:01:39.000 --> 00:01:42.620
+I've also added a filter here to make
+
+00:01:42.620 --> 00:01:46.969
+sure that we are only looking at records that are not corrupt.
+
+00:01:46.969 --> 00:01:52.459
+So the corrupt record column should be null.
+
+00:01:52.459 --> 00:01:57.524
+Let's check the value of our accumulator,
+
+00:01:57.525 --> 00:02:01.050
+it's still zero, why is that?
+
+00:02:01.049 --> 00:02:05.045
+We may just not have any records here,
+
+00:02:05.045 --> 00:02:08.150
+that a non-digit timestamp,
+
+00:02:08.150 --> 00:02:13.950
+or there is a might be that Spark uses lazy evaluation,
+
+00:02:13.949 --> 00:02:18.504
+so since we didn't require any actions here,
+
+00:02:18.504 --> 00:02:21.185
+you may just not read anything yet.
+
+00:02:21.185 --> 00:02:29.039
+So let's just collect logs3 to trigger the withColumn method.
+
+00:02:29.229 --> 00:02:33.069
+So we just collected everything,
+
+00:02:33.069 --> 00:02:37.794
+as you can see, we have this new column called ts_digit,
+
+00:02:37.794 --> 00:02:43.084
+and if we check the value of the incorrect records,
+
+00:02:43.085 --> 00:02:46.855
+we see that the value is four.
+
+00:02:46.854 --> 00:02:51.789
+So let's check how those records look like.
+
+00:02:51.830 --> 00:02:56.280
+So we have four rows here,
+
+00:02:56.280 --> 00:03:00.735
+ts_digit is none in all four cases,
+
+00:03:00.735 --> 00:03:03.660
+and if we look for the timestamps,
+
+00:03:03.659 --> 00:03:05.835
+you can see that there is a C here,
+
+00:03:05.835 --> 00:03:07.665
+which is an ABC there,
+
+00:03:07.664 --> 00:03:10.769
+so these are definitely not numbers.
+
+00:03:10.770 --> 00:03:13.969
+So what happens if the,
+
+00:03:13.969 --> 00:03:18.254
+check the value again, now BC 12.
+
+00:03:18.254 --> 00:03:20.125
+As we mentioned before,
+
+00:03:20.125 --> 00:03:23.189
+accumulators can be quite useful,
+
+00:03:23.189 --> 00:03:25.789
+but they are not either important,
+
+00:03:25.789 --> 00:03:31.694
+and we'll increment the counter whenever DR code that had be retained
+
+00:03:31.694 --> 00:03:38.044
+after the task failure or even if the address part of an execution done multiple times.
+
+00:03:38.044 --> 00:03:41.449
+So by calling logs3 again,
+
+00:03:41.449 --> 00:03:46.019
+checking its ts_digit column for null values,
+
+00:03:46.020 --> 00:03:48.765
+and collecting it back,
+
+00:03:48.764 --> 00:03:52.684
+we added the four incorrect records to
+
+00:03:52.685 --> 00:03:58.949
+our counter two more times and ended up with a value of 12.
+
+00:03:58.949 --> 00:04:03.449
+So while accumulators can be very useful,
+
+00:04:03.449 --> 00:04:07.419
+make sure that you use them carefully.
+

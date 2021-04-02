@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.549 --> 00:00:09.375
+Let's say you've written your Spark program but there's a bug somewhere in your code.
+
+00:00:09.375 --> 00:00:11.535
+The code seems to work just fine,
+
+00:00:11.535 --> 00:00:15.390
+but you have to remember about lazy evaluation from lesson two.
+
+00:00:15.390 --> 00:00:19.269
+Spark waits as long as it can before running your code on data,
+
+00:00:19.269 --> 00:00:21.554
+so you won't discover an error right away.
+
+00:00:21.554 --> 00:00:25.230
+This can be very different from what you've seen in traditional Python.
+
+00:00:25.230 --> 00:00:28.420
+Let's look at an example of this delayed feedback.
+

@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.669 --> 00:00:09.669
+Connecting to Spark's web UI is a lot like docking boats.
+
+00:00:09.669 --> 00:00:11.500
+When boats come to a seaport,
+
+00:00:11.500 --> 00:00:13.839
+it's useful to have various types of ports so
+
+00:00:13.839 --> 00:00:16.899
+that each type of boat can dock efficiently and safely.
+
+00:00:16.899 --> 00:00:20.199
+For a cruise ship, you'll need a port for passenger loading.
+
+00:00:20.199 --> 00:00:23.739
+While a cargo ship would need a port equipped with cranes,
+
+00:00:23.739 --> 00:00:27.459
+and a personal speed boat would only require a small dock or peer.
+
+00:00:27.460 --> 00:00:31.765
+As a result, they have different ports with different procedures for docking.
+
+00:00:31.765 --> 00:00:36.490
+In the same way, it's useful to have several ways to connect data with a machine.
+
+00:00:36.490 --> 00:00:40.885
+When you transfer private data through a secure shell known as SSH,
+
+00:00:40.884 --> 00:00:43.364
+you follow a different protocol than when transferring
+
+00:00:43.365 --> 00:00:47.300
+public HTML data for a webpage using HTTP.
+
+00:00:47.299 --> 00:00:52.709
+For this reason, you use different ports: port 22 for SSH and port 80 for
+
+00:00:52.710 --> 00:00:58.130
+HTTP to indicate that you're transferring data using different networking protocols.
+
+00:00:58.130 --> 00:01:02.660
+These commonly numbered ports follow a convention that engineers agreed upon.
+
+00:01:02.659 --> 00:01:06.379
+It's like having an agreed upon layout for each seaport in the world.
+
+00:01:06.379 --> 00:01:11.869
+That way, anyone visiting the city knows where to go even if it's their first time there.
+
+00:01:11.870 --> 00:01:15.740
+Spark uses several agreed upon ports for sharing information.
+
+00:01:15.739 --> 00:01:20.254
+Some ports are for machines to communicate with each other and aren't intended for users.
+
+00:01:20.254 --> 00:01:26.310
+For example, the Spark master uses port 7077 to communicate with the worker nodes,
+
+00:01:26.310 --> 00:01:27.890
+but you'll never use it.
+
+00:01:27.890 --> 00:01:32.075
+There are a few common ports that you will use from time to time.
+
+00:01:32.075 --> 00:01:34.909
+For example, you've already seen that we usually connect to
+
+00:01:34.909 --> 00:01:37.879
+Jupyter notebooks on port 8888.
+
+00:01:37.879 --> 00:01:42.679
+Another important port is 4040 which shows active Spark jobs.
+
+00:01:42.680 --> 00:01:45.890
+But the most useful port for you to memorize is the web
+
+00:01:45.890 --> 00:01:49.445
+UI for your master node on port 8080.
+
+00:01:49.444 --> 00:01:53.344
+The web UI on 8080 shows the status of your cluster,
+
+00:01:53.344 --> 00:01:57.064
+configurations, and the status of any recent jobs.
+
+00:01:57.064 --> 00:02:01.909
+Now that you're familiar with how Spark uses ports and connects to the Spark UI,
+
+00:02:01.909 --> 00:02:04.310
+let's take a tour of the UI itself.
+

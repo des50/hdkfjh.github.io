@@ -1,0 +1,239 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Other Issues and How to Address Them</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Debugging and Optimization</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Debugging is Hard.html">01. Debugging is Hard</a>
+    </li>
+    <li class="">
+      <a href="02. Intro Syntax Errors.html">02. Intro: Syntax Errors</a>
+    </li>
+    <li class="">
+      <a href="03. Code Errors.html">03. Code Errors</a>
+    </li>
+    <li class="">
+      <a href="04. Data Errors.html">04. Data Errors</a>
+    </li>
+    <li class="">
+      <a href="05. Debugging your Code.html">05. Debugging your Code</a>
+    </li>
+    <li class="">
+      <a href="06. How to Use Accumulators.html">06. How to Use Accumulators</a>
+    </li>
+    <li class="">
+      <a href="07. Spark Broadcast.html">07. Spark Broadcast</a>
+    </li>
+    <li class="">
+      <a href="08. Spark WebUI.html">08. Spark WebUI</a>
+    </li>
+    <li class="">
+      <a href="09. Connecting to the Spark Web UI.html">09. Connecting to the Spark Web UI</a>
+    </li>
+    <li class="">
+      <a href="10. Different types of Spark Functions.html">10. Different types of Spark Functions</a>
+    </li>
+    <li class="">
+      <a href="11. Getting Familiar with the Spark UI.html">11. Getting Familiar with the Spark UI</a>
+    </li>
+    <li class="">
+      <a href="12. Review of the Log Data.html">12. Review of the Log Data</a>
+    </li>
+    <li class="">
+      <a href="13. Intro Code Optimization.html">13. Intro: Code Optimization</a>
+    </li>
+    <li class="">
+      <a href="14. Understanding Data Skewness.html">14. Understanding Data Skewness</a>
+    </li>
+    <li class="">
+      <a href="15. Optimizing for Data Skewness.html">15. Optimizing for Data Skewness</a>
+    </li>
+    <li class="">
+      <a href="16. Other Issues and How to Address Them.html">16. Other Issues and How to Address Them</a>
+    </li>
+    <li class="">
+      <a href="17. Lesson Summary.html">17. Lesson Summary</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">16. Other Issues and How to Address Them</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Untitled</p></h3>
+  <div>
+  <h1 id="troubleshooting-other-spark-issues">Troubleshooting Other Spark Issues</h1>
+<p>In this lesson, we walked through various examples of Spark issues you can debug based on error messages, loglines and stack traces. </p>
+<p>We have also touched on another very common issue with Spark jobs that can be harder to address: everything working fine but just taking a very long time. So what do you do when your Spark job is (too) slow?</p>
+<h2 id="insufficient-resources">Insufficient resources</h2>
+<p>Often while there are some possible ways of improvement, processing large data sets just takes a lot longer time than smaller ones even without any big problem in the code or job tuning. Using more resources, either by increasing the number of executors or using more powerful machines, might just not be possible. <br />
+When you have a slow job it’s useful to understand: </p>
+<p>How much data you’re actually processing (compressed file formats can be tricky to interpret)<br />
+If you can decrease the amount of data to be processed by filtering or aggregating to lower cardinality,<br />
+And if resource utilization is reasonable.</p>
+<p>There are many cases where different stages of a Spark job differ greatly in their resource needs: loading data is typically I/O heavy, some stages might require a lot of memory, others might need a lot of CPU. Understanding these differences might help to optimize the overall performance. Use the Spark UI and logs to collect information on these metrics.</p>
+<p>If you run into out of memory errors you might consider increasing the number of partitions. If the memory errors occur over time you can look into why the size of certain objects is increasing too much during the run and if the size can be contained. Also, look for ways of freeing up resources if garbage collection metrics are high.</p>
+<p>Certain algorithms (especially ML ones) use the driver to store data the workers share and update during the run. If you see memory issues on the driver check if the algorithm you’re using is pushing too much data there.</p>
+<h2 id="data-skew">Data skew</h2>
+<p>If you drill down in the Spark UI to the task level you can see if certain partitions process significantly more data than others and if they are lagging behind. Such symptoms usually indicate a skewed data set. Consider implementing the techniques mentioned in this lesson:</p>
+<p>Add an intermediate data processing step with an alternative key<br />
+Adjust the spark.sql.shuffle.partitions parameter if necessary</p>
+<p>The problem with data skew is that it’s very specific to a dataset. You might know ahead of time that certain customers or accounts are expected to generate a lot more activity but the solution for dealing with the skew might strongly depend on how the data looks like. If you need to implement a more general solution (for example for an automated pipeline) it’s recommended to take a more conservative approach (so assume that your data will be skewed) and then monitor how bad the skew really is.</p>
+<h2 id="inefficient-queries">Inefficient queries</h2>
+<p>Once your Spark application works it’s worth spending some time to analyze the query it runs. You can use the Spark UI to check the DAG and the jobs and stages it’s built of.</p>
+<p>Spark’s query optimizer is called Catalyst. While Catalyst is a powerful tool to turn Python code to an optimized query plan that can run on the JVM it has some limitations when optimizing your code. It will for example push filters in a particular stage as early as possible in the plan but won’t move a filter across stages. It’s your job to make sure that if early filtering is possible without compromising the business logic than you perform this filtering where it’s more appropriate.</p>
+<p>It also can’t decide for you how much data you’re shuffling across the cluster. Remember from the first lesson how expensive sending data through the network is. As much as possible try to avoid shuffling unnecessary data. In practice, this means that you need to perform joins and grouped aggregations as late as possible. </p>
+<p>When it comes to joins there is more than one strategy to choose from. If one of your data frames are small consider using broadcast hash join instead of a hash join.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>Debugging and tuning your Spark application can be a daunting task. There is an ever-growing community out there though, always sharing new ideas and working on improving Spark and its tooling, to make using it easier. So if you have a complicated issue don’t hesitate to reach out to others (via user mailing lists, forums, and Q&amp;A sites).</p>
+<p>You can find more information on tuning [Spark](<a href="https://spark.apache.org/docs/latest/tuning.html" rel="noopener noreferrer" target="_blank">https://spark.apache.org/docs/latest/tuning.html</a><br />
+) and [Spark SQL](<a href="https://spark.apache.org/docs/latest/sql-performance-tuning.html" rel="noopener noreferrer" target="_blank">https://spark.apache.org/docs/latest/sql-performance-tuning.html</a><br />
+)  in the documentation.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="17. Lesson Summary.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('16. Other Issues and How to Address Them')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

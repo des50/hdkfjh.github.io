@@ -1,0 +1,205 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.410
+A great way to monitor the progression and performance of
+
+00:00:04.410 --> 00:00:10.695
+our Spark applications is using the Web UI to Spark Context lounges by default.
+
+00:00:10.695 --> 00:00:13.740
+If you are running Spark in a cluster mode,
+
+00:00:13.740 --> 00:00:17.594
+you can get to the UI by using the configured ports,
+
+00:00:17.594 --> 00:00:24.419
+usually 4040 or 8080 after the master notes IP address.
+
+00:00:24.420 --> 00:00:28.920
+In local mode, you can just use Docker host instead of the IP.
+
+00:00:28.920 --> 00:00:33.060
+As you can see, there are a few tabs we can check here.
+
+00:00:33.060 --> 00:00:38.969
+Under environment, we can see the different configuration parameters of our application.
+
+00:00:38.969 --> 00:00:42.254
+The Java version, the Scala version,
+
+00:00:42.255 --> 00:00:45.665
+the name of the application and so forth so on.
+
+00:00:45.664 --> 00:00:52.600
+The executor step gives you information about the executors,
+
+00:00:52.600 --> 00:00:54.719
+what resources do they have,
+
+00:00:54.719 --> 00:00:58.424
+how many tasks they have run successfully.
+
+00:00:58.424 --> 00:01:00.390
+In this particular case,
+
+00:01:00.390 --> 00:01:05.219
+I'm looking at a Spark Local Executor,
+
+00:01:05.219 --> 00:01:07.530
+so there is only one of them.
+
+00:01:07.530 --> 00:01:16.844
+It has ran 208 tasks and you can see some other parameters about it.
+
+00:01:16.844 --> 00:01:20.789
+The storage tab is currently empty here,
+
+00:01:20.790 --> 00:01:24.920
+but if you have cached RDDs in your application,
+
+00:01:24.920 --> 00:01:27.905
+you can find information and write them here.
+
+00:01:27.905 --> 00:01:31.010
+As we mentioned in the earlier lessons,
+
+00:01:31.010 --> 00:01:34.475
+Spark ranges its tasks to run according to
+
+00:01:34.474 --> 00:01:39.329
+dependency graph and a directed acyclic graph called DAG.
+
+00:01:39.329 --> 00:01:43.938
+A Spark application consists of as many jobs,
+
+00:01:43.938 --> 00:01:46.494
+as many actions regarding the code.
+
+00:01:46.495 --> 00:01:50.215
+An action can be saving a data frame to a database
+
+00:01:50.215 --> 00:01:53.945
+or taking some records back to the driver for inspection.
+
+00:01:53.944 --> 00:01:59.409
+So for example after loading your data frame where we call.head,
+
+00:01:59.409 --> 00:02:02.140
+that's an action triggering a job.
+
+00:02:02.140 --> 00:02:06.340
+You can see the jobs that were around here.
+
+00:02:06.340 --> 00:02:09.775
+Jobs have further been broken down into stages.
+
+00:02:09.775 --> 00:02:11.825
+If we click here,
+
+00:02:11.824 --> 00:02:17.399
+we get access to the stages this job consists of.
+
+00:02:17.400 --> 00:02:24.385
+Stages are units of work that depend on one another and can be further paralyzed.
+
+00:02:24.384 --> 00:02:27.259
+For example, before joining two DataFrames,
+
+00:02:27.259 --> 00:02:29.854
+we need to finish transforming them both,
+
+00:02:29.854 --> 00:02:34.219
+and just after that can we perform the actual joint.
+
+00:02:34.219 --> 00:02:38.705
+The smallest unit within a stage is a task.
+
+00:02:38.705 --> 00:02:42.125
+We have 200 tasks here.
+
+00:02:42.125 --> 00:02:46.180
+Tasks are a series of Spark transformations that
+
+00:02:46.180 --> 00:02:50.425
+can be run in parallel on the different partitions of our Dataframe.
+
+00:02:50.425 --> 00:02:52.995
+So when we have 10 partitions,
+
+00:02:52.995 --> 00:02:57.700
+we will run 10 of the same tasks to complete a stage.
+
+00:02:57.699 --> 00:02:59.949
+So in this particular case,
+
+00:02:59.949 --> 00:03:05.724
+we had 200 partitions and ended up with 200 tasks.
+
+00:03:05.724 --> 00:03:09.519
+The jobs and stages steps of the UI show
+
+00:03:09.520 --> 00:03:13.735
+information about these components of the running application.
+
+00:03:13.735 --> 00:03:17.260
+We can get information about each of the steps,
+
+00:03:17.259 --> 00:03:19.269
+can inspect the deck.
+
+00:03:19.270 --> 00:03:25.120
+So we can just click here and show a visualized version of what we
+
+00:03:25.120 --> 00:03:31.090
+have ran or check on the individual tasks how they performed,
+
+00:03:31.090 --> 00:03:33.765
+how much time they took,
+
+00:03:33.764 --> 00:03:36.689
+how much data we processed in them.
+
+00:03:36.689 --> 00:03:41.389
+Spark applications on big Datasets may take a while to run,
+
+00:03:41.389 --> 00:03:44.409
+but monitoring the progress on the UI is quite simple.
+
+00:03:44.409 --> 00:03:47.009
+More so if you would like to see the time,
+
+00:03:47.009 --> 00:03:49.304
+the different components take,
+
+00:03:49.305 --> 00:03:52.605
+looking at the UI is very helpful.
+
+00:03:52.604 --> 00:03:57.199
+Proper profiling due to the lazy valuation can be tricky.
+
+00:03:57.199 --> 00:04:00.139
+Remember that loading the DataFrame then
+
+00:04:00.139 --> 00:04:03.544
+calling.head we'll only know the first few records.
+
+00:04:03.544 --> 00:04:06.319
+So measuring the load time won't be meaningful.
+
+00:04:06.319 --> 00:04:09.724
+In contrast, if you try to time and join,
+
+00:04:09.724 --> 00:04:13.310
+joints can only happen when we have access to all the data.
+
+00:04:13.310 --> 00:04:17.045
+So this operation we run on the company Dataset.
+
+00:04:17.045 --> 00:04:21.004
+For this reason, be careful when Manual profiling,
+
+00:04:21.004 --> 00:04:24.300
+use the UI instead.
+

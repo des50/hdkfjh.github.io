@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:06.519 --> 00:00:09.394
+You've learned a lot in this lesson.
+
+00:00:09.394 --> 00:00:11.519
+You made the leap from local mode to
+
+00:00:11.519 --> 00:00:15.855
+distributed cluster and you also experimented with the distributed storage.
+
+00:00:15.855 --> 00:00:18.449
+You also learned how to debug your Spark code on
+
+00:00:18.449 --> 00:00:22.035
+a cluster using the web UI and accumulators.
+
+00:00:22.035 --> 00:00:25.050
+With these tools, you can catch any spark error,
+
+00:00:25.050 --> 00:00:26.370
+whether it's in your code,
+
+00:00:26.370 --> 00:00:28.800
+your data, or your algorithm.
+
+00:00:28.800 --> 00:00:31.289
+Now that you know how to wrangle data at scale,
+
+00:00:31.289 --> 00:00:33.509
+you'll use everything you've learned about Spark
+
+00:00:33.509 --> 00:00:36.289
+to build machine learning models on big data.
+

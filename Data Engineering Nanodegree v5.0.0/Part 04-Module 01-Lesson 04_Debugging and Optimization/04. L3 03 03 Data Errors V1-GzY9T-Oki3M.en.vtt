@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.519 --> 00:00:07.319
+Even if you have perfectly written code,
+
+00:00:07.320 --> 00:00:12.794
+your data might have errors like missing values or unexpected Unicode characters.
+
+00:00:12.794 --> 00:00:16.634
+These type of issues in the data shouldn't crash your program.
+
+00:00:16.635 --> 00:00:21.510
+Let's say you extract a few smaller datasets to see if your code runs error-free.
+
+00:00:21.510 --> 00:00:25.785
+Everything seems to be running fine and your code has no syntax issues.
+
+00:00:25.785 --> 00:00:29.309
+Next, you run your Spark code on the full dataset and
+
+00:00:29.309 --> 00:00:33.109
+the same code that worked before throws an error. What happened?
+

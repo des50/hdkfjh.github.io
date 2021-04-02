@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.219 --> 00:00:07.830
+Unless you're perfect and never make mistakes,
+
+00:00:07.830 --> 00:00:11.759
+you probably ran into some minor bugs in your Spark code during lesson two.
+
+00:00:11.759 --> 00:00:13.379
+When you're in local mode,
+
+00:00:13.380 --> 00:00:16.019
+those error show up directly in your Jupyter notebooks,
+
+00:00:16.019 --> 00:00:18.449
+and you can hunt down the problems pretty quickly.
+
+00:00:18.449 --> 00:00:22.619
+But once you're working with multiple machines on a distributed cluster,
+
+00:00:22.620 --> 00:00:25.650
+errors in your code can be very hard to diagnose.
+
+00:00:25.649 --> 00:00:27.344
+In this part of the lesson,
+
+00:00:27.344 --> 00:00:29.939
+you'll learn about common Spark bugs including
+
+00:00:29.940 --> 00:00:33.225
+errors in your code syntax and issues with your data.
+
+00:00:33.225 --> 00:00:37.480
+You'll learn how to diagnose these types of errors so that you can correct for them.
+

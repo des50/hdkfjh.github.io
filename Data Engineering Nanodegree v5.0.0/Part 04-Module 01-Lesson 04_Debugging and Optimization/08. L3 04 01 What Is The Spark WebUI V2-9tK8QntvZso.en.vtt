@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.580 --> 00:00:07.830
+Since debugging on a cluster is hard,
+
+00:00:07.830 --> 00:00:11.789
+Spark has a built-in user interface that you can access from your web browser.
+
+00:00:11.789 --> 00:00:14.564
+This interface, known as the web UI,
+
+00:00:14.564 --> 00:00:16.289
+helps you understand what's going on in
+
+00:00:16.289 --> 00:00:19.410
+your cluster without looking at individual workers.
+
+00:00:19.410 --> 00:00:21.030
+Spark's web UI is like
+
+00:00:21.030 --> 00:00:24.914
+an EKG machine that helps you measure the health of your Spark jobs.
+
+00:00:24.914 --> 00:00:29.144
+It's a very useful tool for diagnosing issues in your code and your cluster,
+
+00:00:29.144 --> 00:00:30.539
+but it's just a tool.
+
+00:00:30.539 --> 00:00:35.494
+You still need to know how to interpret the output and know where to investigate further.
+
+00:00:35.494 --> 00:00:38.984
+When a doctor measures the patient's heart rate with an EKG,
+
+00:00:38.984 --> 00:00:42.079
+she needs to understand not only how the heart works,
+
+00:00:42.079 --> 00:00:45.439
+but also how the heart relates to other parts of the human anatomy.
+
+00:00:45.439 --> 00:00:49.024
+Understanding the Spark internals like shuffling, DAGs,
+
+00:00:49.024 --> 00:00:50.629
+and stages that we discussed in
+
+00:00:50.630 --> 00:00:54.575
+previous lessons is like Anatomy 101 for your Spark cluster.
+
+00:00:54.575 --> 00:00:57.260
+So, what does the web UI actually show?
+
+00:00:57.259 --> 00:01:01.519
+The web UI provides the current configuration for the cluster which
+
+00:01:01.520 --> 00:01:05.795
+can be useful for double-checking that your desired settings went into effect.
+
+00:01:05.795 --> 00:01:08.299
+The web UI also shows you the DAG,
+
+00:01:08.299 --> 00:01:12.634
+the recipe of steps for your program that we went through in lesson two.
+
+00:01:12.635 --> 00:01:15.305
+You'll see the DAG broken up into stages,
+
+00:01:15.305 --> 00:01:16.625
+and within each stage,
+
+00:01:16.625 --> 00:01:18.709
+there are individual tasks.
+
+00:01:18.709 --> 00:01:22.774
+Tasks are the steps that the individual worker nodes are assigned.
+
+00:01:22.775 --> 00:01:25.250
+In each stage, the worker node divides up
+
+00:01:25.250 --> 00:01:28.745
+the input data and runs the task for that stage.
+
+00:01:28.745 --> 00:01:33.350
+The web UI only shows pages related to current Spark jobs that are running.
+
+00:01:33.349 --> 00:01:36.994
+For example, you won't see any pages related to other libraries
+
+00:01:36.995 --> 00:01:40.805
+like Spark Streaming unless you are also running a streaming job.
+
+00:01:40.805 --> 00:01:44.570
+Before we actually do a walk-through of the Spark web UI,
+
+00:01:44.569 --> 00:01:47.649
+let's talk a bit about how to connect to it.
+

@@ -1,0 +1,127 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.040
+So in the previous video,
+
+00:00:02.040 --> 00:00:05.100
+we take a look at what skewed data looks like.
+
+00:00:05.100 --> 00:00:10.350
+Hopefully, the data engineering will teach you how to partition correctly.
+
+00:00:10.350 --> 00:00:11.925
+But sometimes, this could happen.
+
+00:00:11.925 --> 00:00:15.974
+For example, if you have a seasonal data set like retail,
+
+00:00:15.974 --> 00:00:19.070
+then you'll see peak in November and December,
+
+00:00:19.070 --> 00:00:23.610
+no matter what, just like how we saw in this year it peaked.
+
+00:00:23.610 --> 00:00:28.305
+I'm pretty sure that this dataset isn't missing anything before 2014.
+
+00:00:28.305 --> 00:00:32.285
+Or since this is a New York State registration,
+
+00:00:32.285 --> 00:00:35.900
+you will see more on the New York rather than the other states,
+
+00:00:35.900 --> 00:00:39.235
+then you won't see any of the West Coast States.
+
+00:00:39.235 --> 00:00:43.265
+One thing we could do is just plainly pick
+
+00:00:43.265 --> 00:00:48.335
+another column that is more meaningful to use like issue date,
+
+00:00:48.335 --> 00:00:54.990
+violation code, it might be skewed depending on what city you live in,
+
+00:00:55.310 --> 00:01:00.480
+vehicle body type, so something that is common to use.
+
+00:01:00.480 --> 00:01:04.250
+Or what you could do is you could just use a composite key so that
+
+00:01:04.250 --> 00:01:08.020
+you can avoid the slowness.
+
+00:01:08.020 --> 00:01:10.805
+For example, what is this composite key mean?
+
+00:01:10.805 --> 00:01:13.640
+You can combine some code like Summons_Number,
+
+00:01:13.640 --> 00:01:16.145
+plus Plate_ID, plus Registration_State,
+
+00:01:16.145 --> 00:01:18.490
+so that you get an even distribution.
+
+00:01:18.490 --> 00:01:21.920
+In Spark, what you would do is that you will actually
+
+00:01:21.920 --> 00:01:26.870
+use repartition based on the number of cores that you have.
+
+00:01:26.870 --> 00:01:29.090
+Right now, I'm running this on locally,
+
+00:01:29.090 --> 00:01:31.175
+so I know I have two cores.
+
+00:01:31.175 --> 00:01:35.810
+Then from here, we can use something like this and then spark.read.csv,
+
+00:01:35.810 --> 00:01:41.710
+the file that we have is parking violation.
+
+00:01:47.540 --> 00:01:53.080
+So this is Pandas DataFrame specific and this is Spark,
+
+00:01:53.080 --> 00:01:56.350
+and you're saying I'm going to read as csv.
+
+00:01:56.350 --> 00:02:03.190
+Then, what you would do, then we need to name this spark_df.
+
+00:02:04.700 --> 00:02:07.700
+Then whatever you do after,
+
+00:02:07.700 --> 00:02:10.170
+because I know I have two cores,
+
+00:02:10.170 --> 00:02:14.265
+I can say spark_df.repartition
+
+00:02:14.265 --> 00:02:17.460
+and you would plain just write number of the cores that you have,
+
+00:02:17.460 --> 00:02:20.255
+and then do whatever so on afterwards.
+
+00:02:20.255 --> 00:02:22.010
+If you use EMR,
+
+00:02:22.010 --> 00:02:24.050
+you can have like 16,
+
+00:02:24.050 --> 00:02:25.925
+32, and now 15,
+
+00:02:25.925 --> 00:02:27.830
+whatever number you designate to.
+
+00:02:27.830 --> 00:02:31.115
+Then if you use this, this will partition your data
+
+00:02:31.115 --> 00:02:35.520
+evenly so that it's nicely spread out.
+

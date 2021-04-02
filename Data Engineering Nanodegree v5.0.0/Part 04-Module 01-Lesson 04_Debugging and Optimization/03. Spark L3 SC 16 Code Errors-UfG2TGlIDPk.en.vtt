@@ -1,0 +1,313 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.379
+Before we get started looking into all sorts of error messages,
+
+00:00:04.379 --> 00:00:08.294
+let me just say nobody writes perfect code all the time.
+
+00:00:08.294 --> 00:00:09.900
+As you practice more,
+
+00:00:09.900 --> 00:00:12.000
+you will get better at getting it right,
+
+00:00:12.000 --> 00:00:17.640
+and also will get better in interpreting the error messages to find what went wrong.
+
+00:00:17.640 --> 00:00:21.359
+Typos are probably the simplest errors to identify,
+
+00:00:21.359 --> 00:00:23.129
+so let's just start there.
+
+00:00:23.129 --> 00:00:30.914
+We will use the usual sparkify log file with this streaming service records in it,
+
+00:00:30.914 --> 00:00:33.450
+let me just important.
+
+00:00:33.450 --> 00:00:36.115
+As you probably remember,
+
+00:00:36.115 --> 00:00:39.710
+this log file contains records about
+
+00:00:39.710 --> 00:00:43.745
+our music streaming service and what our users did here.
+
+00:00:43.744 --> 00:00:48.364
+So for example, the first record is about someone listening to a song.
+
+00:00:48.365 --> 00:00:52.175
+Let's check a few typos.
+
+00:00:52.174 --> 00:00:55.099
+Let's say we would like to take a look
+
+00:00:55.100 --> 00:00:59.344
+at all the records that belong to a particular user ID,
+
+00:00:59.344 --> 00:01:03.424
+user ID 1046 in this case,
+
+00:01:03.424 --> 00:01:07.239
+but let me just leave out a layer here.
+
+00:01:07.239 --> 00:01:09.884
+May be incorrect method name,
+
+00:01:09.885 --> 00:01:13.305
+may get a short and sweet attribute error
+
+00:01:13.305 --> 00:01:18.785
+saying that the DataFrame object has no attribute wher.
+
+00:01:18.784 --> 00:01:22.429
+If we take a column name incorrectly,
+
+00:01:22.430 --> 00:01:25.265
+let's say son instead of song,
+
+00:01:25.265 --> 00:01:28.040
+you're going to get a much longer error.
+
+00:01:28.040 --> 00:01:32.900
+It is an analysis exception where the query planner
+
+00:01:32.900 --> 00:01:39.945
+explains how it could not find a column name given the schema of our DataFrame.
+
+00:01:39.944 --> 00:01:42.613
+So we have these input columns,
+
+00:01:42.614 --> 00:01:45.630
+our third registration, gender, auth,
+
+00:01:45.629 --> 00:01:51.569
+firstName, and it can't find our column son here.
+
+00:01:51.569 --> 00:01:54.549
+Not all typos are created equal though.
+
+00:01:54.549 --> 00:01:57.409
+Method names are case sensitive.
+
+00:01:57.409 --> 00:02:02.134
+So let me just type where with capital W here.
+
+00:02:02.135 --> 00:02:06.469
+You will see we get the same attribute error as before,
+
+00:02:06.469 --> 00:02:14.569
+but if I type user ID for example with capital I and capital D, no error.
+
+00:02:14.569 --> 00:02:22.789
+I can even select from this log DataFrame the user ID column, still no error,
+
+00:02:22.789 --> 00:02:26.959
+and count how many times that we see
+
+00:02:26.960 --> 00:02:32.420
+this particular UserID and the query just runs without any issues.
+
+00:02:32.419 --> 00:02:36.149
+So while we used ID with capital D here,
+
+00:02:36.150 --> 00:02:40.325
+so for there to be lowercase D, no error occurred.
+
+00:02:40.324 --> 00:02:45.049
+Let's try to add a new column to original DataFrame now.
+
+00:02:45.439 --> 00:02:50.750
+Now, this is a scary error message. It's really long.
+
+00:02:50.750 --> 00:02:52.550
+If you just glance at it,
+
+00:02:52.550 --> 00:02:56.830
+you'll see that if we wanted to use the artist column.
+
+00:02:56.830 --> 00:03:01.490
+The error message says that we have an artist's column.
+
+00:03:01.490 --> 00:03:03.965
+So this might be a little bit confusing.
+
+00:03:03.965 --> 00:03:06.085
+If we look closer though,
+
+00:03:06.085 --> 00:03:09.090
+you realize that the artist here is
+
+00:03:09.090 --> 00:03:12.939
+just a reference to where this DataFrame was coming from,
+
+00:03:12.939 --> 00:03:16.819
+and its columns indeed have no artist among them.
+
+00:03:16.819 --> 00:03:19.250
+So what has happened here?
+
+00:03:19.250 --> 00:03:22.960
+Well, we did leave an S out.
+
+00:03:22.960 --> 00:03:26.659
+Be careful how you name your variables.
+
+00:03:26.659 --> 00:03:31.129
+Simple typos like this can cause a lot of headaches.
+
+00:03:31.129 --> 00:03:33.009
+As we discussed earlier,
+
+00:03:33.009 --> 00:03:35.609
+while Spark supports Python API,
+
+00:03:35.610 --> 00:03:38.135
+its native language is Scala.
+
+00:03:38.134 --> 00:03:41.914
+That's why some of the error messages are referring to Scala,
+
+00:03:41.914 --> 00:03:47.014
+Java, or JVM issues even when we are running Python code.
+
+00:03:47.014 --> 00:03:49.289
+Let's see an example.
+
+00:03:49.289 --> 00:03:55.974
+I'll try to do a self-join on logs DataFrame and collect it.
+
+00:03:55.974 --> 00:03:59.000
+We got an error message that says,
+
+00:03:59.000 --> 00:04:04.794
+"java.lang.OutOfMemory error: Java heap space."
+
+00:04:04.794 --> 00:04:08.614
+What this means is that we ran out of memory.
+
+00:04:08.615 --> 00:04:13.250
+As you can see, the error message reference's Java heap
+
+00:04:13.250 --> 00:04:16.995
+because our application is running on the JVM.
+
+00:04:16.995 --> 00:04:21.615
+Let's just state the first five records of this joint.
+
+00:04:21.615 --> 00:04:24.855
+Whenever you use collect,
+
+00:04:24.855 --> 00:04:29.410
+be careful how much data are you collecting back to the driver.
+
+00:04:29.410 --> 00:04:33.860
+Let's take a look at what happens when we use the right function names.
+
+00:04:33.860 --> 00:04:37.250
+They are just not the functions we met.
+
+00:04:37.250 --> 00:04:39.230
+In a separate DataFrame,
+
+00:04:39.230 --> 00:04:41.750
+let's create the records about listening to
+
+00:04:41.750 --> 00:04:46.910
+songs and then calculate the total lengths each user has listened to.
+
+00:04:46.910 --> 00:04:49.970
+So here's the sounds DataFrame.
+
+00:04:49.970 --> 00:04:55.040
+The first record is indeed about listening to a song.
+
+00:04:55.040 --> 00:05:02.090
+Let's import a SQL functions and then calculate the number we were interested in,
+
+00:05:02.089 --> 00:05:06.579
+so the sum length for user ID.
+
+00:05:06.579 --> 00:05:12.824
+The sum lengths of the songs a particular user ID has listened to.
+
+00:05:12.824 --> 00:05:15.680
+The golden arrow here.
+
+00:05:15.680 --> 00:05:18.185
+Column is not iterable.
+
+00:05:18.185 --> 00:05:23.925
+The problem is that while we imported the PySpark SQL function,
+
+00:05:23.925 --> 00:05:27.420
+this sum we are referencing here is
+
+00:05:27.420 --> 00:05:31.105
+not the same function that can operate on the DataFrame columns.
+
+00:05:31.105 --> 00:05:35.830
+So if we do the import in the frame here,
+
+00:05:38.209 --> 00:05:41.219
+then we get a syntax error.
+
+00:05:41.220 --> 00:05:44.580
+So we need to add S as well.
+
+00:05:44.579 --> 00:05:52.029
+If we reference now the correct SQL function of the sum,
+
+00:05:52.029 --> 00:05:57.244
+then we will get the sum lengths for each user ID.
+
+00:05:57.245 --> 00:06:00.269
+As a last example in this video,
+
+00:06:00.269 --> 00:06:04.149
+let's look at another syntax error that happens when
+
+00:06:04.149 --> 00:06:08.739
+we don't properly close all the parentheses we have opened.
+
+00:06:08.740 --> 00:06:10.990
+So I just deleted this one.
+
+00:06:10.990 --> 00:06:13.314
+Let's see what happens.
+
+00:06:13.314 --> 00:06:16.000
+We get a syntax error,
+
+00:06:16.000 --> 00:06:19.944
+unexpected end of file while parsing.
+
+00:06:19.944 --> 00:06:24.769
+So this might look like something new referencing.
+
+00:06:24.769 --> 00:06:28.784
+End of the file maybe our input file,
+
+00:06:28.785 --> 00:06:34.520
+but this is just about this particular cell as this little arrow shows us.
+
+00:06:34.519 --> 00:06:38.899
+So it was just not expecting for
+
+00:06:38.899 --> 00:06:43.519
+the command to be over yet because we haven't closed all of our parentheses.
+
+00:06:43.519 --> 00:06:46.819
+If I put a parenthesis here,
+
+00:06:46.819 --> 00:06:50.240
+we get a different error,
+
+00:06:50.240 --> 00:06:54.720
+so we need to make sure that it's in the right location.
+

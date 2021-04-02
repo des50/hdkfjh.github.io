@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.370 --> 00:00:07.560
+If you were writing a traditional Python script,
+
+00:00:07.559 --> 00:00:11.519
+you might use print statements to output the values held by variables.
+
+00:00:11.519 --> 00:00:16.679
+A typical example would be outputting the i and j variables of a nested for-loop.
+
+00:00:16.679 --> 00:00:20.030
+These print statements can be helpful when debugging your code,
+
+00:00:20.030 --> 00:00:22.295
+but this won't work on Spark.
+
+00:00:22.295 --> 00:00:25.905
+Instead, you need to use a special variable.
+
+00:00:25.905 --> 00:00:29.039
+But why can't you use print statements on a cluster?
+
+00:00:29.039 --> 00:00:31.699
+Think back to how Spark runs your code.
+
+00:00:31.699 --> 00:00:35.990
+You have a driver node coordinating the tasks of various worker nodes.
+
+00:00:35.990 --> 00:00:39.329
+Code is running on those worker nodes and not the driver,
+
+00:00:39.329 --> 00:00:42.920
+so print statements will only run on those worker nodes.
+
+00:00:42.920 --> 00:00:45.079
+You cannot directly see the output from
+
+00:00:45.079 --> 00:00:47.934
+them because you're not connected directly to them.
+
+00:00:47.935 --> 00:00:51.120
+Also, as we discussed in Lesson two,
+
+00:00:51.119 --> 00:00:55.114
+Spark makes a copy of the input data every time you call a function.
+
+00:00:55.115 --> 00:00:57.530
+So, the original debugging variables that you
+
+00:00:57.530 --> 00:01:00.730
+created won't actually get loaded into the worker nodes.
+
+00:01:00.729 --> 00:01:04.909
+Instead, each worker has their own copy of these variables,
+
+00:01:04.909 --> 00:01:06.994
+and only these copies get modified.
+
+00:01:06.995 --> 00:01:10.925
+The original variables stored on the driver remain unchanged,
+
+00:01:10.924 --> 00:01:13.355
+making them useless for debugging.
+
+00:01:13.355 --> 00:01:16.790
+This is one of the most confusing parts of closures.
+
+00:01:16.790 --> 00:01:18.995
+To get around these limitations,
+
+00:01:18.995 --> 00:01:23.135
+Spark gives you special variables known as accumulators.
+
+00:01:23.135 --> 00:01:27.125
+Accumulators are like global variables for your entire cluster.
+
+00:01:27.125 --> 00:01:32.349
+Let's go over to an example of how to use accumulators when debugging your code.
+
