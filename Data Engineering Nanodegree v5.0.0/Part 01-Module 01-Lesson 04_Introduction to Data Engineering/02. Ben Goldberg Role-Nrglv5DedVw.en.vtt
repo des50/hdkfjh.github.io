@@ -1,0 +1,331 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.965
+Hi, my name is Ben Goldberg.
+
+00:00:01.965 --> 00:00:03.570
+I'm at a company called Spot Hero,
+
+00:00:03.569 --> 00:00:05.619
+Web and Data engineer.
+
+00:00:07.309 --> 00:00:09.629
+So at Spot Hero,
+
+00:00:09.630 --> 00:00:13.620
+we have our data teams structured such that all the teams
+
+00:00:13.619 --> 00:00:17.954
+outside of the data engineering team can interact with us and tell us the insights,
+
+00:00:17.954 --> 00:00:20.699
+and information they might need us to produce.
+
+00:00:20.699 --> 00:00:23.445
+Specifically we have a group of data scientists,
+
+00:00:23.445 --> 00:00:25.080
+we have business analysts,
+
+00:00:25.079 --> 00:00:27.794
+and then we have other C-level executives
+
+00:00:27.795 --> 00:00:30.030
+who might want to know the performance of the business.
+
+00:00:30.030 --> 00:00:32.189
+So, they all have very different needs
+
+00:00:32.189 --> 00:00:35.054
+and different types of information that we need to provide for them.
+
+00:00:35.054 --> 00:00:38.850
+So, what we do is we have a data product manager,
+
+00:00:38.850 --> 00:00:40.770
+and a data engineering manager,
+
+00:00:40.770 --> 00:00:43.430
+and the two of them work together to interface with
+
+00:00:43.429 --> 00:00:45.020
+the other aspects of the business to get
+
+00:00:45.020 --> 00:00:47.480
+that information down to the data engineering team.
+
+00:00:47.479 --> 00:00:51.289
+Then, given that the data engineering team typically works
+
+00:00:51.289 --> 00:00:56.284
+together as one unit to try and work through a big project at a time.
+
+00:00:56.284 --> 00:00:58.609
+We tend to prefer to work as
+
+00:00:58.609 --> 00:01:03.429
+one cohesive team rather than as individuals a little tasks here and there.
+
+00:01:03.429 --> 00:01:06.430
+So, as a data engineer,
+
+00:01:06.430 --> 00:01:09.050
+a typical day for me tends to be coming into
+
+00:01:09.049 --> 00:01:12.049
+work and taking a look first by opening up Airflow,
+
+00:01:12.049 --> 00:01:15.924
+and just seeing the status of all the pipelines that we've configured.
+
+00:01:15.924 --> 00:01:19.909
+Most important part of that is to make sure that everything is running as expected.
+
+00:01:19.909 --> 00:01:22.629
+Also typically have a look at our metrics, check my email,
+
+00:01:22.629 --> 00:01:26.464
+and make sure that essentially nothing has failed in a way that I wouldn't expect.
+
+00:01:26.465 --> 00:01:28.325
+Typically this is overboard,
+
+00:01:28.325 --> 00:01:30.635
+because we do have alerts and things like that.
+
+00:01:30.635 --> 00:01:33.590
+Then I tend to write a lot of code from there.
+
+00:01:33.590 --> 00:01:36.710
+So, either I'll be building a data pipeline and something like airflow,
+
+00:01:36.709 --> 00:01:39.109
+or we might be working with a system like Presto or
+
+00:01:39.109 --> 00:01:42.415
+Spark to run some big query that we're trying to design.
+
+00:01:42.415 --> 00:01:46.745
+But the gist of it is most of my day is spent actually writing code.
+
+00:01:46.745 --> 00:01:51.530
+I think my favorite thing about my job is the fact that as a data engineer,
+
+00:01:51.530 --> 00:01:54.504
+I get to work with a lot of different people throughout my day-to-day.
+
+00:01:54.504 --> 00:01:56.509
+So, that'll lead to I get to work with some of
+
+00:01:56.510 --> 00:01:59.105
+the most exciting tools in engineering today.
+
+00:01:59.105 --> 00:02:04.060
+So, tools like Spark or Apache airflow, things like that,
+
+00:02:04.060 --> 00:02:07.250
+but I also get to actually use those tools to produce something that's
+
+00:02:07.250 --> 00:02:10.520
+really meaningful for the people that I work with on a day-to-day basis.
+
+00:02:10.520 --> 00:02:12.770
+Whether it's a data scientist,
+
+00:02:12.770 --> 00:02:14.805
+or a data analyst,
+
+00:02:14.805 --> 00:02:17.990
+or someone in the business who really needs some information.
+
+00:02:17.990 --> 00:02:21.395
+A lot of my job is making something that we can
+
+00:02:21.395 --> 00:02:25.120
+basically answer question we couldn't answer 6 months or a year ago,
+
+00:02:25.120 --> 00:02:29.480
+or making a question that we could only answer every week or month.
+
+00:02:29.479 --> 00:02:32.750
+We will answer that question every minute of every day,
+
+00:02:32.750 --> 00:02:35.090
+or anytime somebody opens up a dashboard.
+
+00:02:35.090 --> 00:02:37.310
+Those are the things that are really exciting.
+
+00:02:37.310 --> 00:02:42.319
+It feels like we're actually moving forward what we're capable of as a company,
+
+00:02:42.319 --> 00:02:44.900
+and you get to really see how exciting this is for people.
+
+00:02:44.900 --> 00:02:47.480
+So, that's definitely one of my favorite things,
+
+00:02:47.479 --> 00:02:51.449
+I think as a data engineer that I really get to enjoy.
+
+00:02:52.689 --> 00:02:57.259
+So I think one of the things that's difficult about being a data engineer is
+
+00:02:57.259 --> 00:03:01.139
+that you're going to be working with a lot of different data sources,
+
+00:03:01.139 --> 00:03:04.789
+in a lot of different forms and inequality.
+
+00:03:04.789 --> 00:03:09.879
+So, we have data at Spot Hero going back years in many cases,
+
+00:03:09.879 --> 00:03:15.215
+and some of the original data from when we were just a brand new little it bitty startup,
+
+00:03:15.215 --> 00:03:18.680
+it doesn't really work well in 2018,
+
+00:03:18.680 --> 00:03:21.379
+2019 so on and so forth because we've learned
+
+00:03:21.379 --> 00:03:25.009
+a lot about how to actually store and structure our data for processing.
+
+00:03:25.009 --> 00:03:27.259
+So, for me, one of the things that's most
+
+00:03:27.259 --> 00:03:31.655
+difficult is figuring out how to get all of this data to work together,
+
+00:03:31.655 --> 00:03:35.550
+so that our pipelines run reliably and actually produce meaningful insights.
+
+00:03:35.550 --> 00:03:40.560
+That can be really difficult in terms of a challenge that I encounter.
+
+00:03:41.229 --> 00:03:46.429
+So my advice for aspiring data engineers is try not to get too lost
+
+00:03:46.430 --> 00:03:51.050
+in the soup of acronyms and tools that exist in the data engineering space.
+
+00:03:51.050 --> 00:03:54.830
+I think that a lot of people when they first learn about data engineering,
+
+00:03:54.830 --> 00:03:57.560
+they run into this wall of tools and products they
+
+00:03:57.560 --> 00:04:00.515
+can use to solve data engineering problems.
+
+00:04:00.514 --> 00:04:04.219
+My recommendation would be to focus on a couple of the big names in this space.
+
+00:04:04.219 --> 00:04:10.074
+So, learning how to use Airflow, Redshifts, Spark, Presto,
+
+00:04:10.074 --> 00:04:13.579
+those tools is going to be more of a benefit that to you,
+
+00:04:13.580 --> 00:04:16.879
+than to try to learn 10, 15, 20 things.
+
+00:04:16.879 --> 00:04:21.529
+Data engineering stacks aren't necessarily standardized across the entire industry.
+
+00:04:21.529 --> 00:04:24.529
+So, something that I think is really important is to hone in and
+
+00:04:24.529 --> 00:04:28.764
+develop skills that work across the board,
+
+00:04:28.764 --> 00:04:31.774
+but not to be having a little bit of expertise,
+
+00:04:31.774 --> 00:04:36.078
+and a bunch of tools is not as good as having a lot of expertise,
+
+00:04:36.079 --> 00:04:38.240
+and a couple of really big important tools.
+
+00:04:38.240 --> 00:04:40.295
+You'll want to make sure that you cover your bases.
+
+00:04:40.295 --> 00:04:42.640
+How am I going to organize my data pipelines?
+
+00:04:42.639 --> 00:04:46.219
+How am I going to run big analyses that work on a lot of data?
+
+00:04:46.220 --> 00:04:51.020
+Those are the things that I would like to emphasize that when you're starting out,
+
+00:04:51.019 --> 00:04:55.859
+try to figure out tools that are going to benefit you and keep it limited.
+
+00:04:57.199 --> 00:04:59.844
+So, as a data engineer,
+
+00:04:59.845 --> 00:05:02.030
+some of the soft skills that are most important,
+
+00:05:02.029 --> 00:05:05.599
+are figuring out how to work with your data consumers,
+
+00:05:05.600 --> 00:05:09.415
+to actually figure out what the requirements of what you're producing are.
+
+00:05:09.415 --> 00:05:13.035
+So, one of the first things you'll notice is that people might ask you,
+
+00:05:13.035 --> 00:05:16.550
+they'll just say I need data that tells me x or y,
+
+00:05:16.550 --> 00:05:18.770
+and that doesn't really describe to you as
+
+00:05:18.769 --> 00:05:21.560
+a data engineer exactly what you need to build.
+
+00:05:21.560 --> 00:05:24.290
+So, it's your responsibility to talk to them,
+
+00:05:24.290 --> 00:05:26.569
+human to human, and talking to somebody
+
+00:05:26.569 --> 00:05:28.805
+who really may not have a lot of technical skills,
+
+00:05:28.805 --> 00:05:35.165
+and really dig into and understand and empathize why they need the data,
+
+00:05:35.165 --> 00:05:37.160
+how important it is to them,
+
+00:05:37.160 --> 00:05:39.760
+and figure out how to come up with the solution.
+
+00:05:39.759 --> 00:05:41.779
+Not only is that an important soft skill,
+
+00:05:41.779 --> 00:05:44.059
+I think it's actually one of the best parts of this job
+
+00:05:44.060 --> 00:05:46.699
+is that you get to work with people from all over their organization,
+
+00:05:46.699 --> 00:05:49.144
+or even externally to your organization,
+
+00:05:49.144 --> 00:05:52.444
+and get to explain these really interesting concepts to them.
+
+00:05:52.444 --> 00:05:56.000
+Also, try to map concepts to them that might be
+
+00:05:56.000 --> 00:06:01.259
+simple into what might be more complicated on the data engineering side.
+
