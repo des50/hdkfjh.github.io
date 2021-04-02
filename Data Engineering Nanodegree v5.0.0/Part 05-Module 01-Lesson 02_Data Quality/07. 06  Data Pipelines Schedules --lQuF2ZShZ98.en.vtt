@@ -1,0 +1,313 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.080 --> 00:00:03.570
+Data pipelines are commonly driven by schedules.
+
+00:00:03.569 --> 00:00:06.269
+You've already seen this in Lesson 1 to some extent.
+
+00:00:06.269 --> 00:00:11.079
+These schedules determine what data should be analyzed and when.
+
+00:00:11.330 --> 00:00:13.964
+Often defined as cron jobs,
+
+00:00:13.964 --> 00:00:16.710
+you've seen these schedules in previous courses and lessons.
+
+00:00:16.710 --> 00:00:19.005
+Those jobs may have run once an hour,
+
+00:00:19.004 --> 00:00:21.494
+once a day, and so on and so forth.
+
+00:00:21.495 --> 00:00:26.025
+In this lecture, we'll be diving into how schedules can be used to enhance our analyses,
+
+00:00:26.024 --> 00:00:28.769
+improve data quality, and speed up our pipelines.
+
+00:00:28.769 --> 00:00:33.164
+So again, this schedule interval monthly which we used in
+
+00:00:33.164 --> 00:00:38.850
+the previous exercises is an example of setting a schedule for a DAG.
+
+00:00:39.130 --> 00:00:43.400
+Pipeline schedules can be used to enhance our analyses by allowing
+
+00:00:43.399 --> 00:00:47.269
+us to make assumptions about the scope of the data we're analyzing.
+
+00:00:47.270 --> 00:00:50.005
+What do I mean when I say the scope of the data?
+
+00:00:50.005 --> 00:00:54.050
+Put simply, when a data pipeline is designed with a schedule in mind,
+
+00:00:54.049 --> 00:00:57.439
+we can use the execution time of the pipeline run to analyze
+
+00:00:57.439 --> 00:01:01.369
+data from the time period since this data pipeline last ran.
+
+00:01:01.369 --> 00:01:04.370
+In a naive analysis with no scope,
+
+00:01:04.370 --> 00:01:07.475
+we would analyze all the data at all times.
+
+00:01:07.474 --> 00:01:09.919
+So in this diagram on the page,
+
+00:01:09.920 --> 00:01:13.355
+you can see we have January through December
+
+00:01:13.355 --> 00:01:17.540
+and our Redshift analysis looking at all of the data all at once.
+
+00:01:17.540 --> 00:01:20.025
+This is what we might call a naive analysis.
+
+00:01:20.025 --> 00:01:25.145
+If we have exactly one year's worth of data and we analyze that full dataset every time,
+
+00:01:25.144 --> 00:01:29.909
+we're not taking advantage of schedules to partition our data properly.
+
+00:01:30.430 --> 00:01:33.200
+In our final exercise in lesson 1,
+
+00:01:33.200 --> 00:01:36.650
+we created an airflow DAG that built a station traffic table that contained
+
+00:01:36.650 --> 00:01:41.135
+the analysis of all the 2018 data available for our bikeshare company.
+
+00:01:41.135 --> 00:01:43.880
+Scope of this data was the entire dataset.
+
+00:01:43.879 --> 00:01:47.959
+Again, this would be an example of a naive analysis.
+
+00:01:47.959 --> 00:01:51.140
+One way you can prove this analysis would be to
+
+00:01:51.140 --> 00:01:54.185
+change the scope of the analysis to a smaller time period.
+
+00:01:54.185 --> 00:01:59.680
+In this example, the Redshift analysis is just looking at data for the month of January.
+
+00:01:59.680 --> 00:02:04.535
+Next, the Redshift analysis could run again and look at February
+
+00:02:04.534 --> 00:02:10.849
+and so on and so forth as the Redshift analysis progresses through its schedule.
+
+00:02:10.849 --> 00:02:14.840
+Determining the appropriate time period for a schedule is
+
+00:02:14.840 --> 00:02:18.545
+based on a number of factors which you need to consider as the pipeline designer.
+
+00:02:18.544 --> 00:02:22.814
+First, what is the size of the data on average for a time period?
+
+00:02:22.814 --> 00:02:27.544
+If an entire year's worth of data is only a few kilobytes or megabytes,
+
+00:02:27.544 --> 00:02:30.530
+then perhaps it's fine to load the entire dataset.
+
+00:02:30.530 --> 00:02:34.780
+But if an hour's worth of data is hundreds of megabytes or gigabytes,
+
+00:02:34.780 --> 00:02:37.159
+or even terabytes, then likely you will
+
+00:02:37.159 --> 00:02:39.854
+need to schedule your pipelines more frequently than that.
+
+00:02:39.854 --> 00:02:43.094
+Secondly, how frequently is data arriving,
+
+00:02:43.094 --> 00:02:45.875
+and how often does the analysis need to be performed?
+
+00:02:45.875 --> 00:02:49.310
+Far base your company needs trick data
+
+00:02:49.310 --> 00:02:52.985
+every hour that will be a driving factor in determining the schedule.
+
+00:02:52.985 --> 00:02:57.200
+Alternatively, if we have to load hundreds of thousands of tiny records even if
+
+00:02:57.199 --> 00:03:01.530
+they don't add up to much in terms of megabytes or gigabytes general memory,
+
+00:03:01.530 --> 00:03:04.099
+the file access alone will slow down or
+
+00:03:04.099 --> 00:03:07.294
+analysis and will likely want to run it more often.
+
+00:03:07.294 --> 00:03:10.729
+Finally, we need to consider related datasets.
+
+00:03:10.729 --> 00:03:14.810
+A good rule of thumb is that the frequency of a pipeline schedule should be
+
+00:03:14.810 --> 00:03:19.625
+determined by the dataset and a pipeline which requires the most frequent analysis.
+
+00:03:19.625 --> 00:03:23.060
+This isn't universally the case but it's a good starting assumption.
+
+00:03:23.060 --> 00:03:25.594
+For example, if our trips data updates
+
+00:03:25.594 --> 00:03:30.349
+every single hour but our bikeshare station table only updates once a quarter,
+
+00:03:30.349 --> 00:03:33.169
+we'll probably want to run our trip analysis every hour and not
+
+00:03:33.169 --> 00:03:37.129
+once a quarter based on our station data updating once a quarter.
+
+00:03:37.129 --> 00:03:41.359
+Using schedules to select only data relevant to the time period of
+
+00:03:41.360 --> 00:03:44.210
+the given pipeline execution can help improve the quality
+
+00:03:44.210 --> 00:03:47.420
+and accuracy of the analyses performed by a pipeline.
+
+00:03:47.419 --> 00:03:50.089
+For example, let's pretend we extended
+
+00:03:50.090 --> 00:03:54.200
+our bike share traffic pipeline to include a marketing analysis component.
+
+00:03:54.199 --> 00:03:57.319
+We might denote that by the marketing table you see on the slide here.
+
+00:03:57.319 --> 00:04:00.715
+So we already have the trips table which we're familiar with.
+
+00:04:00.715 --> 00:04:05.990
+This new marketing analysis operator will compare overall traffic year-over-year for
+
+00:04:05.990 --> 00:04:08.390
+our bikeshare company and try to determine if
+
+00:04:08.389 --> 00:04:12.199
+increased marketing spend led to an increase in ridership.
+
+00:04:12.199 --> 00:04:16.089
+If we were to add an operator to our DAG to execute this task,
+
+00:04:16.089 --> 00:04:20.029
+we would use schedules and templating to ensure that our analysis only
+
+00:04:20.029 --> 00:04:24.274
+targets the data related to this time period and a set of data for all time.
+
+00:04:24.274 --> 00:04:26.344
+So again, returning to the diagram,
+
+00:04:26.345 --> 00:04:29.455
+we can see here that we're only looking at data for November.
+
+00:04:29.454 --> 00:04:31.004
+In the trips table,
+
+00:04:31.004 --> 00:04:34.939
+we can denote November data by this orange section on the table.
+
+00:04:34.939 --> 00:04:37.219
+Likewise in the marketing table,
+
+00:04:37.220 --> 00:04:43.130
+we want to just look at November data not all the data for all of marketing for all time.
+
+00:04:43.129 --> 00:04:45.725
+Think for just a moment about what would happen
+
+00:04:45.725 --> 00:04:48.080
+if I was looking at trips data for just November
+
+00:04:48.079 --> 00:04:50.629
+by comparing that same dataset for just November
+
+00:04:50.629 --> 00:04:53.464
+for the trips to marketing data of all time.
+
+00:04:53.464 --> 00:04:55.750
+My analysis would be completely wrong.
+
+00:04:55.750 --> 00:04:59.329
+Likewise, if I was looking at how marketing spend was performing for
+
+00:04:59.329 --> 00:05:03.694
+just November and compare it to all trips data for the entirety of 2018,
+
+00:05:03.694 --> 00:05:05.750
+my data's not going to be very good.
+
+00:05:05.750 --> 00:05:09.170
+So scheduling is a critical feature to understand if
+
+00:05:09.170 --> 00:05:13.160
+you want to have pipelines that produce meaningful results for your data consumers.
+
+00:05:13.160 --> 00:05:15.064
+As I've already pointed out,
+
+00:05:15.064 --> 00:05:19.444
+selecting data limited to a particular timeframe limits the size of that data.
+
+00:05:19.444 --> 00:05:21.949
+This is a form of data partitioning which is
+
+00:05:21.949 --> 00:05:25.430
+a concept we'll cover in depth in the next lecture.
+
+00:05:25.430 --> 00:05:29.240
+Until then, suffice it to say that the last data we process,
+
+00:05:29.240 --> 00:05:31.160
+the faster our pipeline will run.
+
+00:05:31.160 --> 00:05:36.650
+For example, if we had millions of data points for all the bikeshare rides in 2018,
+
+00:05:36.649 --> 00:05:40.129
+it's going to take longer to analyze those data points that it might to
+
+00:05:40.129 --> 00:05:43.819
+analyze hundreds of thousands of data points for just a single month.
+
+00:05:43.819 --> 00:05:46.469
+In this example, I made up a time.
+
+00:05:46.470 --> 00:05:50.720
+I said, let's say it takes 12 hours to look at all the data for 2018.
+
+00:05:50.720 --> 00:05:52.745
+But if I look at just the data for me,
+
+00:05:52.745 --> 00:05:55.449
+it might take one-twelfth of that an hour.
+
+00:05:55.449 --> 00:05:58.534
+This type of partitioning is really useful
+
+00:05:58.535 --> 00:06:02.670
+in making our pipelines speedier with a site or scope.
+

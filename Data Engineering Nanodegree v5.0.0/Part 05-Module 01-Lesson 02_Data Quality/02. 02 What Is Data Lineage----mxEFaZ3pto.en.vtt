@@ -1,0 +1,259 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.035
+Data lineage describes the discrete steps involved in the movement,
+
+00:00:04.035 --> 00:00:07.334
+creation, and calculation of a data set.
+
+00:00:07.334 --> 00:00:09.734
+For example, in Lesson one,
+
+00:00:09.734 --> 00:00:12.809
+we created a station traffic table which
+
+00:00:12.810 --> 00:00:17.070
+contained a lifetime count of arrivals and departures at every bike share station.
+
+00:00:17.070 --> 00:00:20.565
+We would be doing that in this redshift analysis step.
+
+00:00:20.565 --> 00:00:23.595
+The diagram on the slide should look familiar.
+
+00:00:23.594 --> 00:00:26.939
+We have a task for S3 to redshift,
+
+00:00:26.940 --> 00:00:30.455
+and we have another task for redshift analysis.
+
+00:00:30.454 --> 00:00:34.549
+The output of those two tests is the table below,
+
+00:00:34.549 --> 00:00:36.679
+where we count the number of departures
+
+00:00:36.679 --> 00:00:40.265
+and the number of arrivals for each of our bike stations.
+
+00:00:40.265 --> 00:00:43.289
+So, you can see here we have station ID,
+
+00:00:43.289 --> 00:00:45.030
+which is this bike station,
+
+00:00:45.030 --> 00:00:47.390
+we have number of departures from that station,
+
+00:00:47.390 --> 00:00:50.270
+as well as the number of arrivals from that station.
+
+00:00:50.270 --> 00:00:53.560
+At some point, other engineers,
+
+00:00:53.560 --> 00:00:57.545
+analysts, or other data consumers willing to make use of this data.
+
+00:00:57.545 --> 00:01:00.260
+When these data consumers ask how the data was
+
+00:01:00.259 --> 00:01:03.589
+calculated and what the source of the data for the calculation was,
+
+00:01:03.590 --> 00:01:05.500
+we'll need to be able to tell them.
+
+00:01:05.500 --> 00:01:07.805
+Being able to describe the data lineage
+
+00:01:07.805 --> 00:01:10.160
+of our station traffic table will build confidence
+
+00:01:10.159 --> 00:01:12.409
+in our users that are data pipeline is creating
+
+00:01:12.409 --> 00:01:15.379
+meaningful results using the correct data sets.
+
+00:01:15.379 --> 00:01:19.189
+If we can't answer questions and we're not sure what our data lineages,
+
+00:01:19.189 --> 00:01:24.049
+it's less likely that our data consumers will trust our data sets and choose to use them.
+
+00:01:24.049 --> 00:01:27.799
+So, again, if someone in our organization asked us how we calculated
+
+00:01:27.799 --> 00:01:32.254
+the number of departures or the number of arrivals for say station 192,
+
+00:01:32.254 --> 00:01:34.819
+we could actually point to this diagram up here and tell them
+
+00:01:34.819 --> 00:01:37.459
+exactly what happened, step-by-step.
+
+00:01:37.459 --> 00:01:41.829
+Here, we took data from the overall trips for all 2018,
+
+00:01:41.829 --> 00:01:44.429
+and then we copy that CVS to redshift,
+
+00:01:44.430 --> 00:01:45.640
+and then within redshift,
+
+00:01:45.640 --> 00:01:48.400
+we performed analysis on that data set.
+
+00:01:48.400 --> 00:01:50.500
+Another major benefit of servicing
+
+00:01:50.500 --> 00:01:53.560
+the data lineage of your data sets is that it allows everyone in
+
+00:01:53.560 --> 00:01:58.450
+the organization to agree on the definition of how a particular metric is calculated.
+
+00:01:58.450 --> 00:02:00.625
+The more our bikeshare company grows,
+
+00:02:00.625 --> 00:02:05.200
+the more people and divisions there will be that need to agree on key metrics.
+
+00:02:05.200 --> 00:02:08.469
+If one person or group has one definition of a
+
+00:02:08.469 --> 00:02:11.889
+metric and another person or group has a different definition,
+
+00:02:11.889 --> 00:02:14.419
+we're going to be in a lot of trouble as a business.
+
+00:02:14.419 --> 00:02:16.809
+Describing and servicing data lineage is one
+
+00:02:16.810 --> 00:02:19.120
+of the key ways we can ensure that everyone in
+
+00:02:19.120 --> 00:02:21.039
+the organization has access to and
+
+00:02:21.039 --> 00:02:24.310
+understands where data originates and how it's calculated.
+
+00:02:24.310 --> 00:02:27.545
+So, again, coming back to this table,
+
+00:02:27.544 --> 00:02:29.054
+we are data engineers,
+
+00:02:29.055 --> 00:02:31.319
+we designed our tasks.
+
+00:02:31.319 --> 00:02:34.909
+If we have a business analyst or a data scientist who are partnered with,
+
+00:02:34.909 --> 00:02:36.500
+who are our data customers,
+
+00:02:36.500 --> 00:02:39.849
+they might ask us to prove that this number is correct.
+
+00:02:39.849 --> 00:02:41.120
+In this particular case,
+
+00:02:41.120 --> 00:02:42.950
+the calculation is not very involved,
+
+00:02:42.949 --> 00:02:47.599
+but it's still important for us to be able to tell our data consumers exactly where
+
+00:02:47.599 --> 00:02:49.819
+our data came from and how we calculated
+
+00:02:49.819 --> 00:02:52.805
+it so that they trust that those numbers are correct.
+
+00:02:52.805 --> 00:02:55.424
+Finally, as a data engineer,
+
+00:02:55.424 --> 00:02:59.224
+data lineage helps us track down the route of errors when they occur.
+
+00:02:59.224 --> 00:03:03.125
+If each step of the data movement and transformation process is well described,
+
+00:03:03.125 --> 00:03:05.210
+we can easily find problems when they occur.
+
+00:03:05.210 --> 00:03:07.370
+So, let's pretend again as
+
+00:03:07.370 --> 00:03:11.615
+data engineers that we had a problem running this redshift analysis,
+
+00:03:11.615 --> 00:03:15.810
+and it's entirely possible that in the last exercise while you're doing it,
+
+00:03:15.810 --> 00:03:19.835
+you may have had an issue completing the lesson successfully the first time.
+
+00:03:19.835 --> 00:03:23.030
+It's likely that maybe the table wasn't produced at all,
+
+00:03:23.030 --> 00:03:26.090
+or maybe the table is produced with the wrong information.
+
+00:03:26.090 --> 00:03:30.140
+In that scenario, we want to be able to know that the analysis failed.
+
+00:03:30.139 --> 00:03:31.759
+In this particular case,
+
+00:03:31.759 --> 00:03:34.939
+we might have not a number or NaNs in all of our rows,
+
+00:03:34.939 --> 00:03:38.030
+and so this would be an indicator that something has failed.
+
+00:03:38.030 --> 00:03:41.435
+There are additional steps we can add to our pipeline
+
+00:03:41.435 --> 00:03:45.814
+to actually verify that we've run into these types of issues.
+
+00:03:45.814 --> 00:03:48.169
+We're going to talk about that a little bit later in this lesson.
+
+00:03:48.169 --> 00:03:51.259
+But for now, just seeing that the analysis step has failed
+
+00:03:51.259 --> 00:03:55.560
+is already a really good start for us to find issues in our pipelines.
+
+00:03:55.870 --> 00:03:59.030
+Returning to the last exercise of lesson one,
+
+00:03:59.030 --> 00:04:01.555
+if our location traffic task had failed,
+
+00:04:01.555 --> 00:04:04.010
+we can immediately identify the location of
+
+00:04:04.009 --> 00:04:06.664
+that failure by using the graph view and airflow.
+
+00:04:06.664 --> 00:04:08.435
+As you can see in this diagram,
+
+00:04:08.435 --> 00:04:11.719
+location traffic, a circle with red to show that it failed.
+
+00:04:11.719 --> 00:04:14.895
+Again, the location traffic failed here,
+
+00:04:14.895 --> 00:04:18.730
+and some of you very well may have seen something similar in your first exercise.
+

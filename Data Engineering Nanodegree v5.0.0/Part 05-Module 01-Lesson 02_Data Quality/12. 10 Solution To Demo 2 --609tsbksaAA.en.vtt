@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.850
+Hopefully everybody had a good time working in exercise two.
+
+00:00:02.850 --> 00:00:05.084
+I'm going to review the solution with you real quick.
+
+00:00:05.084 --> 00:00:09.179
+So, we already saw in my demonstration,
+
+00:00:09.179 --> 00:00:11.384
+how to add a monthly interval.
+
+00:00:11.384 --> 00:00:14.129
+Major difference between the exercise and what I
+
+00:00:14.130 --> 00:00:18.135
+demonstrated was the frequency of the runs and how long it was running for.
+
+00:00:18.135 --> 00:00:19.515
+So, I'm going to go ahead,
+
+00:00:19.515 --> 00:00:20.910
+move back to the code.
+
+00:00:20.910 --> 00:00:22.530
+I'm going to pull up the solution here.
+
+00:00:22.530 --> 00:00:26.054
+So, we're looking at lesson two, exercise two.
+
+00:00:26.054 --> 00:00:29.024
+Okay. So, in the code,
+
+00:00:29.024 --> 00:00:32.489
+I asked for you to set an end date, February first.
+
+00:00:32.490 --> 00:00:36.375
+So, your code should look something like this, February one.
+
+00:00:36.375 --> 00:00:39.314
+Secondly, I asked for a schedule interval of monthly,
+
+00:00:39.314 --> 00:00:42.344
+and I wanted to use at the max active runs to one.
+
+00:00:42.344 --> 00:00:46.929
+Once you've done that, very similar to what you saw me show in the Airflow UI,
+
+00:00:46.929 --> 00:00:49.130
+you would have pulled up the Airflow UI.
+
+00:00:49.130 --> 00:00:52.915
+Seen lesson two, exercise two,
+
+00:00:52.914 --> 00:00:54.585
+you would've turned it on.
+
+00:00:54.585 --> 00:00:56.204
+Without clicking the run button,
+
+00:00:56.204 --> 00:00:57.524
+you didn't need to click this.
+
+00:00:57.524 --> 00:01:02.045
+Airflow automatically would have backfilled for both January and February.
+
+00:01:02.045 --> 00:01:06.775
+You could click into the DAG and you can see a couple of columns here.
+
+00:01:06.775 --> 00:01:11.775
+Click into the graph view and you can see a graph of those runs.
+
+00:01:11.775 --> 00:01:13.655
+Now, it's worth mentioning.
+
+00:01:13.655 --> 00:01:16.070
+If you didn't want to just run through February,
+
+00:01:16.069 --> 00:01:19.159
+if you wanted to run through the end of 2018 or even to today,
+
+00:01:19.159 --> 00:01:21.280
+you're more than welcome to do that.
+
+00:01:21.280 --> 00:01:22.855
+For the sake of speed,
+
+00:01:22.855 --> 00:01:24.710
+we had you only do a couple of backfills,
+
+00:01:24.709 --> 00:01:27.149
+but there's nothing wrong with adding more.
+

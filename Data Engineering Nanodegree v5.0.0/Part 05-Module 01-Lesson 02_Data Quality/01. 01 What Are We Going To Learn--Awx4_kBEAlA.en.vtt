@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.234
+In this lesson, we'll be covering
+
+00:00:02.234 --> 00:00:05.564
+new concepts and expanding on a few we covered in lesson one.
+
+00:00:05.565 --> 00:00:08.759
+Students will learn what data lineage is and why it's
+
+00:00:08.759 --> 00:00:12.044
+critical to defining and maintaining your data pipelines.
+
+00:00:12.044 --> 00:00:14.039
+Next, we'll go in depth on
+
+00:00:14.039 --> 00:00:15.869
+data pipeline schedules and learn how to
+
+00:00:15.869 --> 00:00:18.689
+leverage them to make our pipelines more manageable.
+
+00:00:18.690 --> 00:00:22.545
+The handle on schedules will be ready to dive in on data partitioning
+
+00:00:22.545 --> 00:00:26.535
+and see how partitioning can make our pipelines faster and more reliable.
+
+00:00:26.535 --> 00:00:31.035
+We'll conclude this lesson with an overview of data quality, how it's defined,
+
+00:00:31.035 --> 00:00:33.479
+and how we can build and test to our data pipelines to
+
+00:00:33.479 --> 00:00:36.399
+ensure that our data pipelines are working as intended.
+

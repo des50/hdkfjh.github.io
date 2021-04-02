@@ -1,0 +1,381 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Goals of Data Partitioning</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Data Quality</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. What we are going to learn.html">01. What we are going to learn?</a>
+    </li>
+    <li class="">
+      <a href="02.  What is Data Lineage.html">02.  What is Data Lineage?</a>
+    </li>
+    <li class="">
+      <a href="03.  Visualizing Data Lineage.html">03.  Visualizing Data Lineage</a>
+    </li>
+    <li class="">
+      <a href="04. Demo 1 Data Lineage in Airflow.html">04. Demo 1: Data Lineage in Airflow</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise 1 Data Lineage in Airflow.html">05. Exercise 1: Data Lineage in Airflow</a>
+    </li>
+    <li class="">
+      <a href="06. Solution 1 Data Lineage in Airflow.html">06. Solution 1: Data Lineage in Airflow</a>
+    </li>
+    <li class="">
+      <a href="07. Data Pipeline Schedules.html">07. Data Pipeline Schedules</a>
+    </li>
+    <li class="">
+      <a href="08. Scheduling in Airflow.html">08. Scheduling in Airflow</a>
+    </li>
+    <li class="">
+      <a href="09. Updating DAGs.html">09. Updating DAGs</a>
+    </li>
+    <li class="">
+      <a href="10. Demo 2 Schedules and Backfills in Airflow.html">10. Demo 2: Schedules and Backfills in Airflow</a>
+    </li>
+    <li class="">
+      <a href="11. Exercise 2 Schedules and Backfills in Airflow.html">11. Exercise 2: Schedules and Backfills in Airflow</a>
+    </li>
+    <li class="">
+      <a href="12. Solution 2  Schedules and Backfills in Airflow.html">12. Solution 2: : Schedules and Backfills in Airflow</a>
+    </li>
+    <li class="">
+      <a href="13. Data Partitioning.html">13. Data Partitioning</a>
+    </li>
+    <li class="">
+      <a href="14. Goals of Data Partitioning.html">14. Goals of Data Partitioning</a>
+    </li>
+    <li class="">
+      <a href="15. Demo 3 Data Partitioning.html">15. Demo 3: Data Partitioning</a>
+    </li>
+    <li class="">
+      <a href="16. Exercise 3 Data Partitioning.html">16. Exercise 3: Data Partitioning</a>
+    </li>
+    <li class="">
+      <a href="17. Solution 3 Data Partitioning.html">17. Solution 3: Data Partitioning</a>
+    </li>
+    <li class="">
+      <a href="18. Data Quality.html">18. Data Quality</a>
+    </li>
+    <li class="">
+      <a href="19. Demo 4 Data Quality.html">19. Demo 4: Data Quality</a>
+    </li>
+    <li class="">
+      <a href="20. Exercise 4 Data Quality.html">20. Exercise 4: Data Quality</a>
+    </li>
+    <li class="">
+      <a href="21. Solution 4 Data Quality.html">21. Solution 4: Data Quality</a>
+    </li>
+    <li class="">
+      <a href="22. Conclusion.html">22. Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">14. Goals of Data Partitioning</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>12 Goals Of Data Partitioning -</p></h3>
+  <video controls>
+  <source src="14. 12 Goals Of Data Partitioning --Ly3XBoVs1tU.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="14. 12 Goals Of Data Partitioning --Ly3XBoVs1tU.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="why-data-partitioning">Why Data Partitioning?</h3>
+<p>Pipelines designed to work with partitioned data fail more gracefully. Smaller datasets, smaller time periods, and related concepts are easier to debug than big datasets, large time periods, and unrelated concepts. Partitioning makes debugging and rerunning failed tasks much simpler. It also enables easier redos of work, reducing cost and time.</p>
+<p>Another great thing about Airflow is that if your data is partitioned appropriately, your tasks will naturally have fewer dependencies on each other. Because of this, Airflow will be able to parallelize execution of your DAGs to produce your results even faster.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Types of partitioning</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>What are four common types of data partitioning?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1549934873106" name="825246" id="a1549934873106">
+      <label for="a1549934873106"><p>Location</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1549934913302" name="825246" id="a1549934913302">
+      <label for="a1549934913302"><p>Logical</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1549934913891" name="825246" id="a1549934913891">
+      <label for="a1549934913891"><p>Size</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1549934914284" name="825246" id="a1549934914284">
+      <label for="a1549934914284"><p>Cloud</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1549934915148" name="825246" id="a1549934915148">
+      <label for="a1549934915148"><p>Time</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>Location</li>
+      <li>Logical</li>
+      <li>Size</li>
+      <li>Time</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Logical partitioning</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Logical Partitioning is the process of…</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1549935067323" name="825247" id="a1549935067323">
+        <label for="a1549935067323"><p>Processing data based on its location in a datastore</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1549935069227" name="825247" id="a1549935069227">
+        <label for="a1549935069227"><p>Separating data for processing based on desired or required storage limits</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1549935070156" name="825247" id="a1549935070156">
+        <label for="a1549935070156"><p>Processing data based on a schedule or when it was created</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1549935070531" name="825247" id="a1549935070531">
+        <label for="a1549935070531"><p>Breaking conceptually related data into discrete groups for processing</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Breaking conceptually related data into discrete groups for processing
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Time Partitioning</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Time Partitioning is the process of…</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1549935114144" name="825248" id="a1549935114144">
+        <label for="a1549935114144"><p>Processing data based on its location in a datastore</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1549935124020" name="825248" id="a1549935124020">
+        <label for="a1549935124020"><p>Separating data for processing based on desired or required storage limits</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1549935124508" name="825248" id="a1549935124508">
+        <label for="a1549935124508"><p>Processing data based on a schedule or when it was created</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1549935125059" name="825248" id="a1549935125059">
+        <label for="a1549935125059"><p>Breaking conceptually related data into discrete groups for processing</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Processing data based on a schedule or when it was created
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Size Partitioning</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Size Partitioning is the process of</p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1549935165142" name="825249" id="a1549935165142">
+        <label for="a1549935165142"><p>Processing data based on its location in a datastore </p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1549935182941" name="825249" id="a1549935182941">
+        <label for="a1549935182941"><p>Separating data for processing based on desired or required storage limits</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1549935183540" name="825249" id="a1549935183540">
+        <label for="a1549935183540"><p>Processing data based on a schedule or when it was created</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1549935184045" name="825249" id="a1549935184045">
+        <label for="a1549935184045"><p>Breaking conceptually related data into discrete groups for processing</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Separating data for processing based on desired or required storage limits
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="15. Demo 3 Data Partitioning.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('14. Goals of Data Partitioning')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

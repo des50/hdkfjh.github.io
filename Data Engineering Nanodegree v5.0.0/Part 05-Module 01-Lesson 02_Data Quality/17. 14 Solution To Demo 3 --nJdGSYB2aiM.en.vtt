@@ -1,0 +1,103 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.120
+Let's take a look at the solution for exercise 3.
+
+00:00:04.280 --> 00:00:08.890
+So I'm going to open up my solutions folder.
+
+00:00:09.259 --> 00:00:12.914
+Lesson 2, exercise 3.
+
+00:00:12.914 --> 00:00:15.914
+So we had to change a couple of things here.
+
+00:00:15.914 --> 00:00:18.199
+First, we needed to set the execution date,
+
+00:00:18.199 --> 00:00:21.030
+equal to kwargs execution date.
+
+00:00:21.030 --> 00:00:24.330
+So because we provide a context to the function,
+
+00:00:24.329 --> 00:00:26.548
+we're able to look at the keyword arguments,
+
+00:00:26.548 --> 00:00:28.515
+and get the execution date.
+
+00:00:28.515 --> 00:00:34.950
+Just a reminder that the execution date is the actual datetime.date time object,
+
+00:00:34.950 --> 00:00:40.405
+that gives us the year and month of executions that we can properly segment the data.
+
+00:00:40.405 --> 00:00:48.770
+We go to the bottom where we have our actual provide context statement equal to true.
+
+00:00:48.770 --> 00:00:51.440
+So our Python operator that's loading to trip data,
+
+00:00:51.439 --> 00:00:57.030
+is now going to provide context to the actual function that we're calling.
+
+00:00:57.789 --> 00:01:02.464
+You would end up seeing a similar result to what you saw in the demonstration.
+
+00:01:02.465 --> 00:01:05.195
+Where you would see data run month by month,
+
+00:01:05.194 --> 00:01:08.134
+but instead of seeing the data run month by month,
+
+00:01:08.135 --> 00:01:10.685
+or load all the data month by month,
+
+00:01:10.685 --> 00:01:15.094
+you're going to see it load just that month's worth of data for that particular run.
+
+00:01:15.094 --> 00:01:17.120
+So I'm going to toggle this off,
+
+00:01:17.120 --> 00:01:21.180
+and then we're going to return to our slides.
+
+00:01:21.769 --> 00:01:25.909
+There was actually one quick question I want to just cover, which was,
+
+00:01:25.909 --> 00:01:29.134
+if you were just to provide SQL string,
+
+00:01:29.135 --> 00:01:33.170
+say here, would that work?
+
+00:01:33.170 --> 00:01:37.500
+The answer is, yes. You could just type in SQL here like this,
+
+00:01:37.500 --> 00:01:42.045
+select star from stations.
+
+00:01:42.045 --> 00:01:44.375
+You can write SQL just like that.
+
+00:01:44.375 --> 00:01:47.719
+You don't actually need to make it a separate variable and import it.
+
+00:01:47.719 --> 00:01:50.810
+I'm doing that just because I don't want to distract you guys,
+
+00:01:50.810 --> 00:01:55.519
+as you go through and try to parse the Airflow.
+
+00:01:55.519 --> 00:01:56.750
+I wanted just to be it out.
+
+00:01:56.750 --> 00:01:58.420
+Getting Airflow organized and setup.
+
+00:01:58.420 --> 00:02:03.120
+But you absolutely could come in here and write SQL statements just like this.
+

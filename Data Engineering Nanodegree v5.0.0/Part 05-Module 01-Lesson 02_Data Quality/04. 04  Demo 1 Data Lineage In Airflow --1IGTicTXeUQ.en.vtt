@@ -1,0 +1,259 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.879
+Okay. Now that you've seen data lineage and we've talked about data lineage,
+
+00:00:05.879 --> 00:00:08.865
+we're going to go ahead and walk through demonstration.
+
+00:00:08.865 --> 00:00:14.085
+So, we're actually going to just pick up where we left off on the previous demonstration.
+
+00:00:14.085 --> 00:00:17.800
+So, I'm going to go to airflow,
+
+00:00:18.050 --> 00:00:22.769
+I'm going to go back to lesson two demo one.
+
+00:00:22.769 --> 00:00:25.454
+and I'm going to pull it up in the code.
+
+00:00:25.454 --> 00:00:30.029
+So, when I close out of the solution for lesson six,
+
+00:00:30.030 --> 00:00:35.745
+open demo one and then we're going to take a look at the code.
+
+00:00:35.744 --> 00:00:37.814
+So, this code should look very familiar.
+
+00:00:37.814 --> 00:00:41.849
+We have the function load trip data to redshift.
+
+00:00:41.850 --> 00:00:47.015
+We have our DAG definition on line 24 to 27.
+
+00:00:47.015 --> 00:00:50.329
+We have the create trips table, postgres operator.
+
+00:00:50.329 --> 00:00:52.159
+We have our copy trips task,
+
+00:00:52.159 --> 00:00:56.659
+Python operator, and finally we have the location traffic task.
+
+00:00:56.659 --> 00:01:00.694
+Then we assign the create trips table to copy trips task.
+
+00:01:00.695 --> 00:01:03.335
+All right. So we have three tasks here.
+
+00:01:03.335 --> 00:01:04.534
+We create a table,
+
+00:01:04.534 --> 00:01:09.034
+we copy the trips to that table and then finally we run a calculation.
+
+00:01:09.034 --> 00:01:14.674
+So at this point, this is identical to the final exercise of less than one.
+
+00:01:14.674 --> 00:01:16.969
+Before we move on, I want to actually run
+
+00:01:16.969 --> 00:01:21.454
+this one more time just to get a history and listen to demo one.
+
+00:01:21.454 --> 00:01:23.734
+So I'm going to turn on lesson two,
+
+00:01:23.734 --> 00:01:27.769
+demo one and I made sure that lesson one solution six is turned off.
+
+00:01:27.769 --> 00:01:30.994
+When it come over here and then I'm going to click to trigger the DAG.
+
+00:01:30.995 --> 00:01:33.329
+I'm going to click "Okay".
+
+00:01:33.349 --> 00:01:38.089
+As you can see, it's already started to schedule our tasks.
+
+00:01:38.090 --> 00:01:41.939
+So we're going to wait a moment for this task to complete.
+
+00:01:42.609 --> 00:01:45.984
+Now it's going to load the trips from S3 to redshift,
+
+00:01:45.984 --> 00:01:48.665
+and you can see there's something very confusing about this.
+
+00:01:48.665 --> 00:01:52.025
+Calculate location traffic isn't in the right place,
+
+00:01:52.025 --> 00:01:53.555
+and if you look at our graph view,
+
+00:01:53.555 --> 00:01:59.215
+we can see that it's actually not correctly connected to load trips from S3 to redshift.
+
+00:01:59.215 --> 00:02:03.140
+Again, we can see here that load trips from S3 to redshift is not
+
+00:02:03.140 --> 00:02:08.060
+directing itself to calculate location traffic. So that's an issue.
+
+00:02:08.060 --> 00:02:10.735
+We may have some data left and redshift,
+
+00:02:10.735 --> 00:02:14.810
+but because we're not using that data as a dependency for calculate location traffic,
+
+00:02:14.810 --> 00:02:18.485
+we can't actually be sure that the right data was used, right?
+
+00:02:18.485 --> 00:02:21.170
+If this run calculate location traffic
+
+00:02:21.169 --> 00:02:24.714
+before we complete loading the trips from S3 to redshift,
+
+00:02:24.715 --> 00:02:26.909
+what's in here anyway?
+
+00:02:26.909 --> 00:02:31.310
+So, this is a bug in our DAG and it's something that we need to fix.
+
+00:02:31.310 --> 00:02:37.219
+So, I'm going to return to the code and we can see that the issue
+
+00:02:37.219 --> 00:02:39.319
+with the code here is that we never actually
+
+00:02:39.319 --> 00:02:43.250
+assigned the location traffic task as a dependency.
+
+00:02:43.250 --> 00:02:48.905
+Okay? So, I'm going to copy this and I'm going to correct this DAG.
+
+00:02:48.905 --> 00:02:55.379
+So I'm going say copy trips task and I'm going to assign it.
+
+00:02:55.939 --> 00:02:58.514
+Come back over here,
+
+00:02:58.514 --> 00:03:03.819
+I'm going to go back to the DAG's page and we're going to run it one more time.
+
+00:03:06.139 --> 00:03:09.949
+I show that once more and we can
+
+00:03:09.949 --> 00:03:12.964
+see airflow is starting to actually run our task once again.
+
+00:03:12.965 --> 00:03:14.675
+So I'm going to click in to lesson two,
+
+00:03:14.675 --> 00:03:20.330
+demo one, and we can still see the DAG isn't rendering correctly.
+
+00:03:20.330 --> 00:03:22.805
+So, airflow actually needs to finish running
+
+00:03:22.805 --> 00:03:27.590
+the updated DAG steps to actually recognize the new ordering of the graph.
+
+00:03:27.590 --> 00:03:29.495
+So when I click in here,
+
+00:03:29.495 --> 00:03:33.875
+back to the graph view and we can see that this still looks the same as well.
+
+00:03:33.875 --> 00:03:37.745
+So it can take airflow just a few moments to actually recognize the change.
+
+00:03:37.745 --> 00:03:40.325
+So I'm going to refresh here a few times,
+
+00:03:40.324 --> 00:03:45.319
+and then we can see that airflow actually recognizes the update to our DAG,
+
+00:03:45.319 --> 00:03:47.824
+that the ordering is now correct.
+
+00:03:47.824 --> 00:03:51.004
+Now, the purpose of this demonstration is to show you that you can
+
+00:03:51.004 --> 00:03:53.960
+update the DAG and airflow will pick up those changes.
+
+00:03:53.960 --> 00:03:56.599
+So, we were able to correct the mistake that we made in
+
+00:03:56.599 --> 00:04:00.979
+this DAG by actually adding the ordering to the calculate location traffic table.
+
+00:04:00.979 --> 00:04:05.299
+It's important to note that if we go back in history,
+
+00:04:05.300 --> 00:04:08.075
+after this change has had a time to propagate through airflow.
+
+00:04:08.074 --> 00:04:10.539
+So, if I look at the previous run,
+
+00:04:10.539 --> 00:04:16.909
+we can see that it still shows us the correct layout for that particular run but
+
+00:04:16.910 --> 00:04:19.865
+eventually this will actually correct itself
+
+00:04:19.865 --> 00:04:24.155
+to look like it was a dependency of low trips from S3 to redshift.
+
+00:04:24.154 --> 00:04:25.519
+So you can see,
+
+00:04:25.519 --> 00:04:29.894
+we're looking at the old run and now airflow things that it ran,
+
+00:04:29.894 --> 00:04:33.224
+calculate location traffic, afterload trips from S3 to redshift.
+
+00:04:33.225 --> 00:04:36.200
+So, the reason I we're doing this demonstration is just to show you
+
+00:04:36.199 --> 00:04:39.180
+that while airflow is a very powerful tool for tracking data lineage,
+
+00:04:39.180 --> 00:04:43.194
+you need to be very careful with how you evolve your DAGs over time.
+
+00:04:43.194 --> 00:04:45.449
+For example, if this wasn't a bug,
+
+00:04:45.449 --> 00:04:47.354
+if this was actually in the steak,
+
+00:04:47.355 --> 00:04:49.265
+or excuse me, if this wasn't a bug,
+
+00:04:49.264 --> 00:04:52.115
+if this was actually a feature change to our DAG,
+
+00:04:52.115 --> 00:04:55.759
+it would likely not be a good idea at all to update the DAG.
+
+00:04:55.759 --> 00:04:59.024
+It would be a better idea to go back to the screen,
+
+00:04:59.024 --> 00:05:00.359
+turn off lesson two,
+
+00:05:00.360 --> 00:05:05.150
+demo one and create a second DAG with the change that we want it to reflect.
+
+00:05:05.149 --> 00:05:10.409
+The reason for this is we don't want to confuse ourselves as history changes over time.
+

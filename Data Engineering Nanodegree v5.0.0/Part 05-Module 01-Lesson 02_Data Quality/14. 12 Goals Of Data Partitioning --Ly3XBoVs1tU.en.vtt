@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.435
+Pipeline is designed to work with partition data fail more gracefully.
+
+00:00:03.435 --> 00:00:05.685
+Smaller datasets, smaller time periods,
+
+00:00:05.684 --> 00:00:09.209
+and related concepts are easier to debug than big datasets,
+
+00:00:09.210 --> 00:00:12.240
+large time periods, and unrelated concepts.
+
+00:00:12.240 --> 00:00:14.609
+In Airflow, if you leverage the concepts of data
+
+00:00:14.609 --> 00:00:17.280
+partitioning to help design the tasks in your DAG,
+
+00:00:17.280 --> 00:00:21.164
+You'll find that debugging and rerunning failed tests will be much simpler.
+
+00:00:21.164 --> 00:00:24.778
+Another great thing about Airflow is that if your data is partitioned appropriately,
+
+00:00:24.778 --> 00:00:27.434
+your task will naturally have fewer dependencies on each other.
+
+00:00:27.434 --> 00:00:30.269
+Because of this, Airflow will be able to parallelize
+
+00:00:30.269 --> 00:00:34.185
+execution of your DAGs to produce your results even faster.
+
+00:00:34.185 --> 00:00:37.875
+Another great thing about Airflow is that if your data is partitioned appropriately,
+
+00:00:37.875 --> 00:00:40.369
+your task will naturally have fewer dependencies on each other.
+
+00:00:40.369 --> 00:00:42.739
+Because of this, Airflow will be able to parallelize
+
+00:00:42.740 --> 00:00:45.800
+execution of your DAGs to produce your results even faster.
+
+00:00:45.799 --> 00:00:48.619
+This is an example from the previous demonstration.
+
+00:00:48.619 --> 00:00:50.989
+You can see here that we
+
+00:00:50.990 --> 00:00:53.929
+have both of these tasks and they're running state at the same time.
+
+00:00:53.929 --> 00:00:57.789
+So, these two tasks are executing in parallel.
+

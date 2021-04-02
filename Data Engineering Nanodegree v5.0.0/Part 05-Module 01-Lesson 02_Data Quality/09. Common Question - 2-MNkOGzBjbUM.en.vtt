@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.285
+Great question. So, question was,
+
+00:00:03.285 --> 00:00:06.060
+"Is time the only type of partition?
+
+00:00:06.059 --> 00:00:10.050
+Can we partition on other types of things like an event or a value?"
+
+00:00:10.050 --> 00:00:12.675
+Absolutely, there are other types of partitioning.
+
+00:00:12.675 --> 00:00:14.895
+We're actually going to talk about that shortly.
+
+00:00:14.894 --> 00:00:17.759
+Specifically, we're going to be talking about
+
+00:00:17.760 --> 00:00:23.609
+logical partitioning and also size partitioning or data size partitioning.
+
+00:00:23.609 --> 00:00:29.280
+You could also partition around events and other types of things, but yes.
+
+00:00:29.280 --> 00:00:31.289
+Absolutely, time is a common one,
+
+00:00:31.289 --> 00:00:35.049
+but it's not the only kind of partitioning. Great question.
+
