@@ -1,0 +1,367 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.710
+So in this demo, we're going to walk through
+
+00:00:01.710 --> 00:00:04.530
+the basics of creating a table in Apache Cassandra,
+
+00:00:04.530 --> 00:00:06.255
+inserting rows of data,
+
+00:00:06.255 --> 00:00:09.375
+and doing a simple SQL query to validate the information.
+
+00:00:09.375 --> 00:00:12.230
+We will talk about the importance of denormalization,
+
+00:00:12.230 --> 00:00:14.420
+and the 1 table per 1 query,
+
+00:00:14.420 --> 00:00:18.375
+and how it is a practical good approach with Apache Cassandra.
+
+00:00:18.375 --> 00:00:22.500
+So again, just like before, in lesson 1,
+
+00:00:22.500 --> 00:00:24.540
+we're going to be utilizing Python driver,
+
+00:00:24.540 --> 00:00:26.925
+and we're going to import our Python package here,
+
+00:00:26.925 --> 00:00:29.040
+and it's called Cassandra.
+
+00:00:29.040 --> 00:00:31.680
+Now, let's create a connection to the database.
+
+00:00:31.680 --> 00:00:33.690
+So we learned about this in lesson 1,
+
+00:00:33.690 --> 00:00:36.240
+so I'm just going to zoom through this here again,
+
+00:00:36.240 --> 00:00:38.265
+creating a keyspace we don't have it,
+
+00:00:38.265 --> 00:00:40.605
+but it should be now familiar to you.
+
+00:00:40.605 --> 00:00:42.800
+It's just the basics of setting up, getting ready,
+
+00:00:42.800 --> 00:00:45.490
+getting our session, and then executing queries.
+
+00:00:45.490 --> 00:00:49.835
+So let's imagine we'd like to start creating a Music Library of albums.
+
+00:00:49.835 --> 00:00:52.675
+We want to ask two questions of our data.
+
+00:00:52.675 --> 00:00:57.755
+One, give me every album in my music library that was released in a given year.
+
+00:00:57.755 --> 00:00:59.345
+So any given year,
+
+00:00:59.345 --> 00:01:00.650
+I want to be able to find that.
+
+00:01:00.650 --> 00:01:02.540
+So here's an example of that query,
+
+00:01:02.540 --> 00:01:06.110
+select star from music library where year equals 1970.
+
+00:01:06.110 --> 00:01:09.465
+To be clear, the year can now be any year.
+
+00:01:09.465 --> 00:01:12.335
+Doesn't just have to be 1970, any given year.
+
+00:01:12.335 --> 00:01:18.485
+Number 2, give me every album in my music library that was created by a given artist.
+
+00:01:18.485 --> 00:01:21.560
+So in this select star from artists library,
+
+00:01:21.560 --> 00:01:23.075
+where artist name equals,
+
+00:01:23.075 --> 00:01:24.740
+and in this case it can be any artist that
+
+00:01:24.740 --> 00:01:26.615
+we have in our music library that we're looking for,
+
+00:01:26.615 --> 00:01:28.645
+and it's The Beatles.
+
+00:01:28.645 --> 00:01:32.159
+Because I want to do two different queries,
+
+00:01:32.159 --> 00:01:37.310
+I'm going to need two different tables that partition the data differently.
+
+00:01:37.310 --> 00:01:40.910
+My music library table will need to be by year.
+
+00:01:40.910 --> 00:01:44.435
+That will become my partition key.
+
+00:01:44.435 --> 00:01:49.855
+The artist name will be my clustering column to make each primary key unique.
+
+00:01:49.855 --> 00:01:53.310
+My album library table will be by artist name,
+
+00:01:53.310 --> 00:01:55.935
+and this will be my partition key.
+
+00:01:55.935 --> 00:02:00.610
+Any year will be my clustering column to make each primary key unique.
+
+00:02:00.610 --> 00:02:04.095
+More on primary keys in the next lesson and demos.
+
+00:02:04.095 --> 00:02:07.775
+If this is seeming a little confusing right now, that's okay.
+
+00:02:07.775 --> 00:02:11.480
+Just go through the example with me and we're going to focus way more
+
+00:02:11.480 --> 00:02:15.385
+on this in the rest of the lesson.
+
+00:02:15.385 --> 00:02:18.660
+So again, here's our table name, music library,
+
+00:02:18.660 --> 00:02:20.145
+column 1 will be year,
+
+00:02:20.145 --> 00:02:22.970
+artist name, and album name will be the other columns.
+
+00:02:22.970 --> 00:02:24.095
+In our primary key,
+
+00:02:24.095 --> 00:02:25.955
+we're going to partition by year,
+
+00:02:25.955 --> 00:02:29.600
+and then we're going to have a composite key with artist name.
+
+00:02:29.600 --> 00:02:32.225
+So here's an example of our table,
+
+00:02:32.225 --> 00:02:36.845
+and in the format it would be right partitioned by year,
+
+00:02:36.845 --> 00:02:38.905
+artist name, album name.
+
+00:02:38.905 --> 00:02:41.870
+Then here, we're going to have that same set of data.
+
+00:02:41.870 --> 00:02:43.625
+We're going to have album library,
+
+00:02:43.625 --> 00:02:46.085
+artist name, year, and album name.
+
+00:02:46.085 --> 00:02:47.765
+We're going to have our primary key,
+
+00:02:47.765 --> 00:02:50.585
+it's going to be partitioned by artist name,
+
+00:02:50.585 --> 00:02:53.755
+and we're going have a composite key utilizing year.
+
+00:02:53.755 --> 00:02:56.090
+So you can see we didn't set the columns up in
+
+00:02:56.090 --> 00:02:58.400
+the same way that we did before, and that's okay.
+
+00:02:58.400 --> 00:03:00.050
+But we're going to partition by this,
+
+00:03:00.050 --> 00:03:03.115
+and then we're going to have a clustering column by year.
+
+00:03:03.115 --> 00:03:05.280
+So let's just create both tables.
+
+00:03:05.280 --> 00:03:07.745
+So we're going to create the tables just like we said,
+
+00:03:07.745 --> 00:03:08.870
+year is an int,
+
+00:03:08.870 --> 00:03:12.440
+artist name text, and album name text with primary key,
+
+00:03:12.440 --> 00:03:13.910
+this is your focus.
+
+00:03:13.910 --> 00:03:18.160
+You want to focus on creating these tables with your primary key.
+
+00:03:18.160 --> 00:03:22.065
+So let's create this, let's insert some data.
+
+00:03:22.065 --> 00:03:23.240
+This is all pretty straightforward,
+
+00:03:23.240 --> 00:03:24.980
+so I'm not going through the insert statements,
+
+00:03:24.980 --> 00:03:27.180
+we're just inserting data.
+
+00:03:27.520 --> 00:03:31.885
+So it might have felt as we were doing those inserts.
+
+00:03:31.885 --> 00:03:34.935
+It might have felt as you look through them.
+
+00:03:34.935 --> 00:03:36.750
+Actually let me go back and look at them.
+
+00:03:36.750 --> 00:03:38.730
+I will just want to make it clear.
+
+00:03:38.730 --> 00:03:41.930
+So we're going to be inserting data into
+
+00:03:41.930 --> 00:03:46.860
+both the music library and the album library.. As we saw in that graphic,
+
+00:03:46.860 --> 00:03:49.500
+I showed you that table representation.
+
+00:03:49.500 --> 00:03:54.120
+You're going see a lot of the same data put into the different tables.
+
+00:03:54.120 --> 00:03:56.000
+So let's take an example here.
+
+00:03:56.000 --> 00:03:59.325
+We're going to insert into our query,
+
+00:03:59.325 --> 00:04:00.750
+which is query 1.
+
+00:04:00.750 --> 00:04:03.975
+By the way, I just want to make a note here,
+
+00:04:03.975 --> 00:04:06.560
+I'm using the term query as my variable here
+
+00:04:06.560 --> 00:04:09.300
+because this is a query that I'm going to execute on my database,
+
+00:04:09.300 --> 00:04:11.300
+but this is just a variable name.
+
+00:04:11.300 --> 00:04:13.365
+This variable could be named anything.
+
+00:04:13.365 --> 00:04:15.420
+It doesn't need to be named query, could be named Amanda.
+
+00:04:15.420 --> 00:04:17.900
+It doesn't matter what it is, it's just a variable,
+
+00:04:17.900 --> 00:04:19.400
+and I just thought it was clear that since
+
+00:04:19.400 --> 00:04:21.385
+I'm running a query, that's what I would call it.
+
+00:04:21.385 --> 00:04:22.980
+So like for example here,
+
+00:04:22.980 --> 00:04:25.530
+this other query is called query 1,
+
+00:04:25.530 --> 00:04:29.160
+and that's going to insert into the album table versus the music table.
+
+00:04:29.160 --> 00:04:30.930
+So as we can see here,
+
+00:04:30.930 --> 00:04:34.599
+the first query we're going to do 1970,
+
+00:04:34.599 --> 00:04:36.215
+The Beatles, and Let it Be.
+
+00:04:36.215 --> 00:04:37.860
+Then you can see here,
+
+00:04:37.860 --> 00:04:42.645
+with query 1, we're going to have again the Beatles,1970, and Let it Be.
+
+00:04:42.645 --> 00:04:45.110
+So again, it's duplicate data.
+
+00:04:45.110 --> 00:04:47.645
+So that might have felt unnatural.
+
+00:04:47.645 --> 00:04:49.655
+If I'd just normalize these tables,
+
+00:04:49.655 --> 00:04:53.050
+I wouldn't have extra copies of the data. Wouldn't that be great?
+
+00:04:53.050 --> 00:04:54.740
+While that is true,
+
+00:04:54.740 --> 00:04:57.125
+remember there's no joins in Apache Cassandra.
+
+00:04:57.125 --> 00:05:00.140
+So for the benefit of high availability and scalability,
+
+00:05:00.140 --> 00:05:02.405
+you must denormalize your tables.
+
+00:05:02.405 --> 00:05:04.940
+So let's validate our data model.
+
+00:05:04.940 --> 00:05:09.720
+Let's do that, select star from music library where year equals 1970.
+
+00:05:10.100 --> 00:05:13.260
+Awesome, we got back two results,1970
+
+00:05:13.260 --> 00:05:17.650
+The Beatles Let it Be,1970 The Carpenters, Close To You.
+
+00:05:17.650 --> 00:05:21.320
+Let's validate our data model for our album library.
+
+00:05:21.320 --> 00:05:25.640
+Again, select star from album name where artist name equals the Beatles.
+
+00:05:25.640 --> 00:05:28.565
+Awesome, we got two results, just what we wanted,
+
+00:05:28.565 --> 00:05:31.145
+The Beatles 1975, Rubber Soul,
+
+00:05:31.145 --> 00:05:33.770
+and The Beatles 1970 Let it Be.
+
+00:05:33.770 --> 00:05:35.510
+So for the sake of the demo,
+
+00:05:35.510 --> 00:05:40.890
+I'm going drop my tables and we're going to shut it down. Shut down the connections.
+
