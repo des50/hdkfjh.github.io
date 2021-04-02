@@ -1,0 +1,1533 @@
+{
+  "data": {
+    "lesson": {
+      "id": 809458,
+      "key": "faf1bbd9-859a-47a3-9010-43f4463b7876",
+      "title": "Data Quality",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Students will learn how to track data lineage and set up data pipeline schedules, partition data to optimize pipelines, investigating Data Quality issues, and write tests to ensure data quality.\n",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/faf1bbd9-859a-47a3-9010-43f4463b7876/809458/1552596682491/Data+Quality+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/faf1bbd9-859a-47a3-9010-43f4463b7876/809458/1552596678395/Data+Quality+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 817628,
+          "key": "6dc5e9f6-d855-4192-8468-01767545cb49",
+          "title": "What we are going to learn?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6dc5e9f6-d855-4192-8468-01767545cb49",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826460,
+              "key": "9f2b9b9e-a41f-415f-83f6-1f332f0df0b4",
+              "title": "01 What Are We Going To Learn-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Awx4_kBEAlA",
+                "china_cdn_id": "Awx4_kBEAlA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 809464,
+          "key": "94031a86-8c79-4ad9-824a-ee5f36fff9cc",
+          "title": " What is Data Lineage?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "94031a86-8c79-4ad9-824a-ee5f36fff9cc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826467,
+              "key": "bf35fd64-1107-4648-b520-a66482e76be5",
+              "title": "02 What Is Data Lineage--",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-mxEFaZ3pto",
+                "china_cdn_id": "-mxEFaZ3pto.mp4"
+              }
+            },
+            {
+              "id": 825202,
+              "key": "62aaa272-4f91-431a-ac8b-6e220a5f2769",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Data Lineage\n\n##### Definition\nThe data lineage of a dataset describes the discrete steps involved in the creation, movement, and calculation of that dataset.\n\n##### Why is Data Lineage important?\n1. **Instilling Confidence:** Being able to describe the data lineage of a particular dataset or analysis will build confidence in data consumers (engineers, analysts, data scientists, etc.) that our data pipeline is creating meaningful results using the correct datasets. If the data lineage is unclear, its less likely that the data consumers will trust or use the data. \n2. **Defining Metrics:** Another major benefit of surfacing data lineage is that it allows everyone in the organization to agree on the definition of how a particular metric is calculated.\n3. **Debugging:** Data lineage helps data engineers track down the root of errors when they occur. If each step of the data movement and transformation process is well described, it's easy to find problems when they occur.\n\nIn general, data lineage has important implications for a business. Each department or business unit's success is tied to data and to the flow of data between departments. For e.g., sales departments rely on data to make sales forecasts, while at the same time the finance department would need to track sales and revenue. Each of these departments and roles depend on data, and knowing where to find the data. Data flow and data lineage tools enable data engineers and architects to track the flow of this large web of data.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 809465,
+          "key": "d7cde457-fdaf-4410-9890-35621b85806a",
+          "title": " Visualizing Data Lineage",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d7cde457-fdaf-4410-9890-35621b85806a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826468,
+              "key": "30ad0c36-0958-41fa-9d1b-dc135923484e",
+              "title": "03 Visualizing Data Lineage-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "KWw0iro1JGQ",
+                "china_cdn_id": "KWw0iro1JGQ.mp4"
+              }
+            },
+            {
+              "id": 825204,
+              "key": "5dd6bf5c-4508-460d-b601-0402b79c93e6",
+              "title": "Data Lineage",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5dd6bf5c-4508-460d-b601-0402b79c93e6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the data lineage of a dataset?",
+                "answers": [
+                  {
+                    "id": "a1549929432169",
+                    "text": "The starting location of a dataset",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549929463443",
+                    "text": "Description of the discrete steps involved in the creation, movement, and calculation of that dataset",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549929464043",
+                    "text": "The final destination of a dataset",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549929464581",
+                    "text": "The calculation steps involved in producing a dataset",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825205,
+              "key": "9048ed00-9560-47b6-baff-05c3df130b27",
+              "title": "Data lineage benefits",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9048ed00-9560-47b6-baff-05c3df130b27",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following are benefits of visualizing data lineage?\n",
+                "answers": [
+                  {
+                    "id": "a1549929569534",
+                    "text": "Allows business users to modify our data pipelines",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549929583139",
+                    "text": "Builds confidence in our users that our data pipelines are designed properly",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549929583577",
+                    "text": "Helps organizations surface and agree on dataset definitions",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549929584067",
+                    "text": "Provides easy access to credential management ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549929584874",
+                    "text": "Makes locating errors more obvious",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825209,
+              "key": "6d716a56-705e-4ae7-bae3-f3f1d058a985",
+              "title": "Data Lineage in Airflow",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6d716a56-705e-4ae7-bae3-f3f1d058a985",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which components of Airflow can be used to track data lineage?\n",
+                "answers": [
+                  {
+                    "id": "a1549929823608",
+                    "text": "Connections Configuration Page",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549929837250",
+                    "text": "Rendered code tab for a task",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549929837682",
+                    "text": "Graph view for a DAG",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549929838162",
+                    "text": "Historical runs under the tree view",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549929838778",
+                    "text": "Airflow home page ",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 825211,
+          "key": "ef3fe504-3739-4935-b4af-e61cca31d822",
+          "title": "Demo 1: Data Lineage in Airflow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ef3fe504-3739-4935-b4af-e61cca31d822",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826469,
+              "key": "3b251229-e28e-4f55-95d4-a0f46eeded0c",
+              "title": "04  Demo 1 Data Lineage In Airflow -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1IGTicTXeUQ",
+                "china_cdn_id": "1IGTicTXeUQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 817286,
+          "key": "e77041f6-1fc8-40d2-b6cc-574f2bcb096d",
+          "title": "Exercise 1: Data Lineage in Airflow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e77041f6-1fc8-40d2-b6cc-574f2bcb096d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 817742,
+              "key": "44422f26-8df6-400e-9498-8ee58a7505e6",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c817286xREACTww4o8i7h",
+              "pool_id": "airflow",
+              "view_id": "react-ix4kv",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "mldatasets",
+                      "paths": [
+                        {
+                          "src": "/",
+                          "dest": "/data/"
+                        }
+                      ],
+                      "mountWarnUntil": 0
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [
+                      "/home/workspace/airflow/dags/lesson2_exercises/exercise1.py"
+                    ],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Access Airflow",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 825210,
+          "key": "a2712ffa-3e92-41d6-a653-1396e055e2da",
+          "title": "Solution 1: Data Lineage in Airflow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a2712ffa-3e92-41d6-a653-1396e055e2da",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826470,
+              "key": "31b72ad9-cf6a-463c-8a36-92dc16a88c83",
+              "title": "05 Solution To Demo 1 -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "P4XpKBOfRaw",
+                "china_cdn_id": "P4XpKBOfRaw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 814646,
+          "key": "54c25b1a-834e-42df-90ca-53936c9db08e",
+          "title": "Data Pipeline Schedules",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "54c25b1a-834e-42df-90ca-53936c9db08e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826471,
+              "key": "db2d61f6-3fb1-4f9a-98b7-f1a21ba2fa11",
+              "title": "06  Data Pipelines Schedules -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lQuF2ZShZ98",
+                "china_cdn_id": "lQuF2ZShZ98.mp4"
+              }
+            },
+            {
+              "id": 825220,
+              "key": "efa1a2e0-df2d-47e5-ad42-f06696fd3c2d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Schedules\nPipelines are often driven by schedules which determine what data should be analyzed and when. \n\n##### Why Schedules\n* Pipeline schedules can reduce the amount of data that needs to be processed in a given run. It helps scope the job to only run the data for the time period since the data pipeline last ran. In a naive analysis, with no scope, we would analyze all of the data at all times.\n* Using schedules to select only data relevant to the time period of the given pipeline execution can help improve the quality and accuracy of the analyses performed by our pipeline. \n* Running pipelines on a schedule will decrease the time it takes the pipeline to run.\n* An analysis of larger scope can leverage already-completed work.  For. e.g., if the aggregates for all months prior to now have already been done by a scheduled job, then we only need to perform the aggregation for the current month and add it to the existing totals.\n\n##### Selecting the time period\nDetermining the appropriate time period for a schedule is based on a number of factors which you need to consider as the pipeline designer.\n\n1. **What is the size of data, on average, for a time period?** If an entire years worth of data is only a few kb or mb, then perhaps its fine to load the entire dataset. If an hours worth of data is hundreds of mb or even in the gbs then likely you will need to schedule your pipeline more frequently.\n\n2. **How frequently is data arriving, and how often does the analysis need to be performed?** If our bikeshare company needs trip data every hour, that will be a driving factor in determining the schedule. Alternatively, if we have to load hundreds of thousands of tiny records, even if they don't add up to much in terms of mb or gb, the file access alone will slow down our analysis and we’ll likely want to run it more often.\n\n3. **What's the frequency on related datasets?** A good rule of thumb is that the frequency of a pipeline’s schedule should be determined by the dataset in our pipeline which requires the most frequent analysis. This isn’t universally the case, but it's a good starting assumption. For example, if our trips data is updating every hour, but our bikeshare station table only updates once a quarter, we’ll probably want to run our trip analysis every hour, and not once a quarter.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 814647,
+          "key": "8427b47e-e864-4f49-b0e6-9c6a0495aa23",
+          "title": "Scheduling in Airflow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8427b47e-e864-4f49-b0e6-9c6a0495aa23",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826472,
+              "key": "73cb1720-ea57-47ff-ba74-95a541718f67",
+              "title": "07 Scheduling In Airflow -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wHXPJjofvHo",
+                "china_cdn_id": "wHXPJjofvHo.mp4"
+              }
+            },
+            {
+              "id": 825222,
+              "key": "d2761bd4-f2fc-4c75-a8af-3ae19af72c1d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Schedules in Airflow\n##### Start Date\nAirflow will begin running pipelines on the start date selected. Whenever the start date of a DAG is in the past, and the time difference between the start date and now includes more than one schedule intervals, Airflow will automatically schedule and execute a DAG run to satisfy each one of those intervals. This feature is useful in almost all enterprise settings, where companies have established years of data that may need to be retroactively analyzed.\n\n##### End Date\nAirflow pipelines can also have end dates. You can use an end_date with your pipeline to let Airflow know when to stop running the pipeline. End_dates can also be useful when you want to perform an overhaul or redesign of an existing pipeline. Update the old pipeline with an end_date and then have the new pipeline start on the end date of the old pipeline.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 825224,
+              "key": "179a6b0c-cb05-4fcb-832c-fbb72856bbe0",
+              "title": "Schedules",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "179a6b0c-cb05-4fcb-832c-fbb72856bbe0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "How are schedules used by data pipelines?\n\n\n\n\n",
+                "answers": [
+                  {
+                    "id": "a1549931860399",
+                    "text": "Determine what data should be analyzed and when",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549931869707",
+                    "text": "Determine when to interact with data sources ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549931870395",
+                    "text": "Determine when to run particular tasks",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549931870883",
+                    "text": "Determine when to email observers",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825233,
+              "key": "655c433f-d605-43e3-a810-b3071be39d45",
+              "title": "Airflow Schedules",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "655c433f-d605-43e3-a810-b3071be39d45",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following are used by Airflow to determine schedules?\n\n\n",
+                "answers": [
+                  {
+                    "id": "a1549932347503",
+                    "text": "start_date",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549932354036",
+                    "text": "interval_date",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549932354499",
+                    "text": "end_date",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549932355171",
+                    "text": "schedule_interval",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825234,
+              "key": "0ccf630d-63fe-4640-a555-ecee4713ad1f",
+              "title": "End Date",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0ccf630d-63fe-4640-a555-ecee4713ad1f",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: End date is required by Airflow Schedules.",
+                "answers": [
+                  {
+                    "id": "a1549932460399",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549932471315",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825235,
+              "key": "5b7bf17f-1aa7-462a-88cc-7afdd83b2d05",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5b7bf17f-1aa7-462a-88cc-7afdd83b2d05",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: Start date is required by Airflow Schedules.",
+                "answers": [
+                  {
+                    "id": "a1549932520094",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549932531228",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825236,
+              "key": "581038e4-80c7-4af1-9b2e-25345c7504c3",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "581038e4-80c7-4af1-9b2e-25345c7504c3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: Schedule interval is required by Airflow Schedules.\n",
+                "answers": [
+                  {
+                    "id": "a1549932564835",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549932578156",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 825228,
+          "key": "d2703ac3-811f-49e6-aed6-a4e84f650cce",
+          "title": "Updating DAGs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d2703ac3-811f-49e6-aed6-a4e84f650cce",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826056,
+              "key": "0d950bd8-9c4f-4cd0-94b4-f7a192f1e38d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Common Questions\n\n** Wouldn't creating a new DAG for every feature change become cumbersome because feature changes or bugs happen all the time?**",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826756,
+              "key": "dea821e4-fa35-4595-8511-8f42871fcb54",
+              "title": "Common Question - 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zuLPBN9SZRc",
+                "china_cdn_id": "zuLPBN9SZRc.mp4"
+              }
+            },
+            {
+              "id": 826060,
+              "key": "fbd1f001-7c15-4727-93f0-672a28a18843",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Is time the only type of partition? Can you partition other types, such as events or values?**",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826755,
+              "key": "309316c8-9135-42a4-9269-cd1989a43b11",
+              "title": "Common Question - 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MNkOGzBjbUM",
+                "china_cdn_id": "MNkOGzBjbUM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 825212,
+          "key": "9e747a3b-d4de-4f94-abdf-e1f27f4a11ed",
+          "title": "Demo 2: Schedules and Backfills in Airflow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9e747a3b-d4de-4f94-abdf-e1f27f4a11ed",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826473,
+              "key": "8bd0fd91-54ab-4513-bef7-be0756f542fe",
+              "title": "09 Demo 2 - Schedules And Backfills In Airflow -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MQcZjyqnLjk",
+                "china_cdn_id": "MQcZjyqnLjk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 814648,
+          "key": "1c0704eb-870b-47c2-95e2-00760d375ce8",
+          "title": "Exercise 2: Schedules and Backfills in Airflow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1c0704eb-870b-47c2-95e2-00760d375ce8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 818180,
+              "key": "c5304226-1238-487e-8d22-83c1286afb2b",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c817286xREACTww4o8i7h",
+              "pool_id": "airflow",
+              "view_id": "react-qnefe",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "mldatasets",
+                      "paths": [
+                        {
+                          "src": "/",
+                          "dest": "/data/"
+                        }
+                      ],
+                      "mountWarnUntil": 0
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [
+                      "/home/workspace/airflow/dags/lesson2_exercises/exercise2.py"
+                    ],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Access Airflow",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 825213,
+          "key": "d62f5632-bce6-49b1-ad3b-0d9384d25f5f",
+          "title": "Solution 2: : Schedules and Backfills in Airflow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d62f5632-bce6-49b1-ad3b-0d9384d25f5f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826474,
+              "key": "c415bba4-5166-401b-87ad-c39a76bfdeaa",
+              "title": "10 Solution To Demo 2 -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "609tsbksaAA",
+                "china_cdn_id": "609tsbksaAA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 814649,
+          "key": "44cbc366-a3e8-42b6-8ab3-dee5e9415217",
+          "title": "Data Partitioning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "44cbc366-a3e8-42b6-8ab3-dee5e9415217",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826475,
+              "key": "1b9058d3-4ed0-4ecd-9a1b-a0163ddaaec3",
+              "title": "11 Data Partitioning-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2lQbENrIcXU",
+                "china_cdn_id": "2lQbENrIcXU.mp4"
+              }
+            },
+            {
+              "id": 825242,
+              "key": "e9289fb4-cd47-41a1-8596-c4c3b4bc22c7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Partitioning\n\n##### Schedule partitioning\nNot only are schedules great for reducing the amount of data our pipelines have to process, but they also help us guarantee that we can meet timing guarantees that our data consumers may need. \n\n##### Logical partitioning \nConceptually related data can be partitioned into discrete segments and processed separately. This process of separating data based on its conceptual relationship is called logical partitioning. With logical partitioning, unrelated things belong in separate steps. Consider your dependencies and separate processing around those boundaries. \n\nAlso worth mentioning, the data _location_ is another form of logical partitioning. For example, if our data is stored in a key-value store like Amazon's S3 in a format such as: `s3://<bucket>/<year>/<month>/<day>` we could say that our date is logically partitioned by time.\n\n##### Size Partitioning\nSize partitioning separates data for processing based on desired or required storage limits. This essentially sets the amount of data included in a data pipeline run. Size partitioning is critical to understand when working with large datasets, especially with Airflow. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 814650,
+          "key": "c647295e-5944-45eb-aa81-c698b2ea8355",
+          "title": "Goals of Data Partitioning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c647295e-5944-45eb-aa81-c698b2ea8355",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826476,
+              "key": "1c849fa0-8b14-427b-9112-6b7ccd113cc5",
+              "title": "12 Goals Of Data Partitioning -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ly3XBoVs1tU",
+                "china_cdn_id": "Ly3XBoVs1tU.mp4"
+              }
+            },
+            {
+              "id": 825244,
+              "key": "ac5f3620-fe0e-4558-8d9c-f1abcf69e3cb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Why Data Partitioning?\n\nPipelines designed to work with partitioned data fail more gracefully. Smaller datasets, smaller time periods, and related concepts are easier to debug than big datasets, large time periods, and unrelated concepts. Partitioning makes debugging and rerunning failed tasks much simpler. It also enables easier redos of work, reducing cost and time.\n\nAnother great thing about Airflow is that if your data is partitioned appropriately, your tasks will naturally have fewer dependencies on each other. Because of this, Airflow will be able to parallelize execution of your DAGs to produce your results even faster.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 825246,
+              "key": "eaf0e49b-f272-43ab-aba3-671abf7dc28e",
+              "title": "Types of partitioning",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "eaf0e49b-f272-43ab-aba3-671abf7dc28e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What are four common types of data partitioning?",
+                "answers": [
+                  {
+                    "id": "a1549934873106",
+                    "text": "Location",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549934913302",
+                    "text": "Logical",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549934913891",
+                    "text": "Size",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549934914284",
+                    "text": "Cloud",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549934915148",
+                    "text": "Time",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825247,
+              "key": "6199b56a-30d5-4701-94d4-d15c37591e78",
+              "title": "Logical partitioning",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6199b56a-30d5-4701-94d4-d15c37591e78",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Logical Partitioning is the process of...",
+                "answers": [
+                  {
+                    "id": "a1549935067323",
+                    "text": "Processing data based on its location in a datastore",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549935069227",
+                    "text": "Separating data for processing based on desired or required storage limits",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549935070156",
+                    "text": "Processing data based on a schedule or when it was created",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549935070531",
+                    "text": "Breaking conceptually related data into discrete groups for processing",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825248,
+              "key": "8f362518-641c-40d4-a618-2f8512189672",
+              "title": "Time Partitioning",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8f362518-641c-40d4-a618-2f8512189672",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Time Partitioning is the process of...\n\n\n\n",
+                "answers": [
+                  {
+                    "id": "a1549935114144",
+                    "text": "Processing data based on its location in a datastore",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549935124020",
+                    "text": "Separating data for processing based on desired or required storage limits",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549935124508",
+                    "text": "Processing data based on a schedule or when it was created",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549935125059",
+                    "text": "Breaking conceptually related data into discrete groups for processing",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825249,
+              "key": "a9db0830-b608-4522-b19f-5b2159c04405",
+              "title": "Size Partitioning",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a9db0830-b608-4522-b19f-5b2159c04405",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Size Partitioning is the process of",
+                "answers": [
+                  {
+                    "id": "a1549935165142",
+                    "text": "Processing data based on its location in a datastore ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549935182941",
+                    "text": "Separating data for processing based on desired or required storage limits",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549935183540",
+                    "text": "Processing data based on a schedule or when it was created",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549935184045",
+                    "text": "Breaking conceptually related data into discrete groups for processing",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 825214,
+          "key": "55cab1bc-8e56-46fd-8ea5-3865a42fca37",
+          "title": "Demo 3: Data Partitioning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "55cab1bc-8e56-46fd-8ea5-3865a42fca37",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826477,
+              "key": "4e551d84-ed60-4564-87c8-441d8b509159",
+              "title": "13 Demo 3 - Data Partitioning -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "In this demonstration we upgrade our demonstration DAG to work on logically partitioned data. The data that we use in this lesson has been pre-partitioned in Amazon Web Services (AWS) S3 by creation date. The partition follows the format: `<year>/<month>/<day>/<file>.csv`. \n\nIn practice, it is often best to have Airflow process pre-partitioned data. If your upstream data sources cannot partition data, it is possible to write an Airflow DAG to partition the data. However, it is worth keeping in mind memory limitations on your Airflow workers. If the size of the data to be partitioned exceeds the amount of memory available on your worker, the DAG will not successfully execute.",
+              "video": {
+                "youtube_id": "zHlMjG66alw",
+                "china_cdn_id": "zHlMjG66alw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 814653,
+          "key": "2c1d7279-bafa-4e67-9e49-6b4b122a110f",
+          "title": "Exercise 3: Data Partitioning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2c1d7279-bafa-4e67-9e49-6b4b122a110f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 818181,
+              "key": "a65e69a0-9f35-40d5-95f3-2d5af729f0ce",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c817286xREACTww4o8i7h",
+              "pool_id": "airflow",
+              "view_id": "react-wdi1e",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "mldatasets",
+                      "paths": [
+                        {
+                          "src": "/",
+                          "dest": "/data/"
+                        }
+                      ],
+                      "mountWarnUntil": 0
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [
+                      "/home/workspace/airflow/dags/lesson2_exercises/exercise3.py"
+                    ],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Access Airflow",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 825215,
+          "key": "96d7d030-6885-44be-aed0-a89c95e187d7",
+          "title": "Solution 3: Data Partitioning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "96d7d030-6885-44be-aed0-a89c95e187d7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826478,
+              "key": "5397cc04-0cb4-4dd6-b2ad-8bf76d170068",
+              "title": "14 Solution To Demo 3 -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nJdGSYB2aiM",
+                "china_cdn_id": "nJdGSYB2aiM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 814652,
+          "key": "d1ae7bfe-3153-444c-8e40-070767262b3b",
+          "title": "Data Quality",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d1ae7bfe-3153-444c-8e40-070767262b3b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826479,
+              "key": "939db177-2189-47fe-b65d-35342682af7f",
+              "title": "15 Data Quality -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-ravmjI7RYk",
+                "china_cdn_id": "-ravmjI7RYk.mp4"
+              }
+            },
+            {
+              "id": 825250,
+              "key": "491bc68c-1f66-4961-806a-45808c530435",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Examples of Data Quality Requirements\n\n* Data must be a certain size\n* Data must be accurate to some margin of error\n* Data must arrive within a given timeframe from the start of execution\n* Pipelines must run on a particular schedule\n* Data must not contain any sensitive information\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 825251,
+              "key": "7939b31d-e987-48cc-8f87-a5e9a30d69e0",
+              "title": "Data Quality Requirements",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "7939b31d-e987-48cc-8f87-a5e9a30d69e0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following are true about data quality requirements?",
+                "answers": [
+                  {
+                    "id": "a1549935741721",
+                    "text": "Requirements tell engineers exactly how to build a data pipeline ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549935751100",
+                    "text": "Requirements are how we can set and measure quality ",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549935751558",
+                    "text": "Requirements allow both engineering and non-engineering roles to agree on the high-level method for preparing the output.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549935752027",
+                    "text": "Requirements tell engineers what the output of their data pipelines should be",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825252,
+              "key": "e8cbf7b6-9c29-42fd-ae5c-11ab4f037b15",
+              "title": "SLA Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e8cbf7b6-9c29-42fd-ae5c-11ab4f037b15",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "How would you set a requirement for ensuring that data arrives within a certain timeframe of a DAG starting?",
+                "answers": [
+                  {
+                    "id": "a1549936191750",
+                    "text": "Use a Service Level Agreement",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549936192892",
+                    "text": "Use a schedule",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549936193245",
+                    "text": "Use a start date",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549936193525",
+                    "text": "Use an end date",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825253,
+              "key": "0e68d48c-b784-441a-81ec-ddb304bd1e11",
+              "title": "No data",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0e68d48c-b784-441a-81ec-ddb304bd1e11",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What kind of requirement would be violated if no data was produced by a DAG?\n\n",
+                "answers": [
+                  {
+                    "id": "a1549936423707",
+                    "text": "Data must be accurate to some margin of error",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549936429825",
+                    "text": "Data must arrive within a given timeframe from the start of execution",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549936430292",
+                    "text": "Pipelines must run on a particular Schedule",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549936430876",
+                    "text": "Data must not contain any sensitive information",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549936453148",
+                    "text": "Data must be of a certain size",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825254,
+              "key": "3a31efb0-8f05-4d8f-aa5a-d712f42e99c6",
+              "title": "Data arrival",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3a31efb0-8f05-4d8f-aa5a-d712f42e99c6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What kind of requirement would be violated if data arrived after it was needed?\n\n\n\n\n",
+                "answers": [
+                  {
+                    "id": "a1549936571144",
+                    "text": "Data must be of a certain size",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549936575958",
+                    "text": "Data must be accurate to some margin of error",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549936576428",
+                    "text": "Data must arrive within a given timeframe from the start of execution",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549936576846",
+                    "text": "Pipelines must run on a particular Schedule",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549936577501",
+                    "text": "Data must not contain any sensitive information",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 825216,
+          "key": "c986132e-4706-4870-92cc-b42674bef42c",
+          "title": "Demo 4: Data Quality",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c986132e-4706-4870-92cc-b42674bef42c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826481,
+              "key": "d182f0c9-fdb9-4930-a5f8-48175505793f",
+              "title": "16 Demo 4 - Data Quality",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jvp-f9xHS48",
+                "china_cdn_id": "jvp-f9xHS48.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 814657,
+          "key": "b98249aa-0acb-40a6-b3f0-b2c7264a71a5",
+          "title": "Exercise 4: Data Quality",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b98249aa-0acb-40a6-b3f0-b2c7264a71a5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 818182,
+              "key": "1406c69d-5c49-42e4-bfe8-9dcef4f16855",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c817286xREACTww4o8i7h",
+              "pool_id": "airflow",
+              "view_id": "react-cn4ut",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "mldatasets",
+                      "paths": [
+                        {
+                          "src": "/",
+                          "dest": "/data/"
+                        }
+                      ],
+                      "mountWarnUntil": 0
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [
+                      "/home/workspace/airflow/dags/lesson2_exercises/exercise4.py"
+                    ],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Access Airflow",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 825217,
+          "key": "af850e7a-bfa0-422f-862e-8e88fc2a9807",
+          "title": "Solution 4: Data Quality",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "af850e7a-bfa0-422f-862e-8e88fc2a9807",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827586,
+              "key": "a4efbd8f-d3d0-486a-9d90-51b1a2eb769a",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c817286xREACTww4o8i7h",
+              "pool_id": "airflow",
+              "view_id": "react-uvgl0",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "mldatasets",
+                      "paths": [
+                        {
+                          "src": "/",
+                          "dest": "/data/"
+                        }
+                      ],
+                      "mountWarnUntil": 0
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [
+                      "/home/workspace/airflow/dags/lesson2 - solutions/solution4.py"
+                    ],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Access Airflow",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 817644,
+          "key": "b378c608-d3e7-4fd3-9301-5888a88efc7f",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b378c608-d3e7-4fd3-9301-5888a88efc7f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826480,
+              "key": "ce5a7ca6-e849-4232-900d-135864054d76",
+              "title": "18 Conclusion -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "4llRbKNXvF0",
+                "china_cdn_id": "4llRbKNXvF0.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

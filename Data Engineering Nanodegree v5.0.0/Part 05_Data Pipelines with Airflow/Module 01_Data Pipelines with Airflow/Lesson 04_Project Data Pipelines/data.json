@@ -1,0 +1,508 @@
+{
+  "data": {
+    "lesson": {
+      "id": 813320,
+      "key": "4d1d5892-2cab-4456-8b1a-fb2b5fa1488d",
+      "title": "Project: Data Pipelines",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Students continue to work on the music streaming company’s data infrastructure by creating and automating a set of data pipelines with Airflow, monitoring and debugging production pipelines",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Project template",
+            "uri": "https://video.udacity-data.com/topher/2019/February/5c6058dc_project-template/project-template.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "da4e6f3a-7b26-47b2-8fcd-aa3479152300",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 38880,
+        "semantic_type": "Project",
+        "title": "Data Pipelines",
+        "description": "Your **deliverables** will be a zip file or **Github repo** containing the files for your project. Alternatively, you can submit your project through the workspace.\n\nEnsure you meet specifications for all items in the [Project Rubric](https://review.udacity.com/#!/rubrics/2478/view). Your project  must **Meet Specifications** in each category in order for your submission to pass. \n\nIt can take us up to a week to grade the project, but in most cases it is much faster. You will get an email once your submission has been reviewed. In the meantime, you should feel free to proceed with your learning journey by continuing on to the next module in the program.",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "2478",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": null
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 813322,
+          "key": "4c6de3e8-bad6-41a7-a27c-4349f9f61131",
+          "title": "Project Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4c6de3e8-bad6-41a7-a27c-4349f9f61131",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 813447,
+              "key": "1af6a6b6-e66a-4d17-9df5-93de55060e95",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project: Data Pipelines with Airflow\nA music streaming company, Sparkify, has decided that it is time to introduce more automation and monitoring to their data warehouse ETL pipelines and come to the conclusion that the best tool to achieve this is Apache Airflow.\n\nThey have decided to bring you into the project and expect you to create high grade data pipelines that are dynamic and built from reusable tasks, can be monitored, and allow easy backfills. They have also noted that the data quality plays a big part when analyses are executed on top the data warehouse and want to run tests against their datasets after the ETL steps have been executed to catch any discrepancies in the datasets.\n\nThe source data resides in S3 and needs to be processed in Sparkify's data warehouse in Amazon Redshift. The source datasets consist of JSON logs that tell about user activity in the application and JSON metadata about the songs the users listen to.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813323,
+          "key": "8af0af0f-7516-4a10-bce9-edcbe8ae84fb",
+          "title": "Project Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8af0af0f-7516-4a10-bce9-edcbe8ae84fb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 813570,
+              "key": "40e63ca5-8a7c-429e-b67e-ed1d91f25c46",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Overview\nThis project will introduce you to the core concepts of Apache Airflow. To complete the project, you will need to create your own custom operators to perform tasks such as staging the data, filling the data warehouse, and running checks on the data as the final step. \n\nWe have provided you with a project template that takes care of all the imports and provides four empty operators that need to be implemented into functional pieces of a data pipeline. The template also contains a set of tasks that need to be linked to achieve a coherent and sensible data flow within the pipeline.\n\nYou'll be provided with a helpers class that contains all the SQL transformations. Thus, you won't need to write the ETL yourselves, but you'll need to execute it with your custom operators.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 813572,
+              "key": "21ef893b-a358-4f10-a2a6-d45584463fca",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/January/5c48a861_example-dag/example-dag.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/21ef893b-a358-4f10-a2a6-d45584463fca",
+              "caption": "Example DAG",
+              "alt": "Example DAG",
+              "width": 1954,
+              "height": 564,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 817738,
+          "key": "f5c91ffd-60dc-4af3-bc86-44efce885834",
+          "title": "Add Airflow Connections to AWS",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f5c91ffd-60dc-4af3-bc86-44efce885834",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 817785,
+              "key": "afd249c1-4cf1-41a9-82df-d7b3711e1f95",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Add Airflow Connections\nHere, we'll use Airflow's UI to configure your AWS credentials and connection to Redshift.\n\n1. To go to the Airflow UI:\n - You can use the Project Workspace here and click on the blue **Access Airflow** button in the bottom right. \n - If you'd prefer to run Airflow locally, open http://localhost:8080 in Google Chrome (other browsers occasionally have issues rendering the Airflow UI).\n2. Click on the **Admin** tab and select **Connections**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 817786,
+              "key": "fce92f77-6230-4fe2-aa11-6c07056b1f93",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aaca1_admin-connections/admin-connections.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fce92f77-6230-4fe2-aa11-6c07056b1f93",
+              "caption": "",
+              "alt": "",
+              "width": 662,
+              "height": 235,
+              "instructor_notes": null
+            },
+            {
+              "id": 817787,
+              "key": "84238468-b416-4a61-92da-8e8b8309f4e9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. Under **Connections**, select **Create**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 817788,
+              "key": "adfc8ceb-fc5f-4d94-9907-e5204a5afa49",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aad2d_create-connection/create-connection.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/adfc8ceb-fc5f-4d94-9907-e5204a5afa49",
+              "caption": "",
+              "alt": "",
+              "width": 456,
+              "height": 262,
+              "instructor_notes": null
+            },
+            {
+              "id": 817792,
+              "key": "fd08a419-5a6a-4f4a-a97f-5ff67f81fc08",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "4. On the create connection page, enter the following values:\n  - **Conn Id**: Enter `aws_credentials`.\n  - **Conn Type**: Enter `Amazon Web Services`.\n  - **Login**: Enter your **Access key ID** from the IAM User credentials you downloaded earlier.\n  - **Password**: Enter your **Secret access key** from the IAM User credentials you downloaded earlier.\n\n  Once you've entered these values, select **Save and Add Another**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 817789,
+              "key": "1cb76d93-ee55-44e1-b12c-f280995aa545",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aaefe_connection-aws-credentials/connection-aws-credentials.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1cb76d93-ee55-44e1-b12c-f280995aa545",
+              "caption": "",
+              "alt": "",
+              "width": 1142,
+              "height": 793,
+              "instructor_notes": null
+            },
+            {
+              "id": 817793,
+              "key": "26965ddd-db27-497b-8e8e-37e3bebc6a58",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "4. On the next create connection page, enter the following values:\n  - **Conn Id**: Enter `redshift`.\n  - **Conn Type**: Enter `Postgres`.\n  - **Host**: Enter the endpoint of your Redshift cluster, excluding the port at the end. You can find this by selecting your cluster in the **Clusters** page of the Amazon Redshift console. See where this is located in the screenshot below. IMPORTANT: Make sure to **NOT** include the port at the end of the Redshift endpoint string.\n  - **Schema**: Enter `dev`. This is the Redshift database you want to connect to.\n  - **Login**: Enter `awsuser`.\n  - **Password**: Enter the password you created when launching your Redshift cluster.\n  - **Port**: Enter `5439`.\n\n  Once you've entered these values, select **Save**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 817794,
+              "key": "16e47978-7f69-4240-b8b3-6e61959c3821",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5ab302_cluster-details/cluster-details.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/16e47978-7f69-4240-b8b3-6e61959c3821",
+              "caption": "",
+              "alt": "",
+              "width": 1492,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 817790,
+              "key": "0b91b9c4-f31a-49db-9f32-c42dbc20d6b5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aaf07_connection-redshift/connection-redshift.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0b91b9c4-f31a-49db-9f32-c42dbc20d6b5",
+              "caption": "",
+              "alt": "",
+              "width": 1206,
+              "height": 864,
+              "instructor_notes": null
+            },
+            {
+              "id": 817795,
+              "key": "a521c56f-8c77-4c04-a737-9ee3887e5e49",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Awesome! You're now all configured to run Airflow with Redshift.\n\n### WARNING: Remember to DELETE your cluster each time you are finished working to avoid large, unexpected costs.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813324,
+          "key": "3b78f18c-3a53-40ab-8300-b1fe5208de97",
+          "title": "Project Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3b78f18c-3a53-40ab-8300-b1fe5208de97",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 825243,
+              "key": "8dbe1834-b1da-4128-a129-6e8f98f2742d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Datasets\nFor this project, you'll be working with two datasets. Here are the s3 links for each:\n- Log data: `s3://udacity-dend/log_data`\n- Song data: `s3://udacity-dend/song_data`",
+              "instructor_notes": ""
+            },
+            {
+              "id": 813576,
+              "key": "6b547bf2-0e20-4372-990a-2f85fd65d64d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Template\n\nTo get started with the project:\n1. Go to the workspace on the next page, where you'll find the project template. You can work on your project and submit your work through this workspace.\n\n Alternatively, you can download the [project template package](https://s3.amazonaws.com/video.udacity-data.com/topher/2019/February/5c6058dc_project-template/project-template.zip) and put the contents of the package in their respective folders in your local Airflow installation.\n\n The project template package contains three major components for the project:\n\n - The ** dag template** has all the imports and task templates in place, but the task dependencies have not been set\n - The ** operators** folder with operator templates\n - A ** helper class** for the SQL transformations\n\n2. With these template files, you should be able see the new DAG in the Airflow UI. The graph view should look like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 813581,
+              "key": "7cf3ce34-e500-4eba-983e-277c0f2f3a2b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/January/5c48b3cf_screenshot-2019-01-21-at-20.55.39/screenshot-2019-01-21-at-20.55.39.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7cf3ce34-e500-4eba-983e-277c0f2f3a2b",
+              "caption": "",
+              "alt": "",
+              "width": 1702,
+              "height": 876,
+              "instructor_notes": null
+            },
+            {
+              "id": 813584,
+              "key": "147dda07-5a76-4896-b1db-b836baf9abf0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You should be able to execute the DAG successfully, but if you check the logs, you will see only `operator not implemented` messages.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 813573,
+              "key": "8d08a3f5-58d0-4d1b-965c-94c5b61ff78e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Configuring the DAG\n\nIn the DAG, add `default parameters` according to these guidelines \n\n- The DAG does not have dependencies on past runs\n- On failure, the task are retried 3 times\n- Retries happen every 5 minutes\n- Catchup is turned off\n- Do not email on retry\n\nIn addition, configure the task dependencies so that after the dependencies are set, the graph view follows the flow shown in the image below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 813588,
+              "key": "152f789b-5f18-4951-9f75-a8abca4c1c2a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/January/5c48ba31_example-dag/example-dag.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/152f789b-5f18-4951-9f75-a8abca4c1c2a",
+              "caption": "Working DAG with correct task dependencies",
+              "alt": "Final DAG",
+              "width": 1954,
+              "height": 564,
+              "instructor_notes": null
+            },
+            {
+              "id": 813574,
+              "key": "74967064-080e-47ca-abd1-0e2b919f1ca0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Building the operators\nTo complete the project, you need to build four different operators that will stage the data, transform the data, and run checks on data quality.\n\nYou can reuse the code from Project 2, but remember to utilize Airflow's built-in functionalities as connections and hooks as much as possible and let Airflow do all the heavy-lifting when it is possible.\n\nAll of the operators and task instances will run SQL statements against the Redshift database. However, using parameters wisely will allow you to build flexible, reusable, and configurable operators you can later apply to many kinds of data pipelines with Redshift and with other databases.\n\n### Stage Operator\n\nThe stage operator is expected to be able to load any JSON formatted files from S3 to Amazon Redshift. The operator creates and runs a SQL COPY statement based on the parameters provided. The operator's parameters should specify where in S3 the file is loaded and what is the target table. \n\nThe parameters should be used to distinguish between JSON file. Another important requirement of the stage operator is containing a templated field that allows it to load timestamped files from S3 based on the execution time and run backfills.\n\n### Fact and Dimension Operators\n\nWith dimension and fact operators, you can utilize the provided SQL helper class to run data transformations. Most of the logic is within the SQL transformations and the operator is expected to take as input a SQL statement and target database on which to run the query against. You can also define a target table that will contain the results of the transformation.\n\nDimension loads are often done with the truncate-insert pattern where the target table is emptied before the load. Thus, you could also have a parameter that allows switching between insert modes when loading dimensions. Fact tables are usually so massive that they should only allow append type functionality.\n\n### Data Quality Operator\n\nThe final operator to create is the data quality operator, which is used to run checks on the data itself. The operator's main functionality is to receive one or more SQL based test cases along with the expected results and execute the tests. For each the test, the test result and expected result needs to be checked and if there is no match, the operator should raise an exception and the task should retry and fail eventually. \n\nFor example one test could be a SQL statement that checks if certain column contains NULL values by counting all the rows that have NULL in the column. We do not want to have any NULLs so expected result would be 0 and the test would compare the SQL statement's outcome to the expected result.\n\n### Note about Workspace\nAfter you have updated the DAG, you will need to run `/opt/airflow/start.sh` command to start the Airflow web server. Once the Airflow web server is ready, you can access the Airflow UI by clicking on the blue `Access Airflow` button.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 842054,
+          "key": "2ff09459-10ca-40fb-8ab6-1f505f7c898b",
+          "title": "Workspace Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2ff09459-10ca-40fb-8ab6-1f505f7c898b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 842055,
+              "key": "6941d584-5e0a-4bae-be3a-84c087f18cc0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Workspace Instructions\n\nBefore you start on your first exercise, please note the following instruction.\n\n1. After you have updated the DAG, you will need to run `/opt/airflow/start.sh` command to start the Airflow webserver. See the screenshot below for the Exercise 1 Workspace.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842060,
+              "key": "6764f565-a79e-4205-9a16-fb1197017051",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/April/5ca5188c_opt-airflow-image2/opt-airflow-image2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6764f565-a79e-4205-9a16-fb1197017051",
+              "caption": "",
+              "alt": "",
+              "width": 1723,
+              "height": 813,
+              "instructor_notes": null
+            },
+            {
+              "id": 842061,
+              "key": "13142892-fee5-435a-af89-e8d6bfbe0adc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. Wait for the Airflow web server to be ready (see screenshot below).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842062,
+              "key": "e6b7ecc9-2b63-4dba-9f2a-08be449d8095",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/April/5ca5190c_opt-airflow-image3/opt-airflow-image3.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e6b7ecc9-2b63-4dba-9f2a-08be449d8095",
+              "caption": "",
+              "alt": "",
+              "width": 1723,
+              "height": 809,
+              "instructor_notes": null
+            },
+            {
+              "id": 842063,
+              "key": "e630c7b0-44b1-47bf-a903-61157d946e6a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. Access the Airflow UI by clicking on the blue \"Access Airflow\" button.\n\nThis should be able to access the Airflow UI without any delay.\n\n__Please note:__ Because the files located in the s3 bucket 'udacity-dend' are very large, Airflow can take up to 10 minutes to make the connection.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813325,
+          "key": "bf4be3f7-ac30-4a25-9d9b-9b9eb703f0a4",
+          "title": "Project Workspace",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bf4be3f7-ac30-4a25-9d9b-9b9eb703f0a4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 818215,
+              "key": "96de7340-9221-4f50-b89e-9d0eaa16a673",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c813325xREACTrof5hc5u",
+              "pool_id": "airflow",
+              "view_id": "react-2kplh",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "mldatasets",
+                      "paths": [
+                        {
+                          "src": "/",
+                          "dest": "/data/"
+                        }
+                      ],
+                      "mountWarnUntil": 0
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [
+                      "/home/workspace/airflow/dags/udac_example_dag.py"
+                    ],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": true,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Access Airflow",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

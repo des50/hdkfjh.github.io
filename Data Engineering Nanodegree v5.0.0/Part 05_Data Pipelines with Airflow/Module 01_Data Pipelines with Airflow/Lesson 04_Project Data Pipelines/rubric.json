@@ -1,0 +1,313 @@
+{
+  "id": 2478,
+  "project_id": 565,
+  "upload_types": [
+    "repo",
+    "zip"
+  ],
+  "file_filter_regex": "\\A(?!(((.*/)?(__MACOSX|\\.git|node_modules|bower_components|jspm_packages|\\.idea|build|.ipynb_checkpoints|\\.Trash-0|logs)(\\Z|/))))((.*\\.(css|docx|gradle|htm|html|java|js|markdown|md|pdf|py|rmd|rst|sql|swift|txt|xml|yaml|yml)\\Z)|((.*/)?(README|Readme|readme|Makefile)\\Z))",
+  "nomination_eligible": false,
+  "stand_out": "-  Simple and dynamic operators, as little hard coding as possible\r\n-  Effective use of parameters in tasks\r\n-  Clean formatting of values in SQL strings\r\n-  Load dimensions with a subdag\r\n",
+  "hide_criteria": false,
+  "created_at": "2019-01-18T21:47:15.263Z",
+  "updated_at": "2019-10-09T07:32:16.619Z",
+  "hashtag": "",
+  "max_upload_size_mb": 500,
+  "estimated_sla": null,
+  "project_assistant_enabled": false,
+  "available_for_cert_project": false,
+  "language": "en-us",
+  "ndkeys": [
+    "nd027",
+    "nd027-beta",
+    "nd197-beta",
+    "nd027-ent",
+    "nd-instructor",
+    "nd027-ent-rbs",
+    "nd027-mena-connect"
+  ],
+  "coursekeys": [],
+  "is_career": false,
+  "sections": [
+    {
+      "id": 5308,
+      "name": "General",
+      "created_at": "2019-02-04T20:40:20.399Z",
+      "updated_at": "2019-02-07T21:06:15.114Z",
+      "deleted_at": null,
+      "position": 0,
+      "rubric_id": 2478,
+      "rubric_items": [
+        {
+          "id": 15383,
+          "section_id": 5308,
+          "passed_description": "DAG can be browsed without issues in the Airflow UI\r\n",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:09:41.105Z",
+          "updated_at": "2019-02-07T22:04:53.851Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "The dag and plugins do not give an error when imported to Airflow",
+          "exceedable": false
+        },
+        {
+          "id": 15384,
+          "section_id": 5308,
+          "passed_description": "\r\nThe dag follows the data flow provided in the instructions, all the tasks have a dependency and DAG begins with a start_execution task and ends with a end_execution task.",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:11:21.514Z",
+          "updated_at": "2019-02-07T22:04:53.860Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "All tasks have correct dependencies\r\n",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5323,
+      "name": "Dag configuration",
+      "created_at": "2019-02-07T21:06:15.346Z",
+      "updated_at": "2019-02-07T21:06:55.180Z",
+      "deleted_at": null,
+      "position": 2,
+      "rubric_id": 2478,
+      "rubric_items": [
+        {
+          "id": 15390,
+          "section_id": 5323,
+          "passed_description": "DAG contains default_args dict, with the following keys:\r\n- Owner\r\n- Depends_on_past\r\n- Start_date\r\n- Retries\r\n- Retry_delay\r\n- Catchup\r\n",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:17:08.838Z",
+          "updated_at": "2019-02-07T22:04:53.906Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Default_args object is used in the DAG",
+          "exceedable": false
+        },
+        {
+          "id": 15391,
+          "section_id": 5323,
+          "passed_description": "The DAG object has default args set",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:18:41.715Z",
+          "updated_at": "2019-02-07T22:04:53.914Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Defaults_args are bind to the DAG",
+          "exceedable": false
+        },
+        {
+          "id": 15392,
+          "section_id": 5323,
+          "passed_description": "The DAG should be scheduled to run once an hour",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:19:09.722Z",
+          "updated_at": "2019-02-14T19:04:30.083Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "The DAG has a correct schedule",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5324,
+      "name": "Staging the data",
+      "created_at": "2019-02-07T21:06:55.395Z",
+      "updated_at": "2019-02-07T21:07:14.584Z",
+      "deleted_at": null,
+      "position": 3,
+      "rubric_id": 2478,
+      "rubric_items": [
+        {
+          "id": 15393,
+          "section_id": 5324,
+          "passed_description": "There is a task that to stages data from S3 to Redshift. (Runs a Redshift copy statement)\r\n",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:19:38.705Z",
+          "updated_at": "2019-07-22T19:55:23.863Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Task to stage JSON data is included in the DAG and uses the RedshiftStage operator",
+          "exceedable": false
+        },
+        {
+          "id": 15394,
+          "section_id": 5324,
+          "passed_description": "Instead of running a static SQL statement to stage the data, the task uses params to generate the copy statement dynamically",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:20:07.653Z",
+          "updated_at": "2019-02-07T22:04:53.937Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Task uses params",
+          "exceedable": false
+        },
+        {
+          "id": 15395,
+          "section_id": 5324,
+          "passed_description": "The operator contains logging in different steps of the execution",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:20:34.274Z",
+          "updated_at": "2019-02-07T22:04:53.942Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "Logging used",
+          "exceedable": false
+        },
+        {
+          "id": 15396,
+          "section_id": 5324,
+          "passed_description": "The SQL statements are executed by using a Airflow hook\r\n",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:21:02.011Z",
+          "updated_at": "2019-02-07T22:04:53.947Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 3,
+          "criteria": "The database connection is created by using a hook and a connection",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5325,
+      "name": "Loading dimensions and facts",
+      "created_at": "2019-02-07T21:07:14.801Z",
+      "updated_at": "2019-02-07T21:07:28.902Z",
+      "deleted_at": null,
+      "position": 4,
+      "rubric_id": 2478,
+      "rubric_items": [
+        {
+          "id": 15397,
+          "section_id": 5325,
+          "passed_description": "Dimensions are loaded with on the LoadDimension operator\r\n",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:21:39.023Z",
+          "updated_at": "2019-02-07T22:04:53.952Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Set of tasks using the dimension load operator is in the DAG",
+          "exceedable": false
+        },
+        {
+          "id": 15398,
+          "section_id": 5325,
+          "passed_description": "Facts are loaded with on the LoadFact operator",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:23:19.963Z",
+          "updated_at": "2019-02-07T22:04:53.957Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "A task using the fact load operator is in the DAG",
+          "exceedable": false
+        },
+        {
+          "id": 15399,
+          "section_id": 5325,
+          "passed_description": "\r\nInstead of running a static SQL statement to stage the data, the task uses params to generate the copy statement dynamically\r\n",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:24:05.399Z",
+          "updated_at": "2019-02-07T22:04:53.962Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "Both operators use params",
+          "exceedable": false
+        },
+        {
+          "id": 15400,
+          "section_id": 5325,
+          "passed_description": "The DAG allows to switch between append-only and delete-load functionality\r\n",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:24:33.848Z",
+          "updated_at": "2019-02-07T22:04:53.967Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 3,
+          "criteria": "The dimension task contains a param to allow switch between append and insert-delete functionality",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5326,
+      "name": "Data Quality Checks",
+      "created_at": "2019-02-07T21:07:29.152Z",
+      "updated_at": "2019-02-07T21:08:04.699Z",
+      "deleted_at": null,
+      "position": 5,
+      "rubric_id": 2478,
+      "rubric_items": [
+        {
+          "id": 15401,
+          "section_id": 5326,
+          "passed_description": "Data quality check is done with correct operator",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:25:04.669Z",
+          "updated_at": "2019-02-07T22:04:53.973Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "A task using the data quality operator is in the DAG and at least one data quality check is done",
+          "exceedable": false
+        },
+        {
+          "id": 15402,
+          "section_id": 5326,
+          "passed_description": "The DAG either fails or retries n times\r\n",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:25:33.839Z",
+          "updated_at": "2019-02-07T22:04:53.977Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "The operator raises an error if the check fails pass",
+          "exceedable": false
+        },
+        {
+          "id": 15403,
+          "section_id": 5326,
+          "passed_description": "Operator uses params to get the tests and the results, tests are not hard coded to the operator",
+          "exceeded_description": "",
+          "created_at": "2019-02-07T21:25:35.149Z",
+          "updated_at": "2019-02-14T18:47:59.353Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "The operator is parametrized",
+          "exceedable": false
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": 565,
+    "name": "Data Pipelines with Airflow",
+    "nanodegree_key": "nd027",
+    "is_cert_project": false,
+    "audit_project_id": null,
+    "hashtag": null,
+    "audit_rubric_id": 2899,
+    "entitlement_required": false,
+    "is_career": false,
+    "recruitment_family_id": 5,
+    "created_at": "2019-01-29T03:52:47.315Z",
+    "updated_at": "2021-04-02T00:22:56.432Z",
+    "price": "7.5",
+    "ungradeable_price": "3.0",
+    "audit_price": "0.0"
+  }
+}

@@ -1,0 +1,1210 @@
+{
+  "data": {
+    "lesson": {
+      "id": 809459,
+      "key": "7bf6d12e-68a2-4e9d-b18e-2278f5d8ed9c",
+      "title": "Production Data Pipelines",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this last lesson, students will learn how to build Pipelines with maintainability and reusability in mind. They will also learn about pipeline monitoring.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/7bf6d12e-68a2-4e9d-b18e-2278f5d8ed9c/809459/1552596685476/Production+Data+Pipelines+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/7bf6d12e-68a2-4e9d-b18e-2278f5d8ed9c/809459/1552596681622/Production+Data+Pipelines+Subtitles.zip"
+          },
+          {
+            "name": "Glossary  Data Pipelines In Airflow",
+            "uri": "https://video.udacity-data.com/topher/2019/March/5c89bd15_glossary-data-pipelines-in-airflow/glossary-data-pipelines-in-airflow.pdf"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 825259,
+          "key": "ee5a9d7c-c2b7-4489-b3d5-a4005aef0664",
+          "title": "Lesson Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ee5a9d7c-c2b7-4489-b3d5-a4005aef0664",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826603,
+              "key": "01c314f2-2edb-4cda-a475-570317f03fc7",
+              "title": "01 Lesson Introduction -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EpgLJRXeIe4",
+                "china_cdn_id": "EpgLJRXeIe4.mp4"
+              }
+            },
+            {
+              "id": 839353,
+              "key": "cb95ad3e-2b97-47e2-b579-584e737d2a8f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Additional Resources\n__Glossary of Terms__: We have provided a glossary of terms in the Resources tab. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 809466,
+          "key": "6d949df0-59ad-4a2f-914c-7445a12c926a",
+          "title": "Extending Airflow with Plugins",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6d949df0-59ad-4a2f-914c-7445a12c926a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826604,
+              "key": "46a04ca5-ff11-48ae-ab4e-9fc3a7c86ee7",
+              "title": "02 Extending Airflow With Plugins -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "iRiqX4UyKHY",
+                "china_cdn_id": "iRiqX4UyKHY.mp4"
+              }
+            },
+            {
+              "id": 818208,
+              "key": "1b7a1cb9-0321-45a2-af53-b25fbab59450",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Airflow Plugins\nAirflow was built with the intention of allowing its users to extend and customize its functionality through plugins. The most common types of user-created plugins for Airflow are Operators and Hooks. These plugins make DAGs reusable and simpler to maintain.\n\nTo create custom operator, follow the steps:\n1.  Identify Operators that perform similar functions and can be consolidated\n2. Define a new Operator in the plugins folder\n3. Replace the original Operators with your new custom one, re-parameterize, and instantiate them.\n\n\n\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 824879,
+          "key": "b1679316-5748-4517-a517-cd2fe95abe2c",
+          "title": "Extending Airflow Hooks & Contrib",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b1679316-5748-4517-a517-cd2fe95abe2c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826605,
+              "key": "621fca67-1ef8-49c8-a37c-23dd8ca4d470",
+              "title": "03 Extending Airflow Hooks And Contrib-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5LSh41n7mP8",
+                "china_cdn_id": "5LSh41n7mP8.mp4"
+              }
+            },
+            {
+              "id": 825256,
+              "key": "d4e60cf1-3b8e-451e-b3b7-d036bb027090",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Airflow Contrib\n\nAirflow has a rich and vibrant open source community. This community is constantly adding new functionality and extending the capabilities of Airflow. As an Airflow user, you should always check [Airflow contrib](https://github.com/apache/airflow/tree/master/airflow/contrib) before building your own airflow plugins, to see if what you need already exists. \n\nOperators and hooks for common data tools like Apache Spark and Cassandra, as well as vendor specific integrations for Amazon Web Services, Azure, and Google Cloud Platform can be found in Airflow contrib. If the functionality exists and its not quite what you want, that’s a great opportunity to add that functionality through an open source contribution.\n\n[Check out Airflow Contrib](https://github.com/apache/airflow/tree/master/airflow/contrib)\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 824881,
+          "key": "25e1773c-87a0-486d-907a-3435ce3da58f",
+          "title": "Demo 1: Operator Plugins",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "25e1773c-87a0-486d-907a-3435ce3da58f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826614,
+              "key": "0a77dc47-e655-4613-91c3-8ecbae6c785d",
+              "title": "04 Demo 1 Operator Plugins -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JafnSFG8spY",
+                "china_cdn_id": "JafnSFG8spY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 818216,
+          "key": "e4918c32-d7d2-4978-adaf-4cd99f420600",
+          "title": "Exercise 1: Operator Plugins",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e4918c32-d7d2-4978-adaf-4cd99f420600",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 824830,
+              "key": "a54ff137-4032-4eaf-84cc-82df93a6448d",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c818216xREACTrm60d671",
+              "pool_id": "airflow",
+              "view_id": "react-56gma",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "mldatasets",
+                      "paths": [
+                        {
+                          "src": "/",
+                          "dest": "/data/"
+                        }
+                      ],
+                      "mountWarnUntil": 0
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [
+                      "/home/workspace/airflow/dags/lesson3/exercise1.py"
+                    ],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Access Airflow",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 825255,
+          "key": "9c4bdcbb-e4eb-4ee5-98d2-7400419f245a",
+          "title": "Solution 1: Operator Plugins",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9c4bdcbb-e4eb-4ee5-98d2-7400419f245a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826615,
+              "key": "6516a526-57ed-4b4d-826c-f131a4878196",
+              "title": "05 Solution 1 -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RRyQGS5QXPQ",
+                "china_cdn_id": "RRyQGS5QXPQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 809468,
+          "key": "952a8c06-5d3a-4940-9a15-71759d47930b",
+          "title": "Best Practices for Data Pipeline Steps - Task Boundaries",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "952a8c06-5d3a-4940-9a15-71759d47930b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826616,
+              "key": "78a81f12-bcbb-464a-a113-9774d82a5e7a",
+              "title": "06 Best Practices For Data Pipeline Steps -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XxhNFrkKuQo",
+                "china_cdn_id": "XxhNFrkKuQo.mp4"
+              }
+            },
+            {
+              "id": 825260,
+              "key": "cde4275d-bbcb-4ff2-a29d-c7a61df1edfd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Task Boundaries\nDAG tasks should be designed such that they are:\n* Atomic and have a single purpose\n* Maximize parallelism\n* Make failure states obvious\n\nEvery task in your dag should perform **only one job.**\n\n> “Write programs that do one thing and do it well.” - Ken Thompson’s Unix Philosophy\n\n##### Benefits of Task Boundaries\n* Re-visitable: Task boundaries are useful for you if you revisit a pipeline you wrote after a 6 month absence. You'll have a much easier time understanding how it works and the lineage of the data if the boundaries between tasks are clear and well defined. This is true in the code itself, and within the Airflow UI.\n* Tasks that do just one thing are often more easily parallelized. This parallelization can offer a significant speedup in the execution of our DAGs.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 824884,
+          "key": "64f35f72-e863-4fa8-a8d8-bfe296b0eb80",
+          "title": "Demo 2: Task Boundaries",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "64f35f72-e863-4fa8-a8d8-bfe296b0eb80",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826617,
+              "key": "36a490b0-23f2-4d25-8473-5809c7c4ed1e",
+              "title": "07 Demo 2 Task Boundaries -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "eVAi3BT1RXs",
+                "china_cdn_id": "eVAi3BT1RXs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 824885,
+          "key": "bece113c-74d2-4c20-a413-07d8ead4b38a",
+          "title": "Exercise 2: Refactor a DAG",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bece113c-74d2-4c20-a413-07d8ead4b38a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 825261,
+              "key": "85842371-ae28-4ea4-acaf-a216bd8e796a",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c818216xREACTrm60d671",
+              "pool_id": "airflow",
+              "view_id": "react-ubt6x",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "mldatasets",
+                      "paths": [
+                        {
+                          "src": "/",
+                          "dest": "/data/"
+                        }
+                      ],
+                      "mountWarnUntil": 0
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [
+                      "/home/workspace/airflow/dags/lesson3/exercise2.py"
+                    ],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Access Airflow",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 825257,
+          "key": "8fc2fe56-1abb-42e9-b74c-ec3cfa67f430",
+          "title": "Solution 2: Refactor a DAG",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8fc2fe56-1abb-42e9-b74c-ec3cfa67f430",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826618,
+              "key": "ee341eab-4206-41e7-80df-28d6a38d53ca",
+              "title": "08 Solution 2 Refactor A DAG -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "O3MEAcMf5ck",
+                "china_cdn_id": "O3MEAcMf5ck.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 814658,
+          "key": "70204483-3a38-4c7c-871f-32b1ccdede98",
+          "title": "Subdags: Introduction and When to Use Them",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "70204483-3a38-4c7c-871f-32b1ccdede98",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826619,
+              "key": "04f63082-5433-4041-88d4-f9b0992afb04",
+              "title": "09 Subdags Intro And When To Use -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bsWgeeFtOog",
+                "china_cdn_id": "bsWgeeFtOog.mp4"
+              }
+            },
+            {
+              "id": 825332,
+              "key": "38a9d7f1-19c0-45be-9fae-5e5230505565",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### SubDAGs\nCommonly repeated series of tasks within DAGs can be captured as reusable SubDAGs. Benefits include:\n* Decrease the amount of code we need to write and maintain to create a new DAG\n* Easier to understand the high level goals of a DAG\n* Bug fixes, speedups, and other enhancements can be made more quickly and distributed to all DAGs that use that SubDAG\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 824887,
+          "key": "99acc552-09d2-4772-b483-3bad11379e94",
+          "title": "SubDAGs: Drawbacks of SubDAGs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "99acc552-09d2-4772-b483-3bad11379e94",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826620,
+              "key": "c4ca58bd-8185-4c11-82e1-5c6e16abac7d",
+              "title": "10 Subdags Drawbacks -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8Rakw2VMH9o",
+                "china_cdn_id": "8Rakw2VMH9o.mp4"
+              }
+            },
+            {
+              "id": 825337,
+              "key": "bd06df57-490f-407a-a651-ed5c55bfa9f0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Drawbacks of Using SubDAGs\n\n* Limit the visibility within the Airflow UI\n* Abstraction makes understanding what the DAG is doing more difficult\n* Encourages premature optimization\n\n### Common Questions\n**Can Airflow nest subDAGs?** -  Yes, you can nest subDAGs. However, you should have a really good reason to do so because it makes it much harder to understand what's going on in the code. Generally, subDAGs are not necessary at all, let alone subDAGs within subDAGs.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 824889,
+          "key": "4eb31964-9daf-49f7-ab73-24d45a02f9e6",
+          "title": "Quiz: Subdags",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4eb31964-9daf-49f7-ab73-24d45a02f9e6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 825343,
+              "key": "6c1a0047-d423-455f-b37c-299ef7d44ac4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c62f70c_subdag-quiz/subdag-quiz.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6c1a0047-d423-455f-b37c-299ef7d44ac4",
+              "caption": "",
+              "alt": "",
+              "width": 1282,
+              "height": 396,
+              "instructor_notes": null
+            },
+            {
+              "id": 825339,
+              "key": "0925f63d-afe9-4e99-8f49-2a0d9bb44592",
+              "title": "SubDAGs",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0925f63d-afe9-4e99-8f49-2a0d9bb44592",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "The diagram above shows two DAGs and their tasks. Which tasks could be placed into a SubDAG for reuse?",
+                "answers": [
+                  {
+                    "id": "a1549989457266",
+                    "text": "HTTP Data Fetch",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549989472552",
+                    "text": "Data Check",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549989473245",
+                    "text": "Merge",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549989473847",
+                    "text": "Check API Status",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825349,
+              "key": "9bac65b4-153a-4977-99b3-d8538aaec918",
+              "title": "SubDAG Advantages ",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9bac65b4-153a-4977-99b3-d8538aaec918",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following are advantages of SubDAGs?",
+                "answers": [
+                  {
+                    "id": "a1549989698883",
+                    "text": "Improves code visibility",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549989713870",
+                    "text": "Reduces duplicated code in DAGs",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549989714302",
+                    "text": "Improves visibility into DAG steps in Airflow UI",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549989714918",
+                    "text": "Allows for simple reusability of commonly occurring task patterns",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825350,
+              "key": "ba23c328-9b83-40a9-96bc-571571973ea4",
+              "title": "SubDAGs Disadvantages",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ba23c328-9b83-40a9-96bc-571571973ea4",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following are drawbacks of SubDAGs?\n\n\n\n",
+                "answers": [
+                  {
+                    "id": "a1549989825298",
+                    "text": "Reduces visibility in the Airflow UI ",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549989837829",
+                    "text": "Sharing of common patterns between DAGs",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549989838230",
+                    "text": "Harder to understand and maintain if improperly scoped",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549989838543",
+                    "text": "Encourages Premature Optimization",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 824890,
+          "key": "71e69f8c-7780-47da-9387-772828efb419",
+          "title": "Demo 3: SubDAGs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71e69f8c-7780-47da-9387-772828efb419",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826621,
+              "key": "89e4fe39-f998-4397-b80d-a78065f13b01",
+              "title": "11 Demo 3 Subdags -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jIVIJWFLkhk",
+                "china_cdn_id": "jIVIJWFLkhk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 814663,
+          "key": "7a3c59be-9337-46df-bb93-d1420e1de82b",
+          "title": "Exercise 3: SubDAGs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7a3c59be-9337-46df-bb93-d1420e1de82b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 825354,
+              "key": "8f3bbae4-fd67-487f-9648-d562de6a719d",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c818216xREACTrm60d671",
+              "pool_id": "airflow",
+              "view_id": "react-nthix",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "mldatasets",
+                      "paths": [
+                        {
+                          "src": "/",
+                          "dest": "/data/"
+                        }
+                      ],
+                      "mountWarnUntil": 0
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [
+                      "/home/workspace/airflow/dags/lesson3/exercise3/dag.py",
+                      "/home/workspace/airflow/dags/lesson3/exercise3/subdag.py"
+                    ],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Access Airflow",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 825258,
+          "key": "4bd57128-8007-4d7f-86cf-363cb2f12fe8",
+          "title": "Solution 3: Subdags",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4bd57128-8007-4d7f-86cf-363cb2f12fe8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826622,
+              "key": "0bd933dd-29bb-4e38-854c-3ef96d6f2594",
+              "title": "12 Solution 3 Subdags -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "M-kdhnQ6sdk",
+                "china_cdn_id": "M-kdhnQ6sdk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 814661,
+          "key": "e6b7d7f7-36cb-43bf-820c-99801261f552",
+          "title": "Monitoring",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e6b7d7f7-36cb-43bf-820c-99801261f552",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826623,
+              "key": "218fee67-f978-4174-b3c1-882a9ad43d74",
+              "title": "13 Monitoring -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-Ib-Iwe2NoE",
+                "china_cdn_id": "-Ib-Iwe2NoE.mp4"
+              }
+            },
+            {
+              "id": 825355,
+              "key": "0773cbdc-7f92-49f0-a760-814a22fcd1db",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Pipeline Monitoring\nAirflow can surface metrics and emails to help you stay on top of pipeline issues. \n\n#### SLAs\nAirflow DAGs may optionally specify an SLA, or “Service Level Agreement”, which is defined as **a time by which a DAG must complete.** For time-sensitive applications these features are critical for developing trust amongst your pipeline customers and ensuring that data is delivered while it is still meaningful. Slipping SLAs can also be **early indicators of performance problems**, or a need to scale up the size of your Airflow cluster\n\n#### Emails and Alerts\nAirflow can be configured to send emails on DAG and task state changes. These state changes may include successes, failures, or retries. Failure emails can allow you to easily trigger alerts. It is common for alerting systems like PagerDuty to accept emails as a source of alerts. If a mission-critical data pipeline fails, you will need to know as soon as possible to get online and get it fixed.\n\n#### Metrics\nAirflow comes out of the box with the ability to send system metrics using a metrics aggregator called statsd. Statsd can be coupled with metrics visualization tools like [Grafana](https://grafana.com/) to provide you and your team high level insights into the overall performance of your DAGs, jobs, and tasks. These systems can be integrated into your alerting system, such as pagerduty, so that you can ensure problems are dealt with immediately. These Airflow system-level metrics allow you and your team to stay ahead of issues before they even occur by watching long-term trends.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 824892,
+          "key": "3562eaaf-ca94-4e92-8b8e-c6dc11a5c244",
+          "title": "Monitoring",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3562eaaf-ca94-4e92-8b8e-c6dc11a5c244",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 825378,
+              "key": "8d1d7c01-e79b-40b0-9493-5f9d55ad2602",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8d1d7c01-e79b-40b0-9493-5f9d55ad2602",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following DAGs might benefit from an SLA?\n",
+                "answers": [
+                  {
+                    "id": "a1549991497873",
+                    "text": "A DAG which determines how to allocate marketing money next hour based on the last hour’s performance",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549991515857",
+                    "text": "A DAG which performs a weekly load of data from S3 to Redshift",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1549991516487",
+                    "text": "A DAG which generates analytics that the executive team receives via email every morning",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1549991516974",
+                    "text": "A DAG that quickly updates a table once a day at any point in the day",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825379,
+              "key": "749ad657-27e0-45c6-9b89-28e3c97c7b99",
+              "title": "System Metric",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "749ad657-27e0-45c6-9b89-28e3c97c7b99",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following is an example of an Airflow system-level metric?",
+                "answers": [
+                  {
+                    "id": "a1550018510609",
+                    "text": "Task successes for an individual DAG",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550018534164",
+                    "text": "Task failures for all DAGs in the system",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550018534704",
+                    "text": "Runtime of an individual DAG",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550018535133",
+                    "text": "Runtime of a type of Operator",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825380,
+              "key": "f80041f9-fc87-4731-9bb8-9295c25297d2",
+              "title": "Missed SLAs",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f80041f9-fc87-4731-9bb8-9295c25297d2",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following components might need to be scaled up if your SLAs are routinely missed? \n\n\n",
+                "answers": [
+                  {
+                    "id": "a1550018963023",
+                    "text": "Scheduler",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550018969116",
+                    "text": "Workers",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550018969525",
+                    "text": "Webserver",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550018969851",
+                    "text": "Queue",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825381,
+              "key": "a5bfe33d-b44d-459e-a8e9-49a7c51f3850",
+              "title": "Email",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a5bfe33d-b44d-459e-a8e9-49a7c51f3850",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following can Airflow be configured to send on DAG or task state change?\n\n\n\n\n",
+                "answers": [
+                  {
+                    "id": "a1550019253527",
+                    "text": "HTTP Requests",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550019258654",
+                    "text": "Emails",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550019259046",
+                    "text": "File drops in S3",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550019259494",
+                    "text": "Database table inserts",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825382,
+              "key": "7d6318c2-0306-41ba-bab4-f088233909c3",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "7d6318c2-0306-41ba-bab4-f088233909c3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What state changes can Airflow send notifications for?",
+                "answers": [
+                  {
+                    "id": "a1550020626529",
+                    "text": "Worker reboot",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550020635431",
+                    "text": "Task Success, Failure, and Retry",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550020636014",
+                    "text": "DAG Success, Failure, and Retry",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550020636374",
+                    "text": "Configuration Changes",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825383,
+              "key": "0a5e74b4-29c2-4e92-9633-50d8c89931c5",
+              "title": "Notifications",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0a5e74b4-29c2-4e92-9633-50d8c89931c5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: Notifications can be sent individually for both entire DAGs or tasks.",
+                "answers": [
+                  {
+                    "id": "a1550020676552",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550020703238",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 839270,
+          "key": "bb7ec28c-2661-40f5-9ee5-f9a659d59ec9",
+          "title": "Exercise 4: Building a Full DAG",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bb7ec28c-2661-40f5-9ee5-f9a659d59ec9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 839272,
+              "key": "48a43929-0d48-4e46-ab94-81004f908618",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Exercise 4: Building a Full DAG \n\nIn this exercise you will construct a DAG and custom operator end-to-end on your own. Our bikeshare company would like to create a trips facts table every time we update the trips data. You've decided to make the facts table creation a custom operator so that it can be reused for other tables in the future.\n\nThe skeleton of the custom operator, as well as the facts SQL statement has been created for you and can be found in `plugins/operators/facts_calculator.py`. The DAG itself will be defined in `dags/lesson3/exercise4.py`.\n\nUsing the previous exercises as examples, follow the instructions in the DAG and Operator file to complete the exercise. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 839273,
+              "key": "f293e25e-dc0b-4352-a901-2e79c9670b7b",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c818216xREACTrm60d671",
+              "pool_id": "airflow",
+              "view_id": "react-bhfs4",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "mldatasets",
+                      "paths": [
+                        {
+                          "src": "/",
+                          "dest": "/data/"
+                        }
+                      ],
+                      "mountWarnUntil": 0
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [
+                      "/home/workspace/airflow/dags/lesson3/exercise4.py"
+                    ],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Access Airflow",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 839271,
+          "key": "da564976-2c16-425c-93bc-ebed70160ade",
+          "title": "Solution 4: Building a Full Pipeline",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "da564976-2c16-425c-93bc-ebed70160ade",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 839275,
+              "key": "ea72bf0c-7c50-4c97-a61b-5e7d9c017b56",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Here is the Solution for Exercise 4: Building a Full Pipeline\n\n### This is the solution code for exercise4.py\n\n```python\nimport datetime\n\nfrom airflow import DAG\n\nfrom airflow.operators import (\n    FactsCalculatorOperator,\n    HasRowsOperator,\n    S3ToRedshiftOperator\n)\n\n#\n# The following DAG performs the following functions:\n#\n#       1. Loads Trip data from S3 to RedShift\n#       2. Performs a data quality check on the Trips table in RedShift\n#       3. Uses the FactsCalculatorOperator to create a Facts table in Redshift\n#           a. **NOTE**: to complete this step you must complete the FactsCalcuatorOperator\n#              skeleton defined in plugins/operators/facts_calculator.py\n#\ndag = DAG(\"lesson3.exercise4\", start_date=datetime.datetime.utcnow())\n\n#\n# The following code will load trips data from S3 to RedShift. Use the s3_key\n#       \"data-pipelines/divvy/unpartitioned/divvy_trips_2018.csv\"\n#       and the s3_bucket \"udacity-dend\"\n#\ncopy_trips_task = S3ToRedshiftOperator(\n    task_id=\"load_trips_from_s3_to_redshift\",\n    dag=dag,\n    table=\"trips\",\n    redshift_conn_id=\"redshift\",\n    aws_credentials_id=\"aws_credentials\",\n    s3_bucket=\"udacity-dend\",\n    s3_key=\"data-pipelines/divvy/unpartitioned/divvy_trips_2018.csv\"\n)\n\n#\n#  Data quality check on the Trips table\n#\ncheck_trips = HasRowsOperator(\n    task_id=\"check_trips_data\",\n    dag=dag,\n    redshift_conn_id=\"redshift\",\n    table=\"trips\"\n)\n\n#\n# We use the FactsCalculatorOperator to create a Facts table in RedShift. The fact column is\n#  `tripduration` and the groupby_column is `bikeid`\n#\ncalculate_facts = FactsCalculatorOperator(\n    task_id=\"calculate_facts_trips\",\n    dag=dag,\n    redshift_conn_id=\"redshift\",\n    origin_table=\"trips\",\n    destination_table=\"trips_facts\",\n    fact_column=\"tripduration\",\n    groupby_column=\"bikeid\"\n)\n\n#\n# Task ordering for the DAG tasks \n#\ncopy_trips_task >> check_trips\ncheck_trips >> calculate_facts\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 839347,
+              "key": "90c9957f-cde4-404e-928d-6fe9c803cf9c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### This is the solution code for the  Custom Operator: **`facts_calculator`**\n```python\nimport logging\n\nfrom airflow.hooks.postgres_hook import PostgresHook\nfrom airflow.models import BaseOperator\nfrom airflow.utils.decorators import apply_defaults\n\n\nclass FactsCalculatorOperator(BaseOperator):\n    facts_sql_template = \"\"\"\n    DROP TABLE IF EXISTS {destination_table};\n    CREATE TABLE {destination_table} AS\n    SELECT\n        {groupby_column},\n        MAX({fact_column}) AS max_{fact_column},\n        MIN({fact_column}) AS min_{fact_column},\n        AVG({fact_column}) AS average_{fact_column}\n    FROM {origin_table}\n    GROUP BY {groupby_column};\n    \"\"\"\n\n    @apply_defaults\n    def __init__(self,\n                 redshift_conn_id=\"\",\n                 origin_table=\"\",\n                 destination_table=\"\",\n                 fact_column=\"\",\n                 groupby_column=\"\",\n                 *args, **kwargs):\n\n        super(FactsCalculatorOperator, self).__init__(*args, **kwargs)\n        self.redshift_conn_id = redshift_conn_id\n        self.origin_table = origin_table\n        self.destination_table = destination_table\n        self.fact_column = fact_column\n        self.groupby_column = groupby_column\n\n    def execute(self, context):\n        redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)\n        facts_sql = FactsCalculatorOperator.facts_sql_template.format(\n            origin_table=self.origin_table,\n            destination_table=self.destination_table,\n            fact_column=self.fact_column,\n            groupby_column=self.groupby_column\n        )\n        redshift.run(facts_sql)\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 824893,
+          "key": "cc3933ce-4cf1-4132-bba4-4cba3ff47164",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cc3933ce-4cf1-4132-bba4-4cba3ff47164",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826624,
+              "key": "4038ac48-6288-4ebe-b00d-70aa9de620fc",
+              "title": "14 Conclusion -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "R4bks2yMUpk",
+                "china_cdn_id": "R4bks2yMUpk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 840602,
+          "key": "7b5e1743-78f2-4c71-b5cc-734e97e20be7",
+          "title": "Additional Resources: Data Pipeline Orchestrators",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7b5e1743-78f2-4c71-b5cc-734e97e20be7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840603,
+              "key": "3964d5b1-fa95-42a3-9f1c-3ac0bb2b195a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Other Pipeline Orchestrators\n\nHere are some resources to explore other data pipeline orchestrators. \n\n1. This [Github link](https://github.com/pditommaso/awesome-pipeline) contains perhaps way too many examples, but it shows a nice list of other pipeline orchestrators.\n\n2. You can also check out these pages to see how Airflow's components can be generalized to the elements of other pipeline orchestrators.\n\n   - [Quora page](https://www.quora.com/Which-is-a-better-data-pipeline-scheduling-platform-Airflow-or-Luigi)\n\n   - [Github link](https://xunnanxu.github.io/2018/04/13/Workflow-Processing-Engine-Overview-2018-Airflow-vs-Azkaban-vs-Conductor-vs-Oozie-vs-Amazon-Step-Functions/)\n\n   - [Medium post](https://medium.com/@cyrusv/luigi-vs-airflow-vs-zope-wfmc-comparison-of-open-source-workflow-engines-de5209e6dac1)\n\n ",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

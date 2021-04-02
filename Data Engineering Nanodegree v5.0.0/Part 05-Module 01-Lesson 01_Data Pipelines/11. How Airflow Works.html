@@ -1,0 +1,336 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>How Airflow Works</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Data Pipelines</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Welcome.html">01. Welcome</a>
+    </li>
+    <li class="">
+      <a href="02. What is a Data Pipeline.html">02. What is a Data Pipeline?</a>
+    </li>
+    <li class="">
+      <a href="03. Data Validation.html">03. Data Validation</a>
+    </li>
+    <li class="">
+      <a href="04. DAGs and Data Pipelines.html">04. DAGs and Data Pipelines</a>
+    </li>
+    <li class="">
+      <a href="05. Bikeshare DAG.html">05. Bikeshare DAG</a>
+    </li>
+    <li class="">
+      <a href="06. Introduction to Apache Airflow.html">06. Introduction to Apache Airflow</a>
+    </li>
+    <li class="">
+      <a href="07. Demo 1 Airflow DAGs.html">07. Demo 1: Airflow DAGs</a>
+    </li>
+    <li class="">
+      <a href="08. Workspace Instructions.html">08. Workspace Instructions</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise 1 Airflow DAGs.html">09. Exercise 1: Airflow DAGs</a>
+    </li>
+    <li class="">
+      <a href="10. Solution 1 Airflow DAGs.html">10. Solution 1: Airflow DAGs</a>
+    </li>
+    <li class="">
+      <a href="11. How Airflow Works.html">11. How Airflow Works</a>
+    </li>
+    <li class="">
+      <a href="12. Airflow Runtime Architecture.html">12. Airflow Runtime Architecture</a>
+    </li>
+    <li class="">
+      <a href="13. Building a Data Pipeline.html">13. Building a Data Pipeline</a>
+    </li>
+    <li class="">
+      <a href="14. Demo 2 Run the Schedules.html">14. Demo 2: Run the Schedules</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise 2 Run the Schedules.html">15. Exercise 2: Run the Schedules</a>
+    </li>
+    <li class="">
+      <a href="16. Solution 2 Run the Schedules.html">16. Solution 2: Run the Schedules</a>
+    </li>
+    <li class="">
+      <a href="17. Operators and Tasks.html">17. Operators and Tasks</a>
+    </li>
+    <li class="">
+      <a href="18. Demo 3 Task Dependencies.html">18. Demo 3: Task Dependencies</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise 3 Task Dependencies .html">19. Exercise 3: Task Dependencies </a>
+    </li>
+    <li class="">
+      <a href="20. Solution Task Dependencies.html">20. Solution: Task Dependencies</a>
+    </li>
+    <li class="">
+      <a href="21. Airflow Hooks.html">21. Airflow Hooks</a>
+    </li>
+    <li class="">
+      <a href="22. Demo 4 Connections and Hooks.html">22. Demo 4: Connections and Hooks</a>
+    </li>
+    <li class="">
+      <a href="23. Exercise 4 Connections and Hooks.html">23. Exercise 4: Connections and Hooks</a>
+    </li>
+    <li class="">
+      <a href="24. Solution 4 Connections and Hooks.html">24. Solution 4: Connections and Hooks</a>
+    </li>
+    <li class="">
+      <a href="25. Demo 5 Context and Templating.html">25. Demo 5: Context and Templating</a>
+    </li>
+    <li class="">
+      <a href="26. Exercise 5 Context and Templating.html">26. Exercise 5: Context and Templating</a>
+    </li>
+    <li class="">
+      <a href="27. Solution 5 Context and Templating.html">27. Solution 5: Context and Templating</a>
+    </li>
+    <li class="">
+      <a href="28. Quiz Review of Pipeline Components.html">28. Quiz: Review of Pipeline Components</a>
+    </li>
+    <li class="">
+      <a href="29. Demo Exercise 6 Building the S3 to Redshift DAG.html">29. Demo: Exercise 6: Building the S3 to Redshift DAG</a>
+    </li>
+    <li class="">
+      <a href="30. Exercise 6 Build the S3 to Redshift DAG.html">30. Exercise 6: Build the S3 to Redshift DAG</a>
+    </li>
+    <li class="">
+      <a href="31. Solution 6 Build the S3 to Redshift DAG.html">31. Solution 6: Build the S3 to Redshift DAG</a>
+    </li>
+    <li class="">
+      <a href="32. Conclusion.html">32. Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">11. How Airflow Works</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>How Airflow Works</p></h3>
+  <video controls>
+  <source src="11. How Airflow Works-vltaMg-mC4I.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="11. How Airflow Works-vltaMg-mC4I.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Note: Ben refers to "Coco" in the video. He's referring to using an Airflow Workspace within the Udacity classroom.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="center-components-of-airflow"><center> Components of Airflow</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/airflow-diagram.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ul>
+<li><strong>Scheduler</strong> orchestrates the execution of jobs on a trigger or schedule. The Scheduler chooses how to prioritize the running and execution of tasks within the system. You can learn more about the Scheduler from the official <a href="https://airflow.apache.org/scheduler.html" rel="noopener noreferrer" target="_blank">Apache Airflow documentation</a>.</li>
+<li><strong>Work Queue</strong> is used by the scheduler in most Airflow installations to deliver tasks that need to be run to the <strong>Workers</strong>. </li>
+<li><strong>Worker</strong> processes execute the operations defined in each DAG. In most Airflow installations, workers pull from the <strong>work queue</strong> when it is ready to process a task. When the worker completes the execution of the task, it will attempt to process more work from the <strong>work queue</strong> until there is no further work remaining. When work in the queue arrives, the worker will begin to process it.</li>
+<li><strong>Database</strong> saves credentials, connections, history, and configuration. The database, often referred to as the <em>metadata database</em>, also stores the state of all tasks in the system. Airflow components interact with the database with the Python ORM, <a href="https://www.sqlalchemy.org/" rel="noopener noreferrer" target="_blank">SQLAlchemy</a>.</li>
+<li><strong>Web Interface</strong> provides a control dashboard for users and maintainers. Throughout this course you will see how the web interface allows users to perform tasks such as stopping and starting DAGs, retrying failed tasks, configuring credentials, The web interface is built using the <a href="http://flask.pocoo.org/" rel="noopener noreferrer" target="_blank">Flask web-development microframework</a>.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="centerhow-airflow-works"><center>How Airflow Works</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/how-airflow-works.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="order-of-operations-for-an-airflow-dag">Order of Operations For an Airflow DAG</h3>
+<ul>
+<li>The Airflow Scheduler starts DAGs based on time or external triggers.</li>
+<li>Once a DAG is started, the Scheduler looks at the steps within the DAG and determines which steps can run by looking at their dependencies.</li>
+<li>The Scheduler places runnable steps in the queue.</li>
+<li>Workers pick up those tasks and run them. </li>
+<li>Once the worker has finished running the step, the final status of the task is recorded and additional tasks are placed by the scheduler until all tasks are complete.</li>
+<li>Once all tasks have been completed, the DAG is complete. </li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="12. Airflow Runtime Architecture.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. How Airflow Works')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>
