@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:03.980 --> 00:00:07.290
+Let's talk about hardware requirements when going from
+
+00:00:07.290 --> 00:00:10.395
+a local Spark installation to Spark on a cluster.
+
+00:00:10.395 --> 00:00:13.530
+Spark provides three options for working on a cluster;
+
+00:00:13.530 --> 00:00:16.605
+Standalone Mode, MESOS, and YARN.
+
+00:00:16.605 --> 00:00:19.230
+MESOS and YARN are for sharing a Spark cluster
+
+00:00:19.230 --> 00:00:22.185
+across an entire team of engineers and analysts.
+
+00:00:22.185 --> 00:00:25.170
+So, we'll stick to Standalone Mode for this course.
+
+00:00:25.170 --> 00:00:27.600
+As a reminder from lesson one,
+
+00:00:27.600 --> 00:00:29.870
+memory is only for short-term storage.
+
+00:00:29.870 --> 00:00:31.970
+It's like your computer's scratch paper.
+
+00:00:31.970 --> 00:00:38.135
+On the other hand, long-term storage like an SSD is like a file cabinet for your data.
+
+00:00:38.135 --> 00:00:44.315
+When you run a program the CPU requests the data which gets pulled from SSD into memory.
+
+00:00:44.315 --> 00:00:46.160
+Once the data is in your memory,
+
+00:00:46.160 --> 00:00:48.980
+the CPU can quickly use it to run calculations.
+
+00:00:48.980 --> 00:00:50.330
+With small data sets,
+
+00:00:50.330 --> 00:00:52.675
+all of this happens on a same computer.
+
+00:00:52.675 --> 00:00:56.570
+With big data, the data is often too big to store on a single machine,
+
+00:00:56.570 --> 00:00:58.850
+so it's kept on a separate computer.
+
+00:00:58.850 --> 00:01:00.980
+As a Data Scientist at accompany,
+
+00:01:00.980 --> 00:01:04.835
+you'll usually run your Spark jobs on data stored in an external database
+
+00:01:04.835 --> 00:01:09.960
+or a third-party storage rented from a Cloud computing provider like Amazon.
+
+00:01:09.960 --> 00:01:12.065
+To build a Spark cluster,
+
+00:01:12.065 --> 00:01:16.295
+you could go out and buy a handful of computers but it's usually easier to use
+
+00:01:16.295 --> 00:01:19.100
+cloud computing through Amazon Web Services
+
+00:01:19.100 --> 00:01:22.310
+which everyone in the industry just calls AWS.
+
+00:01:22.310 --> 00:01:25.640
+With AWS, you can rent a cluster of machines and
+
+00:01:25.640 --> 00:01:28.985
+expand or shrink the cluster size as you need.
+
+00:01:28.985 --> 00:01:31.640
+The actual machines are located in data centers spread
+
+00:01:31.640 --> 00:01:34.115
+throughout the world but you don't have to worry about that.
+
+00:01:34.115 --> 00:01:37.055
+You just log in from anywhere to use them.
+
+00:01:37.055 --> 00:01:39.245
+Our setup will look like this.
+
+00:01:39.245 --> 00:01:42.685
+We'll use Amazon S3 to store the dataset.
+
+00:01:42.685 --> 00:01:46.970
+Separately, we'll rent machines for our Spark cluster from Amazon
+
+00:01:46.970 --> 00:01:51.770
+using their service called Elastic Compute Cloud or EC2 for short.
+
+00:01:51.770 --> 00:01:54.325
+Then we'll log in to the cluster remotely.
+
+00:01:54.325 --> 00:01:55.890
+When we run our Spark code,
+
+00:01:55.890 --> 00:01:58.850
+a cluster will load the dataset from S3 into
+
+00:01:58.850 --> 00:02:03.515
+the cluster's memory putting a portion of the data onto each machine in the cluster.
+
+00:02:03.515 --> 00:02:05.810
+To follow along, you'll want to set up
+
+00:02:05.810 --> 00:02:10.510
+your own AWS cluster using the instructions in the next part of the lesson.
+

@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:05.030 --> 00:00:09.975
+When you use S3, you're separating the data storage from your cluster.
+
+00:00:09.974 --> 00:00:14.699
+One of the downsides is that you have to download your data across the network which,
+
+00:00:14.699 --> 00:00:16.109
+as we learned in lesson one,
+
+00:00:16.109 --> 00:00:17.774
+can be a bottleneck.
+
+00:00:17.774 --> 00:00:21.539
+Another solution is to store the data on your Spark cluster with
+
+00:00:21.539 --> 00:00:25.484
+the Hadoop Distributed File System or HDFS.
+
+00:00:25.484 --> 00:00:30.390
+HDFS comes pre-installed on Spark with very little setup needed.
+
+00:00:30.390 --> 00:00:34.215
+Spark in HDFS are designed to work well together.
+
+00:00:34.215 --> 00:00:36.720
+When Spark needs some data from HDFS,
+
+00:00:36.719 --> 00:00:38.549
+it grabs the closest copy which
+
+00:00:38.549 --> 00:00:41.804
+minimizes the time data spends traveling around the network.
+
+00:00:41.804 --> 00:00:44.269
+But there's a trade off to HDFS.
+
+00:00:44.270 --> 00:00:47.390
+You have to maintain and fix the system yourself.
+
+00:00:47.390 --> 00:00:51.590
+For many companies, from small startups to big corporations,
+
+00:00:51.590 --> 00:00:53.365
+S3 is just easier,
+
+00:00:53.365 --> 00:00:56.164
+since you don't have to maintain a separate cluster.
+
+00:00:56.164 --> 00:00:59.134
+Also, if you rent clusters from AWS,
+
+00:00:59.134 --> 00:01:02.299
+your data usually doesn't have to go too far in the network since
+
+00:01:02.299 --> 00:01:06.774
+the cluster hardware and the S3 hardware are both on Amazon's data centers.
+
+00:01:06.775 --> 00:01:10.310
+Finally, Spark is smart enough to download a small chunk of
+
+00:01:10.310 --> 00:01:14.030
+data and process that chunk while waiting for the rest to download.
+
+00:01:14.030 --> 00:01:16.969
+In order to decide which storage you prefer,
+
+00:01:16.969 --> 00:01:22.299
+S3 or HDFS, will try the exact same job on both.
+

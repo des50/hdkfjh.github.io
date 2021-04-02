@@ -1,0 +1,616 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AWS CLI - Create EMR Cluster</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Setting up Spark Clusters with AWS</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. From Local to Standalone Mode.html">02. From Local to Standalone Mode</a>
+    </li>
+    <li class="">
+      <a href="03. Setup Instructions AWS.html">03. Setup Instructions AWS</a>
+    </li>
+    <li class="">
+      <a href="04. AWS - Install and Configure CLI v2.html">04. AWS - Install and Configure CLI v2</a>
+    </li>
+    <li class="">
+      <a href="05. AWS CLI - Create EMR Cluster.html">05. AWS CLI - Create EMR Cluster</a>
+    </li>
+    <li class="">
+      <a href="06. Using Notebooks on Your Cluster.html">06. Using Notebooks on Your Cluster</a>
+    </li>
+    <li class="">
+      <a href="07. Spark Scripts.html">07. Spark Scripts</a>
+    </li>
+    <li class="">
+      <a href="08. Submitting Spark Scripts.html">08. Submitting Spark Scripts</a>
+    </li>
+    <li class="">
+      <a href="09. Storing and Retrieving Data on the Cloud.html">09. Storing and Retrieving Data on the Cloud</a>
+    </li>
+    <li class="">
+      <a href="10. Reading and Writing to Amazon S3.html">10. Reading and Writing to Amazon S3</a>
+    </li>
+    <li class="">
+      <a href="11. Understanding difference between HDFS and AWS S3.html">11. Understanding difference between HDFS and AWS S3</a>
+    </li>
+    <li class="">
+      <a href="12. Reading and Writing Data to HDFS.html">12. Reading and Writing Data to HDFS</a>
+    </li>
+    <li class="">
+      <a href="13. Recap Local Mode to Cluster Mode.html">13. Recap Local Mode to Cluster Mode</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">05. AWS CLI - Create EMR Cluster</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Create EMR Script</p></h3>
+  <div>
+  <p>Let's learn how to create an EMR cluster from the CLI, and configure the related settings. </p>
+<h2 id="1-aws-emr-create-cluster-command">1. <code>aws emr create-cluster</code> command</h2>
+<p>While creating EMR through AWS console has been shown, but if you know your instances' specificity, such as which applications you need or what kind of clusters you’ll need, you can reuse the <code>aws emr create-cluster</code> command below multiple times.</p>
+<pre><code>aws emr create-cluster --name &lt;cluster_name&gt; \
+ --use-default-roles --release-label emr-5.28.0  \
+--instance-count 3 --applications Name=Spark Name=Zeppelin  \
+--bootstrap-actions Path="s3://bootstrap.sh" \
+--ec2-attributes KeyName=&lt;your permission key name&gt; \
+--instance-type m5.xlarge --log-uri s3:///emrlogs/</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol>
+<li><strong>Options of the <code>aws emr create-cluster</code> command</strong> - Let’s break down the command and go over each option to know its responsibility.</li>
+</ol>
+<ul>
+<li><code>--name</code> : You can give any name of your choice. This will show up on your AWS EMR UI. </li>
+<li><code>--release-label</code>: This is the version of EMR you’d like to use.</li>
+<li><code>--instance-count</code>: Annotates instance count. One is for the primary, and the rest are for the secondary. For example, if --instance-count is given 4, then 1 instance will be reserved <br />
+for primary, then 3 will be reserved for secondary instances.</li>
+<li><code>--applications</code>: List of applications you want to pre-install on your EMR at the launch time</li>
+<li><code>--bootstrap-actions</code>: The <code>Path</code> attribute provides the path to a file (residing in S3 or locally) that contains a script that runs during a bootstrap action. The script may set <br />
+environmental variables in all the instances of the cluster. This file must be accessible to each instance in the cluster. </li>
+<li><code>--ec2-attributes KeyName</code>: Specify your permission key name, for example, if it is MyKey.pem, just specify <code>MyKey</code> for this field</li>
+<li><code>--instance-type</code>: Specify the type of instances you want to use. <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-supported-instance-types.html" target="_blank">Detailed list can be accessed here</a>, but find the one that can fit your data and your budget.</li>
+<li><code>--log-uri</code>: S3 location to store your EMR logs in. This log can store EMR metrics and also the metrics/logs for submission of your code.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li><strong>Reference</strong> - You can refer to an even more detailed explanation about all possible options of the <code>aws emr create-cluster</code> command at <a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/emr/create-cluster.html" target="_blank">CLI command reference</a>. </li>
+</ol>
+<hr>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="2-exercise--create-an-emr-cluster-using-aws-cli">2. Exercise:  Create an EMR cluster using AWS CLI</h2>
+<p>Follow the instructions given below: </p>
+<h3 id="21-prerequisite">2.1. Prerequisite</h3>
+<ol>
+<li><strong>AWS CLI</strong> - Install AWS CLI on your local computer. Refer to the  <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html" target="_blank">AWS instructions to install/update AWS CLI</a> (version 2) based on your underlying OS.<br><br></li>
+<li><strong>Set up Access credentials using AWS IAM</strong> - Generate and save a new Access key  (access key ID, and a secret key) locally in your system, which will allow your CLI to create an EMR cluster. You will have to configure the environment variables so that the <code>aws configure</code> command can run properly. <br><br></li>
+<li><strong>EC2 Login Key-Pair</strong> - You should have an EC2 login key-pair to access your EC2 instances in the cluster. You can generate a key-pair from the <a href="https://console.aws.amazon.com/ec2/v2/home" target="_blank">EC2 dashboard</a>. Remember, a <em>key-pair</em> is a pair of (encrypted) public and (unencrypted PEM encoded) private keys. The public key is placed automatically on the instance, and the private key is made available to the user, just once. Suppose, your private key file name is <em>AWS_EC2_Demo.pem</em>, then you should use only "<em>AWS_EC2_Demo</em>" in the script below, with the option <code>--ec2-attributes</code>.  </li>
+</ol>
+<h3 id="22-create-an-emr-cluster">2.2. Create an EMR Cluster</h3>
+<ol>
+<li><strong>Create default roles in IAM</strong> - Before you run the <code>aws emr create-cluster</code> command, make sure to have the necessary roles created in your account. Use the following command. </li>
+</ol>
+<pre><code>aws emr create-default-roles</code></pre>
+<p>This command will create  <em>EMR_EC2_DefaultRole</em> and <em>EMR_DefaultRole</em> in your account. <br><br></p>
+<ol>
+<li><strong>Launch your cluster</strong> - Run the script below to launch your cluster. Be sure to include the appropriate file names within the <code>&lt;&gt;</code> in the code.<br><br></li>
+<li><strong>[Optional] Specify your bootstrap file</strong> - You should save an executable (bootstrap_emr.sh file) in an accessible S3 location. You can specify this option as, for example, <code>--bootstrap-actions Path=s3://mybucket/bootstrap_emr.sh</code> in the script below. A sample file is provided in the <a href="https://github.com/udacity/nd027-c3-data-lakes-with-spark/tree/master/Setting_Spark_Cluster_In_AWS/exercises/starter/create_emr_cluster" target="_blank">Github repo here</a>.</li>
+</ol>
+<pre><code># Add your cluster name, and EC2 private key file name
+aws emr create-cluster --name &lt;YOUR_CLUSTER_NAME&gt; --use-default-roles --release-label emr-5.28.0 --instance-count 3 --applications Name=Spark  --ec2-attributes KeyName=&lt;YOUR_EC2_KEY_FILE_NAME&gt; --instance-type m5.xlarge --instance-count 3 --auto-terminate</code></pre>
+<p>Notice two things in the command above. </p>
+<ul>
+<li><p>One, we have added the <code>--auto-terminate</code> option to terminate the cluster after completing all the steps because EMR clusters are costly. However, you can ignore this option, and <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminateJobFlow.html" rel="noopener noreferrer" target="_blank">terminate the cluster manually</a> after your job is done. </p></li>
+<li><p>Two, we haven't specified the <code>--bootstrap-actions</code> option. This step is optional. </p>
+<p>The expected output should look similar to this:</p></li>
+</ul>
+<pre><code> "ClusterId": "j-2PZ79NHXO7YYX",
+ "ClusterArn": "arn:aws:elasticmapreduce:us-east-2:027631528606:cluster/j-2PZ79NHXO7YYX"</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="4">
+<li>You can either go to <a href="https://console.aws.amazon.com/elasticmapreduce/home" rel="noopener noreferrer" target="_blank">AWS EMR console</a> from your web browser or run the command below to verify if the cluster is created successfully. </li>
+</ol>
+<pre><code>aws emr describe-cluster --cluster-id &lt;CLUSTER_ID FROM ABOVE&gt;</code></pre>
+<p>A copy of the exercises are also available in the lesson git repo:** <strong><a href="https://github.com/udacity/nd027-c3-data-lakes-with-spark/tree/master/Setting_Spark_Cluster_In_AWS/exercises/starter" target="_blank"></strong>Link to Github**</a></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-12.08.35-pm.png" alt="Summary of the newly created cluster. The next set of steps are also highlighted above. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Summary of the newly created cluster. The next set of steps are also highlighted above. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="5">
+<li><strong>Troubleshoot</strong> - Refer here if you get <a href="https://aws.amazon.com/premiumsupport/knowledge-center/emr-default-role-invalid/" target="_blank">"EMR_DefaultRole is invalid" or "EMR_EC2_DefaultRole is invalid"</a> error.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="23-change-security-groups">2.3. Change Security Groups</h3>
+<ol>
+<li><p>After successfully launching the EMR cluster, the master and core (slave) EC2 instances will launch automatically. Next, we will try to log in to the master EC2 instance on the EMR cluster using the SSH protocol (allows secure remote login). Therefore, you’ll need to enable the <em>Security Groups</em> setting of the master EC2 instance to accept incoming SSH protocol from your local computer.</p>
+<p>The master and slave nodes are associated with a separate security group. You can view the security group ID either in the <strong>EMR console</strong> &#8594; <strong>Clusters</strong> or you can go to the <strong>EC2 dashboard</strong> &#8594; <strong>Security Groups</strong> service, as shown below. </p></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-12.12.35-pm.png" alt="Select the security group associated with the master " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Select the security group associated with the master </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li>Edit the security group to authorize inbound SSH traffic (port 22)  from your local computer. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-12.14.45-pm.png" alt="Edit the inbound rules of the master node" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Edit the inbound rules of the master node</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-11.47.10-am.png" alt="Add new inbound SSH traffic (port 22) from your local IP" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Add new inbound SSH traffic (port 22) from your local IP</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="3">
+<li><strong>Reference</strong> - <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-connect-ssh-prereqs.html" rel="noopener noreferrer" target="_blank">Authorize inbound traffic</a></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="24-verify-connection-to-the-master-node">2.4. Verify connection to the Master node</h3>
+<ol>
+<li>Go to the EC2 dashboard, and select the instance you want to connect using the SSH protocol. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-12.18.32-pm.png" alt="Select the instance to connect" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Select the instance to connect</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li>Connect using the SSH protocol. You can run the commands shown in the figure below in your terminal.</li>
+</ol>
+<blockquote>
+  <p><strong>Note</strong> - In the snapshot below, the user name to log in is not <strong>root</strong>. Instead, you must use ** hadoop**. For example, use <code>ssh -i AWS_EC2_Demo.pem hadoop@ec2-3-139-93-181.us-east-2.compute.amazonaws.com</code></p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-12.24.54-pm.png" alt="Steps to connect using SSH protocol. After a successful connection, you can &#x60;exit&#x60; your connection." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Steps to connect using SSH protocol. After a successful connection, you can <code>exit</code> your connection.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="3">
+<li><strong>Reference</strong> - <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-connect-master-node-ssh.html" rel="noopener noreferrer" target="_blank">Connect to the Master Node Using SSH</a>. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="25-view-spark-ui-hosted-on-the-emr-clusters">2.5. View Spark UI hosted on the EMR Clusters</h3>
+<p>One last thing to do before using the Jupyter Notebook, or even browsing the Spark UI, is to set up a proxy in your browser. It is a two-step process. </p>
+<p><strong>Step 1. Set Up an SSH Tunnel to the Master Node Using Dynamic Port Forwarding</strong><br></p>
+<ol>
+<li>Enable the dynamic port forwarding using the command. This command does not returns a response.</li>
+</ol>
+<pre><code class="bash language-bash">ssh -i AWS_EC2_Demo.pem -N -D 8157 hadoop@ec2-3-139-93-181.us-east-2.compute.amazonaws.com</code></pre>
+<blockquote>
+  <p>Replace the <em>.pem</em> file name and the <em>master node public DNS</em> for you. In the above example, the <em>.pem</em> is residing in the present working folder. If your <em>.pem</em> is placed in any different folder, you can provide the complete path.</p>
+</blockquote>
+<p>In the command above, the <code>-D</code> option is used for specifying a local port (8157) to forward data to all remote ports on the master node's web server. <br><br></p>
+<ol start="2">
+<li>Now, you'd want to copy your .pem file (EC2 log in private key) to the master node. You can securely copy your .pem file from your local computer to the master node, using:</li>
+</ol>
+<pre><code>scp -i AWS_EC2_Demo.pem AWS_EC2_Demo.pem hadoop@ec2-3-139-93-181.us-east-2.compute.amazonaws.com:/home/hadoop/</code></pre>
+<p>You can use a similar command to copy any other script, if required.</p>
+<ol start="3">
+<li><strong>Reference</strong> - <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-ssh-tunnel.html" rel="noopener noreferrer" target="_blank">Part 1: Set Up an SSH Tunnel to the Master Node Using Dynamic Port Forwarding</a></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p><strong>Step 2. Configure Proxy Settings in your Local Computer</strong><br><br />
+To do this, you'll need to install an extension in your browser. Here are the options:</p>
+<ul>
+<li>Chrome - SwitchyOmega or FoxyProxy</li>
+<li>Firefox - FoxyProxy </li>
+</ul>
+<p>The snapshots below present the step for the Chrome browser. For other browsers, you can follow the reference link present at the end of the section. </p>
+<ol>
+<li>Go to the <a href="https://chrome.google.com/webstore/category/extensions" rel="noopener noreferrer" target="_blank">https://chrome.google.com/webstore/category/extensions</a>, and add for <em>Proxy SwitchyOmega</em> extension to your Chrome browser.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-12.41.02-pm.png" alt="SwitchyOmega extension on Chrome" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>SwitchyOmega extension on Chrome</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li>Create a new profile with name <code>emr-socks-proxy</code> and select <em>PAC profile type</em>.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-12.41.33-pm.png" alt="Create a new profile in SwitchyOmega" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Create a new profile in SwitchyOmega</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-12.42.12-pm.png" alt="Enter the profile name and choose a profile type" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Enter the profile name and choose a profile type</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="3">
+<li>Save the following profile script in your new profile:</li>
+</ol>
+<pre><code>function FindProxyForURL(url, host) {
+    if (shExpMatch(url, "*ec2*.amazonaws.com*")) return 'SOCKS5 localhost:8157';
+    if (shExpMatch(url, "*ec2*.compute*")) return 'SOCKS5 localhost:8157';
+    if (shExpMatch(url, "http://10.*")) return 'SOCKS5 localhost:8157';
+    if (shExpMatch(url, "*10*.compute*")) return 'SOCKS5 localhost:8157';
+    if (shExpMatch(url, "*10*.amazonaws.com*")) return 'SOCKS5 localhost:8157';
+    if (shExpMatch(url, "*.compute.internal*")) return 'SOCKS5 localhost:8157';
+    if (shExpMatch(url, "*ec2.internal*")) return 'SOCKS5 localhost:8157';
+    return 'DIRECT';
+}</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-12.43.21-pm.png" alt="Apply changes to the new profile" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Apply changes to the new profile</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="4">
+<li>Enable the <code>emr-socks-proxy</code> profile.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-3.09.22-pm.png" alt="Enable the new SwitchyOmega profile" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Enable the new SwitchyOmega profile</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="5">
+<li>Once, you have configured the proxy, you can access the Spark UI using the command (replace the master node public DNS for you):</li>
+</ol>
+<pre><code>http://ec2-3-139-93-181.us-east-2.compute.amazonaws.com:18080/</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-12-17-at-12.51.20-pm.png" alt="Spark UI, accessed from the CLI (note the URL above). Though, you can access the same Spark UI by selecting the cluster summary from the **EMR console** &amp;#8594; **Clusters**, and clicking on the **Persistent user interface** hyperlink. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Spark UI, accessed from the CLI (note the URL above). Though, you can access the same Spark UI by selecting the cluster summary from the <strong>EMR console</strong> &#8594; <strong>Clusters</strong>, and clicking on the <strong>Persistent user interface</strong> hyperlink. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="6">
+<li><strong>Reference</strong> - <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-connect-master-node-proxy.html" rel="noopener noreferrer" target="_blank">Part 2: Configure Proxy Settings to View Websites Hosted on the Master Node</a></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <blockquote>
+  <p><strong><font color="red">Note</font></strong> - Do not forget to <strong><a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminateJobFlow.html" rel="noopener noreferrer" target="_blank">Terminate</a></strong> your EMR cluster after your exercise is finished. </p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="06. Using Notebooks on Your Cluster.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. AWS CLI - Create EMR Cluster')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

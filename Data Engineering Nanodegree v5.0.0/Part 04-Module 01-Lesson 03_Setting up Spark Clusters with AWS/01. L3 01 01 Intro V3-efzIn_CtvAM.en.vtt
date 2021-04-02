@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:05.390 --> 00:00:08.025
+After going through the previous lesson,
+
+00:00:08.025 --> 00:00:11.300
+you should feel comfortable writing basic Spark programs.
+
+00:00:11.300 --> 00:00:14.995
+Up until now, you've been working with data sets on a local machine.
+
+00:00:14.995 --> 00:00:18.105
+These data sets were small enough to fit in your computer's memory,
+
+00:00:18.105 --> 00:00:20.415
+so you didn't need a distributed cluster.
+
+00:00:20.415 --> 00:00:24.770
+But we weren't taking full advantage of what Spark really has to offer,
+
+00:00:24.770 --> 00:00:28.720
+working on the type of big data problems that we discussed in lesson one.
+
+00:00:28.720 --> 00:00:32.670
+In this lesson, you'll get Spark running on a distributed cluster,
+
+00:00:32.670 --> 00:00:34.970
+so you can start to work with big data.
+
+00:00:34.970 --> 00:00:37.700
+But a quick heads up, you'll find that running
+
+00:00:37.700 --> 00:00:41.120
+Spark in distributed mode is not always straightforward.
+
+00:00:41.120 --> 00:00:43.880
+It's common to run into issues with your code or
+
+00:00:43.880 --> 00:00:46.280
+your data that lead to failed Spark jobs.
+
+00:00:46.280 --> 00:00:47.810
+So, in this lesson,
+
+00:00:47.810 --> 00:00:50.090
+you'll not only get Spark running on a cluster,
+
+00:00:50.090 --> 00:00:55.340
+you'll also learn best practices for debugging and optimizing your Spark programs.
+
+00:00:55.340 --> 00:00:58.100
+More specifically, you'll set up Spark in
+
+00:00:58.100 --> 00:01:02.525
+standalone mode which uses a cluster of computers rather than a single node.
+
+00:01:02.525 --> 00:01:09.145
+You'll work with data stored in popular distributed systems like Amazon's S3 or HDFS.
+
+00:01:09.145 --> 00:01:11.930
+We'll also learn to catch and fix issues in your code and
+
+00:01:11.930 --> 00:01:14.975
+data using the Spark web UI for debugging.
+
+00:01:14.975 --> 00:01:18.590
+We'll optimize your code to work with big data more efficiently,
+
+00:01:18.590 --> 00:01:20.690
+and we'll understand the most common Spark
+
+00:01:20.690 --> 00:01:23.695
+issues you'll run into and learn how to resolve them.
+
+00:01:23.695 --> 00:01:25.375
+By the end of the lesson,
+
+00:01:25.375 --> 00:01:27.440
+you'll know how to run Spark on a cluster,
+
+00:01:27.440 --> 00:01:29.330
+and you will have a clear process for fixing
+
+00:01:29.330 --> 00:01:33.060
+issues when your Spark program doesn't work as expected.
+

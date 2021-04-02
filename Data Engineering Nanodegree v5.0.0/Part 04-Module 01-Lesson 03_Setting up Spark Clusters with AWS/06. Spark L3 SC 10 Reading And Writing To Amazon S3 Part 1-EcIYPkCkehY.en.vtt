@@ -1,0 +1,103 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.790
+So now that you've got your Spark cluster up and running and
+
+00:00:02.790 --> 00:00:05.759
+you've tested that you are able to connect to it successfully,
+
+00:00:05.759 --> 00:00:09.224
+the next step would be to actually run some notebooks.
+
+00:00:09.224 --> 00:00:11.189
+So fortunately,
+
+00:00:11.189 --> 00:00:15.195
+Amazon has a number of different ways that you can connect to the cluster,
+
+00:00:15.195 --> 00:00:17.519
+but very conveniently there's this option on
+
+00:00:17.519 --> 00:00:20.429
+the left side of the EMR menu called "Notebooks."
+
+00:00:20.429 --> 00:00:23.070
+When you click there, you'll be given
+
+00:00:23.070 --> 00:00:26.324
+the option to create a notebook which will automatically
+
+00:00:26.324 --> 00:00:32.729
+be connected to one of the clusters that you've spun up and stored on Amazon S3.
+
+00:00:32.729 --> 00:00:34.664
+Unfortunately what happens is,
+
+00:00:34.664 --> 00:00:36.009
+it stored in such a way that,
+
+00:00:36.009 --> 00:00:39.369
+if you ever need to delete your cluster and set up a new one,
+
+00:00:39.369 --> 00:00:44.974
+the notebooks are stored separately and can be kept for later use.
+
+00:00:44.975 --> 00:00:48.350
+So go ahead and click, "Create notebook" and we'll go ahead and
+
+00:00:48.350 --> 00:00:52.170
+start with a very simple notebook not to actually do some analysis,
+
+00:00:52.170 --> 00:00:53.810
+but just to test all of our connections.
+
+00:00:53.810 --> 00:00:55.640
+So I'll name it something very simple like,
+
+00:00:55.640 --> 00:00:58.789
+"Test EMR" and give it a similar description,
+
+00:00:58.789 --> 00:01:02.530
+so just testing connections.
+
+00:01:02.530 --> 00:01:07.359
+Then importantly, when you choose a cluster,
+
+00:01:07.359 --> 00:01:09.950
+go ahead and choose the cluster that we made before,
+
+00:01:09.950 --> 00:01:11.435
+whatever you called it,
+
+00:01:11.435 --> 00:01:13.719
+make sure that you've selected that,
+
+00:01:13.719 --> 00:01:17.704
+and then you can use all the default options.
+
+00:01:17.704 --> 00:01:20.959
+Very importantly, make sure that you go ahead and use
+
+00:01:20.959 --> 00:01:26.944
+the defaults role for the notebooks that has all the correct permissions to be able to
+
+00:01:26.944 --> 00:01:32.719
+write and save to the right places and go ahead and leave the default location which
+
+00:01:32.719 --> 00:01:35.450
+will automatically be created for you using
+
+00:01:35.450 --> 00:01:38.945
+this notebook sub-directory in your S3 bucket.
+
+00:01:38.944 --> 00:01:41.629
+So with all of that set,
+
+00:01:41.629 --> 00:01:45.079
+just go ahead and create a notebook and within a few minutes,
+
+00:01:45.079 --> 00:01:51.689
+you should have a notebook that you're able to open and edit live in your browser.
+

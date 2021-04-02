@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.129 --> 00:00:07.109
+Let's recap what you've done so far.
+
+00:00:07.110 --> 00:00:09.810
+You've set up a Spark cluster on AWS,
+
+00:00:09.810 --> 00:00:13.769
+submitted Spark code using Jupyter notebooks and Python scripts,
+
+00:00:13.769 --> 00:00:19.545
+and you've also used distributed data storage using both S3 and HDFS.
+
+00:00:19.545 --> 00:00:25.080
+So, you now have all the tools to analyze massive datasets on a distributed system.
+
+00:00:25.079 --> 00:00:28.019
+But as you start to use these tools,
+
+00:00:28.019 --> 00:00:29.475
+you'll run into some issues,
+
+00:00:29.475 --> 00:00:32.234
+sometimes in your code and sometimes in your data.
+
+00:00:32.234 --> 00:00:36.780
+Let's learn how to deal with these issues and debug our Spark jobs.
+

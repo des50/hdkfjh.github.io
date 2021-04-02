@@ -1,0 +1,217 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.170
+So in this case, the data that we've actually loaded is just
+
+00:00:04.170 --> 00:00:08.430
+from an actual list that we've created in Python,
+
+00:00:08.430 --> 00:00:13.725
+but more normally what we want to do is actually load data from some other sources.
+
+00:00:13.725 --> 00:00:18.945
+One of the most common sources is to actually load data from S3.
+
+00:00:18.945 --> 00:00:25.590
+So let's go ahead and practice loading data from an S3 bucket.
+
+00:00:25.590 --> 00:00:29.580
+You go ahead and specify a path and for S3,
+
+00:00:29.580 --> 00:00:34.354
+it looks just like a file system or URL,
+
+00:00:34.354 --> 00:00:37.280
+except instead of something like HTTP,
+
+00:00:37.280 --> 00:00:42.905
+you would actually just do S3N and that's a specific protocol that S3 uses.
+
+00:00:42.905 --> 00:00:45.670
+Then you specify the location of the bucket.
+
+00:00:45.670 --> 00:00:50.000
+Now, you can use the bucket that we've set up for this course which
+
+00:00:50.000 --> 00:00:54.620
+is known as Sparkify and it'll be the same for every single person.
+
+00:00:54.620 --> 00:00:58.880
+We've already pre-loaded some data and they're called Sparkify log small.
+
+00:00:58.880 --> 00:01:03.090
+That's the same JSON data set that you used in Lesson 2.
+
+00:01:03.090 --> 00:01:05.370
+So if you go ahead and do that,
+
+00:01:05.370 --> 00:01:11.710
+that will just create a nice object that we can refer to.
+
+00:01:11.710 --> 00:01:15.110
+Then from there, the command to actually read in that
+
+00:01:15.110 --> 00:01:17.960
+JSON is the same as if you had used a local system.
+
+00:01:17.960 --> 00:01:23.855
+So again, let's copy over some of those same commands that we would have used otherwise,
+
+00:01:23.855 --> 00:01:28.700
+and what we'll see is that this will go ahead and
+
+00:01:28.700 --> 00:01:35.150
+run the job to actually pull the data from our S3 bucket,
+
+00:01:35.150 --> 00:01:40.730
+and we'll go ahead and persist that data locally or onto the cluster,
+
+00:01:40.730 --> 00:01:44.575
+not locally but onto the actual Spark cluster that we have.
+
+00:01:44.575 --> 00:01:46.940
+Just for the sake of double-checking it,
+
+00:01:46.940 --> 00:01:52.530
+we'll output the first five data points from that data set.
+
+00:01:52.530 --> 00:01:57.925
+As we can see, this is the data it's not in the best form for reading,
+
+00:01:57.925 --> 00:02:00.500
+but this is in fact the data that we would expect.
+
+00:02:00.500 --> 00:02:03.695
+So the first row shows that first user,
+
+00:02:03.695 --> 00:02:07.495
+Kenneth, listening to Showaddywaddy.
+
+00:02:07.495 --> 00:02:10.310
+So that's how to load data from S3.
+
+00:02:10.310 --> 00:02:11.900
+It's relatively simple.
+
+00:02:11.900 --> 00:02:16.010
+Let's actually go ahead and look at what the S3 data looks like.
+
+00:02:16.010 --> 00:02:24.215
+So within S3, S3 is actually a separate service that you would use outside of Amazon EMR.
+
+00:02:24.215 --> 00:02:26.345
+If we look at the S3,
+
+00:02:26.345 --> 00:02:28.610
+you can get to that a lot of different ways,
+
+00:02:28.610 --> 00:02:33.050
+but the best way is just type S3 and that will pull up the S3.
+
+00:02:33.050 --> 00:02:36.815
+Now, within S3 you'll see a number of different buckets.
+
+00:02:36.815 --> 00:02:42.050
+Buckets are a lot like folders in the file system and they operate in much the same way.
+
+00:02:42.050 --> 00:02:45.800
+You'll probably have two separate buckets that correspond to the logs,
+
+00:02:45.800 --> 00:02:47.390
+and as mentioned before,
+
+00:02:47.390 --> 00:02:49.580
+this is where your actual notebooks are being stored.
+
+00:02:49.580 --> 00:02:52.595
+So if you've got several notebooks you might see
+
+00:02:52.595 --> 00:02:56.815
+a lot of them with random strings for what they're called.
+
+00:02:56.815 --> 00:03:01.165
+If you actually look at one at any one of these you'll get more intuitive names for them.
+
+00:03:01.165 --> 00:03:03.035
+But if we go back,
+
+00:03:03.035 --> 00:03:08.585
+you'll actually be able to see that this is the Sparkify data set that I've set up.
+
+00:03:08.585 --> 00:03:12.445
+Again, it just has a few small logs in here.
+
+00:03:12.445 --> 00:03:17.440
+You can see this data and you can actually use this browser to view
+
+00:03:17.440 --> 00:03:22.480
+some of the data so you could actually open it in the web browser,
+
+00:03:22.480 --> 00:03:28.075
+and you could actually look at the data in its raw form live there.
+
+00:03:28.075 --> 00:03:31.845
+You can also, with the S3 view,
+
+00:03:31.845 --> 00:03:34.510
+download the data, or download it in a different format.
+
+00:03:34.510 --> 00:03:35.830
+Let's say you want to download it as
+
+00:03:35.830 --> 00:03:40.270
+a zipped file and you can also conveniently copy this path.
+
+00:03:40.270 --> 00:03:44.985
+So if you ever decided you wanted to look at a different bucket or a different thing,
+
+00:03:44.985 --> 00:03:46.895
+you could just copy the path there,
+
+00:03:46.895 --> 00:03:51.220
+and then go back to your cluster and change this URL.
+
+00:03:51.220 --> 00:03:53.260
+So in this case,
+
+00:03:53.260 --> 00:03:54.820
+I've just copied the same thing.
+
+00:03:54.820 --> 00:03:56.620
+So it's relatively boring.
+
+00:03:56.620 --> 00:04:00.550
+Let me go and get a different file to show that this actually works.
+
+00:04:00.550 --> 00:04:03.835
+Go again here, copy this path,
+
+00:04:03.835 --> 00:04:07.320
+go back to my path here,
+
+00:04:07.320 --> 00:04:12.310
+and you'll note here that it doesn't actually put the in protocol.
+
+00:04:12.310 --> 00:04:16.015
+It's much faster if you put that in afterwards,
+
+00:04:16.015 --> 00:04:22.105
+that's esoteric detail that we can go into more detail in the classroom,
+
+00:04:22.105 --> 00:04:25.325
+but that'll make your job actually run faster.
+
+00:04:25.325 --> 00:04:27.260
+So if you rerun this again,
+
+00:04:27.260 --> 00:04:29.585
+it'll pull this data.
+
+00:04:29.585 --> 00:04:32.600
+This is just a much larger file but it has
+
+00:04:32.600 --> 00:04:36.930
+the exact same form so you can see everything's working as expected.
+

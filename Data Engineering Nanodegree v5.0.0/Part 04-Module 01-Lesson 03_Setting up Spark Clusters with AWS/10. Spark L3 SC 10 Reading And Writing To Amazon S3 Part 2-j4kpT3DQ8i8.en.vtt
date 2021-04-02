@@ -1,0 +1,229 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.005
+From here, go ahead and open up your notebook.
+
+00:00:04.005 --> 00:00:07.470
+What you'll see is a familiar notebook view that you would
+
+00:00:07.470 --> 00:00:10.810
+expect if you were running Jupiter Notebooks on your local cluster,
+
+00:00:10.810 --> 00:00:15.420
+except this time, it's being stored on inside Amazon.
+
+00:00:15.420 --> 00:00:19.290
+So let's go ahead and actually run some of
+
+00:00:19.290 --> 00:00:24.060
+the same commands that we ran from our previous lesson when we were working with Spark.
+
+00:00:24.060 --> 00:00:30.840
+I've got a few commands loaded up that you could also find in the GitHub repo.
+
+00:00:30.840 --> 00:00:32.920
+So in this case,
+
+00:00:32.920 --> 00:00:36.800
+let's go ahead and just copy those directly over.
+
+00:00:36.800 --> 00:00:38.930
+When you first run a command,
+
+00:00:38.930 --> 00:00:40.355
+whether it uses Spark or not,
+
+00:00:40.355 --> 00:00:43.685
+you'll get prompted with this starting Spark application.
+
+00:00:43.685 --> 00:00:47.760
+That's just the Amazon doing exactly what it says,
+
+00:00:47.760 --> 00:00:50.250
+starting the Spark application.
+
+00:00:50.250 --> 00:00:52.530
+Then while that's going,
+
+00:00:52.530 --> 00:00:57.290
+we'll get ready to do an actual command that triggers an action.
+
+00:00:57.290 --> 00:01:01.025
+So prompts that the Spark session is available,
+
+00:01:01.025 --> 00:01:04.890
+and let's go ahead and do another command.
+
+00:01:07.570 --> 00:01:11.470
+As you recall, this does something very simple.
+
+00:01:11.470 --> 00:01:16.825
+It takes this list of songs that would have been from our Sparkfy application.
+
+00:01:16.825 --> 00:01:22.830
+If all goes well, it should lowercase them all with this very simple lower function.
+
+00:01:22.830 --> 00:01:26.259
+However, there is a small bug in Spark,
+
+00:01:26.259 --> 00:01:28.120
+which causes a problem.
+
+00:01:28.120 --> 00:01:33.820
+Specifically, it seems to have some problem with this authentication token,
+
+00:01:33.820 --> 00:01:35.425
+not having some links.
+
+00:01:35.425 --> 00:01:36.960
+If you actually look into this,
+
+00:01:36.960 --> 00:01:40.420
+what you'll see is this has nothing to do with our actual code.
+
+00:01:40.420 --> 00:01:44.170
+So this is the first example of a error in Spark,
+
+00:01:44.170 --> 00:01:46.600
+and it's not uncommon to encounter these errors.
+
+00:01:46.600 --> 00:01:50.005
+So let's go ahead and try to debug this.
+
+00:01:50.005 --> 00:01:52.300
+So the very first thing that you can do,
+
+00:01:52.300 --> 00:01:56.675
+which will get you past most errors is to try to just Google it.
+
+00:01:56.675 --> 00:01:59.960
+If you actually just take this last thing,
+
+00:01:59.960 --> 00:02:04.040
+making sure that it doesn't have any specific information about our cluster.
+
+00:02:04.040 --> 00:02:06.110
+So if we just googled this whole thing,
+
+00:02:06.110 --> 00:02:10.865
+we'd probably come up with no results because this data is unique to us.
+
+00:02:10.865 --> 00:02:14.869
+But if we just take this last error, and specifically,
+
+00:02:14.869 --> 00:02:18.265
+I would try adding the word PySpark,
+
+00:02:18.265 --> 00:02:20.230
+go ahead and Google that.
+
+00:02:20.230 --> 00:02:26.120
+What you'll see pretty quickly is that there's a few errors showing up.
+
+00:02:26.120 --> 00:02:31.010
+Actually, the one that's probably most relevant is this newest one.
+
+00:02:31.010 --> 00:02:34.260
+You can see that it's got a specific Spark tag on it.
+
+00:02:34.260 --> 00:02:37.205
+So I'll go ahead and check that out.
+
+00:02:37.205 --> 00:02:40.370
+This is actually from the Spark mailing lists,
+
+00:02:40.370 --> 00:02:42.650
+so it doesn't have all the information we need.
+
+00:02:42.650 --> 00:02:45.020
+But importantly, it has this link to
+
+00:02:45.020 --> 00:02:50.555
+the actual JIRA page that has the actual issue tracking.
+
+00:02:50.555 --> 00:02:52.820
+So if you copy paste that,
+
+00:02:52.820 --> 00:02:56.495
+what you'll see is that this is actually
+
+00:02:56.495 --> 00:03:00.770
+a known error that is just from this latest version of Spark,
+
+00:03:00.770 --> 00:03:04.295
+and if you actually go down to here at the bottom,
+
+00:03:04.295 --> 00:03:06.155
+you'll see a few things.
+
+00:03:06.155 --> 00:03:12.410
+One is that what they say here is that this is a known issue,
+
+00:03:12.410 --> 00:03:14.540
+and it's something that was introduced.
+
+00:03:14.540 --> 00:03:17.490
+They actually have a few different tags here.
+
+00:03:17.490 --> 00:03:20.430
+So this is going down the rabbit hole,
+
+00:03:20.430 --> 00:03:24.965
+but there's actually a separate issue here where this is a duplicate.
+
+00:03:24.965 --> 00:03:26.615
+So if we click on here,
+
+00:03:26.615 --> 00:03:31.460
+we can find more details and see if you follow this thread,
+
+00:03:31.460 --> 00:03:34.325
+which you don't necessarily want to fall all of it.
+
+00:03:34.325 --> 00:03:36.920
+But the key thing is that this has been resolved,
+
+00:03:36.920 --> 00:03:42.080
+and it's actually a known issue that will be fixed in the next version of Spark.
+
+00:03:42.080 --> 00:03:45.125
+This is one of the challenges of working with open-source software,
+
+00:03:45.125 --> 00:03:48.560
+there's always new bugs and fixes.
+
+00:03:48.560 --> 00:03:53.880
+But the key thing to take away from this is that if you follow this thread,
+
+00:03:53.880 --> 00:03:56.310
+you'll see that actually,
+
+00:03:56.310 --> 00:03:58.695
+it's just a inconvenient bug.
+
+00:03:58.695 --> 00:04:01.320
+If you run the exact same code again,
+
+00:04:01.320 --> 00:04:04.190
+it will work perfectly the next time.
+
+00:04:04.190 --> 00:04:07.350
+So if you just run this twice,
+
+00:04:07.350 --> 00:04:11.015
+it will actually work the second time exactly, as we expected.
+
+00:04:11.015 --> 00:04:16.835
+As you can see, the songs that were capitalized are now in lowercase.
+
+00:04:16.835 --> 00:04:20.350
+So our Spark job is working exactly as we'd like.
+
+00:04:20.350 --> 00:04:26.015
+You can actually drill down and see more details about the actual Spark job,
+
+00:04:26.015 --> 00:04:31.860
+and the tasks, and see that everything worked as expected in just a few seconds.
+

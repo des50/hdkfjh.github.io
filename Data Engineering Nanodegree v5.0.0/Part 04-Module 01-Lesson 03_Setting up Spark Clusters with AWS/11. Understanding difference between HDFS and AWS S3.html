@@ -1,0 +1,218 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Understanding difference between HDFS and AWS S3</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Setting up Spark Clusters with AWS</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. From Local to Standalone Mode.html">02. From Local to Standalone Mode</a>
+    </li>
+    <li class="">
+      <a href="03. Setup Instructions AWS.html">03. Setup Instructions AWS</a>
+    </li>
+    <li class="">
+      <a href="04. AWS - Install and Configure CLI v2.html">04. AWS - Install and Configure CLI v2</a>
+    </li>
+    <li class="">
+      <a href="05. AWS CLI - Create EMR Cluster.html">05. AWS CLI - Create EMR Cluster</a>
+    </li>
+    <li class="">
+      <a href="06. Using Notebooks on Your Cluster.html">06. Using Notebooks on Your Cluster</a>
+    </li>
+    <li class="">
+      <a href="07. Spark Scripts.html">07. Spark Scripts</a>
+    </li>
+    <li class="">
+      <a href="08. Submitting Spark Scripts.html">08. Submitting Spark Scripts</a>
+    </li>
+    <li class="">
+      <a href="09. Storing and Retrieving Data on the Cloud.html">09. Storing and Retrieving Data on the Cloud</a>
+    </li>
+    <li class="">
+      <a href="10. Reading and Writing to Amazon S3.html">10. Reading and Writing to Amazon S3</a>
+    </li>
+    <li class="">
+      <a href="11. Understanding difference between HDFS and AWS S3.html">11. Understanding difference between HDFS and AWS S3</a>
+    </li>
+    <li class="">
+      <a href="12. Reading and Writing Data to HDFS.html">12. Reading and Writing Data to HDFS</a>
+    </li>
+    <li class="">
+      <a href="13. Recap Local Mode to Cluster Mode.html">13. Recap Local Mode to Cluster Mode</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">11. Understanding difference between HDFS and AWS S3</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>Differences Between HDFS and AWS S3</p></h3>
+  <div>
+  <h3 id="differences-between-hdfs-and-aws-s3">Differences between HDFS and AWS S3</h3>
+<p>Since Spark does not have its own distributed storage system, it leverages using HDFS or AWS S3, or any other distributed storage. Primarily in this course, we will be using AWS S3, but let’s review the advantages of using HDFS over AWS S3.</p>
+<p>Although it would make the most sense to use AWS S3 while using other AWS services, it’s important to note the differences between AWS S3 and HDFS. </p>
+<ul>
+<li><p><strong>AWS S3</strong> is an <strong>object storage system</strong> that stores the data using key value pairs, namely bucket and key, and <strong>HDFS</strong> is an <strong>actual distributed file system</strong> which guarantees fault tolerance. HDFS achieves fault tolerance by having duplicate factors, which means it will duplicate the same files at 3 different nodes across the cluster by default (it can be configured to different numbers of duplication). </p></li>
+<li><p>HDFS has usually been <strong>installed in on-premise systems</strong>, and traditionally have had engineers on-site to maintain and troubleshoot Hadoop Ecosystem, which <strong>cost more than having data on cloud</strong>. Due to the <strong>flexibility of location</strong> and <strong>reduced cost of maintenance</strong>, cloud solutions have been more popular. With extensive services you can use within AWS, S3 has been a more popular choice than HDFS.  </p></li>
+<li><p>Since <strong>AWS S3 is a binary object store</strong>, it can <strong>store all kinds of format</strong>, even images and videos. HDFS will strictly require a certain file format - the popular choices are <strong>avro</strong> and <strong>parquet</strong>, which have relatively high compression rate and which makes it useful to store large dataset.</p></li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>L3 02 04 Intro To HDFS V2</p></h3>
+  <video controls>
+  <source src="11. L3 02 04 Intro To HDFS V2-vsB_VLoiwyc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="11. L3 02 04 Intro To HDFS V2-vsB_VLoiwyc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="12. Reading and Writing Data to HDFS.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. Understanding difference between HDFS and AWS S3')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

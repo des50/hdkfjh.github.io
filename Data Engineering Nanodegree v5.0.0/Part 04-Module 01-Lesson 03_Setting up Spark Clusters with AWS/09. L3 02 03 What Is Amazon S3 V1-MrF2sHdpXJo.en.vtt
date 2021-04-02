@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.280 --> 00:00:07.950
+We now have a cluster running on AWS and we
+
+00:00:07.950 --> 00:00:11.160
+can submit our Spark programs directly through the command line.
+
+00:00:11.160 --> 00:00:15.855
+Let's see how we can read and write data to long-term storage in the cloud.
+
+00:00:15.855 --> 00:00:19.320
+One of the most common places to store big data sets is
+
+00:00:19.320 --> 00:00:23.535
+Amazon's Simple Storage Service or S3 for short.
+
+00:00:23.535 --> 00:00:25.740
+Amazon S3 is a safe,
+
+00:00:25.739 --> 00:00:28.484
+easy, and cheap place to store big data.
+
+00:00:28.484 --> 00:00:32.310
+Amazon does all the work of maintaining the hardware,
+
+00:00:32.310 --> 00:00:36.045
+keeping backups, and making sure the data is almost always available.
+
+00:00:36.045 --> 00:00:40.204
+You can think about it like Dropbox or iCloud for your big data.
+
+00:00:40.204 --> 00:00:43.434
+You don't need to worry about the details of how S3 works,
+
+00:00:43.435 --> 00:00:45.679
+the Amazon engineers take care of that.
+
+00:00:45.679 --> 00:00:49.234
+You just need to know how to use S3 with Spark.
+
+00:00:49.234 --> 00:00:52.310
+So, next, we will show you how to store data in
+
+00:00:52.310 --> 00:00:55.660
+S3 and then retrieve the data for your Spark program.
+
