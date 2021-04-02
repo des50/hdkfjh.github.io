@@ -1,0 +1,103 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.084
+The objectives of normal form.
+
+00:00:02.084 --> 00:00:06.495
+To free the database from unwanted insertions,
+
+00:00:06.495 --> 00:00:09.509
+updates, and deletion dependencies.
+
+00:00:09.509 --> 00:00:14.205
+It's pretty simple. If I have to update my data,
+
+00:00:14.205 --> 00:00:17.925
+do I want to do this in one place or many places?
+
+00:00:17.925 --> 00:00:22.455
+Ideally, I want to go and update that data in just one place.
+
+00:00:22.454 --> 00:00:24.614
+Again, it just seems natural.
+
+00:00:24.614 --> 00:00:26.820
+It seems it makes logical sense.
+
+00:00:26.820 --> 00:00:29.594
+Number two, to reduce the need for
+
+00:00:29.594 --> 00:00:33.945
+refactoring the database as new types of data are introduced.
+
+00:00:33.945 --> 00:00:37.499
+When a new piece of information is added, for example,
+
+00:00:37.499 --> 00:00:41.025
+our company is now collecting email addresses for our customers,
+
+00:00:41.024 --> 00:00:46.114
+we don't want to have to completely change our data model and collection of tables.
+
+00:00:46.115 --> 00:00:49.250
+We should either be able to simply add a column or
+
+00:00:49.250 --> 00:00:53.094
+a new table with a foreign key especially if we have normalized tables,
+
+00:00:53.094 --> 00:00:56.615
+we want to make sure we can just add a new table with a foreign key.
+
+00:00:56.615 --> 00:01:01.355
+We don't want to have to go through and read each row and edit each row.
+
+00:01:01.354 --> 00:01:05.000
+Also think about other applications using your database.
+
+00:01:05.000 --> 00:01:07.659
+If you make human exchanges,
+
+00:01:07.659 --> 00:01:09.875
+it may affect those applications.
+
+00:01:09.875 --> 00:01:14.780
+Number three, to make the relational model more informative to users.
+
+00:01:14.780 --> 00:01:17.405
+The relational model should be very intuitive
+
+00:01:17.405 --> 00:01:20.344
+and make sense to others, just like good code.
+
+00:01:20.344 --> 00:01:24.060
+These models should model real life concepts.
+
+00:01:24.060 --> 00:01:29.135
+Number four, to make the database neutral to the query statistics.
+
+00:01:29.135 --> 00:01:32.450
+Try not to design your tables for particular queries.
+
+00:01:32.450 --> 00:01:34.894
+Try to make sure every
+
+00:01:34.894 --> 00:01:39.649
+all new information and insights can be gathered from the tables over time.
+
+00:01:39.650 --> 00:01:41.690
+So please note, this is
+
+00:01:41.689 --> 00:01:45.200
+the exact opposite of what we discussed when we were learning about
+
+00:01:45.200 --> 00:01:47.299
+NoSQL tables and we were talking about
+
+00:01:47.299 --> 00:01:51.379
+Apache Cassandra and modeling our tables to our queries.
+
+00:01:51.379 --> 00:01:54.000
+This is the exact opposite of that.
+

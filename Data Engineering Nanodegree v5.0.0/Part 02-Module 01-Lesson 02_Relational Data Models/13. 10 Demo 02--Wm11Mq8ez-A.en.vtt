@@ -1,0 +1,505 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.265
+So, creating de-normalized tables.
+
+00:00:02.265 --> 00:00:04.890
+In this demo, we're going to walk through the basis of data
+
+00:00:04.889 --> 00:00:09.239
+modeling from normalized form to de-normalized form.
+
+00:00:09.240 --> 00:00:11.330
+We're going to create tables and Postgres,
+
+00:00:11.330 --> 00:00:12.654
+insert rows of data,
+
+00:00:12.654 --> 00:00:17.384
+and do more simple joins to show how multiple tables can work together.
+
+00:00:17.385 --> 00:00:22.665
+Again, remember these examples are simple but imagine the situation that scale
+
+00:00:22.664 --> 00:00:27.579
+with large databases and many users and the need for quick response time.
+
+00:00:27.579 --> 00:00:30.844
+So, again because we're doing de-normalization and that's all about performance.
+
+00:00:30.844 --> 00:00:33.949
+The fact that we're walking to this demo with a simple example you may think,
+
+00:00:33.950 --> 00:00:35.780
+"Why would that be necessary?"
+
+00:00:35.780 --> 00:00:39.005
+In this case in this small demo, it really isn't.
+
+00:00:39.005 --> 00:00:44.535
+But again, imagine that we need low latency and quick response time,
+
+00:00:44.534 --> 00:00:46.559
+and we're working at scale.
+
+00:00:46.560 --> 00:00:49.335
+Again, we're going to import that library,
+
+00:00:49.335 --> 00:00:52.939
+and I'm going to connect to my database the same way we've done in the past.
+
+00:00:52.939 --> 00:00:54.905
+Okay, let's get started.
+
+00:00:54.905 --> 00:00:58.140
+Let's start with our normalized and third normal form data set,
+
+00:00:58.140 --> 00:01:00.965
+the set of tables we had in the last exercise.
+
+00:01:00.965 --> 00:01:05.405
+But we've now added a new table called song length.
+
+00:01:05.405 --> 00:01:08.375
+So, again, we're going to have our album library,
+
+00:01:08.375 --> 00:01:12.000
+song library, artists library and song length.
+
+00:01:12.000 --> 00:01:14.269
+Again, we have the same columns,
+
+00:01:14.269 --> 00:01:17.030
+again all the columns that we had in our third normal form.
+
+00:01:17.030 --> 00:01:18.530
+Now, we've added this new table,
+
+00:01:18.530 --> 00:01:22.375
+again I can show you these tables that we created. Song length.
+
+00:01:22.375 --> 00:01:25.099
+So, we're going to have one column for song ID,
+
+00:01:25.099 --> 00:01:28.189
+and the other column for song length in seconds.
+
+00:01:28.189 --> 00:01:31.489
+So, here are our tables,
+
+00:01:31.489 --> 00:01:35.629
+and here's our song ID and there's song length in seconds.
+
+00:01:35.629 --> 00:01:38.789
+So, this is all in third normal form.
+
+00:01:38.790 --> 00:01:41.365
+So, in this next statement here,
+
+00:01:41.364 --> 00:01:48.304
+we're just going to create all those tables and do those inserts and nothing fancy here.
+
+00:01:48.305 --> 00:01:52.170
+So, let's go ahead and just- you just need to run this here.
+
+00:01:52.170 --> 00:01:54.924
+Then again, it's a lot of code.
+
+00:01:54.924 --> 00:01:57.099
+It may look overwhelming but it's really not,
+
+00:01:57.099 --> 00:02:00.564
+it's just really going through creating the table and then writing the insert statements.
+
+00:02:00.564 --> 00:02:04.319
+Then from there when we get to- yeah. So, we're just going to run that.
+
+00:02:04.319 --> 00:02:06.969
+Then in this next cell we're actually going to print those results.
+
+00:02:06.969 --> 00:02:09.729
+Make sure everything got into the table correctly.
+
+00:02:09.729 --> 00:02:12.294
+Great. We have our album library,
+
+00:02:12.294 --> 00:02:14.289
+where we have our albums, our song library,
+
+00:02:14.289 --> 00:02:19.409
+our artists library, we've just had that one result and our song length.
+
+00:02:19.409 --> 00:02:23.064
+So, again this is all about our queries.
+
+00:02:23.064 --> 00:02:27.810
+Let's say we want to do a query that gives us all of these columns artist ID,
+
+00:02:27.810 --> 00:02:29.640
+artist name, album ID,
+
+00:02:29.639 --> 00:02:31.774
+album name, year, song ID,
+
+00:02:31.775 --> 00:02:33.140
+song name, and song length.
+
+00:02:33.139 --> 00:02:36.394
+We want everything. So, in this case,
+
+00:02:36.395 --> 00:02:40.640
+we're going to have to perform a three way join on four tables we've created.
+
+00:02:40.639 --> 00:02:42.994
+So, we can do that. It is possible.
+
+00:02:42.995 --> 00:02:45.305
+Let's just take a look here at this join here.
+
+00:02:45.305 --> 00:02:47.540
+This code is a little bit ugly here probably
+
+00:02:47.539 --> 00:02:50.344
+in the demo that may be something you want to look at later.
+
+00:02:50.344 --> 00:02:54.139
+So, we're going to select all of those columns,
+
+00:02:54.139 --> 00:02:56.524
+and then we're going to do a join.
+
+00:02:56.525 --> 00:03:00.210
+We're going to do a- first our join is going to be an artist library
+
+00:03:00.210 --> 00:03:04.820
+and album library and we're going to join on the artist ID.
+
+00:03:04.819 --> 00:03:06.875
+Then from there after we've done that join,
+
+00:03:06.875 --> 00:03:10.044
+we're going to do our next join which is on song library.
+
+00:03:10.044 --> 00:03:13.849
+Then we're going to join that with on the columns album
+
+00:03:13.849 --> 00:03:17.719
+ID from album library and song library.album ID.
+
+00:03:17.719 --> 00:03:20.409
+That's the column that will join those two tables together.
+
+00:03:20.409 --> 00:03:22.814
+After those tables are joined together,
+
+00:03:22.814 --> 00:03:27.469
+we're going to join them with another table which is the song length table when we're
+
+00:03:27.469 --> 00:03:32.620
+going to utilize the columns of song ID on both the song library and song length.
+
+00:03:32.620 --> 00:03:35.504
+It's a pretty complicated query.
+
+00:03:35.504 --> 00:03:37.724
+So, let's run that.
+
+00:03:37.724 --> 00:03:39.739
+Okay, awesome. Well, it worked.
+
+00:03:39.740 --> 00:03:42.560
+We got all the information that we wanted.
+
+00:03:42.560 --> 00:03:45.319
+So, great we were able to get all the data that we
+
+00:03:45.319 --> 00:03:48.454
+wanted but we had to do a three way join to get there.
+
+00:03:48.455 --> 00:03:50.930
+While it's great that we have that flexibility,
+
+00:03:50.930 --> 00:03:53.180
+we have to remember that joins are slow and if we have
+
+00:03:53.180 --> 00:03:56.420
+a really heavy workload that requires low latency queries,
+
+00:03:56.419 --> 00:03:58.609
+we want to reduce the number of joins.
+
+00:03:58.610 --> 00:04:02.505
+Let's think about de-normalizing our normalized table.
+
+00:04:02.504 --> 00:04:07.310
+With de-normalization, we want to think about the queries that we're running and how
+
+00:04:07.310 --> 00:04:11.990
+we can reduce the number of joins even if that means duplicating the data.
+
+00:04:11.990 --> 00:04:16.504
+So, let's just get an example of some of the queries that we might want to run.
+
+00:04:16.504 --> 00:04:19.189
+So, in this example, let's say query one.
+
+00:04:19.189 --> 00:04:22.279
+I want a list all my songs. That's what I want.
+
+00:04:22.279 --> 00:04:23.899
+That's ultimately what I want.
+
+00:04:23.899 --> 00:04:25.609
+I want to do a select.
+
+00:04:25.610 --> 00:04:26.810
+I want artist name,
+
+00:04:26.810 --> 00:04:29.240
+album name, year, song name, and song length.
+
+00:04:29.240 --> 00:04:31.129
+That's the the columns that I want to see.
+
+00:04:31.129 --> 00:04:34.939
+I want that from a minimum number of tables.
+
+00:04:34.939 --> 00:04:38.920
+I don't want to have to do a ton of joins. Then my second query.
+
+00:04:38.920 --> 00:04:42.515
+I want to know the length of each album in seconds.
+
+00:04:42.514 --> 00:04:44.779
+So, I'm going to select my album name,
+
+00:04:44.779 --> 00:04:48.864
+and then I'm probably going to want to do sum and aggregation on my song length.
+
+00:04:48.865 --> 00:04:50.290
+Then from there, again,
+
+00:04:50.290 --> 00:04:52.220
+I want to use a minimum number of tables,
+
+00:04:52.220 --> 00:04:54.110
+then I'm going to group by album.
+
+00:04:54.110 --> 00:04:56.795
+So, let's look at our first query first.
+
+00:04:56.795 --> 00:04:59.660
+So, again we just discussed the query that
+
+00:04:59.660 --> 00:05:02.135
+we're looking at which is select artist name, album name,
+
+00:05:02.134 --> 00:05:09.149
+year, song name, and song length from a minimum number of tables.
+
+00:05:09.149 --> 00:05:10.824
+To reduce the number of tables,
+
+00:05:10.824 --> 00:05:12.860
+this is a little bit more straightforward.
+
+00:05:12.860 --> 00:05:15.290
+Let's first add song length to
+
+00:05:15.290 --> 00:05:19.700
+the song library table and artist name to the album library.
+
+00:05:19.699 --> 00:05:22.310
+So, from here, we're going to create a table.
+
+00:05:22.310 --> 00:05:25.100
+Again, album library, album ID,
+
+00:05:25.100 --> 00:05:27.800
+album name, artist name, and year.
+
+00:05:27.800 --> 00:05:30.245
+Then we're going to create a table called song library.
+
+00:05:30.245 --> 00:05:32.280
+Song ID, album ID,
+
+00:05:32.279 --> 00:05:35.084
+song name, and song length.
+
+00:05:35.084 --> 00:05:38.709
+So, this is what the tables would look like.
+
+00:05:38.709 --> 00:05:42.514
+So, then we're going to go through the process of actually creating those.
+
+00:05:42.514 --> 00:05:46.764
+Actually these are both going to be called album library one and song library one.
+
+00:05:46.764 --> 00:05:50.169
+So, we're going to create these tables and do those insert statements.
+
+00:05:50.170 --> 00:05:51.850
+That's what we're doing in this cell here.
+
+00:05:51.850 --> 00:05:56.885
+Again, it is a lot of code but it's pretty straightforward what it's doing. So, great.
+
+00:05:56.884 --> 00:05:59.949
+We were able to insert all of those rows, no errors were thrown.
+
+00:05:59.949 --> 00:06:04.344
+So, now we can do a simplified query to get the information we need.
+
+00:06:04.345 --> 00:06:06.940
+We're only going to have to use one join
+
+00:06:06.939 --> 00:06:09.504
+because now we only have two tables with our information.
+
+00:06:09.504 --> 00:06:12.375
+Select artist name, album name, year,
+
+00:06:12.375 --> 00:06:13.680
+song name, song length,
+
+00:06:13.680 --> 00:06:15.264
+from song ID one.
+
+00:06:15.264 --> 00:06:19.430
+We're going to join that with album library one on song
+
+00:06:19.430 --> 00:06:24.545
+library.album ID and album library one.album ID.
+
+00:06:24.545 --> 00:06:29.265
+So, that's the common foreign key we're going to join on that column.
+
+00:06:29.264 --> 00:06:31.584
+When we execute that,
+
+00:06:31.584 --> 00:06:34.284
+we get back the information that we wanted.
+
+00:06:34.285 --> 00:06:39.425
+Now, we have a query of all the songs that I have in my music library.
+
+00:06:39.425 --> 00:06:43.280
+As you can see, let's just scroll back there really quick.
+
+00:06:43.279 --> 00:06:46.489
+As you can see, we do have some duplicate data now.
+
+00:06:46.490 --> 00:06:51.800
+The album ID is now represented in both tables, and that's okay.
+
+00:06:51.800 --> 00:06:56.795
+So, now let's say that we also want to run this query which is select album name,
+
+00:06:56.795 --> 00:07:01.740
+song length from a minimum number of tables and group by the album name.
+
+00:07:01.740 --> 00:07:02.900
+So, basically what it's saying,
+
+00:07:02.899 --> 00:07:06.469
+I want to know how long each one of my albums is.
+
+00:07:06.470 --> 00:07:10.745
+We should be able to do a join on the tables that we created.
+
+00:07:10.745 --> 00:07:13.045
+But what if we don't want to do a join at all?
+
+00:07:13.045 --> 00:07:15.199
+Maybe this is something I need to be able to return to
+
+00:07:15.199 --> 00:07:18.170
+my users of my database very quickly.
+
+00:07:18.170 --> 00:07:19.699
+I don't want to have to do a join.
+
+00:07:19.699 --> 00:07:24.289
+So, why don't just create a new table with just the information we need. That's okay.
+
+00:07:24.290 --> 00:07:27.370
+So, let's just create a table called album length,
+
+00:07:27.370 --> 00:07:30.504
+song ID, album ID, and song length.
+
+00:07:30.504 --> 00:07:32.420
+I don't need any other information.
+
+00:07:32.420 --> 00:07:34.055
+I just need the album name.
+
+00:07:34.055 --> 00:07:35.480
+So, in this case,
+
+00:07:35.480 --> 00:07:38.600
+I'm going to create a table called album length with the song ID,
+
+00:07:38.600 --> 00:07:40.535
+album ID and song length.
+
+00:07:40.535 --> 00:07:43.010
+That's all I need in my query as we see here.
+
+00:07:43.009 --> 00:07:44.584
+So, I'm just going to create that.
+
+00:07:44.584 --> 00:07:46.549
+Yes, I'm going to have some duplicate data,
+
+00:07:46.550 --> 00:07:50.090
+but that's okay. So, let's run that.
+
+00:07:50.089 --> 00:07:52.054
+This is going to create the table,
+
+00:07:52.055 --> 00:07:54.415
+and we're going to do the inserts.
+
+00:07:54.415 --> 00:07:57.194
+Now, let's run our query.
+
+00:07:57.194 --> 00:08:00.149
+So, now we're able to do this, select album name,
+
+00:08:00.149 --> 00:08:01.799
+sum on the song length,
+
+00:08:01.800 --> 00:08:06.220
+from album length group by album name. No joins there.
+
+00:08:06.439 --> 00:08:09.329
+It's very quickly great performance.
+
+00:08:09.329 --> 00:08:11.359
+So, here's my album Rubber Soul.
+
+00:08:11.360 --> 00:08:14.150
+It's 445 seconds long,
+
+00:08:14.149 --> 00:08:20.589
+and Let It Be which is 467 seconds long of the songs that I own.
+
+00:08:20.589 --> 00:08:25.519
+So, we have successfully taken a normalized set of tables and de-normalized
+
+00:08:25.519 --> 00:08:29.990
+them in order to speed up our performance and allow for simpler queries to be executed.
+
+00:08:29.990 --> 00:08:32.720
+So, then again, for the sake of this demo,
+
+00:08:32.720 --> 00:08:34.750
+we're going to drop all those tables that we created.
+
+00:08:34.750 --> 00:08:37.539
+Again, we're going to close our connection.
+

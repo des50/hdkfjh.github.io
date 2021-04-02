@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.615
+So what did we learn? We learned what is a relational database?
+
+00:00:03.615 --> 00:00:06.740
+We learned about what makes a database a relational database,
+
+00:00:06.740 --> 00:00:10.035
+and cobs 12 rules of relational database design.
+
+00:00:10.035 --> 00:00:13.890
+We learned about the difference between different types of workloads for databases that
+
+00:00:13.890 --> 00:00:17.969
+they use the OLTP and the OLAP type of workloads.
+
+00:00:17.969 --> 00:00:19.739
+We learned about normalization,
+
+00:00:19.739 --> 00:00:23.774
+which is the process of database normalization and normal forms.
+
+00:00:23.774 --> 00:00:27.029
+We walked through a demo on this process and did an exercise.
+
+00:00:27.030 --> 00:00:28.500
+Denormalization.
+
+00:00:28.500 --> 00:00:31.785
+We learned about denormalization and when it should be used.
+
+00:00:31.785 --> 00:00:34.729
+We will use this information a lot in our next section.
+
+00:00:34.729 --> 00:00:36.859
+We learned about facts and dimension tables as
+
+00:00:36.859 --> 00:00:39.789
+a concept and how to apply that toward data modeling.
+
+00:00:39.789 --> 00:00:41.804
+Star and SnowFlake Schema.
+
+00:00:41.804 --> 00:00:45.500
+We learned about how the Star SnowFlake Schemas use the concept of fact and
+
+00:00:45.500 --> 00:00:49.625
+dimension tables to make getting values out of your data easier.
+
+00:00:49.625 --> 00:00:52.628
+Remember that data modeling is a skill,
+
+00:00:52.628 --> 00:00:56.765
+and that is and should be independent of any type of database you're working with.
+
+00:00:56.765 --> 00:00:58.109
+Once you have these skills,
+
+00:00:58.109 --> 00:01:01.924
+you'll be able to transfer these skills to any database you are working with.
+
+00:01:01.924 --> 00:01:05.039
+Until the next lesson, thank you.
+

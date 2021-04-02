@@ -1,0 +1,358 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.980
+So now, we're going to move on to demo three,
+
+00:00:01.980 --> 00:00:04.154
+Creating Fact and Dimension Tables.
+
+00:00:04.155 --> 00:00:08.054
+So from here, I am going back to Jupiter Notebooks.
+
+00:00:08.054 --> 00:00:11.564
+I'm going to open lesson two, demo three,
+
+00:00:11.564 --> 00:00:16.649
+Creating Fact and Dimension Tables with a Star Schema. Just as a note.
+
+00:00:16.649 --> 00:00:21.179
+Here, we're utilizing Jupiter Notebooks and Python to interact with the database,
+
+00:00:21.179 --> 00:00:23.414
+but this is really just one way.
+
+00:00:23.414 --> 00:00:27.000
+I wouldn't even say it's the best way or there's no best ways,
+
+00:00:27.000 --> 00:00:29.204
+really whatever works for your use case.
+
+00:00:29.204 --> 00:00:30.419
+It's all about that.
+
+00:00:30.420 --> 00:00:33.420
+But this is just one way and a good way,
+
+00:00:33.420 --> 00:00:36.240
+but it's just one way that we can represent how to
+
+00:00:36.240 --> 00:00:39.329
+connect to the database and how to do create tables,
+
+00:00:39.329 --> 00:00:40.695
+inserts, things like that.
+
+00:00:40.695 --> 00:00:43.130
+In this demo, we're going to walk through the basics of
+
+00:00:43.130 --> 00:00:45.695
+modeling data using fact and dimension tables.
+
+00:00:45.695 --> 00:00:47.869
+We'll create both fact and dimension tables,
+
+00:00:47.869 --> 00:00:51.199
+and show how this is the basic elements of the star schema.
+
+00:00:51.200 --> 00:00:53.435
+So again, we're going to import the library,
+
+00:00:53.435 --> 00:00:57.905
+ignore my error, we're going to create a connection to the database.
+
+00:00:57.905 --> 00:01:03.454
+Again, this is all things that we've done in the other demos and other exercises.
+
+00:01:03.454 --> 00:01:06.274
+We're going to use that cursor to execute queries.
+
+00:01:06.275 --> 00:01:09.085
+Again, we're going to set our augment to true.
+
+00:01:09.084 --> 00:01:12.515
+So now, let's imagine we work in an online music store.
+
+00:01:12.515 --> 00:01:14.870
+There will be many tables in our database,
+
+00:01:14.870 --> 00:01:19.175
+but let's just focus on four of those tables all around customer purchases.
+
+00:01:19.174 --> 00:01:21.450
+So we're going to have a table name,
+
+00:01:21.450 --> 00:01:24.299
+customer transactions, with a Customer ID,
+
+00:01:24.299 --> 00:01:26.700
+Store ID, and how much they spent.
+
+00:01:26.700 --> 00:01:28.755
+From there, we're going to have a Customer table,
+
+00:01:28.754 --> 00:01:30.893
+with a Customer ID, Name,
+
+00:01:30.894 --> 00:01:33.190
+and whether they are in a rewards program.
+
+00:01:33.189 --> 00:01:35.084
+Then, we're going to have a Store table,
+
+00:01:35.084 --> 00:01:37.399
+with Store ID, and the state that that stores in.
+
+00:01:37.400 --> 00:01:39.844
+Then, we're going to have items purchased.
+
+00:01:39.844 --> 00:01:43.219
+We're going to have our Customer ID, and the Item name.
+
+00:01:43.219 --> 00:01:45.140
+So here's example.
+
+00:01:45.140 --> 00:01:47.215
+We saw this in earlier in the slides.
+
+00:01:47.215 --> 00:01:50.325
+Here are all the tables and their connections.
+
+00:01:50.325 --> 00:01:55.844
+As we can see, it may be resembling the star schema here.
+
+00:01:55.844 --> 00:01:57.980
+So from this representation,
+
+00:01:57.980 --> 00:02:00.924
+we can already start to see that its the makings of the star schema.
+
+00:02:00.924 --> 00:02:03.164
+We have one fact table,
+
+00:02:03.165 --> 00:02:05.025
+the center of the star,
+
+00:02:05.025 --> 00:02:07.535
+and three dimension tables that are coming from it.
+
+00:02:07.534 --> 00:02:09.224
+So let's create the fact table,
+
+00:02:09.224 --> 00:02:10.849
+insert data into the table.
+
+00:02:10.849 --> 00:02:14.344
+So we're going to create our customer transactions table,
+
+00:02:14.344 --> 00:02:16.969
+and we're going to insert the data into that table.
+
+00:02:16.969 --> 00:02:19.055
+Now, let's create a dimension tables,
+
+00:02:19.055 --> 00:02:20.944
+insert data into those tables.
+
+00:02:20.944 --> 00:02:22.775
+So again, items purchased,
+
+00:02:22.775 --> 00:02:24.215
+then we're going to insert our data.
+
+00:02:24.215 --> 00:02:25.580
+We're going to create our store,
+
+00:02:25.580 --> 00:02:27.185
+and insert our data into that.
+
+00:02:27.185 --> 00:02:28.860
+We're going to create our customer,
+
+00:02:28.860 --> 00:02:30.905
+and insert our data into that.
+
+00:02:30.905 --> 00:02:33.245
+Let's just do that simply here.
+
+00:02:33.245 --> 00:02:36.950
+Alright. We can do a variety of queries
+
+00:02:36.949 --> 00:02:40.060
+to state it easily because we are utilizing the fact,
+
+00:02:40.060 --> 00:02:41.819
+dimension, and star schema.
+
+00:02:41.819 --> 00:02:44.509
+So here's my first query I want to be able to perform.
+
+00:02:44.509 --> 00:02:48.304
+Find all the customers that spent more than $30,
+
+00:02:48.305 --> 00:02:50.915
+who they are, what did they buy,
+
+00:02:50.914 --> 00:02:52.849
+and if they are rewards member.
+
+00:02:52.849 --> 00:02:57.884
+Then query two, how much did store one sell?
+
+00:02:57.884 --> 00:03:02.429
+Query one, find all the customers that spent more than $30,
+
+00:03:02.430 --> 00:03:04.560
+who they are, what did they buy,
+
+00:03:04.560 --> 00:03:06.074
+and if there rewards member.
+
+00:03:06.074 --> 00:03:08.084
+So for this example,
+
+00:03:08.085 --> 00:03:10.784
+we want select on our name,
+
+00:03:10.784 --> 00:03:12.599
+our item name, right?
+
+00:03:12.599 --> 00:03:14.014
+Because we want to know who they are.
+
+00:03:14.014 --> 00:03:15.814
+So that's her name. What did they buy?
+
+00:03:15.814 --> 00:03:18.379
+The item name, and if they were rewards member or not.
+
+00:03:18.379 --> 00:03:21.504
+So if they have the rewards program.
+
+00:03:21.504 --> 00:03:23.329
+So to be able to do this,
+
+00:03:23.330 --> 00:03:26.480
+we're going to have to do joins on multiple of our tables.
+
+00:03:26.479 --> 00:03:28.879
+So from our customer transaction table,
+
+00:03:28.879 --> 00:03:32.419
+we want to join on the customer table.
+
+00:03:32.419 --> 00:03:35.969
+So on, and we're going to join that on the same column,
+
+00:03:35.969 --> 00:03:37.370
+which is Customer ID.
+
+00:03:37.370 --> 00:03:40.250
+That's our foreign key. That's how we're going to combine those two tables.
+
+00:03:40.250 --> 00:03:43.835
+From there, we want to join on the items purchased.
+
+00:03:43.835 --> 00:03:47.045
+We're going to join that on the customer transaction table,
+
+00:03:47.044 --> 00:03:50.084
+that has the Customer ID and the items purchased,
+
+00:03:50.085 --> 00:03:53.295
+which also has a column called Customer ID.
+
+00:03:53.294 --> 00:03:59.399
+All of this, we only want the customers or they spent more than $30.
+
+00:03:59.469 --> 00:04:02.194
+So it looks like two b,
+
+00:04:02.194 --> 00:04:05.389
+somebody who spent more than $30 on let it be,
+
+00:04:05.389 --> 00:04:07.919
+and he is not a rewards member.
+
+00:04:08.560 --> 00:04:10.939
+Now, we want to do a second query.
+
+00:04:10.939 --> 00:04:13.745
+How much did store one sell?
+
+00:04:13.745 --> 00:04:17.610
+So third query, we want to do a select Store ID,
+
+00:04:17.610 --> 00:04:19.905
+because we want it from store one.
+
+00:04:19.904 --> 00:04:23.699
+Then, we want to do a sum on the spent column,
+
+00:04:23.699 --> 00:04:28.649
+from customer transactions, GroupBy Store ID.
+
+00:04:28.649 --> 00:04:31.379
+Great. So we see store one,
+
+00:04:31.379 --> 00:04:40.899
+they made a profit of $55.71.
+
+00:04:41.740 --> 00:04:46.879
+So summary, what you can see here is that from this elegant schema,
+
+00:04:46.879 --> 00:04:50.480
+we were able to get facts and metrics from our fact table,
+
+00:04:50.480 --> 00:04:54.270
+which is what we did here in the second query with our customer transactions.
+
+00:04:54.269 --> 00:04:58.789
+Also, information about our customers that will allow us to do more in-depth
+
+00:04:58.790 --> 00:05:01.160
+analytics to get answers to business questions
+
+00:05:01.160 --> 00:05:04.010
+by utilizing our facts and dimension tables.
+
+00:05:04.009 --> 00:05:06.649
+So again here, we were able to get a quick answer,
+
+00:05:06.649 --> 00:05:08.914
+a fact, something true,
+
+00:05:08.915 --> 00:05:15.915
+which is that the stores sold $55.71 of merchandise.
+
+00:05:15.915 --> 00:05:19.365
+We've got that quickly from our fact table.
+
+00:05:19.365 --> 00:05:21.514
+Then here, we learned something about our customer.
+
+00:05:21.514 --> 00:05:23.229
+We learned our customer,
+
+00:05:23.230 --> 00:05:25.075
+this is the item that they purchased,
+
+00:05:25.074 --> 00:05:26.990
+and that they're actually not a rewards member.
+
+00:05:26.990 --> 00:05:28.819
+So maybe that's somebody that we need to reach out
+
+00:05:28.819 --> 00:05:31.384
+to and get them in our rewards program.
+
+00:05:31.384 --> 00:05:33.334
+Then here, at the end of the demo,
+
+00:05:33.334 --> 00:05:34.669
+I'm going to drop all my tables.
+
+00:05:34.670 --> 00:05:37.050
+Again, I'm going to close my cursor.
+

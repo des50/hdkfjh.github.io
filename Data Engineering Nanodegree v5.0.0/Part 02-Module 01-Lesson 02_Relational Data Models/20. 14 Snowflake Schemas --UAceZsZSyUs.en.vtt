@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.189
+So now, let's talk about the snowflake schema.
+
+00:00:02.189 --> 00:00:06.990
+This is a logical arrangement of tables in a multi-dimensional database
+
+00:00:06.990 --> 00:00:12.205
+represented by centralized fact table which are connected to multiple dimensions.
+
+00:00:12.205 --> 00:00:15.314
+So, it's a complex snowflake shapes that
+
+00:00:15.314 --> 00:00:19.318
+emerges when the dimensions of a snowflake schema are elaborated,
+
+00:00:19.318 --> 00:00:21.524
+having multiple levels of relationships,
+
+00:00:21.524 --> 00:00:24.209
+and child tables with multiple parents.
+
+00:00:24.210 --> 00:00:26.880
+So again, here we have one fact table,
+
+00:00:26.879 --> 00:00:28.695
+and then the dimension table,
+
+00:00:28.695 --> 00:00:31.940
+and then other dimension tables that are radiating off of that.
+
+00:00:31.940 --> 00:00:34.460
+So, the snowflake versus the star schema.
+
+00:00:34.460 --> 00:00:39.785
+So, the star schema is a special simplified case of the snowflake schema.
+
+00:00:39.784 --> 00:00:43.899
+Star schema does not allow for one to many relationships,
+
+00:00:43.899 --> 00:00:47.149
+which is what we saw that you're able to do with the snowflake schema.
+
+00:00:47.149 --> 00:00:50.619
+The snowflake schema is more normalized than the star schema,
+
+00:00:50.619 --> 00:00:55.719
+but it's normally only in first normal form or second normal form.
+

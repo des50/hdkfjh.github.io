@@ -1,0 +1,166 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.160
+So, let's talk about structuring the database.
+
+00:00:02.160 --> 00:00:04.620
+So, the two biggest concepts of data modeling and
+
+00:00:04.620 --> 00:00:08.294
+relational databases are normalization and denormalization.
+
+00:00:08.294 --> 00:00:14.280
+Normalization: to reduce data redundancy and increase data integrity.
+
+00:00:14.279 --> 00:00:17.250
+Reduce data redundancy, right?
+
+00:00:17.250 --> 00:00:18.975
+What is data redundancy stand for?
+
+00:00:18.975 --> 00:00:21.450
+That means, copies of my data.
+
+00:00:21.449 --> 00:00:25.605
+Increase data integrity, what is data integrity mean again?
+
+00:00:25.605 --> 00:00:30.140
+That means that the answer that I get back from the database is the correct answer.
+
+00:00:30.140 --> 00:00:32.164
+Two very important things.
+
+00:00:32.164 --> 00:00:35.869
+Denormalization: this is a process that must be
+
+00:00:35.869 --> 00:00:39.939
+done if you're doing read heavy workloads to increase performance.
+
+00:00:39.939 --> 00:00:44.015
+So, normalization will feel like a natural process.
+
+00:00:44.015 --> 00:00:45.575
+It's going to feel natural.
+
+00:00:45.575 --> 00:00:47.795
+Not as you go through the normal forms.
+
+00:00:47.795 --> 00:00:50.570
+Third normal form starts to feel little unnatural but that's okay.
+
+00:00:50.570 --> 00:00:52.954
+But it should feel like a natural process.
+
+00:00:52.954 --> 00:00:56.359
+You're going to be reducing the number of copies of the data and
+
+00:00:56.359 --> 00:01:00.725
+increasing the likelihood that your data is correct in all locations.
+
+00:01:00.725 --> 00:01:01.880
+That feels very natural,
+
+00:01:01.880 --> 00:01:03.785
+feels like something that we want to do.
+
+00:01:03.784 --> 00:01:07.444
+Denormalization: it will not feel as natural.
+
+00:01:07.444 --> 00:01:10.314
+You're going to have duplicate copies of your data.
+
+00:01:10.314 --> 00:01:12.789
+That may not feel natural to you, right?
+
+00:01:12.790 --> 00:01:14.030
+That may seem like, "Well,
+
+00:01:14.030 --> 00:01:15.890
+if I have all this information in one column,
+
+00:01:15.890 --> 00:01:18.185
+I don't want to have it all in another column in a table,
+
+00:01:18.185 --> 00:01:19.670
+I want to normalize it."
+
+00:01:19.670 --> 00:01:22.890
+But sometimes denormalization must be done for performance reasons,
+
+00:01:22.890 --> 00:01:26.765
+and we're going to talk about that here in a couple of minutes.
+
+00:01:26.765 --> 00:01:31.239
+So, these tables are going to be more focused on the queries that will be run.
+
+00:01:31.239 --> 00:01:33.709
+This is what we were talking about when we were talking about
+
+00:01:33.709 --> 00:01:36.394
+NoSQL databases yesterday in lesson one.
+
+00:01:36.394 --> 00:01:39.560
+Okay. So, let's focus a little bit more on normalization.
+
+00:01:39.560 --> 00:01:44.210
+The process of structuring a relational database in accordance with a series of
+
+00:01:44.209 --> 00:01:51.034
+normal forms in order to reduce data redundancy and increase data integrity.
+
+00:01:51.034 --> 00:01:55.310
+So, this process was actually proposed again by Edgar Codd.
+
+00:01:55.310 --> 00:01:59.105
+He sound like he's must be the father of relational databases.
+
+00:01:59.105 --> 00:02:03.439
+Normalization organizes the columns and tables in a database to ensure that
+
+00:02:03.439 --> 00:02:08.704
+their dependencies are properly enforced by the database integrity constraints.
+
+00:02:08.705 --> 00:02:12.745
+We don't want or need extra copies of our data,
+
+00:02:12.745 --> 00:02:14.465
+that is data redundancy.
+
+00:02:14.465 --> 00:02:20.270
+We want to be able to update our data in one place and have that be the source of truth,
+
+00:02:20.270 --> 00:02:22.250
+that is data integrity.
+
+00:02:22.250 --> 00:02:27.680
+The more copies of the data is that the more likely that our data could be out of date,
+
+00:02:27.680 --> 00:02:30.004
+not updated or incorrect.
+
+00:02:30.004 --> 00:02:32.835
+Let's look at the example in the next slide.
+
+00:02:32.835 --> 00:02:37.865
+So, here's an example of the table that we'll be using later in our demo in our exercise.
+
+00:02:37.865 --> 00:02:42.129
+Let's say that we have a table, called music_ library.
+
+00:02:42.129 --> 00:02:44.259
+Looks pretty standard.
+
+00:02:44.259 --> 00:02:48.679
+We have some two rows here and variety of columns,
+
+00:02:48.679 --> 00:02:51.710
+but this is not a normalized table.
+
+00:02:51.710 --> 00:02:55.825
+As we walk through the process of moving to third normal form,
+
+00:02:55.824 --> 00:02:58.269
+we will learn why.
+

@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.419
+So, let's talk about the importance of relational databases.
+
+00:00:03.419 --> 00:00:06.105
+So, a little bit of history here.
+
+00:00:06.105 --> 00:00:13.335
+The concept of relational databases was invented in about 1969 by researchers at IBM.
+
+00:00:13.335 --> 00:00:16.005
+Edgar R. Codd was the lead researcher.
+
+00:00:16.004 --> 00:00:18.809
+He proposed 12 rules of what makes
+
+00:00:18.809 --> 00:00:22.919
+the database management system a true relational system.
+
+00:00:22.920 --> 00:00:24.825
+We won't go over each rule,
+
+00:00:24.824 --> 00:00:29.189
+but I want to focus here on rule one because it's particularly important for this course.
+
+00:00:29.190 --> 00:00:31.740
+Rule one, the information rule.
+
+00:00:31.739 --> 00:00:36.299
+All information in a relational database is represented explicitly at
+
+00:00:36.299 --> 00:00:41.309
+the logical level in exactly one way by values and tables.
+
+00:00:41.310 --> 00:00:45.065
+Rule one, is what we're trying to achieve with data modeling.
+
+00:00:45.064 --> 00:00:48.289
+Remember, this is all abstract concepts of
+
+00:00:48.289 --> 00:00:52.479
+relational modeling and what makes a system a valid relational model.
+
+00:00:52.479 --> 00:00:55.059
+So, why is the relational model important?
+
+00:00:55.060 --> 00:00:57.245
+Standardization of the data model.
+
+00:00:57.244 --> 00:01:01.729
+It takes work and effort to get your data transformed into the rows and columns format.
+
+00:01:01.729 --> 00:01:03.679
+But once you do this, your data is in
+
+00:01:03.679 --> 00:01:06.519
+standardized and we'll be able to be query with SQL.
+
+00:01:06.519 --> 00:01:10.744
+Number two, flexibility in adding and altering tables.
+
+00:01:10.745 --> 00:01:14.045
+Relational database gives you the flexibility to add tables,
+
+00:01:14.045 --> 00:01:16.670
+alter tables, and add or remove data.
+
+00:01:16.670 --> 00:01:21.370
+Remember, these are the basics of what makes a database also a relational model.
+
+00:01:21.370 --> 00:01:26.435
+Data integrity. Data integrity is the backbone of using relational model.
+
+00:01:26.435 --> 00:01:28.100
+You'll remember from lesson one,
+
+00:01:28.099 --> 00:01:30.155
+we talked about this quite extensively.
+
+00:01:30.155 --> 00:01:33.049
+Strong data typing ensures data that does
+
+00:01:33.049 --> 00:01:36.469
+not fit the model will not be inserted causing corruption.
+
+00:01:36.469 --> 00:01:39.275
+Number four, Standard Query Language.
+
+00:01:39.275 --> 00:01:44.585
+Standard language can be used to access the data with a predefined language.
+
+00:01:44.584 --> 00:01:49.509
+Simplicity. Then finally, intuitive organization.
+
+00:01:49.510 --> 00:01:52.490
+The most important benefit for us to remember,
+
+00:01:52.489 --> 00:01:55.719
+is that data is systematically stored and modeled,
+
+00:01:55.719 --> 00:01:58.864
+and that the modeling process is an intuitive process.
+
+00:01:58.864 --> 00:02:01.104
+If you've created a spreadsheet in Excel,
+
+00:02:01.105 --> 00:02:03.570
+you have created tables and modeled your data.
+
+00:02:03.569 --> 00:02:05.169
+It was so natural,
+
+00:02:05.170 --> 00:02:08.735
+you didn't even think that you were doing data modeling but you really were.
+
+00:02:08.735 --> 00:02:12.980
+More complicated systems require more intense thought and experimentation,
+
+00:02:12.979 --> 00:02:15.060
+but the basics are really the same.
+

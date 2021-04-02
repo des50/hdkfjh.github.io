@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.889
+In lesson two, we're going to focus on data modeling with relational databases.
+
+00:00:04.889 --> 00:00:07.889
+Students will be learning the fundamentals of how to do
+
+00:00:07.889 --> 00:00:11.504
+relational data modeling by focusing on normalization,
+
+00:00:11.505 --> 00:00:15.179
+denormalization, fact tables, dimension tables,
+
+00:00:15.179 --> 00:00:16.995
+and different schema models.
+
+00:00:16.995 --> 00:00:21.195
+Again, I just want to make sure everyone knows that really want to have
+
+00:00:21.195 --> 00:00:25.980
+a strong understanding of normalization and denormalization.
+
+00:00:25.980 --> 00:00:29.339
+Those are the biggest heaviest topics we're going to discuss today.
+
+00:00:29.339 --> 00:00:34.130
+So, really make sure you take the time to make sure you fully understand these topics.
+

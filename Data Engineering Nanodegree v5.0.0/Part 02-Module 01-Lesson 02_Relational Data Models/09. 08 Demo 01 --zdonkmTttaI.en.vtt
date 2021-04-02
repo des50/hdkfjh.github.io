@@ -1,0 +1,652 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.759
+All right. So, let's start on a demo.
+
+00:00:02.759 --> 00:00:07.169
+We're going to walk through that actual process of normal forms of taking
+
+00:00:07.169 --> 00:00:09.300
+a data that is in a non-normal form and
+
+00:00:09.300 --> 00:00:11.850
+walking all the way through to getting into third normal form.
+
+00:00:11.849 --> 00:00:13.799
+So, hopefully you need those questions that we had on
+
+00:00:13.800 --> 00:00:16.350
+third normal form will get cleared up here.
+
+00:00:16.350 --> 00:00:20.310
+Then from there, you'll actually do an exercise.
+
+00:00:20.309 --> 00:00:23.099
+So, again we're back in our Jupyter notebooks.
+
+00:00:23.100 --> 00:00:27.915
+I've opened lesson two demo one creating normalized tables.
+
+00:00:27.914 --> 00:00:29.460
+So, in this demo,
+
+00:00:29.460 --> 00:00:32.954
+we're going to walk through the basics of data modelling in normalized form.
+
+00:00:32.954 --> 00:00:35.414
+We will create tables and Postgres,
+
+00:00:35.414 --> 00:00:37.350
+insert rows of data,
+
+00:00:37.350 --> 00:00:42.030
+and do a simple join to show that these tables can all work together.
+
+00:00:42.030 --> 00:00:45.850
+Because remember and I really might not have stressed it enough earlier,
+
+00:00:45.850 --> 00:00:48.649
+that when you're getting tables into normal form,
+
+00:00:48.649 --> 00:00:52.114
+you're going to need to combine those tables.
+
+00:00:52.115 --> 00:00:56.385
+Just by separating them out doesn't mean that this data isn't related.
+
+00:00:56.384 --> 00:00:57.719
+It's tightly related.
+
+00:00:57.719 --> 00:01:02.435
+So, you need to make sure that you can always get your data back in the way,
+
+00:01:02.435 --> 00:01:05.740
+get all the information from that data with joins.
+
+00:01:05.739 --> 00:01:12.979
+Again, the ability to do joins is a benefit of using a relational database. All right.
+
+00:01:12.980 --> 00:01:15.290
+So, we're going to import the library that we're going to use,
+
+00:01:15.290 --> 00:01:20.460
+the Python driver, so that we can interact with our Postgres database.
+
+00:01:20.629 --> 00:01:24.994
+So, again mine always pops up with an error just ignore that.
+
+00:01:24.995 --> 00:01:27.950
+Okay, and again, this is similar to what we were
+
+00:01:27.950 --> 00:01:30.439
+doing in the previous demos and exercises.
+
+00:01:30.439 --> 00:01:34.995
+We're going to connect to our database and we're going to get a cursor.
+
+00:01:34.995 --> 00:01:36.710
+We're going to set our auto commit to true.
+
+00:01:36.709 --> 00:01:39.244
+This is all the same as yesterday.
+
+00:01:39.245 --> 00:01:41.495
+Okay. So, let's start here.
+
+00:01:41.495 --> 00:01:46.450
+We solve this table earlier in the lesson, but let's walk through it.
+
+00:01:46.450 --> 00:01:49.280
+So, let's imagine we have a table called Music Library.
+
+00:01:49.280 --> 00:01:54.019
+So, the table name is music library and we have five columns.
+
+00:01:54.019 --> 00:01:56.750
+Album ID, album name,
+
+00:01:56.750 --> 00:02:00.325
+artist name, year, and list of songs.
+
+00:02:00.325 --> 00:02:03.015
+So, let's go to this first row here.
+
+00:02:03.015 --> 00:02:06.195
+Number one, that's our album ID.
+
+00:02:06.194 --> 00:02:12.125
+Our album name is Rubber Soul and the artist name was of course the Beatles,
+
+00:02:12.125 --> 00:02:15.479
+and year, the year that it was released in 1965,
+
+00:02:15.479 --> 00:02:18.754
+and here's a list of some of the songs that are in that album.
+
+00:02:18.754 --> 00:02:21.590
+Michelle, think for yourself and in my life.
+
+00:02:21.590 --> 00:02:24.979
+So, now let's just translate this table
+
+00:02:24.979 --> 00:02:28.814
+into a simple create table statement and insert the data.
+
+00:02:28.814 --> 00:02:32.969
+So, this should all feel very familiar to you from yesterday.
+
+00:02:32.969 --> 00:02:35.349
+So, I'm going to run this code very quickly,
+
+00:02:35.349 --> 00:02:38.284
+but let's walk through it before we move on.
+
+00:02:38.284 --> 00:02:41.090
+So, I'm going to create table if it does not exist and I'm going to
+
+00:02:41.090 --> 00:02:45.050
+model exactly what I saw here in my diagram.
+
+00:02:45.050 --> 00:02:48.185
+Music library. We're going to have an album ID.
+
+00:02:48.185 --> 00:02:49.625
+We're going to have that be an int.
+
+00:02:49.625 --> 00:02:51.739
+An album name which is a varchar,
+
+00:02:51.739 --> 00:02:53.810
+an artist name which is a varchar,
+
+00:02:53.810 --> 00:02:56.960
+a year which is an int and a songs,
+
+00:02:56.960 --> 00:03:02.469
+I called it songs, where it's going to be a list of text.
+
+00:03:02.469 --> 00:03:04.764
+List of text and again,
+
+00:03:04.764 --> 00:03:10.879
+we have provided that link to look up the various data types that you may need to use.
+
+00:03:10.879 --> 00:03:15.469
+So, in this case, we're using a list of strings or text.
+
+00:03:15.469 --> 00:03:19.129
+So, I'm going to run that in my catch my error if I have an issue.
+
+00:03:19.129 --> 00:03:21.139
+Then I'm just going to do some simple inserts.
+
+00:03:21.139 --> 00:03:22.804
+Again, this is just like what we saw yesterday.
+
+00:03:22.805 --> 00:03:25.295
+So, it should feel comfortable and familiar.
+
+00:03:25.294 --> 00:03:28.444
+We're going to insert that data into the database.
+
+00:03:28.444 --> 00:03:32.400
+So, here's our insert statement with music library and our values.
+
+00:03:32.400 --> 00:03:34.530
+Again, here's the album ID,
+
+00:03:34.530 --> 00:03:37.245
+album name, artist name,
+
+00:03:37.245 --> 00:03:43.340
+year, and this is the syntax for how you're going to insert a list of songs.
+
+00:03:43.340 --> 00:03:48.170
+So, take note of that and we're going to insert those two rows. So, we did that here.
+
+00:03:48.169 --> 00:03:50.284
+Again, we're going to try to catch the error,
+
+00:03:50.284 --> 00:03:51.784
+and so then after that,
+
+00:03:51.784 --> 00:03:55.430
+what we're going to do here is just do a select star on that table to make
+
+00:03:55.430 --> 00:03:59.525
+sure that our data actually got inserted and it looks the way we thought.
+
+00:03:59.525 --> 00:04:03.590
+Then from there, again this is just code that will be provided to you.
+
+00:04:03.590 --> 00:04:09.694
+It just loop through and prints that to screen and remember,
+
+00:04:09.694 --> 00:04:13.159
+again in Postgres, feel free to do a select star from
+
+00:04:13.159 --> 00:04:16.725
+a table in NoSQL and Apache Cassandra, you can't do that.
+
+00:04:16.725 --> 00:04:18.945
+But in Postgre, you're free to do so.
+
+00:04:18.944 --> 00:04:21.420
+So, here we did. Looks great.
+
+00:04:21.420 --> 00:04:24.400
+So, let's think about moving that to first normal form.
+
+00:04:24.399 --> 00:04:26.964
+Again, this data has not been normalized.
+
+00:04:26.964 --> 00:04:28.989
+To get this data into first normal form,
+
+00:04:28.990 --> 00:04:32.540
+we need to remove any collections or lists of data.
+
+00:04:32.540 --> 00:04:36.665
+We need to break up the list and songs into individual rows.
+
+00:04:36.665 --> 00:04:40.400
+So, in this case, we're going to make a new table called music library two.
+
+00:04:40.399 --> 00:04:42.464
+We're going to have album ID,
+
+00:04:42.464 --> 00:04:44.519
+album name, artist name,
+
+00:04:44.519 --> 00:04:46.169
+year, and song name.
+
+00:04:46.170 --> 00:04:49.319
+Because we're not going to have a list, we're going to have songs.
+
+00:04:49.319 --> 00:04:51.569
+So, let's just take this first row.
+
+00:04:51.569 --> 00:04:53.819
+Album ID again is one,
+
+00:04:53.819 --> 00:04:55.740
+album name is Rubber Soul.
+
+00:04:55.740 --> 00:04:57.300
+Artist name is the Beatles,
+
+00:04:57.300 --> 00:05:01.329
+year 1965, and song name, Michelle.
+
+00:05:01.389 --> 00:05:04.805
+So, again we're going to just go through it just like we did above.
+
+00:05:04.805 --> 00:05:07.129
+I'm not going to walk through this because it's just the same,
+
+00:05:07.129 --> 00:05:08.719
+but we're going to insert into our.
+
+00:05:08.720 --> 00:05:09.755
+We're going to create the table.
+
+00:05:09.754 --> 00:05:12.079
+Remember, music library two,
+
+00:05:12.079 --> 00:05:14.599
+and then we're going to insert all those values.
+
+00:05:14.600 --> 00:05:16.210
+This looks like a lot of code.
+
+00:05:16.209 --> 00:05:19.474
+Don't be alarmed. It's all just entering in that data.
+
+00:05:19.475 --> 00:05:22.055
+These are just simple insert statements.
+
+00:05:22.055 --> 00:05:25.245
+Let me actually go back here and run it.
+
+00:05:25.245 --> 00:05:28.250
+Okay, awesome, and then again we're going to do
+
+00:05:28.250 --> 00:05:31.884
+a select star from that table just to make sure that our data got inserted.
+
+00:05:31.884 --> 00:05:35.930
+Looks like this is all successful and looks correct, wonderful.
+
+00:05:35.930 --> 00:05:38.900
+All right. So, let's start talking about moving it to second normal form.
+
+00:05:38.899 --> 00:05:40.209
+That was easy enough, right?
+
+00:05:40.209 --> 00:05:43.969
+We just broke up our collections to get it in first normal form.
+
+00:05:43.970 --> 00:05:45.845
+Moving to second normal form.
+
+00:05:45.845 --> 00:05:49.385
+We have moved our data to first normal form which is the first step
+
+00:05:49.384 --> 00:05:53.209
+that's the prerequisite to even thinking about second normal form,
+
+00:05:53.209 --> 00:05:57.849
+but our table is not yet there in this second normal form.
+
+00:05:57.850 --> 00:06:02.060
+So, while each of the records in our table is unique right,
+
+00:06:02.060 --> 00:06:03.379
+each row actually is unique.
+
+00:06:03.379 --> 00:06:09.769
+Let's go back and look at that chart or our table representation here.
+
+00:06:09.769 --> 00:06:12.649
+So, we can see that each one of these records is,
+
+00:06:12.649 --> 00:06:15.454
+or shouldn't say records especially when we're talking about music library.
+
+00:06:15.454 --> 00:06:17.435
+Each one of these rows is unique.
+
+00:06:17.435 --> 00:06:19.910
+Except there's as many elements that are duplicated.
+
+00:06:19.910 --> 00:06:24.390
+Let's keep that in mind. Let's scroll back down here.
+
+00:06:24.699 --> 00:06:27.539
+So, our primary key in this case,
+
+00:06:27.540 --> 00:06:29.850
+the album ID is not unique.
+
+00:06:29.850 --> 00:06:31.800
+Right. We saw that above.
+
+00:06:31.800 --> 00:06:37.900
+Actually, we had many duplicates, many different columns.
+
+00:06:37.899 --> 00:06:40.924
+We need to break this up into two tables.
+
+00:06:40.925 --> 00:06:45.020
+Let's break it up into album library and song library.
+
+00:06:45.019 --> 00:06:49.699
+So, here we're going to have a table called album library with album ID,
+
+00:06:49.699 --> 00:06:51.139
+album name, artist name,
+
+00:06:51.139 --> 00:06:55.159
+and year, and then we're going to have song library with a song ID,
+
+00:06:55.160 --> 00:06:57.800
+song name, and album ID.
+
+00:06:57.800 --> 00:07:00.949
+So, now in this case you already see that now we have reduced
+
+00:07:00.949 --> 00:07:03.769
+the number of duplicates that we had on album ID.
+
+00:07:03.769 --> 00:07:11.560
+Now, we just have two rows here in this table called new album library and then,
+
+00:07:11.560 --> 00:07:14.089
+we have our song library which now we've added
+
+00:07:14.089 --> 00:07:17.614
+a song ID and then the corresponding album ID
+
+00:07:17.615 --> 00:07:21.150
+that will join with this table to
+
+00:07:21.149 --> 00:07:25.589
+be able to get rest of this information here and then our song name.
+
+00:07:26.079 --> 00:07:31.204
+Okay. So, again we're just going to create those tables and insert that data.
+
+00:07:31.204 --> 00:07:33.099
+Again, looks like a lot of code,
+
+00:07:33.100 --> 00:07:35.230
+but it's all very straightforward.
+
+00:07:35.779 --> 00:07:37.849
+Awesome. So, from here,
+
+00:07:37.850 --> 00:07:40.610
+we're doing a select star on that table.
+
+00:07:40.610 --> 00:07:44.379
+So, we did for album library and song library.
+
+00:07:44.379 --> 00:07:46.714
+So, we just printed out the table name to just make it
+
+00:07:46.714 --> 00:07:50.149
+clear which one that we're showing the information for.
+
+00:07:50.149 --> 00:07:53.029
+Okay. So, let's do something that we haven't done in
+
+00:07:53.029 --> 00:07:55.894
+the past and let's do a join on that table,
+
+00:07:55.894 --> 00:07:59.930
+so that we can get the information that we had in our first table.
+
+00:07:59.930 --> 00:08:03.110
+Because, let's say I want to be able to know,
+
+00:08:03.110 --> 00:08:05.750
+I don't just want to do a query on some library.
+
+00:08:05.750 --> 00:08:10.805
+I wanted to do a query that gets back both my album name,
+
+00:08:10.805 --> 00:08:13.370
+album ID, the artist name.
+
+00:08:13.370 --> 00:08:14.660
+We want all of that at one time.
+
+00:08:14.660 --> 00:08:17.630
+So, do that, you need to do a join.
+
+00:08:17.629 --> 00:08:20.120
+So, in this case, we're going to do a select star from
+
+00:08:20.120 --> 00:08:24.485
+our album library and we're going to join it on the song library table.
+
+00:08:24.485 --> 00:08:28.550
+We're going to join the two tables and what we do when we do a join,
+
+00:08:28.550 --> 00:08:31.865
+is we need to join those on a particular column.
+
+00:08:31.865 --> 00:08:35.375
+So, in this case, what they have in column,
+
+00:08:35.375 --> 00:08:39.320
+pardon me, what they have in common is the album ID.
+
+00:08:39.320 --> 00:08:41.629
+So, we're going to join on the album ID.
+
+00:08:41.629 --> 00:08:49.529
+So, album library.album ID equals song library.song id or pardon me album ID.
+
+00:08:49.899 --> 00:08:53.965
+We're going to run that, and as you can see,
+
+00:08:53.965 --> 00:08:58.019
+we get back that same information that we had before.
+
+00:08:58.019 --> 00:09:00.504
+We now have our album ID,
+
+00:09:00.504 --> 00:09:03.340
+our album name, our artist name,
+
+00:09:03.340 --> 00:09:05.800
+the year, our song ID.
+
+00:09:05.799 --> 00:09:12.679
+In this case, I did not remove the other columns,
+
+00:09:12.679 --> 00:09:15.875
+it just joined both of the tables as
+
+00:09:15.875 --> 00:09:21.700
+is and so then it's printing the album ID and then the song.
+
+00:09:21.700 --> 00:09:24.440
+The important thing here is how we're moving
+
+00:09:24.440 --> 00:09:29.555
+from a table that was not normalized to first normal,
+
+00:09:29.554 --> 00:09:30.949
+and then to second normal form.
+
+00:09:30.950 --> 00:09:32.735
+That's the key here.
+
+00:09:32.735 --> 00:09:34.894
+Moving to third normal form.
+
+00:09:34.894 --> 00:09:38.210
+Let's check our table for any transitive dependencies.
+
+00:09:38.210 --> 00:09:45.830
+Album library can now move artist name into its own table called artist.
+
+00:09:45.830 --> 00:09:47.815
+Which will leave us with three tables.
+
+00:09:47.815 --> 00:09:50.535
+We are going to make album library two,
+
+00:09:50.534 --> 00:09:52.110
+which is going to have album ID,
+
+00:09:52.110 --> 00:09:55.034
+album name, artist ID and year.
+
+00:09:55.034 --> 00:09:58.115
+We're going to have song library which will have song ID,
+
+00:09:58.115 --> 00:10:01.544
+song name and album ID and then artist library,
+
+00:10:01.544 --> 00:10:03.479
+artist ID and name.
+
+00:10:03.480 --> 00:10:06.815
+So, you can see the representation of the tables here.
+
+00:10:06.815 --> 00:10:09.215
+So, here's our song table,
+
+00:10:09.215 --> 00:10:14.300
+our album table, and our artist table.
+
+00:10:14.860 --> 00:10:21.455
+So, again we're just going to create those tables and then we're going to print them out,
+
+00:10:21.455 --> 00:10:27.410
+and then we can see that we inserted the data correctly and so from there,
+
+00:10:27.409 --> 00:10:31.274
+we're going to do two joins so that on all three tables.
+
+00:10:31.274 --> 00:10:34.819
+So, again, we can get back all the information that we had in the first table.
+
+00:10:34.820 --> 00:10:37.504
+So, let's do that. So, in this case again,
+
+00:10:37.504 --> 00:10:38.975
+I'm going to do two joins.
+
+00:10:38.975 --> 00:10:41.960
+I'm going to select star from artist library and
+
+00:10:41.960 --> 00:10:44.990
+I'm going to join that with album library two.
+
+00:10:44.990 --> 00:10:46.745
+I'm going to do that on the,
+
+00:10:46.745 --> 00:10:52.139
+I'm going to join that with a common column that they both have which is the artist ID.
+
+00:10:52.509 --> 00:10:56.865
+Then from there, once I've done that join, an inner join,
+
+00:10:56.865 --> 00:11:01.294
+then I'm going to do this outer join here on the song library on
+
+00:11:01.294 --> 00:11:06.214
+album library where the album ID column matches.
+
+00:11:06.215 --> 00:11:08.180
+So, if we do this,
+
+00:11:08.179 --> 00:11:10.489
+two joins on three tables,
+
+00:11:10.490 --> 00:11:15.230
+again we'll get back all the information that we originally had in our first table.
+
+00:11:15.230 --> 00:11:18.409
+Awesome. That looks great.
+
+00:11:18.409 --> 00:11:19.909
+So, we're all done.
+
+00:11:19.909 --> 00:11:22.414
+We have normalized our data set.
+
+00:11:22.414 --> 00:11:24.844
+We have gone all the way from
+
+00:11:24.845 --> 00:11:31.399
+a denormalized table to a normalized table reducing duplicates all along the way.
+
+00:11:31.399 --> 00:11:36.399
+So, all about getting that data integrity and reducing the data redundancy.
+
+00:11:36.399 --> 00:11:38.189
+So, just for the sake of the demo,
+
+00:11:38.190 --> 00:11:39.320
+we're going to drop the tables.
+
+00:11:39.320 --> 00:11:43.370
+So, we had a lot of them in this case because we were walking through and then finally,
+
+00:11:43.370 --> 00:11:44.509
+just again to reiterate,
+
+00:11:44.509 --> 00:11:47.029
+we're going to make sure that we close our connection to the database.
+
+00:11:47.029 --> 00:11:52.079
+We're going to close our cursor and close our connection. Awesome.
+

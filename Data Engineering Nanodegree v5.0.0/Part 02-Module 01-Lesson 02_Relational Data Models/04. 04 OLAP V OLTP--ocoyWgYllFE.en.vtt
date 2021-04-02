@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.265
+A quick note on the difference between
+
+00:00:02.265 --> 00:00:09.855
+Online Analytical Processing or OLAP or OLTP, Online Transaction Processing.
+
+00:00:09.855 --> 00:00:13.065
+Online Analytical Processing or OLAP.
+
+00:00:13.064 --> 00:00:18.929
+Database optimization for these workloads allow for complex analytics and ad hoc queries.
+
+00:00:18.929 --> 00:00:23.399
+These types of databases are optimized for read.
+
+00:00:23.399 --> 00:00:26.894
+Online Transactional Processing, OLTP.
+
+00:00:26.894 --> 00:00:32.700
+Databases optimized for these workloads allow for less complex queries in large volumes.
+
+00:00:32.700 --> 00:00:35.375
+The types of queries for these databases are read,
+
+00:00:35.375 --> 00:00:37.085
+insert, update, and delete.
+
+00:00:37.085 --> 00:00:40.844
+So, let's go through an example so we can understand the difference between the two.
+
+00:00:40.844 --> 00:00:43.994
+OLAP query will tell you how many shoes,
+
+00:00:43.994 --> 00:00:47.054
+last week, were sold in stores in California.
+
+00:00:47.054 --> 00:00:51.179
+You can see that it's already an aggregation that you'd have to do to get that data.
+
+00:00:51.179 --> 00:00:53.869
+You're doing analytics and aggregations on your data.
+
+00:00:53.869 --> 00:00:56.000
+Those are OLAP queries.
+
+00:00:56.000 --> 00:00:59.945
+An OLTP query will tell you the price of the shoes.
+
+00:00:59.945 --> 00:01:04.700
+Imagine just doing a select star on a particular table and getting back a result.
+
+00:01:04.700 --> 00:01:07.640
+OLAP queries will have little aggregations,
+
+00:01:07.640 --> 00:01:13.000
+really if any, while OLTP will heavily focus on aggregations.
+

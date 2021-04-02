@@ -1,0 +1,394 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.240
+The process of normalization is a step-by-step process: first normal form,
+
+00:00:06.240 --> 00:00:09.435
+second normal form, and third normal form.
+
+00:00:09.435 --> 00:00:12.240
+This is a progressive process and
+
+00:00:12.240 --> 00:00:16.095
+each form must be met before the next form can be completed.
+
+00:00:16.095 --> 00:00:18.075
+There are more normal forms,
+
+00:00:18.075 --> 00:00:20.175
+actually up to six normal form.
+
+00:00:20.175 --> 00:00:23.430
+But most relational databases and
+
+00:00:23.430 --> 00:00:27.555
+most data modeling design just strive to achieve third normal form.
+
+00:00:27.555 --> 00:00:31.290
+4-6 is really just more for academic and research purposes,
+
+00:00:31.290 --> 00:00:33.390
+and it is really not done in production.
+
+00:00:33.390 --> 00:00:36.765
+Let's go over each one of these normal forms in the next few slides.
+
+00:00:36.765 --> 00:00:41.085
+First normal form, how to reach first normal form?
+
+00:00:41.085 --> 00:00:44.270
+So you want to make sure that you have atomic values.
+
+00:00:44.270 --> 00:00:48.319
+Each cell contains unique and single values.
+
+00:00:48.319 --> 00:00:50.854
+So that means no sets,
+
+00:00:50.854 --> 00:00:54.970
+collections, or lists of values in a column.
+
+00:00:54.970 --> 00:00:59.240
+Be able to add data without altering tables.
+
+00:00:59.240 --> 00:01:01.520
+Maybe this sounds a little bit confusing,
+
+00:01:01.520 --> 00:01:04.640
+but what this really means is by adding or removing columns.
+
+00:01:04.640 --> 00:01:06.040
+Sometimes this has to be done,
+
+00:01:06.040 --> 00:01:10.100
+sometimes you just have to add a column to your table just to make it make
+
+00:01:10.100 --> 00:01:14.390
+more sense or something that data does go with that table,
+
+00:01:14.390 --> 00:01:16.355
+and so you need to be able to alter it, and that's fine.
+
+00:01:16.355 --> 00:01:18.950
+But if you can do that without doing that,
+
+00:01:18.950 --> 00:01:20.375
+that's what you want to strive for.
+
+00:01:20.375 --> 00:01:22.000
+So this would really be the last result,
+
+00:01:22.000 --> 00:01:24.260
+really we want to just create a new table.
+
+00:01:24.260 --> 00:01:27.670
+Separate different relations into different tables.
+
+00:01:27.670 --> 00:01:31.910
+So for example, let's talk about these two tables we have in this example.
+
+00:01:31.910 --> 00:01:35.435
+We have a customer table and a sales table.
+
+00:01:35.435 --> 00:01:39.590
+We could probably combine these two tables into just one table, but instead,
+
+00:01:39.590 --> 00:01:43.590
+we want to have logical groupings for customer and sales.
+
+00:01:43.590 --> 00:01:47.980
+We don't want just one giant table that just holds all the information we possibly have,
+
+00:01:47.980 --> 00:01:49.355
+even though we could probably do that,
+
+00:01:49.355 --> 00:01:50.810
+that's not what we want to do.
+
+00:01:50.810 --> 00:01:54.685
+Keep relationships between tables together with foreign keys.
+
+00:01:54.685 --> 00:01:58.520
+We need a way to keep the relationships at the table that have been separated.
+
+00:01:58.520 --> 00:01:59.810
+They're not all in one big table,
+
+00:01:59.810 --> 00:02:00.980
+they're in separate tables now,
+
+00:02:00.980 --> 00:02:04.175
+so we need to make sure we can still link them together by a key.
+
+00:02:04.175 --> 00:02:06.295
+This will need to be unique.
+
+00:02:06.295 --> 00:02:10.130
+So again, let's look over here at our customer table and our sales table.
+
+00:02:10.130 --> 00:02:12.245
+So here we have columns such as name,
+
+00:02:12.245 --> 00:02:14.230
+e-mail, ID, and city.
+
+00:02:14.230 --> 00:02:16.050
+Now, over here we have a sales table,
+
+00:02:16.050 --> 00:02:18.380
+looks like maybe we're selling something,
+
+00:02:18.380 --> 00:02:19.850
+we have customers, we have sales,
+
+00:02:19.850 --> 00:02:21.334
+looks like our customer,
+
+00:02:21.334 --> 00:02:22.760
+which we have our name here,
+
+00:02:22.760 --> 00:02:27.960
+and this is the maybe the amount that they spent on a transaction.
+
+00:02:28.220 --> 00:02:32.385
+We could have this column in this table,
+
+00:02:32.385 --> 00:02:34.155
+but it doesn't really belong there,
+
+00:02:34.155 --> 00:02:36.040
+it's not really information about our customer,
+
+00:02:36.040 --> 00:02:37.430
+it really should be separated out,
+
+00:02:37.430 --> 00:02:40.910
+which we have to get it into normal form.
+
+00:02:40.910 --> 00:02:46.525
+So from there we're able to join these two tables by this key here, which is name.
+
+00:02:46.525 --> 00:02:48.735
+Now this is just an example,
+
+00:02:48.735 --> 00:02:51.845
+we probably wouldn't want to use name as yet name is not unique.
+
+00:02:51.845 --> 00:02:54.485
+But in this case, in our little example, it is.
+
+00:02:54.485 --> 00:02:58.550
+Second normal form, how to reach second normal form?
+
+00:02:58.550 --> 00:03:02.180
+Well, the very first thing that you have to do to start getting
+
+00:03:02.180 --> 00:03:03.830
+your information and your data model into
+
+00:03:03.830 --> 00:03:06.080
+second normal form is to be in first normal form.
+
+00:03:06.080 --> 00:03:09.245
+You have to do that first before you can progress onto second normal form.
+
+00:03:09.245 --> 00:03:13.060
+Again, it's a progression process.
+
+00:03:13.060 --> 00:03:18.700
+Then all columns in the table must rely on the primary key.
+
+00:03:18.700 --> 00:03:21.180
+Let's stop and think about that for a minute.
+
+00:03:21.180 --> 00:03:25.295
+This means that there should be no composite keys to get fields.
+
+00:03:25.295 --> 00:03:28.855
+I shouldn't need two elements to get a third,
+
+00:03:28.855 --> 00:03:32.540
+if the column does not help describe the primary key,
+
+00:03:32.540 --> 00:03:34.325
+they are just customers, sales,
+
+00:03:34.325 --> 00:03:37.400
+employees, then it may not fit in the table.
+
+00:03:37.400 --> 00:03:40.670
+Also if the column depends on multiple columns,
+
+00:03:40.670 --> 00:03:42.970
+it may need its own table.
+
+00:03:42.970 --> 00:03:45.720
+So let's look at this example here.
+
+00:03:45.720 --> 00:03:47.820
+This is our first table,
+
+00:03:47.820 --> 00:03:50.520
+we have Store ID, Customer ID,
+
+00:03:50.520 --> 00:03:52.635
+Customer name, and E-mail.
+
+00:03:52.635 --> 00:03:54.500
+So in this case,
+
+00:03:54.500 --> 00:04:01.015
+we're going to need both the Store ID and the Customer ID to get our Customer.
+
+00:04:01.015 --> 00:04:03.320
+Our Store ID is not unique,
+
+00:04:03.320 --> 00:04:06.230
+so we need two keys to get our customer.
+
+00:04:06.230 --> 00:04:08.870
+Well, to be in second normal form, we don't want to do that,
+
+00:04:08.870 --> 00:04:12.445
+so what we can do is break that up into two tables.
+
+00:04:12.445 --> 00:04:15.660
+One, Store ID and Customer ID,
+
+00:04:15.660 --> 00:04:17.320
+and our customer table,
+
+00:04:17.320 --> 00:04:21.070
+Customer ID, and then the rest of the information about our customers.
+
+00:04:21.070 --> 00:04:26.515
+Then from there, we can easily join these tables on Customer ID to get more information.
+
+00:04:26.515 --> 00:04:29.235
+Third normal form, first,
+
+00:04:29.235 --> 00:04:31.665
+we must be in second normal form.
+
+00:04:31.665 --> 00:04:35.110
+Remember, this is a process and it's an iterative process.
+
+00:04:35.110 --> 00:04:37.580
+First, you start with a non-normalized table,
+
+00:04:37.580 --> 00:04:39.200
+then first normal form,
+
+00:04:39.200 --> 00:04:41.210
+and then second normal form,
+
+00:04:41.210 --> 00:04:43.745
+and now finally the third normal form,
+
+00:04:43.745 --> 00:04:46.295
+but we must first be in second normal form.
+
+00:04:46.295 --> 00:04:51.010
+From there, we must not have any transitive dependencies.
+
+00:04:51.010 --> 00:04:54.970
+Let's take a look at our example here, in this case,
+
+00:04:54.970 --> 00:04:59.550
+we have an awards table of music awards.
+
+00:04:59.550 --> 00:05:02.290
+So in this case, we have a row with our music awards,
+
+00:05:02.290 --> 00:05:04.885
+we have the Grammys, CMA, and the VMAs.
+
+00:05:04.885 --> 00:05:10.310
+Then we have the years because both of these music awards happen every year.
+
+00:05:10.310 --> 00:05:14.320
+So we need to have both the music award and
+
+00:05:14.320 --> 00:05:19.530
+the year to be able to know who has the winning record of the year.
+
+00:05:19.530 --> 00:05:23.575
+In this case, so the Grammys in 1965,
+
+00:05:23.575 --> 00:05:25.385
+we're going to get the Beatles.
+
+00:05:25.385 --> 00:05:28.810
+Then from there we have the lead singer of that band.
+
+00:05:28.810 --> 00:05:31.505
+Now, this transitive property,
+
+00:05:31.505 --> 00:05:34.970
+the fact that you need both the music awards and
+
+00:05:34.970 --> 00:05:39.200
+the year to get to the winning record of the year,
+
+00:05:39.200 --> 00:05:43.355
+and the fact now you have this extra amount of data here for the lead singer.
+
+00:05:43.355 --> 00:05:49.020
+As you can see, both in 1970 and 1965,
+
+00:05:49.020 --> 00:05:50.160
+the winners were the same,
+
+00:05:50.160 --> 00:05:54.335
+both the Beatles and the lead singer is now duplicated here.
+
+00:05:54.335 --> 00:05:57.890
+The fact that we need to have this transitive property to
+
+00:05:57.890 --> 00:06:01.910
+get the lead singer makes it not in third normal form.
+
+00:06:01.910 --> 00:06:06.680
+So from there, what we want to do is break that up into two tables.
+
+00:06:06.680 --> 00:06:11.435
+We don't want to have duplicate data in the lead singer,
+
+00:06:11.435 --> 00:06:14.180
+we do not want to have duplicate data as we may have
+
+00:06:14.180 --> 00:06:17.285
+data integrity issues with updating the lead singer,
+
+00:06:17.285 --> 00:06:21.595
+we wouldn't want to do an update on this row and not on this row.
+
+00:06:21.595 --> 00:06:23.510
+So if we separate that out,
+
+00:06:23.510 --> 00:06:25.385
+we can easily avoid that problem.
+
+00:06:25.385 --> 00:06:27.680
+From here, we'll have our awards table,
+
+00:06:27.680 --> 00:06:29.705
+we will have music award, year,
+
+00:06:29.705 --> 00:06:33.490
+and the winner, and then we'll have another table called lead singer,
+
+00:06:33.490 --> 00:06:36.485
+the band name, and the lead singer here.
+
+00:06:36.485 --> 00:06:38.870
+So from here, if we have to do an update,
+
+00:06:38.870 --> 00:06:41.300
+we only have to do it in one place,
+
+00:06:41.300 --> 00:06:47.579
+and we're able to get back our original information by joining on these two columns.
+

@@ -1,0 +1,196 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.875
+So some of the benefits,
+
+00:00:01.875 --> 00:00:04.765
+is that you can denormalize your tables,
+
+00:00:04.764 --> 00:00:07.304
+and it will simplify your queries.
+
+00:00:07.304 --> 00:00:10.019
+As we saw during our last demo and exercise,
+
+00:00:10.019 --> 00:00:14.099
+getting a table into third normal form is a lot of hard work,
+
+00:00:14.099 --> 00:00:17.939
+and the join we had to do at the end of the process was very complex,
+
+00:00:17.940 --> 00:00:20.490
+and we were working on a very simple data set.
+
+00:00:20.489 --> 00:00:24.009
+Star schema allows for the relaxation of these rules,
+
+00:00:24.010 --> 00:00:28.605
+and makes each queries easier with simple joints.
+
+00:00:28.605 --> 00:00:30.960
+First aggregations.
+
+00:00:30.960 --> 00:00:33.615
+These are all the benefits of using a star schema.
+
+00:00:33.615 --> 00:00:36.710
+Aggregations perform calculations and clustering of
+
+00:00:36.710 --> 00:00:41.490
+our data so that we do not have to do that work inside of our application.
+
+00:00:41.490 --> 00:00:44.245
+Examples are count, group by, etc.
+
+00:00:44.244 --> 00:00:47.344
+Some of the drawbacks of using a star schema.
+
+00:00:47.344 --> 00:00:51.784
+There may become some issues that come with denormalization.
+
+00:00:51.784 --> 00:00:55.884
+The issues that come with denormalization will happen when you're using a star schema.
+
+00:00:55.884 --> 00:01:00.439
+Issues around data integrity and decrease query flexibility will come up.
+
+00:01:00.439 --> 00:01:03.169
+The data integrity, that is an issue that may come
+
+00:01:03.170 --> 00:01:05.825
+up because again your denormalizing your tables,
+
+00:01:05.825 --> 00:01:08.030
+so data integrity issues may come up,
+
+00:01:08.030 --> 00:01:12.030
+because you will have duplicated data spread across multiple tables.
+
+00:01:12.030 --> 00:01:14.210
+And then decrease query flexibility.
+
+00:01:14.209 --> 00:01:16.294
+Again, when you denormalize your tables,
+
+00:01:16.295 --> 00:01:18.784
+you're not able, you're modeling to your query.
+
+00:01:18.784 --> 00:01:22.629
+And so you're not as able to do as many ad-hoc queries on your tables.
+
+00:01:22.629 --> 00:01:25.339
+Also many to many relationships.
+
+00:01:25.340 --> 00:01:27.210
+This has been simplified,
+
+00:01:27.209 --> 00:01:31.024
+one to one mapping and all its all the star schemas supports.
+
+00:01:31.025 --> 00:01:34.640
+Many to many relationships are hard to support and are just
+
+00:01:34.640 --> 00:01:38.974
+abstracted away for sake of simplicity and to fit the model.
+
+00:01:38.974 --> 00:01:41.839
+So here's an example that I put together
+
+00:01:41.840 --> 00:01:44.900
+that we're going to see also in our demo and in our exercise,
+
+00:01:44.900 --> 00:01:49.370
+of a star schema using our music store database with a star schema.
+
+00:01:49.370 --> 00:01:51.840
+So here again, in the middle,
+
+00:01:51.840 --> 00:01:53.085
+we have our fact table,
+
+00:01:53.084 --> 00:01:55.229
+we're going to call it customer transactions.
+
+00:01:55.230 --> 00:01:57.609
+We're going to have Customer ID, Store ID,
+
+00:01:57.609 --> 00:02:00.530
+and the amount that was spent at that store.
+
+00:02:00.530 --> 00:02:02.659
+From there, we're going to have connections
+
+00:02:02.659 --> 00:02:05.149
+again by foreign key two other dimension tables,
+
+00:02:05.150 --> 00:02:07.070
+such as item purchased.
+
+00:02:07.069 --> 00:02:10.159
+So here we're going to join on our customer ID.
+
+00:02:10.159 --> 00:02:13.759
+Here's our customer, here's the item number that they bought,
+
+00:02:13.759 --> 00:02:15.064
+and the item name.
+
+00:02:15.064 --> 00:02:17.329
+So let's say in this if we own a music store,
+
+00:02:17.330 --> 00:02:20.510
+we had a customer who bought an item,
+
+00:02:20.509 --> 00:02:22.564
+which was an album, which was Rubber Soul.
+
+00:02:22.564 --> 00:02:26.930
+And then from here, and second customer bought us another album.
+
+00:02:26.930 --> 00:02:29.405
+Okay, so that's one of the points of our Star.
+
+00:02:29.405 --> 00:02:32.435
+So here's another point of our Star which is customer.
+
+00:02:32.435 --> 00:02:35.365
+So now again we can join on that customer ID,
+
+00:02:35.365 --> 00:02:38.240
+and we're going to get information about our customer, name,
+
+00:02:38.240 --> 00:02:39.770
+whether there were wards member,
+
+00:02:39.770 --> 00:02:42.064
+their address, all things like that.
+
+00:02:42.064 --> 00:02:44.719
+And then from there, we're going to have store ID.
+
+00:02:44.719 --> 00:02:47.449
+So this now we're joining on a different foreign key.
+
+00:02:47.449 --> 00:02:53.269
+So the store ID and It'll be able to join with the store table, and we have a store ID.
+
+00:02:53.270 --> 00:02:55.984
+And then we're going to have information about that store, the state,
+
+00:02:55.984 --> 00:02:58.655
+the city, store number,
+
+00:02:58.655 --> 00:03:00.469
+address, things like that.
+
+00:03:00.469 --> 00:03:04.199
+So as you can see, we have one table in the middle that is our fact table,
+
+00:03:04.199 --> 00:03:07.294
+and and reading it out in Stars.
+
+00:03:07.294 --> 00:03:10.589
+Star points are the dimension tables.
+

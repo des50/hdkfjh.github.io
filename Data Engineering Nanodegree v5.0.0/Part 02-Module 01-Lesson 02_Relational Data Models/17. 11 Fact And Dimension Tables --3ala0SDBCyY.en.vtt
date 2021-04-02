@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.700
+All right. So, now we're going to move into a new topic,
+
+00:00:03.700 --> 00:00:06.570
+we're leaving the denormalization and normalization.
+
+00:00:06.570 --> 00:00:09.240
+But these still have much to do with that again because those are
+
+00:00:09.240 --> 00:00:13.050
+the most important concepts in data modelling for relational databases.
+
+00:00:13.050 --> 00:00:15.570
+So, this will have to do with that,
+
+00:00:15.570 --> 00:00:19.109
+but it's a little bit, it's utilizing those concepts.
+
+00:00:19.109 --> 00:00:22.739
+So, we're going to talk about fact and dimension tables.
+
+00:00:22.739 --> 00:00:26.909
+So, these work together to create an organized data model.
+
+00:00:26.910 --> 00:00:31.664
+While fact and dimension tables are not created differently in the DDL,
+
+00:00:31.664 --> 00:00:36.314
+their conceptual and extremely important for organization.
+
+00:00:36.314 --> 00:00:39.409
+So, again these are different tables you create in
+
+00:00:39.409 --> 00:00:42.544
+the sense that you're going to do a different create table statement,
+
+00:00:42.545 --> 00:00:44.719
+but they are different in the fact of how
+
+00:00:44.719 --> 00:00:47.914
+we're conceptually understanding our data model.
+
+00:00:47.914 --> 00:00:52.804
+So, again fact and dimension tables work together to solve business problems.
+
+00:00:52.804 --> 00:00:57.484
+You will find at least one or more fact tables for each dimension table.
+
+00:00:57.484 --> 00:01:02.774
+They are created the same way as a conceptual concept of data modelling.
+
+00:01:02.774 --> 00:01:07.780
+Fact and dimension table concepts will help us understand star and snowflake schemas,
+
+00:01:07.780 --> 00:01:10.549
+and we'll get to that in the next couple of slides.
+
+00:01:10.549 --> 00:01:13.655
+Fact tables consists of measurements,
+
+00:01:13.655 --> 00:01:16.625
+metrics or facts in a business process.
+
+00:01:16.625 --> 00:01:19.385
+Fact tables are made up of facts.
+
+00:01:19.385 --> 00:01:21.800
+Events that have actually happened.
+
+00:01:21.799 --> 00:01:25.224
+Think of a customer transaction and how much they spent.
+
+00:01:25.224 --> 00:01:28.309
+That transaction ID might be used as a key in
+
+00:01:28.310 --> 00:01:33.500
+a dimension table to tell us more about the customers and the individual items bought.
+
+00:01:33.500 --> 00:01:36.269
+Fact tables can be aggregations of data,
+
+00:01:36.269 --> 00:01:40.229
+but are not meant to be updated in place like a dimension table would.
+
+00:01:40.230 --> 00:01:43.640
+Fact tables normally have ints or numbers and
+
+00:01:43.640 --> 00:01:47.405
+we'll see an example coming up. Dimension table.
+
+00:01:47.405 --> 00:01:50.435
+A structure that categorizes facts and measures
+
+00:01:50.435 --> 00:01:53.590
+in order to enable users to answer business questions.
+
+00:01:53.590 --> 00:01:57.460
+Dimensions are people, products, places, and time.
+
+00:01:57.459 --> 00:02:00.079
+Dimension tables are all the other pieces of
+
+00:02:00.079 --> 00:02:02.644
+information that are not included in the fact table.
+
+00:02:02.644 --> 00:02:06.439
+Customer information, information about products et cetera.
+
+00:02:06.439 --> 00:02:09.889
+Normally, textual information or numbers that are
+
+00:02:09.889 --> 00:02:13.609
+not used for analysis like year or date.
+
+00:02:13.610 --> 00:02:15.740
+Each dimension table will have
+
+00:02:15.740 --> 00:02:19.475
+one or more fact tables joined together with a foreign key.
+
+00:02:19.474 --> 00:02:22.085
+Implementing different schemas.
+
+00:02:22.085 --> 00:02:25.909
+Building off of our conceptual knowledge of fact and dimension tables,
+
+00:02:25.909 --> 00:02:28.849
+the schema that fits with this is the star schema.
+
+00:02:28.849 --> 00:02:32.555
+So, two of the most popular because of their simplicity,
+
+00:02:32.555 --> 00:02:38.450
+data marts schemas for data warehouses are the star schema and snowflake schema.
+
+00:02:38.449 --> 00:02:43.039
+This is building off of our conceptual knowledge of the fact and dimension tables,
+
+00:02:43.039 --> 00:02:46.359
+and the schema that fits with this which is the star schema.
+

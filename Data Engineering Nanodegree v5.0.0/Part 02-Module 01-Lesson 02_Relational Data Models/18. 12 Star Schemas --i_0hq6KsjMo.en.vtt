@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.275
+The star schema is the simplest style of data marts schemas.
+
+00:00:04.275 --> 00:00:06.089
+The star schema consists of
+
+00:00:06.089 --> 00:00:11.280
+one or more fact tables referencing any number of dimension tables,
+
+00:00:11.279 --> 00:00:15.644
+and this is one of the most widely used schemas in the industry.
+
+00:00:15.644 --> 00:00:18.855
+So, why would we use a star schema?
+
+00:00:18.855 --> 00:00:22.995
+It gets its name from the physical model representing a star shape.
+
+00:00:22.995 --> 00:00:26.339
+So, a fact table is at its center,
+
+00:00:26.339 --> 00:00:30.539
+that's here, and the dimension tables surround the fact table.
+
+00:00:30.539 --> 00:00:32.685
+These are here, here,
+
+00:00:32.685 --> 00:00:36.910
+and here, and those represent the star points.
+
