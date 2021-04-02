@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.459
+At this point, you have seen two big ideas in the world of big data engineering.
+
+00:00:05.459 --> 00:00:08.205
+The first idea being data warehousing,
+
+00:00:08.205 --> 00:00:12.914
+rather traditional arts for dealing with
+
+00:00:12.914 --> 00:00:18.089
+the difference between transaction processing and analytical processing,
+
+00:00:18.089 --> 00:00:21.539
+and a field which is really mature
+
+00:00:21.539 --> 00:00:26.099
+over the agents you have lots of tried and true technologies,
+
+00:00:26.100 --> 00:00:30.975
+and actually that survived the test of many years.
+
+00:00:30.975 --> 00:00:35.355
+Then you have also seen now
+
+00:00:35.354 --> 00:00:37.500
+the big data technology school of
+
+00:00:37.500 --> 00:00:40.204
+thought is something that is a little bit more progressive,
+
+00:00:40.204 --> 00:00:44.539
+where normal commodity machines have been used and
+
+00:00:44.539 --> 00:00:50.289
+clustered together to act as a supercomputer which is infinitely scalable.
+
+00:00:50.289 --> 00:00:54.079
+In this lesson, we're going to see how these two fields
+
+00:00:54.079 --> 00:00:57.019
+started to actually come together,
+
+00:00:57.020 --> 00:01:00.560
+there was a marriage and the big data technology started to
+
+00:01:00.560 --> 00:01:04.129
+affect the data warehouse until actually,
+
+00:01:04.129 --> 00:01:08.045
+it started to almost totally revamp it.
+
+00:01:08.045 --> 00:01:10.745
+The little strength in that is known as
+
+00:01:10.745 --> 00:01:14.579
+the data lake which we're going to cover in this lesson.
+

@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.029
+So, the idea was very simple.
+
+00:00:03.029 --> 00:00:04.859
+One you would store,
+
+00:00:04.860 --> 00:00:09.879
+it does storage and processing combo, two in one.
+
+00:00:09.980 --> 00:00:13.530
+All types of data are welcome.
+
+00:00:13.529 --> 00:00:15.164
+High value, low value,
+
+00:00:15.164 --> 00:00:20.114
+medium value, structured, unstructured, semi-structured.
+
+00:00:20.114 --> 00:00:22.469
+I know sometimes you say that JSON
+
+00:00:22.469 --> 00:00:25.454
+is not really unstructured because there is structured,
+
+00:00:25.454 --> 00:00:27.839
+but it can have fields of like large text,
+
+00:00:27.839 --> 00:00:30.839
+so it's semi-structured and so forth.
+
+00:00:30.839 --> 00:00:33.104
+That was like the first thing,
+
+00:00:33.104 --> 00:00:35.070
+all data is welcomed.
+
+00:00:35.070 --> 00:00:37.035
+The second thing is that,
+
+00:00:37.034 --> 00:00:39.209
+you don't do ETL.
+
+00:00:39.210 --> 00:00:44.060
+You do ELT which is first actually at E L T. So,
+
+00:00:44.060 --> 00:00:47.315
+the data is stored as is in its original formats.
+
+00:00:47.314 --> 00:00:51.000
+Unlike ETL, unlikely in the data warehouse,
+
+00:00:51.000 --> 00:00:56.929
+either in Inman architecture or Kimball's architecture that when you get the data,
+
+00:00:56.929 --> 00:01:02.524
+you either like transform it into dimensional model or even take first into
+
+00:01:02.524 --> 00:01:07.969
+one uniform and normalized format then put it in the dimensional model.
+
+00:01:07.969 --> 00:01:10.194
+But at the end of the day in the warehouse,
+
+00:01:10.194 --> 00:01:17.674
+you need it to know the format of the destination table before touching the source data.
+
+00:01:17.674 --> 00:01:22.200
+Here, any old data with the original format,
+
+00:01:22.200 --> 00:01:24.075
+we don't know it's binary, its text, its worth.
+
+00:01:24.075 --> 00:01:30.010
+We put it as it is without transformation and we transform later one word processing,
+
+00:01:30.010 --> 00:01:33.770
+and how do we transform later one word processing using
+
+00:01:33.769 --> 00:01:38.449
+the idea of the schema on read that we just saw?
+
+00:01:38.450 --> 00:01:41.900
+Features like parallelism and columnar storage
+
+00:01:41.900 --> 00:01:45.984
+are provided actually by the idea that you have
+
+00:01:45.984 --> 00:01:49.694
+a dataframe and in Spark or RDD
+
+00:01:49.694 --> 00:01:54.709
+and these are actually distributed data storage out of the box.
+
+00:01:54.709 --> 00:01:58.579
+This is like the vanilla data abstraction,
+
+00:01:58.579 --> 00:02:02.549
+it's a distributed data frame, and also,
+
+00:02:02.549 --> 00:02:08.889
+you have those like parquet which is columnar storage and the MPP plus parquet.
+
+00:02:08.889 --> 00:02:16.199
+Here is something that is unparalleled for actually commodity hardware.
+
+00:02:16.199 --> 00:02:20.509
+Finally, in Spark you have packages like MN Libin graph x,
+
+00:02:20.509 --> 00:02:24.409
+and actually new things are coming like for NLP and so on.
+
+00:02:24.409 --> 00:02:31.460
+That can make you do things that wouldn't typically be in a database.
+
+00:02:31.460 --> 00:02:35.000
+I have to say that lots of the current databases are catching up.
+
+00:02:35.000 --> 00:02:40.235
+So, many like or it can and Microsoft tend to.
+
+00:02:40.235 --> 00:02:45.740
+I mean all the all the major vendors of databases are actually
+
+00:02:45.740 --> 00:02:54.100
+incorporating machine learning features into their databases as well.
+

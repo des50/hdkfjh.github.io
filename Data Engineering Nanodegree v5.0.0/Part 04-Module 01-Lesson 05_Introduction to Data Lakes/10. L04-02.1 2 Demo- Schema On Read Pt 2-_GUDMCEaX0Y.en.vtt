@@ -1,0 +1,166 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.165
+So here we're going to come and
+
+00:00:03.165 --> 00:00:06.209
+the regular expression for
+
+00:00:06.209 --> 00:00:09.539
+web logs is just Google it and you'll find the regular expression.
+
+00:00:09.539 --> 00:00:11.339
+If you hit writing regular expressions,
+
+00:00:11.339 --> 00:00:16.365
+and parsing this in Python is very easy.
+
+00:00:16.364 --> 00:00:20.820
+So here's the regular expression and here's the function that does this.
+
+00:00:20.820 --> 00:00:22.935
+This is pure Python that you can test,
+
+00:00:22.934 --> 00:00:25.669
+and we're going to declare this as UDF.
+
+00:00:25.670 --> 00:00:29.010
+You might be familiar with this syntax or you might be
+
+00:00:29.010 --> 00:00:32.295
+familiar with the other syntax with register UDF,
+
+00:00:32.295 --> 00:00:33.959
+which are both equivalent,
+
+00:00:33.959 --> 00:00:36.859
+and once we have this registered,
+
+00:00:36.859 --> 00:00:39.000
+we go and use this here,
+
+00:00:39.000 --> 00:00:44.715
+to do the transformation with column and we get another DF which is the DF parsed.
+
+00:00:44.715 --> 00:00:50.240
+By design here, we made this such it looks like a dictionary.
+
+00:00:50.240 --> 00:00:53.170
+So we can actually access the fields,
+
+00:00:53.170 --> 00:00:55.620
+and if you look here,
+
+00:00:55.619 --> 00:00:59.644
+you print the schema and that's a string.
+
+00:00:59.645 --> 00:01:03.275
+That's not the dictionary but we return the dictionary.
+
+00:01:03.274 --> 00:01:08.359
+Yes. But we made the mistake actually in this function.
+
+00:01:08.359 --> 00:01:10.780
+I don't know if you can spot it.
+
+00:01:10.780 --> 00:01:12.670
+If you studied well,
+
+00:01:12.670 --> 00:01:14.400
+your UDFs you will know that,
+
+00:01:14.400 --> 00:01:16.520
+you have to be very careful with the return types.
+
+00:01:16.519 --> 00:01:19.339
+You have to say, what is the return type.
+
+00:01:19.340 --> 00:01:25.010
+So we will do a third attempts while the first was the splitting,
+
+00:01:25.010 --> 00:01:26.329
+the second was the bad UDF,
+
+00:01:26.329 --> 00:01:28.039
+and the third is the proper UDF.
+
+00:01:28.040 --> 00:01:31.820
+We'll go and say, this UDF is going to return a map type,
+
+00:01:31.819 --> 00:01:34.459
+and depending on how much you studied Spark,
+
+00:01:34.459 --> 00:01:40.414
+you would know that Spark has abnormal string columns,
+
+00:01:40.415 --> 00:01:45.030
+integer columns, double, and so forth.
+
+00:01:45.030 --> 00:01:50.010
+But you have also three complex type of jars structs, maps and arrays.
+
+00:01:50.010 --> 00:01:53.380
+So you can have a column itself as a map type which is
+
+00:01:53.379 --> 00:01:57.084
+an extremely powerful feature of Spark,
+
+00:01:57.084 --> 00:01:59.979
+and you have to say it's a map type of what to what.
+
+00:01:59.980 --> 00:02:02.335
+So this is going to be a map type from string
+
+00:02:02.334 --> 00:02:05.529
+to string because these will be the most generic for us,
+
+00:02:05.530 --> 00:02:09.504
+and we repeat this and we read it clear.
+
+00:02:09.504 --> 00:02:13.379
+I will call it this parse UDF better and we say this is the DF parsed,
+
+00:02:13.379 --> 00:02:15.664
+and we look at it and at while.
+
+00:02:15.664 --> 00:02:17.150
+The results seem okay,
+
+00:02:17.150 --> 00:02:19.099
+actually it looked okay last time.
+
+00:02:19.099 --> 00:02:22.310
+But also, when I print the schema here,
+
+00:02:22.310 --> 00:02:26.620
+I will see that there is a key and a value.
+
+00:02:26.620 --> 00:02:31.300
+So actually the type of parsed column is map.
+
+00:02:31.300 --> 00:02:33.564
+We're doing actually grid.
+
+00:02:33.564 --> 00:02:35.939
+It seems that I made a mistake,
+
+00:02:35.939 --> 00:02:40.189
+and I am printing this two times anyhow.
+
+00:02:40.189 --> 00:02:42.365
+Here's printing it one time and here's the scheme.
+
+00:02:42.365 --> 00:02:46.294
+Now I can go and say DF will select parsed,
+
+00:02:46.294 --> 00:02:50.115
+and I'm going to get all the field here, beautiful.
+
+00:02:50.115 --> 00:02:51.875
+But I guess we need more.
+
+00:02:51.875 --> 00:02:54.099
+We need to convert these into columns.
+

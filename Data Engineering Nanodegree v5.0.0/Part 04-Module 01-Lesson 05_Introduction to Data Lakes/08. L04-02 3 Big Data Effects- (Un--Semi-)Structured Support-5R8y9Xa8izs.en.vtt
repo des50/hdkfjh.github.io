@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:08.009
+The third very important effect is that the big data technologies were able to read many,
+
+00:00:08.009 --> 00:00:11.730
+many format and text formats like texts CSV,
+
+00:00:11.730 --> 00:00:15.120
+JSON, but not only that, binary formats.
+
+00:00:15.119 --> 00:00:16.919
+I mean, if you have, I don't know,
+
+00:00:16.920 --> 00:00:21.695
+if you have censored data and saved that as text, all those numbers.
+
+00:00:21.695 --> 00:00:26.984
+I mean, this is going to take a ridiculous amount of space unnecessarily and
+
+00:00:26.984 --> 00:00:32.310
+saving them in binary format like an arrow might be a better choice.
+
+00:00:32.310 --> 00:00:34.215
+Then, you have Parquet.
+
+00:00:34.215 --> 00:00:38.355
+This Parquet format is a columnar storage formats which is also,
+
+00:00:38.354 --> 00:00:41.750
+you can load but only columns off disk in
+
+00:00:41.750 --> 00:00:45.469
+memory without losing the whole row which is actually very nice
+
+00:00:45.469 --> 00:00:50.899
+because that is something undreamt of except maybe in
+
+00:00:50.899 --> 00:00:55.399
+those expensive MPP databases like Redshift
+
+00:00:55.399 --> 00:01:02.469
+and Oracle Exadata and Teradata and these high end systems.
+
+00:01:02.469 --> 00:01:08.989
+Finally, also we can work with GZ data or Zip data in compressed formats like Gzip and
+
+00:01:08.989 --> 00:01:12.920
+Snappy which actually gives us also control on
+
+00:01:12.920 --> 00:01:18.075
+the compression ratio versus the speed of decompression and so forth.
+
+00:01:18.075 --> 00:01:19.969
+So we can work with many,
+
+00:01:19.969 --> 00:01:24.939
+many formats for lots of useful use cases.
+
+00:01:24.939 --> 00:01:28.009
+Not only that, we can also read these formats from
+
+00:01:28.010 --> 00:01:31.370
+a file systems like the local file system,
+
+00:01:31.370 --> 00:01:35.064
+the HDFS or S3.
+
+00:01:35.064 --> 00:01:38.864
+Actually, in its initial incarnations,
+
+00:01:38.864 --> 00:01:42.289
+the Hadoop ecosystem was not made to work with S3,
+
+00:01:42.290 --> 00:01:45.290
+and now it's actually a very mainstream,
+
+00:01:45.290 --> 00:01:46.984
+actually thing to do that.
+
+00:01:46.984 --> 00:01:56.120
+I would say, also in like in other Cloud providers like Google Cloud and Azure,
+
+00:01:56.120 --> 00:02:00.160
+you have the equivalence of S3 that are also supported.
+
+00:02:00.159 --> 00:02:04.519
+Also, the data doesn't need to reside in file systems,
+
+00:02:04.519 --> 00:02:06.769
+it can reside into databases.
+
+00:02:06.769 --> 00:02:10.789
+So one can have a database, like,
+
+00:02:10.789 --> 00:02:16.009
+one can load a DataFrame from from a JDBC connection or from
+
+00:02:16.009 --> 00:02:19.159
+our SQL database like so by just specifying
+
+00:02:19.159 --> 00:02:22.995
+a string and one is unaware of the source of that.
+
+00:02:22.995 --> 00:02:26.539
+Whether it's JDBC or S3 or CSV,
+
+00:02:26.538 --> 00:02:29.489
+at the end of the day, all of them are DataFrames.
+
+00:02:29.490 --> 00:02:31.935
+Likewise, for NoSQL databases,
+
+00:02:31.935 --> 00:02:34.025
+one can also connect to them and have
+
+00:02:34.025 --> 00:02:40.680
+a dataframe which means we can also work was that in SQL.
+

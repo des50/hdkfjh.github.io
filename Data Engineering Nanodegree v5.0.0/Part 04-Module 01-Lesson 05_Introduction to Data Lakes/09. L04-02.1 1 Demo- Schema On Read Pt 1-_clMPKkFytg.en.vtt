@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.950 --> 00:00:06.905
+In this demo, we're going to work on the exercise for schema on Read,
+
+00:00:06.905 --> 00:00:09.780
+mainly actually loading Logs.
+
+00:00:09.919 --> 00:00:14.490
+We have here a log file from NASA,
+
+00:00:14.490 --> 00:00:16.859
+it's pretty old but I mean the format of
+
+00:00:16.859 --> 00:00:20.625
+the log is actually didn't change a lot over time.
+
+00:00:20.625 --> 00:00:26.850
+We go for a quick inspection and we find that while it's one value,
+
+00:00:26.850 --> 00:00:29.385
+it's a string, makes sense,
+
+00:00:29.385 --> 00:00:34.920
+it's just a line and you couldn't break it on anything.
+
+00:00:34.920 --> 00:00:37.440
+How much that's looks like,
+
+00:00:37.439 --> 00:00:38.609
+what one million rows?
+
+00:00:38.609 --> 00:00:39.859
+One point million rows?
+
+00:00:39.859 --> 00:00:43.670
+Okay, fine. We show how it looks like.
+
+00:00:43.670 --> 00:00:46.795
+It seems that show is not going to be very helpful.
+
+00:00:46.795 --> 00:00:50.865
+So, what do we do we say, (s, truncate=False).
+
+00:00:50.865 --> 00:00:56.005
+We see a little bit here but still it looks a little bit ugly.
+
+00:00:56.005 --> 00:01:02.929
+Anyhow Pandas comes to the rescue here and we say we want to do Pandas but we
+
+00:01:02.929 --> 00:01:10.090
+want to control the column width to be like 200 characters and we print again.
+
+00:01:10.090 --> 00:01:14.820
+Naturally, one can say the dfLog.toPandas
+
+00:01:14.819 --> 00:01:20.694
+and.head5 but that means we're going to load all the file in Pandas then show it.
+
+00:01:20.694 --> 00:01:25.044
+When I do the dfLog.limit first,
+
+00:01:25.045 --> 00:01:29.510
+I'm getting only five rows from the data frame and loading
+
+00:01:29.510 --> 00:01:34.045
+them to Pandas so we consume less memory and it's much faster.
+
+00:01:34.045 --> 00:01:35.965
+Anyhow, when we look here,
+
+00:01:35.965 --> 00:01:40.745
+you will see that these actually look alike but upon closer inspection,
+
+00:01:40.745 --> 00:01:45.780
+we might say, why don't we just split this on the space?
+
+00:01:45.950 --> 00:01:51.645
+Well, here there are spaces so things might not be very nice.
+
+00:01:51.644 --> 00:01:53.109
+So, we have this brackets,
+
+00:01:53.109 --> 00:01:55.084
+square brackets and we have those codes.
+
+00:01:55.084 --> 00:01:57.544
+So, we are going to get this, lets try.
+
+00:01:57.545 --> 00:02:04.320
+So, we go initially and we use the split function from the functions and we make
+
+00:02:04.319 --> 00:02:07.469
+a column called tokenized and we think that
+
+00:02:07.469 --> 00:02:10.859
+the dfLog and we put into the dfArrays data frame.
+
+00:02:10.860 --> 00:02:12.525
+So, it looks like this.
+
+00:02:12.525 --> 00:02:14.710
+Actually, if you work with it,
+
+00:02:14.710 --> 00:02:20.165
+you will soon realize that this is going to be a not very nice to work with.
+
+00:02:20.164 --> 00:02:23.058
+Actually, the number of columns,
+
+00:02:23.058 --> 00:02:27.169
+if you start counting the number of items per column,
+
+00:02:27.169 --> 00:02:29.780
+you will find that this is not very regular nodes.
+
+00:02:29.780 --> 00:02:34.879
+The point I'm trying to make here is that not because it's Schema on Read that you would
+
+00:02:34.879 --> 00:02:37.069
+load the file and you will find that
+
+00:02:37.069 --> 00:02:39.979
+comma separated or JSON and everything is hunky-dory,
+
+00:02:39.979 --> 00:02:42.769
+you will need sometimes to work a little bit more.
+

@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.394
+Now, that cluster has finally started called the DataLakeCluster,
+
+00:00:04.394 --> 00:00:07.229
+and I can open the notebook here.
+
+00:00:07.230 --> 00:00:10.919
+Actually, if you just write percent, percent Spark,
+
+00:00:10.919 --> 00:00:19.425
+Spark will launch for you and you don't need to load the Hadoop AWS library,
+
+00:00:19.425 --> 00:00:22.905
+like we did in our Local Jupyter notebook here.
+
+00:00:22.905 --> 00:00:26.429
+That part has already been done for you.
+
+00:00:26.429 --> 00:00:29.519
+You also do not need to have any access key or secret
+
+00:00:29.519 --> 00:00:32.579
+key because you're running this with your credentials.
+
+00:00:32.579 --> 00:00:39.664
+So, both these steps are not needed if we're working on the EMR notebooks.
+
+00:00:39.664 --> 00:00:44.890
+Finally, we can go ahead right away and write our code like here,
+
+00:00:44.890 --> 00:00:51.865
+and you write it and it prints a schema and you can see it.
+
+00:00:51.865 --> 00:00:55.460
+This is actually a proper way of working
+
+00:00:55.460 --> 00:01:00.274
+and you can have a big cluster here with many nodes.
+
+00:01:00.274 --> 00:01:01.594
+The whole point of this,
+
+00:01:01.594 --> 00:01:04.719
+is the ability to crunch a huge amount of data.
+
+00:01:04.719 --> 00:01:07.819
+So, from S3 to the EMR cluster,
+
+00:01:07.819 --> 00:01:09.814
+that's a viable solution.
+
+00:01:09.814 --> 00:01:14.405
+If you need to do Spark submit and not done with a Jupyter,
+
+00:01:14.405 --> 00:01:17.510
+you can actually go to your data cluster here.
+
+00:01:17.510 --> 00:01:26.150
+This is the our cluster and there is a way here to actually have an end point.
+
+00:01:26.150 --> 00:01:28.100
+You can say enable web connection here,
+
+00:01:28.099 --> 00:01:32.405
+it will give you instructions for how to SSH to
+
+00:01:32.405 --> 00:01:38.629
+this machine with an end point and here's the SSH, I'm sorry.
+
+00:01:38.629 --> 00:01:40.824
+That's enabled work connections actually,
+
+00:01:40.825 --> 00:01:46.415
+for monitoring all the services like seeing the Spark, UI, and so on.
+
+00:01:46.415 --> 00:01:53.110
+Here is an endpoint and that you can SSH to if you so wish.
+

@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.605
+I'm going to do here is that I'm going to use the NLP library,
+
+00:00:04.605 --> 00:00:09.705
+and this downloads a pre-trained pipeline.
+
+00:00:09.705 --> 00:00:15.210
+This understands the English language and knows a lot about English,
+
+00:00:15.210 --> 00:00:19.575
+and it can tell you what each word type is.
+
+00:00:19.574 --> 00:00:23.730
+What I go is we get this basic pipeline,
+
+00:00:23.730 --> 00:00:28.500
+and we say BP which is the basic pipeline of annotate,
+
+00:00:28.500 --> 00:00:30.809
+and you give it a data frame,
+
+00:00:30.809 --> 00:00:33.390
+and you say in this data frame,
+
+00:00:33.390 --> 00:00:38.429
+I'm interested to annotate this column which is the title column.
+
+00:00:38.429 --> 00:00:42.369
+You get back and annotated data frame that looks like this.
+
+00:00:42.369 --> 00:00:45.679
+I don't know how much you're familiar with NLP.
+
+00:00:45.679 --> 00:00:49.759
+There are processes like tokenization, lemmatization,
+
+00:00:49.759 --> 00:00:55.039
+normalization, and one of them is called part of speech tagging.
+
+00:00:55.039 --> 00:00:58.640
+We are going to be interested here in the part of speech tagging,
+
+00:00:58.640 --> 00:01:00.965
+and let me show you what happens.
+
+00:01:00.965 --> 00:01:03.050
+It gives you something that looks like that.
+
+00:01:03.049 --> 00:01:04.954
+So I'm going to select the pulse.
+
+00:01:04.954 --> 00:01:08.909
+So we have here one, two, three, four,
+
+00:01:08.909 --> 00:01:13.189
+and I want the column which is called pos.
+
+00:01:13.189 --> 00:01:16.715
+Pos actually is an array,
+
+00:01:16.715 --> 00:01:21.609
+and it has a struct,
+
+00:01:21.609 --> 00:01:24.810
+and the struct has the metadata,
+
+00:01:24.810 --> 00:01:26.510
+so I need this metadata.
+
+00:01:26.510 --> 00:01:28.430
+So I'm going to select that,
+
+00:01:28.430 --> 00:01:33.665
+and I'm going to get the list for Microsoft is a word,
+
+00:01:33.665 --> 00:01:36.540
+is a word, is a word. I get that.
+
+00:01:36.540 --> 00:01:38.230
+I didn't need NLP to tell me this.
+
+00:01:38.230 --> 00:01:40.219
+But here is the interesting part.
+
+00:01:40.219 --> 00:01:46.745
+It tells me here that this is a proper noun or this is a verb for said, it is a verb.
+
+00:01:46.745 --> 00:01:56.195
+For has, it's a PRP preposition or I don't know, I'm not doing grammar.
+
+00:01:56.194 --> 00:01:58.179
+You have here nouns.
+
+00:01:58.180 --> 00:02:04.855
+Actually, there is a place where if you Googled part of speech tagging,
+
+00:02:04.855 --> 00:02:07.730
+you will find that these acronyms exactly what they tell you,
+
+00:02:07.730 --> 00:02:10.655
+what we are interested in the proper noun like Microsoft,
+
+00:02:10.655 --> 00:02:12.860
+we're not interested in said,
+
+00:02:12.860 --> 00:02:14.730
+or it, or has,
+
+00:02:14.729 --> 00:02:18.114
+we're interested in the NLP being the nouns,
+
+00:02:18.115 --> 00:02:22.760
+and the NNS which might be actually plurals of that.
+
+00:02:22.759 --> 00:02:25.759
+If I remember that terms correctly.
+

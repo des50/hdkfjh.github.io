@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.100 --> 00:00:06.000
+So initially, we had the data warehouse,
+
+00:00:06.000 --> 00:00:07.320
+and one might ask,
+
+00:00:07.320 --> 00:00:10.650
+is there anything wrong with the data warehouse that we need something different?
+
+00:00:10.650 --> 00:00:13.285
+But, there's nothing wrong per se.
+
+00:00:13.285 --> 00:00:17.714
+Data warehouse is really mature, tried-and-true.
+
+00:00:17.714 --> 00:00:22.050
+I mentioned modeling is extremely relevant to this day.
+
+00:00:22.050 --> 00:00:26.205
+For many organizations, data warehouse is still the best way to go,
+
+00:00:26.204 --> 00:00:28.859
+perhaps the only thing that needs to be
+
+00:00:28.859 --> 00:00:31.619
+changed is maybe moving to the cloud or something.
+
+00:00:31.620 --> 00:00:34.870
+But otherwise, still totally relevant.
+
+00:00:36.289 --> 00:00:40.500
+So why do we need the data lake then?
+
+00:00:40.500 --> 00:00:42.469
+The idea is that in recent years,
+
+00:00:42.469 --> 00:00:45.740
+there are some factors drove the evolution of the data warehouse.
+
+00:00:45.740 --> 00:00:49.609
+For example the abundance of unstructured data.
+
+00:00:49.609 --> 00:00:52.174
+A lot, not everything is tabular.
+
+00:00:52.174 --> 00:01:00.890
+There are unprecedented data volumes like social network dumps and censored data and
+
+00:01:00.890 --> 00:01:04.840
+machine-generated stuff that comes from like
+
+00:01:04.840 --> 00:01:12.390
+your smartwatch or things of that sort.
+
+00:01:12.769 --> 00:01:16.519
+Then meanwhile also, we have seen a rise
+
+00:01:16.519 --> 00:01:20.179
+of the big data technologies like HDFS and spark.
+
+00:01:20.180 --> 00:01:24.510
+These became enablers for new opportunities.
+
+00:01:24.700 --> 00:01:30.260
+Also, certain types of analyses that we're
+
+00:01:30.260 --> 00:01:35.570
+not really that popular before like predictive analytics based on machine learning
+
+00:01:35.569 --> 00:01:44.250
+and recommended systems and graph analytics became actually more topical and
+
+00:01:44.250 --> 00:01:48.349
+also we had new roles in the organization so that the data warehouse audience were
+
+00:01:48.349 --> 00:01:53.769
+basically the business users that needed to make decisions and gain insights.
+

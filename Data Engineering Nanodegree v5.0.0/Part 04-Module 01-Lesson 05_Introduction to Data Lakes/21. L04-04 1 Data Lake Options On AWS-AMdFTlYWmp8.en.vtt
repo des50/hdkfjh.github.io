@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.474
+Now we take a closer look on how to build a data lake on Amazon Web Services.
+
+00:00:05.474 --> 00:00:11.129
+So, basically, what we have to understand what is the storage option,
+
+00:00:11.130 --> 00:00:12.825
+what does the processing option,
+
+00:00:12.824 --> 00:00:18.989
+and the kind of the the manager or the unmanaged vendor solution order.
+
+00:00:18.989 --> 00:00:22.049
+Like we didn't in Redshift and RDS and so forth.
+
+00:00:22.050 --> 00:00:26.160
+So, the idea that the normal solution which is to
+
+00:00:26.160 --> 00:00:30.269
+have storage with HDFS and processing with Spark
+
+00:00:30.269 --> 00:00:33.839
+and and I would say here maybe you want to replace this with Hive or
+
+00:00:33.840 --> 00:00:37.410
+with any other processing tool that you might
+
+00:00:37.409 --> 00:00:40.079
+see like like Flink
+
+00:00:40.079 --> 00:00:46.405
+or whatever other processing tool is available on the big data clusters.
+
+00:00:46.405 --> 00:00:48.600
+And then, you would have to two choices
+
+00:00:48.600 --> 00:00:51.664
+either AWS managed solution or the vendor managed.
+
+00:00:51.664 --> 00:00:59.729
+So, Amazon gives you this AWS elastic MapReduce and it's not the map,
+
+00:00:59.729 --> 00:01:02.914
+the Hadoop MapReduce that's like I guess it's a legacy name,
+
+00:01:02.914 --> 00:01:05.480
+but in elastic MapReduce,
+
+00:01:05.480 --> 00:01:07.380
+you can choose the components that you want,
+
+00:01:07.379 --> 00:01:13.394
+and you can choose the HDFS with Spark and that would be a cluster,
+
+00:01:13.394 --> 00:01:15.545
+and that cluster is elastic.
+
+00:01:15.545 --> 00:01:17.105
+You can shrink it, you can grow it.
+
+00:01:17.105 --> 00:01:19.640
+I mean you can do lots of functionality,
+
+00:01:19.640 --> 00:01:22.659
+add software, you name it.
+
+00:01:22.659 --> 00:01:26.969
+But also other vendors like Cloudera, Hortonworks,
+
+00:01:26.969 --> 00:01:35.189
+and Databricks will give you also solutions to work with on the clouds on EC2 machines.
+
+00:01:35.189 --> 00:01:36.450
+So, you can get easy planning.
+
+00:01:36.450 --> 00:01:40.805
+In principle you just get bare-metal EC2 machines or,
+
+00:01:40.805 --> 00:01:42.890
+they're not bare metal, but I mean just have
+
+00:01:42.890 --> 00:01:46.445
+operating systems and you can install whatever you like on them.
+
+00:01:46.444 --> 00:01:51.709
+The second option, which is a new way of deploying an AWS solutions,
+
+00:01:51.709 --> 00:01:56.094
+which is actually making the storage S3 and the processing Spark.
+
+00:01:56.094 --> 00:01:59.319
+And the third is S3 with Serverless,
+
+00:01:59.319 --> 00:02:02.839
+and perhaps these are not the traditional ways.
+
+00:02:02.840 --> 00:02:08.009
+This is a little bit an evolution of how things became when we went to the cloud.
+
+00:02:08.009 --> 00:02:14.679
+So, let me introduce this one first and then we go by delta to see the rest.
+

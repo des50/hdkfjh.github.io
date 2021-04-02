@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.009
+Now we take a look at some internals of the Data Lake.
+
+00:00:05.009 --> 00:00:07.919
+So, as we said,
+
+00:00:07.919 --> 00:00:12.434
+the data lakes were empowered by the big data technologies,
+
+00:00:12.433 --> 00:00:17.234
+and initially, big data technologies worked using the hadoop ecosystem.
+
+00:00:17.234 --> 00:00:21.614
+Over times the big data tools architecture itself changed and
+
+00:00:21.614 --> 00:00:27.629
+hadoop is not now the only way to implement big data architectures.
+
+00:00:27.629 --> 00:00:30.859
+So, we will start by explaining the original idea,
+
+00:00:30.859 --> 00:00:32.640
+and then in the next section,
+
+00:00:32.640 --> 00:00:38.100
+we will explain the different ways of doing data lake on Amazon Web Services.
+

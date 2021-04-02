@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.060
+Welcome to lesson four, Data Lakes.
+
+00:00:03.060 --> 00:00:07.304
+In this lesson, we'll understand the need for data lakes,
+
+00:00:07.304 --> 00:00:09.599
+how they are different from a data warehouse,
+
+00:00:09.599 --> 00:00:12.884
+and the various options for implementing it on AWS.
+
+00:00:12.884 --> 00:00:18.644
+You need to know the basic knowledge for database design SQL, programming in Python,
+
+00:00:18.644 --> 00:00:21.480
+data warehouse architecture, dimensional modelling,
+
+00:00:21.480 --> 00:00:26.429
+and you should be familiar with AWS services, Spark and HDFS.
+
+00:00:26.429 --> 00:00:30.769
+So, we will start by knowing why do we need the data lake,
+
+00:00:30.769 --> 00:00:34.460
+and then we will go review a little bit,
+
+00:00:34.460 --> 00:00:36.350
+in a closer look,
+
+00:00:36.350 --> 00:00:39.410
+the big data technology effect on data warehousing.
+
+00:00:39.409 --> 00:00:44.009
+And then we will go and see how data lakes work,
+
+00:00:44.009 --> 00:00:47.299
+and then we will go through the different options
+
+00:00:47.299 --> 00:00:51.019
+for implementing a big data lake on AWS.
+
+00:00:51.020 --> 00:00:55.850
+Finally, we will see what are the current issues with data lakes.
+

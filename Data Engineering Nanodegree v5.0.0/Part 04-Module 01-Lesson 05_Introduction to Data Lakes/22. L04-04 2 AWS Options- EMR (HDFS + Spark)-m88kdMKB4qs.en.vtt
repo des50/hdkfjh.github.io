@@ -1,0 +1,103 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.673
+So the idea in the AWS EMR,
+
+00:00:03.673 --> 00:00:05.490
+we need to build an EMR cluster,
+
+00:00:05.490 --> 00:00:08.910
+Elastic Map Reduce, and put HDFS and Spark on it.
+
+00:00:08.910 --> 00:00:10.845
+So we will have all our nodes,
+
+00:00:10.845 --> 00:00:15.960
+and our nodes are going to be storage nodes and processing nodes.
+
+00:00:15.960 --> 00:00:19.605
+The idea is that data would live in the sources initially.
+
+00:00:19.605 --> 00:00:21.524
+We're going to ingest this data,
+
+00:00:21.524 --> 00:00:23.084
+and here the ingest,
+
+00:00:23.085 --> 00:00:27.269
+the data pipe-lining tools are the same,
+
+00:00:27.269 --> 00:00:36.530
+put them here, and here are the data in various formats all live in this storage.
+
+00:00:36.530 --> 00:00:38.420
+Once they are ingested,
+
+00:00:38.420 --> 00:00:39.649
+they are queried in place.
+
+00:00:39.649 --> 00:00:41.515
+The data doesn't move anywhere else,
+
+00:00:41.515 --> 00:00:42.980
+the data stays here.
+
+00:00:42.979 --> 00:00:50.119
+Only the results of the our queries come to the BI and the analytics apps.
+
+00:00:50.119 --> 00:00:54.109
+Also, if this cluster is shut down,
+
+00:00:54.109 --> 00:00:56.939
+this means we don't have access to the data.
+
+00:00:56.990 --> 00:00:59.340
+This is unlike, of course S3,
+
+00:00:59.340 --> 00:01:01.440
+I mean S3 if something is an S3,
+
+00:01:01.439 --> 00:01:02.684
+S3 doesn't shut down.
+
+00:01:02.685 --> 00:01:03.945
+It's always available.
+
+00:01:03.945 --> 00:01:05.564
+So in that case,
+
+00:01:05.564 --> 00:01:14.780
+here this HDFS cluster becomes these are like any database actually it's on all the time.
+
+00:01:14.780 --> 00:01:16.790
+Are they not supposed to be on?
+
+00:01:16.790 --> 00:01:18.410
+Of course, they're supposed to be on.
+
+00:01:18.409 --> 00:01:22.599
+But that's in contrast to the other mode we're going to see now.
+
+00:01:22.599 --> 00:01:24.780
+But bottom line is,
+
+00:01:24.780 --> 00:01:27.135
+here what do we pay?
+
+00:01:27.135 --> 00:01:34.495
+We pay the cost of having all the EC2 machines on which the EMR cluster is running.
+
+00:01:34.495 --> 00:01:39.260
+So you have to compute the cost of each such node,
+
+00:01:39.260 --> 00:01:41.540
+of course, if you have these,
+
+00:01:41.540 --> 00:01:44.090
+these could be as powerful as you want,
+
+00:01:44.090 --> 00:01:49.570
+and they are always on 24-7 and you need to compute that cost.
+

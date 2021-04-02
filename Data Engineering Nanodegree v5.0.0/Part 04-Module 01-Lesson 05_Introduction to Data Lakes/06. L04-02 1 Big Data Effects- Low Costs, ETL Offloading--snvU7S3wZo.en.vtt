@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.860
+Now, we take a closer look at how big data technology affect the data warehousing
+
+00:00:04.860 --> 00:00:09.929
+or the aspects of big data technology that had a direct effect on data warehouse.
+
+00:00:09.929 --> 00:00:13.724
+The first thing is that the low cost of storage.
+
+00:00:13.724 --> 00:00:17.640
+Actually, once big data technologies were made
+
+00:00:17.640 --> 00:00:21.675
+mainstream or we can say gained industrial grounds,
+
+00:00:21.675 --> 00:00:24.929
+the idea that you have the same hardware for storage and processing
+
+00:00:24.929 --> 00:00:28.469
+made it very attractive to take this ETL here,
+
+00:00:28.469 --> 00:00:30.869
+which traditionally was an ETL grid,
+
+00:00:30.870 --> 00:00:35.340
+was storage and processing nodes and replace that with a big data cluster.
+
+00:00:35.340 --> 00:00:37.260
+It's not the biggest big data cluster,
+
+00:00:37.259 --> 00:00:44.460
+but actually it provided a very nice and easier to manage alternative for that.
+
+00:00:44.460 --> 00:00:49.210
+So, that became known as ETL offloading.
+
+00:00:49.640 --> 00:00:57.365
+The dimensional model practice was still the same normally,
+
+00:00:57.365 --> 00:01:03.740
+but the only thing maybe that changed is not only that this replaced the ETL,
+
+00:01:03.740 --> 00:01:06.590
+the big data cluster, is that there was a little bit of room.
+
+00:01:06.590 --> 00:01:09.950
+So, this was cheap to get some data which is
+
+00:01:09.950 --> 00:01:14.840
+a little bit of low or unknown value or you could even say of non-value,
+
+00:01:14.840 --> 00:01:18.719
+but it would have been very expensive to put it in
+
+00:01:18.719 --> 00:01:24.965
+the dimensional model store in those expensive MVPs then we can put them here as well.
+
+00:01:24.965 --> 00:01:29.299
+So, a little bit of ETL replacement and
+
+00:01:29.299 --> 00:01:35.679
+also adding storage into the warehouse with less cost.
+

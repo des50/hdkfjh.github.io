@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.504
+We fix the type here.
+
+00:00:02.504 --> 00:00:08.219
+So we convert the payment date using a function here.
+
+00:00:08.220 --> 00:00:11.670
+I could have done also this using an expression,
+
+00:00:11.669 --> 00:00:16.859
+df.withColumn, and I'm overwriting the payment date column,
+
+00:00:16.859 --> 00:00:19.649
+and I am getting it here as a timestamp.
+
+00:00:19.649 --> 00:00:22.769
+If I convert it as date I would lose the time part.
+
+00:00:22.769 --> 00:00:26.445
+Time stamp would have both the date and the time.
+
+00:00:26.445 --> 00:00:28.394
+I'm going to extract the month,
+
+00:00:28.394 --> 00:00:30.144
+and I'm also doing a trick here,
+
+00:00:30.144 --> 00:00:32.810
+instead of importing every function by itself,
+
+00:00:32.810 --> 00:00:35.755
+I say pyspark.sql.functions as F,
+
+00:00:35.755 --> 00:00:39.300
+that's a very actually common convention in Spark,
+
+00:00:39.299 --> 00:00:41.009
+and you just say f.months,
+
+00:00:41.009 --> 00:00:43.679
+and f dot all the other things,
+
+00:00:43.679 --> 00:00:46.039
+that's why you don't have to do a lot of imports.
+
+00:00:46.039 --> 00:00:49.464
+You get that you have here that the dfPayments.
+
+00:00:49.465 --> 00:00:53.190
+You show and you've got the month. Is it correct?
+
+00:00:53.189 --> 00:00:54.750
+Yeah. That looks like Jan,
+
+00:00:54.750 --> 00:00:57.179
+so that's the month number 1.
+
+00:00:57.179 --> 00:01:01.039
+I can go and do an aggregation in SQL,
+
+00:01:01.039 --> 00:01:03.094
+that's actually quite easy.
+
+00:01:03.094 --> 00:01:06.769
+Then I can go and fix the schema here.
+
+00:01:06.769 --> 00:01:08.269
+Why do I fix the schema?
+
+00:01:08.269 --> 00:01:11.750
+I don't need to fix the schema because I did the cost myself,
+
+00:01:11.750 --> 00:01:16.620
+but if I want to make sure that it's either date or bust that I really,
+
+00:01:16.620 --> 00:01:18.150
+really every time I load,
+
+00:01:18.150 --> 00:01:20.400
+I want to have dates.
+
+00:01:20.400 --> 00:01:22.484
+So I can go here,
+
+00:01:22.484 --> 00:01:24.894
+and I can build the schema myself,
+
+00:01:24.894 --> 00:01:27.439
+and to make my schema compact here,
+
+00:01:27.439 --> 00:01:30.950
+I got all the types and I kind of shorten them like that.
+
+00:01:30.950 --> 00:01:33.935
+You have to be careful with shortening not to clash with anything,
+
+00:01:33.935 --> 00:01:38.375
+but of course you could have all the other ones here.
+
+00:01:38.375 --> 00:01:44.540
+As a matter of fact this was supposed to be shorten but I didn't shorten.
+
+00:01:44.540 --> 00:01:47.300
+So here's the payment schema,
+
+00:01:47.299 --> 00:01:51.019
+and I do another data frame with the payment schema,
+
+00:01:51.019 --> 00:01:52.674
+and I load the file again,
+
+00:01:52.674 --> 00:01:55.869
+and here this time I'm not inferring the schema,
+
+00:01:55.870 --> 00:01:59.495
+I'm giving an explicit schema which is this one.
+
+00:01:59.495 --> 00:02:01.954
+I printed my schema and voila,
+
+00:02:01.954 --> 00:02:04.084
+I have date which is correct,
+
+00:02:04.084 --> 00:02:05.509
+and it prints correctly,
+
+00:02:05.509 --> 00:02:07.480
+and I can go ahead,
+
+00:02:07.480 --> 00:02:11.110
+and here I'm using the month is in extraction function,
+
+00:02:11.110 --> 00:02:16.500
+inside SQL unlike what I've done here.
+
+00:02:16.500 --> 00:02:20.060
+I've used the API inside SQL,
+
+00:02:20.060 --> 00:02:26.465
+I can also use the months function right away,
+
+00:02:26.465 --> 00:02:31.379
+and I grouped by it and I got my record.
+

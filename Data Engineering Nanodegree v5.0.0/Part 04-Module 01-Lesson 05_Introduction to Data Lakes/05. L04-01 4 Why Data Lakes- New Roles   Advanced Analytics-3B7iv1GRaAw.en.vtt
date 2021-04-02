@@ -1,0 +1,103 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.069
+As we said, also the new roles,
+
+00:00:02.069 --> 00:00:07.470
+the data warehouse by design followed an extremely well-architected.
+
+00:00:07.469 --> 00:00:10.140
+You have very clear roles for the facts,
+
+00:00:10.140 --> 00:00:12.614
+for the dimensions, for the OLAP cubes,
+
+00:00:12.614 --> 00:00:15.270
+for the quality, for the consistency,
+
+00:00:15.269 --> 00:00:19.030
+for who has access to what and so forth.
+
+00:00:20.079 --> 00:00:27.704
+Now, it's becoming more popular that you want to engage new roles like a data scientist,
+
+00:00:27.704 --> 00:00:30.179
+who's going to extract value from the data.
+
+00:00:30.179 --> 00:00:33.195
+The data scientist's job is almost impossible.
+
+00:00:33.195 --> 00:00:38.549
+If you went through this very well-architected and fixed data representation.
+
+00:00:38.549 --> 00:00:42.869
+There needs to be a freedom to basically play with datasets,
+
+00:00:42.869 --> 00:00:47.534
+join them differently, re-encode them,
+
+00:00:47.534 --> 00:00:51.729
+take external data sources and so forth.
+
+00:00:51.920 --> 00:00:56.350
+That was not possible in the warehouse.
+
+00:00:58.670 --> 00:01:03.564
+New or larger interest in analytics,
+
+00:01:03.564 --> 00:01:06.289
+machine learning and natural language processing and so forth,
+
+00:01:06.290 --> 00:01:08.775
+these types of analytics, actually,
+
+00:01:08.775 --> 00:01:11.515
+we're also hard to do on the data warehouse itself.
+
+00:01:11.515 --> 00:01:13.939
+While in the big data technologies,
+
+00:01:13.939 --> 00:01:20.219
+it was possible to have the same hardware which does the storage, does the processing.
+
+00:01:20.219 --> 00:01:24.659
+That processing also can do the normal mainstream stuff, it can do the exploration,
+
+00:01:24.659 --> 00:01:29.250
+and it can do those types of new machine learning analytics.
+
+00:01:29.250 --> 00:01:30.765
+So to sum it up,
+
+00:01:30.765 --> 00:01:36.500
+the data lake came to this new architecture named the data lake.
+
+00:01:36.500 --> 00:01:37.909
+You can consider it, actually,
+
+00:01:37.909 --> 00:01:39.424
+the new data warehouse.
+
+00:01:39.424 --> 00:01:43.369
+So, the data lake shares the same goals of the data warehouse of
+
+00:01:43.370 --> 00:01:47.594
+supporting business insights beyond the day-to-day transaction handling.
+
+00:01:47.594 --> 00:01:52.890
+However, it is there to provide what the data warehouse,
+
+00:01:52.890 --> 00:01:57.015
+per se in its known form, could not achieve.
+
+00:01:57.015 --> 00:01:59.280
+Regarding the various data formats,
+
+00:01:59.280 --> 00:02:01.260
+the data exploration, the new roles,
+
+00:02:01.260 --> 00:02:03.219
+and the advanced analytics.
+

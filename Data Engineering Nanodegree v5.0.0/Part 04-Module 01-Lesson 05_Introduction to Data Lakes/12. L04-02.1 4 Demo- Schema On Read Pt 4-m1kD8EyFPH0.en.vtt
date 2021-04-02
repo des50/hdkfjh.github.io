@@ -1,0 +1,127 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.879
+Then, I tried to see,
+
+00:00:04.009 --> 00:00:07.214
+what are the large files?
+
+00:00:07.214 --> 00:00:10.150
+So, I want to sort things by content size.
+
+00:00:10.150 --> 00:00:13.470
+So, I want to know what are the file that actually are
+
+00:00:13.470 --> 00:00:17.609
+big in my weblog that were requested.
+
+00:00:17.609 --> 00:00:23.489
+So, this time, I go and use the SQL syntax.
+
+00:00:23.489 --> 00:00:28.334
+I do that. This doesn't look good.
+
+00:00:28.335 --> 00:00:30.719
+This is content size desk,
+
+00:00:30.719 --> 00:00:32.549
+why does it look like this?
+
+00:00:32.549 --> 00:00:35.009
+This can't be, can you guess why?
+
+00:00:35.009 --> 00:00:38.469
+Well, because this is actually sorted as strings,
+
+00:00:38.469 --> 00:00:42.700
+not sorted as integers, that's our bird.
+
+00:00:42.700 --> 00:00:44.560
+That's really our bird,
+
+00:00:44.560 --> 00:00:47.630
+because we have the content size here,
+
+00:00:47.630 --> 00:00:49.550
+if you look at the schema.
+
+00:00:49.549 --> 00:00:53.164
+Everything is key value and everything is a string,
+
+00:00:53.164 --> 00:00:57.695
+and we did not actually convert the contents size.
+
+00:00:57.695 --> 00:01:03.395
+You might look here and see that everything is still like that.
+
+00:01:03.395 --> 00:01:05.930
+Even the thing that we meant as int,
+
+00:01:05.930 --> 00:01:07.265
+when we return it back,
+
+00:01:07.265 --> 00:01:12.120
+it is key value and both are strings.
+
+00:01:12.120 --> 00:01:14.415
+So, let's fix that.
+
+00:01:14.415 --> 00:01:16.080
+How do we fix this?
+
+00:01:16.079 --> 00:01:17.534
+We go here.
+
+00:01:17.534 --> 00:01:19.879
+So, we go and we make another expression,
+
+00:01:19.879 --> 00:01:23.159
+and we cost the content size as int.
+
+00:01:23.359 --> 00:01:28.829
+You could have also done this by calling also,
+
+00:01:28.829 --> 00:01:31.640
+the cast from the Function here directly.
+
+00:01:31.640 --> 00:01:35.195
+I'm trying to use the various syntaxes of sparks,
+
+00:01:35.194 --> 00:01:36.859
+you're aware of them all.
+
+00:01:36.859 --> 00:01:43.664
+So, dfCleanTyped.limits(5).toPandas, will give us the content size.
+
+00:01:43.665 --> 00:01:45.530
+Well, it looks correct.
+
+00:01:45.530 --> 00:01:47.870
+I wouldn't be able to spot it with my eyes.
+
+00:01:47.870 --> 00:01:50.060
+I could print the schema tool to make sure,
+
+00:01:50.060 --> 00:01:59.400
+but I'm going to go ahead and make another table from the cleanuntyped table.
+
+00:01:59.400 --> 00:02:02.385
+I'm going to sort again.
+
+00:02:02.385 --> 00:02:04.920
+That looks much much nicer.
+
+00:02:04.920 --> 00:02:07.590
+So, indeed, it seems that there is a JPEG video,
+
+00:02:07.590 --> 00:02:11.039
+which is actually, was a big one.
+
+00:02:11.039 --> 00:02:17.419
+I guess, you can go and you can try on your own to clean the date column.
+
+00:02:17.419 --> 00:02:21.849
+I guess, there's a hint from the past exercise.
+

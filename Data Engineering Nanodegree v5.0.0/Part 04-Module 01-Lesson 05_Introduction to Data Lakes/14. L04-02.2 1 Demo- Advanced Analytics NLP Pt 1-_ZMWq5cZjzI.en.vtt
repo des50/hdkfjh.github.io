@@ -1,0 +1,166 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:07.275
+For the second exercise here we are going to show a type of analytic that is not,
+
+00:00:07.275 --> 00:00:10.410
+that cannot be really accomplished in SQL very easily.
+
+00:00:10.410 --> 00:00:14.879
+Here we're going to get some data from Reddit.
+
+00:00:14.880 --> 00:00:18.750
+Here, I am actually before saying anything about Reddit,
+
+00:00:18.750 --> 00:00:24.339
+I should say that I'm loading here the package called Spark NLP.
+
+00:00:24.589 --> 00:00:27.640
+I want to just tell you here that when you,
+
+00:00:27.640 --> 00:00:30.964
+when you start by loading this like that,
+
+00:00:30.964 --> 00:00:36.405
+now it's loaded but actually it can take some time until this loads.
+
+00:00:36.405 --> 00:00:42.615
+So, you might see here the all of these are attempts to load this.
+
+00:00:42.615 --> 00:00:47.100
+So, when you actually run that code,
+
+00:00:47.100 --> 00:00:50.810
+expect that the spark session initialization is going to take
+
+00:00:50.810 --> 00:00:55.160
+much longer depending on your Internet connectivity,
+
+00:00:55.159 --> 00:00:58.769
+is going to take much longer than usual.
+
+00:00:58.770 --> 00:01:02.855
+Here I read multiple files in our directory as one data frame.
+
+00:01:02.854 --> 00:01:05.629
+Whatever JSON files I have, I'm long to load them.
+
+00:01:05.629 --> 00:01:11.344
+I think for this exercise actually I have one five.
+
+00:01:11.344 --> 00:01:14.584
+So, I'm going to read.JSON.
+
+00:01:14.584 --> 00:01:16.219
+Okay. I can read JSON,
+
+00:01:16.219 --> 00:01:17.629
+I read CSV before.
+
+00:01:17.629 --> 00:01:19.954
+Now, I can read, and wait that text before.
+
+00:01:19.954 --> 00:01:21.724
+Now, we're going to read JSON.
+
+00:01:21.724 --> 00:01:25.884
+That doesn't look like a very nice schema.
+
+00:01:25.885 --> 00:01:30.320
+Every Reddit article has lots and lots of information.
+
+00:01:30.319 --> 00:01:39.054
+I think we're going to be interested in the author here and perhaps the title itself.
+
+00:01:39.055 --> 00:01:42.440
+The title is really really really really down.
+
+00:01:42.439 --> 00:01:48.709
+Okay. You might be interested in those deeply varied things,
+
+00:01:48.709 --> 00:01:51.289
+actually that's a very powerful feature.
+
+00:01:51.290 --> 00:01:54.710
+Also a spark that you can just load JSON nested,
+
+00:01:54.709 --> 00:01:57.034
+nested, nested like that.
+
+00:01:57.034 --> 00:02:00.439
+Actually, you see that it's a struct and within
+
+00:02:00.439 --> 00:02:04.140
+the struct there are fields and then within the,
+
+00:02:04.140 --> 00:02:07.483
+you can have an array and within the array you can have structs,
+
+00:02:07.483 --> 00:02:12.324
+and without the structs you have array and so forth, and so forth.
+
+00:02:12.324 --> 00:02:14.159
+So, you say like this,
+
+00:02:14.159 --> 00:02:19.984
+I can DF select data.title and data.author like that.
+
+00:02:19.985 --> 00:02:22.055
+I'm going to get those two.
+
+00:02:22.055 --> 00:02:25.860
+I extracted these, they are clean and neat.
+
+00:02:26.210 --> 00:02:29.485
+It just since this is text,
+
+00:02:29.485 --> 00:02:35.075
+I couldn't resist making the hello world of big data which is where it counts.
+
+00:02:35.074 --> 00:02:42.839
+Basically, we want to count what are the most frequent words here in all of the titles.
+
+00:02:43.000 --> 00:02:45.455
+You do like this,
+
+00:02:45.455 --> 00:02:49.975
+you first you split on white spaces.
+
+00:02:49.974 --> 00:02:53.284
+So, each one of those becomes an array.
+
+00:02:53.284 --> 00:02:55.879
+Then you take an array and you explode it.
+
+00:02:55.879 --> 00:03:00.439
+What happens is, every element in the array becomes a line here.
+
+00:03:00.439 --> 00:03:05.689
+You can try and take this and do it step-by-step to see what happens.
+
+00:03:05.689 --> 00:03:09.454
+After getting an array of words,
+
+00:03:09.455 --> 00:03:13.700
+I just grouped by the word and count descendingly
+
+00:03:13.699 --> 00:03:19.774
+and I count them but this is not very informative.
+
+00:03:19.775 --> 00:03:22.760
+Perhaps I didn't say why we're doing this exercise.
+
+00:03:22.759 --> 00:03:26.269
+So, the point here is I want to be able to know
+
+00:03:26.270 --> 00:03:30.120
+what are the popular topics in these media.
+
+00:03:30.120 --> 00:03:34.310
+I am going to get tons of these and I just want to know what the world is talking
+
+00:03:34.310 --> 00:03:39.539
+about and to and that and often in are not really informative actually.
+

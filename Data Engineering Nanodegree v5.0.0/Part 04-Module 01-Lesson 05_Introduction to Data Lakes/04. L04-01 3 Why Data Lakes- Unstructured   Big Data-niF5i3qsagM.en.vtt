@@ -1,0 +1,118 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.060
+So let's speak about the unstructured data.
+
+00:00:03.060 --> 00:00:06.945
+Is it the case that we really cannot handle unstructured data in the warehouse,
+
+00:00:06.945 --> 00:00:09.974
+in the data warehouse, in the classic data warehouse?
+
+00:00:09.974 --> 00:00:12.179
+Actually, it might be possible.
+
+00:00:12.179 --> 00:00:13.769
+So in the ETL process,
+
+00:00:13.769 --> 00:00:18.524
+we can distill some data from JSON or from some texts,
+
+00:00:18.524 --> 00:00:21.989
+and actually some current ETL tools support that,
+
+00:00:21.989 --> 00:00:23.879
+and put them in a tabular format.
+
+00:00:23.879 --> 00:00:30.945
+However, we might decide later that this extraction is too much of a strong commitment,
+
+00:00:30.945 --> 00:00:33.365
+and it's a commitment without enough knowledge.
+
+00:00:33.365 --> 00:00:35.704
+So if we got some Facebook comments,
+
+00:00:35.704 --> 00:00:39.769
+we initially you might be interested in the number of
+
+00:00:39.770 --> 00:00:44.405
+replies and then we would be interested in the frequency of angry words.
+
+00:00:44.405 --> 00:00:47.675
+That's not like facts and dimension when you have those clears of
+
+00:00:47.674 --> 00:00:53.434
+additive facts and group by dimensions and so on.
+
+00:00:53.435 --> 00:00:58.025
+Sometimes of course some data is really hard to put even with ETL.
+
+00:00:58.024 --> 00:01:03.004
+Sometimes things like deep json structures are hard to put in tabular format.
+
+00:01:03.005 --> 00:01:06.500
+Also like long text and PDF documents
+
+00:01:06.500 --> 00:01:09.769
+could be stored as blobs of data in a relational database.
+
+00:01:09.769 --> 00:01:13.399
+But they're totally useless unless we extract something from them.
+
+00:01:13.400 --> 00:01:16.030
+With the rise of the Big Data Technologies,
+
+00:01:16.030 --> 00:01:20.420
+it became possible to store petabytes of data on commodity hardware
+
+00:01:20.420 --> 00:01:24.890
+using HDFS and process it with tools of the Hadoop ecosystem.
+
+00:01:24.890 --> 00:01:29.629
+That provide the much lower cost per terabyte compared to MPP,
+
+00:01:29.629 --> 00:01:32.390
+the massively parallel processing databases which
+
+00:01:32.390 --> 00:01:35.724
+were traditionally only afforded by very large organizations.
+
+00:01:35.724 --> 00:01:39.229
+The idea is that the associated tools were made from day
+
+00:01:39.230 --> 00:01:42.805
+one with parallel processing in mind,
+
+00:01:42.805 --> 00:01:46.460
+and also another nice property about it is that,
+
+00:01:46.459 --> 00:01:48.829
+the data it's not like you have
+
+00:01:48.829 --> 00:01:52.849
+storage and then you load the storage into processing nodes and crunch them,
+
+00:01:52.849 --> 00:01:57.394
+the storage nodes are in themselves processing nodes.
+
+00:01:57.394 --> 00:02:04.295
+Finally, a nice property of Big Data Technologies is this idea of Schema-On-Read,
+
+00:02:04.295 --> 00:02:07.504
+where one can load a CSV file and make query on
+
+00:02:07.504 --> 00:02:13.498
+it without really creating table, inserting the data,
+
+00:02:13.498 --> 00:02:18.149
+and going through a long tedious process,
+
+00:02:18.149 --> 00:02:21.094
+which was actually very attractive for
+
+00:02:21.094 --> 00:02:25.240
+processing unstructured or unstructured data in general.
+

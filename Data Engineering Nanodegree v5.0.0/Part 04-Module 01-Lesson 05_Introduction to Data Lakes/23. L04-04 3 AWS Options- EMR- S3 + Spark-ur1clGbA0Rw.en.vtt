@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.115
+Then you have the second mode.
+
+00:00:02.115 --> 00:00:03.645
+In that second mode,
+
+00:00:03.645 --> 00:00:08.769
+you actually ingest but you put into S3.
+
+00:00:09.380 --> 00:00:12.554
+Once you put to S3 here,
+
+00:00:12.554 --> 00:00:15.254
+that becomes the lake storage.
+
+00:00:15.255 --> 00:00:19.335
+So the storage is not in HDFS.
+
+00:00:19.335 --> 00:00:20.789
+As a matter of fact,
+
+00:00:20.789 --> 00:00:28.064
+you would actually create Amazon EMR clusters with no HDFS at all, only spark.
+
+00:00:28.065 --> 00:00:32.774
+The idea would be you would load the data that you need to do,
+
+00:00:32.774 --> 00:00:34.799
+for the query that you need to do,
+
+00:00:34.799 --> 00:00:40.250
+and from S3 and that's actually very simple.
+
+00:00:40.250 --> 00:00:45.380
+You just point your data frame to S3 location and you'll have a data frame.
+
+00:00:45.380 --> 00:00:48.250
+The computation is done.
+
+00:00:48.250 --> 00:00:51.445
+Most likely if it's in a batch mode,
+
+00:00:51.445 --> 00:00:53.945
+you would get this data and save the results.
+
+00:00:53.945 --> 00:00:59.134
+It is so desired that can last a little bit longer to access it interactively as well.
+
+00:00:59.134 --> 00:01:01.399
+The main differentiator here,
+
+00:01:01.399 --> 00:01:05.554
+is that this cluster does not need to be 24/7 on.
+
+00:01:05.555 --> 00:01:07.430
+You can shut down this cluster.
+
+00:01:07.430 --> 00:01:10.910
+Sometimes it's also called like in batch mode the step function,
+
+00:01:10.909 --> 00:01:14.974
+is just the data lakes on S3.
+
+00:01:14.974 --> 00:01:17.179
+You make one computation,
+
+00:01:17.180 --> 00:01:23.105
+you spin one or actually multiple of them to do the computations,
+
+00:01:23.105 --> 00:01:26.185
+you write the data here, and you close the cluster.
+
+00:01:26.185 --> 00:01:33.245
+The data is in S3 which is naturally if you're going to save a file 24/7,
+
+00:01:33.245 --> 00:01:37.805
+it's definitely going to be much cheaper to save it in S3
+
+00:01:37.805 --> 00:01:44.480
+compared to save it on 24/7 powered up EC2 machines.
+
+00:01:44.480 --> 00:01:48.555
+So there is a little bit of cost-saving here.
+
+00:01:48.555 --> 00:01:51.030
+However, for the performance,
+
+00:01:51.030 --> 00:01:54.320
+the idea of loading the data was actually
+
+00:01:54.319 --> 00:01:57.873
+initially one of the initial promises of big data architectures,
+
+00:01:57.873 --> 00:01:59.935
+that data should be queried in place.
+
+00:01:59.935 --> 00:02:03.965
+However, with the architecture or
+
+00:02:03.965 --> 00:02:08.344
+the networking inside the cloud becoming faster and faster,
+
+00:02:08.344 --> 00:02:13.205
+this is starting to diminish and mix that architecture feasibly.
+
+00:02:13.205 --> 00:02:15.800
+So it's potentially less costly,
+
+00:02:15.800 --> 00:02:21.340
+it's potentially less performance but not that much less performance,
+
+00:02:21.340 --> 00:02:27.479
+and also it's easier to manage because S3 in general,
+
+00:02:27.699 --> 00:02:33.859
+the steady state where you don't have anything to manage your data is safe.
+
+00:02:33.860 --> 00:02:37.565
+There is no system administrator that needs to guarantee that
+
+00:02:37.564 --> 00:02:42.474
+the cluster is always intact and nothing wrong goes with it.
+
+00:02:42.474 --> 00:02:47.189
+Of course, my statement here is also not extremely accurate because
+
+00:02:47.189 --> 00:02:53.129
+Amazon EMR itself takes care of the system administration.
+
+00:02:53.259 --> 00:03:00.449
+However, in general anything in
+
+00:03:00.449 --> 00:03:07.069
+EC2 is slightly more complicated than having it on the worry-free S3.
+
+00:03:07.069 --> 00:03:10.819
+I would say also that you don't need to get Amazon EMR.
+
+00:03:10.819 --> 00:03:17.310
+I would remind you that you can get also that part from any other vendor if you so wish.
+
