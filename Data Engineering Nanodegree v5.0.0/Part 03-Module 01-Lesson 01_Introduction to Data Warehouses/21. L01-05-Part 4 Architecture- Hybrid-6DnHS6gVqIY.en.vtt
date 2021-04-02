@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.064
+Finally, there are people who combine
+
+00:00:04.064 --> 00:00:08.384
+the Kimball model and the Inmon model in a hybrid approach,
+
+00:00:08.384 --> 00:00:11.625
+and they said, this 3NF is really cool,
+
+00:00:11.625 --> 00:00:14.310
+but we're not going to do data marks.
+
+00:00:14.310 --> 00:00:16.905
+We're still going to do conformed dimensions.
+
+00:00:16.905 --> 00:00:21.585
+But we are also going to expose the enterprise data warehouse
+
+00:00:21.585 --> 00:00:28.030
+here so that's taking a little bit the best of both worlds.
+

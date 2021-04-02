@@ -1,0 +1,220 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.620 --> 00:00:03.780
+Now that we understand the business motivation
+
+00:00:03.779 --> 00:00:06.119
+for a data warehouse or for creating a data warehouse,
+
+00:00:06.120 --> 00:00:08.740
+let's look more at the technical perspective.
+
+00:00:08.750 --> 00:00:12.404
+There are many definitions for a data warehouse,
+
+00:00:12.404 --> 00:00:15.524
+and let's look at some because they show us different perspectives.
+
+00:00:15.525 --> 00:00:23.339
+So, for example, Kimball who was one of the pioneers of the data warehouse actually says
+
+00:00:23.339 --> 00:00:27.300
+the following very simple definition: "A data warehouse is a copy of
+
+00:00:27.300 --> 00:00:31.605
+transaction data specifically structured for query and analysis."
+
+00:00:31.605 --> 00:00:33.990
+So, the focus here is that,
+
+00:00:33.990 --> 00:00:35.399
+we're going to take a copy,
+
+00:00:35.399 --> 00:00:37.350
+we're not going to work on the same data,
+
+00:00:37.350 --> 00:00:43.480
+and we're going to structure it in a way that is optimal for query and analysis.
+
+00:00:43.479 --> 00:00:46.969
+Let's take another definition by another pioneer of
+
+00:00:46.969 --> 00:00:50.795
+that field who's Bill Inmon, and he says,
+
+00:00:50.795 --> 00:00:54.840
+"A data warehouse is a subject-oriented, integrated,
+
+00:00:54.840 --> 00:01:00.005
+nonvolatile, and time-variant collection of data in support of management's decisions."
+
+00:01:00.005 --> 00:01:03.440
+So, we still have the management decisions in
+
+00:01:03.439 --> 00:01:07.929
+the idea that this is a decision-making kind of a process,
+
+00:01:07.930 --> 00:01:12.125
+basically motivated by making management decisions and insights.
+
+00:01:12.125 --> 00:01:14.855
+But the idea is that it's subject-oriented,
+
+00:01:14.855 --> 00:01:19.915
+and now he's getting more specific into the idea that there is no one-size-fits-all,
+
+00:01:19.915 --> 00:01:23.480
+or you have to categorize them by topic in a way.
+
+00:01:23.480 --> 00:01:25.880
+It's integrated, which means,
+
+00:01:25.879 --> 00:01:29.359
+the information you're going to get is going to come from many sources,
+
+00:01:29.359 --> 00:01:31.790
+and it's nonvolatile in the sense that it's not transient.
+
+00:01:31.790 --> 00:01:33.340
+This has to be persistent,
+
+00:01:33.340 --> 00:01:36.140
+and it's a time-variant collection, which means,
+
+00:01:36.140 --> 00:01:38.390
+I can ask the same question today,
+
+00:01:38.390 --> 00:01:42.150
+tomorrow, and another day and it's going to change.
+
+00:01:42.280 --> 00:01:47.224
+We have another one, which is from Rainardi,
+
+00:01:47.224 --> 00:01:51.619
+and by the way,
+
+00:01:51.620 --> 00:01:55.020
+I am referencing here three books,
+
+00:01:55.019 --> 00:01:59.224
+and you can let look at the references at the end of the lesson.
+
+00:01:59.224 --> 00:02:00.439
+But here, it says,
+
+00:02:00.439 --> 00:02:04.929
+"A data warehouse is a system that retrieves, consolidates data periodically."
+
+00:02:04.930 --> 00:02:07.575
+So, we have to retrieve and consolidate,
+
+00:02:07.575 --> 00:02:09.509
+which we saw in the previous derilium.
+
+00:02:09.509 --> 00:02:10.949
+But here, we add periodically,
+
+00:02:10.949 --> 00:02:14.179
+in the sense giving us the knowledge that this is
+
+00:02:14.180 --> 00:02:19.390
+a continuous process from the source system into a dimensional or normalized data store,
+
+00:02:19.389 --> 00:02:20.899
+and here we start saying, "Oh,
+
+00:02:20.900 --> 00:02:24.730
+we might either get in a dimension or normalized data store.
+
+00:02:24.729 --> 00:02:27.024
+We don't know. That's a design option,
+
+00:02:27.025 --> 00:02:31.205
+and then it usually keeps years of history and
+
+00:02:31.205 --> 00:02:35.965
+is queried for business intelligence and other unethical activities,
+
+00:02:35.965 --> 00:02:38.270
+and it's typically updated in batches.
+
+00:02:38.270 --> 00:02:40.810
+Not every time a transactions happened in the source system."
+
+00:02:40.810 --> 00:02:43.055
+So, here we are getting a little bit more of detail
+
+00:02:43.055 --> 00:02:45.710
+about the internal workings of a data warehouse,
+
+00:02:45.710 --> 00:02:47.719
+and both of them are
+
+00:02:47.719 --> 00:02:57.245
+actually valid definitions which
+
+00:02:57.245 --> 00:03:00.620
+show us different perspectives of a data warehouse.
+
+00:03:00.620 --> 00:03:04.200
+So, the idea would be as follows: a data warehouse,
+
+00:03:04.199 --> 00:03:07.984
+the first activity in it would be to do what's known as ETL,
+
+00:03:07.985 --> 00:03:15.524
+where you extract the data from the source system used for operations,
+
+00:03:15.524 --> 00:03:17.155
+and you transform them,
+
+00:03:17.155 --> 00:03:20.310
+and you load them into a dimensional model.
+
+00:03:20.409 --> 00:03:25.789
+The dimensional model itself is designed to make it easy for business users to work with
+
+00:03:25.789 --> 00:03:31.030
+the data and it should improve the analytical query performance.
+
+00:03:31.030 --> 00:03:35.405
+Naturally, the technologies that is used here might be completely different.
+
+00:03:35.405 --> 00:03:37.129
+Both of them are databases,
+
+00:03:37.129 --> 00:03:41.335
+but they might not be the same type of databases that we use here.
+
+00:03:41.335 --> 00:03:46.490
+Finally, we would need here also what's known
+
+00:03:46.490 --> 00:03:51.230
+as business intelligence applications that would actually have lots of visuals,
+
+00:03:51.229 --> 00:03:54.229
+and reportings, and graphs,
+
+00:03:54.229 --> 00:03:56.764
+and things of that sort.
+
+00:03:56.764 --> 00:04:02.104
+So, to sum it up, the data warehouse goals has to be simple to understand.
+
+00:04:02.104 --> 00:04:03.244
+That's a goal on itself.
+
+00:04:03.245 --> 00:04:05.689
+It should be easy to understand,
+
+00:04:05.689 --> 00:04:08.419
+and it has to be performance,
+
+00:04:08.419 --> 00:04:10.519
+and it has to be quality assured,
+
+00:04:10.520 --> 00:04:18.790
+and it should be able to handle new questions well and naturally it needs to be secure.
+

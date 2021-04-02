@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:02.600 --> 00:00:07.769
+Hi. Welcome to the introduction to the data warehouses course.
+
+00:00:07.769 --> 00:00:12.509
+In this course we will be learning about data warehouses,
+
+00:00:12.509 --> 00:00:14.730
+their purpose, different architectures,
+
+00:00:14.730 --> 00:00:18.480
+and technologies used to build data warehouses.
+
+00:00:18.480 --> 00:00:23.355
+The prerequisites for this course are as follows,
+
+00:00:23.355 --> 00:00:24.990
+you need to have a basic knowledge of
+
+00:00:24.989 --> 00:00:30.179
+relational database design and the SQL query language,
+
+00:00:30.179 --> 00:00:33.179
+and then you need to know a little bit of Python,
+
+00:00:33.179 --> 00:00:35.549
+because we're using that in Jupiter Notebooks,
+
+00:00:35.549 --> 00:00:38.209
+and basic familiarity with dimensional modeling and
+
+00:00:38.210 --> 00:00:42.039
+we are reiterating a number of examples here.
+
+00:00:42.039 --> 00:00:47.435
+So, this is the plan of our lesson here.
+
+00:00:47.435 --> 00:00:50.900
+The first thing we will do is that we'll looking at data warehouses from
+
+00:00:50.899 --> 00:00:53.939
+a business perspective and then from a technical perspective.
+
+00:00:53.939 --> 00:00:57.644
+Then we're going to take a look at the dimensional modeling.
+
+00:00:57.645 --> 00:01:02.250
+Then we will see different architectures and then we'll talk about OLAP cubes,
+
+00:01:02.250 --> 00:01:06.099
+and finally we'll look at the storage technologies.
+

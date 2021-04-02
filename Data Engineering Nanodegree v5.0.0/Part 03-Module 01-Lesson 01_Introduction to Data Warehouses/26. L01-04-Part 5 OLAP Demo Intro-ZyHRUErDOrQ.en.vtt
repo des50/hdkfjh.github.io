@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.899
+I know that this part actually from
+
+00:00:03.899 --> 00:00:06.960
+the slides might be conceptually clear
+
+00:00:06.960 --> 00:00:10.304
+but you will need to actually try this on some SQL code.
+
+00:00:10.304 --> 00:00:13.320
+So, let's go through our demo,
+
+00:00:13.320 --> 00:00:14.460
+and what we will do here,
+
+00:00:14.460 --> 00:00:17.820
+we're still going to use the Sakila database or
+
+00:00:17.820 --> 00:00:23.100
+the Postgres version of it which is famous for being called [inaudible].
+
+00:00:23.100 --> 00:00:25.230
+We're going to walk through the facts and dimensions.
+
+00:00:25.230 --> 00:00:31.410
+We're going to create the OLAP cube from the facts and dimensions using Group by,
+
+00:00:31.410 --> 00:00:33.000
+and then we're going to slice,
+
+00:00:33.000 --> 00:00:34.320
+dice, roll up, and drill down.
+
+00:00:34.320 --> 00:00:35.670
+That would be the old fashion.
+
+00:00:35.670 --> 00:00:41.539
+Then, we're going to redo the exercise using the Group by cube.
+

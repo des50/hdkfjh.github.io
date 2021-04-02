@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.819
+Now, instead of this complicated setup,
+
+00:00:02.819 --> 00:00:09.580
+let's go and create some facts on dimension tables.
+
+00:00:09.710 --> 00:00:15.510
+Now, here again, I'm going to try to open this image in a new tab,
+
+00:00:15.509 --> 00:00:21.490
+take this URL and put it perhaps here.
+
+00:00:21.649 --> 00:00:25.750
+This is our target schema.
+
+00:00:26.539 --> 00:00:29.684
+If we start looking here,
+
+00:00:29.684 --> 00:00:33.359
+initially in our initial schema,
+
+00:00:33.359 --> 00:00:37.740
+we have no table called date.
+
+00:00:37.740 --> 00:00:42.230
+But because of the idea that we need actually
+
+00:00:42.229 --> 00:00:45.769
+to get dimensions and use them actually in a number of facts,
+
+00:00:45.770 --> 00:00:49.430
+we're going to extract a date dimension on its own.
+
+00:00:49.429 --> 00:00:53.780
+Let's see what the changes are going to be here.
+
+00:00:53.780 --> 00:00:57.109
+So, we're going to create a table called dimension dates,
+
+00:00:57.109 --> 00:00:59.214
+and then we're going to make a date key.
+
+00:00:59.215 --> 00:01:02.870
+That one actually the date key could be just an auto-increment number
+
+00:01:02.869 --> 00:01:07.009
+or serial like we're doing here for the customer table.
+
+00:01:07.010 --> 00:01:10.325
+But for clarity, actually,
+
+00:01:10.325 --> 00:01:14.075
+all dimensional schema suggested to make it an
+
+00:01:14.075 --> 00:01:20.909
+integer that actually looked like a date.
+
+00:01:20.909 --> 00:01:27.340
+But for simplicity, just consider that this could be a normal key like auto-increment.
+
+00:01:27.590 --> 00:01:30.469
+Then we have the data itself untouched.
+
+00:01:30.469 --> 00:01:32.929
+Then we have the year alone,
+
+00:01:32.930 --> 00:01:35.750
+the quarter alone, Q1, Q2, Q3,
+
+00:01:35.750 --> 00:01:38.870
+Q4, we have the months, we have the day,
+
+00:01:38.870 --> 00:01:42.555
+possibly from 1-30 or 31st,
+
+00:01:42.555 --> 00:01:44.220
+then we have the week,
+
+00:01:44.219 --> 00:01:48.969
+until week 1-52, and then we have something called is_weekend.
+

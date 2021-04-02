@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.915
+Because this grouping set was that way,
+
+00:00:03.915 --> 00:00:09.300
+is so common, we have also the cube.
+
+00:00:09.300 --> 00:00:12.210
+The cube actually does this implicitly.
+
+00:00:12.210 --> 00:00:16.679
+So, when we go and say group by cube,
+
+00:00:16.679 --> 00:00:22.259
+month, and country, that's totally equivalent to what we did here.
+
+00:00:22.260 --> 00:00:26.940
+So, we're going to get without specifying anything,
+
+00:00:26.940 --> 00:00:28.455
+it's going to say,
+
+00:00:28.454 --> 00:00:31.034
+I'm going to get you the whole group,
+
+00:00:31.035 --> 00:00:33.375
+group by months, group by country,
+
+00:00:33.375 --> 00:00:36.270
+group by both and so forth.
+
+00:00:36.270 --> 00:00:41.280
+If you also put three here you'll get all the zero combination,
+
+00:00:41.280 --> 00:00:42.929
+the one combinations, the two combination,
+
+00:00:42.929 --> 00:00:45.134
+and the three combination.
+
+00:00:45.134 --> 00:00:50.239
+I have to warn you that the none here is expressive,
+
+00:00:50.240 --> 00:00:52.940
+which means if you had country none,
+
+00:00:52.939 --> 00:00:55.104
+you're going to be confused big-time.
+
+00:00:55.104 --> 00:00:56.875
+So, before running cube,
+
+00:00:56.875 --> 00:01:00.634
+you need to make sure that the original data doesn't have any none's because
+
+00:01:00.634 --> 00:01:05.000
+none here have a special meaning which actually says that I group by the months,
+
+00:01:05.000 --> 00:01:08.750
+the revenue and then I summed over all countries.
+
+00:01:08.750 --> 00:01:13.590
+So, usually, one cleans and drops any none's before doing a cube.
+
+00:01:13.590 --> 00:01:15.750
+One final thing I'm going to do,
+
+00:01:15.750 --> 00:01:18.569
+this thing ran in 25 milliseconds,
+
+00:01:18.569 --> 00:01:20.939
+this one, this cube one pass.
+
+00:01:20.939 --> 00:01:27.829
+I'm going to compare this with the naive approach of doing the four passes.
+
+00:01:27.829 --> 00:01:31.340
+So, this is the first pass for the sum alone,
+
+00:01:31.340 --> 00:01:35.670
+then a second pass where I'm grouping by the country,
+
+00:01:35.670 --> 00:01:38.085
+then a third pass where I'm grouping by the month,
+
+00:01:38.084 --> 00:01:40.769
+then a fourth pass when I am grouping by both.
+
+00:01:40.769 --> 00:01:46.024
+That took something almost like double the time which is 45 milliseconds.
+
+00:01:46.025 --> 00:01:50.540
+Of course here, my data is very small and we're talking
+
+00:01:50.540 --> 00:01:55.055
+milliseconds because these are 1,000 or this is a baby database.
+
+00:01:55.055 --> 00:01:59.635
+But this factor from 25-45,
+
+00:01:59.635 --> 00:02:03.270
+if these were 25 minutes, that's substantial.
+
+00:02:03.269 --> 00:02:09.389
+For actually overnight, drops with lots of data and
+
+00:02:09.389 --> 00:02:17.654
+almost 100 percent or close to a 100 percent increase, that is substantial.
+
+00:02:17.655 --> 00:02:24.439
+So, with that, we hope we have shown the different OLAP operations and we have shown
+
+00:02:24.439 --> 00:02:29.030
+the cube operation which gives us all of this and we can
+
+00:02:29.030 --> 00:02:34.009
+actually start going and saving this and over many,
+
+00:02:34.009 --> 00:02:37.310
+many more dimensions, so we're going to get many, many more details.
+
+00:02:37.310 --> 00:02:40.140
+Then when we save that table,
+
+00:02:40.139 --> 00:02:44.269
+we can actually serve that to the business users so they don't even need
+
+00:02:44.270 --> 00:02:50.330
+to even construct cubes or look into actually this schema row.
+

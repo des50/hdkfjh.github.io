@@ -1,0 +1,187 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.905
+Now the third thing,
+
+00:00:01.905 --> 00:00:04.514
+we're going to combine both.
+
+00:00:04.514 --> 00:00:08.219
+So we're going to get the revenue of a movie by customer,
+
+00:00:08.220 --> 00:00:10.304
+city, and by month.
+
+00:00:10.304 --> 00:00:13.394
+So, when we go here,
+
+00:00:13.394 --> 00:00:15.974
+we get the total revenue.
+
+00:00:15.974 --> 00:00:17.925
+This is the total revenue by month,
+
+00:00:17.925 --> 00:00:21.734
+and here how to get the month we only have the payment date.
+
+00:00:21.734 --> 00:00:24.314
+So we're going to use a SQL function.
+
+00:00:24.315 --> 00:00:27.810
+Sometimes from database management system to the other,
+
+00:00:27.809 --> 00:00:30.899
+these functions are going to differ a little bit.
+
+00:00:30.899 --> 00:00:35.909
+But here we'd like to extract the month from the payment date,
+
+00:00:35.909 --> 00:00:38.339
+and then we get a number like four for April,
+
+00:00:38.340 --> 00:00:41.520
+three for March, one for Jan, and so forth,
+
+00:00:41.520 --> 00:00:44.065
+and we indeed know that we actually,
+
+00:00:44.064 --> 00:00:47.419
+the database spans from January to May.
+
+00:00:47.420 --> 00:00:52.170
+So we have here the revenues of the five months,
+
+00:00:53.140 --> 00:00:56.600
+and we ordered actually by the revenue,
+
+00:00:56.600 --> 00:01:00.329
+it seems we sold most in April.
+
+00:01:01.250 --> 00:01:08.224
+So, we still didn't do these insights but we just understood now
+
+00:01:08.224 --> 00:01:15.339
+that which month is the actually most selling month.
+
+00:01:15.340 --> 00:01:22.405
+Here, now, we need to go and see each movie by each customer,
+
+00:01:22.405 --> 00:01:26.510
+and which month sold,
+
+00:01:27.239 --> 00:01:34.919
+like here we have this one, the amount.
+
+00:01:34.920 --> 00:01:37.290
+So, we have for each movie,
+
+00:01:37.290 --> 00:01:42.090
+of each customer, in each city, in each month,
+
+00:01:42.090 --> 00:01:46.575
+we have the customer ID,
+
+00:01:46.575 --> 00:01:50.290
+and I'm here putting the month and the payment date.
+
+00:01:50.290 --> 00:01:53.080
+We don't need this column because we want to group by months.
+
+00:01:53.079 --> 00:01:57.370
+I'm just putting it for illustration purposes so you can see that one is coming from
+
+00:01:57.370 --> 00:02:02.855
+one and so forth because I'm limiting and probably only restricted to Jan here.
+
+00:02:02.855 --> 00:02:05.990
+But here look, back then,
+
+00:02:05.989 --> 00:02:09.169
+when we were computing the top-grossing cities,
+
+00:02:09.169 --> 00:02:10.998
+we were doing three joins,
+
+00:02:10.998 --> 00:02:14.134
+and while computing the top-grossing movies,
+
+00:02:14.134 --> 00:02:16.519
+we were also doing three joints.
+
+00:02:16.520 --> 00:02:18.380
+Look how things are here,
+
+00:02:18.379 --> 00:02:19.549
+we are doing like one,
+
+00:02:19.550 --> 00:02:21.665
+two, three, four, five,
+
+00:02:21.664 --> 00:02:26.859
+six joins that are hopefully,
+
+00:02:26.930 --> 00:02:30.000
+we don't get confused when doing them.
+
+00:02:30.000 --> 00:02:31.425
+Actually, when I was typing this,
+
+00:02:31.425 --> 00:02:34.910
+I was doing typos and looking what's
+
+00:02:34.909 --> 00:02:39.079
+the table of this name and what's the key looking here and so forth.
+
+00:02:39.080 --> 00:02:42.440
+So, you did that complicated join and actually,
+
+00:02:42.439 --> 00:02:44.449
+this is not very performant at all.
+
+00:02:44.449 --> 00:02:48.469
+If we start doing this enlarged tables,
+
+00:02:48.469 --> 00:02:51.109
+joining those seven tables together like that,
+
+00:02:51.110 --> 00:02:54.650
+things are not going to be really fun in terms of performance.
+
+00:02:54.650 --> 00:03:00.980
+Then, again, that is not enough because we just got the amount here.
+
+00:03:00.979 --> 00:03:03.280
+We need to sum
+
+00:03:04.599 --> 00:03:11.729
+the revenue of each such title, city, and month.
+
+00:03:11.729 --> 00:03:16.724
+So, we have to go like this title in this city,
+
+00:03:16.724 --> 00:03:18.375
+in a given month,
+
+00:03:18.375 --> 00:03:24.669
+gross this amount of revenue irrespective of the customer.
+
+00:03:24.669 --> 00:03:27.949
+So, we probably had lots of customers in Mannheim,
+
+00:03:27.949 --> 00:03:31.324
+lots of in Warren and so forth.
+
+00:03:31.324 --> 00:03:38.780
+Great. So, that is in way something closely related
+
+00:03:38.780 --> 00:03:43.574
+to the idea of a cube
+
+00:03:43.574 --> 00:03:49.084
+or something looks like facts and dimensions or these are the dimensions.
+
+00:03:49.085 --> 00:03:52.240
+We have three dimensions and one fact.
+

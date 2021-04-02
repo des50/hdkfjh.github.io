@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.139
+Another architecture which is actually a little bit ad
+
+00:00:05.139 --> 00:00:10.629
+hoc but it happens in reality is that we get the backroom and the front room,
+
+00:00:10.630 --> 00:00:14.575
+but we have each department alone.
+
+00:00:14.574 --> 00:00:18.339
+Each department alone would go and fetch,
+
+00:00:18.339 --> 00:00:20.109
+have separate ETL processes.
+
+00:00:20.109 --> 00:00:22.660
+So, if we have three departments here,
+
+00:00:22.660 --> 00:00:24.910
+we're going to have three ETL processes
+
+00:00:24.910 --> 00:00:28.385
+totally unaware of each other, totally uncoordinated.
+
+00:00:28.385 --> 00:00:30.825
+They would repeat each other's work,
+
+00:00:30.824 --> 00:00:34.405
+they would model dimensions differently.
+
+00:00:34.405 --> 00:00:38.274
+This is totally opposite to the idea of conformed dimensions.
+
+00:00:38.274 --> 00:00:40.299
+The data dimension here might be different than here,
+
+00:00:40.299 --> 00:00:42.189
+might be different in there.
+
+00:00:42.189 --> 00:00:45.294
+So, a data mart in principle inside,
+
+00:00:45.295 --> 00:00:47.105
+it's also facts and dimension.
+
+00:00:47.104 --> 00:00:51.619
+It's a much smaller data model or dimensional data model and it's actually
+
+00:00:51.619 --> 00:00:56.994
+focused only on one department or one business process.
+
+00:00:56.994 --> 00:00:59.584
+The independent data marts architecture.
+
+00:00:59.585 --> 00:01:04.549
+The problem of it is that it can give you uncoordinated and inconsistent views.
+
+00:01:04.549 --> 00:01:08.299
+So, at the end of the day I might be summing up something in a department and
+
+00:01:08.299 --> 00:01:11.149
+another department would be summing the same thing
+
+00:01:11.150 --> 00:01:14.810
+and we would get different views because we already started,
+
+00:01:14.810 --> 00:01:17.075
+our cleaning process is not the same,
+
+00:01:17.075 --> 00:01:19.600
+the design of our dimensions is not the same,
+
+00:01:19.599 --> 00:01:22.244
+the facts are not the same and so on.
+
+00:01:22.245 --> 00:01:25.189
+The thing is of course there is a little bit of
+
+00:01:25.189 --> 00:01:29.359
+an advantage or acknowledgement of reality.
+
+00:01:29.359 --> 00:01:32.540
+That type of advantage is that, hey,
+
+00:01:32.540 --> 00:01:36.245
+every department just wants to live on its own and wants to do its own job,
+
+00:01:36.245 --> 00:01:40.490
+it wants its autonomy and doesn't want to coordinate with others.
+
+00:01:40.489 --> 00:01:45.069
+When you go into logistics of companies sometimes coordination is a huge overhead.
+
+00:01:45.069 --> 00:01:49.159
+Naturally, if you can afford and it's good to have the coordination,
+
+00:01:49.159 --> 00:01:50.884
+but some people just say, "Okay,
+
+00:01:50.885 --> 00:01:55.130
+autonomy can get things done faster even if not so consistent."
+
+00:01:55.129 --> 00:02:01.109
+But in general, it is regarded as a practice which is not really encouraged.
+

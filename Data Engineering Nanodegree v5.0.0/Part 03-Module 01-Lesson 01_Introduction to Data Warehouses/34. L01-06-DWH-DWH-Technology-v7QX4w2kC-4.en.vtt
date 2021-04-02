@@ -1,0 +1,142 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.050 --> 00:00:04.694
+Now that we conceptually understand the architecture of the warehouse
+
+00:00:04.695 --> 00:00:09.929
+and the modeling practices in a data warehouse,
+
+00:00:09.929 --> 00:00:14.294
+let's take a look a little bit at the technologies of the storage.
+
+00:00:14.294 --> 00:00:17.144
+So, delivering the analytics to users.
+
+00:00:17.144 --> 00:00:21.344
+Data is available in an understandable and performant dimensional model.
+
+00:00:21.344 --> 00:00:25.964
+We got that with conformed dimensions or separate data marts,
+
+00:00:25.964 --> 00:00:29.160
+and users can report and visualize
+
+00:00:29.160 --> 00:00:32.250
+these by interacting directly with the model or in most cases,
+
+00:00:32.250 --> 00:00:35.259
+through a BI application.
+
+00:00:35.619 --> 00:00:40.384
+You will see that OLAP cubes is a very convenient way for slicing, dicing,
+
+00:00:40.384 --> 00:00:44.799
+and drilling down, as we explained in the OLAP cubes part.
+
+00:00:44.799 --> 00:00:48.070
+The idea is how do we serve these OLAP cubes.
+
+00:00:48.070 --> 00:00:51.935
+So, we have two actually approaches to serve the OLAP cubes.
+
+00:00:51.935 --> 00:00:57.679
+The first one, the tradition one was
+
+00:00:57.679 --> 00:01:00.619
+to pre-aggregate the OLAP cubes and save
+
+00:01:00.619 --> 00:01:04.334
+them on a special purpose non-relational database.
+
+00:01:04.334 --> 00:01:10.859
+That's known as the MOLAP approach or the multidimensional OLAP.
+
+00:01:10.859 --> 00:01:15.939
+Actually, you would go and buy a product that's called an OLAP server.
+
+00:01:15.939 --> 00:01:20.689
+An OLAP server would actually be a product which is not a relational database.
+
+00:01:20.689 --> 00:01:25.849
+It has an internal structure optimized for serving OLAP cubes,
+
+00:01:25.849 --> 00:01:29.849
+and it is there for most major vendors.
+
+00:01:30.260 --> 00:01:36.770
+As relational databases became more mature and more sophisticated, people said, "Okay.
+
+00:01:36.769 --> 00:01:41.989
+Well, we can just compute the OLAP cubes on the fly or make them materialized views,
+
+00:01:41.989 --> 00:01:45.079
+but we can serve them also from relational databases."
+
+00:01:45.079 --> 00:01:48.679
+That's the more kind of popular approach right now,
+
+00:01:48.680 --> 00:01:51.095
+and it's known as ROLAP.
+
+00:01:51.094 --> 00:01:55.664
+To distinguish it from the main thing is
+
+00:01:55.665 --> 00:02:01.890
+the technology we're using to serve the OLAP cubes post-aggregation.
+
+00:02:02.170 --> 00:02:06.750
+Another important thing is the columnar formats.
+
+00:02:08.060 --> 00:02:11.590
+We're going to demonstrate for you to
+
+00:02:11.590 --> 00:02:15.094
+get the feeling of that the idea of a columnar format.
+
+00:02:15.094 --> 00:02:18.379
+In a columnar format, actually,
+
+00:02:18.379 --> 00:02:21.514
+data is stored in rows and not columns.
+
+00:02:21.514 --> 00:02:23.584
+So, when you load data from disk,
+
+00:02:23.585 --> 00:02:26.450
+you actually load one column.
+
+00:02:26.449 --> 00:02:29.359
+So, you consume way less memory,
+
+00:02:29.360 --> 00:02:32.120
+and let alone accessing the disk.
+
+00:02:32.120 --> 00:02:36.564
+So, you don't need to load the whole row to be able to get one value from it.
+
+00:02:36.564 --> 00:02:39.014
+In our upcoming demo,
+
+00:02:39.014 --> 00:02:40.049
+we're going to do this.
+
+00:02:40.050 --> 00:02:44.250
+We're going to construct the same table once
+
+00:02:44.250 --> 00:02:46.400
+the columnar format and the other time without
+
+00:02:46.400 --> 00:02:50.480
+the columnar format and test the difference.
+
+00:02:50.479 --> 00:02:55.269
+I'm here referring to the Kimball and the Inmon books,
+
+00:02:55.270 --> 00:02:59.689
+and also referring to a book that I like by Rainardi,
+
+00:02:59.689 --> 00:03:09.289
+that's actually simplifying and collecting lots of the concepts from other people's work.
+

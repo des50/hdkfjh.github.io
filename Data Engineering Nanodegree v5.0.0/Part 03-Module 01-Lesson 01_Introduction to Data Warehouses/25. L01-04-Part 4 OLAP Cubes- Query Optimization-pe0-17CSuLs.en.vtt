@@ -1,0 +1,127 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.870
+Finally, the business users will typically want to slice,
+
+00:00:03.870 --> 00:00:07.275
+dice, roll up, and drill-down all the time,
+
+00:00:07.275 --> 00:00:09.240
+and really ad hoc,
+
+00:00:09.240 --> 00:00:13.440
+and without knowing initially which green they want
+
+00:00:13.439 --> 00:00:19.179
+to deal with or which subtotal they want to get or which grouping they intend to do.
+
+00:00:19.699 --> 00:00:22.739
+So, actually in general,
+
+00:00:22.739 --> 00:00:24.584
+one will do select star group by,
+
+00:00:24.585 --> 00:00:28.440
+we produce a cube.
+
+00:00:28.440 --> 00:00:33.280
+But there's also a SQL in most databases which support OLAP operations.
+
+00:00:33.280 --> 00:00:36.765
+There is a group by cube statement,
+
+00:00:36.765 --> 00:00:38.509
+and then we put movie, branch,
+
+00:00:38.509 --> 00:00:42.000
+and month, and shall we do only group by,
+
+00:00:42.000 --> 00:00:44.435
+we are going to get the grouping by the movie,
+
+00:00:44.435 --> 00:00:46.090
+the branch, and the month.
+
+00:00:46.090 --> 00:00:48.175
+However, when we do cube,
+
+00:00:48.174 --> 00:00:52.009
+we're going to do one pass through the facts table,
+
+00:00:52.009 --> 00:00:55.234
+and we will aggregate all possible combinations.
+
+00:00:55.234 --> 00:00:56.628
+So, for the revenue,
+
+00:00:56.628 --> 00:00:59.494
+we're going to go, and say zero groupings,
+
+00:00:59.494 --> 00:01:03.125
+just sum everything together and tell me the total revenue,
+
+00:01:03.125 --> 00:01:08.310
+and then let's see by each possible single grouping.
+
+00:01:08.310 --> 00:01:11.230
+So, if I grouped only by each movie,
+
+00:01:11.230 --> 00:01:14.000
+what would be the revenue of each movie or what is the revenue
+
+00:01:14.000 --> 00:01:17.444
+of each branch or what's the revenue of each month?
+
+00:01:17.444 --> 00:01:19.734
+Then we take that revenue,
+
+00:01:19.734 --> 00:01:23.510
+all the possible revenues if we group by two dimensions.
+
+00:01:23.510 --> 00:01:27.505
+So, I would say for every movie and branch, what was the revenue,
+
+00:01:27.504 --> 00:01:29.349
+and for each combination of branch and months,
+
+00:01:29.349 --> 00:01:31.879
+what's the revenue and so forth, and finally,
+
+00:01:31.879 --> 00:01:33.214
+we would get the movie, branch,
+
+00:01:33.215 --> 00:01:38.000
+month also which was actually the original one,
+
+00:01:38.000 --> 00:01:41.275
+we would get by doing a group by only.
+
+00:01:41.275 --> 00:01:43.700
+Saving the output of this,
+
+00:01:43.700 --> 00:01:50.329
+of all the combinations of subtotals or all the possible grouping lengths,
+
+00:01:50.329 --> 00:01:53.045
+and possibly materializing this,
+
+00:01:53.045 --> 00:01:54.489
+the output of that cube,
+
+00:01:54.489 --> 00:01:56.939
+and starts using it for slicing, and dicing,
+
+00:01:56.939 --> 00:01:59.719
+and roll-up is actually enough to answer
+
+00:01:59.719 --> 00:02:04.174
+almost all forthcoming aggregations or the standard ones,
+
+00:02:04.174 --> 00:02:09.319
+the ones that could be actually anticipated from business users without having to process
+
+00:02:09.319 --> 00:02:16.060
+the whole fact stable each time someone comes with a grouping in an ad hoc fashion.
+

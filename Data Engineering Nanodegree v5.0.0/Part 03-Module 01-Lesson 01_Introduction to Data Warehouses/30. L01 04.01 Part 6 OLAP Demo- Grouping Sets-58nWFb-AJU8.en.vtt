@@ -1,0 +1,172 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.549
+We have something called the group sets,
+
+00:00:02.549 --> 00:00:07.905
+and the grouping set is something which is actually rather nice.
+
+00:00:07.905 --> 00:00:10.455
+Because we can say let's group by nothing,
+
+00:00:10.455 --> 00:00:13.214
+group by the first dimension, second dimension,
+
+00:00:13.214 --> 00:00:15.390
+third dimension, first and second,
+
+00:00:15.390 --> 00:00:17.100
+second and third, first and third,
+
+00:00:17.100 --> 00:00:19.410
+first and second, and so forth.
+
+00:00:19.410 --> 00:00:23.504
+For example, here we're going to group by nothing,
+
+00:00:23.504 --> 00:00:25.169
+select all the revenue.
+
+00:00:25.170 --> 00:00:26.940
+So that's grouping by nothing.
+
+00:00:26.940 --> 00:00:30.000
+Here, grouping revenue by country.
+
+00:00:30.000 --> 00:00:31.695
+So let's group by country.
+
+00:00:31.695 --> 00:00:33.929
+Here, let's grouped by month.
+
+00:00:33.929 --> 00:00:35.984
+So we're seeing each month revenue.
+
+00:00:35.984 --> 00:00:39.079
+Then we take the combination month and country and so forth.
+
+00:00:39.079 --> 00:00:43.489
+Then we take month by country and months and an all in one shot.
+
+00:00:43.490 --> 00:00:47.929
+So what regrouping set is going to do for us,
+
+00:00:47.929 --> 00:00:51.019
+is we are going to actually explicitly say,
+
+00:00:51.020 --> 00:00:56.020
+please instead of saying group by something or a number of columns,
+
+00:00:56.020 --> 00:01:00.545
+we're going to say group by grouping sets.
+
+00:01:00.545 --> 00:01:07.555
+My desired grouping sets are actually nothing,
+
+00:01:07.555 --> 00:01:11.460
+the month alone, the country alone,
+
+00:01:11.459 --> 00:01:14.774
+the dimension, and the country.
+
+00:01:14.775 --> 00:01:21.155
+Here actually, I chose to make a small cube of two-dimensions,
+
+00:01:21.155 --> 00:01:27.064
+just so we don't get overwhelmed by the dimensions.
+
+00:01:27.064 --> 00:01:29.855
+So here we have only two dimensions,
+
+00:01:29.855 --> 00:01:31.895
+which is the month and the country.
+
+00:01:31.894 --> 00:01:35.575
+However, one time we're not doing any grouping,
+
+00:01:35.575 --> 00:01:38.335
+one time we're doing grouping by one-dimension,
+
+00:01:38.334 --> 00:01:41.304
+another time by the other dimension,
+
+00:01:41.305 --> 00:01:44.780
+and a third time by the combination of both dimensions here.
+
+00:01:44.780 --> 00:01:47.575
+Look how the output looks like now.
+
+00:01:47.575 --> 00:01:54.210
+So this is a grouping by month and country for the month one.
+
+00:01:54.209 --> 00:01:56.369
+Look, there is a none here,
+
+00:01:56.370 --> 00:02:04.125
+and that none is actually an expressive none which says that irrespective of the country,
+
+00:02:04.125 --> 00:02:05.564
+here is the revenue.
+
+00:02:05.564 --> 00:02:09.425
+So, this is a grouping by month only.
+
+00:02:09.425 --> 00:02:14.390
+But it works as a subtotal for these two lines.
+
+00:02:14.389 --> 00:02:17.144
+Then you go likewise here,
+
+00:02:17.145 --> 00:02:18.480
+and none likewise here,
+
+00:02:18.479 --> 00:02:19.649
+and none likewise here,
+
+00:02:19.650 --> 00:02:21.620
+and none, and so forth.
+
+00:02:21.620 --> 00:02:24.784
+Then we actually get another thing.
+
+00:02:24.784 --> 00:02:30.020
+We get none-none and a total revenue and that is
+
+00:02:30.020 --> 00:02:35.270
+actually the total revenue we have computed here.
+
+00:02:35.270 --> 00:02:38.930
+These were like 67,000, the total revenue.
+
+00:02:38.930 --> 00:02:42.474
+So when we get none and none here,
+
+00:02:42.474 --> 00:02:44.614
+that was the grouping by nothing.
+
+00:02:44.615 --> 00:02:52.115
+Then we also get the whole amount for Canada and the whole amount for Australia.
+
+00:02:52.115 --> 00:02:54.189
+So in one goal,
+
+00:02:54.189 --> 00:02:57.250
+we pass through this once,
+
+00:02:57.250 --> 00:03:00.664
+and we get all these combinations of sub-grouping.
+
+00:03:00.664 --> 00:03:02.469
+Of course, if we had three dimensions,
+
+00:03:02.469 --> 00:03:07.319
+we'd have found many more combinations.
+
+00:03:08.419 --> 00:03:15.649
+So otherwise, we would have needed to go one, two,
+
+00:03:15.650 --> 00:03:24.400
+three, four times, four passes through the facts table to compute this.
+

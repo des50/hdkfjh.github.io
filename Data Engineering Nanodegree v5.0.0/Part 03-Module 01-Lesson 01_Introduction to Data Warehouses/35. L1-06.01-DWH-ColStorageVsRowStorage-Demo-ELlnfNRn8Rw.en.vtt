@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.110 --> 00:00:02.895
+Okay. In this third demo,
+
+00:00:02.895 --> 00:00:08.865
+I'm doing something which is hopefully you're not going to use per se,
+
+00:00:08.865 --> 00:00:15.509
+but this is something in order for you to believe with a hands-on experience that
+
+00:00:15.509 --> 00:00:18.539
+actually columnar formats are faster than
+
+00:00:18.539 --> 00:00:24.119
+row storage or columnar storage is faster than the normal row storage.
+
+00:00:24.120 --> 00:00:27.675
+What I'm doing here is that I am getting Postgres,
+
+00:00:27.675 --> 00:00:31.125
+but installing what's known as an extension to it.
+
+00:00:31.125 --> 00:00:33.810
+I'm using this extension here,
+
+00:00:33.810 --> 00:00:39.969
+it's an open-source extension called the C-Store fdw by Citus Data.
+
+00:00:40.329 --> 00:00:45.504
+I'm using the demo they have provided here.
+
+00:00:45.505 --> 00:00:50.690
+However, I am doing a comparison between a normal and a columnar storage.
+
+00:00:50.689 --> 00:00:56.719
+So here I created a new database called reviews, connected to it,
+
+00:00:56.719 --> 00:01:03.614
+and then downloaded sample data that they are demoing the columnar storage with.
+
+00:01:03.615 --> 00:01:12.234
+Here, unzip the data and copy that in a place accessible by my database user.
+
+00:01:12.234 --> 00:01:17.150
+Anyhow, the first step is that I am going to create a table with normal row storage.
+
+00:01:17.150 --> 00:01:21.265
+So that's nothing strange about that table.
+
+00:01:21.265 --> 00:01:23.820
+We don't even care about the schema,
+
+00:01:23.819 --> 00:01:26.869
+we just see that this is a normal table.
+
+00:01:26.870 --> 00:01:33.995
+We're doing a copy statement and we load two CSVs in it and we get those,
+
+00:01:33.995 --> 00:01:44.040
+so that's close to a million row here plus another 500,000,
+
+00:01:44.040 --> 00:01:49.830
+close to almost two million rows here.
+
+00:01:49.829 --> 00:01:55.228
+Then, we create the other table with the columnar storage,
+
+00:01:55.228 --> 00:02:02.500
+and here we have to load the extension for the columnar storage,
+
+00:02:02.500 --> 00:02:04.709
+that's the syntax for doing this,
+
+00:02:04.709 --> 00:02:10.609
+and we also have to load what's known as a c-store server.
+
+00:02:10.610 --> 00:02:13.725
+Then, we create the table.
+
+00:02:13.724 --> 00:02:18.319
+Here, this table is created in a different fashion because you have to say it's
+
+00:02:18.319 --> 00:02:23.560
+a foreign table because it's actually not saved inside the native Postgres,
+
+00:02:23.560 --> 00:02:27.610
+it's actually saved in a different storage formats.
+
+00:02:27.610 --> 00:02:30.980
+So it's a foreign table and it's created this way
+
+00:02:30.979 --> 00:02:34.549
+and I'm calling it customer reviews col.
+
+00:02:34.550 --> 00:02:37.205
+The first one was called customer reviews row.
+
+00:02:37.205 --> 00:02:43.940
+I will load the data into it and now we're ready for the head-to-head competition.
+
+00:02:43.939 --> 00:02:48.664
+So I'm going to compare the performance here for the rows.
+
+00:02:48.664 --> 00:02:50.429
+For a typical, I mean,
+
+00:02:50.430 --> 00:02:51.719
+not very complicated one,
+
+00:02:51.719 --> 00:02:59.300
+but has ranges and likes like pattern matching and simple filter.
+
+00:02:59.300 --> 00:03:03.050
+That gets done in 217 milliseconds.
+
+00:03:03.050 --> 00:03:11.960
+Here, I do that and I do that on the column and I get that in a 158 milliseconds.
+
+00:03:11.960 --> 00:03:15.830
+So the conclusion is we can see that the columnar storage is faster.
+
+00:03:15.830 --> 00:03:18.530
+Are we going to use this in reality or not?
+
+00:03:18.530 --> 00:03:20.360
+Well, for the rest of the course,
+
+00:03:20.360 --> 00:03:22.430
+we're going to be using Redshift.
+
+00:03:22.430 --> 00:03:25.355
+Redshift has something similar to that,
+
+00:03:25.354 --> 00:03:35.714
+another extension done by Redshift that actually implements columnar storage.
+
+00:03:35.715 --> 00:03:39.569
+Actually, for example, in Redshift,
+
+00:03:39.569 --> 00:03:44.639
+in most databases you're either finding it like columnar or row,
+
+00:03:44.639 --> 00:03:50.589
+and the nice thing about having an extension here is that we can make both
+
+00:03:50.590 --> 00:03:56.825
+there surviving the same database and we can compare them side-to-side.
+
+00:03:56.824 --> 00:03:59.869
+I hope that was useful.
+

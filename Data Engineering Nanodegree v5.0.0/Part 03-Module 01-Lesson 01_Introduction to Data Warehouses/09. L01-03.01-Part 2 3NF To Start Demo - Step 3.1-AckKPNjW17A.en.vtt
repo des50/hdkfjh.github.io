@@ -1,0 +1,202 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.950
+Now that we understand the basic nature of the data we're dealing with,
+
+00:00:04.950 --> 00:00:08.490
+let's perform some simple data analysis.
+
+00:00:08.490 --> 00:00:10.650
+So let's ask for example ourselves,
+
+00:00:10.650 --> 00:00:14.205
+what are the top grossing movies in this DVD rental store?
+
+00:00:14.205 --> 00:00:16.274
+If we look to this schema,
+
+00:00:16.274 --> 00:00:21.169
+we will find that we have the movies here in this table called film,
+
+00:00:21.170 --> 00:00:23.460
+and we have the payments here.
+
+00:00:23.460 --> 00:00:26.894
+This is where people pay actually amounts of money.
+
+00:00:26.894 --> 00:00:30.884
+But we will see that there is no relation between the payments and the film.
+
+00:00:30.885 --> 00:00:35.969
+So, to go, you have the payments and when you pay something,
+
+00:00:35.969 --> 00:00:37.649
+you pay it for a rental.
+
+00:00:37.649 --> 00:00:40.890
+So there's this instance called the rental.
+
+00:00:40.890 --> 00:00:43.910
+The rental actually is also not linked to a movie,
+
+00:00:43.909 --> 00:00:46.964
+the rental is linked to an inventory item,
+
+00:00:46.965 --> 00:00:49.925
+and then the inventory item points to a movie.
+
+00:00:49.924 --> 00:00:53.344
+So in order for us to be able to go from here to there,
+
+00:00:53.344 --> 00:00:55.225
+you have to go like this.
+
+00:00:55.225 --> 00:00:57.919
+This is actually the type of questions that,
+
+00:00:57.918 --> 00:01:02.959
+or the type of things that would make the business users really not
+
+00:01:02.960 --> 00:01:09.040
+kind of understanding how to jump and join tables in this manner.
+
+00:01:09.040 --> 00:01:12.030
+So we take a look here and,
+
+00:01:12.030 --> 00:01:14.835
+oh, yeah we can get that this title,
+
+00:01:14.834 --> 00:01:21.599
+we got a rental rate and a rating and we possibly,
+
+00:01:21.599 --> 00:01:25.679
+this is actually the film alone yet,
+
+00:01:25.680 --> 00:01:27.485
+we didn't join yet.
+
+00:01:27.484 --> 00:01:31.829
+So I guess I can do it like that.
+
+00:01:32.840 --> 00:01:35.594
+So this is the film alone,
+
+00:01:35.594 --> 00:01:37.515
+these are the payments alone,
+
+00:01:37.515 --> 00:01:40.250
+and then this is the inventory alone.
+
+00:01:40.250 --> 00:01:42.079
+We can take a look each one of them,
+
+00:01:42.079 --> 00:01:45.784
+and then we can get for every movie,
+
+00:01:45.784 --> 00:01:48.649
+how much did the customer pay and when.
+
+00:01:48.650 --> 00:01:50.420
+How do we do that?
+
+00:01:50.420 --> 00:01:52.685
+We have to do the join on the rental,
+
+00:01:52.685 --> 00:01:54.515
+join on the inventory,
+
+00:01:54.515 --> 00:01:56.700
+join on the film.
+
+00:01:57.260 --> 00:02:01.295
+So we have to actually select from the payments table,
+
+00:02:01.295 --> 00:02:03.950
+then join here on the rental,
+
+00:02:03.950 --> 00:02:13.020
+so we have to choose a join key between the payments rental id and the rental rental id.
+
+00:02:13.020 --> 00:02:17.140
+So we're actually jumping this relationship here where we have the rental
+
+00:02:17.139 --> 00:02:21.804
+id is going to give us the corresponding rental id here.
+
+00:02:21.805 --> 00:02:23.740
+Then we go from here,
+
+00:02:23.740 --> 00:02:25.629
+and we go from the inventory
+
+00:02:25.628 --> 00:02:29.679
+id into this inventory id which is, we're doing it like that.
+
+00:02:29.680 --> 00:02:33.640
+We're using this actually rental r, inventory i,
+
+00:02:33.639 --> 00:02:39.854
+film f to just shorten our SQL queries,
+
+00:02:39.854 --> 00:02:47.439
+and finally, we're going to get for each title the amount we paid.
+
+00:02:48.139 --> 00:02:53.329
+I have to warn you here that I am doing limit a lot because in
+
+00:02:53.330 --> 00:02:58.445
+Jupiter is very nice because we can interleave documentation, do things interactively,
+
+00:02:58.444 --> 00:03:01.639
+but actually if you get lots of data out,
+
+00:03:01.639 --> 00:03:05.524
+like if I leave this and I get 16,000 payments or so,
+
+00:03:05.525 --> 00:03:11.330
+this table becomes really big in Jupiter and actually the notebook
+
+00:03:11.330 --> 00:03:17.850
+will not crash but it's going to become like very heavy and irresponsive to work with.
+
+00:03:17.919 --> 00:03:22.694
+So now that we know how each movie,
+
+00:03:22.694 --> 00:03:27.009
+when was the rental and how much did the customer pay,
+
+00:03:27.009 --> 00:03:32.199
+let us then actually group by all the movies,
+
+00:03:32.199 --> 00:03:37.189
+like for each movie group by that movie and sum the amount.
+
+00:03:37.189 --> 00:03:42.564
+So this is the same thing except here that we're summing the amount,
+
+00:03:42.564 --> 00:03:45.199
+instead of showing it like this we're summing it,
+
+00:03:45.199 --> 00:03:47.539
+and we'll call it revenue.
+
+00:03:47.539 --> 00:03:49.639
+Then we're grouping by title,
+
+00:03:49.639 --> 00:03:57.934
+and then we are ordering descendingly in a descending order by the revenue.
+
+00:03:57.935 --> 00:04:02.615
+And that's how we get those numbers.
+
+00:04:02.615 --> 00:04:10.050
+Actually this database has kind of like very fictitious names for everything,
+
+00:04:10.050 --> 00:04:12.800
+so these are not actually real movies,
+
+00:04:12.800 --> 00:04:16.439
+I do not support any anyhow.
+

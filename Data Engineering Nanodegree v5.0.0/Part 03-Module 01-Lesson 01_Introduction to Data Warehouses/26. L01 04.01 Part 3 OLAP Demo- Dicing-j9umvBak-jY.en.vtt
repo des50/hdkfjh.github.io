@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.825
+Dicing. For the dicing here,
+
+00:00:03.825 --> 00:00:06.690
+we're having the same query again,
+
+00:00:06.690 --> 00:00:08.940
+but we're putting these three here.
+
+00:00:08.939 --> 00:00:15.660
+So, we're putting restrictions on the rating that's going to be PG-13 and PG,
+
+00:00:15.660 --> 00:00:18.929
+the city is going to be only those two cities,
+
+00:00:18.929 --> 00:00:20.910
+and the day is going to be at the 1st,
+
+00:00:20.910 --> 00:00:22.605
+the 15th, and the 30th.
+
+00:00:22.605 --> 00:00:26.504
+With that, we are actually having three-dimensions,
+
+00:00:26.504 --> 00:00:28.609
+the three actually mean something to us,
+
+00:00:28.609 --> 00:00:30.449
+it's not a constant any longer,
+
+00:00:30.449 --> 00:00:33.990
+and we computed what's known as a sub cube.
+
+00:00:33.990 --> 00:00:40.060
+So, we actually were able to extract a smaller cube from the big cube.
+

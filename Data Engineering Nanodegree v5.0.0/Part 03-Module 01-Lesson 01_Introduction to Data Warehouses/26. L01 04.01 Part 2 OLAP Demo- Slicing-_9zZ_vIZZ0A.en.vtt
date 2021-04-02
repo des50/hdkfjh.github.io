@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.710
+Then, we try to slice,
+
+00:00:01.710 --> 00:00:06.644
+and if you remember slicing is that we're going to reduce the dimensionality,
+
+00:00:06.644 --> 00:00:09.615
+and we have already three here.
+
+00:00:09.615 --> 00:00:13.275
+I want to make sure also you're not confused and thinking that this
+
+00:00:13.275 --> 00:00:17.129
+is a dimension because this is actually the fact.
+
+00:00:17.129 --> 00:00:22.664
+So, this is the cube and this would be the content of each cell in the cube, okay?
+
+00:00:22.664 --> 00:00:26.049
+These are 3-dimensions, that's the fact.
+
+00:00:26.239 --> 00:00:29.250
+So we slice, when we slice,
+
+00:00:29.250 --> 00:00:33.960
+we are going actually to say where the movie rating is equal to PG-13.
+
+00:00:33.960 --> 00:00:36.314
+When we have that, we fixed that,
+
+00:00:36.314 --> 00:00:37.934
+so we still have three column,
+
+00:00:37.935 --> 00:00:40.980
+but we're not counting this one because this one
+
+00:00:40.979 --> 00:00:44.549
+became now only slicing for us, that cube.
+
+00:00:44.549 --> 00:00:47.239
+So actually the actual relation we have now is
+
+00:00:47.240 --> 00:00:51.200
+between the day and the city giving that the rating is constant.
+
+00:00:51.200 --> 00:00:53.060
+So that's a slice.
+

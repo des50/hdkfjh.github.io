@@ -1,0 +1,73 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.089
+Rolling up is actually going through one dimension like for example,
+
+00:00:06.089 --> 00:00:10.245
+the branch and instead of having here the cities,
+
+00:00:10.244 --> 00:00:13.979
+we're going to group all the US Cities and sum them,
+
+00:00:13.980 --> 00:00:16.620
+and all the French cities and sum them.
+
+00:00:16.620 --> 00:00:19.905
+With that, we have rolled up,
+
+00:00:19.905 --> 00:00:24.630
+we say that we have rolled up the branch dimension.
+
+00:00:24.629 --> 00:00:27.644
+Similarly, we can also drill down,
+
+00:00:27.644 --> 00:00:32.609
+which means we're going to take each city and decompose it,
+
+00:00:32.609 --> 00:00:34.454
+let's say to districts.
+
+00:00:34.454 --> 00:00:38.609
+With rolling up actually, the dimension actually,
+
+00:00:38.609 --> 00:00:40.500
+you get fewer values here,
+
+00:00:40.500 --> 00:00:45.045
+and was drilling down you get more values.
+
+00:00:45.045 --> 00:00:49.765
+That's why the OLAP cube should store the finest grain of data,
+
+00:00:49.765 --> 00:00:52.200
+sometimes called atomic data,
+
+00:00:52.200 --> 00:00:55.315
+in case we need to drill down to the lowest level.
+
+00:00:55.314 --> 00:01:00.349
+For example, country and then city and then district and then street.
+
+00:01:00.350 --> 00:01:01.880
+In our OLAP cubes,
+
+00:01:01.880 --> 00:01:07.600
+we choose the city as our grain of the dimension.
+
+00:01:07.599 --> 00:01:10.640
+But then we can go into a more coarse screen or we
+
+00:01:10.640 --> 00:01:13.629
+can go into a more fine grain or even finer grain.
+
+00:01:13.629 --> 00:01:15.949
+At one in time are going to say,
+
+00:01:15.950 --> 00:01:20.250
+for example, that we will not go beyond street.
+
+00:01:20.250 --> 00:01:24.819
+So, that would be the atomic data on the finest grain.
+

@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.865
+Then, we have a roll-up operation.
+
+00:00:02.865 --> 00:00:04.980
+In the roll-up operation actually,
+
+00:00:04.980 --> 00:00:08.355
+remember that we were working on the day level, right?
+
+00:00:08.355 --> 00:00:11.890
+So we want to go and work,
+
+00:00:14.179 --> 00:00:18.355
+sorry, we are going to roll up on the country, from city to country.
+
+00:00:18.355 --> 00:00:20.074
+So here we had the city.
+
+00:00:20.074 --> 00:00:24.975
+So changing that the customer country from city to country,
+
+00:00:24.975 --> 00:00:26.280
+we actually went in,
+
+00:00:26.280 --> 00:00:35.945
+we are going to have less rows or less unique number of dimensions in the country.
+
+00:00:35.945 --> 00:00:45.320
+So we actually have rolled up the branch because this is the, sorry the customer.
+
+00:00:45.320 --> 00:00:50.094
+Because we are displaying the customer country or the customer city.
+
+00:00:50.094 --> 00:00:55.369
+So originally we were showing the customers city and now all Lancaster
+
+00:00:55.369 --> 00:01:01.000
+and all other cities of the country are going to be rolled up together.
+
+00:01:01.000 --> 00:01:05.674
+Simply by because we actually had them here.
+
+00:01:05.674 --> 00:01:09.634
+Now, what would happen if the table was purely designs?
+
+00:01:09.635 --> 00:01:15.185
+We might have needed actually to go and doing this summation ourselves.
+
+00:01:15.185 --> 00:01:18.454
+But because this was actually reflected in the design,
+
+00:01:18.454 --> 00:01:20.390
+we didn't need to do that.
+
+00:01:20.390 --> 00:01:22.489
+That's why while designing,
+
+00:01:22.489 --> 00:01:27.149
+one should have these ideas in mind.
+

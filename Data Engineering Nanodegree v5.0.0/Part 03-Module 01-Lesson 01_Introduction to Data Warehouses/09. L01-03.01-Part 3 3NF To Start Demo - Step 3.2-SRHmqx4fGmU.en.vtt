@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.174
+Okay. So we got the gross topping or at the top grossing films.
+
+00:00:05.174 --> 00:00:09.599
+We can perhaps also see w here customers are coming from
+
+00:00:09.599 --> 00:00:16.559
+and from which city our customers buy more.
+
+00:00:16.559 --> 00:00:21.719
+So these are the top grossing customer cities.
+
+00:00:21.719 --> 00:00:25.164
+Again, also to to do that similarly,
+
+00:00:25.164 --> 00:00:29.689
+you have to go from the payment to the customer,
+
+00:00:29.690 --> 00:00:34.310
+to the address, to the city.
+
+00:00:34.310 --> 00:00:38.420
+So you also have to do that join which is cumbersome.
+
+00:00:38.420 --> 00:00:46.550
+Well, the idea is when you have a huge schema and you have lots of links to follow,
+
+00:00:46.549 --> 00:00:48.829
+that becomes really hard to follow.
+
+00:00:48.829 --> 00:00:53.494
+So we do not want our business users to start thinking this way.
+
+00:00:53.494 --> 00:00:55.429
+Similar to the movies,
+
+00:00:55.429 --> 00:01:00.090
+we also will compute the top grossing cities this way.
+

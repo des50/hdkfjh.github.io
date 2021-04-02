@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.790
+So from a business perspective,
+
+00:00:02.790 --> 00:00:05.790
+the warehouse in a business context is as follows.
+
+00:00:05.790 --> 00:00:08.429
+Put yourself in this mental mode where you are
+
+00:00:08.429 --> 00:00:11.504
+in charge of our retailer's data infrastructure.
+
+00:00:11.505 --> 00:00:18.660
+So let's look at some business activities that happen in that retailer's IT department,
+
+00:00:18.660 --> 00:00:21.605
+or I mean business in general not even IT department.
+
+00:00:21.605 --> 00:00:25.625
+So the customers should be able to find goods and make orders.
+
+00:00:25.625 --> 00:00:28.609
+The inventory staff should be able to stock,
+
+00:00:28.609 --> 00:00:30.394
+retrieve, and reorder goods.
+
+00:00:30.394 --> 00:00:36.274
+The delivery staff need to easily be able to pick up and deliver the goods.
+
+00:00:36.274 --> 00:00:41.539
+Then the HR department should be able to assess the performance of the sales staff and
+
+00:00:41.539 --> 00:00:43.609
+the marketing department needs to see whether
+
+00:00:43.609 --> 00:00:48.109
+the different sales channels are performing well or not and how do they compare.
+
+00:00:48.109 --> 00:00:51.564
+The management should be able to monitor the sales growth.
+
+00:00:51.564 --> 00:00:57.094
+So with your SQL knowledge and database design knowledge,
+
+00:00:57.094 --> 00:01:01.589
+ask yourself, can I build a database to support these activities?
+
+00:01:01.909 --> 00:01:09.724
+Well, I believe if you had a decent course in database design,
+
+00:01:09.724 --> 00:01:11.914
+the answer should be yes.
+
+00:01:11.915 --> 00:01:14.455
+Another question would be,
+
+00:01:14.454 --> 00:01:18.245
+are all of the above questions of the same nature?
+
+00:01:18.245 --> 00:01:23.930
+Well, yeah some of them look maybe you already guessed,
+
+00:01:23.930 --> 00:01:28.800
+but let's look closer to to be able to give a more educated answer.
+
+00:01:29.060 --> 00:01:31.674
+But before doing that,
+
+00:01:31.674 --> 00:01:35.269
+you get a little bit more of details about the business.
+
+00:01:35.269 --> 00:01:37.700
+The retailer for example,
+
+00:01:37.700 --> 00:01:39.715
+has a nation-wide presence.
+
+00:01:39.715 --> 00:01:44.299
+So for example, you know how to handle the scale of the database?
+
+00:01:44.299 --> 00:01:47.034
+Like nation-wide database?
+
+00:01:47.034 --> 00:01:49.409
+Well, perhaps you're going to do a central one,
+
+00:01:49.409 --> 00:01:53.780
+perhaps you're going to do many databases for
+
+00:01:53.780 --> 00:02:00.049
+different stores and headquarters and so forth.
+
+00:02:00.049 --> 00:02:06.394
+Then you would learn that the retailer acquired other smaller retailers.
+
+00:02:06.394 --> 00:02:11.044
+Some of them are brick and mortar and some of them are like an online store.
+
+00:02:11.044 --> 00:02:14.629
+So you will see that things are a little bit complex.
+
+00:02:14.629 --> 00:02:16.294
+Not that I mean,
+
+00:02:16.294 --> 00:02:21.719
+it's not about base design any longer that we have many systems now to integrate.
+
+00:02:22.520 --> 00:02:26.540
+Then you would learn that the business
+
+00:02:26.539 --> 00:02:30.530
+also has like a call center and social media accounts,
+
+00:02:30.530 --> 00:02:37.050
+and you wants to actually put that in the database when reporting about like how people
+
+00:02:37.050 --> 00:02:44.890
+feel about the different products or service and so on.
+
+00:02:44.889 --> 00:02:51.484
+Then you will see that you can have like sales staff expect to see a performance results
+
+00:02:51.485 --> 00:02:55.760
+and the customer and inventory staff
+
+00:02:55.759 --> 00:03:00.000
+expect to see a system that is fast and stable while operating.
+
+00:03:00.000 --> 00:03:03.814
+I mean, whenever someone looks up a customer or tries to
+
+00:03:03.814 --> 00:03:08.060
+deliver a good or look up an SQL in the store,
+
+00:03:08.060 --> 00:03:11.189
+in the inventory, it should be quick.
+
+00:03:11.569 --> 00:03:15.829
+Similarly, the HR and marketing department also want
+
+00:03:15.830 --> 00:03:19.160
+to have a lot of information but haven't decided yet on everything they need.
+
+00:03:19.159 --> 00:03:23.615
+So the requirements are not very clear.
+
+00:03:23.615 --> 00:03:25.969
+We know that they're going to evolve.
+
+00:03:25.969 --> 00:03:30.099
+So perhaps maybe a single relational database won't suffice.
+

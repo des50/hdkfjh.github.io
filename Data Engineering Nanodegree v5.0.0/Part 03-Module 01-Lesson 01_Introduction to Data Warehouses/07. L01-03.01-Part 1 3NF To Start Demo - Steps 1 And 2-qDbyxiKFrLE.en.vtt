@@ -1,0 +1,184 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.160
+In this demo, we're going to see
+
+00:00:02.160 --> 00:00:05.220
+our first actual running transformation
+
+00:00:05.219 --> 00:00:10.364
+from a third normal form application to the star schema.
+
+00:00:10.365 --> 00:00:16.454
+We're using here the Sakila sample database that was originally published by MySQL,
+
+00:00:16.454 --> 00:00:19.769
+and there is a postgreSQL version of it called Pagila.
+
+00:00:19.769 --> 00:00:22.739
+So these are actually publicly available.
+
+00:00:22.739 --> 00:00:26.009
+Then, we are using also the facts and dimension tables
+
+00:00:26.010 --> 00:00:30.150
+design based on a public O'Reilly's dimension modelling tutorial.
+
+00:00:30.149 --> 00:00:33.539
+So, everything we're using here is actually a public domain.
+
+00:00:33.539 --> 00:00:37.369
+These are the usual tools we use.
+
+00:00:37.369 --> 00:00:39.814
+So, we're going to use the iPython SQL,
+
+00:00:39.814 --> 00:00:45.844
+which requires cycle PGE2 binary and sometimes pandas might be handy.
+
+00:00:45.844 --> 00:00:48.949
+If you haven't used iPython SQL before,
+
+00:00:48.950 --> 00:00:52.445
+you actually first have to load that extension
+
+00:00:52.445 --> 00:00:57.185
+and then you can write a one-liner SQL or a multi-line SQL.
+
+00:00:57.185 --> 00:00:58.880
+If you write a one-liner SQL,
+
+00:00:58.880 --> 00:01:03.815
+you can actually use the dollars sign to access a python variable.
+
+00:01:03.814 --> 00:01:06.414
+In the multi-line SQL, you can not.
+
+00:01:06.415 --> 00:01:09.825
+To run the connection, you're just trying to align with
+
+00:01:09.825 --> 00:01:13.995
+a postgre connection string in it and it will connect.
+
+00:01:13.995 --> 00:01:20.105
+So, the first step we do is that we load the extension.
+
+00:01:20.105 --> 00:01:23.910
+We have here our local connection, we connect to it,
+
+00:01:23.909 --> 00:01:31.319
+and then we run percent SQL, that's a one liner,
+
+00:01:31.319 --> 00:01:33.164
+and we access the connection string,
+
+00:01:33.165 --> 00:01:35.085
+which is a python variable here,
+
+00:01:35.084 --> 00:01:40.129
+and then we get connected to the database that we call pagila actually.
+
+00:01:40.129 --> 00:01:46.560
+Then we want to explore the third normal form schema here.
+
+00:01:46.560 --> 00:01:48.500
+So, I can actually say,
+
+00:01:48.500 --> 00:01:50.075
+open in new tab,
+
+00:01:50.075 --> 00:01:53.930
+and please do not open two tabs of Jupyter ever
+
+00:01:53.930 --> 00:01:58.100
+because if you have to Jupyter instances writing at the same notebook,
+
+00:01:58.099 --> 00:01:59.629
+you can get conflicts.
+
+00:01:59.629 --> 00:02:04.409
+I'm just opening here the image for you to see the schema.
+
+00:02:05.680 --> 00:02:12.115
+The first thing is, let's look at how much of data we have.
+
+00:02:12.115 --> 00:02:14.240
+So, you see here we have the stores,
+
+00:02:14.240 --> 00:02:18.000
+the films, customers, rentals, payments, and so forth.
+
+00:02:18.430 --> 00:02:21.500
+These correspond to the tables here.
+
+00:02:21.500 --> 00:02:25.985
+I counted the main ones and we have like 1,000 movies,
+
+00:02:25.985 --> 00:02:29.465
+some customers 16,000 transactions,
+
+00:02:29.465 --> 00:02:34.879
+and you will see that the transactions are actually rentals and payments.
+
+00:02:34.879 --> 00:02:38.525
+You have two staff members and to stores,
+
+00:02:38.525 --> 00:02:42.664
+but you have lots of cities for addressees and so forth.
+
+00:02:42.664 --> 00:02:45.349
+So you can actually consider that these are two stores,
+
+00:02:45.349 --> 00:02:49.525
+but people, the customers come from 600 cities.
+
+00:02:49.525 --> 00:02:51.719
+Then we have also countries.
+
+00:02:51.719 --> 00:02:58.064
+So these 100 cities are scattered in 109 countries.
+
+00:02:58.064 --> 00:03:01.664
+We can look now at the when question,
+
+00:03:01.664 --> 00:03:04.229
+i.e when these thing happen?
+
+00:03:04.229 --> 00:03:05.924
+We look at the payments table,
+
+00:03:05.925 --> 00:03:09.950
+and in the payment we have the minimum payment date and the maximum date.
+
+00:03:09.949 --> 00:03:14.524
+So it seems that the payment are happening between 2017 and 2017,
+
+00:03:14.525 --> 00:03:17.360
+like between January and May.
+
+00:03:17.360 --> 00:03:21.710
+That's five month transactions.
+
+00:03:21.710 --> 00:03:24.800
+We look also at the location where are things happening.
+
+00:03:24.800 --> 00:03:29.795
+So we can take a look at the districts and the ID.
+
+00:03:29.794 --> 00:03:32.709
+We have actually here,
+
+00:03:32.710 --> 00:03:34.649
+if you look at the address,
+
+00:03:34.649 --> 00:03:37.680
+so the addresses here are grouped by district,
+
+00:03:37.680 --> 00:03:39.105
+and then you have a city,
+
+00:03:39.104 --> 00:03:44.919
+and then actually you have a table for a city linking them to countries, and so forth.
+

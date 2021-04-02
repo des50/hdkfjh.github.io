@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.530
+Actually, we might want to also do the reverse like drill down,
+
+00:00:04.530 --> 00:00:10.734
+so going from the city level to the district level.
+
+00:00:10.734 --> 00:00:12.434
+In that case also,
+
+00:00:12.435 --> 00:00:14.835
+the drilling down was taken care of by the design.
+
+00:00:14.835 --> 00:00:16.259
+So from the city,
+
+00:00:16.259 --> 00:00:21.945
+we can roll up to a country and we can drill down to a district.
+
+00:00:21.945 --> 00:00:26.280
+Okay. Now, I'm going to move to something completely different,
+
+00:00:26.280 --> 00:00:28.995
+which is optimizing the query time.
+
+00:00:28.995 --> 00:00:30.644
+So the idea is as follows.
+
+00:00:30.644 --> 00:00:33.359
+We are going to slice, dice,
+
+00:00:33.359 --> 00:00:38.100
+roll up all the time and each time we do something of these up there,
+
+00:00:38.100 --> 00:00:41.070
+we go through the whole facts table.
+

@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.860
+OLAP cubes.
+
+00:00:01.860 --> 00:00:06.165
+Once we are done building our facts and dimension tables,
+
+00:00:06.165 --> 00:00:09.099
+we are now in a position to start querying,
+
+00:00:09.099 --> 00:00:11.414
+and exploring, and getting insights.
+
+00:00:11.414 --> 00:00:15.959
+The typical way of doing this is that we take a combination of dimensions like,
+
+00:00:15.960 --> 00:00:18.000
+for example, the movie itself,
+
+00:00:18.000 --> 00:00:24.074
+the movie title, and the branch store or the city where the branch is located,
+
+00:00:24.074 --> 00:00:26.714
+and we sum up the sales.
+
+00:00:26.714 --> 00:00:30.570
+So, this is actually a fact metric dimension,
+
+00:00:30.570 --> 00:00:36.119
+another dimension, and we have also here a third dimension, which is the month.
+
+00:00:36.119 --> 00:00:40.664
+So, you can see that these are the three dimensions of the cube.
+
+00:00:40.664 --> 00:00:44.509
+Naturally, a cube can have more dimensions if
+
+00:00:44.509 --> 00:00:48.564
+we grouped the data by more dimensions, if you so wish.
+
+00:00:48.564 --> 00:00:50.369
+The nice thing about that,
+
+00:00:50.369 --> 00:00:55.919
+that this is a model which is easy communicate the bill to business users.
+
+00:00:56.090 --> 00:01:00.990
+Once we have this abstraction in mind, users usually,
+
+00:01:00.990 --> 00:01:04.260
+who are trained in dealing with those OLAP cubes,
+
+00:01:04.260 --> 00:01:06.200
+would think in terms of rolling up,
+
+00:01:06.200 --> 00:01:10.379
+drilling down, slicing, and dicing those OLAP cubes.
+
