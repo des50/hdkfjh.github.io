@@ -1,0 +1,163 @@
+{
+  "id": 2500,
+  "project_id": 572,
+  "upload_types": [
+    "repo",
+    "zip"
+  ],
+  "file_filter_regex": "\\A(?!(((.*/)?(__MACOSX|\\.git|node_modules|bower_components|jspm_packages|\\.idea|build|.ipynb_checkpoints|\\.Trash-0|logs)(\\Z|/))))((.*\\.(js|css|py|html|htm|txt|md|markdown|sql|swift|java|gradle|xml|rst|yml|yaml|rmd|pdf|docx)\\Z)|((.*/)?(README|Readme|readme|Makefile)\\Z))",
+  "nomination_eligible": false,
+  "stand_out": "- Insert data using the COPY command to bulk insert log files instead of using INSERT on one row at a time\n- Add data quality checks\n- Create a dashboard for analytic queries on your new database",
+  "hide_criteria": false,
+  "created_at": "2019-02-15T19:38:13.841Z",
+  "updated_at": "2020-02-04T17:55:37.036Z",
+  "hashtag": "",
+  "max_upload_size_mb": 500,
+  "estimated_sla": null,
+  "project_assistant_enabled": false,
+  "available_for_cert_project": false,
+  "language": "en-us",
+  "ndkeys": [
+    "nd027-beta",
+    "nd027",
+    "nd197-beta",
+    "nd027-ent",
+    "nd027-ent-rbs",
+    "nd027-mena-connect",
+    "nd002-ent-bmw",
+    "nd025-shell",
+    "nd025-ent-shell"
+  ],
+  "coursekeys": [],
+  "is_career": false,
+  "sections": [
+    {
+      "id": 5358,
+      "name": "Table Creation",
+      "created_at": "2019-02-19T17:05:22.510Z",
+      "updated_at": "2019-02-19T17:05:43.931Z",
+      "deleted_at": null,
+      "position": 0,
+      "rubric_id": 2500,
+      "rubric_items": [
+        {
+          "id": 15468,
+          "section_id": 5358,
+          "passed_description": "The script, `create_tables.py`, runs in the terminal without errors. The script successfully connects to the Sparkify database, drops any tables if they exist, and creates the tables.",
+          "exceeded_description": null,
+          "created_at": "2019-02-19T17:05:44.092Z",
+          "updated_at": "2019-02-19T17:06:32.374Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Table creation script runs without errors.",
+          "exceedable": false
+        },
+        {
+          "id": 15469,
+          "section_id": 5358,
+          "passed_description": "CREATE statements in `sql_queries.py` specify all columns for each of the five tables with the right data types and conditions.",
+          "exceeded_description": null,
+          "created_at": "2019-02-19T17:06:32.526Z",
+          "updated_at": "2019-02-19T17:07:02.064Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Fact and dimensional tables for a star schema are properly defined.",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5359,
+      "name": "ETL",
+      "created_at": "2019-02-19T17:07:02.197Z",
+      "updated_at": "2019-02-19T17:07:10.533Z",
+      "deleted_at": null,
+      "position": 1,
+      "rubric_id": 2500,
+      "rubric_items": [
+        {
+          "id": 15470,
+          "section_id": 5359,
+          "passed_description": "The script, `etl.py`, runs in the terminal without errors. The script connects to the Sparkify database, extracts and processes the `log_data` and `song_data`, and loads data into the five tables.\n\nSince this is a subset of the much larger dataset, the solution dataset will only have 1 row with values for value containing ID for both `songid` and `artistid` in the fact table. Those are the only 2 values that the query in the `sql_queries.py` will return that are not-NONE. The rest of the rows will have NONE values for those two variables.",
+          "exceeded_description": null,
+          "created_at": "2019-02-19T17:07:10.872Z",
+          "updated_at": "2020-01-09T19:39:58.645Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "ETL script runs without errors.",
+          "exceedable": false
+        },
+        {
+          "id": 15471,
+          "section_id": 5359,
+          "passed_description": "INSERT statements are correctly written for each table, and handle existing records where appropriate. `songs` and `artists` tables are used to retrieve the correct information for the `songplays` INSERT. ",
+          "exceeded_description": null,
+          "created_at": "2019-02-19T17:08:10.841Z",
+          "updated_at": "2020-01-03T00:14:15.874Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "ETL script properly processes transformations in Python.",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 5360,
+      "name": "Code Quality",
+      "created_at": "2019-02-19T17:09:01.370Z",
+      "updated_at": "2019-02-19T17:10:19.084Z",
+      "deleted_at": null,
+      "position": 2,
+      "rubric_id": 2500,
+      "rubric_items": [
+        {
+          "id": 15472,
+          "section_id": 5360,
+          "passed_description": "The README file includes a summary of the project, how to run the Python scripts, and an explanation of the files in the repository. Comments are used effectively and each function has a docstring.",
+          "exceeded_description": null,
+          "created_at": "2019-02-19T17:09:22.000Z",
+          "updated_at": "2019-02-19T17:10:19.093Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "The project shows proper use of documentation.",
+          "exceedable": false
+        },
+        {
+          "id": 15473,
+          "section_id": 5360,
+          "passed_description": "Scripts have an intuitive, easy-to-follow structure with code separated into logical functions. Naming for variables and functions follows the PEP8 style guidelines.",
+          "exceeded_description": null,
+          "created_at": "2019-02-19T17:10:19.236Z",
+          "updated_at": "2019-02-19T17:11:40.934Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "The project code is clean and modular.",
+          "exceedable": false
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": 572,
+    "name": "Data Modeling with Postgres",
+    "nanodegree_key": "nd027",
+    "is_cert_project": false,
+    "audit_project_id": null,
+    "hashtag": null,
+    "audit_rubric_id": 2899,
+    "entitlement_required": false,
+    "is_career": false,
+    "recruitment_family_id": 5,
+    "created_at": "2019-02-12T00:17:45.577Z",
+    "updated_at": "2021-04-02T01:34:22.316Z",
+    "price": "7.03",
+    "ungradeable_price": "3.0",
+    "audit_price": "0.0"
+  }
+}

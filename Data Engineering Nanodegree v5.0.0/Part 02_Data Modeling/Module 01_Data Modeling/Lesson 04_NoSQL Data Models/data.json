@@ -1,0 +1,1380 @@
+{
+  "data": {
+    "lesson": {
+      "id": 809389,
+      "key": "73fd6e35-3319-4520-94b5-9651437235d7",
+      "title": "NoSQL Data Models",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Students will understand when to use non-relational databases based on the data business needs, their strengths and weaknesses, and how to creates tables in Apache Cassandra.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/73fd6e35-3319-4520-94b5-9651437235d7/809389/1554359805479/NoSQL+Data+Models+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/73fd6e35-3319-4520-94b5-9651437235d7/809389/1554359800975/NoSQL+Data+Models+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 826266,
+          "key": "864ae5c9-e9fb-47ca-bcde-b152d00543a1",
+          "title": "Learning Objectives",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "864ae5c9-e9fb-47ca-bcde-b152d00543a1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827039,
+              "key": "4fe85491-de8c-4285-b023-4852597d5650",
+              "title": "01 Learning Objectives -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SnZGJemYgfs",
+                "china_cdn_id": "SnZGJemYgfs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 813174,
+          "key": "3989f7f3-7a6a-4077-85d7-7d3772e92269",
+          "title": "Non-Relational Databases",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3989f7f3-7a6a-4077-85d7-7d3772e92269",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827040,
+              "key": "6de6ed1b-bcc0-43d5-9b98-9daf7ad0340b",
+              "title": "02 NonRelational Databases-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qF9zF9ls8Yw",
+                "china_cdn_id": "qF9zF9ls8Yw.mp4"
+              }
+            },
+            {
+              "id": 813176,
+              "key": "3c5f7d2c-dd2d-48d8-a98b-98f963f51013",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### When Not to Use SQL:\n\n- **Need high Availability in the data**: Indicates the system is always up and there is no downtime\n- **Have Large Amounts of Data**\n- **Need Linear Scalability**: The need to add more nodes to the system so performance will increase linearly\n- **Low Latency**: Shorter delay before the data is transferred once the instruction for the transfer has been received.\n- **Need fast reads and write**",
+              "instructor_notes": ""
+            },
+            {
+              "id": 841809,
+              "key": "d8c9bdb9-bd4c-4662-bd9c-e11f96a4b702",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is a helpful blog that describes the [different types of NoSQL databases](https://www.xenonstack.com/blog/overview-types-nosql-databases/). You can bookmark it to review this later too.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813142,
+          "key": "1a1cf3f7-6347-493e-9ab6-c4e78b285a4b",
+          "title": "Distributed Databases",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1a1cf3f7-6347-493e-9ab6-c4e78b285a4b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827041,
+              "key": "7472ac7e-3b2d-487b-8df0-236df69eab12",
+              "title": "03 Distributed Databases -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "W0KLTdziin8",
+                "china_cdn_id": "W0KLTdziin8.mp4"
+              }
+            },
+            {
+              "id": 826539,
+              "key": "1944be69-22a8-4f6c-b10a-0e0208f0f992",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n### Eventual Consistency: \nOver time (if no new changes are made)  each copy of the data will be the same, but if there are new changes, the data may be different in different locations. The data may be inconsistent for only milliseconds. There are workarounds in place to prevent getting stale data.\n\n### Commonly Asked Questions:\n\n**What does the network look like? Can you share any examples?**<br>\nIn Apache Cassandra every node is connected to every node  -- it's peer to peer database architecture.\n\n** Is data deployment strategy an important element of data modeling in Apache Cassandra?**<br>\nDeployment strategies are a great topic, but have very little to do with data modeling. Developing deployment strategies focuses on determining how many clusters to create or determining how many nodes are needed. These are topics generally covered under database architecture, database deployment and operations, which we will not cover in this lesson. Here is a useful link to learn more about it for [Apache Cassandra](https://docs.datastax.com/en/dse-planning/doc/).\n\nIn general, the size of your data and your data model can affect your deployment strategies. You need to think about how to create a cluster, how many nodes should be in that cluster, how to do the actual installation. More information about deployment strategies can be found on this [DataStax documentation page](https://docs.datastax.com/en/dse-planning/doc/)\n\n### Citation for above slides:\nHere is the [Wikipedia page](https://en.wikipedia.org/wiki/Eventual_consistency) cited in the slides.\n\n### Cassandra Architecture\nWe are not going into a lot of details about the Apache Cassandra Architecture. However, if you would like to learn more about it for your job, here are some links that you may find useful.\n\n__Apache Cassandra Data Architecture: __\n* [Understanding the architecture](https://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archTOC.html)\n*  [Cassandra Architecture](https://www.tutorialspoint.com/cassandra/cassandra_architecture.htm)\n\nThe following link will go more in-depth about the Apache Cassandra Data Model, how Cassandra reads, writes, updates, and deletes data. \n* [Cassandra Documentation](https://docs.datastax.com/en/cassandra/3.0/cassandra/dml/dmlIntro.html)\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813145,
+          "key": "49e2905b-1cb3-4deb-b4c1-8f0c4da156c5",
+          "title": "CAP Theorem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "49e2905b-1cb3-4deb-b4c1-8f0c4da156c5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827042,
+              "key": "3d4967cb-ea2f-4bb6-a938-e155c12d608a",
+              "title": "04 CAP Theorem -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ms9NcbSoFnA",
+                "china_cdn_id": "Ms9NcbSoFnA.mp4"
+              }
+            },
+            {
+              "id": 826543,
+              "key": "5cf75146-53f8-4faa-aa59-56fc6ea61e1b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### CAP Theorem:\n\n- ** Consistency**:\nEvery read from the database gets the latest (and correct) piece of data or an error\n\n- **Availability**: Every request is received and a response is given -- without a guarantee that the data is the latest update\n\n- **Partition Tolerance**: The system continues to work regardless of losing network connectivity between nodes \n\n### Additional Resource:\nYou can also check out this [Wikipedia page](https://en.wikipedia.org/wiki/CAP_theorem) on the CAP theorem.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826187,
+              "key": "434ad817-c349-4a5f-b1fb-79d7c8a93db1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Commonly Asked Questions:\n\n**Is Eventual Consistency the opposite of what is promised by SQL database per the ACID principle?**<br>\nMuch has been written about how _Consistency_ is interpreted in the ACID principle and the CAP theorem.  Consistency in the ACID principle refers to the requirement that only transactions that abide by constraints and database rules are written into the database, otherwise the database keeps previous state. In other words, the data should be correct across all rows and tables. However, consistency in the CAP theorem refers to  every read from the database getting the latest piece of data or an error. <br>To learn more, you may find this discussion useful:\n * [Discussion about ACID vs. CAP](https://www.voltdb.com/blog/2015/10/22/disambiguating-acid-cap/)\n\n**Which of these combinations is desirable for a production system - Consistency and Availability, Consistency and Partition Tolerance, or Availability and Partition Tolerance?**<br>\nAs the CAP Theorem Wikipedia entry says, \"The CAP theorem implies that in the presence of a network partition, one has to choose between consistency and availability.\" So there is no such thing as Consistency and Availability in a distributed database since it must always tolerate network issues. You can only have Consistency and Partition Tolerance (CP) or Availability and Partition Tolerance (AP). Remember, relational and non-relational databases do different things, and that's why most companies have both types of database systems.\n\n**Does Cassandra meet just Availability and Partition Tolerance in the CAP theorem?**<br>\nAccording to the CAP theorem, a database can actually only guarantee two out of the three in CAP. So supporting Availability and Partition Tolerance makes sense, since Availability and Partition Tolerance are the biggest requirements.\n\n** If Apache Cassandra is not built for consistency, won't the analytics pipeline break?**<br>\nIf I am trying to do analysis, such as determining a trend over time, e.g., how many friends does John have on Twitter, and if you have one less person counted because of \"eventual consistency\" (the data may not be up-to-date in all locations), that's OK. In theory, that can be an issue but only if you are not constantly updating. If the pipeline pulls data from one node and it has not been updated, then you won't get it. Remember, in Apache Cassandra it is about ** Eventual Consistency**.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 827454,
+          "key": "681a7d47-5637-4116-9fc4-4561aeb2bdeb",
+          "title": "Quiz 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "681a7d47-5637-4116-9fc4-4561aeb2bdeb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827455,
+              "key": "267bee95-6350-41fd-a795-6a5b69166252",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "267bee95-6350-41fd-a795-6a5b69166252",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the CAP theorem term to its definition."
+                },
+                "concepts_label": "CAP Theorem Term",
+                "answers_label": "Definition",
+                "concepts": [
+                  {
+                    "text": "Consistency ",
+                    "correct_answer": {
+                      "id": "a1550609319811",
+                      "text": "Database will get the latest piece of data requested"
+                    }
+                  },
+                  {
+                    "text": "Availability",
+                    "correct_answer": {
+                      "id": "a1550609352112",
+                      "text": " Every request is received and a response is given."
+                    }
+                  },
+                  {
+                    "text": "Partition Tolerance",
+                    "correct_answer": {
+                      "id": "a1550609352865",
+                      "text": "Network connectivity does not affect the system."
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1550609352112",
+                    "text": " Every request is received and a response is given."
+                  },
+                  {
+                    "id": "a1550609319811",
+                    "text": "Database will get the latest piece of data requested"
+                  },
+                  {
+                    "id": "a1550609352865",
+                    "text": "Network connectivity does not affect the system."
+                  }
+                ]
+              }
+            },
+            {
+              "id": 827457,
+              "key": "8b4706dc-e44f-4f94-b524-d4034be872d0",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8b4706dc-e44f-4f94-b524-d4034be872d0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Apache Cassandra is...<br>\n_(Check all that apply)_\n",
+                "answers": [
+                  {
+                    "id": "a1550609450805",
+                    "text": "A Highly Available Database",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550609466872",
+                    "text": "Linearly scalable",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550609467532",
+                    "text": "Used when ACID transactions are needed",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550609471017",
+                    "text": "An Open Source project supported by The Apache Foundation",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550609471776",
+                    "text": "A Consistency and Partition Tolerant Database during network failures ",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 813147,
+          "key": "65cecac3-8728-4fe1-b06e-3950c123185b",
+          "title": "Denormalization in Apache Cassandra",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "65cecac3-8728-4fe1-b06e-3950c123185b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827043,
+              "key": "ddb7ea11-a5cc-468d-a5eb-2f01ad13d489",
+              "title": "05 Denomorlization In Apache -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zvl4nzqJJYc",
+                "china_cdn_id": "zvl4nzqJJYc.mp4"
+              }
+            },
+            {
+              "id": 858548,
+              "key": "f00b6d63-e6c5-4fc9-82bb-0f1c99ba8f58",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note of correction:** \nAt 2:55 of the video, the instructor says \"Losing customers to outages or low latency is not [inexpensive].\"\nShe should have said \"Losing customers to outages or poor *performance* is not [inexpensive].\"",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826544,
+              "key": "404a642c-7438-4925-a7de-bdb2ae47a897",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Data Modeling in Apache Cassandra:\n- Denormalization is not just okay -- it's a must\n- Denormalization must be done for fast reads \n- Apache Cassandra has been optimized for fast writes \n- ALWAYS think Queries first  \n- One table per query is a great strategy \n- Apache Cassandra does **not** allow for JOINs between tables\n\n### Commonly Asked Questions:\n* **I see certain downsides of this approach, since in a production application, requirements change quickly and I may need to improve my queries later. Isn't that a downside of Apache Cassandra?**<br>\nIn Apache Cassandra, you want to model your data to your queries, and if your business need calls for quickly changing requirements, you need to create a new table to process the data. That is a requirement of Apache Cassandra. If your business needs calls for ad-hoc queries, these are not a strength of Apache Cassandra. However keep in mind that it is easy to create a new table that will fit your new query. \n\n\n### Additional Resource:\nHere is a reference to the DataStax documents on [Apache Cassandra].(https://docs.datastax.com/en/dse/6.7/cql/cql/ddl/dataModelingApproach.html)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826270,
+              "key": "8084fea3-ef23-405b-ae74-575f65fbde63",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8084fea3-ef23-405b-ae74-575f65fbde63",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False:\nApache Cassandra denormalization of tables in data modeling is required.\n",
+                "answers": [
+                  {
+                    "id": "a1550260705638",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550260717359",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 826271,
+              "key": "98345669-d310-47cd-b140-0796a6385834",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "98345669-d310-47cd-b140-0796a6385834",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False:\nWhen doing data modeling in Apache Cassandra 1 table per 1 query is a very acceptable practice. \n",
+                "answers": [
+                  {
+                    "id": "a1550260775562",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550260791026",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 826272,
+              "key": "19e0cc16-5a9d-462f-b95d-4cd70d817ff6",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "19e0cc16-5a9d-462f-b95d-4cd70d817ff6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False:\nWhen doing data modeling in Apache Cassandra knowing your queries first and modeling to those queries is essential. ",
+                "answers": [
+                  {
+                    "id": "a1550260844655",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550260856596",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 827458,
+              "key": "fdc17df4-ef8d-4eb3-a82a-06d72a114653",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Understanding the answers to the above quiz questions is KEY. Once you shift your thinking to this model, all the rest is easy! ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813151,
+          "key": "67ee35f9-2c73-48c2-a691-91629403bced",
+          "title": "CQL",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "67ee35f9-2c73-48c2-a691-91629403bced",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841301,
+              "key": "86d72d9c-9b71-41e6-aa7d-8c7ae8ebbe9e",
+              "title": "06 CQL",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XlUtr6T2FuA",
+                "china_cdn_id": "XlUtr6T2FuA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 826098,
+          "key": "28797bc6-fe66-4107-90a3-e67a9973f063",
+          "title": "Demo 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "28797bc6-fe66-4107-90a3-e67a9973f063",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "L3_Demo1_Two_queries_Two_Tables",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9f8588_lesson-3-demo-1-2-queries-2-tables/lesson-3-demo-1-2-queries-2-tables.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 841906,
+              "key": "46048e7a-c044-4549-8936-fb0081b372c5",
+              "title": "Demo 1 Updated",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "k8uQ8moKFPk",
+                "china_cdn_id": "k8uQ8moKFPk.mp4"
+              }
+            },
+            {
+              "id": 841799,
+              "key": "d5140885-840b-4dcf-818c-9ea4055bd30e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is the link to the demo notebook",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813155,
+          "key": "b3bf9d92-585d-4a6a-8b39-25deee61cf6f",
+          "title": "Exercise 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b3bf9d92-585d-4a6a-8b39-25deee61cf6f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827442,
+              "key": "8a685632-52e3-4b34-8494-d4c4467049bc",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c826096xJUPYTERLhedmekn4",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-2xu9x",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 3 Exercise 1 Three Queries Three Tables.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 833886,
+          "key": "9127835f-9aa4-462e-b609-e0807f7ccea0",
+          "title": "Exercise 1 Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9127835f-9aa4-462e-b609-e0807f7ccea0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 833887,
+              "key": "96a3cc15-0faf-4609-bee0-0640597de980",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c826096xJUPYTERLhedmekn4",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-rifip",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 3 Exercise 1 Three Queries Three Tables-ANSWER KEY.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 813157,
+          "key": "0600fb6e-935a-4b6b-abd2-16bff1016924",
+          "title": "Primary Key",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0600fb6e-935a-4b6b-abd2-16bff1016924",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827047,
+              "key": "f0d2bb01-a510-41d7-bc23-fe8fb05c6170",
+              "title": "08  Primary Key -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HJSdDWYCQ7s",
+                "china_cdn_id": "HJSdDWYCQ7s.mp4"
+              }
+            },
+            {
+              "id": 826579,
+              "key": "206fbcc8-7071-4105-ae87-8485c484c9d6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Primary Key\n- Must be unique\n- The PRIMARY KEY is made up of either just the PARTITION KEY or may also include additional CLUSTERING COLUMNS \n- A Simple PRIMARY KEY is just one column that is also the PARTITION KEY. A Composite PRIMARY KEY is made up of more than one column and will assist in creating a unique value and in your retrieval queries\n- The PARTITION KEY will determine the distribution of data across the system\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 831072,
+              "key": "cf75887a-e652-404d-824f-f40fb9ed1f47",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is the [DataStax documentation](https://docs.datastax.com/en/cql/3.3/cql/cql_using/useSimplePrimaryKeyConcept.html#useSimplePrimaryKeyConcept) on Primary Keys. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813163,
+          "key": "a9f15f8c-36d1-4abe-83f6-5744cf9e29d7",
+          "title": "Primary Key",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a9f15f8c-36d1-4abe-83f6-5744cf9e29d7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826215,
+              "key": "e85cb153-505f-4dcd-8754-ef41c5c80f8a",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e85cb153-505f-4dcd-8754-ef41c5c80f8a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False:  Apache Cassandra supports duplicate rows.\n",
+                "answers": [
+                  {
+                    "id": "a1550253324664",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550253332329",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 826218,
+              "key": "8844224c-bfd5-4d42-a816-3aa0e0ac7194",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8844224c-bfd5-4d42-a816-3aa0e0ac7194",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which is better: Simple or Composite Primary Keys?\n",
+                "answers": [
+                  {
+                    "id": "a1550253476919",
+                    "text": "It depends on the data you have and the queries you will do",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550253492931",
+                    "text": "Simple -- Simple is always better ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550253493681",
+                    "text": "Composite ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550253494850",
+                    "text": "Neither, it is better to use a Relational Database",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 813159,
+          "key": "01d38c21-08a5-4e12-9a95-5c74e6fb46a1",
+          "title": "Demo 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "01d38c21-08a5-4e12-9a95-5c74e6fb46a1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "L2_Demo_3_Primary_Keys",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9f85d4_lesson-3-demo-2-primary-key/lesson-3-demo-2-primary-key.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 827048,
+              "key": "77ad28ff-553f-444f-aad3-9e1af99c8705",
+              "title": "09 Demo 2 -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "K-p2zX7x-fY",
+                "china_cdn_id": "K-p2zX7x-fY.mp4"
+              }
+            },
+            {
+              "id": 841800,
+              "key": "e93a5cb4-6659-472a-8951-090c6aad58df",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is the link to the demo notebook",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813165,
+          "key": "fe20c03b-52e7-4357-b5d0-ec88ff314c83",
+          "title": "Exercise 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fe20c03b-52e7-4357-b5d0-ec88ff314c83",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827443,
+              "key": "45736e83-0274-4261-bf71-053c416e513f",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c826096xJUPYTERLhedmekn4",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-6qyx2",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 3 Exercise 2 Primary Key.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 833890,
+          "key": "37f3ea07-2e1d-46d3-a55b-8ec2ec6eefce",
+          "title": "Exercise 2: Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "37f3ea07-2e1d-46d3-a55b-8ec2ec6eefce",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 833891,
+              "key": "5d3570af-e8bb-4ad1-a23e-94d4a2fff9f5",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c826096xJUPYTERLhedmekn4",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-0emmq",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 3 Exercise 2 Primary Key-ANSWER KEY.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 826222,
+          "key": "347092ad-2042-4385-90e5-b258f41941f4",
+          "title": "Clustering Columns",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "347092ad-2042-4385-90e5-b258f41941f4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827049,
+              "key": "773aa2a8-fa75-40bc-b9d2-d436deb3cb57",
+              "title": "10 Clustering Columns -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SKJLSKPis_0",
+                "china_cdn_id": "SKJLSKPis_0.mp4"
+              }
+            },
+            {
+              "id": 826224,
+              "key": "0bcc70ec-28d9-4465-9571-29e2b6435d85",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Clustering Columns:\n- The clustering column will sort the data in sorted **ascending** order, e.g., alphabetical order. **Note: this is a mistake in the video, which says descending order.**\n- More than one clustering column can be added (or none!)\n- From there the clustering columns will sort in order of how they were added to the primary key\n\n\n### Commonly Asked Questions:\n**How many clustering columns can we add?**<br>\nYou can use as many clustering columns as you would like. You cannot use the clustering columns out of order in the SELECT statement. You may choose to omit using a clustering column in your SELECT statement. That's OK. Just remember to use them in order when you are using the SELECT statement.\n\n\n### Additional Resources:\n1. Here is the [DataStax documentation](https://docs.datastax.com/en/cql/3.3/cql/cql_using/useCompoundPrimaryKeyConcept.html) on Composite Partition Keys.\n2. This [Stackoverflow](https://stackoverflow.com/questions/24949676/difference-between-partition-key-composite-key-and-clustering-key-in-cassandra) page provides a nice description of the difference between Partition Keys and Clustering Keys.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826268,
+              "key": "256d85b1-d2a3-4e6d-ba98-f69c5f245803",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "256d85b1-d2a3-4e6d-ba98-f69c5f245803",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "The PRIMARY KEY is made up of...",
+                "answers": [
+                  {
+                    "id": "a1550260134462",
+                    "text": "The composite key, the primary key, and the clustering key",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550260139503",
+                    "text": "The composite key, the partition key, and the clustering columns",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550260140178",
+                    "text": "The partition key and the clustering columns",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 826269,
+              "key": "587c2c2b-72b4-4c98-acaa-4e5c329612bd",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "587c2c2b-72b4-4c98-acaa-4e5c329612bd",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "A Clustering Column is required in the Primary Key",
+                "answers": [
+                  {
+                    "id": "a1550260504096",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550260511171",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 826225,
+          "key": "93d34780-c384-48fb-b92c-a734e80cea0f",
+          "title": "Demo 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "93d34780-c384-48fb-b92c-a734e80cea0f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "L3_Demo_3_Clustering_Columns",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9f8606_lesson-3-demo-3-clustering-column/lesson-3-demo-3-clustering-column.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 827050,
+              "key": "b4266f8b-edf4-4f41-908a-e86d8b1c36ad",
+              "title": "11 Demo 3 -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uXCV1cZ6CzM",
+                "china_cdn_id": "uXCV1cZ6CzM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 826226,
+          "key": "099e6185-a67e-4944-b8de-5b3471dbff57",
+          "title": "Exercise 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "099e6185-a67e-4944-b8de-5b3471dbff57",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827444,
+              "key": "006d71e3-621d-484d-bb80-cd937be54f40",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c826096xJUPYTERLhedmekn4",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-odonk",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 3 Exercise 3 Clustering Column.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 833895,
+          "key": "512d3115-ba9c-41f7-a1fd-0a676292e7d5",
+          "title": "Exercise 3: Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "512d3115-ba9c-41f7-a1fd-0a676292e7d5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 833896,
+              "key": "32ed57c7-aa74-4b91-bf55-eed860ba7e00",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c826096xJUPYTERLhedmekn4",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-0m1iv",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 3 Exercise 3 Clustering Column-ANSWER KEY.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 826227,
+          "key": "e06366bf-bc5b-4de9-a773-2036cadb0113",
+          "title": "WHERE Clause",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e06366bf-bc5b-4de9-a773-2036cadb0113",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827051,
+              "key": "aa50dc1d-f0f5-465b-b29d-f7b5016e0e95",
+              "title": "12 WHERE Clause -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-iSkI-rFIdE",
+                "china_cdn_id": "-iSkI-rFIdE.mp4"
+              }
+            },
+            {
+              "id": 826580,
+              "key": "74832013-a3c3-43bc-a107-da33dfa83615",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### WHERE clause\n- Data Modeling in Apache Cassandra is query focused, and that focus needs to be on the WHERE clause \n- Failure to include a WHERE clause will result in an error \n\n### Additional Resource\nAVOID using \"ALLOW FILTERING\": Here is a reference [in DataStax](https://www.datastax.com/dev/blog/allow-filtering-explained-2) that explains ALLOW FILTERING and why you should not use it.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826251,
+              "key": "41deb193-2569-4c74-98eb-b2081813422c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Commonly Asked Questions:\n\n**Why do we need to use a `WHERE` statement since we are not concerned about analytics? Is it only for debugging purposes?**<br>\nThe `WHERE` statement is allowing us to do the fast reads. With Apache Cassandra, we are talking about big data -- think terabytes of data -- so we are making it fast for read purposes. Data is spread across all the nodes. By using the `WHERE` statement, we know which node to go to, from which node to get that data and serve it back. For example, imagine we have 10 years of data on 10 nodes or servers. So 1 year's data is on a separate node. By using the `WHERE year = 1` statement we know which node to visit fast to pull the data from.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826240,
+              "key": "d349ffbd-1f44-49d8-a98a-76ba473ea1be",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d349ffbd-1f44-49d8-a98a-76ba473ea1be",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Can you do `SELECT * FROM myTable` in Apache Cassandra?\n",
+                "answers": [
+                  {
+                    "id": "a1550256167256",
+                    "text": "Yes",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550256205500",
+                    "text": "No",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550256207623",
+                    "text": "It is highly discouraged as performance will be slow (or may just fail) but it is possible with a configuration setting",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550256215883",
+                    "text": "Yes, and no one should worry about it",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 826228,
+          "key": "6c0c3739-57ff-44ad-aff9-9e1fc51395a7",
+          "title": "Demo 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6c0c3739-57ff-44ad-aff9-9e1fc51395a7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "L3_Demo_4_Where_Clause",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9f8631_lesson-3-demo-4-using-the-where-clause/lesson-3-demo-4-using-the-where-clause.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 827052,
+              "key": "1f4fdfbf-4acd-4559-a44c-e9a778264841",
+              "title": "13 Demo 4 -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "px9xfHx_cLk",
+                "china_cdn_id": "px9xfHx_cLk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 826229,
+          "key": "14222a9b-5d25-4b97-a09b-18d5f5a1cdc4",
+          "title": "Exercise 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "14222a9b-5d25-4b97-a09b-18d5f5a1cdc4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827445,
+              "key": "bf6ae690-bc81-4872-ac73-c69774cfad09",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c826096xJUPYTERLhedmekn4",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-ukor0",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 3 Exercise 4 Using the WHERE Clause.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            },
+            {
+              "id": 827553,
+              "key": "f6bbc3cb-e158-4847-993f-80ca5362e6ad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Try out the notebook for the demo by completing this exercise. Your solution should match the demo notebook.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826230,
+          "key": "a359a5dd-e7b2-4542-a4fe-7e1cb1ff5b18",
+          "title": "Lesson Wrap Up",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a359a5dd-e7b2-4542-a4fe-7e1cb1ff5b18",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827055,
+              "key": "e13bc5f8-abc1-4982-ba46-29450c366356",
+              "title": "14 Lesson Wrap Up -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LqN2i5blSxE",
+                "china_cdn_id": "LqN2i5blSxE.mp4"
+              }
+            },
+            {
+              "id": 826243,
+              "key": "f538faa8-f440-4ccb-9ed4-5ffee3bb4a52",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What we covered in this lesson:\n\n- Basics of Distributed Database Design \n- Must know your queries and model the tables to your queries \n- Importance of Denormalization \n- Apache Cassandra is a popular NoSQL database\n- CQL and some key differences with SQL\n- Primary Key, Partition Key, and Clustering Column\n- The WHERE clause \n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826241,
+          "key": "999d5e15-a12a-457d-91d0-fc33f773b3a3",
+          "title": "Course Wrap Up",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "999d5e15-a12a-457d-91d0-fc33f773b3a3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827056,
+              "key": "08977c15-777a-4f06-8467-6cab69607f44",
+              "title": "15 Course Wrap Up -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "eWNeh8__Jrg",
+                "china_cdn_id": "eWNeh8__Jrg.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

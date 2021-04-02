@@ -1,0 +1,315 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ACID Transactions</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Data Modeling</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction to the Course.html">01. Introduction to the Course</a>
+    </li>
+    <li class="">
+      <a href="02. What is Data Modeling.html">02. What is Data Modeling?</a>
+    </li>
+    <li class="">
+      <a href="03. Why is Data Modeling Important.html">03. Why is Data Modeling Important?</a>
+    </li>
+    <li class="">
+      <a href="04. Who does this type of work.html">04. Who does this type of work?</a>
+    </li>
+    <li class="">
+      <a href="05. Intro to Relational Databases.html">05. Intro to Relational Databases</a>
+    </li>
+    <li class="">
+      <a href="06. Relational Databases.html">06. Relational Databases</a>
+    </li>
+    <li class="">
+      <a href="07. When to use a relational database.html">07. When to use a relational database?</a>
+    </li>
+    <li class="">
+      <a href="08. ACID Transactions.html">08. ACID Transactions</a>
+    </li>
+    <li class="">
+      <a href="09. When Not to Use a Relational Database.html">09. When Not to Use a Relational Database</a>
+    </li>
+    <li class="">
+      <a href="10. What is PostgreSQL.html">10. What is PostgreSQL?</a>
+    </li>
+    <li class="">
+      <a href="11. Demos Creating a Postgres Table.html">11. Demos: Creating a Postgres Table</a>
+    </li>
+    <li class="">
+      <a href="12. Exercise 1 Creating a Table with Postgres.html">12. Exercise 1: Creating a Table with Postgres</a>
+    </li>
+    <li class="">
+      <a href="13. Solution for Exercise 1 Create a Table with Postgres.html">13. Solution for Exercise 1: Create a Table with Postgres</a>
+    </li>
+    <li class="">
+      <a href="14. NoSQL Databases.html">14. NoSQL Databases</a>
+    </li>
+    <li class="">
+      <a href="15. What is Apache Cassandra.html">15. What is Apache Cassandra?</a>
+    </li>
+    <li class="">
+      <a href="16. When to Use a NoSql Database.html">16. When to Use a NoSql Database</a>
+    </li>
+    <li class="">
+      <a href="17. When Not to Use a NoSql Database.html">17. When Not to Use a NoSql Database</a>
+    </li>
+    <li class="">
+      <a href="18. Demo 2 Creating table with Cassandra.html">18. Demo 2: Creating table with Cassandra</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise 2 Create table with Cassandra.html">19. Exercise 2: Create table with Cassandra</a>
+    </li>
+    <li class="">
+      <a href="20. Solution for Exercise 2 Create table with Cassandra.html">20. Solution for Exercise 2: Create table with Cassandra</a>
+    </li>
+    <li class="">
+      <a href="21. Conclusion.html">21. Conclusion</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">08. ACID Transactions</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3><p>07 ACID Transactions -</p></h3>
+  <video controls>
+  <source src="08. 07 ACID Transactions --rr35DQljFnc.mp4" type="video/mp4">
+
+  <track default="true" kind="subtitles" srclang="en" src="08. 07 ACID Transactions --rr35DQljFnc.en.vtt" label="en">
+</video>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="acid-transactions">ACID Transactions</h3>
+<p>Properties of database transactions intended to guarantee validity even in the event of errors or power failures.</p>
+<ul>
+<li><p><strong>Atomicity:</strong> The whole transaction is processed or nothing is processed. A commonly cited example of an atomic transaction is money transactions between two bank accounts. The transaction of transferring money from one account to the other is made up of two operations. First, you have to withdraw money in one account, and second you have to save the withdrawn money to the second account. An atomic transaction, i.e., when either all operations occur or nothing occurs, keeps the database in a consistent state. This ensures that if either of those two operations (withdrawing money from the 1st account or saving the money to the 2nd account) fail, the money is neither lost nor created. Source <a href="https://en.wikipedia.org/wiki/Atomicity_%28database_systems%29" rel="noopener noreferrer" target="_blank">Wikipedia</a> for a detailed description of this example.<br />
+<br><BR></p></li>
+<li><p><strong>Consistency:</strong> Only transactions that abide by constraints and rules are written into the database, otherwise the database keeps the previous state. The data should be correct across all rows and tables. Check out additional information about consistency on <a href="https://en.wikipedia.org/wiki/Consistency_%28database_systems%29" rel="noopener noreferrer" target="_blank">Wikipedia</a>.<br><BR></p></li>
+<li><p><strong>Isolation:</strong> Transactions are processed independently and securely, order does not matter. A low level of isolation enables many users to access the data simultaneously, however this also increases the possibilities of concurrency effects (e.g., dirty reads or lost updates). On the other hand, a high level of isolation reduces these chances of concurrency effects, but also uses more system resources and transactions blocking each other. Source: <a href="https://en.wikipedia.org/wiki/Isolation_%28database_systems%29" rel="noopener noreferrer" target="_blank">Wikipedia</a> </p></li>
+<li><p><strong>Durability:</strong> Completed transactions are saved to database even in cases of system failure. A commonly cited example includes tracking flight seat bookings. So once the flight booking records a confirmed seat booking, the seat remains booked even if a system failure occurs. <br />
+Source: <a href="https://en.wikipedia.org/wiki/ACID" rel="noopener noreferrer" target="_blank">Wikipedia</a>. </p></li>
+</ul>
+<p>We cover ACID transactions in much depth in Lesson 2 of this course.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>RDB Advantages</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Which of these are benefits of a relational database?</p></legend>
+    </fieldset>
+
+    <div>
+      <input type="checkbox" value="a1550081589465" name="825429" id="a1550081589465">
+      <label for="a1550081589465"><p>ACID Transactions</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1550081609854" name="825429" id="a1550081609854">
+      <label for="a1550081609854"><p>Ability to do JOINS</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1550081610214" name="825429" id="a1550081610214">
+      <label for="a1550081610214"><p>Can handle big data</p></label>
+    </div>
+    <div>
+      <input type="checkbox" value="a1550081610650" name="825429" id="a1550081610650">
+      <label for="a1550081610650"><p>Easy to change business requirements on the data</p></label>
+    </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    <ul>
+      <li>ACID Transactions</li>
+      <li>Ability to do JOINS</li>
+      <li>Easy to change business requirements on the data</li>
+  </ul>
+  </details>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3><p>Joins</p></h3>
+  <div>
+  <form>
+    <fieldset>
+      <legend><p>Can you JOIN a table with another table on any column? </p></legend>
+    </fieldset>
+
+      <div>
+        <input type="radio" value="a1550081779682" name="825430" id="a1550081779682">
+        <label for="a1550081779682"><p>Yes, as long there are matching values in the columns</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1550081786630" name="825430" id="a1550081786630">
+        <label for="a1550081786630"><p>No, only on columns with the same name</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1550081787030" name="825430" id="a1550081787030">
+        <label for="a1550081787030"><p>Yes, you can join any columns together</p></label>
+      </div>
+      <div>
+        <input type="radio" value="a1550081787479" name="825430" id="a1550081787479">
+        <label for="a1550081787479"><p>No, only on columns in the same table</p></label>
+      </div>
+  </form>
+
+  <details>
+    <summary><strong>SOLUTION:</strong></summary>
+    Yes, as long there are matching values in the columns
+  </details>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="09. When Not to Use a Relational Database.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. ACID Transactions')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

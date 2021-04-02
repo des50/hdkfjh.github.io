@@ -1,0 +1,1324 @@
+{
+  "data": {
+    "lesson": {
+      "id": 809388,
+      "key": "dd3dfaa9-ba17-48eb-a6e6-8edda0b3c7df",
+      "title": "Relational Data Models",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson, students understand the purpose of data modeling, the strengths and weaknesses of relational databases, and create schemas and tables in Postgres\n",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/dd3dfaa9-ba17-48eb-a6e6-8edda0b3c7df/809388/1554359827190/Relational+Data+Models+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/dd3dfaa9-ba17-48eb-a6e6-8edda0b3c7df/809388/1554359822432/Relational+Data+Models+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 825708,
+          "key": "d315276a-d5f4-46c5-971d-367142dfe580",
+          "title": "Learning Objective",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d315276a-d5f4-46c5-971d-367142dfe580",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826987,
+              "key": "e63049eb-fb54-4a3e-9272-94b6dfe0c256",
+              "title": "01 Learning Objective -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "S1G7BurtYJ0",
+                "china_cdn_id": "S1G7BurtYJ0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 825492,
+          "key": "af6b34f3-442f-4160-b3de-e22c05e67b82",
+          "title": "Databases",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "af6b34f3-442f-4160-b3de-e22c05e67b82",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826988,
+              "key": "fe49a022-73d8-4e97-b3cd-17e2d2a07d88",
+              "title": "02 Databases -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EvjmD7mTqQM",
+                "china_cdn_id": "EvjmD7mTqQM.mp4"
+              }
+            },
+            {
+              "id": 825709,
+              "key": "1eb6f3bd-dcbc-49c0-81aa-9a223fdfe25f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Rule 1: The information rule:\nAll information in a relational database is represented explicitly at the logical level and in exactly one way – by values in tables.\n\n\n### More information on Codd's 12 Rules can be found here:  \n[Wikipedia link](https://en.wikipedia.org/wiki/Codd%27s_12_rules)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 809439,
+          "key": "5fa6bb70-23e5-4eb7-a04c-1c49054e77a0",
+          "title": "Importance of Relational Databases",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5fa6bb70-23e5-4eb7-a04c-1c49054e77a0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826989,
+              "key": "9082db6f-e82c-498c-84a7-509153fb7b83",
+              "title": "03 Importance Of Relational Databases -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QgBHz0bL1Sw",
+                "china_cdn_id": "QgBHz0bL1Sw.mp4"
+              }
+            },
+            {
+              "id": 825710,
+              "key": "a95c594e-6149-494b-81e8-cf6b9e7c4e22",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Importance of Relational Databases:\n- __Standardization of data model: __ Once your data is transformed into the rows and columns format, your data is standardized and you can query it with SQL\n- __Flexibility in adding and altering tables: __Relational databases gives you flexibility to add tables, alter tables, add and remove data.\n- __Data Integrity: __Data Integrity is the backbone of using a relational database.\n- __Structured Query Language (SQL): __ A standard language can be used to access the data with a predefined language. \n- __Simplicity :__ Data is systematically stored and modeled in tabular format.\n- __Intuitive Organization: __The spreadsheet format is intuitive but intuitive to data modeling in relational databases.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 809440,
+          "key": "3fbb09ab-588d-4e07-8a8b-b3cbb4462851",
+          "title": "OLAP vs OLTP",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3fbb09ab-588d-4e07-8a8b-b3cbb4462851",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826990,
+              "key": "38edc20d-6855-49cc-b742-521570fdc59c",
+              "title": "04 OLAP V OLTP-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ocoyWgYllFE",
+                "china_cdn_id": "ocoyWgYllFE.mp4"
+              }
+            },
+            {
+              "id": 851029,
+              "key": "89f69d15-da89-409c-ae78-527c1cb0258b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note - Correction from video:**\n\nAt the 1:04 mark of the video, the instructor mistakenly says: \n\n- \"OLTP queries will have little aggregations really, if any, while OLTP will heavily focus on aggregations.\" \n\nThe instructor misspoke here. **The CORRECT statement is:**\n\n- **\"OLTP queries will have little aggregations really, if any, while OLAP will heavily focus on aggregations.\"**\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 825711,
+              "key": "e95e7d67-9088-40c2-b1e6-0d881706e45e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Online Analytical Processing (OLAP):**<br>\nDatabases optimized for these workloads allow for complex analytical and ad hoc queries, including aggregations. These type of databases are optimized for reads.\n\n**Online Transactional Processing (OLTP):**<br>\nDatabases optimized for these workloads allow for less complex queries in large volume. The  types of  queries for these databases are read, insert, update, and delete. \n\nThe key to remember the difference between OLAP and OLTP is analytics (A) vs transactions (T). If you want to get the price of a shoe then you are using OLTP (this has very little or no aggregations). If you want to know the total stock of shoes a particular store sold, then this requires using OLAP (since this will require aggregations).\n\n#### Additional Resource on the difference between OLTP and OLAP:\nThis [Stackoverflow post](https://stackoverflow.com/questions/21900185/what-are-oltp-and-olap-what-is-the-difference-between-them) describes it well.\n\n**Note:** We will also be going more in depth with OLAP vs OLTP in __Course 3. Cloud Data Warehouses__",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813099,
+          "key": "bcb365fc-b7ed-4613-9759-cec096e026ea",
+          "title": "Quiz 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bcb365fc-b7ed-4613-9759-cec096e026ea",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 825712,
+              "key": "d8a54ee6-508c-4db4-a164-62ddfc81451c",
+              "title": "True or False statement:",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d8a54ee6-508c-4db4-a164-62ddfc81451c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: OLTP queries are read heavy and focus primarily on analytics.  ",
+                "answers": [
+                  {
+                    "id": "a1550165020389",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550165039497",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825713,
+              "key": "40b000d9-55d8-4e37-82a3-6e6dc221641e",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "40b000d9-55d8-4e37-82a3-6e6dc221641e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": " What makes data modeling for relational databases different?",
+                "answers": [
+                  {
+                    "id": "a1550165092621",
+                    "text": " The ability to model data in a way that is intuitive",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550165102749",
+                    "text": "You must model for your queries first",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550165103477",
+                    "text": "There is no flexibility or agile nature to this process",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 813105,
+          "key": "f73f481e-2669-4378-a9fb-57247e39c3f3",
+          "title": "Structuring the Database: Normalization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f73f481e-2669-4378-a9fb-57247e39c3f3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826991,
+              "key": "b1189622-c8d5-4194-a8be-f90cf7a2a868",
+              "title": "05 Structuring The Database Normalization -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "92dREpe9SLg",
+                "china_cdn_id": "92dREpe9SLg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 813107,
+          "key": "63e559a7-0c06-45f5-9ea8-8aa4a3c930a2",
+          "title": "Objectives of Normal Form",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "63e559a7-0c06-45f5-9ea8-8aa4a3c930a2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826992,
+              "key": "78ee364d-2c75-4f60-b275-24dd0bafa486",
+              "title": "06 Objectives Of Normal Form -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "B_JtLJbhszM",
+                "china_cdn_id": "B_JtLJbhszM.mp4"
+              }
+            },
+            {
+              "id": 825714,
+              "key": "56af75a8-2254-40db-abb9-324ab6c268ce",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Objectives of Normal Form:\n\n1. To free the database  from unwanted insertions, updates, & deletion dependencies\n2. To reduce the need for refactoring the database as new types of data are introduced\n3. To make the relational model more informative to users\n4. \tTo make the database neutral to the query statistics\n\nSee this [Wikipedia page](https://en.wikipedia.org/wiki/Database_normalization) to learn more.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813113,
+          "key": "6b9e48af-6988-41c4-aa7c-ec6c0d74b23e",
+          "title": "Normal Forms",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6b9e48af-6988-41c4-aa7c-ec6c0d74b23e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841915,
+              "key": "62ceb7f7-e3b0-4a31-a028-d7c708be4907",
+              "title": "07 Normal Forms Updated",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ZUnI99efjJQ",
+                "china_cdn_id": "ZUnI99efjJQ.mp4"
+              }
+            },
+            {
+              "id": 825719,
+              "key": "3b67cbe0-c20e-402f-ba94-466a71fed630",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "1. **How to reach First Normal Form (1NF):**<br>\n  - Atomic values: each cell contains unique and single values<br>\n  - Be able to add data without altering tables<br>\n  - Separate different relations into different tables<br>\n  - Keep relationships between tables together with foreign keys\n\n2. **Second Normal Form (2NF):**<br>\n - Have reached 1NF\n - All columns in the table must rely on the Primary Key\n\n3. **Third Normal Form (3NF):**<br>\n  - Must be in 2nd Normal Form\n - No transitive dependencies\n  -  Remember, transitive dependencies you are trying to maintain is that to get from A-> C, you want to avoid going through B.\n\n  **When to use 3NF:** \n - When you want to update data, we want to be able to do in just 1 place. We want to avoid updating the table in the Customers Detail table (in the example in the lecture slide). \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 825715,
+              "key": "af921fdb-f745-420e-a020-9b1e59c7d005",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "af921fdb-f745-420e-a020-9b1e59c7d005",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "**What is the maximum normal form that should be attempted while doing practical data modeling?**",
+                "answers": [
+                  {
+                    "id": "a1550165307864",
+                    "text": "First normal form",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550165318334",
+                    "text": "Second normal form",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550165319016",
+                    "text": "Third normal form",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550165319731",
+                    "text": "Fourth normal form",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 813115,
+          "key": "d95c3d50-daa5-4ebe-ba5c-756f89be643f",
+          "title": "Demo 1: Creating Normalized Tables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d95c3d50-daa5-4ebe-ba5c-756f89be643f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "L1_Demo_1_Creating_Normalized_tables",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9eaee6_lesson-2-demo-1-creating-normalized-tables/lesson-2-demo-1-creating-normalized-tables.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 826994,
+              "key": "b6ccd8d8-37b8-493e-99e0-93454ec9b34f",
+              "title": "08 Demo 01 -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zdonkmTttaI",
+                "china_cdn_id": "zdonkmTttaI.mp4"
+              }
+            },
+            {
+              "id": 825735,
+              "key": "530623f2-7809-4df7-a7fb-07a11fa021ad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Again, the **goal of the demo ** was to **maintain data integrity and reducing data redundancy.**\n\nHere is the link to the demo file.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813121,
+          "key": "62f0b672-e897-4774-a13c-1f2a7d8a2431",
+          "title": "Exercise 1: Creating Normalized Tables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62f0b672-e897-4774-a13c-1f2a7d8a2431",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827429,
+              "key": "50e638db-ab26-44fb-a1b3-b4f2ca2d2961",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c825601xJUPYTERLghx72lvz",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-6zkkp",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 2 Exercise 1 Creating Normalized Tables.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 833655,
+          "key": "9191c512-569d-41d0-acb4-7f1f8f35eec0",
+          "title": "Solution: Exercise 1: Creating Normalized Tables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9191c512-569d-41d0-acb4-7f1f8f35eec0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 833656,
+              "key": "cd60e06c-e37e-4f28-a3bf-eb7590e50bb8",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c825601xJUPYTERLghx72lvz",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-4opdu",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 2 Exercise 1 Creating Normalized Tables--ANSWER KEY.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 813124,
+          "key": "358842ca-638e-4983-ada5-5e3cae820020",
+          "title": "Denormalization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "358842ca-638e-4983-ada5-5e3cae820020",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826997,
+              "key": "c611d277-674f-41e8-b3c7-e93b5738d182",
+              "title": "09 Denormalization -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jJezt6YGweA",
+                "china_cdn_id": "jJezt6YGweA.mp4"
+              }
+            },
+            {
+              "id": 825748,
+              "key": "1300aa66-6e34-4136-b9a4-dd9c7ee55cc7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Denormalization:** \n\nJOINS on the database allow for outstanding flexibility but are extremely slow. If you are dealing with heavy reads on your database, you may want to think about denormalizing your tables. You get your data into normalized form, and then you proceed with denormalization. So, denormalization comes after normalization. \n\n**Citation for slides:**  https://en.wikipedia.org/wiki/Denormalization\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 825737,
+              "key": "bf7ff5bd-b7db-4c1d-855c-4659cc4bfa89",
+              "title": "True or False statement:",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bf7ff5bd-b7db-4c1d-855c-4659cc4bfa89",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: Denormalization is just allowing data to come in as it is with no organization or planning.",
+                "answers": [
+                  {
+                    "id": "a1550166969855",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550166981494",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 826531,
+          "key": "e5fe9c95-f391-4239-a65a-1075d23639b6",
+          "title": "Demo 2: Creating Denormalized Tables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e5fe9c95-f391-4239-a65a-1075d23639b6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "L2_Demo_2_Creating_Denormalized_Tables",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9eb1d2_lesson-2-demo-2-creating-denormalized-tables/lesson-2-demo-2-creating-denormalized-tables.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 826998,
+              "key": "3316d173-09ab-4b96-8c88-d3a6175432ff",
+              "title": "10 Demo 02-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Wm11Mq8ez-A",
+                "china_cdn_id": "Wm11Mq8ez-A.mp4"
+              }
+            },
+            {
+              "id": 841797,
+              "key": "2eaed23c-bd3b-4061-8d9e-4968becd3acd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is the link to the demo notebook.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 832605,
+          "key": "757d847f-b220-4196-b82b-7e4cda2ae590",
+          "title": "Denormalization Vs. Normalization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "757d847f-b220-4196-b82b-7e4cda2ae590",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 832606,
+              "key": "dc17469e-966d-40c2-a6c7-886f936572a4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's take a moment to make sure you understand what was in the demo regarding denormalized vs. normalized data. These are important concepts, so make sure to spend some time reflecting on these.\n\n** Normalization** is about trying to increase data integrity by reducing the number of copies of the data. Data that needs to be added or updated will be done in as few places as possible. \n\n** Denormalization** is trying to increase performance by reducing the number of joins between tables (as joins can be slow). Data integrity will take a bit of a potential hit, as there will be more copies of the data (to reduce JOINS). \n\n\n## Example of Denormalized Data:\n\nAs you saw in the earlier demo, this denormalized table contains a column with the Artist name that includes duplicated rows, and another column with a list of songs. \n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 832607,
+              "key": "8acaa5c0-b38a-420b-bff1-b715068159f4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/March/5c788517_table1/table1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8acaa5c0-b38a-420b-bff1-b715068159f4",
+              "caption": "",
+              "alt": "",
+              "width": 1468,
+              "height": 334,
+              "instructor_notes": null
+            },
+            {
+              "id": 832608,
+              "key": "e59bada2-088c-40d7-be73-c747da977075",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Example of Normalized Data:\n\nNow for normalized data, Amanda used 3NF. You see a few changes:<br>\n1) _No row contains a list of items._ For e.g., the list of song has been replaced with each song having its own row in the Song table.<br>\n2) _Transitive dependencies have been removed_. For e.g., album ID is the PRIMARY KEY for the album year in Album Table. Similarly, each of the other tables have a unique primary key that can identify the other values in the table (e.g., song id and song name within Song table).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 832753,
+              "key": "2b32d8b8-9654-46ce-8565-1d59e84361ba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Song_Table",
+              "instructor_notes": ""
+            },
+            {
+              "id": 832750,
+              "key": "24efc349-65f4-4f3e-8a1e-92cbc19ec73c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/March/5c797e7e_table4/table4.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/24efc349-65f4-4f3e-8a1e-92cbc19ec73c",
+              "caption": "",
+              "alt": "",
+              "width": 938,
+              "height": 488,
+              "instructor_notes": null
+            },
+            {
+              "id": 832754,
+              "key": "3da797d1-b271-4ea9-b4cb-9bace80992d7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Album_Table",
+              "instructor_notes": ""
+            },
+            {
+              "id": 832751,
+              "key": "98f4cd58-4ea4-45c1-9ba2-ec79ffa8a107",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/March/5c797e87_table5/table5.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/98f4cd58-4ea4-45c1-9ba2-ec79ffa8a107",
+              "caption": "",
+              "alt": "",
+              "width": 934,
+              "height": 276,
+              "instructor_notes": null
+            },
+            {
+              "id": 832755,
+              "key": "48946a13-e6ed-4a6b-8e99-8a9bced55aae",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Artist_Table",
+              "instructor_notes": ""
+            },
+            {
+              "id": 832752,
+              "key": "96c4617e-d17f-4342-9f5d-117b2d0ef938",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/March/5c797e8e_table6/table6.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/96c4617e-d17f-4342-9f5d-117b2d0ef938",
+              "caption": "",
+              "alt": "",
+              "width": 590,
+              "height": 206,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 825783,
+          "key": "fdc4d7b2-ec8b-4a4b-ae0b-410a67eec186",
+          "title": "Exercise 2: Creating Denormalized Tables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fdc4d7b2-ec8b-4a4b-ae0b-410a67eec186",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827440,
+              "key": "b8c39ac1-7cf0-4457-8e76-1e876c088bf0",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c825601xJUPYTERLghx72lvz",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-irh3d",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 2 Exercise 2 Creating Denormalized Tables.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            },
+            {
+              "id": 825786,
+              "key": "edd993ee-d78e-4594-a9cb-654c73a8328e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "** Troubleshooting:**<br>\n\n- If you get an error for the insert statements: `Error: Inserting Rows\ncolumn \"transaction_id\" of relation \"transactions\" does not exist` make sure you have dropped the table `transactions` first.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 833657,
+          "key": "a05c625a-2e9b-45e2-b6e3-53f2cdb023f8",
+          "title": "Solution: Exercise 2: Creating Denormalized Tables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a05c625a-2e9b-45e2-b6e3-53f2cdb023f8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 833658,
+              "key": "c5f096f5-75df-4d24-933b-e5debb23e13c",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c825601xJUPYTERLghx72lvz",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-72lhd",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 2 Exercise 2 Creating Denormalized Tables--ANSWER KEY.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 825716,
+          "key": "1523f798-d9c1-4ce8-bb67-e8e1c8fd7ef4",
+          "title": "Fact and Dimension Tables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1523f798-d9c1-4ce8-bb67-e8e1c8fd7ef4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826999,
+              "key": "15ec5f0d-05cd-46b4-8e3c-aef233b49d17",
+              "title": "11 Fact And Dimension Tables -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3ala0SDBCyY",
+                "china_cdn_id": "3ala0SDBCyY.mp4"
+              }
+            },
+            {
+              "id": 825734,
+              "key": "e99d0885-f545-4288-a2fa-51de46312ebd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Citations for slides:** \n- https://en.wikipedia.org/wiki/Dimension_(data_warehouse)\n- https://en.wikipedia.org/wiki/Fact_table\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 837287,
+              "key": "aff82ec2-e018-41c7-8d7a-ebc988f74937",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The following image shows the relationship between the fact and dimension tables for the example shown in the video. As you can see in the image, the unique primary key for each Dimension table is included in the Fact  table. \n\nIn this example, it helps to think about the __Dimension tables__ providing the following information:\n* __Where__ the product was bought? (Dim_Store table) \n* __When__ the product was bought? (Dim_Date table)\n* __What__ product was bought? (Dim_Product table)\n\nThe __Fact table__ provides the __metric of the business process__ (here Sales).\n* __How many__ units of products were bought? (Fact_Sales table)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 837290,
+              "key": "80e15c3d-a228-4957-a96f-c3873ed97488",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/March/5c81772b_dimension-fact-tables/dimension-fact-tables.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/80e15c3d-a228-4957-a96f-c3873ed97488",
+              "caption": "",
+              "alt": "",
+              "width": 1002,
+              "height": 648,
+              "instructor_notes": null
+            },
+            {
+              "id": 839352,
+              "key": "f2d2e4d8-76c0-4db7-9643-9bff2defb370",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you are familiar with __Entity Relationship Diagrams__ (ERD), you will find the depiction of STAR and SNOWFLAKE schemas in the demo familiar. The ERDs show the data model in a concise way that is also easy to interpret. ERDs can be used for any data model, and are not confined to STAR or SNOWFLAKE schemas. Commonly available tools can be used to generate ERDs. However, more important than creating an ERD is to learn more about the data through conversations with the data team so as a data engineer you have a strong understanding of the data you are working with.\n\nMore information about ER diagrams can be found at this [Wikipedia](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) page.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 825717,
+          "key": "587f2bcf-81c9-4ae6-8774-f282ce0469a9",
+          "title": "Star Schemas",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "587f2bcf-81c9-4ae6-8774-f282ce0469a9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827000,
+              "key": "ee70fd68-0e3e-46a9-b201-07b11c4dc8ae",
+              "title": "12 Star Schemas -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "i_0hq6KsjMo",
+                "china_cdn_id": "i_0hq6KsjMo.mp4"
+              }
+            },
+            {
+              "id": 825732,
+              "key": "f6e7eaff-219f-489a-8590-f8d2eb4b465b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Reference for image in slides: **https://en.wikipedia.org/wiki/Star_schema\n\n\n#### Additional Resources\n\nCheck out this Wikipedia page on [Star schemas](https://en.wikipedia.org/wiki/Star_schema ).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 825729,
+          "key": "f06e3bb2-21d9-46b2-b009-dc6e4b9a8d61",
+          "title": "Benefits of Star Schemas",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f06e3bb2-21d9-46b2-b009-dc6e4b9a8d61",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827001,
+              "key": "6e8d24f4-4495-4e40-87bd-a7b40d3449e5",
+              "title": "13 Benefits Of Star Schemas -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sfsnFmE74yY",
+                "china_cdn_id": "sfsnFmE74yY.mp4"
+              }
+            },
+            {
+              "id": 825733,
+              "key": "9479587c-4d5c-4497-9454-0afb788599a9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Citation for image above:** https://en.wikipedia.org/wiki/Star_schema \n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 825730,
+          "key": "4ff74859-419d-4256-8b99-038fa88fe8ae",
+          "title": "Snowflake Schemas",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4ff74859-419d-4256-8b99-038fa88fe8ae",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827002,
+              "key": "1a6395de-d4a0-4977-b9b7-c0562d8e0cf1",
+              "title": "14 Snowflake Schemas -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UAceZsZSyUs",
+                "china_cdn_id": "UAceZsZSyUs.mp4"
+              }
+            },
+            {
+              "id": 825731,
+              "key": "c6ab9347-bb85-4845-9656-2596d85e8f02",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Additional Resources\n\nCheck out this Wikipedia page on [Snowflake schemas](https://en.wikipedia.org/wiki/Snowflake_schema).\n\nThis [Medium post](https://medium.com/@BluePi_In/deep-diving-in-the-world-of-data-warehousing-78c0d52f49a) provides a nice comparison, and examples, of Star and Snowflake Schemas. Make sure to scroll down halfway through the page. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826534,
+          "key": "da4abe25-7e95-4955-84b3-500ab849c115",
+          "title": "Demo 3: Creating Fact and Dimension Tables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "da4abe25-7e95-4955-84b3-500ab849c115",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "L2_Demo_3_Create_Fact_Dimension_Tables",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9eb3c7_lesson-2-demo-3-creating-fact-and-dimension-tables-with-star-schema/lesson-2-demo-3-creating-fact-and-dimension-tables-with-star-schema.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 837307,
+              "key": "478c4db1-44aa-4c54-9ccd-83a8eb34f76c",
+              "title": "15 Demo 03 - V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GVRAWaESxfk",
+                "china_cdn_id": "GVRAWaESxfk.mp4"
+              }
+            },
+            {
+              "id": 841798,
+              "key": "5d6e01c6-d743-4d2e-ada7-0e6a66540973",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is the link to the Demo notebook",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826535,
+          "key": "99639bd4-b206-46bc-a4cd-1d40ada07d55",
+          "title": "Exercise 3: Creating Fact and Dimension Tables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "99639bd4-b206-46bc-a4cd-1d40ada07d55",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 833704,
+              "key": "7ce5a201-aa4d-4f53-b7b5-b1728361fcf7",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c825601xJUPYTERLghx72lvz",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-k1njb",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 2 Exercise 3 Creating Fact and Dimension Tables with Star Schema.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 833703,
+          "key": "4e8109d0-48b9-4358-8784-e7b46c477478",
+          "title": "Solution: Exercise 3: Creating Fact and Dimension Tables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4e8109d0-48b9-4358-8784-e7b46c477478",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 833705,
+              "key": "64e7f2b2-4b9c-4eab-b9ec-802dd92e3a9c",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c825601xJUPYTERLghx72lvz",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-4p2g8",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson 2 Exercise3_Solution Creating Fact and Dimension Tables with Star Schema-ANSWER KEY.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 838979,
+          "key": "8d0b8eb2-f66d-4317-a008-2a16f6dc79dd",
+          "title": "Data Definition and Constraints",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8d0b8eb2-f66d-4317-a008-2a16f6dc79dd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840106,
+              "key": "46892496-8313-461e-8f39-1eec417b65c6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Data Definition and Constraints\nThe CREATE statement in SQL has a few important constraints that are highlighted below.\n\n### NOT NULL\n\nThe __NOT NULL__ constraint indicates that the column cannot contain a null value. \n\nHere is the syntax for adding a NOT NULL constraint to the CREATE statement:\n```python\nCREATE TABLE IF NOT EXISTS customer_transactions (\n    customer_id int NOT NULL, \n    store_id int, \n    spent numeric\n);\n    \n```\nYou can add __NOT NULL__ constraints to more than one column. Usually this occurs when you have a __COMPOSITE KEY__, which will be discussed further below.\n\nHere is the syntax for it:\n```python\nCREATE TABLE IF NOT EXISTS customer_transactions (\n    customer_id int NOT NULL, \n    store_id int NOT NULL, \n    spent numeric\n);\n    \n```\n\n### UNIQUE\n\nThe __UNIQUE__ constraint is used to specify that the data across all the rows in one column are unique within the table. The __UNIQUE__ constraint can also be used for multiple columns, so that the combination of the values across those columns will be unique within the table. In this latter case, the values within 1 column do not need to be unique. <br><br>Let's look at an example.\n\n```python\nCREATE TABLE IF NOT EXISTS customer_transactions (\n    customer_id int NOT NULL UNIQUE, \n    store_id int NOT NULL UNIQUE, \n    spent numeric \n);\n```\n\nAnother way to write  a __UNIQUE__ constraint is to add a table constraint using commas to separate the columns. \n```python\nCREATE TABLE IF NOT EXISTS customer_transactions (\n    customer_id int NOT NULL, \n    store_id int NOT NULL, \n    spent numeric,\n    UNIQUE (customer_id, store_id, spent)\n);\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 840192,
+              "key": "7bca2ffb-4070-4419-9f77-164dea1137d5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### PRIMARY KEY\n\nThe __PRIMARY KEY__  constraint is defined on a single column, and every table should contain a primary key.  The values in this column uniquely identify the rows in the table. If a group of columns are defined as a primary key, they are called a __composite key__. That means the combination of values in these columns will uniquely identify the rows in the table. By default, the __PRIMARY KEY__ constraint has the unique and not null constraint built into it. <br><br>Let's look at the following example:\n```python\nCREATE TABLE IF NOT EXISTS store (\n    store_id int PRIMARY KEY, \n    store_location_city text,\n    store_location_state text\n);\n```\nHere is an example for a group of columns serving as __composite key__.\n```python\nCREATE TABLE IF NOT EXISTS customer_transactions (\n    customer_id int, \n    store_id int, \n    spent numeric,\n    PRIMARY KEY (customer_id, store_id)\n);\n```\n\nTo read more about these constraints, check out the [PostgreSQL documentation](https://www.postgresql.org/docs/9.4/ddl-constraints.html).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 840056,
+          "key": "adea1108-4fe9-4c0f-a9d6-a3a35137f94e",
+          "title": "Upsert",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "adea1108-4fe9-4c0f-a9d6-a3a35137f94e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840207,
+              "key": "2cb0c307-2b34-4ba9-b9c0-ce36d7c825d1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Upsert\n\nIn RDBMS language, the term *upsert* refers to the idea of inserting a new row in an existing table, or updating the row if it already exists in the table. The action of updating or inserting has been described as \"upsert\". \n\nThe way this is handled in PostgreSQL is by using the `INSERT` statement in combination with the `ON CONFLICT` clause.\n\n### INSERT\nThe __INSERT__ statement adds in new rows within the table. The values associated with specific target columns can be added in any order. \n\nLet's look at a simple example. We will use a customer address table as an example, which is defined with the following __CREATE__ statement:\n```python\nCREATE TABLE IF NOT EXISTS customer_address (\n    customer_id int PRIMARY KEY, \n    customer_street varchar NOT NULL,\n    customer_city text NOT NULL,\n    customer_state text NOT NULL\n);\n```\nLet's try to insert data into it by adding a new row:\n\n```python\nINSERT into customer_address (\nVALUES\n    (432, '758 Main Street', 'Chicago', 'IL'\n);\n```\nNow let's assume that the customer moved and we need to update the customer's address. However we do not want to add a new customer id. In other words, if there is any conflict on the `customer_id`, we do not want that to change.\n\nThis would be a good candidate for using the __ON CONFLICT DO NOTHING__ clause.\n```python\nINSERT INTO customer_address (customer_id, customer_street, customer_city, customer_state)\nVALUES\n (\n 432, '923 Knox Street', 'Albany', 'NY'\n ) \nON CONFLICT (customer_id) \nDO NOTHING;\n```\n\nNow, let's imagine we want to add more details in the existing address for an existing customer. This would be a good candidate for using the __ON CONFLICT DO UPDATE__ clause.\n```python\nINSERT INTO customer_address (customer_id, customer_street)\nVALUES\n    (\n    432, '923 Knox Street, Suite 1' \n) \nON CONFLICT (customer_id) \nDO UPDATE\n    SET customer_street  = EXCLUDED.customer_street;\n```\n\nWe recommend checking out these two links to learn other ways to insert data into the tables.\n- [PostgreSQL tutorial](http://www.postgresqltutorial.com/postgresql-upsert/)\n- [PostgreSQL documentation](https://www.postgresql.org/docs/9.5/sql-insert.html)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 825779,
+          "key": "e24cac86-696e-4f5f-86a5-603598c9363a",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e24cac86-696e-4f5f-86a5-603598c9363a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827003,
+              "key": "2d5ed6de-1729-47d1-ab03-d84b666630cf",
+              "title": "16 Conclusion -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fxIslVJSbo0",
+                "china_cdn_id": "fxIslVJSbo0.mp4"
+              }
+            },
+            {
+              "id": 825780,
+              "key": "5eb39d53-54e0-46cf-8e3d-60a8cf3441a1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### What we learned:\n- What makes a database a relational database and Codd’s 12 rules of relational database design\n- The difference between different types of workloads for databases OLAP and OLTP\n- The process of database normalization and the normal forms. \n- Denormalization and when it should be used.\n- Fact vs dimension tables as a concept and how to apply that to our data modeling\n- How the star and snowflake schemas use the concepts of fact and dimension tables to make getting value out of the data easier. \n\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

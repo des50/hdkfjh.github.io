@@ -1,0 +1,165 @@
+{
+  "data": {
+    "lesson": {
+      "id": 809436,
+      "key": "8616a226-20fc-4408-ae32-eff0265c0f11",
+      "title": "Project: Data Modeling with Apache Cassandra",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Students will model event data to create a non-relational database and ETL pipeline for a music streaming app. They will define queries and tables for a database built using Apache Cassandra.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Data Modeling with Apache Cassandra project template",
+            "uri": "https://video.udacity-data.com/topher/2019/June/5d0ae93f_project-1b-project-template.ipynb/project-1b-project-template.ipynb.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "a0ad1da6-6207-47c5-bec8-48a0b25cdaed",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 18720,
+        "semantic_type": "Project",
+        "title": "Data Modeling with Apache Cassandra",
+        "description": "Your **deliverables** will be a zip file or **Github repo** containing the files for your project. Alternatively, you can submit your project through the workspace.\n\nEnsure you meet specifications for all items in the [Project Rubric](https://review.udacity.com/#!/rubrics/2475/view). Your project  must **Meet Specifications** in each category in order for your submission to pass. \n\nIt can take us up to a week to grade the project, but in most cases it is much faster. You will get an email once your submission has been reviewed. In the meantime, you should feel free to proceed with your learning journey by continuing on to the next module in the program.\n\n## Project Submission Checklist\n\n**Before submitting your project, please review and confirm the following items.** \n<input type=\"checkbox\"> I am confident all rubric items have been met and my project will pass as submitted.\n<input type=\"checkbox\"> Project builds correctly without errors and runs.\n<input type=\"checkbox\"> All required functionality exists and my project behaves as expected per the project's specifications.\n\n**Once you have checked all these items, you are ready to submit!**\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "2475",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": null
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 826646,
+          "key": "5601623f-c833-49b8-907b-a606e99d00bb",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5601623f-c833-49b8-907b-a606e99d00bb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826651,
+              "key": "e41e94bf-f7fb-42b9-8fc1-71fe97dddb7c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project: Data Modeling with Cassandra\nA startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analysis team is particularly interested in understanding what songs users are listening to. Currently, there is no easy way to query the data to generate the results, since the data reside in a directory of CSV files on user activity on the app.\n\nThey'd like a data engineer to create an Apache Cassandra database which can create queries on song play  data to answer the questions, and wish to bring you on the project. Your role is to create a database for this analysis. You'll be able to test your database by running queries given to you by the analytics team from Sparkify to create the results.\n\n# Project Overview\nIn this project, you'll apply what you've learned on data modeling with Apache Cassandra and complete an ETL pipeline using Python. To complete the project, you will need to model your data by creating tables in Apache Cassandra to run queries. You are provided with part of the ETL pipeline that transfers data from a set of CSV files within a directory to create a streamlined CSV file to model and insert data into Apache Cassandra tables. \n\nWe have provided you with a project template that takes care of all the imports and provides a structure for ETL pipeline you'd need to process this data.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826648,
+          "key": "02b77931-45b1-46ca-a2f7-84e2a95c9827",
+          "title": "Project Details",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "02b77931-45b1-46ca-a2f7-84e2a95c9827",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826660,
+              "key": "2adbb50f-f0b4-443d-8298-df57a0d25265",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Datasets\nFor this project, you'll be working with one dataset: `event_data`. The  directory of CSV files partitioned by date. Here are examples of filepaths to two files in the dataset:\n\n\n```txt\nevent_data/2018-11-08-events.csv\nevent_data/2018-11-09-events.csv\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826669,
+              "key": "e0536260-49df-4bfd-8510-a970aa6d708a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Template\n\nTo get started with the project, go to the workspace on the next page, where you'll find the project template (a Jupyter notebook file). You can work on your project and submit your work through this workspace.\n\nThe project template includes one Jupyter Notebook file, in which:\n- you will process the `event_datafile_new.csv` dataset to create a denormalized dataset\n- you will model the data tables keeping in mind the queries you need to run\n- you have been provided queries that you will need to model your data tables for\n- you will load the data into tables you create in Apache Cassandra and run your queries\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826677,
+              "key": "9aafcb53-9bdd-4d4b-99e3-98e444f14530",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Steps\nBelow are steps you can follow to complete each component of this project.\n### Modeling your NoSQL database or Apache Cassandra database\n1. Design tables to answer the queries outlined in the project template\n2. Write Apache Cassandra `CREATE KEYSPACE` and `SET KEYSPACE` statements\n3. Develop your `CREATE` statement for each of the tables to address each question\n4. Load the data with `INSERT` statement for each of the tables\n5. Include `IF NOT EXISTS` clauses in your `CREATE` statements to create tables only if the tables do not already exist. We recommend you also include `DROP TABLE` statement for each table, this way you can run drop and create tables whenever you want to reset your database and test your ETL pipeline\n6.  Test by running the proper select statements with the correct `WHERE` clause\n\n### Build ETL Pipeline\n1. Implement the logic in section Part I of the notebook template to iterate through each event file in `event_data` to process and create a new CSV file in Python\n2. Make necessary edits to Part II of the notebook template to include Apache Cassandra `CREATE` and `INSERT` statements to load processed records into relevant tables in your data model\n3. Test by running `SELECT` statements after running the queries on your database\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826649,
+          "key": "119e3d59-1dd8-4d9f-a11f-a44b77f8d651",
+          "title": "Project Workspace",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "119e3d59-1dd8-4d9f-a11f-a44b77f8d651",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826700,
+              "key": "e74890b6-1b6c-4193-959e-e3de6bc56ffa",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c826649xJUPYTERLrhraafil",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-lo589",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": true,
+                    "defaultPath": "",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

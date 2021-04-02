@@ -1,0 +1,1340 @@
+{
+  "data": {
+    "lesson": {
+      "id": 809347,
+      "key": "2652c88c-1d14-4e98-8583-7a6fe61b7e27",
+      "title": "Introduction to Data Modeling",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson, students will learn the basic difference between relational and non-relational databases, and how each type of database fits the diverse needs of data consumers.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/2652c88c-1d14-4e98-8583-7a6fe61b7e27/809347/1613500928397/Introduction+to+Data+Modeling+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/2652c88c-1d14-4e98-8583-7a6fe61b7e27/809347/1613500921106/Introduction+to+Data+Modeling+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 825419,
+          "key": "98d3cc11-b74e-41bc-8096-0b8443d36f16",
+          "title": "Introduction to the Course",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "98d3cc11-b74e-41bc-8096-0b8443d36f16",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826779,
+              "key": "dc1e5136-3096-4983-b715-018fd78378af",
+              "title": "01 Introduction To The Course - Copy",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "c7G8sMId7KM",
+                "china_cdn_id": "c7G8sMId7KM.mp4"
+              }
+            },
+            {
+              "id": 841807,
+              "key": "b8aabe0d-c447-4461-ab83-81e8238013dd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "__Databases:__ A [database](https://en.wikipedia.org/wiki/Database) is a structured repository or collection of data that is stored and retrieved electronically for use in applications. Data can be stored, updated, or deleted from a database. \n\n __Database Management System (DBMS)__: The software used to access the database by the user and application is the database management system. Check out these few links describing a DBMS in more detail.\n1. [Introduction to DBMS](https://www.geeksforgeeks.org/database-management-system-introduction-set-1/)\n2. [DBMS as per Wikipedia](https://en.wikipedia.org/wiki/Database#Database_management_system)\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 809437,
+          "key": "5e6ca0e3-10e2-43f8-9a16-530efa26cba4",
+          "title": "What is Data Modeling?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5e6ca0e3-10e2-43f8-9a16-530efa26cba4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826780,
+              "key": "7c330576-fad0-4c74-9551-b7eb6803b291",
+              "title": "02 What Is Data Modeling -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CAf5CzKJHmc",
+                "china_cdn_id": "CAf5CzKJHmc.mp4"
+              }
+            },
+            {
+              "id": 813027,
+              "key": "05006939-6785-4a12-a09c-f86e9f498943",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Common Questions\n\n**Why can't everything be stored in a giant Excel spreadsheet?**\n*  There are limitations to the amount of data that can be stored in an Excel sheet. So, a database helps organize the elements into tables - rows and columns, etc. Also reading and writing operations on a large scale is not possible with an Excel sheet, so it's better to use a database to handle most business functions.\n\n**Does data modeling happen before you create a database, or is it an iterative process?**\n* It's definitely an iterative process. Data engineers continually reorganize, restructure, and optimize data models to fit the needs of the organization.\n\n**How is data modeling different from machine learning modeling?**\n* Machine learning includes a lot of data wrangling to create the inputs for machine learning models, but data modeling is more about how to structure data to be used by different people within an organization. You can think of data modeling as the process of designing data and making it available to machine learning engineers, data scientists, business analytics, etc., so they can make use of it easily.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 825420,
+              "key": "25e6e320-d7f9-4a62-b9bd-a040f04b64d9",
+              "title": "Data Modeling Process",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "25e6e320-d7f9-4a62-b9bd-a040f04b64d9",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Choose the Correct Order of the Data Modeling Process:",
+                "answers": [
+                  {
+                    "id": "a1550079283018",
+                    "text": "Physical -> Logical -> Conceptual ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550079310880",
+                    "text": "Logical -> Physical -> Conceptual",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550079311277",
+                    "text": "Conceptual -> Physical -> Logical",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550079311696",
+                    "text": "Conceptual -> Logical -> Physical",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 813028,
+          "key": "a4422fb8-ded4-4cb5-9dba-813d9dcb2bd7",
+          "title": "Why is Data Modeling Important?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a4422fb8-ded4-4cb5-9dba-813d9dcb2bd7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826781,
+              "key": "27741918-f42d-4e9f-9ad1-d63f9f78d1d2",
+              "title": "03 Why Is Data Modeling Important -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hq0Q86fEd2E",
+                "china_cdn_id": "hq0Q86fEd2E.mp4"
+              }
+            },
+            {
+              "id": 813029,
+              "key": "0076df13-a95b-4d00-ab79-1f636b30dd60",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Key points about Data Modeling\n\n* **Data Organization:** The organization of the data for your applications is extremely important and makes everyone's life easier.\n* **Use cases:** Having a well thought out and organized data model is critical to how that data can later be used. Queries that could have been straightforward and simple might become complicated queries if data modeling isn't well thought out. \n* **Starting early:** Thinking and planning ahead will help you be successful. This is not something you want to leave until the last minute. \n* **Iterative Process:** Data modeling is not a fixed process. It is iterative as new requirements and data are introduced. Having flexibility will help as new information becomes available. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 841812,
+              "key": "5cf24936-d748-4892-a751-46a46b5deb5b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Example of Why Data Modeling is Important:\nLet's take an example from Udacity. Here, a Udacity data engineer would help structure the data so it can be used by different people within Udacity for further analysis and also shared with the learner on the website. For instance, when we want to track the students' progress within a Nanodegree program, we want to aggregate data across students and projects within a Nanodegree. In a relational database, this requires the data to be structured in ways that each student's data is tracked across all Nanodegree programs that s/he has ever enrolled in. The data also needs to track the student's progress within each of those Nanodegree programs. \n\nThe data model is critical for accurately representing each data object. For instance, a data table would track a student's progress on project submissions, i.e., whether they passed or failed a specific rubric requirement. Furthermore, the data model should ensure that a student's progress is updated and aggregated to provide an indicator of whether the student passed all the rubric requirements and successfully finished the project. Data modeling is critical to track all of these pieces of data so the tables are speaking to each other,  updating the tables correctly (e.g., updating a student's progress on a project submission), and meeting defined rules (e.g., project completed when all rubric requirements are passed). \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 825421,
+              "key": "bca43475-5128-4d26-9417-84016a7a6c16",
+              "title": "Who does data modeling",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bca43475-5128-4d26-9417-84016a7a6c16",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Who should focus on learning data modeling? Choose one response.",
+                "answers": [
+                  {
+                    "id": "a1550080061457",
+                    "text": "Data Scientists ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550080089660",
+                    "text": "Data Engineers",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550080090100",
+                    "text": "Software Engineers",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550080090716",
+                    "text": "Everyone who deals with data!",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 813030,
+          "key": "5b8a7173-71e0-461b-8d20-b537b3776ad4",
+          "title": "Who does this type of work?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5b8a7173-71e0-461b-8d20-b537b3776ad4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826782,
+              "key": "658685ea-7f5a-41bb-bb0d-e9ca44949f40",
+              "title": "04 Who Does This Type Of Work -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LBqMfr1PniQ",
+                "china_cdn_id": "LBqMfr1PniQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 813032,
+          "key": "acf2e5fd-9cbf-4c96-8f6b-c8e2a08035be",
+          "title": "Intro to Relational Databases",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "acf2e5fd-9cbf-4c96-8f6b-c8e2a08035be",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826783,
+              "key": "10641ab7-3d20-46a5-8135-d161d34c486e",
+              "title": "05 Intro To Relational Databases -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TAXJtSgGzqA",
+                "china_cdn_id": "TAXJtSgGzqA.mp4"
+              }
+            },
+            {
+              "id": 825422,
+              "key": "1e073f2f-483a-4cbf-81c2-13f7d84560ac",
+              "title": "RDBMS",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1e073f2f-483a-4cbf-81c2-13f7d84560ac",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is an RDBMS?",
+                "answers": [
+                  {
+                    "id": "a1550080502450",
+                    "text": "Relateable Database Management System",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550080533612",
+                    "text": "Relational Database Management System",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550080533961",
+                    "text": "Readable Data Management System",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550080534471",
+                    "text": "Reachable Database Management System",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 813034,
+          "key": "3ab00a5f-bf17-4d52-9e9b-131a59351e01",
+          "title": "Relational Databases",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3ab00a5f-bf17-4d52-9e9b-131a59351e01",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 825423,
+              "key": "eeace3dd-07bd-4512-bc46-b7e61995d353",
+              "title": "RDB Q1",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "eeace3dd-07bd-4512-bc46-b7e61995d353",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: A column holds multiple tables.",
+                "answers": [
+                  {
+                    "id": "a1550080668832",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550080671949",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825424,
+              "key": "cb48f38f-2244-45fe-8401-a25f3554b717",
+              "title": "RDB Q2",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "cb48f38f-2244-45fe-8401-a25f3554b717",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: An attribute is another name for a column.",
+                "answers": [
+                  {
+                    "id": "a1550080726672",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550080754174",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825425,
+              "key": "6457935d-c1eb-40ec-a1e1-5bf9cb541503",
+              "title": "RDB Q2",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6457935d-c1eb-40ec-a1e1-5bf9cb541503",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: A schema is a collection of tables in some database terminology.",
+                "answers": [
+                  {
+                    "id": "a1550080772441",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550080802319",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 813037,
+          "key": "70d5be93-7153-42f7-a07c-ceb8e9e2fcf2",
+          "title": "When to use a relational database?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "70d5be93-7153-42f7-a07c-ceb8e9e2fcf2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826784,
+              "key": "038ef051-181f-4c7b-8a94-b3423505bd69",
+              "title": "06 When To Use A Relational Databases PROS-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cHErsgQZNlw",
+                "china_cdn_id": "cHErsgQZNlw.mp4"
+              }
+            },
+            {
+              "id": 825426,
+              "key": "36a7d56c-d0ba-4912-9eca-beaf3ef2db1c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Advantages of Using a Relational Database\n\n* __Flexibility for writing in SQL queries:__ With SQL being the most common database query language.\n* __Modeling the data not modeling queries__\n* __Ability to do JOINS__\n* __Ability to do aggregations and analytics__\n* __Secondary Indexes available__ : You have the advantage of being able to add another index to help with quick searching.\n* __Smaller data volumes:__ If you have a smaller data volume (and not big data) you can use a relational database for its simplicity.\n* __ACID Transactions__: Allows you to meet a set of properties of database transactions intended to guarantee validity even in the event of errors, power failures, and thus maintain data integrity.\n* __Easier to change to business requirements__ \n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 825427,
+          "key": "00457364-0557-4403-9a66-729c6ad23554",
+          "title": "ACID Transactions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "00457364-0557-4403-9a66-729c6ad23554",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826785,
+              "key": "00c3fb56-148a-4df2-973a-db035fc2eba9",
+              "title": "07 ACID Transactions -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "rr35DQljFnc",
+                "china_cdn_id": "rr35DQljFnc.mp4"
+              }
+            },
+            {
+              "id": 825428,
+              "key": "22f2ec4e-72f3-46ec-8fd3-41d09ad2fef3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### ACID Transactions\nProperties of database transactions intended to guarantee validity even in the event of errors or power failures.\n* **Atomicity:** The whole transaction is processed or nothing is processed. A commonly cited example of an atomic transaction is money transactions between two bank accounts. The transaction of transferring money from one account to the other is made up of two operations. First, you have to withdraw money in one account, and second you have to save the withdrawn money to the second account. An atomic transaction, i.e., when either all operations occur or nothing occurs, keeps the database in a consistent state. This ensures that if either of those two operations (withdrawing money from the 1st account or saving the money to the 2nd account) fail, the money is neither lost nor created. Source [Wikipedia](https://en.wikipedia.org/wiki/Atomicity_%28database_systems%29) for a detailed description of this example.\n<br><BR>\n* **Consistency:** Only transactions that abide by constraints and rules are written into the database, otherwise the database keeps the previous state. The data should be correct across all rows and tables. Check out additional information about consistency on [Wikipedia](https://en.wikipedia.org/wiki/Consistency_%28database_systems%29).<br><BR>\n* **Isolation:** Transactions are processed independently and securely, order does not matter. A low level of isolation enables many users to access the data simultaneously, however this also increases the possibilities of concurrency effects (e.g., dirty reads or lost updates). On the other hand, a high level of isolation reduces these chances of concurrency effects, but also uses more system resources and transactions blocking each other. Source: [Wikipedia](https://en.wikipedia.org/wiki/Isolation_%28database_systems%29) \n\n\n* **Durability:** Completed transactions are saved to database even in cases of system failure. A commonly cited example includes tracking flight seat bookings. So once the flight booking records a confirmed seat booking, the seat remains booked even if a system failure occurs. \nSource: [Wikipedia](https://en.wikipedia.org/wiki/ACID). \n\nWe cover ACID transactions in much depth in Lesson 2 of this course.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 825429,
+              "key": "621d7f50-7533-4b09-9bc4-a09b1f9db7c4",
+              "title": "RDB Advantages",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "621d7f50-7533-4b09-9bc4-a09b1f9db7c4",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of these are benefits of a relational database?\n\n\n\n\n",
+                "answers": [
+                  {
+                    "id": "a1550081589465",
+                    "text": "ACID Transactions",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550081609854",
+                    "text": "Ability to do JOINS",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550081610214",
+                    "text": "Can handle big data",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550081610650",
+                    "text": "Easy to change business requirements on the data",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825430,
+              "key": "5d0da90c-39ec-4ea4-bbc3-d96465b0cc27",
+              "title": "Joins",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5d0da90c-39ec-4ea4-bbc3-d96465b0cc27",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Can you JOIN a table with another table on any column? ",
+                "answers": [
+                  {
+                    "id": "a1550081779682",
+                    "text": "Yes, as long there are matching values in the columns",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550081786630",
+                    "text": "No, only on columns with the same name",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550081787030",
+                    "text": "Yes, you can join any columns together",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550081787479",
+                    "text": "No, only on columns in the same table",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 825431,
+          "key": "5877f58e-21c5-493f-af8f-4a36dcaafb62",
+          "title": "When Not to Use a Relational Database",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5877f58e-21c5-493f-af8f-4a36dcaafb62",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826914,
+              "key": "bca6826b-491b-45e8-aceb-5119f469a626",
+              "title": "08 When Not To Use A Relational Database-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yzB2G33pxbQ",
+                "china_cdn_id": "yzB2G33pxbQ.mp4"
+              }
+            },
+            {
+              "id": 825432,
+              "key": "6caf9584-fbd4-4c3c-94f1-d9f4e71226c3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### When Not to Use a Relational Database\n* **Have large amounts of data:** Relational Databases are not distributed databases and because of this they can only scale vertically by adding more storage in the machine itself. You are limited by how much you can scale and how much data you can store on one machine. You cannot add more machines like you can in NoSQL databases.  \n* **Need to be able to store different data type formats:** Relational databases are not designed to handle unstructured data.\n* **Need high throughput -- fast reads:** While ACID transactions bring benefits, they also slow down the process of reading and writing data. If you need very fast reads and writes, using a relational database may not suit your needs. \n* **Need a flexible schema:** Flexible schema can allow for columns to be added that do not have to be used by every row, saving disk space.\n* **Need high availability:** The fact that relational databases are not distributed (and even when they are, they have a coordinator/worker architecture), they have a single point of failure. When that database goes down, a fail-over to a backup system occurs and takes time.\n* **Need horizontal scalability:** Horizontal scalability is the ability to add more machines or nodes to a system to increase performance and space for data.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 825433,
+              "key": "5a974483-88c5-4ab1-87a1-a80d6794b81c",
+              "title": "Horizontal Relational",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5a974483-88c5-4ab1-87a1-a80d6794b81c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: Relational Databases are traditionally horizontally scalable.",
+                "answers": [
+                  {
+                    "id": "a1550082561217",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550082615224",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 825434,
+              "key": "8baabefd-958d-433c-bb46-a461a3289c1e",
+              "title": "Use an RDB",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8baabefd-958d-433c-bb46-a461a3289c1e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "When should you use a Relational Database?\n\n\n\n\n",
+                "answers": [
+                  {
+                    "id": "a1550082635993",
+                    "text": "Small amounts of data",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550082682686",
+                    "text": "Need to be able to do aggregations",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550082683283",
+                    "text": "Need ACID transactions",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550082683640",
+                    "text": "You need to be able to scale out quickly",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550082692055",
+                    "text": "Need to be able to join multiple tables",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 813041,
+          "key": "180b59ec-eed1-4b86-93ab-931ed1725bd6",
+          "title": "What is PostgreSQL?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "180b59ec-eed1-4b86-93ab-931ed1725bd6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826786,
+              "key": "44e40f9d-e5f5-45ae-9dea-92887c99f4ee",
+              "title": "08 What Is PostgresSQL-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5L9O9QK7nLY",
+                "china_cdn_id": "5L9O9QK7nLY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 826522,
+          "key": "0a04fa2c-34cc-446d-8f89-61aaa434738f",
+          "title": "Demos: Creating a Postgres Table",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0a04fa2c-34cc-446d-8f89-61aaa434738f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "L1 Demo_0_Creating_a_table_with_Postgres",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9e7914_l1-demo-0-creating-a-table-with-postgres/l1-demo-0-creating-a-table-with-postgres.ipynb"
+              },
+              {
+                "name": "L1_Demo_1_Creating_a_table_with_Postgres",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9e8bc6_l1-demo-1-creating-a-table-with-postgres/l1-demo-1-creating-a-table-with-postgres.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 826787,
+              "key": "a7cec77c-6fb5-4a0d-88f7-8b9b025ac992",
+              "title": "09 Demo 0 -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QuC6xIj7WiI",
+                "china_cdn_id": "QuC6xIj7WiI.mp4"
+              }
+            },
+            {
+              "id": 951544,
+              "key": "3bf02504-a88b-40c3-b101-09a23a54fabf",
+              "title": "09 Demo 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OzNizL-Zjt8",
+                "china_cdn_id": "OzNizL-Zjt8.mp4"
+              }
+            },
+            {
+              "id": 841808,
+              "key": "94498d18-7965-441e-9c8a-1c92e65fb923",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Please note: We have provided a Workspace so you do not need to run Postgres locally on your machine for any of the exercises or projects in this course.\n\nThe following information on setting up PostgreSQL on your local machine is completely optional for this course and for users who feel comfortable setting up the environment on their local machine to complete the exercises.\n\nHere is additional Information on how to install and set up Postgres locally in case you want to follow along the demo on your local machine. This [link](https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb) provides directions for MacOS. It goes through configuring Postgres, creating users, and creating databases using the psql utility. It will help further explain the Python driver and also help you in running the demos locally. \n\nIn addition, here is a short tutorial on `psycopg2`. This [link](https://pynative.com/python-postgresql-tutorial/) gives a good starter tutorial in case you are curious about it.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 841772,
+              "key": "3a9f51e7-582f-4cfe-b826-4aad6a7c3a49",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here are the two demo files. Feel free to follow along. Just download these and open up the Jupyter Notebook files.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813069,
+          "key": "a2dfb00f-d28b-45e4-83cd-e62eec966f1e",
+          "title": "Exercise 1: Creating a Table with Postgres",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a2dfb00f-d28b-45e4-83cd-e62eec966f1e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 825063,
+              "key": "e3a8d445-1830-431d-95f3-2ef533c99ae8",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c824902xJUPYTERLffh8mf9e",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-iupzv",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1_Exercise_1_Creating_a_Table_with_Postgres.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 813048,
+          "key": "856cf608-fec8-4601-a83e-93e08425c0a8",
+          "title": "Solution for Exercise 1: Create a Table with Postgres",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "856cf608-fec8-4601-a83e-93e08425c0a8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "L1_Exercise_1_Solution_Creating_table_with_postgres",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9e8d45_l1-exercise-1-solution-creating-a-table-with-postgres/l1-exercise-1-solution-creating-a-table-with-postgres.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 826788,
+              "key": "6b648aa4-e38c-4bb3-a569-0459908688a6",
+              "title": "10 Solution To Demo 0 And 1 -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2tPN_pMssiU",
+                "china_cdn_id": "2tPN_pMssiU.mp4"
+              }
+            },
+            {
+              "id": 841773,
+              "key": "7fbb2901-efc0-424e-9346-f18e933d0578",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is the solution file. Feel free to follow along. Just download it and open up the Jupyter Notebook file.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 825436,
+          "key": "6376d16d-2cd0-4529-9fda-51d8ea41f767",
+          "title": "NoSQL Databases",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6376d16d-2cd0-4529-9fda-51d8ea41f767",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826789,
+              "key": "66c3bfff-fb97-4a1e-9ce2-9f9306861ce3",
+              "title": "11 NoSQL Databases 1-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0rVgi7NiHFQ",
+                "china_cdn_id": "0rVgi7NiHFQ.mp4"
+              }
+            },
+            {
+              "id": 825437,
+              "key": "f5230646-8105-44f2-a5a4-5bdd60e3517c",
+              "title": "Keyspace",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f5230646-8105-44f2-a5a4-5bdd60e3517c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: A Keyspace in Apache Cassandra is similar to a schema in PostgreSQL",
+                "answers": [
+                  {
+                    "id": "a1550084772500",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550084801712",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 847514,
+              "key": "257c6f3d-75d4-49bb-9e63-ea087776d11c",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "257c6f3d-75d4-49bb-9e63-ea087776d11c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of these are examples of non-relational databases?",
+                "answers": [
+                  {
+                    "id": "a1557507803567",
+                    "text": "SQL",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1557507820565",
+                    "text": "Apache Cassandra",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1557507855925",
+                    "text": "RDBMS",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1557507861980",
+                    "text": "MongoDB",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 813065,
+          "key": "f6b21ec8-2d8f-43eb-b42f-9f7b022735b1",
+          "title": "What is Apache Cassandra?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f6b21ec8-2d8f-43eb-b42f-9f7b022735b1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826790,
+              "key": "a8cb77db-8b99-4688-86a7-281f55c6ca14",
+              "title": "13 What Is Apache Cassandra -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ku8Ywgkduk8",
+                "china_cdn_id": "ku8Ywgkduk8.mp4"
+              }
+            },
+            {
+              "id": 831087,
+              "key": "63150e38-3154-4bf7-92f6-dc40316349e2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Common Questions:\n\n**What type of companies use Apache Cassandra?**<br>\nAll kinds of companies. For example, Uber uses Apache Cassandra for their  entire backend. Netflix uses Apache Cassandra to serve all their videos to customers. Good use cases for NoSQL (and more specifically Apache Cassandra) are :\n1. Transaction logging (retail, health care)\n2. Internet of Things (IoT)\n3. Time series data\n4. Any workload that is heavy on writes to the database (since Apache Cassandra is optimized for writes). \n\n**Would Apache Cassandra be a hindrance for my analytics work? If yes, why?**<br>\nYes, if you are trying to do analysis, such as using `GROUP BY` statements. Since Apache Cassandra requires data modeling based on the query you want, you can't do ad-hoc queries. However you can add clustering columns into your data model and create new tables.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 813066,
+              "key": "e37c89ce-eeb6-437d-b988-b40dc75c2e4b",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e37c89ce-eeb6-437d-b988-b40dc75c2e4b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "When should you use a NoSQL database? ",
+                "answers": [
+                  {
+                    "id": "a1547670998733",
+                    "text": "Large amounts of data",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1547671002801",
+                    "text": "Need to be able to do aggregations",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550085475511",
+                    "text": "Need high availability",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550085476014",
+                    "text": "You need to be able to scale out quickly",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550085476318",
+                    "text": "Need to be able to join multiple tables",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 813062,
+          "key": "155379a7-4005-463c-9137-ff37f847016c",
+          "title": "When to Use a NoSql Database",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "155379a7-4005-463c-9137-ff37f847016c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826791,
+              "key": "215bd87f-7db2-4da4-a43d-7270bc0b49c4",
+              "title": "14 When To Use NoSQL Database PROS-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jjwYgUEPSUc",
+                "china_cdn_id": "jjwYgUEPSUc.mp4"
+              }
+            },
+            {
+              "id": 825439,
+              "key": "dbeaa96a-af49-403b-b2c7-fc4ef57ce80a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n### When to use a NoSQL Database\n* __Need to be able to store different data type formats__: NoSQL was also created to handle different data configurations: structured, semi-structured, and unstructured data. JSON, XML documents can all be handled easily with NoSQL.\n* __Large amounts of data__: Relational Databases are not distributed databases and because of this they can only scale vertically by adding more storage in the machine itself. NoSQL databases were created to be able to be horizontally scalable. The more servers/systems you add to the database the more data that can be hosted with high availability and low latency (fast reads and writes). \n* __Need horizontal scalability__: Horizontal scalability is the ability to add more machines or nodes to a system to increase performance and space for data\n* __Need high throughput__: While ACID transactions bring benefits they also slow down the process of reading and writing data. If you need very fast reads and writes using a relational database may not suit your needs. \n* __Need a flexible schema__: Flexible schema can allow for columns to be added that do not have to be used by every row, saving disk space. \n* __Need high availability__: Relational databases have a single point of failure. When that database goes down, a failover to a backup system must happen and takes time.\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826519,
+          "key": "f171f51d-563b-436f-8c86-a009253b2309",
+          "title": "When Not to Use a NoSql Database",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f171f51d-563b-436f-8c86-a009253b2309",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826792,
+              "key": "1272eab2-918f-40ea-9894-dabaee4dbf81",
+              "title": "16 When NOT To Use A NoSQL Database-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fT_USRXmtlo",
+                "china_cdn_id": "fT_USRXmtlo.mp4"
+              }
+            },
+            {
+              "id": 827448,
+              "key": "860f41db-9959-4f65-8079-969914e03cf9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### When NOT to use a NoSQL Database?\n* __When you have a small dataset__: NoSQL databases were made for big datasets not small datasets and while it works it wasn’t created for that.\n* __When you need ACID Transactions__: If you need a consistent database with ACID transactions, then most NoSQL databases will not be able to serve this need. NoSQL database are eventually consistent and do not provide ACID transactions. However, there are exceptions to it. Some non-relational databases like MongoDB can support ACID transactions.\n* __When you need the ability to do JOINS across tables__: NoSQL does not allow the ability to do JOINS. This is not allowed as this will result in full table scans.\n* __If you want to be able to do aggregations and analytics __\n* __If you have changing business requirements __: Ad-hoc queries are possible but difficult as the data model was done to fix particular queries\n* __If your queries are not available and you need the flexibility __: You need your queries in advance. If those are not available or you will need to be able to have flexibility on how you query your data you might need to stick with a relational database\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 861470,
+              "key": "24945ac2-5808-449f-b6d7-e4853f8ba7a4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n\n### Caveats to NoSQL and ACID Transactions\nThere are some NoSQL databases that offer some form of ACID transaction. As of v4.0, MongoDB added multi-document ACID transactions within a single replica set. With their later version, v4.2, they have added multi-document ACID transactions in a sharded/partitioned deployment. \n\n* Check out this documentation from MongoDB on [multi-document ACID transactions](https://www.mongodb.com/collateral/mongodb-multi-document-acid-transactions)\n* Here is another link documenting [MongoDB's ability to handle ACID transactions](https://www.mongodb.com/blog/post/mongodb-multi-document-acid-transactions-general-availability)\n\nAnother example of a NoSQL database supporting ACID transactions is MarkLogic. <br>\n* Check out this link from their [blog](https://www.marklogic.com/blog/how-marklogic-supports-acid-transactions/) that offers ACID transactions.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 813046,
+          "key": "f35a027f-4039-4182-bf2c-a46b753416a5",
+          "title": "Demo 2: Creating table with Cassandra",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f35a027f-4039-4182-bf2c-a46b753416a5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "L1_Demo_2_Creating_table_with_Cassandra",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9e8ea2_l1-demo-2-creating-a-table-with-apache-cassandra/l1-demo-2-creating-a-table-with-apache-cassandra.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 826793,
+              "key": "78938836-b2bf-4892-9729-9a9d9e5806c8",
+              "title": "17 Demo 2 Creating Tables Pt 1 -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "u-GlcpAndmY",
+                "china_cdn_id": "u-GlcpAndmY.mp4"
+              }
+            },
+            {
+              "id": 951546,
+              "key": "fcaf663c-7a59-4d2d-8fe7-e8839590c3b6",
+              "title": "17 Demo 2 Creating Tables Pt 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QFYO0SqZMuw",
+                "china_cdn_id": "QFYO0SqZMuw.mp4"
+              }
+            },
+            {
+              "id": 841794,
+              "key": "fcd6abb1-9b9f-46a4-9db4-544d8f8ffff0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Please note: We have provided a Workspace so you do not need to run Apache Cassandra locally on your machine for any of the Exercises or Projects in this Course.\nThe following information on setting up Cassandra on your local machine is completely optional for this course and for users who feel comfortable setting up the environment on their local machine to complete the exercises. Please note, Apache Cassandra is easier to install on MacOS than a Windows machine. \n\n__Installing Apache Cassandra to run locally on your machine:__<br>\n[Cassandra Documentation ](http://cassandra.apache.org/doc/latest/getting_started/installing.html)\n\n\nAgain, if you want to follow along, here is the demo notebook showcased in the video above.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 824903,
+          "key": "217d8cd5-68fc-427a-896a-a8c49d6e1c48",
+          "title": "Exercise 2: Create table with Cassandra",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "217d8cd5-68fc-427a-896a-a8c49d6e1c48",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 825065,
+              "key": "7d453f4d-ae54-41ae-b317-7425368a1c1d",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c824902xJUPYTERLffh8mf9e",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-pjrmj",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1_Exercise_2_Creating_a_Table_with_Apache_Cassandra.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 809438,
+          "key": "4a89c9ff-a016-49fa-9e48-810fe46b62ac",
+          "title": "Solution for Exercise 2: Create table with Cassandra",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4a89c9ff-a016-49fa-9e48-810fe46b62ac",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "L1_Exercise_2_Solution",
+                "uri": "https://video.udacity-data.com/topher/2019/March/5c9e961b_l1-exercise-2-solution-creating-a-table-with-cassandra/l1-exercise-2-solution-creating-a-table-with-cassandra.ipynb"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 827037,
+              "key": "8985e559-c864-40a6-ad93-5d89de8c437c",
+              "title": "L1 Demo2 Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9m4_k_luAqI",
+                "china_cdn_id": "9m4_k_luAqI.mp4"
+              }
+            },
+            {
+              "id": 841795,
+              "key": "a7d0c3a5-c881-4c8e-b337-c0001abf8ff5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is the link to the solution notebook.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826529,
+          "key": "2c457b37-4e49-4176-a73d-6dec28fd0749",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2c457b37-4e49-4176-a73d-6dec28fd0749",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826794,
+              "key": "09fa2d92-3148-4d61-82a5-d864017a71d1",
+              "title": "19 Conclusion -",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_II7WYiFslk",
+                "china_cdn_id": "_II7WYiFslk.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

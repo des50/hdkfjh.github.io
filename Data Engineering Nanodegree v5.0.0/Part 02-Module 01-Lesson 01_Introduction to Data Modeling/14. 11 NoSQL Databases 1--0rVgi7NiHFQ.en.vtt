@@ -1,0 +1,241 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.680
+For the remainder of this lesson,
+
+00:00:01.680 --> 00:00:04.680
+we will focus on non-relational databases.
+
+00:00:04.680 --> 00:00:07.845
+So what is a NoSQL Database?
+
+00:00:07.845 --> 00:00:11.505
+So NoSQL database has a simpler design,
+
+00:00:11.505 --> 00:00:16.079
+simpler horizontal scaling, and finer control of availability.
+
+00:00:16.079 --> 00:00:18.810
+Data structures used are different than those in
+
+00:00:18.810 --> 00:00:23.145
+relational database and they make some operations faster.
+
+00:00:23.145 --> 00:00:27.750
+So NoSQL equals not only SQL.
+
+00:00:27.750 --> 00:00:31.830
+NoSQL and non-relational are interchangeable terms.
+
+00:00:31.830 --> 00:00:35.890
+From here on out, you'll probably only hear me say NoSQL.
+
+00:00:35.890 --> 00:00:39.020
+Again, there are various types of NoSQL databases,
+
+00:00:39.020 --> 00:00:41.450
+and we'll talk a little bit about that in just a minute.
+
+00:00:41.450 --> 00:00:43.460
+So like we said in the last lesson,
+
+00:00:43.460 --> 00:00:48.440
+NoSQL databases were created to do some of the issues faced with relational databases.
+
+00:00:48.440 --> 00:00:52.795
+Remember all the reasons that we listed not to use a relational database?
+
+00:00:52.795 --> 00:00:56.430
+NoSQL has been around also since the 1970s,
+
+00:00:56.430 --> 00:01:00.620
+but they became much more popular and used during the 2000's as data sizes
+
+00:01:00.620 --> 00:01:05.585
+increased and outages and downtime has decreased in acceptability.
+
+00:01:05.585 --> 00:01:09.320
+So here's just a few common types of NoSQL databases.
+
+00:01:09.320 --> 00:01:10.850
+Like I said before,
+
+00:01:10.850 --> 00:01:13.670
+there are different NoSQL databases and different types of
+
+00:01:13.670 --> 00:01:19.370
+implementations that will naturally align better with different use cases.
+
+00:01:19.370 --> 00:01:21.850
+So the first one we'll discuss here is
+
+00:01:21.850 --> 00:01:25.120
+Apache Cassandra which is what we're going to use for our examples.
+
+00:01:25.120 --> 00:01:27.565
+This is a Partition Row store.
+
+00:01:27.565 --> 00:01:32.170
+The data is distributed by partitions across nodes or servers,
+
+00:01:32.170 --> 00:01:35.770
+and the data is organized in the columns and rows format.
+
+00:01:35.770 --> 00:01:38.110
+Next, we have MongoDB,
+
+00:01:38.110 --> 00:01:39.670
+which is a Document store.
+
+00:01:39.670 --> 00:01:41.860
+One of the defining characteristics of
+
+00:01:41.860 --> 00:01:44.440
+a document-oriented database is that in
+
+00:01:44.440 --> 00:01:47.695
+addition to the Key Lookups performed by key-value store,
+
+00:01:47.695 --> 00:01:50.290
+the database also offers an API or
+
+00:01:50.290 --> 00:01:53.920
+query language that retrieves document based on its contents.
+
+00:01:53.920 --> 00:01:58.405
+Think of it's basically easy to do search on documents.
+
+00:01:58.405 --> 00:02:02.230
+Next we have DynamoDB which is a Key-Value store.
+
+00:02:02.230 --> 00:02:04.640
+A key-value store is basically the data is
+
+00:02:04.640 --> 00:02:07.700
+represented as a collection of key and value pairs.
+
+00:02:07.700 --> 00:02:11.960
+Next, we have Apache HBase which is a Wide Column Store.
+
+00:02:11.960 --> 00:02:14.830
+It also uses tables, rows, and columns,
+
+00:02:14.830 --> 00:02:16.880
+but unlike a relational database,
+
+00:02:16.880 --> 00:02:21.095
+the names and format of the columns can vary from row to row in the same table.
+
+00:02:21.095 --> 00:02:24.270
+That's flexible schema that we talked about before.
+
+00:02:24.270 --> 00:02:26.550
+Next, Neo4j.
+
+00:02:26.550 --> 00:02:32.300
+Neo4j is a Graph Database where relationships between entities is more the focus.
+
+00:02:32.300 --> 00:02:35.450
+With graph databases, it's all about relationships,
+
+00:02:35.450 --> 00:02:39.220
+and the data is represented as nodes and edges.
+
+00:02:39.220 --> 00:02:40.915
+So in this course,
+
+00:02:40.915 --> 00:02:43.340
+we'll focus on Apache Cassandra to explain
+
+00:02:43.340 --> 00:02:46.850
+the concepts of data modeling for NoSQL databases.
+
+00:02:46.850 --> 00:02:51.470
+Data modeling for all NoSQL databases has a lot in common,
+
+00:02:51.470 --> 00:02:55.460
+but each one has its own uniqueness that will play apart.
+
+00:02:55.460 --> 00:02:57.410
+But once you have the foundation,
+
+00:02:57.410 --> 00:03:00.965
+adapting to small changes will be very straightforward.
+
+00:03:00.965 --> 00:03:04.955
+This is a set of terminology that is specific to Apache Cassandra.
+
+00:03:04.955 --> 00:03:08.480
+Other NoSQL databases will use slightly different terminology,
+
+00:03:08.480 --> 00:03:10.305
+but the concepts are the same.
+
+00:03:10.305 --> 00:03:13.220
+So here is some of the basics of Apache Cassandra.
+
+00:03:13.220 --> 00:03:14.780
+We have a Keyspace,
+
+00:03:14.780 --> 00:03:16.445
+which is a collection of tables.
+
+00:03:16.445 --> 00:03:19.730
+So in relational terms that would be a database.
+
+00:03:19.730 --> 00:03:22.915
+We have a Table, which is a group of partitions.
+
+00:03:22.915 --> 00:03:25.220
+We have Rows, which is a single item.
+
+00:03:25.220 --> 00:03:26.945
+These are all very straightforward.
+
+00:03:26.945 --> 00:03:30.530
+Let's talk about some of the really specific things to Apache Cassandra.
+
+00:03:30.530 --> 00:03:32.000
+We have a Partition,
+
+00:03:32.000 --> 00:03:34.700
+which is the fundamental unit of access,
+
+00:03:34.700 --> 00:03:37.075
+it is a collection of rows,
+
+00:03:37.075 --> 00:03:39.830
+and it is how the data is distributed.
+
+00:03:39.830 --> 00:03:41.645
+We have a Primary Key.
+
+00:03:41.645 --> 00:03:46.385
+The primary key is made up of a partition key and clustering columns.
+
+00:03:46.385 --> 00:03:47.870
+Then we have Columns,
+
+00:03:47.870 --> 00:03:52.550
+which we have clustering columns and data columns and these are the labeled elements.
+
+00:03:52.550 --> 00:03:58.475
+So from here, you can see we're partitioning by last name because this is our partition.
+
+00:03:58.475 --> 00:04:02.530
+We have some clustering columns around First Name and Last Name,
+
+00:04:02.530 --> 00:04:04.480
+and then here we have some data columns,
+
+00:04:04.480 --> 00:04:06.440
+which are just our address and email.
+
+00:04:06.440 --> 00:04:10.865
+Again, we're going to talk about these concepts in a lot of depth in Lesson 3.
+
+00:04:10.865 --> 00:04:13.920
+So if it seems confusing now, don't worry.
+
