@@ -1,0 +1,488 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Launch a Redshift Cluster</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Cloud Computing and AWS</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Introduction.html">01. Lesson Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Cloud Computing.html">02. Cloud Computing</a>
+    </li>
+    <li class="">
+      <a href="03. Amazon Web Services.html">03. Amazon Web Services</a>
+    </li>
+    <li class="">
+      <a href="04. AWS Account Setup.html">04. AWS Account Setup</a>
+    </li>
+    <li class="">
+      <a href="05. Monitor your AWS Costs and Credits.html">05. Monitor your AWS Costs and Credits</a>
+    </li>
+    <li class="">
+      <a href="06. Create an IAM Role.html">06. Create an IAM Role</a>
+    </li>
+    <li class="">
+      <a href="07. Create Security Group.html">07. Create Security Group</a>
+    </li>
+    <li class="">
+      <a href="08. Launch a Redshift Cluster.html">08. Launch a Redshift Cluster</a>
+    </li>
+    <li class="">
+      <a href="09. Create an IAM User.html">09. Create an IAM User</a>
+    </li>
+    <li class="">
+      <a href="10. Delete a Redshift Cluster.html">10. Delete a Redshift Cluster</a>
+    </li>
+    <li class="">
+      <a href="11. RDS - Create PostgreSQL Database.html">11. RDS - Create PostgreSQL Database</a>
+    </li>
+    <li class="">
+      <a href="12. Avoid Paying Unexpected Costs for AWS.html">12. Avoid Paying Unexpected Costs for AWS</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">08. Launch a Redshift Cluster</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="launch-a-redshift-cluster">Launch a Redshift Cluster</h1>
+<blockquote>
+  <p><strong>WARNING:</strong> The cluster that you are about to launch will be live, and you will be charged the standard Amazon Redshift usage fees for the cluster until you delete it. <strong>Make sure to delete your cluster each time you're finished working to avoid large, unexpected costs for yourself.</strong> Instructions on deleting your cluster are included on the last page in this lesson. You can always launch a new cluster, so don't leave your Redshift cluster running overnight or throughout the week if you don't need to.</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol>
+<li>Sign in to the AWS Management Console and open the Amazon Redshift console at <a href="https://console.aws.amazon.com/redshift/" rel="noopener noreferrer" target="_blank">https://console.aws.amazon.com/redshift/</a>.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-12.55.05-pm.png" alt="Navigate to a new service" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Navigate to a new service</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li>On the Amazon Redshift Dashboard, choose <strong>Create cluster</strong>. It will launch the <em>Create cluster</em> wizard.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-12.57.40-pm.png" alt="Amazon Redshift dashboard" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Amazon Redshift dashboard</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="3">
+<li><strong>Cluster configuration</strong><br>Provide a unique identifier, such as <code>redshift-cluster-1</code>, and choose the <strong>Free trial</strong> option.  It will automatically, choose the following configuration:</li>
+</ol>
+<ul>
+<li>1 node of <code>dc2.large</code> hardware type. It is a high performance with fixed local SSD storage</li>
+<li>2 vCPUs</li>
+<li>160 GB storage capacity</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-1.28.49-pm.png" alt="Cluster&#x27;s basic configuration" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Cluster's basic configuration</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="4">
+<li><strong>Database configurations</strong><br><br />
+A few fields will be already filled up by default. Ensure to have to the following values:</li>
+</ol>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th id="**field**"><strong>Field</strong></th>
+<th id="**value**"><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Database name</td>
+<td><code>dev</code></td>
+</tr>
+<tr>
+<td>Database port</td>
+<td><code>5439</code></td>
+</tr>
+<tr>
+<td>Master user name</td>
+<td><code>awsuser</code></td>
+</tr>
+<tr>
+<td>Master user password</td>
+<td>Enter a password of your choice</td>
+</tr>
+<tr>
+<td></center></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+  <p><strong>Please note:</strong> We <strong>strongly advise</strong> you to keep these passwords closely guarded, including not putting them in your GitHub public repo, etc. </p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-1.06.48-pm.png" alt="Database configurations" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Database configurations</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="5">
+<li><strong>Cluster permissions (optional)</strong><br><br />
+Choose the IAM role created earlier, <em>myRedshiftRole</em>, from the drop-down and click on the <em>Associate IAM role</em> button.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-1.07.07-pm.png" alt="Cluster permissions " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Cluster permissions </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="6">
+<li><p><strong>Additional configurations</strong><br><br />
+Toggle the button to turn off the "use defaults" feature, and expand the <strong>Network and security</strong> section. Choose the following values:</p>
+<p><center></p></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th id="**field**"><strong>Field</strong></th>
+<th id="**value**"><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Virtual private cloud (VPC)</td>
+<td>Default VPC<br> If you are not able to view/select the default VPC, <br>refer to the resolution given <a href="https://aws.amazon.com/premiumsupport/knowledge-center/vpc-redshift-associate/" rel="noopener noreferrer" target="_blank">here</a>. <br>You will have to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-subnet-group-console.html#create-cluster-subnet-group" rel="noopener noreferrer" target="_blank">create a cluster subnet group</a>. <br><em>(It's easy, see the snapshots below)</em></td>
+</tr>
+<tr>
+<td>VPC security groups</td>
+<td>Choose the <em>redshift_security_group</em> created earlier.</td>
+</tr>
+<tr>
+<td>Cluster subnet group</td>
+<td>Choose the default<br>It is the one you have just created.</td>
+</tr>
+<tr>
+<td>Availability Zone</td>
+<td>No preference</td>
+</tr>
+<tr>
+<td>Enhanced VPC routing</td>
+<td>Disabled</td>
+</tr>
+<tr>
+<td>Publicly accessible</td>
+<td>Enable</td>
+</tr>
+<tr>
+<td></center></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Leave the rest of the values as default.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-1.20.29-pm.png" alt="Network and security section" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Network and security section</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-1.13.54-pm.png" alt="Amazon Redshift &amp;#8594;	 Configurations &amp;#8594;	 Subnet groups" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Amazon Redshift &#8594;     Configurations &#8594;  Subnet groups</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-1.16.21-pm.png" alt="Create a cluster subnet group from a default VPC" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Create a cluster subnet group from a default VPC</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="6">
+<li>Review your Cluster configuration and click on the <strong>Create cluster</strong> button at the bottom. It will take a few minutes to finish and show you a <strong>Complete</strong> status.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-1.56.22-pm.png" alt="Success message/Complete status" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Success message/Complete status</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="8">
+<li>Click on the <strong>Clusters</strong> menu item from the left navigation pane, and look at the cluster that you just launched. Make sure that the <strong>Status</strong> is <strong>Available</strong> before you try to connect to the database later. You can expect this to take 5-10 minutes.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-2.10.06-pm.png" alt="Cluster is ready to be connectedd" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Cluster is ready to be connectedd</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="09. Create an IAM User.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Launch a Redshift Cluster')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

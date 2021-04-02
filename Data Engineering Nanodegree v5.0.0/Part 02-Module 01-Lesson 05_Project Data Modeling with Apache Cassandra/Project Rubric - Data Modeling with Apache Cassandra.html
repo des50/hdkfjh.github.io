@@ -1,0 +1,331 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Data Modeling with Apache Cassandra</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Project: Data Modeling with Apache Cassandra</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Introduction.html">01. Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Project Details.html">02. Project Details</a>
+    </li>
+    <li class="">
+      <a href="03. Project Workspace.html">03. Project Workspace</a>
+    </li>
+    <li class="">
+      <a href="Project Description - Data Modeling with Apache Cassandra.html">Project Description - Data Modeling with Apache Cassandra</a>
+    </li>
+    <li class="">
+      <a href="Project Rubric - Data Modeling with Apache Cassandra.html">Project Rubric - Data Modeling with Apache Cassandra</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">Data Modeling with Apache Cassandra</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            
+      <div>
+        <h2><p>ETL Pipeline Processing</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Student completes the ETL pipeline procedures.</p>
+        </td>
+        <td>
+          <p>Student creates <code>event_data_new.csv</code> file.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Student uses the correct datatype for each Cassandra <code>CREATE</code> statement.</p>
+        </td>
+        <td>
+          <p>Student uses the appropriate datatype within the <code>CREATE</code> statement. </p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Data Modeling</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Student creates correct data models for the queries they need to run.</p>
+        </td>
+        <td>
+          <p>Student creates the correct Apache Cassandra tables for each of the three queries. The <code>CREATE TABLE</code> statement should include the appropriate table. </p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Student can set up the data model correctly to generate the exact responses posed in the questions.</p>
+        </td>
+        <td>
+          <p>Student demonstrates good understanding of data modeling by generating correct SELECT statements to generate the result being asked for in the question.</p>
+<p>The SELECT statement should NOT use <code>ALLOW FILTERING</code> to generate the results.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Student models the data by using appropriate table names.</p>
+        </td>
+        <td>
+          <p>Student should use table names that reflect the query and the result it will generate. Table names should include alphanumeric characters and underscores, and table names must start with a letter.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Student has given careful thought to how the data is modeled in the table and the sequence and order in which data is partitioned, inserted and retrieved from the table.</p>
+        </td>
+        <td>
+          <p>The sequence in which columns appear should reflect how the data is partitioned and the order of the data within the partitions.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>PRIMARY KEYS</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>The PRIMARY key for each table should uniquely identify each row in each of the tables.</p>
+        </td>
+        <td>
+          <p>The combination of the PARTITION KEY alone or with the addition of CLUSTERING COLUMNS should be used appropriately to uniquely identify each row.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div>
+        <h2><p>Presentation</p></h2>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Criteria</th>
+              <th>Meet Specification</th>
+            </tr>
+          </thead>
+          
+    <tbody>
+      
+      <tr scope="row">
+        <td>
+          <p>Student provides responses to the questions.</p>
+        </td>
+        <td>
+          <p>The notebooks should include a description of the query the data is modeled after.</p>
+        </td>
+      </tr>
+    
+      <tr scope="row">
+        <td>
+          <p>Students notebook code should be clean and modular.</p>
+        </td>
+        <td>
+          <p>Code should be organized well into the different queries. Any in-line comments that were clearly part of the project instructions should be removed so the notebook provides a professional look.</p>
+        </td>
+      </tr>
+    
+    </tbody>
+  
+        </table>
+
+      </div>
+    
+      <div class="jumbotron">
+        <h3>Tips to make your project standout:</h3>
+        <p><ul>
+<li>You can add description of your PRIMARY KEY and how you arrived at the decision to use each for the query</li>
+<li>Use Panda dataframes to add columns to your query output</li>
+</ul></p>
+      </div>
+    
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Data Modeling with Apache Cassandra')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,532 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RDS - Create PostgreSQL Database</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Cloud Computing and AWS</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Introduction.html">01. Lesson Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Cloud Computing.html">02. Cloud Computing</a>
+    </li>
+    <li class="">
+      <a href="03. Amazon Web Services.html">03. Amazon Web Services</a>
+    </li>
+    <li class="">
+      <a href="04. AWS Account Setup.html">04. AWS Account Setup</a>
+    </li>
+    <li class="">
+      <a href="05. Monitor your AWS Costs and Credits.html">05. Monitor your AWS Costs and Credits</a>
+    </li>
+    <li class="">
+      <a href="06. Create an IAM Role.html">06. Create an IAM Role</a>
+    </li>
+    <li class="">
+      <a href="07. Create Security Group.html">07. Create Security Group</a>
+    </li>
+    <li class="">
+      <a href="08. Launch a Redshift Cluster.html">08. Launch a Redshift Cluster</a>
+    </li>
+    <li class="">
+      <a href="09. Create an IAM User.html">09. Create an IAM User</a>
+    </li>
+    <li class="">
+      <a href="10. Delete a Redshift Cluster.html">10. Delete a Redshift Cluster</a>
+    </li>
+    <li class="">
+      <a href="11. RDS - Create PostgreSQL Database.html">11. RDS - Create PostgreSQL Database</a>
+    </li>
+    <li class="">
+      <a href="12. Avoid Paying Unexpected Costs for AWS.html">12. Avoid Paying Unexpected Costs for AWS</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">11. RDS - Create PostgreSQL Database</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>According to AWS:</p>
+<blockquote>
+  <p><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html" target="_blank">Amazon RDS</a> is a relational database service that manages common database administration tasks, resizes automatically, and is cost-friendly.  </p>
+</blockquote>
+<p>Let's see how to create a PostgresSQL database, and view the details of an existing database.</p>
+<h2 id="rds-dashboard">RDS Dashboard</h2>
+<p>Navigate to the <a href="https://console.aws.amazon.com/rds/home" target="_blank">RDS dashboard</a>. <br />
+It shows the database-resources summary, such as the count of database instances, the health of the database service, reserved instances, snapshots. You can also view the portion of the allocated storage. You can launch the <strong>Create database</strong> wizard from here.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-11-25-at-8.43.57-pm.png" alt="RDS dashboard" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>RDS dashboard</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="create-a-postgresql-db">Create a PostgreSQL DB</h2>
+<p>If you haven't launched already, choose the <strong>Databases</strong> menu item on the left navigation pane, and click on the <strong>Create Database</strong> button.</p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/02-rds-postgres.png" alt="Amazon RDS service &amp;#8594; Databases dashboard" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Amazon RDS service &#8594; Databases dashboard</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol>
+<li><p><strong>Choose a database creation method</strong><br>AWS provides two options to choose from:</p>
+<ul>
+<li><strong>Standard create</strong> - You have set all of the configuration options, including ones for availability, security, backups, and maintenance.</li>
+<li><strong>Easy create</strong> - You use the industry best-practice configurations. All configuration options, except the Encryption and VPC details, can be changed after the database is created.</li></ul>
+<p>The steps below will show you the <strong>Standard create</strong> fields/options.</p></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-5.42.42-pm.png" alt="Choose a database creation method" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Choose a database creation method</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li><strong>Engine options</strong><br>Select <strong>PostgreSQL</strong> option. It will pick up the latest stable release by default, though you can select a version of your choice as well. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-5.44.33-pm.png" alt="Engine options" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Engine options</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="3">
+<li>** Templates**<br><br />
+Use either the **RDS Free Tier **or **Dev/Test **template. On free-tier resources, you can develop and test applications to gain hands-on experience with Amazon RDS.  <br />
+The free tier will offer you 750 hrs of Amazon RDS in a Single-AZ <code>db.t2.micro</code> Instance, 20 GB of General Purpose Storage (SSD), and 20 GB for automated backup storage and any user-initiated DB Snapshots.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-5.57.51-pm.png" alt="Templates" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Templates</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="4">
+<li><p><strong>Settings</strong><br><br />
+Provide a <em>DB instance identifier</em>, such as <em>postgreSQL-test</em>, and master credentials (username and a password). Take note of this password, as it is useful for future steps. You will be able to find this password and change it later in the console.  </p>
+<p>Alternatively, you can auto-generate the password. In this case, AWS will show you the password once you create the database successfully. </p></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-6.02.43-pm.png" alt="Settings" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Settings</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="5">
+<li><strong>DB instance class</strong><br><br />
+The options here present the options for processing power and memory requirements. Since we have selected the Free tier option above, the only available option is <code>db.t2.micro</code>, which has 1 vCPU, and 1 GiB RAM.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-6.18.41-pm.png" alt="DB instance class" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>DB instance class</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="6">
+<li>** Storage** and <strong>Availability & durability</strong><br><br />
+Choose the default values for both these sections. It will offer you 20 GiB SSD storage, expandable up to 1000 GiB, by default. <br />
+For <em>Availability & durability</em> section, it will not offer us to have a Multi-AZ deployment.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-6.23.29-pm.png" alt="Storage and Availability &amp; durability" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Storage and Availability &amp; durability</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="7">
+<li>** Connectivity** <br><br />
+Choose/ensure the following values:</li>
+</ol>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th id="**field**"><strong>Field</strong></th>
+<th id="**value**"><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPC</td>
+<td>Default VPC</td>
+</tr>
+<tr>
+<td>Subnet group</td>
+<td>default</td>
+</tr>
+<tr>
+<td>Public access</td>
+<td>YES<br>Once you get familiar, choose NO next time.<br>You will need additional configuration to do so.</td>
+</tr>
+<tr>
+<td>VPC security group</td>
+<td>Either choose default or <br>create a new one</td>
+</tr>
+<tr>
+<td>Availability Zone</td>
+<td>No preferencce</td>
+</tr>
+<tr>
+<td>Database port</td>
+<td><code>5432</code> (default)</td>
+</tr>
+<tr>
+<td></center></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Leave the values default for the Database authentication section.</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-6.35.07-pm.png" alt="Connectivity" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Connectivity</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="8">
+<li><strong>Additional configuration</strong><br></li>
+</ol>
+<ul>
+<li>Provide the database name. If you do not specify a database name, Amazon RDS will not create a database.</li>
+<li>In the <em>Backup</em> section and select <em>1 day</em>, since this is for demonstration purposes.</li>
+<li>Leave the default values for the rest and click on the <strong>Create database</strong> button on the bottom right.</li>
+</ul>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-7.01.27-pm.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-7.01.40-pm.png" alt="Additional configuration" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Additional configuration</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="9">
+<li><strong>Success</strong> <br>You should land on a confirmation page. It will take a few minutes to launch the database. Wait a few minutes for the status to change to <strong>Available</strong>.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/11-rds-postgres.png" alt="" class="img img-fluid">
+    <figcaption class="figure-caption">
+      
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-7.15.31-pm.png" alt="Wait a few minutes for the status to change to **Available**." class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Wait a few minutes for the status to change to <strong>Available</strong>.</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <blockquote>
+  <p>For each database in the list above,  you can see the Region and availability zone it's running in, the size, and the status that it's up and running. You can also see the percentage utilization of the underlying CPU.   </p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="12. Avoid Paying Unexpected Costs for AWS.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. RDS - Create PostgreSQL Database')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

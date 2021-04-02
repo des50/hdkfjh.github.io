@@ -1,0 +1,206 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Avoid Paying Unexpected Costs for AWS</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Cloud Computing and AWS</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Introduction.html">01. Lesson Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Cloud Computing.html">02. Cloud Computing</a>
+    </li>
+    <li class="">
+      <a href="03. Amazon Web Services.html">03. Amazon Web Services</a>
+    </li>
+    <li class="">
+      <a href="04. AWS Account Setup.html">04. AWS Account Setup</a>
+    </li>
+    <li class="">
+      <a href="05. Monitor your AWS Costs and Credits.html">05. Monitor your AWS Costs and Credits</a>
+    </li>
+    <li class="">
+      <a href="06. Create an IAM Role.html">06. Create an IAM Role</a>
+    </li>
+    <li class="">
+      <a href="07. Create Security Group.html">07. Create Security Group</a>
+    </li>
+    <li class="">
+      <a href="08. Launch a Redshift Cluster.html">08. Launch a Redshift Cluster</a>
+    </li>
+    <li class="">
+      <a href="09. Create an IAM User.html">09. Create an IAM User</a>
+    </li>
+    <li class="">
+      <a href="10. Delete a Redshift Cluster.html">10. Delete a Redshift Cluster</a>
+    </li>
+    <li class="">
+      <a href="11. RDS - Create PostgreSQL Database.html">11. RDS - Create PostgreSQL Database</a>
+    </li>
+    <li class="">
+      <a href="12. Avoid Paying Unexpected Costs for AWS.html">12. Avoid Paying Unexpected Costs for AWS</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">12. Avoid Paying Unexpected Costs for AWS</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="important-note">Important Note</h3>
+<p>We believe that the amount of AWS Educate promotional credits we have arranged for Udacity students to receive for free from AWS is sufficient to allow you to complete all of your work in the Data Engineering ND, <em>if you follow the guidelines we provide in this lesson for using your credits wisely</em>. </p>
+<h4 id="key-recommendations-for-using-your-aws-credits-wisely">Key recommendations for using your AWS credits wisely:</h4>
+<ul>
+<li>Delete your Amazon Redshift cluster each time you're finished working.</li>
+<li>Use a smaller subset of your data while you code and debug on AWS, and only execute with the full dataset on AWS as a final test of your code.</li>
+</ul>
+<p><strong>If you exceed the AWS credits that you are provided, you will be responsible for purchasing any additional credits necessary to complete the Nanodegree.</strong> Students are solely responsible for monitoring usage charges on the AWS account you use.</p>
+<p>If you believe there is an error or problem with your usage of AWS credits, please contact AWS Support at <a href="https://console.aws.amazon.com/support/home" rel="noopener noreferrer" target="_blank">https://console.aws.amazon.com/support/home</a>.</p>
+<p>For more information or inquiries, please refer to the <a href="https://www.awseducate.com/registrationtandc" rel="noopener noreferrer" target="_blank">AWS Educate Terms and Conditions</a>.</p>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('12. Avoid Paying Unexpected Costs for AWS')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

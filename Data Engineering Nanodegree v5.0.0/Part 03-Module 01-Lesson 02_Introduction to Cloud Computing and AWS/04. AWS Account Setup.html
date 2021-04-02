@@ -1,0 +1,286 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AWS Account Setup</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Cloud Computing and AWS</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Introduction.html">01. Lesson Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Cloud Computing.html">02. Cloud Computing</a>
+    </li>
+    <li class="">
+      <a href="03. Amazon Web Services.html">03. Amazon Web Services</a>
+    </li>
+    <li class="">
+      <a href="04. AWS Account Setup.html">04. AWS Account Setup</a>
+    </li>
+    <li class="">
+      <a href="05. Monitor your AWS Costs and Credits.html">05. Monitor your AWS Costs and Credits</a>
+    </li>
+    <li class="">
+      <a href="06. Create an IAM Role.html">06. Create an IAM Role</a>
+    </li>
+    <li class="">
+      <a href="07. Create Security Group.html">07. Create Security Group</a>
+    </li>
+    <li class="">
+      <a href="08. Launch a Redshift Cluster.html">08. Launch a Redshift Cluster</a>
+    </li>
+    <li class="">
+      <a href="09. Create an IAM User.html">09. Create an IAM User</a>
+    </li>
+    <li class="">
+      <a href="10. Delete a Redshift Cluster.html">10. Delete a Redshift Cluster</a>
+    </li>
+    <li class="">
+      <a href="11. RDS - Create PostgreSQL Database.html">11. RDS - Create PostgreSQL Database</a>
+    </li>
+    <li class="">
+      <a href="12. Avoid Paying Unexpected Costs for AWS.html">12. Avoid Paying Unexpected Costs for AWS</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">04. AWS Account Setup</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="step-1-create-an-aws-account">Step 1. Create an AWS Account</h3>
+<p>Open a regular AWS account (if you don't already have one) following the instructions via the <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank">Amazon Web Service Help Center</a></p>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="step-2-get-promo-codes">Step 2. Get Promo Codes</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>Udacity has partnered with AWS to provide nominal credits for learners whose coursework requires AWS services to complete. To request a promo code, you can submit a Support ticket <a href="https://udacity.zendesk.com/hc/en-us/requests/new?ticket_form_id=110806" target="_blank">here</a>.</p>
+<ol>
+<li>Under the <strong>"Reason for Contact"</strong> field, choose ** "Third-Party Access, Promo Codes &amp; License keys**", then choose ** "AWS"** in the dropdown.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-11-23-at-11.13.32-am.png" alt="Snapshot: **Reason for Contact** field. " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Snapshot: <strong>Reason for Contact</strong> field. </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li>Please note that a regular AWS account will receive a promo code from Udacity with a fixed amount of AWS credits.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="step-3-apply-promo-code-to-your-aws-account">Step 3. Apply Promo Code to Your AWS Account</h3>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <p>To apply your promo code, follow below:</p>
+<ol>
+<li>Go to the <a href="https://console.aws.amazon.com/billing/home#/" rel="noopener noreferrer" target="_blank">AWS Billing Dashboard</a>. </li>
+<li>Click <strong>"Credits"</strong> on the left side of the screen, and click on the <strong>Redeem credit</strong> button. Enter the promo-code you have received. </li>
+<li>Credits will automatically be applied to your bill. Refresh the page and you will be able to view your credits under the <strong>Credits</strong> page. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2020-11-23-at-11.02.59-am.png" alt="Snapshot: **Credits** page on the **Billing Dashboard**" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Snapshot: <strong>Credits</strong> page on the <strong>Billing Dashboard</strong></p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="aws-free-tier">AWS Free Tier</h3>
+<p>It is an offering from AWS that allows you to use <em>most</em> of the AWS services free of cost up to a certain usage limit for one year. In addition to the promo codes provided by Udacity, you can also leverage the <a href="https://aws.amazon.com/premiumsupport/knowledge-center/what-is-free-tier/" target="_blank">AWS Free Tier Access</a>. </p>
+<p>According to AWS:</p>
+<blockquote>
+  <p>The AWS Free Tier is automatically activated on each new AWS account.   </p>
+</blockquote>
+<p>Check the list of services covered under Free Tier <a href="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc&amp;awsf.Free%20Tier%20Types=*all" target="_blank">here</a>. </p>
+<blockquote>
+  <p><strong>Note</strong> - You will be responsible for charges incurred from usage that exceeds the AWS Free Tier limits and credits provided by Udacity.  </p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="05. Monitor your AWS Costs and Credits.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. AWS Account Setup')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

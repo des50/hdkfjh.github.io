@@ -1,0 +1,226 @@
+{
+  "data": {
+    "lesson": {
+      "id": 826422,
+      "key": "cfdfde06-9c87-4c72-aa09-2aee8eb35675",
+      "title": "Project: Data Lake",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Students will build a data lake and an ETL pipeline in Spark that loads data from S3, processes the data into analytics tables, and loads them back into S3.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Data Lake project resources",
+            "uri": "https://video.udacity-data.com/topher/2019/June/5d0ae7a8_data-lake-project-resources/data-lake-project-resources.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "4796843e-4e97-45aa-aa45-59e89718d122",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 38880,
+        "semantic_type": "Project",
+        "title": "Data Lake",
+        "description": "Your **deliverables** will be a zip file or **Github repo** containing the files for your project. Alternatively, you can submit your project through the workspace.\n\nEnsure you meet specifications for all items in the [Project Rubric](https://review.udacity.com/#!/rubrics/2502/view). Your project  must **Meet Specifications** in each category in order for your submission to pass. \n\nIt can take us up to a week to grade the project, but in most cases it is much faster. You will get an email once your submission has been reviewed. In the meantime, you should feel free to proceed with your learning journey by continuing on to the next module in the program.",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "2502",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": null
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 826423,
+          "key": "273bfed9-eae1-4956-bc18-0aca4f837650",
+          "title": "Project Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "273bfed9-eae1-4956-bc18-0aca4f837650",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826455,
+              "key": "40552fd4-9347-4bfa-996e-94e824e7c4f3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project: Data Lake\n### Introduction\nA music streaming startup, Sparkify, has grown their user base and song database even more and want to move their data warehouse to a data lake. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.\n\nAs their data engineer, you are tasked with building an ETL pipeline that extracts their data from S3, processes them using Spark, and loads the data back into S3 as a set of dimensional tables. This will allow their analytics team to continue finding insights in what songs their users are listening to.\n\nYou'll be able to test your database and ETL pipeline by running queries given to you by the analytics team from Sparkify and compare your results with their expected results.\n\n### Project Description\nIn this project, you'll apply what you've learned on Spark and data lakes to build an ETL pipeline for a data lake hosted on S3. To complete the project, you will need to load data from S3, process the data into analytics tables using Spark, and load them back into S3. You'll deploy this Spark process on a cluster using AWS.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826424,
+          "key": "2a3cf217-276f-4826-b6c1-6747ca73533b",
+          "title": "Project Datasets",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2a3cf217-276f-4826-b6c1-6747ca73533b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826456,
+              "key": "e9244642-f449-481f-8921-6a308d346ed6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Datasets\nYou'll be working with two datasets that reside in S3. Here are the S3 links for each:\n- Song data: `s3://udacity-dend/song_data`\n- Log data: `s3://udacity-dend/log_data`\n\n# Song Dataset\nThe first dataset is a subset of real data from the [Million Song Dataset](https://labrosa.ee.columbia.edu/millionsong/). Each file is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.\n```txt\nsong_data/A/B/C/TRABCEI128F424C983.json\nsong_data/A/A/B/TRAABJL12903CDCF1A.json\n```\nAnd below is an example of what a single song file, TRAABJL12903CDCF1A.json, looks like.\n```json\n{\"num_songs\": 1, \"artist_id\": \"ARJIE2Y1187B994AB7\", \"artist_latitude\": null, \"artist_longitude\": null, \"artist_location\": \"\", \"artist_name\": \"Line Renaud\", \"song_id\": \"SOUPIRU12A6D4FA1E1\", \"title\": \"Der Kleine Dompfaff\", \"duration\": 152.92036, \"year\": 0}```\n\n\n# Log Dataset\nThe second dataset consists of log files in JSON format generated by this [event simulator](https://github.com/Interana/eventsim) based on the songs in the dataset above. These simulate app activity logs from an imaginary music streaming app based on configuration settings.\n\nThe log files in the dataset you'll be working with are partitioned by year and month. For example, here are filepaths to two files in this dataset.\n```txt\nlog_data/2018/11/2018-11-12-events.json\nlog_data/2018/11/2018-11-13-events.json\n```\nAnd below is an example of what the data in a log file, 2018-11-12-events.json, looks like.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827233,
+              "key": "4bac6f4a-c268-4391-a6f1-79e5c2cfd4dd",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6c3f0a_log-data/log-data.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4bac6f4a-c268-4391-a6f1-79e5c2cfd4dd",
+              "caption": "",
+              "alt": "",
+              "width": 1525,
+              "height": 460,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 826425,
+          "key": "816592a5-1ec3-4fec-85f7-4a6498802349",
+          "title": "Project Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "816592a5-1ec3-4fec-85f7-4a6498802349",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830404,
+              "key": "3934a577-4bd0-4587-a48f-e6ead9299bd1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Schema for Song Play Analysis\nUsing the song and log datasets, you'll need to create a star schema optimized for queries on song play analysis. This includes the following tables.\n\n#### Fact Table\n1. **songplays** - records in log data associated with song plays i.e. records with page `NextSong`  \n     - *songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent*\n\n#### Dimension Tables\n2. **users** - users in the app\n    - *user_id, first_name, last_name, gender, level*\n3. **songs** - songs in music database\n     - *song_id, title, artist_id, year, duration*\n4. **artists** - artists in music database\n     - *artist_id, name, location, lattitude, longitude*\n5. **time** - timestamps of records in **songplays** broken down into specific units\n    - *start_time, hour, day, week, month, year, weekday*",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826458,
+              "key": "6c35c108-07cf-451b-b0de-012c003c02ed",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Template\n\nTo get started with the project, go to the workspace on the next page, where you'll find the project template. You can work on your project with a smaller dataset found in the workspace, and then move on to the bigger dataset on AWS.\n\nAlternatively, you can download the template files in the Resources tab in the classroom and work on this project on your local computer.\n\nThe project template includes three files:\n\n- `etl.py` reads data from S3, processes that data using Spark, and writes them back to S3\n- `dl.cfg`contains your AWS credentials\n- `README.md` provides discussion on your process and decisions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 830409,
+              "key": "a71b38de-c7c4-440b-85a1-f90352d35bad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Document Process\nDo the following steps in your `README.md` file.\n1. Discuss the purpose of this database in context of the startup, Sparkify, and their analytical goals.\n2. State and justify your database schema design and ETL pipeline.\n3. [Optional] Provide example queries and results for song play analysis.\n\nHere's a [guide](https://www.markdownguide.org/basic-syntax/) on Markdown Syntax.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 832040,
+              "key": "4a9d8928-2133-474d-8a06-a565f48af828",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Project Rubric\nRead the project [rubric](https://review.udacity.com/#!/rubrics/2502/view) before and during development of your project to ensure you meet all specifications.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 844046,
+              "key": "07d5dff0-a686-4f50-a9ff-0bd88f62f6c1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# REMINDER: Do not include your AWS access keys in your code when sharing this project!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826427,
+          "key": "166a023e-0990-494f-ad63-a1c5270e9c94",
+          "title": "Project Workspace",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "166a023e-0990-494f-ad63-a1c5270e9c94",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830598,
+              "key": "08ea2efc-b4a6-4ff0-9d99-d432825a7d3c",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c826427xJUPYTERLx8knk8rj",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-joigv",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": true,
+                    "defaultPath": "/",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

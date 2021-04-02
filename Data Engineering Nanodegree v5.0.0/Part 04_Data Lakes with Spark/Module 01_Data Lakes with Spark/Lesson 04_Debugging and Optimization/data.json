@@ -1,0 +1,824 @@
+{
+  "data": {
+    "lesson": {
+      "id": 1020541,
+      "key": "d112fbcd-af55-45fe-a30f-5fb2c3d33021",
+      "title": "Debugging and Optimization",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson, you will learn best practices for debugging and optimizing your Spark applications. ",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/d112fbcd-af55-45fe-a30f-5fb2c3d33021/1020541/1589330675835/Debugging+and+Optimization+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/d112fbcd-af55-45fe-a30f-5fb2c3d33021/1020541/1589330671194/Debugging+and+Optimization+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 1015706,
+          "key": "b3e7239e-6918-4261-9652-d291ef372cfd",
+          "title": "Debugging is Hard",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b3e7239e-6918-4261-9652-d291ef372cfd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827608,
+              "key": "2b837ee6-ee97-48cb-ad79-f4ca8e076e43",
+              "title": "L3 03 01 Why Debugging In Spark Is Hard V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nMnt9Z7LM44",
+                "china_cdn_id": "nMnt9Z7LM44.mp4"
+              }
+            },
+            {
+              "id": 1015680,
+              "key": "6c266c5c-ad7e-4173-87f7-11f03dde7108",
+              "title": "Debugging Spark is harder on Standalone",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Debugging Spark is harder on Standalone mode\n\n+ Previously, we ran Spark codes in the local mode where you can easily fix the code on your laptop because you can view the error in your code on your local machine. \n+ For Standalone mode, the cluster (group of manager and executor) load data, distribute the tasks among them and the executor executes the code. The result is either a successful  output or a log of the errors. The logs are captured in a separate machine than the executor, which makes it important to interpret the syntax of the logs - this can get tricky.\n+ One other thing that makes the standalone mode difficult to deploy the code is that your __laptop environment will be completely different than AWS EMR__ or other cloud systems.  As a result, you will always have to test your code rigorously on different environment settings to make sure the code works.\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1015699,
+          "key": "a3c9a1c8-4461-4f20-8aa8-4b8ba1f30a10",
+          "title": "Intro: Syntax Errors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a3c9a1c8-4461-4f20-8aa8-4b8ba1f30a10",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827609,
+              "key": "e33e15f4-a29e-45c4-aabd-0b83ebd33ce9",
+              "title": "L3 03 02 Syntax Errors V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kZp6ifsGQjE",
+                "china_cdn_id": "kZp6ifsGQjE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1015700,
+          "key": "8c3ec6dd-26df-489f-ad64-1de9c38e2a5c",
+          "title": "Code Errors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8c3ec6dd-26df-489f-ad64-1de9c38e2a5c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900301,
+              "key": "170da26e-374c-4da4-95d9-adee0df92de5",
+              "title": "Spark L3 SC 16 Code Errors",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UfG2TGlIDPk",
+                "china_cdn_id": "UfG2TGlIDPk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1015705,
+          "key": "4cefc89a-34fe-44c4-9571-760aa0e76fff",
+          "title": "Data Errors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4cefc89a-34fe-44c4-9571-760aa0e76fff",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1020096,
+              "key": "dbbff7a9-fcfc-48fd-8d4f-503d9907b99b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Let's review examples of Data Errors",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827610,
+              "key": "8aa0e9ac-7f17-4c41-b2b7-f37bda470cdb",
+              "title": "L3 03 03 Data Errors V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GzY9T-Oki3M",
+                "china_cdn_id": "GzY9T-Oki3M.mp4"
+              }
+            },
+            {
+              "id": 900302,
+              "key": "05a0539e-b456-4f23-8d87-08a3e7f3abe1",
+              "title": "Spark L3 SC 18 Data Errors",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cWCqTRbqQTc",
+                "china_cdn_id": "cWCqTRbqQTc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 701936,
+          "key": "7a4de2b3-f54f-41a6-a2df-a7cd56d22718",
+          "title": "Debugging your Code",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7a4de2b3-f54f-41a6-a2df-a7cd56d22718",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827612,
+              "key": "4425e17e-8a97-4e22-86c4-42bc8fc5ab39",
+              "title": "L3 03 04 Debugging Your Code V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MLrMvzj7Scw",
+                "china_cdn_id": "MLrMvzj7Scw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1015708,
+          "key": "39bb5236-c304-458c-b340-e454295b2c86",
+          "title": "How to Use Accumulators",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "39bb5236-c304-458c-b340-e454295b2c86",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1020576,
+              "key": "f3a64776-d4d3-4548-8862-e800c2c5c57e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What are Accumulators?\n\nAs the name hints, accumulators are variables that *accumulate*. Because Spark runs in distributed mode, the workers are running in parallel, but asynchronously. For example, worker 1 will not be able to know how far worker 2 and worker 3 are done with their tasks. With the same analogy, the variables that are local to workers are not going to be shared to another worker unless you accumulate them. Accumulators are used for mostly sum operations, like in Hadoop MapReduce, but you can implement it to do otherwise.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1020091,
+              "key": "1d24fc17-423b-439a-b05d-0614c94e192e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "For additional deep-dive, here is the [Spark documentation on accumulators](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#accumulators) if you want to learn more about these.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900303,
+              "key": "ee62a553-8555-4c55-8c66-bf165bf20e8e",
+              "title": "Spark L3 SC 21 How To Use Accumulators",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "oV1PmKf9Spc",
+                "china_cdn_id": "oV1PmKf9Spc.mp4"
+              }
+            },
+            {
+              "id": 1015683,
+              "key": "23b47223-3566-4019-8967-012ab6fe460a",
+              "title": "What would be the best scenario case to use Spark Accumulators?",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "23b47223-3566-4019-8967-012ab6fe460a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What would be the best scenario for using Spark Accumulators?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "When you’re using transformation functions across your code",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "When you know you will have different values across your executors",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 1015704,
+          "key": "666df10b-fb4f-4bc8-9bf9-810cec22cbdc",
+          "title": "Spark Broadcast",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "666df10b-fb4f-4bc8-9bf9-810cec22cbdc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1015684,
+              "key": "df0dfbdc-111a-4464-9add-f90bc398c1cb",
+              "title": "What is Spark Broadcast?",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What is Spark Broadcast?\n\nSpark Broadcast variables are secured, read-only variables that get distributed and cached to worker nodes. This is helpful to Spark because when the driver sends packets of information to worker nodes, it sends the data and tasks attached together which could be a little heavier on the network side. Broadcast variables seek to reduce network overhead and to reduce communications. Spark Broadcast variables are used only with Spark Context.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1015685,
+              "key": "f804a1d2-807e-4467-8446-affa64dc9faf",
+              "title": "When is broadcast usually used in Spark?",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f804a1d2-807e-4467-8446-affa64dc9faf",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "When is broadcast usually used in Spark?",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Broadcast join is a way of joining a large table and small table in Spark.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Broadcast variable is a cached variable in the driver.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Broadcast variable is shipped to each machine with tasks.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "Broadcast join is like map-side join in MapReduce.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1017630,
+              "key": "c3687695-8e74-4f8c-9f7c-6fceca9f9fa4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Exercise: Broadcast Example\n\nRun the starter code in Jupyter Notebook to practice [Broadcast Joins](https://github.com/udacity/nd027-c3-data-lakes-with-spark/tree/master/Debugging_And_Optimization/exercises/starter). \n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 701940,
+          "key": "863eb5a3-59e7-4aae-9f81-dd8b35765945",
+          "title": "Spark WebUI",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "863eb5a3-59e7-4aae-9f81-dd8b35765945",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827613,
+              "key": "c63d611a-edaf-4d8c-bf8e-deda56438036",
+              "title": "L3 04 01 What Is The Spark WebUI V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9tK8QntvZso",
+                "china_cdn_id": "9tK8QntvZso.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 701942,
+          "key": "50d57a17-5e5d-41a1-a9fc-b7f6e3236eb1",
+          "title": "Connecting to the Spark Web UI",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "50d57a17-5e5d-41a1-a9fc-b7f6e3236eb1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827614,
+              "key": "989eaec3-ffc2-4d22-a880-8b2291febb6b",
+              "title": "L3 04 02 Connecting The The Spark WebUI V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "o_ZjFja3uiA",
+                "china_cdn_id": "o_ZjFja3uiA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1015702,
+          "key": "fb531f82-f9c1-448d-bfc4-20f885cf23b1",
+          "title": "Different types of Spark Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fb531f82-f9c1-448d-bfc4-20f885cf23b1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1017617,
+              "key": "39dd8f5a-f992-4f4c-a65f-a655ac9b4234",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Transformations and Actions\n\nThere are two types of functions in Spark:\n1. __Transformations__\n2. __Actions__\n\nSpark uses __lazy evaluation__ to evaluate RDD and dataframe. Lazy evaluation means the code is not executed until it is needed. The __ action__ functions trigger the lazily evaluated functions.\n\nFor example,\n\n```\ndf = spark.read.load(\"some csv file\")\ndf1 = df.select(\"some column\").filter(\"some condition\")\ndf1.write(\"to path\")\n```\n\n+ In this code, `select` and `filter` are __transformation functions__, and `write` is an __action function__. \n+ If you execute this code line by line, the second line will be loaded, but you __will not see the function being executed in your Spark UI__. \n+ When you actually __execute using action__ `write`, then you will see your Spark program being executed:\n + `select` --> `filter` --> `write` chained in Spark UI\n  + but you will only see `Write`show up under your tasks.\n\nThis is significant because you can chain your __RDD__ or dataframe as much as you want, but it might not do anything until you actually __trigger__ with some __action words__. And if you have lengthy __transformations__, then it might take your executors quite some time to complete all the tasks.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1015703,
+          "key": "01aed4c6-5115-4624-b398-1975dd4fd78d",
+          "title": "Getting Familiar with the Spark UI",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "01aed4c6-5115-4624-b398-1975dd4fd78d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900304,
+              "key": "f02edbd1-f391-479a-bfb1-c1db521a0c73",
+              "title": "Spark L3 SC 24 Getting Familiar With The Spark UI",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "88JQIalP84M",
+                "china_cdn_id": "88JQIalP84M.mp4"
+              }
+            },
+            {
+              "id": 899086,
+              "key": "82c0ab04-fae5-48c5-b6e4-171084034265",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### For Further Optional Reading on the Spark UI \nYou may be interested in the [Monitoring and Instrumentation](https://spark.apache.org/docs/latest/monitoring.html) section of the Spark documentation.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1015709,
+          "key": "3300b790-9229-4a40-8f4e-9745129a2c77",
+          "title": "Review of the Log Data",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3300b790-9229-4a40-8f4e-9745129a2c77",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900305,
+              "key": "d3af0737-813b-4c11-be82-b622627096a9",
+              "title": "Spark L3 SC 25 Review Of The Log Data",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2H8jTcxamlU",
+                "china_cdn_id": "2H8jTcxamlU.mp4"
+              }
+            },
+            {
+              "id": 1015687,
+              "key": "f7bba143-474c-4f97-a08a-eb239424ecc4",
+              "title": "What are some efficient ways to keep logs?",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f7bba143-474c-4f97-a08a-eb239424ecc4",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What are some efficient ways to keep logs? (may be more than one answer)",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Put print statements wherever needed",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Use logging systems, like `Logger`",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Save log files to local system",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 899085,
+              "key": "9e7b6ca2-9e25-47bb-9fb0-6b23858bb954",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Further Optional Study on Log Data\nFor further information please see the [Configuring Logging](https://spark.apache.org/docs/latest/configuration.html) section of the Spark documentation.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1015698,
+          "key": "73272f30-7505-4965-ab98-761f7cb47bbb",
+          "title": "Intro: Code Optimization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "73272f30-7505-4965-ab98-761f7cb47bbb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827622,
+              "key": "56742c94-1ab8-4baf-aef6-c11fb981bd40",
+              "title": "L3 06 01 Code Optimization Intro V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GdXRUYzG9Vw",
+                "china_cdn_id": "GdXRUYzG9Vw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1015710,
+          "key": "efd35a0f-7c8a-463e-8e6c-0840cdac90e9",
+          "title": "Understanding Data Skewness",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "efd35a0f-7c8a-463e-8e6c-0840cdac90e9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827624,
+              "key": "b9f73528-3e8f-490d-a2fb-a1e4501ec863",
+              "title": "L3 06 03 Understanding Data Skew V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QRAtQqWf-Ys",
+                "china_cdn_id": "QRAtQqWf-Ys.mp4"
+              }
+            },
+            {
+              "id": 1015690,
+              "key": "1b7ca454-fa3f-4b0c-bfd6-39c67b18474d",
+              "title": "Introduction to Dataset",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Introduction to Dataset\n\nIn the real world, you’ll see a lot of cases where the data is skewed. Skewed data means due to non-optimal partitioning, the data is heavy on few partitions. This could be problematic. Imagine you’re processing this dataset, and the data is distributed through your cluster by partition. In this case, only a few partitions will continue to work, while the rest of the partitions do not work. If you were to run your cluster like this, you will get billed by the time of the data processing, which means you will get billed for the duration of the longest partitions working. This isn’t optimized, so we would like to re-distribute the data in a way so that all the partitions are working.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1020006,
+              "key": "924b6225-0494-4a9e-8ca5-776d9b26f9a0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Figure A. Time to process with non-optimal partitioning with skewed data",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1015691,
+              "key": "0d59f0e2-2c5a-4e5d-b738-fd378d3d0f30",
+              "title": "Introduction to Dataset Image",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/April/5ea152a4_timetocomplete1/timetocomplete1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0d59f0e2-2c5a-4e5d-b738-fd378d3d0f30",
+              "caption": "",
+              "alt": "Image showing for non-optimal processing",
+              "width": 1001,
+              "height": 559,
+              "instructor_notes": null
+            },
+            {
+              "id": 1020007,
+              "key": "ae0bb761-02f4-42c9-bbc0-52c9c98e8aab",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Figure B. Time to process with optimal partitioning with skewed data",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1015689,
+              "key": "60b7fef4-ee5b-4194-8781-14759a6bf7fa",
+              "title": "Introduction to dataset image 2",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/April/5ea152b1_timetocomplete2/timetocomplete2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/60b7fef4-ee5b-4194-8781-14759a6bf7fa",
+              "caption": "",
+              "alt": "Image showing for optimal processing",
+              "width": 931,
+              "height": 502,
+              "instructor_notes": null
+            },
+            {
+              "id": 1016507,
+              "key": "c96a2b8e-a846-4502-b0ec-8e48b421e8da",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Let’s recap what we saw in the video\nIn order to look at the skewness of the data:\n+ Check for MIN, MAX and data RANGES\n+ Examine how the workers are working\n+ Identify *workers* that are running longer and aim to optimize it.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1017621,
+          "key": "67688dbe-5879-4dcb-8ac5-777a7c6ff854",
+          "title": "Optimizing for Data Skewness",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "67688dbe-5879-4dcb-8ac5-777a7c6ff854",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "Parking Violation.Csv",
+                "uri": "https://video.udacity-data.com/topher/2020/May/5eabed5e_parking-violation.csv/parking-violation.csv.zip"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 1017622,
+              "key": "6958a197-0f9d-4fe0-b624-de082f96e7cf",
+              "title": "Nd027 DEND C3 L3 Debugging And Optimization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uoS77glXLZw",
+                "china_cdn_id": "uoS77glXLZw.mp4"
+              }
+            },
+            {
+              "id": 1017623,
+              "key": "70cc6c60-9357-4d73-83db-dd73be516928",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Optimizing skewness\n\n#### Use Cases in Business Datasets\nSkewed datasets are common. In fact, you are bound to encounter skewed data on a regular basis. In the video above, the instructor describes a year-long worth of retail business’ data. As one might expect, retail business is likely to surge during Thanksgiving and Christmas, while the rest of the year would be pretty flat.\n_Skewed data indicators:_  If we were to look at that data, _partitioned by month_, we would have a large volume during November and December. We would like to __process this dataset through Spark using different partitions__, if possible. _What are some ways to solve skewness?_\n\n+ Data preprocess\n+ Broadcast joins\n+ Salting \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1017624,
+              "key": "2f236d6e-67e2-42bd-8429-ef652bf8e32d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### So how do we solve skewed data problems?\nThe goal is to change the partitioning columns to take out the data skewness (e.g.,  the `year` column is skewed).\n##### 1.  __Use Alternate Columns that are more normally distributed:__<br>\nE.g., Instead of the `year` column, we can use `Issue_Date` column that isn’t skewed. <br>\n##### 2. __Make Composite Keys:__<br>\nFor  e.g., you can make composite keys  by combining two columns so that the new column can be used as  a composite key. For e.g,  combining the `Issue_Date` and `State` columns to make a new composite key titled `Issue_Date + State`. The  __new__ column will now include data from 2 columns, e.g., `2017-04-15-NY`. This column can be used to partition the data,  create more normally distributed datasets (e.g., distribution of parking violations on 2017-04-15 would now be more spread out across states, and this can now help address skewness in the data. \n##### 3. __Partition by number of Spark workers__: <br>\nAnother easy way is using the Spark workers. If you know the number of your workers for Spark, then you can easily partition the data by the number of workers `df.repartition(number_of_workers)` to repartition your data evenly across your workers. For example, if you have 8 workers, then you should do `df.repartition(8)` before doing any operations.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1017701,
+              "key": "66a8f3f0-2805-4d81-b0fa-a02b90aa5a19",
+              "title": "DEND C3 Data Lakes With Spark",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OPmsTEiYPug",
+                "china_cdn_id": "OPmsTEiYPug.mp4"
+              }
+            },
+            {
+              "id": 1017626,
+              "key": "f9f7da52-7998-493f-8cb0-28ea87006931",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the above video, the instructor describes her two approaches and provides an example of the _repartition_ method.\n\n### Optimizing skewness\n\nLet’s recap how I solved the skewed data problem.<br>\nI would like to use two different ways to solve this problem.\n\n+ I would like to __assign a new, temporary partition key__ before processing any huge shuffles.\n+ The second method is using __repartition__.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1017627,
+              "key": "26a65c5b-174f-45ab-83bd-e501150b4368",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##  Practice Optimizing Skewness\n\nHere is a link to the starter code for you to [practice repartitioning](https://github.com/udacity/nd027-c3-data-lakes-with-spark/tree/master/Debugging_And_Optimization/exercises/starter) to address challenges with Skewed data.\n\n#### You will find the zipped Parking_violations.csv file below. This file is _not_ available in the gitrepo because of its size.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 701976,
+          "key": "0b05ebaa-34bf-4caf-8b90-d3a50b0f2ded",
+          "title": "Other Issues and How to Address Them",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0b05ebaa-34bf-4caf-8b90-d3a50b0f2ded",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900198,
+              "key": "81db4272-6f1c-437a-b9ee-2799197d5411",
+              "title": "Untitled",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Troubleshooting Other Spark Issues\nIn this lesson, we walked through various examples of Spark issues you can debug based on error messages, loglines and stack traces. \n\nWe have also touched on another very common issue with Spark jobs that can be harder to address: everything working fine but just taking a very long time. So what do you do when your Spark job is (too) slow?\n\n## Insufficient resources\n\nOften while there are some possible ways of improvement, processing large data sets just takes a lot longer time than smaller ones even without any big problem in the code or job tuning. Using more resources, either by increasing the number of executors or using more powerful machines, might just not be possible. \nWhen you have a slow job it’s useful to understand: \n\nHow much data you’re actually processing (compressed file formats can be tricky to interpret)\nIf you can decrease the amount of data to be processed by filtering or aggregating to lower cardinality,\nAnd if resource utilization is reasonable.\n\nThere are many cases where different stages of a Spark job differ greatly in their resource needs: loading data is typically I/O heavy, some stages might require a lot of memory, others might need a lot of CPU. Understanding these differences might help to optimize the overall performance. Use the Spark UI and logs to collect information on these metrics.\n\nIf you run into out of memory errors you might consider increasing the number of partitions. If the memory errors occur over time you can look into why the size of certain objects is increasing too much during the run and if the size can be contained. Also, look for ways of freeing up resources if garbage collection metrics are high.\n\nCertain algorithms (especially ML ones) use the driver to store data the workers share and update during the run. If you see memory issues on the driver check if the algorithm you’re using is pushing too much data there.\n\n## Data skew\n\nIf you drill down in the Spark UI to the task level you can see if certain partitions process significantly more data than others and if they are lagging behind. Such symptoms usually indicate a skewed data set. Consider implementing the techniques mentioned in this lesson:\n\nAdd an intermediate data processing step with an alternative key\nAdjust the spark.sql.shuffle.partitions parameter if necessary\n\nThe problem with data skew is that it’s very specific to a dataset. You might know ahead of time that certain customers or accounts are expected to generate a lot more activity but the solution for dealing with the skew might strongly depend on how the data looks like. If you need to implement a more general solution (for example for an automated pipeline) it’s recommended to take a more conservative approach (so assume that your data will be skewed) and then monitor how bad the skew really is.\n\n## Inefficient queries\n\nOnce your Spark application works it’s worth spending some time to analyze the query it runs. You can use the Spark UI to check the DAG and the jobs and stages it’s built of.\n\nSpark’s query optimizer is called Catalyst. While Catalyst is a powerful tool to turn Python code to an optimized query plan that can run on the JVM it has some limitations when optimizing your code. It will for example push filters in a particular stage as early as possible in the plan but won’t move a filter across stages. It’s your job to make sure that if early filtering is possible without compromising the business logic than you perform this filtering where it’s more appropriate.\n\nIt also can’t decide for you how much data you’re shuffling across the cluster. Remember from the first lesson how expensive sending data through the network is. As much as possible try to avoid shuffling unnecessary data. In practice, this means that you need to perform joins and grouped aggregations as late as possible. \n\nWhen it comes to joins there is more than one strategy to choose from. If one of your data frames are small consider using broadcast hash join instead of a hash join.\n\n## Further reading\n\nDebugging and tuning your Spark application can be a daunting task. There is an ever-growing community out there though, always sharing new ideas and working on improving Spark and its tooling, to make using it easier. So if you have a complicated issue don’t hesitate to reach out to others (via user mailing lists, forums, and Q&A sites).\n\nYou can find more information on tuning [Spark](https://spark.apache.org/docs/latest/tuning.html\n) and [Spark SQL](https://spark.apache.org/docs/latest/sql-performance-tuning.html\n)  in the documentation.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1015707,
+          "key": "d05de039-dc03-46ce-a248-f7bd91beefaf",
+          "title": "Lesson Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d05de039-dc03-46ce-a248-f7bd91beefaf",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827628,
+              "key": "fd52dffe-c51d-4abc-9cb9-007d8b075ef5",
+              "title": "L3 08 01 Lesson Outro V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nCZReip9DpA",
+                "china_cdn_id": "nCZReip9DpA.mp4"
+              }
+            },
+            {
+              "id": 1016504,
+              "key": "d3056b8e-32ab-4ea3-b8a7-f3fb53facf7b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Lesson Summary\n\n### In this lesson, we covered:\n+ Debugging is hard\n+ Code errors\n+ Data errors\n+ How to  use Accumulators\n+ How to use  Spark Broadcast  variables\n+ Understanding data skewness\n+ Optimizing for data skewness\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

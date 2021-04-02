@@ -1,0 +1,235 @@
+{
+  "data": {
+    "lesson": {
+      "id": 826415,
+      "key": "b3ce1791-9545-4187-b1fc-1e29cc81f2b0",
+      "title": "Project: Data Warehouse",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Students will build an ETL pipeline that extracts data from S3, stages them in Redshift, and transforms data into a set of dimensional tables for their analytics team.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Data_Warehouse_Project_Template",
+            "uri": "https://video.udacity-data.com/topher/2019/April/5cb0ec9c_data-warehouse-project-template/data-warehouse-project-template.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "3f3314ab-e8bb-41e0-a03c-c549e0a91085",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 37440,
+        "semantic_type": "Project",
+        "title": "Data Warehouse",
+        "description": "Your **deliverables** will be a zip file or **Github repo** containing the files for your project. Alternatively, you can submit your project through the workspace.\n\nEnsure you meet specifications for all items in the [Project Rubric](https://review.udacity.com/#!/rubrics/2501/view). Your project  must **Meet Specifications** in each category in order for your submission to pass. \n\nIt can take us up to a week to grade the project, but in most cases it is much faster. You will get an email once your submission has been reviewed. In the meantime, you should feel free to proceed with your learning journey by continuing on to the next module in the program.",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "2501",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": null
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 826416,
+          "key": "32c31df5-7a94-49b4-90da-53308ac2edd5",
+          "title": "Project Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "32c31df5-7a94-49b4-90da-53308ac2edd5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826436,
+              "key": "a31c7ea1-c00a-427f-a706-1cb7c50bfc6e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project: Data Warehouse\n### Introduction\nA music streaming startup, Sparkify, has grown their user base and song database and want to move their processes and data onto the cloud. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.\n\nAs their data engineer, you are tasked with building an ETL pipeline that extracts their data from S3, stages them in Redshift, and transforms data into a set of dimensional tables for their analytics team to continue finding insights in what songs their users are listening to. You'll be able to test your database and ETL pipeline by running queries given to you by the analytics team from Sparkify and compare your results with their expected results.\n\n### Project Description\nIn this project, you'll apply what you've learned on data warehouses and AWS to build an ETL pipeline for a database hosted on Redshift. To complete the project, you will need to load data from S3 to staging tables on Redshift and execute SQL statements that create the analytics tables from these staging tables.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826417,
+          "key": "fa049d13-5e15-4333-b909-f1f6f0ce36a5",
+          "title": "Project Datasets",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fa049d13-5e15-4333-b909-f1f6f0ce36a5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826441,
+              "key": "c665ee19-7904-4df4-81bf-2e7bebd24a2e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Datasets\nYou'll be working with two datasets that reside in S3. Here are the S3 links for each:\n- Song data: `s3://udacity-dend/song_data`\n- Log data: `s3://udacity-dend/log_data`\n\nLog data json path: `s3://udacity-dend/log_json_path.json`\n\n# Song Dataset\nThe first dataset is a subset of real data from the [Million Song Dataset](https://labrosa.ee.columbia.edu/millionsong/). Each file is in JSON format and contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.\n```txt\nsong_data/A/B/C/TRABCEI128F424C983.json\nsong_data/A/A/B/TRAABJL12903CDCF1A.json\n```\nAnd below is an example of what a single song file, TRAABJL12903CDCF1A.json, looks like.\n```json\n{\"num_songs\": 1, \"artist_id\": \"ARJIE2Y1187B994AB7\", \"artist_latitude\": null, \"artist_longitude\": null, \"artist_location\": \"\", \"artist_name\": \"Line Renaud\", \"song_id\": \"SOUPIRU12A6D4FA1E1\", \"title\": \"Der Kleine Dompfaff\", \"duration\": 152.92036, \"year\": 0}```\n\n\n# Log Dataset\nThe second dataset consists of log files in JSON format generated by this [event simulator](https://github.com/Interana/eventsim) based on the songs in the dataset above. These simulate app activity logs from an imaginary music streaming app based on configuration settings.\n\nThe log files in the dataset you'll be working with are partitioned by year and month. For example, here are filepaths to two files in this dataset.\n```txt\nlog_data/2018/11/2018-11-12-events.json\nlog_data/2018/11/2018-11-13-events.json\n```\nAnd below is an example of what the data in a log file, 2018-11-12-events.json, looks like.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827231,
+              "key": "fa739f58-e9db-44b6-bf91-f061cdc164a7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6c3ce5_log-data/log-data.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fa739f58-e9db-44b6-bf91-f061cdc164a7",
+              "caption": "",
+              "alt": "",
+              "width": 1525,
+              "height": 460,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 826418,
+          "key": "14843ffe-212c-464a-b4b6-3f0db421aa32",
+          "title": "Project Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "14843ffe-212c-464a-b4b6-3f0db421aa32",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830403,
+              "key": "43079ad5-174b-4191-b378-2505b747401f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Schema for Song Play Analysis\nUsing the song and event datasets, you'll need to create a star schema optimized for queries on song play analysis. This includes the following tables.\n\n#### Fact Table\n1. **songplays** - records in event data associated with song plays i.e. records with page `NextSong`  \n     - *songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent*\n\n#### Dimension Tables\n2. **users** - users in the app\n    - *user_id, first_name, last_name, gender, level*\n3. **songs** - songs in music database\n     - *song_id, title, artist_id, year, duration*\n4. **artists** - artists in music database\n     - *artist_id, name, location, lattitude, longitude*\n5. **time** - timestamps of records in **songplays** broken down into specific units\n    - *start_time, hour, day, week, month, year, weekday*",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826447,
+              "key": "c6318369-c4f4-4644-b222-f77ad179fd36",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Template\n\nTo get started with the project, go to the workspace on the next page, where you'll find the project template. You can work on your project and submit your work through this workspace.\n\nAlternatively, you can download the template files in the Resources tab in the classroom and work on this project on your local computer.\n\nThe project template includes four files:\n\n- `create_table.py` is where you'll create your fact and dimension tables for the star schema in Redshift.\n- `etl.py` is where you'll load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.\n- `sql_queries.py` is where you'll define you SQL statements, which will be imported into the two other files above.\n- `README.md` is where you'll provide discussion on your process and decisions for this ETL pipeline.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 826451,
+              "key": "069ef3de-c780-43a1-ac9d-5499e089a9c2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Steps\nBelow are steps you can follow to complete each component of this project.\n### Create Table Schemas\n1. Design schemas for your fact and dimension tables\n2. Write a SQL `CREATE` statement for each of these tables in `sql_queries.py`\n3. Complete the logic in `create_tables.py` to connect to the database and create these tables\n4. Write SQL `DROP` statements to drop tables in the beginning of `create_tables.py` if the tables already exist. This way, you can run `create_tables.py` whenever you want to reset your database and test your ETL pipeline.\n5. Launch a redshift cluster and create an IAM role that has read access to S3.\n6. Add redshift database and IAM role info to `dwh.cfg`.\n6. Test by running `create_tables.py` and checking the table schemas in your redshift database. You can use Query Editor in the AWS Redshift console for this.\n\n### Build ETL Pipeline\n1. Implement the logic in `etl.py` to load data from S3 to staging tables on Redshift.\n2. Implement the logic in `etl.py` to load data from staging tables to analytics tables on Redshift.\n3. Test by running `etl.py` after running `create_tables.py` and running the analytic queries on your Redshift database to compare your results with the expected results.\n4. Delete your redshift cluster when finished.\n\n### Document Process\nDo the following steps in your `README.md` file.\n1. Discuss the purpose of this database in context of the startup, Sparkify, and their analytical goals.\n2. State and justify your database schema design and ETL pipeline.\n3. [Optional] Provide example queries and results for song play analysis.\n\nHere's a [guide](https://www.markdownguide.org/basic-syntax/) on Markdown Syntax.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827129,
+              "key": "9778639e-a456-494a-90b6-7ba8c6785d67",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Note\nThe `SERIAL` command in Postgres is not supported in Redshift. The equivalent in redshift is `IDENTITY(0,1)`, which you can read more on in the [Redshift Create Table Docs](https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_TABLE_NEW.html).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 832032,
+              "key": "1a0c0412-ceae-4dce-880f-4fe6c104183f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Project Rubric\nRead the project [rubric](https://review.udacity.com/#!/rubrics/2501/view) before and during development of your project to ensure you meet all specifications.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 844045,
+              "key": "f373fa2c-d487-45c9-8ba2-533e4fdfd8e7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# REMINDER: Do not include your AWS access keys in your code when sharing this project!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826419,
+          "key": "183d03fb-ba73-458f-94d3-f91ebdc674b9",
+          "title": "Project Workspace",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "183d03fb-ba73-458f-94d3-f91ebdc674b9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830592,
+              "key": "b5eef40e-7307-4de2-833e-505feb7cbdd8",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c826419xJUPYTERLr5tapor7",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-iev45",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": true,
+                    "defaultPath": "/",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

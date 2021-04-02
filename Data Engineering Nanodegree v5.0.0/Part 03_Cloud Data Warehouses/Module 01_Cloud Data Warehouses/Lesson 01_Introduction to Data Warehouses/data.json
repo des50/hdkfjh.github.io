@@ -1,0 +1,2005 @@
+{
+  "data": {
+    "lesson": {
+      "id": 809448,
+      "key": "ab256014-8417-4224-ba4f-48672b1ff254",
+      "title": "Introduction to Data Warehouses",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson, you'll be introduced to data warehouses, the Cloud and AWS.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/ab256014-8417-4224-ba4f-48672b1ff254/809448/1552596595905/Introduction+to+Data+Warehouses+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/ab256014-8417-4224-ba4f-48672b1ff254/809448/1552596589909/Introduction+to+Data+Warehouses+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 813627,
+          "key": "2a374997-a755-4b1d-abbb-7d49a1cc65f2",
+          "title": "Course Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2a374997-a755-4b1d-abbb-7d49a1cc65f2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826587,
+              "key": "d0a5df1f-dd2b-4098-8372-097dc040342d",
+              "title": "L00-CourseIntro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "W5xxQEk4yZM",
+                "china_cdn_id": "W5xxQEk4yZM.mp4"
+              }
+            },
+            {
+              "id": 840062,
+              "key": "394a40d7-c565-42cb-8da5-8fff5b220b39",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Welcome to the Data Warehouses Course\nIn this course, we'll cover the following:\n1. Introduction to Data Warehouses\n2. Introduction to the Cloud and AWS\n3. Implementing Data Warehouses on AWS",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826486,
+          "key": "a1b8c93f-a092-41cf-a4df-d995ef3ec4d4",
+          "title": "Lesson Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a1b8c93f-a092-41cf-a4df-d995ef3ec4d4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826588,
+              "key": "04071bf6-74b9-4996-82d9-4952c1e05f70",
+              "title": "DWH Lesson 1 Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ahg8ehawvfc",
+                "china_cdn_id": "Ahg8ehawvfc.mp4"
+              }
+            },
+            {
+              "id": 840063,
+              "key": "2859cfe9-0e20-40b3-8eec-ba521fa8e4d2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Introduction to Data Warehouses\nWelcome to this lesson on Introduction to Data Warehouses!\n\n### Objective\nStudents will be able to understand the purpose, architecture, and technologies used in a data warehouse.\n\n### Prerequisites\n- Relational database design & SQL\n- Programming in Python\n- Basic familiarity with dimensional modeling\n\n### Lesson Overview\n- What is a Data Warehouse? A Business Perspective\n- What is a Data Warehouse? A Technical Perspective\n- Dimensional Modeling (Recap)\n- DWH Architecture\n- OLAP Cubes\n- DWH Storage Technology",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826566,
+          "key": "bbe214d6-ffdb-468a-9cf1-7c971624b5f8",
+          "title": "Data Warehouse: Business Perspective",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bbe214d6-ffdb-468a-9cf1-7c971624b5f8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826589,
+              "key": "1eabf934-eef8-43b4-a11b-44faab13975c",
+              "title": "DWH BizPerspective",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wMN48PtXnow",
+                "china_cdn_id": "wMN48PtXnow.mp4"
+              }
+            },
+            {
+              "id": 840064,
+              "key": "4dd88672-c8de-4829-897d-63605247ebab",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# What is a Data Warehouse? A Business Perspective\n\nYou are in charge  of a retailer’s data infrastructure. Let’s look at some business activities. \n- Customers should be able to find goods & make orders\n- Inventory Staff should be able to stock, retrieve, and re-order goods\n- Delivery Staff should be able to pick up & deliver goods\n- HR should be able to assess the performance of sales staff\n- Marketing should be able to see the effect of different sales channels\n- Management should be able to monitor sales growth\n\nAsk yourself: Can I build a database to support these activities? Are all of the above questions of the same nature?  \nLet's take a closer look at details that may affect your data infrastructure.\n\n- Retailer has a nation-wide presence → **Scale?**\n- Acquired smaller retailers, brick & mortar shops, online store → **Single database? Complexity?**\n- Has support call center & social media accounts → **Tabular data?**\n- Customers, Inventory Staff and Delivery staff expect the system to be fast & stable → **Performance**\n- HR, Marketing & Sales Reports want a lot information but have not decided yet on everything they need → **Clear Requirements?**\n\nOk, maybe one single relational database won’t suffice :)\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826567,
+          "key": "0d0f82ba-f91b-4c69-9072-3021b5795d61",
+          "title": "Operational vs. Analytical Processes",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0d0f82ba-f91b-4c69-9072-3021b5795d61",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841971,
+              "key": "829e04a4-7cf4-494f-963d-c49d0f9c5109",
+              "title": "DWH Business Vs. Analytical",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2WZaa1jGTE8",
+                "china_cdn_id": "2WZaa1jGTE8.mp4"
+              }
+            },
+            {
+              "id": 830737,
+              "key": "44bd8400-6789-467a-a499-d593f04850ba",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "44bd8400-6789-467a-a499-d593f04850ba",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the following examples of business processes with the type of process (operational vs. analytical) each would be considered."
+                },
+                "concepts_label": "Example of Business Process",
+                "answers_label": "Type of Process",
+                "concepts": [
+                  {
+                    "text": "Need to track inventory",
+                    "correct_answer": {
+                      "id": "a1550643456879",
+                      "text": "Operational Process"
+                    }
+                  },
+                  {
+                    "text": "Examine market segmentation over a period of time",
+                    "correct_answer": {
+                      "id": "a1550643519015",
+                      "text": "Analytical Process"
+                    }
+                  },
+                  {
+                    "text": "Split customers into market segments for market optimization",
+                    "correct_answer": {
+                      "id": "a1550643561001",
+                      "text": "Analytical Process"
+                    }
+                  },
+                  {
+                    "text": "Track financial transactions",
+                    "correct_answer": {
+                      "id": "a1550643615999",
+                      "text": "Operational Process"
+                    }
+                  },
+                  {
+                    "text": "Track shipment of customer orders",
+                    "correct_answer": {
+                      "id": "a1550643688757",
+                      "text": "Operational Process"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1550643456879",
+                    "text": "Operational Process"
+                  },
+                  {
+                    "id": "a1550643615999",
+                    "text": "Operational Process"
+                  },
+                  {
+                    "id": "a1550643561001",
+                    "text": "Analytical Process"
+                  },
+                  {
+                    "id": "a1550643519015",
+                    "text": "Analytical Process"
+                  },
+                  {
+                    "id": "a1550643688757",
+                    "text": "Operational Process"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 830767,
+              "key": "7b16b0ad-22e7-44e8-9aed-73df7eff35aa",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "7b16b0ad-22e7-44e8-9aed-73df7eff35aa",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "A Data Warehouse...",
+                "answers": [
+                  {
+                    "id": "a1550644671673",
+                    "text": "is optimized to support processes for data analysis.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550645005811",
+                    "text": "is designed for OLTP transactions only.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550645131315",
+                    "text": "has data gathered from multiple sources.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550645557678",
+                    "text": " is an Online Analytical Processing system.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 840260,
+              "key": "cb55f8cb-dedf-4c75-b43c-454f9b754e6b",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "cb55f8cb-dedf-4c75-b43c-454f9b754e6b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What happens if we use the same database for both OLAP and OLTP?\n\n",
+                "answers": [
+                  {
+                    "id": "a1553011513107",
+                    "text": "The database schema will be hard to understand for business analysts",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1553011520540",
+                    "text": "The analytical queries will be slow as we will have to perform lots of table joins",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1553011521542",
+                    "text": "The database schema will be easy to understand for business analysts",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1553011522600",
+                    "text": "The analytical queries will run faster as they are executed on the same ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1553011591710",
+                    "text": "It might be totally ok if the database is small",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 826568,
+          "key": "8c1b1966-bd22-4bb2-8736-8f0fbadf5bca",
+          "title": "Data Warehouse: Technical Perspective",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8c1b1966-bd22-4bb2-8736-8f0fbadf5bca",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826591,
+              "key": "5ac33622-ab04-4c95-a082-9561c2e34ef3",
+              "title": "L01-02-DWH-TechPerspective",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tGO-aGPyt68",
+                "china_cdn_id": "tGO-aGPyt68.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 826570,
+          "key": "a0b9669d-e7e6-465d-8c40-2179900b5b22",
+          "title": "Dimensional Modeling",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a0b9669d-e7e6-465d-8c40-2179900b5b22",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841973,
+              "key": "5634e485-7212-4c3a-a69f-4fd6de8ec937",
+              "title": "DimModeling1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ony5hGkSo78",
+                "china_cdn_id": "ony5hGkSo78.mp4"
+              }
+            },
+            {
+              "id": 841974,
+              "key": "6380f740-1cc0-49f4-9c84-3cb627ec3b6e",
+              "title": "DimModeling2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GR29jiNw0XE",
+                "china_cdn_id": "GR29jiNw0XE.mp4"
+              }
+            },
+            {
+              "id": 830783,
+              "key": "ee339ba5-1760-4922-beb5-8e7739db0be5",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ee339ba5-1760-4922-beb5-8e7739db0be5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the type of data being captured in a table with the type of table (Fact VS. Dimension) it would be best captured in."
+                },
+                "concepts_label": "Type of data",
+                "answers_label": "Fact VS. Dimension table",
+                "concepts": [
+                  {
+                    "text": "Number of items bought by a customer",
+                    "correct_answer": {
+                      "id": "a1550647261919",
+                      "text": "Fact table"
+                    }
+                  },
+                  {
+                    "text": "Type of shirt ordered by the customer",
+                    "correct_answer": {
+                      "id": "a1550647306661",
+                      "text": "Dimension table"
+                    }
+                  },
+                  {
+                    "text": "Instances of positive feedback from customer",
+                    "correct_answer": {
+                      "id": "a1550647358265",
+                      "text": "Fact table"
+                    }
+                  },
+                  {
+                    "text": "Type of furniture the customer was browsing on an online furniture website",
+                    "correct_answer": {
+                      "id": "a1550647402985",
+                      "text": "Dimension table"
+                    }
+                  },
+                  {
+                    "text": "Number of shares sold for a specific company",
+                    "correct_answer": {
+                      "id": "a1550647444122",
+                      "text": "Fact table"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1550647261919",
+                    "text": "Fact table"
+                  },
+                  {
+                    "id": "a1550647306661",
+                    "text": "Dimension table"
+                  },
+                  {
+                    "id": "a1550647402985",
+                    "text": "Dimension table"
+                  },
+                  {
+                    "id": "a1550647358265",
+                    "text": "Fact table"
+                  },
+                  {
+                    "id": "a1550647444122",
+                    "text": "Fact table"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 830785,
+              "key": "7f470e8c-fcfb-444e-9b17-0468a5a4de59",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "7f470e8c-fcfb-444e-9b17-0468a5a4de59",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the type of data being captured in a table with the type of table (Fact VS. Dimension) it would be best captured in."
+                },
+                "concepts_label": "Type of data",
+                "answers_label": " Fact VS. Dimension table",
+                "concepts": [
+                  {
+                    "text": "Length of phone call a customer service rep attended to resolution.",
+                    "correct_answer": {
+                      "id": "a1550647731271",
+                      "text": "Fact table"
+                    }
+                  },
+                  {
+                    "text": "Location of the store",
+                    "correct_answer": {
+                      "id": "a1550647870662",
+                      "text": "Dimension table"
+                    }
+                  },
+                  {
+                    "text": "Date when customer placed the order for 4 shirts.",
+                    "correct_answer": {
+                      "id": "a1550647872126",
+                      "text": "Dimension table"
+                    }
+                  },
+                  {
+                    "text": "Employee ID of the sales person who made the sale",
+                    "correct_answer": {
+                      "id": "a1550647873548",
+                      "text": "Dimension table"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1550647731271",
+                    "text": "Fact table"
+                  },
+                  {
+                    "id": "a1550647872126",
+                    "text": "Dimension table"
+                  },
+                  {
+                    "id": "a1550647873548",
+                    "text": "Dimension table"
+                  },
+                  {
+                    "id": "a1550647870662",
+                    "text": "Dimension table"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 840542,
+          "key": "8f6f80b8-41ef-4976-86b6-821b9073a49d",
+          "title": "ETL Demo: Step 1 & 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8f6f80b8-41ef-4976-86b6-821b9073a49d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840552,
+              "key": "bc8b12cb-a647-491a-ade3-4dd1f0af1f6f",
+              "title": "L01-03.01-Part 1 3NF To Start Demo - Steps 1 And 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qDbyxiKFrLE",
+                "china_cdn_id": "qDbyxiKFrLE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 840543,
+          "key": "08e8e2c2-2c56-4a8f-ad69-7c972af3f6b3",
+          "title": "Exercise 1: Step 1 & 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "08e8e2c2-2c56-4a8f-ad69-7c972af3f6b3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840553,
+              "key": "4c135a16-97de-402a-9f50-0d5962523fe3",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-ots2l",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1 E1 - Step 1 & 2.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 840544,
+          "key": "be252d34-8d61-4a75-a235-11e1d04f5550",
+          "title": "ETL Demo: Step 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "be252d34-8d61-4a75-a235-11e1d04f5550",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840554,
+              "key": "4ead8028-cb75-4515-bbad-2a884e587d41",
+              "title": "L01-03.01-Part 2 3NF To Start Demo - Step 3.1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AckKPNjW17A",
+                "china_cdn_id": "AckKPNjW17A.mp4"
+              }
+            },
+            {
+              "id": 840555,
+              "key": "fdbe71eb-0bac-4a5f-b054-85725b1f7b58",
+              "title": "L01-03.01-Part 3 3NF To Start Demo - Step 3.2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SRHmqx4fGmU",
+                "china_cdn_id": "SRHmqx4fGmU.mp4"
+              }
+            },
+            {
+              "id": 840556,
+              "key": "6053c9ee-bd9f-4777-8b74-2fe88e430f05",
+              "title": "L01-03.01-Part 4 3NF To Start Demo - Step 3.3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ls1-xCiqHiI",
+                "china_cdn_id": "Ls1-xCiqHiI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 840545,
+          "key": "f795386c-42f0-422b-83da-a85225cf456b",
+          "title": "Exercise 1: Step 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f795386c-42f0-422b-83da-a85225cf456b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840557,
+              "key": "e31150bd-60c1-41d6-95eb-c5d6608dfede",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-a9ltf",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1 E1 - Step 3.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 840547,
+          "key": "88322cae-ed2b-487b-a288-801a9fc0bc46",
+          "title": "ETL Demo: Step 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "88322cae-ed2b-487b-a288-801a9fc0bc46",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840558,
+              "key": "a9cea508-072c-430d-a5e9-e06297dd306d",
+              "title": "L01-03.01-Part 5 3NF To Start Demo - Step 4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HHuhptPD7Kc",
+                "china_cdn_id": "HHuhptPD7Kc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 840546,
+          "key": "ad305b2f-4bba-49c2-b644-06d53f4b584c",
+          "title": "Exercise 1: Step 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ad305b2f-4bba-49c2-b644-06d53f4b584c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840559,
+              "key": "113e1598-f3e8-429e-9421-3d479eb53903",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-cl4u9",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1 E1 - Step 4.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 840548,
+          "key": "87c8d303-fe90-46b2-aa42-9c4ddf66bed6",
+          "title": "ETL Demo: Step 5",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "87c8d303-fe90-46b2-aa42-9c4ddf66bed6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840560,
+              "key": "101aa223-3d88-4a0c-a892-6069ebb69025",
+              "title": "L01-03.01-Part 6 3NF To Start Demo - Step 5",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IimfrD6lnu8",
+                "china_cdn_id": "IimfrD6lnu8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 840549,
+          "key": "08947d69-ea9b-40b1-be55-b8d55c448428",
+          "title": "Exercise 1: Step 5",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "08947d69-ea9b-40b1-be55-b8d55c448428",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840561,
+              "key": "74c79f84-3de5-45fd-956d-a5462e657e61",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-few18",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1 E1 - Step 5.ipynb",
+                    "actionButtonText": "Spark UI"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 840550,
+          "key": "ce0eb3ff-efdb-4b8c-a9bf-a0edb70fbdf6",
+          "title": "ETL Demo: Step 6",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ce0eb3ff-efdb-4b8c-a9bf-a0edb70fbdf6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840562,
+              "key": "0c60f60a-4d55-40d3-bacb-f3111751e8b3",
+              "title": "L01-03.01-Part 7 3NF To Start Demo - Step 6",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fHAALyRwGC0",
+                "china_cdn_id": "fHAALyRwGC0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 840551,
+          "key": "8404ea11-74b4-42eb-9655-2772afbb6e45",
+          "title": "Exercise 1: Step 6",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8404ea11-74b4-42eb-9655-2772afbb6e45",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840563,
+              "key": "0da538c6-8de9-4356-9307-d2bd9ecf232b",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-6gq0s",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1 E1 - Step 6.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 840218,
+          "key": "ae1550ab-6d2b-44d4-b6a9-5d023e4e4592",
+          "title": "Exercise Solution 1: 3NF to Star Schema",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ae1550ab-6d2b-44d4-b6a9-5d023e4e4592",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840219,
+              "key": "0f101141-a1f4-44e5-9b17-25225b46d46b",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-ekn96",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1 E1 - Solution.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 826573,
+          "key": "606b5f73-fe92-4f29-8c83-b6ac348131a1",
+          "title": "DWH Architecture: Kimball's Bus Architecture",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "606b5f73-fe92-4f29-8c83-b6ac348131a1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830433,
+              "key": "d2e9a1b1-c0d1-4fc0-8dae-0a9b8d1dcd68",
+              "title": "L01-05-Part 1 Architecture- Kimballs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cBK4T9LhD-A",
+                "china_cdn_id": "cBK4T9LhD-A.mp4"
+              }
+            },
+            {
+              "id": 830802,
+              "key": "313d6dc3-4cd3-4cc2-bbc7-a9ee44f08830",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "313d6dc3-4cd3-4cc2-bbc7-a9ee44f08830",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Identify the main characteristics of the Kimball Bus Architecture:",
+                "answers": [
+                  {
+                    "id": "a1550651838159",
+                    "text": "Results in a common dimension data model shared by different departments",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550652060921",
+                    "text": "Organized by the departments using the data, not by the business process",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550652062357",
+                    "text": "Data is not kept at the aggregated level, but rather at the atomic level",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550652064260",
+                    "text": "Organized by business processes, and used by different departments",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 842026,
+              "key": "129c6033-b072-45da-8a97-03d843ea27b6",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "129c6033-b072-45da-8a97-03d843ea27b6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "In the Kimball architecture, the sales analytics and the delivery analytics will both use the same  data dimension",
+                "answers": [
+                  {
+                    "id": "a1554228846527",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554228976204",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 826574,
+          "key": "ab00d199-f4ea-4940-9e0a-31319813c38e",
+          "title": "DWH Architecture: Independent Data Marts",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ab00d199-f4ea-4940-9e0a-31319813c38e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830435,
+              "key": "02e36459-f075-475f-9a5e-817328062a84",
+              "title": "L01-05-Part 2 Architecture- Independent Data Marts",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5ItLNcoZMSs",
+                "china_cdn_id": "5ItLNcoZMSs.mp4"
+              }
+            },
+            {
+              "id": 830803,
+              "key": "66c2ca19-964b-4926-8006-6a01025190d1",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "66c2ca19-964b-4926-8006-6a01025190d1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "**True or False:**<br>\nIndependent Data Marts have ETL processes that are designed by specific business departments to meet their analytical needs.",
+                "answers": [
+                  {
+                    "id": "a1550653164328",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550653222831",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 830804,
+              "key": "dbaec761-9252-4ee5-bdf5-fd57d65f3741",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "dbaec761-9252-4ee5-bdf5-fd57d65f3741",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "**True or False: **<br>\nIndependent Data Marts are highly encouraged to help business departments meet their analytic needs.",
+                "answers": [
+                  {
+                    "id": "a1550653334863",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550653378815",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 826575,
+          "key": "27b799ee-1070-4668-a5bc-5ea85bf4fb61",
+          "title": "DWH Architecture: CIF",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "27b799ee-1070-4668-a5bc-5ea85bf4fb61",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830437,
+              "key": "fc20d4ea-4271-46d1-9a0d-057cf3715903",
+              "title": "L01-05-Part 3 Architecture- CIF",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mVqWU7jzbAc",
+                "china_cdn_id": "mVqWU7jzbAc.mp4"
+              }
+            },
+            {
+              "id": 830910,
+              "key": "387e6948-5c0e-4741-9d59-7f555930838c",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "387e6948-5c0e-4741-9d59-7f555930838c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of these statements describe the Corporate Information Factory (CIF) data warehouse architecture?",
+                "answers": [
+                  {
+                    "id": "a1550693888427",
+                    "text": "The Data Marts use distinct ETL processes that can lead to inconsistencies.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550693948021",
+                    "text": "The Enterprise Data Warehouse provides a normalized data architecture before individual departments build on it.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550694021028",
+                    "text": "The Data Marts use a source 3NF model and add denormalization based on department needs.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550694310129",
+                    "text": "Was pioneered by Bill Inmon.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 826576,
+          "key": "f31d2f45-5651-4ae2-8bb8-f7a973e7759c",
+          "title": "DWH Architecture: Hybrid Bus & CIF",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f31d2f45-5651-4ae2-8bb8-f7a973e7759c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830438,
+              "key": "c8708851-ef39-4ec0-abd6-ab23d9bba2ce",
+              "title": "L01-05-Part 4 Architecture- Hybrid",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6DnHS6gVqIY",
+                "china_cdn_id": "6DnHS6gVqIY.mp4"
+              }
+            },
+            {
+              "id": 830911,
+              "key": "aaf03e6c-4cac-4a7a-b643-5037f1bd1f7f",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "aaf03e6c-4cac-4a7a-b643-5037f1bd1f7f",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "**True or False**:<br>\nThe Hybrid Kimball Bus and Inmon CIF model has a heavy focus on Data Marts allowing department to individualize the data ETL process and denormalized data tables.",
+                "answers": [
+                  {
+                    "id": "a1550695261501",
+                    "text": "True",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550695791966",
+                    "text": "False",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 826572,
+          "key": "423865d6-2f28-4df2-bbe5-fcfc0f020aa3",
+          "title": "OLAP Cubes",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "423865d6-2f28-4df2-bbe5-fcfc0f020aa3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830480,
+              "key": "f07a2108-c064-420c-9248-ce2feb0a6083",
+              "title": "L01-04-Part 1 OLAP Cubes",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "modd7NmChic",
+                "china_cdn_id": "modd7NmChic.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827332,
+          "key": "1bc8691e-136f-40b9-acef-ca445b1eba97",
+          "title": "OLAP Cubes: Roll-Up and Drill Down",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1bc8691e-136f-40b9-acef-ca445b1eba97",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830481,
+              "key": "433a0f2d-7ad7-4fb1-9579-5f39fab098c4",
+              "title": "L01-04-Part 2 OLAP Cubes- Roll-Up And Drill Down",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "scJR8EpV82A",
+                "china_cdn_id": "scJR8EpV82A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827333,
+          "key": "29e1c9d1-595f-46b7-9d4b-2a332ae52ff2",
+          "title": "OLAP Cubes: Slice and Dice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "29e1c9d1-595f-46b7-9d4b-2a332ae52ff2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830482,
+              "key": "e8017ab0-c3be-47a9-8898-f1dd55b48258",
+              "title": "L01-04-Part 3 OLAP Cubes- Slice And Dice",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ezSrpOeHG1Y",
+                "china_cdn_id": "ezSrpOeHG1Y.mp4"
+              }
+            },
+            {
+              "id": 830778,
+              "key": "040239b8-84d7-4faf-92f8-50cda12d346f",
+              "title": "OLAP",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "040239b8-84d7-4faf-92f8-50cda12d346f",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the OLAP operation to the correct definition."
+                },
+                "concepts_label": "Definition",
+                "answers_label": "Operation",
+                "concepts": [
+                  {
+                    "text": "Reducing N dimensions to N-1 dimensions by restricting one dimension to a single value.",
+                    "correct_answer": {
+                      "id": "a1550646697256",
+                      "text": "Slice"
+                    }
+                  },
+                  {
+                    "text": "Same dimensions but computing a sub-cube by restricting, some of the values of the dimensions.",
+                    "correct_answer": {
+                      "id": "a1550646773498",
+                      "text": "Dice"
+                    }
+                  },
+                  {
+                    "text": "Aggregates or combines values and reduces number of rows or columns.",
+                    "correct_answer": {
+                      "id": "a1550646812093",
+                      "text": "Roll-Up"
+                    }
+                  },
+                  {
+                    "text": "Decomposes values and increases number of rows or columns.",
+                    "correct_answer": {
+                      "id": "a1550647016604",
+                      "text": "Drill Down"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1550647083106",
+                    "text": "Cut"
+                  },
+                  {
+                    "id": "a1550646812093",
+                    "text": "Roll-Up"
+                  },
+                  {
+                    "id": "a1550647106209",
+                    "text": "Split"
+                  },
+                  {
+                    "id": "a1550646697256",
+                    "text": "Slice"
+                  },
+                  {
+                    "id": "a1550647016604",
+                    "text": "Drill Down"
+                  },
+                  {
+                    "id": "a1550646773498",
+                    "text": "Dice"
+                  },
+                  {
+                    "id": "a1550647090550",
+                    "text": "Summarize"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827334,
+          "key": "18a6b7c0-e7bf-42c1-b8a8-fe60e0f109b4",
+          "title": "OLAP Cubes: Query Optimization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "18a6b7c0-e7bf-42c1-b8a8-fe60e0f109b4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830483,
+              "key": "0b83ecb7-ca0a-4359-8312-09361263e2a3",
+              "title": "L01-04-Part 4 OLAP Cubes- Query Optimization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pe0-17CSuLs",
+                "china_cdn_id": "pe0-17CSuLs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 841396,
+          "key": "37cb82c9-1f74-429b-b46f-197a060d3e9e",
+          "title": "OLAP Cubes Demo: Slicing & Dicing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "37cb82c9-1f74-429b-b46f-197a060d3e9e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841983,
+              "key": "0af3fff7-3c72-4708-9f81-3512a7049a20",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## OLAP Cubes Demo Introduction\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 841982,
+              "key": "d1750ad3-bf6a-4680-a761-8074e05e85c1",
+              "title": "L01-04-Part 5 OLAP Demo Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ZyHRUErDOrQ",
+                "china_cdn_id": "ZyHRUErDOrQ.mp4"
+              }
+            },
+            {
+              "id": 841523,
+              "key": "3addc3ce-5159-40ea-8519-7e73fba9d9ea",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## OLAP Cubes Demo: Slicing\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 841412,
+              "key": "ef272745-4ddd-481c-85ac-d3de52e16133",
+              "title": "L01 04.01 Part 2 OLAP Demo- Slicing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_9zZ_vIZZ0A",
+                "china_cdn_id": "_9zZ_vIZZ0A.mp4"
+              }
+            },
+            {
+              "id": 841525,
+              "key": "4a3c9dd1-b435-4af2-802d-6d54ade6ccf3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## OLAP Cubes Demo: Dicing",
+              "instructor_notes": ""
+            },
+            {
+              "id": 841524,
+              "key": "d6176b2c-8937-4475-b480-fe76d8cbe2ff",
+              "title": "L01 04.01 Part 3 OLAP Demo- Dicing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "j9umvBak-jY",
+                "china_cdn_id": "j9umvBak-jY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 841397,
+          "key": "74fc7889-8a9d-48ff-ba48-e8db68ba262a",
+          "title": "Exercise 2: Slicing & Dicing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "74fc7889-8a9d-48ff-ba48-e8db68ba262a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841910,
+              "key": "17c10282-43da-4485-9ea8-68526f45d5e5",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-wxza8",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1 E2 - 1 - Slicing and Dicing.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 841400,
+          "key": "22a324c8-ad2a-491c-b443-5aa96b27ebdc",
+          "title": "OLAP Cubes Demo: Roll-Up",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "22a324c8-ad2a-491c-b443-5aa96b27ebdc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841417,
+              "key": "1db2384a-f3bd-4c60-b09d-e50518ca300f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## OLAP Cubes Demo: Roll-Up",
+              "instructor_notes": ""
+            },
+            {
+              "id": 841414,
+              "key": "52b90129-c244-4550-98f0-92faad648143",
+              "title": "L01 04.01 Part 4 OLAP Demo- Roll-Up",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "eUGQrKKiQ2M",
+                "china_cdn_id": "eUGQrKKiQ2M.mp4"
+              }
+            },
+            {
+              "id": 841418,
+              "key": "cf78c084-5ffb-4c5e-ab5a-cbd36664175a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## OLAP Cubes Demo: Drill-Down",
+              "instructor_notes": ""
+            },
+            {
+              "id": 841416,
+              "key": "94e2339a-be33-436f-b9fa-471a65b809b4",
+              "title": "L01 04.01 Part 5 OLAP Demo- Drill Down",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JPtPNtb3vnE",
+                "china_cdn_id": "JPtPNtb3vnE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 841401,
+          "key": "29de32fb-657e-46db-a7ab-212371e2a1a6",
+          "title": "Exercise 2: Roll-Up & Drill Down",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "29de32fb-657e-46db-a7ab-212371e2a1a6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841909,
+              "key": "0370d8c5-f85f-4fa6-9ced-e75770968844",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-laqip",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1 E2 - 2 - Roll up and Drill Down.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 841402,
+          "key": "458ea79b-f07e-4663-81ff-fe5e172a7383",
+          "title": "OLAP Cubes  Demo: Grouping Sets",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "458ea79b-f07e-4663-81ff-fe5e172a7383",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841415,
+              "key": "6e044914-45ee-4457-a7a7-3a2d8cea027b",
+              "title": "L01 04.01 Part 6 OLAP Demo- Grouping Sets",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "58nWFb-AJU8",
+                "china_cdn_id": "58nWFb-AJU8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 841403,
+          "key": "91f56877-475d-4d5c-96eb-a4523cec6d95",
+          "title": "Exercise 2: Grouping Sets",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "91f56877-475d-4d5c-96eb-a4523cec6d95",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841908,
+              "key": "a0bc6017-a50c-4323-8e51-83b3f06186de",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-6ef45",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1 E2 - 3 - Grouping Sets.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 841404,
+          "key": "22d34a83-b921-4b3b-b492-89a0b15fdbed",
+          "title": "OLAP Cubes Demo: CUBE",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "22d34a83-b921-4b3b-b492-89a0b15fdbed",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841421,
+              "key": "511ecac1-cbf0-416d-91fa-ba15c5a09435",
+              "title": "L01 04.01 Part 7 OLAP Demo- CUBE",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fMkaZuxCCqw",
+                "china_cdn_id": "fMkaZuxCCqw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 841405,
+          "key": "68c07641-2ddd-4d58-80de-5bb09fa367a4",
+          "title": "Exercise 2: CUBE",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "68c07641-2ddd-4d58-80de-5bb09fa367a4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841907,
+              "key": "95ed13c7-2400-480d-9ca2-0d2fdad47029",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-lu7q1",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1 E2 - 4 - CUBE.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 826577,
+          "key": "3d95d5c4-5b52-4f23-b67a-d5b8366247f9",
+          "title": "Data Warehouse Technologies",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3d95d5c4-5b52-4f23-b67a-d5b8366247f9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830522,
+              "key": "3344aef8-5e62-440c-bafc-76843dccb323",
+              "title": "L01-06-DWH-DWH-Technology",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "v7QX4w2kC-4",
+                "china_cdn_id": "v7QX4w2kC-4.mp4"
+              }
+            },
+            {
+              "id": 850813,
+              "key": "3f702221-bdcf-491f-858c-813653d268fa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Book References\n\nHere are links to the three books referenced in the video:\n- [The Data Warehouse Toolkit: The Complete Guide to Dimensional Modeling (Kimball)](https://www.amazon.com/Data-Warehouse-Toolkit-Complete-Dimensional/dp/0471200247)\n- [Building the Data Warehouse (Inmon)](https://www.amazon.com/Building-Data-Warehouse-W-Inmon/dp/0764599445)\n- [Building a Data Warehouse: With Examples in SQL Server (Rainardi)](https://www.amazon.com/Building-Data-Warehouse-Examples-Experts/dp/1590599314)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826582,
+          "key": "e6481c71-3d13-45ef-aa22-7dbf682c7fa6",
+          "title": "Demo: Column format in ROLAP",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e6481c71-3d13-45ef-aa22-7dbf682c7fa6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830463,
+              "key": "c2ea1804-5965-4b50-a47e-a97b8e7b54da",
+              "title": "L1-06.01-DWH-ColStorageVsRowStorage-Demo",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ELlnfNRn8Rw",
+                "china_cdn_id": "ELlnfNRn8Rw.mp4"
+              }
+            },
+            {
+              "id": 830464,
+              "key": "6c4c5a95-36f8-45fd-ab27-1dce431577e0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Try it yourself\n\nAs in other exercises, open up the Workspace on the next page (Workspace: Column format in ROLAP) and try this out for yourself.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 826581,
+          "key": "825320e9-b6ea-45c4-9ccb-9dbea8f0011f",
+          "title": "Exercise 3: Column format in ROLAP",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "825320e9-b6ea-45c4-9ccb-9dbea8f0011f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826586,
+              "key": "a5984eb2-0de2-44af-97d8-df76cc0ae606",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-8oecq",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L1 E3 - Columnar Vs Row Storage.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

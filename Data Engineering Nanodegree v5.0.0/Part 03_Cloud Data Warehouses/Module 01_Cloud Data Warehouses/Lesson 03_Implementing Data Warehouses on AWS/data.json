@@ -1,0 +1,2161 @@
+{
+  "data": {
+    "lesson": {
+      "id": 809450,
+      "key": "21d59f40-6033-40b5-81a2-4a3211d9f46e",
+      "title": "Implementing Data Warehouses on AWS",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson, you'll learn to implement a data warehouse on AWS",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/21d59f40-6033-40b5-81a2-4a3211d9f46e/809450/1552596616687/Implementing+Data+Warehouses+on+AWS+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/21d59f40-6033-40b5-81a2-4a3211d9f46e/809450/1552596610217/Implementing+Data+Warehouses+on+AWS+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 809455,
+          "key": "b3a20524-34c8-4834-89d7-9264c2591a59",
+          "title": "Lesson Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b3a20524-34c8-4834-89d7-9264c2591a59",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827541,
+              "key": "e5732713-7e4a-4e4d-8536-e4a9caca06d0",
+              "title": "L03-01-Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dUGo0bvo4MQ",
+                "china_cdn_id": "dUGo0bvo4MQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 809456,
+          "key": "b9454b77-bd2d-484c-bf9a-33f5efad5f01",
+          "title": "Data Warehouse: A Closer Look",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b9454b77-bd2d-484c-bf9a-33f5efad5f01",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827543,
+              "key": "f97faa50-8922-4822-8415-399bcc452624",
+              "title": "L03-02-Part 1 Data Warehouse (DWH)- A Closer Look",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EJiFq7iKvNI",
+                "china_cdn_id": "EJiFq7iKvNI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827363,
+          "key": "97176295-6e75-44f9-8302-33dbeb27cba6",
+          "title": "Choices for Implementing a Data Warehouse ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "97176295-6e75-44f9-8302-33dbeb27cba6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827547,
+              "key": "d5ccc3fd-fb4d-4d81-b1f8-049efbd43ebd",
+              "title": "L03-02-Part 2 Choices For Implementing A Data Warehouse-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wnPf5iw_HuA",
+                "china_cdn_id": "wnPf5iw_HuA.mp4"
+              }
+            },
+            {
+              "id": 830754,
+              "key": "79f742e6-951e-480a-b977-49f2af4582ba",
+              "title": "On Prem vs Cloud",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "79f742e6-951e-480a-b977-49f2af4582ba",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "For each of the categories, indicate whether On Premises vs Cloud Data Warehousing is better."
+                },
+                "concepts_label": "Category",
+                "answers_label": "Approach",
+                "concepts": [
+                  {
+                    "text": "Scalability",
+                    "correct_answer": {
+                      "id": "a1550645050920",
+                      "text": "Cloud"
+                    }
+                  },
+                  {
+                    "text": "Operational Cost",
+                    "correct_answer": {
+                      "id": "a1550645126019",
+                      "text": "On Premise"
+                    }
+                  },
+                  {
+                    "text": "Up front cost",
+                    "correct_answer": {
+                      "id": "a1550645130717",
+                      "text": "Cloud"
+                    }
+                  },
+                  {
+                    "text": "Elasticity",
+                    "correct_answer": {
+                      "id": "a1550645136927",
+                      "text": "Cloud"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1550645126019",
+                    "text": "On Premise"
+                  },
+                  {
+                    "id": "a1550645227334",
+                    "text": "On Premise"
+                  },
+                  {
+                    "id": "a1550645220974",
+                    "text": "On Premise"
+                  },
+                  {
+                    "id": "a1550645130717",
+                    "text": "Cloud"
+                  },
+                  {
+                    "id": "a1550645136927",
+                    "text": "Cloud"
+                  },
+                  {
+                    "id": "a1550645050920",
+                    "text": "Cloud"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827364,
+          "key": "314e69fd-a8f9-44a1-ac06-d49ea9acdcae",
+          "title": "DWH Dimensional Model Storage on AWS",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "314e69fd-a8f9-44a1-ac06-d49ea9acdcae",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827552,
+              "key": "df6a2b74-c381-4213-81a3-b4e8f88075be",
+              "title": "L03-02-Part 3 DWH Dimensional Model Storage On AWS",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ERA2pMIJi7Q",
+                "china_cdn_id": "ERA2pMIJi7Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827365,
+          "key": "b9611fa1-9e03-4360-a9b9-58a40fd72b60",
+          "title": "Amazon Redshift Technology",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b9611fa1-9e03-4360-a9b9-58a40fd72b60",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827554,
+              "key": "dde086d1-a387-4654-b3c3-d19934153045",
+              "title": "L03-03-Part 1 Amazon Redshift Technology",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zAQuOCI9bFE",
+                "china_cdn_id": "zAQuOCI9bFE.mp4"
+              }
+            },
+            {
+              "id": 830758,
+              "key": "eef7a075-ced9-49df-a493-00342854fda8",
+              "title": "Redshift",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "eef7a075-ced9-49df-a493-00342854fda8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following statements are true about Redshift?",
+                "answers": [
+                  {
+                    "id": "a1550645475975",
+                    "text": "Column Oriented",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550645514015",
+                    "text": "Self-Managed",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1550645514858",
+                    "text": "Massively Parallel",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550645515952",
+                    "text": "Runs one query on maximum one CPU",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827366,
+          "key": "d102a7d8-6f71-479a-84ee-8558e5202a2f",
+          "title": "Amazon Redshift Architecture",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d102a7d8-6f71-479a-84ee-8558e5202a2f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827558,
+              "key": "703b7b70-4cce-4c51-a0e9-5faca6e8f477",
+              "title": "L03-03-Part 2 Amazon Redshift Technology",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uAyHUF6s3fg",
+                "china_cdn_id": "uAyHUF6s3fg.mp4"
+              }
+            },
+            {
+              "id": 841976,
+              "key": "5fed3d78-c3c2-4582-b78e-e78303440f39",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5fed3d78-c3c2-4582-b78e-e78303440f39",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "The total number of nodes in a Redshift cluster is equal to:",
+                "answers": [
+                  {
+                    "id": "a1554216606942",
+                    "text": "The number of AWS EC2 instances used in the cluster",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554216667354",
+                    "text": "The number of CPU Cores use in the cluster",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 841977,
+              "key": "94fddf5c-81a5-42c2-b0fc-0448d73563d5",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "94fddf5c-81a5-42c2-b0fc-0448d73563d5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Each slice in a Redshift cluster is:",
+                "answers": [
+                  {
+                    "id": "a1554216857146",
+                    "text": "At least 1 CPU with dedicated storage and memory for the slice",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554216930326",
+                    "text": "At least 1 CPU sharing a pool of storage and memory with other slices",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 841978,
+              "key": "53bb9a2f-6483-4de8-96ec-270a4e38a9be",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "53bb9a2f-6483-4de8-96ec-270a4e38a9be",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "If we have a Redshift cluster with 4 nodes, each containing 8 slices, i.e. the cluster collectively offers 32 slices. What is the maximum number of partitions per table?",
+                "answers": [
+                  {
+                    "id": "a1554217036712",
+                    "text": "4 partitions",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1554217327809",
+                    "text": "8 partitions",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1554217393657",
+                    "text": "32 partitions",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827367,
+          "key": "d68a295d-ef14-4d4c-b512-a81456ef6a45",
+          "title": "Redshift Architecture Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d68a295d-ef14-4d4c-b512-a81456ef6a45",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827560,
+              "key": "c473c7d5-49ea-46fe-a77c-0b69dd1fdbf2",
+              "title": "L03-03-Part 3 Redshift Architecture Example",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jHEgPY7eDqE",
+                "china_cdn_id": "jHEgPY7eDqE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827368,
+          "key": "dbf14dae-ebf3-4451-bfc3-9163c0f6cc81",
+          "title": "SQL to SQL ETL",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "dbf14dae-ebf3-4451-bfc3-9163c0f6cc81",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827563,
+              "key": "cd087e42-fe41-43d0-bb64-2f93889b9438",
+              "title": "L03-04-Part 1 SQL To SQL ETL",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UHhoaojC8gE",
+                "china_cdn_id": "UHhoaojC8gE.mp4"
+              }
+            },
+            {
+              "id": 830762,
+              "key": "2e3a9e46-31a6-40ad-9c5f-f1642e5386a1",
+              "title": "ETL Server",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "2e3a9e46-31a6-40ad-9c5f-f1642e5386a1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: An ETL server require a lot of storage.",
+                "answers": [
+                  {
+                    "id": "a1550645773836",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550645806411",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827369,
+          "key": "a5037bb7-f304-423c-8d48-b67b71015fa0",
+          "title": "SQL to SQL ETL - AWS Case",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a5037bb7-f304-423c-8d48-b67b71015fa0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827565,
+              "key": "724b008d-4706-414f-8e8c-951dd4a54489",
+              "title": "L03-04-Part 2 SQL To SQL ETL - AWS Case",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EWgFtSl83J4",
+                "china_cdn_id": "EWgFtSl83J4.mp4"
+              }
+            },
+            {
+              "id": 841984,
+              "key": "1771377d-52a8-452a-90d4-81cee27ef5c7",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1771377d-52a8-452a-90d4-81cee27ef5c7",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "In the ETL implementation on AWS, what is the purpose of the EC2 instance?",
+                "answers": [
+                  {
+                    "id": "a1554220200316",
+                    "text": "To store data from source to data warehouse",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1554220290011",
+                    "text": "Just a machine that acts as a client to RDS and Redshift to issue COPY commands",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 841985,
+              "key": "c27e19a2-06ea-472e-aa71-08a8b3a50486",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "c27e19a2-06ea-472e-aa71-08a8b3a50486",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following is an advantage of using S3 for ETL storage? (Compared to storing the data in our own EC2 instance)",
+                "answers": [
+                  {
+                    "id": "a1554220445447",
+                    "text": "S3 is AWS-managed, we don't need to worry about storage reliability",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554220588931",
+                    "text": "By using S3, we only pay for the storage we use",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554220721380",
+                    "text": "By using S3, we don't need to worry about not having enough storage",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554220782815",
+                    "text": "S3 offers lots of processing power for our ETL process",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827370,
+          "key": "7bcf869c-1511-4167-8b04-a8d621600e45",
+          "title": "Redshift & ETL in Context",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7bcf869c-1511-4167-8b04-a8d621600e45",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827566,
+              "key": "c2284659-9de7-4cab-9d8a-2baad6ff9766",
+              "title": "L03-04-Part 3 Redshift   ETL In Context",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JQEAYabMr20",
+                "china_cdn_id": "JQEAYabMr20.mp4"
+              }
+            },
+            {
+              "id": 841986,
+              "key": "da32a85b-ffce-4d96-b930-f753b9b7cc3d",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "da32a85b-ffce-4d96-b930-f753b9b7cc3d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Why do you think we might need to copy data already stored in S3 to another S3 staging bucket during the ETL process?",
+                "answers": [
+                  {
+                    "id": "a1554221039073",
+                    "text": "Because it would be transformed before insertion into the DWH",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554221104715",
+                    "text": "Because ETL staging uses a special type of S3 buckets",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1554221139051",
+                    "text": "Because there is no connectivity between the source S3 buckets and the DWH",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827371,
+          "key": "03638834-a974-47b4-bc0a-fe67b6cad5ea",
+          "title": "Ingesting at Scale",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "03638834-a974-47b4-bc0a-fe67b6cad5ea",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827567,
+              "key": "9ebf42f7-8560-4c23-9d0e-ea13b7245600",
+              "title": "L03-05-Part 1 Ingesting At Scale- Use COPY",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "maAfudoixmE",
+                "china_cdn_id": "maAfudoixmE.mp4"
+              }
+            },
+            {
+              "id": 841987,
+              "key": "bf1964ad-f4d5-433f-88b8-2109b15749f0",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bf1964ad-f4d5-433f-88b8-2109b15749f0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which method is faster for ingesting data in a sql database?",
+                "answers": [
+                  {
+                    "id": "a1554221366129",
+                    "text": "Insertion using the INSERT command record by record in for loop",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1554221410317",
+                    "text": "Bulk insertion using the COPY command",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 841988,
+              "key": "f9e41ebc-e829-4ce4-9d91-c5d97a479a2e",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f9e41ebc-e829-4ce4-9d91-c5d97a479a2e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Why do we split a table into multiple files before ingestion? ",
+                "answers": [
+                  {
+                    "id": "a1554221495234",
+                    "text": "Because this way, we can execute multiple simultaneous COPY commands",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554221572264",
+                    "text": "Because S3 can not handle the copying of one large file",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827372,
+          "key": "bd98c6da-5e70-450d-b638-7b36d7237102",
+          "title": "Redshift ETL Examples",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bd98c6da-5e70-450d-b638-7b36d7237102",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827569,
+              "key": "b497d2e1-406f-4444-b792-eebcebfdeeac",
+              "title": "L03-05-Part 2 Redshift ETL Examples",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "i3a71j8mNjI",
+                "china_cdn_id": "i3a71j8mNjI.mp4"
+              }
+            },
+            {
+              "id": 841989,
+              "key": "9cb385d2-10dc-4392-a469-06a943c5e4d8",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9cb385d2-10dc-4392-a469-06a943c5e4d8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "If you have multiple files that belong to the same table names as follows:  \n- s3://mySource/day1-sales.csv.gz\n- s3://mySource/day2-sales.csv.gz  \n...\n\nWhich method are you going to use to ingest the files from S3 into Redshift?",
+                "answers": [
+                  {
+                    "id": "a1554221783166",
+                    "text": "I would create a manifest file",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554221921292",
+                    "text": "No need we can depend on the common prefix",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827373,
+          "key": "eccab428-8543-45f5-aa89-c14cbdd89731",
+          "title": "Redshift ETL Continued",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eccab428-8543-45f5-aa89-c14cbdd89731",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827570,
+              "key": "15902c5c-b93e-40dc-9ef1-b12a9975ac28",
+              "title": "L03-05-Part 3 Redshift ETL Continued",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "T-eSqvmuf6w",
+                "china_cdn_id": "T-eSqvmuf6w.mp4"
+              }
+            },
+            {
+              "id": 830768,
+              "key": "ece25783-3968-4e84-b1fc-c31e90766ca4",
+              "title": "EC2",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ece25783-3968-4e84-b1fc-c31e90766ca4",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: While not as scalable as using S3 as a staging area, you can also ingest data directly from EC2 machines storage.",
+                "answers": [
+                  {
+                    "id": "a1550646022467",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1550646124509",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827374,
+          "key": "01359083-2e2f-4b31-acbd-98795de7a141",
+          "title": "Redshift Cluster Quick Launcher ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "01359083-2e2f-4b31-acbd-98795de7a141",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830400,
+              "key": "2f7ae639-8332-477a-af49-7e185c72d042",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### TO-DO: Create a Redshift Cluster Using the Quick Launcher\n\n1. Follow the video below to create a Redshift cluster.\n2. Use the query editor to create a table and insert data.\n3. Delete the cluster.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827573,
+              "key": "a6d97c77-d769-49a5-bba6-811922c00289",
+              "title": "L03-06-RedshiftCluster-Part 1 Redshift Cluster - Quick Launcher",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8Gv6bOY5fvw",
+                "china_cdn_id": "8Gv6bOY5fvw.mp4"
+              }
+            },
+            {
+              "id": 1038693,
+              "key": "a960d744-a176-4879-a1b8-ef0e502a951e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": ">####  <span>IMPORTANT NOTICE: <font color=\"red\"> AWS UI is subject to change on a regular basis and we advise students to refer to AWS documentation. As of June 2020, the UI for setting up the Redshift cluster has slightly changed. You can find the updated documentation on building and launching a Redshift cluster [here](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-launch-sample-cluster.html).</font></span>",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 841996,
+          "key": "fad03fb3-ce48-4a69-9887-4baf8751cae3",
+          "title": "Exercise 1: Launch Redshift Cluster",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fad03fb3-ce48-4a69-9887-4baf8751cae3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841997,
+              "key": "caf1c56b-32ed-445f-808e-ee938259ade3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Launching a Redshift Cluster in the AWS Console\n\n- Follow the instructions below to create a Redshift cluster\n- Use the query editor to create a table and insert data \n- Delete the cluster\n\nNote: The steps below were introduced in lesson 2. You can use the IAM role and security group created in the last lesson.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 841998,
+              "key": "9a4bf1a0-f4d9-4886-a123-41987f3b12af",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Launch a Redshift Cluster\n**WARNING:** The cluster that you are about to launch will be live, and you will be charged the standard Amazon Redshift usage fees for the cluster until you delete it. **Make sure to delete your cluster each time you're finished working to avoid large, unexpected costs.** Instructions on deleting your cluster are included on the last page. You can always launch a new cluster, so don't leave your Redshift cluster running overnight or throughout the week if you don't need to.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 841999,
+              "key": "6b778073-ddcd-4a7c-9bde-551c320240a6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "1. Sign in to the AWS Management Console and open the Amazon Redshift console at https://console.aws.amazon.com/redshift/.\n2. On the Amazon Redshift Dashboard, choose **Launch cluster**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842000,
+              "key": "662e07df-c370-4c6f-966a-cde2f394bf93",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aa388_quick-launch-redshift-cluster/quick-launch-redshift-cluster.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/662e07df-c370-4c6f-966a-cde2f394bf93",
+              "caption": "",
+              "alt": "",
+              "width": 872,
+              "height": 297,
+              "instructor_notes": null
+            },
+            {
+              "id": 842001,
+              "key": "a6227e07-a9f8-485a-8311-5a18aa61b80a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. On the Cluster details page, enter the following values and then choose Continue:\n  - **Cluster identifier**: Enter `redshift-cluster`.\n  - **Database name**: Enter `dev`.\n  - **Database port**: Enter `5439`.\n  - **Master user name**: Enter `awsuser`.\n  - **Master user password** and **Confirm password**: Enter a password for the master user account.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842002,
+              "key": "d79943a7-ef21-4adc-b788-289f72b281af",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5b2da4_cluster-details/cluster-details.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d79943a7-ef21-4adc-b788-289f72b281af",
+              "caption": "",
+              "alt": "",
+              "width": 1076,
+              "height": 591,
+              "instructor_notes": null
+            },
+            {
+              "id": 842003,
+              "key": "874214c8-27f1-4e02-8996-1ea9532accca",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "4. On the Node Configuration page, accept the default values and choose **Continue**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842004,
+              "key": "d9bfa7f0-3f6f-414a-aca0-edaba8fefca8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5b2db8_node-configuration/node-configuration.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d9bfa7f0-3f6f-414a-aca0-edaba8fefca8",
+              "caption": "",
+              "alt": "",
+              "width": 1082,
+              "height": 755,
+              "instructor_notes": null
+            },
+            {
+              "id": 842005,
+              "key": "c498ec15-148f-4b84-b058-1f008973e9de",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "5. On the Additional Configuration page, enter the following values:\n  - **VPC security groups**: redshift_security_group\n  - **Available IAM roles**: myRedshiftRole\n\n  Choose **Continue**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842007,
+              "key": "0a68e185-8972-4bb2-a65b-0adf1b33778b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5b2ebf_security-group-and-role/security-group-and-role.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0a68e185-8972-4bb2-a65b-0adf1b33778b",
+              "caption": "",
+              "alt": "",
+              "width": 1093,
+              "height": 798,
+              "instructor_notes": null
+            },
+            {
+              "id": 842008,
+              "key": "ce2131ee-7bae-4d9d-a28d-d9947b2443f0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "6. Review your Cluster configuration and choose **Launch cluster**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842009,
+              "key": "53e7d131-86cd-49db-af68-586d48061739",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5b2dc8_review-cluster/review-cluster.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/53e7d131-86cd-49db-af68-586d48061739",
+              "caption": "",
+              "alt": "",
+              "width": 1078,
+              "height": 827,
+              "instructor_notes": null
+            },
+            {
+              "id": 842011,
+              "key": "9531fd17-81af-43ca-af73-0d683509ed8a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5b2dd2_review-cluster-launch/review-cluster-launch.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9531fd17-81af-43ca-af73-0d683509ed8a",
+              "caption": "",
+              "alt": "",
+              "width": 1067,
+              "height": 63,
+              "instructor_notes": null
+            },
+            {
+              "id": 842012,
+              "key": "995b8a56-b40a-4982-944b-1205000453d6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "7. A confirmation page will appear and the cluster will take a few minutes to finish. Choose **Clusters** in the left navigation pane to return to the list of clusters.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842013,
+              "key": "47ad8812-2d4c-4262-ac93-108823960f76",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aa36b_clusters-menu/clusters-menu.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/47ad8812-2d4c-4262-ac93-108823960f76",
+              "caption": "",
+              "alt": "",
+              "width": 577,
+              "height": 252,
+              "instructor_notes": null
+            },
+            {
+              "id": 842014,
+              "key": "56f4b17a-2c36-4491-9e15-2747ac9ee49d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "8. On the Clusters page, look at the cluster that you just launched and review the **Cluster Status** information. Make sure that the **Cluster Status** is **available** and the **Database Health** is **healthy** before you try to connect to the database later. You can expect this to take 5-10 minutes.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842015,
+              "key": "c1217251-6ffd-4a05-b24c-dd0299c1b85b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aa35f_cluster-creating/cluster-creating.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c1217251-6ffd-4a05-b24c-dd0299c1b85b",
+              "caption": "",
+              "alt": "",
+              "width": 1475,
+              "height": 193,
+              "instructor_notes": null
+            },
+            {
+              "id": 842016,
+              "key": "849fe172-e36f-416b-a710-90919d651bc5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5ab4d7_redshift-healthy/redshift-healthy.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/849fe172-e36f-416b-a710-90919d651bc5",
+              "caption": "",
+              "alt": "",
+              "width": 1368,
+              "height": 185,
+              "instructor_notes": null
+            },
+            {
+              "id": 842017,
+              "key": "adf05ab9-d500-46c3-8d8c-011ffa36b252",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Delete a Redshift Cluster\nMake sure to delete your cluster each time you're finished working to avoid large, unexpected costs. You can always launch a new cluster, so don't leave it running overnight or throughout the week if you don't need to.\n\n1. On the **Clusters** page of your Amazon Redshift console, click on the box next to your cluster to select it, and then click on **Cluster** > **Delete cluster**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842018,
+              "key": "edbe8ba9-d051-4059-bafa-b66f1ae1a489",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aba12_delete-cluster/delete-cluster.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/edbe8ba9-d051-4059-bafa-b66f1ae1a489",
+              "caption": "",
+              "alt": "",
+              "width": 670,
+              "height": 302,
+              "instructor_notes": null
+            },
+            {
+              "id": 842019,
+              "key": "66867b45-1fb8-4329-b22c-3bef7ff1b24c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. You can choose **No** for **Create snapshot**, check the box that you acknowledge this, and then choose **Delete**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842020,
+              "key": "ffab5a2c-501e-425a-b68f-d353f5662671",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aba6a_delete-cluster-confirm/delete-cluster-confirm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ffab5a2c-501e-425a-b68f-d353f5662671",
+              "caption": "",
+              "alt": "",
+              "width": 622,
+              "height": 401,
+              "instructor_notes": null
+            },
+            {
+              "id": 842021,
+              "key": "a9f91d86-019f-4fc2-aec0-e8aab3b9a4fc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. Your cluster will change it's status to **deleting**, and then disappear from your Cluster list once it's finished deleting. You'll no longer be charged for this cluster.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 842022,
+              "key": "3e72af45-060e-4cac-a69f-1e68dba8306d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aba72_deleting-cluster/deleting-cluster.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3e72af45-060e-4cac-a69f-1e68dba8306d",
+              "caption": "",
+              "alt": "",
+              "width": 1366,
+              "height": 160,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 827375,
+          "key": "b6ef031e-ccd9-4bf8-945e-cb4dc7ac0ccb",
+          "title": "Problems with the Quick Launcher",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b6ef031e-ccd9-4bf8-945e-cb4dc7ac0ccb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827574,
+              "key": "f9aba075-42bb-4898-81bc-af6f5a2078d3",
+              "title": "L03-06-RedshiftCluster-Part 1 Problems With The Quick Launcher",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "G0UoVNj88Wk",
+                "china_cdn_id": "G0UoVNj88Wk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827378,
+          "key": "6f7283ed-38b8-45b2-9129-a8088a78d66e",
+          "title": "Infrastructure as Code on AWS",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6f7283ed-38b8-45b2-9129-a8088a78d66e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827579,
+              "key": "34dd8d4e-98b3-42ac-b2cb-df4936d3cdc0",
+              "title": "L03-07-RedshiftCluster-Part2 Infrastructure As Code (IaC)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fDCSEGGvF6I",
+                "china_cdn_id": "fDCSEGGvF6I.mp4"
+              }
+            },
+            {
+              "id": 841992,
+              "key": "249c0299-7778-4892-be58-c29b0f8a3b8e",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "249c0299-7778-4892-be58-c29b0f8a3b8e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following are advantages of Infrastructure-as-Code over creating infrastructure by clicking-around?",
+                "answers": [
+                  {
+                    "id": "a1554224393755",
+                    "text": "Sharing: One can share all the steps with others easily",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554224494171",
+                    "text": "Reproducibility: One can be sure that no steps are forgotten",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554224546833",
+                    "text": "Multiple deployments: One can create a test environment identical to the production environment",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554224606257",
+                    "text": "Maintainability: If a change is needed, one can keep track of the changes by comparing the code",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827377,
+          "key": "b2d6adbf-3324-45ab-b74b-b5141aa18ef3",
+          "title": "Enabling Programmatic Access fo IaC",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b2d6adbf-3324-45ab-b74b-b5141aa18ef3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827575,
+              "key": "08ad6a22-38dc-4ff7-b5d4-eedc4f21ca34",
+              "title": "L03-07-RedshiftCluster-Part2 Enabling Programmatic Access",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IYbpvvLjWf8",
+                "china_cdn_id": "IYbpvvLjWf8.mp4"
+              }
+            },
+            {
+              "id": 1038694,
+              "key": "99138b11-eecb-40c1-b320-42fc1e97413c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Boto3 is a Python SDK for programmatically accessing AWS. It enables developers to create, configure, and manage AWS services. You can find the documentation for Boto3 [here](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 827431,
+          "key": "7a66583b-36de-4516-8cf8-2962e7b45c43",
+          "title": "Demo: Infrastructure as Code",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7a66583b-36de-4516-8cf8-2962e7b45c43",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 842025,
+              "key": "81c88ba7-4508-4bbf-8c44-f7881855f56f",
+              "title": "L03-07-RedshiftCluster-Part2 IaC Example",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1h8KqUMTK5o",
+                "china_cdn_id": "1h8KqUMTK5o.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827387,
+          "key": "c9b81c18-7d8b-4e2c-a0bc-9ba471e83618",
+          "title": "Exercise 2: Infrastructure as Code",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c9b81c18-7d8b-4e2c-a0bc-9ba471e83618",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827391,
+              "key": "d4d4a393-690a-42b0-85cf-0ffcbddd74ee",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-fzhta",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L3 Exercise 2 - IaC.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 840222,
+          "key": "2c454710-4a84-4c4f-9aeb-caa76f816466",
+          "title": "Exercise Solution 2: Infrastructure as Code",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2c454710-4a84-4c4f-9aeb-caa76f816466",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840225,
+              "key": "66809827-c4d8-4cfb-b1ce-4643a78cb78c",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-c7la6",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L3 Exercise 2 - IaC - Solution.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 827433,
+          "key": "15220e94-d6e0-4698-a680-653d78d7dc54",
+          "title": "Demo: Parallel ETL",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "15220e94-d6e0-4698-a680-653d78d7dc54",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827590,
+              "key": "d088ee23-f659-4380-b632-7a98a9e2e0a7",
+              "title": "L03-Exercise03Demo",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ZeFEotdv6Ig",
+                "china_cdn_id": "ZeFEotdv6Ig.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827388,
+          "key": "20f55efa-7a9f-45c7-bdef-ee503e21a3d7",
+          "title": "Exercise 3: Parallel ETL",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "20f55efa-7a9f-45c7-bdef-ee503e21a3d7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827393,
+              "key": "981adae3-7ff8-4943-9b43-bcab77210b76",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-ekibq",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L3 Exercise 3 - Parallel ETL.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 840227,
+          "key": "0d489f89-73ba-4843-b715-34769879a64a",
+          "title": "Exercise Solution 3: Parallel ETL",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0d489f89-73ba-4843-b715-34769879a64a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840229,
+              "key": "1b2e487c-5698-4fb1-9574-1192256da573",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-ux6tl",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L3 Exercise 3 - Parallel ETL - Solution.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 827379,
+          "key": "a30b7b83-4149-473c-a920-7cb38d47ad24",
+          "title": "Optimizing Table Design",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a30b7b83-4149-473c-a920-7cb38d47ad24",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827580,
+              "key": "74b1c310-b2f4-416f-8379-9a2343a85776",
+              "title": "L03-08-OptimizingDesign-Part1 Optimizing Table Design",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nJXaqtBfhwI",
+                "china_cdn_id": "nJXaqtBfhwI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827380,
+          "key": "0f0c9786-7363-4573-b60d-9dfb21691b77",
+          "title": "Distribution Style: Even",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0f0c9786-7363-4573-b60d-9dfb21691b77",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827581,
+              "key": "59c5dee6-30b3-4a40-b93d-7b1643a368b7",
+              "title": "L03-08-OptimizingDesign-Part1 Distribution Style- Even",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AJjEZbnxabU",
+                "china_cdn_id": "AJjEZbnxabU.mp4"
+              }
+            },
+            {
+              "id": 841994,
+              "key": "e551f35a-ec5b-4a76-b3d5-5ad530b85055",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e551f35a-ec5b-4a76-b3d5-5ad530b85055",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "True or False: With an EVEN key distribution style, a table is partitioned on slices such that each slice would have a an almost equal number of records from the partitioned table",
+                "answers": [
+                  {
+                    "id": "a1554226172146",
+                    "text": "True",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554226270727",
+                    "text": "False",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 841995,
+              "key": "e53b6d3e-787f-4e23-9361-cfff930ca213",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e53b6d3e-787f-4e23-9361-cfff930ca213",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Joining 2 tables distributed using an EVEN strategy is: ",
+                "answers": [
+                  {
+                    "id": "a1554226351732",
+                    "text": "Efficient because both are using the same strategy",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1554226409419",
+                    "text": "Efficient because EVEN distributes processing evenly",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1554226833216",
+                    "text": "Slow because records will have to be shuffled for putting together the join result",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827381,
+          "key": "e9bfdd16-3360-4f28-a49d-d75a27572303",
+          "title": "Distribution Style: All",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e9bfdd16-3360-4f28-a49d-d75a27572303",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827582,
+              "key": "10251afa-2bf1-4d72-858f-7de6260e575e",
+              "title": "L03-08-OptimizingDesign-Part1 Distribution Syle- All",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8ugf27t-z4M",
+                "china_cdn_id": "8ugf27t-z4M.mp4"
+              }
+            },
+            {
+              "id": 842006,
+              "key": "93cb677e-bab8-455d-8c6a-f19d9b93a871",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "93cb677e-bab8-455d-8c6a-f19d9b93a871",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What does the ALL distribution style do to a table?",
+                "answers": [
+                  {
+                    "id": "a1554227039177",
+                    "text": "Puts all records of a table in the same slice ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1554227111118",
+                    "text": "Replicates a table on all slices",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 842010,
+              "key": "872a3325-b155-4133-98a8-841c2ce6f320",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "872a3325-b155-4133-98a8-841c2ce6f320",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What's another common name for the ALL distribution style?",
+                "answers": [
+                  {
+                    "id": "a1554227212518",
+                    "text": "Broadcasting",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1554227237401",
+                    "text": "Widecasting",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1554227241003",
+                    "text": "Anycasting",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827382,
+          "key": "a4539d8c-f6f5-4d03-a672-3b73f8931c1a",
+          "title": "Distribution Syle: Auto",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a4539d8c-f6f5-4d03-a672-3b73f8931c1a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827583,
+              "key": "9ef5621a-a7e2-4d68-8d0f-299ab7c06ac3",
+              "title": "L03-08-OptimizingDesign-Part2 Distribution Syle- Auto",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QYodq1oKeSU",
+                "china_cdn_id": "QYodq1oKeSU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827383,
+          "key": "1d70b1e2-0a8e-4e74-a3d8-2ced944fc8cb",
+          "title": "Distribution Syle: Key",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1d70b1e2-0a8e-4e74-a3d8-2ced944fc8cb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827584,
+              "key": "04da96e2-93ad-42ce-ab60-6e5fe60da842",
+              "title": "L03-08-OptimizingDesign-Part2 Distribution Syle- Key",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CtD2dkiBkUk",
+                "china_cdn_id": "CtD2dkiBkUk.mp4"
+              }
+            },
+            {
+              "id": 830769,
+              "key": "5f6e22fa-bb83-4653-a8e6-d128212b6f14",
+              "title": "Distribution Styles",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5f6e22fa-bb83-4653-a8e6-d128212b6f14",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match each distribution style to its definition."
+                },
+                "concepts_label": "Definition",
+                "answers_label": "Distribution Style",
+                "concepts": [
+                  {
+                    "text": "Round-robin over all slices to achieve load-balancing.",
+                    "correct_answer": {
+                      "id": "a1550646331957",
+                      "text": "Even"
+                    }
+                  },
+                  {
+                    "text": "Small tables could be replicated on all slices to speed up joins.\n",
+                    "correct_answer": {
+                      "id": "a1550646414088",
+                      "text": "All"
+                    }
+                  },
+                  {
+                    "text": "Allows Redshift to determine distribution style.",
+                    "correct_answer": {
+                      "id": "a1550646464126",
+                      "text": "Auto"
+                    }
+                  },
+                  {
+                    "text": "Rows having similar values are placed in the same slice.",
+                    "correct_answer": {
+                      "id": "a1550646502141",
+                      "text": "Key"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1550646502141",
+                    "text": "Key"
+                  },
+                  {
+                    "id": "a1550646414088",
+                    "text": "All"
+                  },
+                  {
+                    "id": "a1550646464126",
+                    "text": "Auto"
+                  },
+                  {
+                    "id": "a1550646331957",
+                    "text": "Even"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 827384,
+          "key": "a9be4ad2-01f6-434b-bd89-de019ad766f5",
+          "title": "Sorting Key",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a9be4ad2-01f6-434b-bd89-de019ad766f5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830406,
+              "key": "4c66c65f-315e-4e29-9bee-bc9f29d5a004",
+              "title": "L03-08-OptimizingDesign-Part2 Sorting Key",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wubk59sUZnk",
+                "china_cdn_id": "wubk59sUZnk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827385,
+          "key": "d833aae8-f4c5-498e-b947-ccc34c710366",
+          "title": "Sorting Key Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d833aae8-f4c5-498e-b947-ccc34c710366",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830407,
+              "key": "fb927978-a9c7-4357-880c-9d41ac0f9085",
+              "title": "L03-08 Sorting Key Example (Previously L03-08-OptimizingDesign-Part3)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DIYCfHEn7Z4",
+                "china_cdn_id": "DIYCfHEn7Z4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827434,
+          "key": "d05b29cd-f521-4eec-bf38-8b28319d6a47",
+          "title": "Demo: Table Design",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d05b29cd-f521-4eec-bf38-8b28319d6a47",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827591,
+              "key": "a2784db9-f432-446c-ba48-4f2e8d67116d",
+              "title": "L03-Exercise04Demo",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6fXns_Txwqc",
+                "china_cdn_id": "6fXns_Txwqc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 827389,
+          "key": "a919e878-e1c5-403d-994d-114de98f3083",
+          "title": "Exercise 4: Table Design ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a919e878-e1c5-403d-994d-114de98f3083",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827396,
+              "key": "af64590e-6ede-45d0-ba1c-44c2048817f0",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-re5aa",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L3 Exercise 4 - Table Design.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 840228,
+          "key": "6afa911d-b5ec-4ced-b286-c4bdb354a9a7",
+          "title": "Exercise Solution 4: Table Design",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6afa911d-b5ec-4ced-b286-c4bdb354a9a7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840230,
+              "key": "ec28e0df-fa8c-406a-ae45-a4ea851d293c",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766469c809452xJUPYTERLm1wubk29",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-g12l3",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/L3 Exercise 4 - Table Design - Solution.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 827386,
+          "key": "4ef68915-1254-49f0-bd8c-ce3083548837",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4ef68915-1254-49f0-bd8c-ce3083548837",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827587,
+              "key": "aa9fae76-c9b5-49eb-9b46-0a925324d3d0",
+              "title": "L03-09-FinalRemarks",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "VqdSJRsMS7I",
+                "china_cdn_id": "VqdSJRsMS7I.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}

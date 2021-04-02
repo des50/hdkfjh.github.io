@@ -1,0 +1,1373 @@
+{
+  "data": {
+    "lesson": {
+      "id": 1020540,
+      "key": "7406b2ee-f6b5-4a64-8087-c72a49eb68d3",
+      "title": "Setting up Spark Clusters with AWS",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson, you will learn to run Spark on a distributed cluster in AWS UI and AWS CLI.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/7406b2ee-f6b5-4a64-8087-c72a49eb68d3/1020540/1589330667974/Setting+up+Spark+Clusters+with+AWS+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/7406b2ee-f6b5-4a64-8087-c72a49eb68d3/1020540/1589330664050/Setting+up+Spark+Clusters+with+AWS+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 1015639,
+          "key": "6e6259a0-d938-4234-878c-f05a7ec0e26c",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6e6259a0-d938-4234-878c-f05a7ec0e26c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827595,
+              "key": "791cd846-e5e1-43bb-9006-9585d6f19eb5",
+              "title": "L3 01 01 Intro V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "efzIn_CtvAM",
+                "china_cdn_id": "efzIn_CtvAM.mp4"
+              }
+            },
+            {
+              "id": 1015650,
+              "key": "4f8d7c95-db57-4d32-bd1a-57e6f1163b25",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n# Lesson Overview\n\n\nBy the end of the lesson,  you will be able to:\n \n+ Distinguish between setting up a Spark Cluster using both Local and Standalone Mode\n+ Set up Spark Cluster in AWS \n+ Use Spark UI\n+ Use AWS CLI\n+ Create EMR using AWS CLI\n+ Create EMR Cluster\n+ Test Port Forwarding\n+ Use Notebooks on your Spark Cluster\n+ Write Spark Scripts\n+ Store and Retrieve data on the Cloud\n+ Read and Write to Amazon S3\n+ Understand the distinction between HDFS and S3\n+ Reading and Writing Data to HDFS\n\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1015637,
+          "key": "a4c98a55-ee5f-4924-8746-9c504827a26d",
+          "title": "From Local to Standalone Mode",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a4c98a55-ee5f-4924-8746-9c504827a26d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827596,
+              "key": "445131a2-2a59-418f-8816-4c259790a740",
+              "title": "L3 02 01 From Local Mode To Cluster Mode V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EeBWbABm_Qc",
+                "china_cdn_id": "EeBWbABm_Qc.mp4"
+              }
+            },
+            {
+              "id": 1020571,
+              "key": "e25ab552-b991-47ca-acb8-e0eae13d4576",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Overview of the Set up of a Spark Cluster \n \n1. __Amazon S3__ will store the dataset.\n2. We rent a cluster of machines, i.e., our   __Spark Cluster__, and iti s located in AWS data centers. We rent these using AWS service called __Elastic Compute Cloud (EC2)__.\n3. We log in from your local computer to this Spark cluster.\n4. Upon running our Spark code, the cluster will load the dataset from __Amazon S3__ into the cluster’s memory distributed across each machine in the cluster.\n\n#### New Terms:\n- **Local mode**: You are running a Spark program on your laptop like a single machine.\n- **Standalone mode**: You are defining Spark Primary and Secondary to work on your (virtual) machine. You can do this on EMR or your machine. Standalone mode uses a resource manager like YARN or Mesos.\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1015613,
+              "key": "42572320-3a8c-46de-bc3d-1644cea7a7ba",
+              "title": "Local vs Standalone",
+              "semantic_type": "ReflectAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "42572320-3a8c-46de-bc3d-1644cea7a7ba",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "title": "Reflect",
+                "semantic_type": "TextQuestion",
+                "evaluation_id": null,
+                "text": "In your own words, please describe key differences between the local and standalone modes of Spark."
+              },
+              "answer": {
+                "text": "Thanks for your response. Here is what I would’ve said for this question: \n\nLocal mode means Spark is running on your local machine.\nStandalone mode is distributed and uses resource management like Yarn or Mesos.",
+                "video": null
+              }
+            }
+          ]
+        },
+        {
+          "id": 1015641,
+          "key": "02a5f4af-8d07-4ec1-af72-89c83c563c4d",
+          "title": "Setup Instructions AWS",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "02a5f4af-8d07-4ec1-af72-89c83c563c4d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1020572,
+              "key": "9f7c4a36-0809-4706-aad8-32a33ebc125c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### EC2 vs EMR\n\n\n\n<table>\n<tr>\n<th>   </th><th>__AWS EMR__</th><th>__AWS EC2__</th></tr>\n<tr>\n<td>**Distributed computing**</td><td>Yes</td><td>Yes</td></tr>\n<tr><td>**Node categorization**</td><td>Categorizes secondary nodes into core and task nodes as a result of which data can be lost in case a data node is removed.</td><td>Does not use node categorization</td></tr>\n<tr><td>**Can support HDFS?**</td><td>Yes</td><td>Only if you configure HDFS on EC2 yourself using multi-step process.</td></tr>\n<tr><td>**What protocol can be used?**</td><td>Uses S3 protocol over AWS S3, which is faster than s3a protocol</td><td>ECS uses s3a</td></tr>\n<tr><td>**Comparison cost**</td> <td>Bit higher</td><td>Lower</td></tr></table>\n\n### Circling back about HDFS\n\nPreviously we have looked over the Hadoop Ecosystem. To refresh those concepts, we have provided reference material here. HDFS (Hadoop Distributed File System) is the file system. HDFS uses MapReduce system as a resource manager.\n\nSpark can replace the MapReduce algorithm. Since Spark does not have its own distributed storage system, it leverages using HDFS or AWS S3, or any other distributed storage. Primarily in this course, we will be using AWS S3, but let’s review the advantages of using HDFS over AWS S3.\n\n### What  is HDFS? \nHDFS (Hadoop Distributed File System) is the file system in the Hadoop ecosystem. Hadoop and Spark are two frameworks providing tools for carrying out big-data related tasks. While Spark is faster than Hadoop, Spark has one drawback. It lacks a distributed storage system. In other words, Spark lacks a system to organize, store and process data files. \n\n### MapReduce System\nHDFS uses MapReduce system as a resource manager to allow the distribution of the files across the hard drives within the cluster. Think of it as the MapReduce System storing the data back on the hard drives after completing all the tasks. \n\nSpark, on the other hand, runs the operations and holds the data in the RAM memory rather than the hard drives used by HDFS. Since Spark lacks a file distribution system to organize, store and process data files, Spark tools are often installed on Hadoop because Spark can then use the Hadoop Distributed File System (HDFS). \n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900294,
+              "key": "7709c995-650a-4aa1-9d14-f0ffcdcf1dcc",
+              "title": "Spark L3 SC 04 Setup Instructions AWS",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ZVdAEMGDFdo",
+                "china_cdn_id": "ZVdAEMGDFdo.mp4"
+              }
+            },
+            {
+              "id": 1015888,
+              "key": "9715a2c5-35ed-4a82-8322-baa576a3c8eb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n### Why do you need __EMR Cluster__?\n\nSince a Spark cluster includes multiple machines, in order to use Spark code on each machine, we would need to download and install Spark and its dependencies. This is a manual process. __Elastic Map Reduce__ is a service offered by AWS that negates the need for you, the user, to go through the manual process of installing Spark and its dependencies for each machine.\n\n### Setting up AWS\nPlease refer to the latest [AWS documentation to set up an EMR Cluster]( https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-gs-launch-sample-cluster.html ).  \n\nLet’s pause  to do a quick check for understanding  from a previous  page.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1015609,
+              "key": "4ede97f2-8b65-4995-929f-e26c8b5059be",
+              "title": "What are the characteristics of the standalone mode?",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4ede97f2-8b65-4995-929f-e26c8b5059be",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What are some characteristics of the AWS EMR standalone mode? (may be more than one answer)",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "It runs on your local machine",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "It is distributed",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Spark is taking care of the resource management",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 1121306,
+          "key": "c68b7e2f-3731-45eb-a5f6-8f7b3068cc8f",
+          "title": "AWS - Install and Configure CLI v2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c68b7e2f-3731-45eb-a5f6-8f7b3068cc8f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1121307,
+              "key": "1730c732-b4d8-4f94-adc8-e01baa8a4497",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "> The AWS Command Line Interface (AWS CLI) is a command-line tool that allows you to interact with AWS services using commands in your terminal/command prompt.  \n>\n\n\nAWS CLI enables you to run commands to provision, configure, list, delete resources in the AWS cloud. Before you run any of the  <a href=\"https://docs.aws.amazon.com/cli/latest/reference/\" target=\"_blank\">aws commands</a>, you need to follow three steps:\n\n1. Install AWS CLI\n1. Create an IAM user with Administrator permissions\n1. Configure the AWS CLI",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1121308,
+              "key": "a0e86019-9d39-4ded-b444-7bb801d6a850",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Step 1. Install AWS CLI v2\n\nRefer to the official <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html\" target=\"_blank\">AWS instructions to install/update AWS CLI</a> (version 2) based on your underlying OS. You can verify the installation using the following command in your terminal (macOS)/cmd (Windows). \n\n```\n# Display the folder that contains the symlink to the aws cli tool\nwhich aws\n# See the current version\naws --version\n```\n\nSee the sample output below. Note that the exact version of AWS CLI and Python may vary in your system.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1121309,
+              "key": "3493a822-256a-4ec6-b811-4d51ed979ca5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fd9dc30_screenshot-2020-12-16-at-3.35.41-pm/screenshot-2020-12-16-at-3.35.41-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3493a822-256a-4ec6-b811-4d51ed979ca5",
+              "caption": "Mac/Linux/Windows: Verify the successful installation of AWS CLI 2",
+              "alt": "",
+              "width": 500,
+              "height": 410,
+              "instructor_notes": null
+            },
+            {
+              "id": 1121325,
+              "key": "dfb2ac21-1b16-4436-bb0a-e96e25bc5cb3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Step 2. Create an IAM user \n\nIn this step, you will create an IAM user with Administrator permissions who is allowed to perform *any* action in your AWS account, only through CLI. After creating such an IAM user, we will use its **Access key **(long-term credentials)** **to configure the AWS CLI locally. \n\n\n\nLet’s create an  <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/intro-structure.html\" target=\"_blank\">AWS IAM</a> user, and copy its Access key.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1121310,
+              "key": "cd6e2787-3f3f-458c-a127-dd5faaa89288",
+              "title": "IAM setup",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "> AWS Identity and Access Management (IAM) service allows you to authorize users / applications (such as AWS CLI) to access AWS resources.   \n>\n\n\nThe Access key is a combination of an  **Access Key ID** and a **Secret Access Key. ** Let's see the steps to create an IAM user, and generate its Access key.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1121311,
+              "key": "15f6dc15-58c7-441e-9e4a-5504f0d7b131",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n * Navigate to the <a href=\"https://console.aws.amazon.com/iam/home#/home\" target=\"_blank\">IAM Dashboard</a>, and create an IAM user.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1130816,
+              "key": "65a14514-e9fb-48d7-8750-d4b37c09a4eb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/January/6012c726_screenshot-2021-01-28-at-7.12.20-pm/screenshot-2021-01-28-at-7.12.20-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/65a14514-e9fb-48d7-8750-d4b37c09a4eb",
+              "caption": "Add a new IAM user ",
+              "alt": "",
+              "width": 600,
+              "height": 628,
+              "instructor_notes": null
+            },
+            {
+              "id": 1130817,
+              "key": "83c0c701-3d2f-4c09-85b3-b83fe581d6bd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* Set the user details, such as the name, and access type as *Programmatic access* only.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1130818,
+              "key": "f839fcc1-c7b1-4699-b30b-af4f0c650c15",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/January/6012cbf9_screenshot-2021-01-28-at-7.13.05-pm/screenshot-2021-01-28-at-7.13.05-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f839fcc1-c7b1-4699-b30b-af4f0c650c15",
+              "caption": "Set the user name, and type (mode) of access ",
+              "alt": "",
+              "width": 600,
+              "height": 1064,
+              "instructor_notes": null
+            },
+            {
+              "id": 1130819,
+              "key": "4d139068-6b9d-487b-956a-5651dd8e10ed",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* Set the permissions to the new user by attaching the AWS Managed **AdministratorAccess** policy from the list of existing policies.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1130820,
+              "key": "d6b72658-970d-4749-b4fe-3566982323de",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fe30edb_screenshot-2020-12-23-at-12.48.57-pm/screenshot-2020-12-23-at-12.48.57-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d6b72658-970d-4749-b4fe-3566982323de",
+              "caption": "Attach the *AdministratorAccess* policy from the list of pre-created policies",
+              "alt": "",
+              "width": 600,
+              "height": 1296,
+              "instructor_notes": null
+            },
+            {
+              "id": 1130821,
+              "key": "86b13680-e702-46ad-b44a-db609c0718c8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* Provide tags [optional], review the details of the new user, and finally create the new user.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1130822,
+              "key": "a4184ef1-996d-4ef4-b917-c7d227e0c789",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* After a user is created successfully, download the access key file (.csv) containing the *Access Key ID* and a *Secret Access Key*. You can even copy the keys and stay on the same page. **Don’t skip this step as this will be your only opportunity to download the secret access key file.**\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1130823,
+              "key": "ae1b47b6-ef49-4600-92d6-67bc79b68d10",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/January/6012cc3d_screenshot-2021-01-28-at-7.14.44-pm/screenshot-2021-01-28-at-7.14.44-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ae1b47b6-ef49-4600-92d6-67bc79b68d10",
+              "caption": "Copy the Access key of the new user OR download the .csv file containing the Access key",
+              "alt": "",
+              "width": 600,
+              "height": 910,
+              "instructor_notes": null
+            },
+            {
+              "id": 1121317,
+              "key": "be38a6cd-9fe6-4e94-96b3-1f43d2302a55",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Step 3. Configure the AWS CLI\n\nYou will need to configure the following four items on your local machine before you can interact with any of the AWS services:\n\n1. **Access key** - It is a combination of an* Access Key ID* and a *Secret Access Key*. Together, they are referred to as *Access key*. You can generate an Access key from the AWS IAM service, and specify the level of permissions (authorization) with the help of *IAM Roles*. \n1. **Default AWS Region** - It specifies the AWS Region where you want to send your requests by default.\n1. **Default output format** - It specifies how the results are formatted. It can either be a json, yaml, text, or a table. \n1. **Profile** - A collection of settings is called a profile. The default profile name is `default`, however, you can create a new profile using the `aws configure --profile new_name` command. A sample command is given below.  \n\n<hr>\n\nIf you have closed the web console that showed the access key, you can open the downloaded access key file (.csv) to copy the keys later. It should be something similar to:\n\n```\nAWSAccessKeyId=WANI9WATIG63GKCXA89VC74A\nAWSSecretKey=kMT2Jn5NPkq1GxtoUqwUbgHtPbsf1ODm/Pbsf1OD\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1121318,
+              "key": "ba58c1ba-49d7-4f55-8d1c-4350cc3111ab",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fda200a_screenshot-2020-12-16-at-8.14.06-pm/screenshot-2020-12-16-at-8.14.06-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ba58c1ba-49d7-4f55-8d1c-4350cc3111ab",
+              "caption": "Mac/Linux: List your present configuration, and then configure your default aws profile",
+              "alt": "",
+              "width": 600,
+              "height": 670,
+              "instructor_notes": null
+            },
+            {
+              "id": 1154933,
+              "key": "bb125184-2558-4ebb-8b46-79b7e0615374",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* Navigate to the home directory and check the current configuration:\n```bash\n# Navigate to the home directory\ncd\n# View the current configuration\naws configure list\n```\n* Set the default profile credentials\n```bash\naws configure --profile default\n```\nThe command above will store the access key in a default file `~/.aws/credentials` and store the profile in the `~/.aws/config` file. Upon prompt, paste the copied access key (access key id and secret access key). Enter the default region as `us-east-1` and output format as `json`. \n\n\n* Let the system know that your sensitive information is residing in the .aws folder\n```bash\nexport AWS_CONFIG_FILE=~/.aws/config\nexport AWS_SHARED_CREDENTIALS_FILE=~/.aws/credentials\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1121319,
+              "key": "b4adce94-2ccb-46e0-b438-b7e3a666af1d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fda2052_screenshot-2020-12-16-at-8.16.36-pm/screenshot-2020-12-16-at-8.16.36-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b4adce94-2ccb-46e0-b438-b7e3a666af1d",
+              "caption": "Mac/Linux: A successful configuration",
+              "alt": "",
+              "width": 600,
+              "height": 360,
+              "instructor_notes": null
+            },
+            {
+              "id": 1154951,
+              "key": "752786f5-3c35-48db-93af-e5ebbd9c5351",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* After a successful credential set-up, your \"credentials\" file will look like:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1121321,
+              "key": "c08cfa40-cf2e-4b51-a7a3-f5dd9cfde0ab",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fda1fe8_screenshot-2020-12-16-at-8.22.29-pm/screenshot-2020-12-16-at-8.22.29-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c08cfa40-cf2e-4b51-a7a3-f5dd9cfde0ab",
+              "caption": "Mac/Linux: View the credentials file using `cat ~/.aws/credentials` command",
+              "alt": "",
+              "width": 600,
+              "height": 448,
+              "instructor_notes": null
+            },
+            {
+              "id": 1154949,
+              "key": "94b9bd5c-a536-4b2a-b36b-0a533de47fae",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* **Windows users with GitBash only**<br> You will have to set the environment variables. Run the following commands in your GitBash terminal:\n```bash\nsetx AWS_ACCESS_KEY_ID AKIAIOSFODNN7EXAMPLE\nsetx AWS_SECRET_ACCESS_KEY wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY\nsetx AWS_DEFAULT_REGION us-west-2\n```\nReplace the access key ID and secret, as applicable to you. Windows users using WSL do not need this step, they will follow all steps as if they are Linux users.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1154954,
+              "key": "7a8ae863-6a98-462c-b8c9-6885f59fec1b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/60476f37_snap201/snap201.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7a8ae863-6a98-462c-b8c9-6885f59fec1b",
+              "caption": "Windows: Successful configuration using the GitBash terminal",
+              "alt": "",
+              "width": 600,
+              "height": 877,
+              "instructor_notes": null
+            },
+            {
+              "id": 1130824,
+              "key": "71acc845-e0a5-435b-9f9f-2b063f07676a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Step 4. Run your first AWS CLI command\n\n* Check the successful configuration of the AWS CLI, by running an AWS command:\n```bash\naws iam list-users\n```\nThe output will display the details of the recently created user:\n```json\n{\n  \"Users\": [\n      {\n          \"Path\": \"/\",\n          \"UserName\": \"Admin\",\n          \"UserId\": \"AIDAZMXYZ3LY2BNC5ZM5E\",\n          \"Arn\": \"arn:aws:iam::388752792305:user/Admin\",\n          \"CreateDate\": \"2021-01-28T13:44:15+00:00\"\n      }\n  ]\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1121320,
+              "key": "46fcdb8a-2b56-4a36-9ef2-48065d7259cc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Troubleshoot\nIf you are facing issues while following the commands above, refer to the detailed instructions here - \n\n1. [Configuration basics](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)\n2. <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html\" target=\"_blank\">Configuration and credential file settings</a>\n3. [Environment variables to configure the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1159256,
+              "key": "defa570e-85fc-4260-b1a1-1bb585dbdc54",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Updating the specific variable in the configuration\nIn the future, you can set a single value, by using the command, such as:\n```bash\n# Syntax\n# aws configure set <varname> <value> [--profile profile-name]\n aws configure set default.region us-east-2\n```\nIt will update only the region variable in the existing default profile.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1118642,
+          "key": "e1a1bbc8-b748-4d39-97c7-00f67c37e7c8",
+          "title": "AWS CLI - Create EMR Cluster",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e1a1bbc8-b748-4d39-97c7-00f67c37e7c8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1118652,
+              "key": "db16f83a-cabb-410b-a8bf-cbaf6ce54568",
+              "title": "Create EMR Script",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's learn how to create an EMR cluster from the CLI, and configure the related settings. \n\n## 1. `aws emr create-cluster` command\n\nWhile creating EMR through AWS console has been shown, but if you know your instances' specificity, such as which applications you need or what kind of clusters you’ll need, you can reuse the `aws emr create-cluster` command below multiple times.\n\n```\naws emr create-cluster --name <cluster_name> \\\n --use-default-roles --release-label emr-5.28.0  \\\n--instance-count 3 --applications Name=Spark Name=Zeppelin  \\\n--bootstrap-actions Path=\"s3://bootstrap.sh\" \\\n--ec2-attributes KeyName=<your permission key name> \\\n--instance-type m5.xlarge --log-uri s3:///emrlogs/\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1118653,
+              "key": "042d40fc-1568-4376-a0eb-a0a4f196b82f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "1. **Options of the `aws emr create-cluster` command** - Let’s break down the command and go over each option to know its responsibility.\n\n * `--name` : You can give any name of your choice. This will show up on your AWS EMR UI. \n * `--release-label`: This is the version of EMR you’d like to use.\n * `--instance-count`: Annotates instance count. One is for the primary, and the rest are for the secondary. For example, if --instance-count is given 4, then 1 instance will be reserved \n for primary, then 3 will be reserved for secondary instances.\n * `--applications`: List of applications you want to pre-install on your EMR at the launch time\n * `--bootstrap-actions`: The `Path` attribute provides the path to a file (residing in S3 or locally) that contains a script that runs during a bootstrap action. The script may set \n environmental variables in all the instances of the cluster. This file must be accessible to each instance in the cluster. \n * `--ec2-attributes KeyName`: Specify your permission key name, for example, if it is MyKey.pem, just specify `MyKey` for this field\n * `--instance-type`: Specify the type of instances you want to use. <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-supported-instance-types.html\" target=\"_blank\">Detailed list can be accessed here</a>, but find the one that can fit your data and your budget.\n * `--log-uri`: S3 location to store your EMR logs in. This log can store EMR metrics and also the metrics/logs for submission of your code.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1118664,
+              "key": "8255b7e2-70ba-4678-83b5-1434c5c8edc1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. **Reference** - You can refer to an even more detailed explanation about all possible options of the `aws emr create-cluster` command at <a href=\"https://awscli.amazonaws.com/v2/documentation/api/latest/reference/emr/create-cluster.html\" target=\"_blank\">CLI command reference</a>. \n\n<hr>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1118654,
+              "key": "5c9aa054-26a3-4f2e-af35-ba9615a3c14d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## 2. Exercise:  Create an EMR cluster using AWS CLI\n\nFollow the instructions given below: \n\n### 2.1. Prerequisite\n\n1. **AWS CLI** - Install AWS CLI on your local computer. Refer to the  <a href=\"https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html\" target=\"_blank\">AWS instructions to install/update AWS CLI</a> (version 2) based on your underlying OS.<br><br>\n1. **Set up Access credentials using AWS IAM** - Generate and save a new Access key  (access key ID, and a secret key) locally in your system, which will allow your CLI to create an EMR cluster. You will have to configure the environment variables so that the `aws configure` command can run properly. <br><br>\n1. **EC2 Login Key-Pair** - You should have an EC2 login key-pair to access your EC2 instances in the cluster. You can generate a key-pair from the <a href=\"https://console.aws.amazon.com/ec2/v2/home\" target=\"_blank\">EC2 dashboard</a>. Remember, a *key-pair* is a pair of (encrypted) public and (unencrypted PEM encoded) private keys. The public key is placed automatically on the instance, and the private key is made available to the user, just once. Suppose, your private key file name is *AWS_EC2_Demo.pem*, then you should use only \"*AWS_EC2_Demo*\" in the script below, with the option `--ec2-attributes`.  \n\n### 2.2. Create an EMR Cluster\n\n1. **Create default roles in IAM** - Before you run the `aws emr create-cluster` command, make sure to have the necessary roles created in your account. Use the following command. \n```\naws emr create-default-roles\n```\n This command will create  *EMR_EC2_DefaultRole* and *EMR_DefaultRole* in your account. <br><br>\n\n1. **Launch your cluster** - Run the script below to launch your cluster. Be sure to include the appropriate file names within the `<>` in the code.<br><br>\n1. **[Optional] Specify your bootstrap file** - You should save an executable (bootstrap_emr.sh file) in an accessible S3 location. You can specify this option as, for example, `--bootstrap-actions Path=s3://mybucket/bootstrap_emr.sh` in the script below. A sample file is provided in the <a href=\"https://github.com/udacity/nd027-c3-data-lakes-with-spark/tree/master/Setting_Spark_Cluster_In_AWS/exercises/starter/create_emr_cluster\" target=\"_blank\">Github repo here</a>.\n```\n# Add your cluster name, and EC2 private key file name\naws emr create-cluster --name <YOUR_CLUSTER_NAME> --use-default-roles --release-label emr-5.28.0 --instance-count 3 --applications Name=Spark  --ec2-attributes KeyName=<YOUR_EC2_KEY_FILE_NAME> --instance-type m5.xlarge --instance-count 3 --auto-terminate\n```\nNotice two things in the command above. \n * One, we have added the `--auto-terminate` option to terminate the cluster after completing all the steps because EMR clusters are costly. However, you can ignore this option, and [terminate the cluster manually](https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminateJobFlow.html) after your job is done. \n * Two, we haven't specified the `--bootstrap-actions` option. This step is optional. \n\n The expected output should look similar to this:\n```\n \"ClusterId\": \"j-2PZ79NHXO7YYX\",\n \"ClusterArn\": \"arn:aws:elasticmapreduce:us-east-2:027631528606:cluster/j-2PZ79NHXO7YYX\"\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1118681,
+              "key": "24401c7e-e1c6-4852-a51d-31b7dee24dd7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "4. You can either go to [AWS EMR console](https://console.aws.amazon.com/elasticmapreduce/home) from your web browser or run the command below to verify if the cluster is created successfully. \n```\naws emr describe-cluster --cluster-id <CLUSTER_ID FROM ABOVE>\n```\n\n A copy of the exercises are also available in the lesson git repo:** **<a href=\"https://github.com/udacity/nd027-c3-data-lakes-with-spark/tree/master/Setting_Spark_Cluster_In_AWS/exercises/starter\" target=\"_blank\">**Link to Github**</a>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119084,
+              "key": "29fac1bf-5290-4575-a1a0-b7da6a1d90b0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb0fa9_screenshot-2020-12-17-at-12.08.35-pm/screenshot-2020-12-17-at-12.08.35-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/29fac1bf-5290-4575-a1a0-b7da6a1d90b0",
+              "caption": "Summary of the newly created cluster. The next set of steps are also highlighted above. ",
+              "alt": "",
+              "width": 700,
+              "height": 1662,
+              "instructor_notes": null
+            },
+            {
+              "id": 1118670,
+              "key": "14ca4eee-3e12-4aab-af82-ddc4703c1ce8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "5. **Troubleshoot** - Refer here if you get <a href=\"https://aws.amazon.com/premiumsupport/knowledge-center/emr-default-role-invalid/\" target=\"_blank\">\"EMR_DefaultRole is invalid\" or \"EMR_EC2_DefaultRole is invalid\"</a> error.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119083,
+              "key": "7b96292b-bc1b-412d-a873-3b82cc59df6f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### 2.3. Change Security Groups\n1. After successfully launching the EMR cluster, the master and core (slave) EC2 instances will launch automatically. Next, we will try to log in to the master EC2 instance on the EMR cluster using the SSH protocol (allows secure remote login). Therefore, you’ll need to enable the *Security Groups* setting of the master EC2 instance to accept incoming SSH protocol from your local computer.\n\n The master and slave nodes are associated with a separate security group. You can view the security group ID either in the **EMR console** &#8594; **Clusters** or you can go to the **EC2 dashboard** &#8594; **Security Groups** service, as shown below. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119086,
+              "key": "ca8620a6-eeda-4a95-b4cc-12f19d947126",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb12d8_screenshot-2020-12-17-at-12.12.35-pm/screenshot-2020-12-17-at-12.12.35-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ca8620a6-eeda-4a95-b4cc-12f19d947126",
+              "caption": "Select the security group associated with the master ",
+              "alt": "",
+              "width": 700,
+              "height": 918,
+              "instructor_notes": null
+            },
+            {
+              "id": 1119087,
+              "key": "7a81bb78-da5a-4fb7-833a-60e2497b176f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. Edit the security group to authorize inbound SSH traffic (port 22)  from your local computer. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119088,
+              "key": "36824447-6174-4778-ac9a-481b688df34e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb1718_screenshot-2020-12-17-at-12.14.45-pm/screenshot-2020-12-17-at-12.14.45-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/36824447-6174-4778-ac9a-481b688df34e",
+              "caption": "Edit the inbound rules of the master node",
+              "alt": "",
+              "width": 700,
+              "height": 1244,
+              "instructor_notes": null
+            },
+            {
+              "id": 1119089,
+              "key": "0f9764fc-2da2-4329-9822-a6fa559818b7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb174d_screenshot-2020-12-17-at-11.47.10-am/screenshot-2020-12-17-at-11.47.10-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0f9764fc-2da2-4329-9822-a6fa559818b7",
+              "caption": "Add new inbound SSH traffic (port 22) from your local IP",
+              "alt": "",
+              "width": 700,
+              "height": 1008,
+              "instructor_notes": null
+            },
+            {
+              "id": 1119096,
+              "key": "9d700a1e-1e56-4884-b57e-f40f7359b3ba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. **Reference** - [Authorize inbound traffic](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-connect-ssh-prereqs.html)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119090,
+              "key": "cabd38f4-fd25-474c-9d3e-e5867f50a2d5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### 2.4. Verify connection to the Master node\n1. Go to the EC2 dashboard, and select the instance you want to connect using the SSH protocol. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119091,
+              "key": "ad93d1c0-c519-4905-9e76-f3f28015dd40",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb185a_screenshot-2020-12-17-at-12.18.32-pm/screenshot-2020-12-17-at-12.18.32-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ad93d1c0-c519-4905-9e76-f3f28015dd40",
+              "caption": "Select the instance to connect",
+              "alt": "",
+              "width": 700,
+              "height": 778,
+              "instructor_notes": null
+            },
+            {
+              "id": 1119092,
+              "key": "7ff2d3f8-51ab-4975-8892-ef85f7933767",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. Connect using the SSH protocol. You can run the commands shown in the figure below in your terminal.\n>**Note** - In the snapshot below, the user name to log in is not **root**. Instead, you must use ** hadoop**. For example, use `ssh -i AWS_EC2_Demo.pem hadoop@ec2-3-139-93-181.us-east-2.compute.amazonaws.com`\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119093,
+              "key": "3240eddd-4219-4acb-a253-bedeb9f7a80c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb18f6_screenshot-2020-12-17-at-12.24.54-pm/screenshot-2020-12-17-at-12.24.54-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3240eddd-4219-4acb-a253-bedeb9f7a80c",
+              "caption": "Steps to connect using SSH protocol. After a successful connection, you can `exit` your connection.",
+              "alt": "",
+              "width": 500,
+              "height": 1244,
+              "instructor_notes": null
+            },
+            {
+              "id": 1119094,
+              "key": "3a59e5a0-ed12-4ba3-b038-e945904b06fb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. **Reference** - [Connect to the Master Node Using SSH](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-connect-master-node-ssh.html). ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1118659,
+              "key": "d7fac0b2-375c-4a8a-a0b4-e74a9e7b9cb5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### 2.5. View Spark UI hosted on the EMR Clusters\n\nOne last thing to do before using the Jupyter Notebook, or even browsing the Spark UI, is to set up a proxy in your browser. It is a two-step process. \n\n**Step 1. Set Up an SSH Tunnel to the Master Node Using Dynamic Port Forwarding**<br>\n1. Enable the dynamic port forwarding using the command. This command does not returns a response.\n```bash\nssh -i AWS_EC2_Demo.pem -N -D 8157 hadoop@ec2-3-139-93-181.us-east-2.compute.amazonaws.com\n``` \n>Replace the *.pem* file name and the *master node public DNS* for you. In the above example, the *.pem* is residing in the present working folder. If your *.pem* is placed in any different folder, you can provide the complete path.\n\n In the command above, the `-D` option is used for specifying a local port (8157) to forward data to all remote ports on the master node's web server. <br><br>\n\n2. Now, you'd want to copy your .pem file (EC2 log in private key) to the master node. You can securely copy your .pem file from your local computer to the master node, using:\n```\nscp -i AWS_EC2_Demo.pem AWS_EC2_Demo.pem hadoop@ec2-3-139-93-181.us-east-2.compute.amazonaws.com:/home/hadoop/\n```\n You can use a similar command to copy any other script, if required.\n\n\n3. **Reference** - [Part 1: Set Up an SSH Tunnel to the Master Node Using Dynamic Port Forwarding](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-ssh-tunnel.html)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119097,
+              "key": "65ff7a81-7614-4e46-aa86-9c10741b3ee6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n**Step 2. Configure Proxy Settings in your Local Computer**<br>\nTo do this, you'll need to install an extension in your browser. Here are the options:\n* Chrome - SwitchyOmega or FoxyProxy\n* Firefox - FoxyProxy \n\nThe snapshots below present the step for the Chrome browser. For other browsers, you can follow the reference link present at the end of the section. \n1. Go to the https://chrome.google.com/webstore/category/extensions, and add for *Proxy SwitchyOmega* extension to your Chrome browser.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119098,
+              "key": "fb19c2c3-8aa9-4a96-8b96-6ad2cf9c9a2c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb25e2_screenshot-2020-12-17-at-12.41.02-pm/screenshot-2020-12-17-at-12.41.02-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fb19c2c3-8aa9-4a96-8b96-6ad2cf9c9a2c",
+              "caption": "SwitchyOmega extension on Chrome",
+              "alt": "",
+              "width": 600,
+              "height": 492,
+              "instructor_notes": null
+            },
+            {
+              "id": 1119105,
+              "key": "c860cafa-645f-412e-9da3-693cf12f7288",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. Create a new profile with name `emr-socks-proxy` and select *PAC profile type*.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119099,
+              "key": "b9dea6d9-7f8a-4b15-89ed-653db1ba8db7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb262e_screenshot-2020-12-17-at-12.41.33-pm/screenshot-2020-12-17-at-12.41.33-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b9dea6d9-7f8a-4b15-89ed-653db1ba8db7",
+              "caption": "Create a new profile in SwitchyOmega",
+              "alt": "",
+              "width": 600,
+              "height": 1062,
+              "instructor_notes": null
+            },
+            {
+              "id": 1119100,
+              "key": "a3353fcc-2e52-4a46-8d8a-13980e3b0b10",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb265a_screenshot-2020-12-17-at-12.42.12-pm/screenshot-2020-12-17-at-12.42.12-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a3353fcc-2e52-4a46-8d8a-13980e3b0b10",
+              "caption": "Enter the profile name and choose a profile type",
+              "alt": "",
+              "width": 600,
+              "height": 1236,
+              "instructor_notes": null
+            },
+            {
+              "id": 1119106,
+              "key": "7eed9b4c-1037-49e2-98e3-2d06a23bb59c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. Save the following profile script in your new profile:\n```\nfunction FindProxyForURL(url, host) {\n    if (shExpMatch(url, \"*ec2*.amazonaws.com*\")) return 'SOCKS5 localhost:8157';\n    if (shExpMatch(url, \"*ec2*.compute*\")) return 'SOCKS5 localhost:8157';\n    if (shExpMatch(url, \"http://10.*\")) return 'SOCKS5 localhost:8157';\n    if (shExpMatch(url, \"*10*.compute*\")) return 'SOCKS5 localhost:8157';\n    if (shExpMatch(url, \"*10*.amazonaws.com*\")) return 'SOCKS5 localhost:8157';\n    if (shExpMatch(url, \"*.compute.internal*\")) return 'SOCKS5 localhost:8157';\n    if (shExpMatch(url, \"*ec2.internal*\")) return 'SOCKS5 localhost:8157';\n    return 'DIRECT';\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119101,
+              "key": "9c31d18d-b80c-4501-ad3f-b1a02cb62b19",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb2697_screenshot-2020-12-17-at-12.43.21-pm/screenshot-2020-12-17-at-12.43.21-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9c31d18d-b80c-4501-ad3f-b1a02cb62b19",
+              "caption": "Apply changes to the new profile",
+              "alt": "",
+              "width": 500,
+              "height": 1378,
+              "instructor_notes": null
+            },
+            {
+              "id": 1119107,
+              "key": "e663ce75-a6cc-4153-8a91-cd3f7e79a0d4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "4. Enable the `emr-socks-proxy` profile.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119102,
+              "key": "80993d88-9ed0-4ec6-aebf-098dfc86a9b4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb275d_screenshot-2020-12-17-at-3.09.22-pm/screenshot-2020-12-17-at-3.09.22-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/80993d88-9ed0-4ec6-aebf-098dfc86a9b4",
+              "caption": "Enable the new SwitchyOmega profile",
+              "alt": "",
+              "width": 600,
+              "height": 1444,
+              "instructor_notes": null
+            },
+            {
+              "id": 1119104,
+              "key": "c0fd3f52-06dc-4fe8-ad73-3935287a0d3d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "5. Once, you have configured the proxy, you can access the Spark UI using the command (replace the master node public DNS for you):\n```\nhttp://ec2-3-139-93-181.us-east-2.compute.amazonaws.com:18080/\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119103,
+              "key": "1a7019c0-c78e-4bc0-87c7-950687b1fc32",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/December/5fdb27ab_screenshot-2020-12-17-at-12.51.20-pm/screenshot-2020-12-17-at-12.51.20-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1a7019c0-c78e-4bc0-87c7-950687b1fc32",
+              "caption": "Spark UI, accessed from the CLI (note the URL above). Though, you can access the same Spark UI by selecting the cluster summary from the **EMR console** &#8594; **Clusters**, and clicking on the **Persistent user interface** hyperlink. ",
+              "alt": "",
+              "width": 700,
+              "height": 398,
+              "instructor_notes": null
+            },
+            {
+              "id": 1119108,
+              "key": "3ccd11b2-9491-40c6-96ec-f9d5928681f9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "6. **Reference** - [Part 2: Configure Proxy Settings to View Websites Hosted on the Master Node](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-connect-master-node-proxy.html)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1119109,
+              "key": "bb687b8c-f518-4451-a76b-209885a3b430",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": ">**<font color=\"red\">Note</font>** - Do not forget to **[Terminate](https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminateJobFlow.html)** your EMR cluster after your exercise is finished. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1015645,
+          "key": "fe9d619b-c485-4a61-b3d9-84f56c33ffde",
+          "title": "Using Notebooks on Your Cluster",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fe9d619b-c485-4a61-b3d9-84f56c33ffde",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 947357,
+              "key": "a86dd2c4-1b95-410d-bb26-4027e5eacc82",
+              "title": "Spark L3 SC 10 Reading And Writing To Amazon S3 Part 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EcIYPkCkehY",
+                "china_cdn_id": "EcIYPkCkehY.mp4"
+              }
+            },
+            {
+              "id": 1016012,
+              "key": "0f7e507e-5c86-4e56-976e-20dea0ea6b57",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Jupyter / Zeppelin Notebook\n\nThere are a couple of options for which notebook to use. We can use a Jupyter Notebook, or use a Zeppelin notebook. If you are already familiar with Jupyter Notebooks, continue using them.\n\n### Advantages of using Zeppelin Notebook\n\nWhile the use of Jupyter Notebook is common across the industry, you can explore using Zeppelin notebooks. Zeppelin notebooks have been available since EMR 5.x versions, and they have direct access to Spark Context, such as a local spark-shell. For example, if you type `sc`, you’ll be able to get Spark Context within Zeppelin notebooks.\n\nZeppelin is very similar to Jupyter Notebook, but if you want to use other languages like Scala or SQL, on top of using Python, you can use Zeppelin instead.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1015638,
+          "key": "df6e69a9-d17c-4e2e-ad0f-480d60ad71dc",
+          "title": "Spark Scripts",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "df6e69a9-d17c-4e2e-ad0f-480d60ad71dc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827598,
+              "key": "6104221c-6b94-4fca-91f2-77c053a5bcf7",
+              "title": "L3 02 02 What Is A Spark Script V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bfOocPv54EI",
+                "china_cdn_id": "bfOocPv54EI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1015647,
+          "key": "72f1c1ba-0984-4d22-81c2-9ae2f0fef90c",
+          "title": "Submitting Spark Scripts",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "72f1c1ba-0984-4d22-81c2-9ae2f0fef90c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "Cities",
+                "uri": "https://video.udacity-data.com/topher/2020/May/5eabf02f_cities/cities.csv"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 900295,
+              "key": "1b2de017-d4c7-4f5a-bb4f-cb852ae19fbd",
+              "title": "Spark L3 SC 08 Submitting Spark Scripts",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ZcSfIqAgoUQ",
+                "china_cdn_id": "ZcSfIqAgoUQ.mp4"
+              }
+            },
+            {
+              "id": 1017632,
+              "key": "00e1904e-feca-410d-94bb-c107ccfc5b9b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Submitting Spark Script Instructions\nHere is the link to the [GitHub repo](https://github.com/udacity/nd027-c3-data-lakes-with-spark/tree/master/Setting_Spark_Cluster_In_AWS/exercises/starter) where a copy of the exercise instructions are located along with cities.csv file.\n\n- Download the `cities.csv` dataset to your local machine.\n- Upload a file into an S3 location using the AWS S3 console, or you can use the AWS CLI command, like `aws s3 cp <your current file location>/<filename> s3://<bucket_name>`.\n- Create an EMR instance.\n- Copy the file to your EMR instance, preferably in your home directory of EMR instance.\n- Execute the file using `spark-submit <filename>.py`.\n\n##### A note about SSH\nSSH is a specific protocol for secure remote login and file transfer. \n\nThe instructor is showing you one way to save your files. He is using SSH protocol to save the files in the EMR instance. \nWhen you see `hadoop@ip-###- ###-####`, this indicates that the instructor accessed the EMR instance using SSH protocol. However, once he terminates the EMR instance, everything he would saved on the EMR instance will be lost.  This is because EMR instance is not kept active all the time since it is expensive. \n\nIn the _Reflection Exercise_ you can experiment with an alternate good industry practice. Data engineers always save their initial, final, and intermediate data of the data pipeline in the S3 for future retrieval. It is best practice to move your files from your local machine to AWS S3, then use the program to read the data from AWS S3.\n\n### Reflection exercise:\nUse your proxy to view the Spark UI to understand how your code and workers are working, i.e. which are transformation vs action words (and if they are correctly showing up on Spark UI), and to get familiar with reading the Spark UI. This will give you a better understanding on how your Spark program runs.\n\n\n__Reminder link__ to [Amazon documentation](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-connect-master-node-proxy.html) on FoxyProxy",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1015648,
+          "key": "668fee6c-290c-4957-bcf8-ccc8ea5030a9",
+          "title": "Storing and Retrieving Data on the Cloud",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "668fee6c-290c-4957-bcf8-ccc8ea5030a9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827599,
+              "key": "d3f2f02e-23b2-43a0-b709-d958ed420a7e",
+              "title": "L3 02 03 What Is Amazon S3 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MrF2sHdpXJo",
+                "china_cdn_id": "MrF2sHdpXJo.mp4"
+              }
+            },
+            {
+              "id": 1015636,
+              "key": "e79698a1-cf85-4ed2-a252-8797ad18a5d8",
+              "title": "What are the characteristics of AWS S3?",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e79698a1-cf85-4ed2-a252-8797ad18a5d8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What are the characteristics of AWS S3? (may be more than one answer)",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "It’s a type of relational database",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "It’s a file storage system that you use to store primarily text files",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "It’s a file storage system that you can access with a bucket, object, and keys.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "You can access S3 from other AWS services, like EMR or EC2 if you have the same access credentials.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 1015649,
+          "key": "59ea870e-70b7-4b11-8b5e-d9625d163a9f",
+          "title": "Reading and Writing to Amazon S3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "59ea870e-70b7-4b11-8b5e-d9625d163a9f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "Reading And Writing To AmazonS3",
+                "uri": "https://video.udacity-data.com/topher/2020/May/5ebba92c_reading-and-writing-to-amazons3/reading-and-writing-to-amazons3.zip"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 1015635,
+              "key": "abe8cad4-39f0-4d86-8a7f-bc42f8be9c0d",
+              "title": "S3 Buckets",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### S3 Buckets\n\nWith the convenient AWS UI, we can easily mistake AWS S3 (Simple Storage Service) equivalent as Dropbox or even Google Drive. This is not the case for S3. S3 stores an object, and when you identify an object, you need to specify a bucket, and key to identify the object.\nFor example,\n```\ndf = spark.read.load(“s3://my_bucket/path/to/file/file.csv”)\n```\nFrom this code, `s3://my_bucket`is the bucket, and `path/to/file/file.csv` is the key for the object. Thankfully, if we’re using spark, and all the objects underneath the bucket have the same schema, you can do something like below.\n```\ndf = spark.read.load(“s3://my_bucket/”)\n```\nThis will generate a dataframe of all the objects underneath the `my_bucket` with the same schema.\nPretend some structure in s3 like below:\n```\nmy_bucket\n  |---test.csv\n  path/to/\n     |--test2.csv\n     file/\n       |--test3.csv\n       |--file.csv\n```\nIf all the csv files underneath `my_bucket`, which are `test.csv`, `test2.csv`, `test3.csv`, and `file.csv` have the same schema, the dataframe will be generated without error, but if there are conflicts in schema between files, then the dataframe will not be generated. As an engineer, you need to be careful on how you organize your data lake.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 900297,
+              "key": "c94de072-021d-407d-b886-a3fb84117c3e",
+              "title": "Spark L3 SC 10 Reading And Writing To Amazon S3 Part 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "j4kpT3DQ8i8",
+                "china_cdn_id": "j4kpT3DQ8i8.mp4"
+              }
+            },
+            {
+              "id": 900300,
+              "key": "0690ab14-bed0-408a-abf5-5b175516cb04",
+              "title": "Spark L3 SC 10 Reading And Writing To Amazon S3 Part 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yXfb4vwg7aM",
+                "china_cdn_id": "yXfb4vwg7aM.mp4"
+              }
+            },
+            {
+              "id": 1020575,
+              "key": "256caa5e-e939-4bb7-b912-5571a6b21bcc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### [Link to Github Repo](https://github.com/udacity/nd027-c3-data-lakes-with-spark/tree/master/Setting_Spark_Cluster_In_AWS/demo_code) on Demo code referred to in video: [HERE](https://github.com/udacity/nd027-c3-data-lakes-with-spark/tree/master/Setting_Spark_Cluster_In_AWS/demo_code)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1015646,
+          "key": "2f5f5e64-7fe5-48ff-85d1-77db967ef534",
+          "title": "Understanding difference between HDFS and AWS S3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2f5f5e64-7fe5-48ff-85d1-77db967ef534",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1015632,
+              "key": "a366bf41-44f3-4773-94d6-b02d197f21c5",
+              "title": "Differences Between HDFS and AWS S3",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Differences between HDFS and AWS S3\n\nSince Spark does not have its own distributed storage system, it leverages using HDFS or AWS S3, or any other distributed storage. Primarily in this course, we will be using AWS S3, but let’s review the advantages of using HDFS over AWS S3.\n \nAlthough it would make the most sense to use AWS S3 while using other AWS services, it’s important to note the differences between AWS S3 and HDFS. \n+ __AWS S3__ is an __object storage system__ that stores the data using key value pairs, namely bucket and key, and __HDFS__ is an __actual distributed file system__ which guarantees fault tolerance. HDFS achieves fault tolerance by having duplicate factors, which means it will duplicate the same files at 3 different nodes across the cluster by default (it can be configured to different numbers of duplication). \n\n+ HDFS has usually been __installed in on-premise systems__, and traditionally have had engineers on-site to maintain and troubleshoot Hadoop Ecosystem, which __cost more than having data on cloud__. Due to the __flexibility of location__ and __reduced cost of maintenance__, cloud solutions have been more popular. With extensive services you can use within AWS, S3 has been a more popular choice than HDFS.  \n\n+ Since __AWS S3 is a binary object store__, it can __store all kinds of format__, even images and videos. HDFS will strictly require a certain file format - the popular choices are __avro__ and __parquet__, which have relatively high compression rate and which makes it useful to store large dataset.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827601,
+              "key": "e6dcfaa2-86a2-4379-86fe-8979a6b42cc8",
+              "title": "L3 02 04 Intro To HDFS V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "vsB_VLoiwyc",
+                "china_cdn_id": "vsB_VLoiwyc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1015644,
+          "key": "5eea29d8-a0e9-4476-a704-9b49018d7027",
+          "title": "Reading and Writing Data to HDFS",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5eea29d8-a0e9-4476-a704-9b49018d7027",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 900299,
+              "key": "0608d03d-5bb5-4768-a9a0-7bead2ebb87f",
+              "title": "Spark L3 SC 12 Reading And Writing Data To HDFS",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IVdbgtCLnmA",
+                "china_cdn_id": "IVdbgtCLnmA.mp4"
+              }
+            },
+            {
+              "id": 1015630,
+              "key": "a9f75c5c-82cf-4c6a-94ca-5bed5d7abbdb",
+              "title": "What are the file types that are supported in HDFS?",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a9f75c5c-82cf-4c6a-94ca-5bed5d7abbdb",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What are the file types that are supported in HDFS? (may be more than one answer)",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "Image files",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "Avro files",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "Parquet files",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "Zip files",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 1015631,
+              "key": "9ee86ffe-400e-40ca-baaf-81ad238e3cb6",
+              "title": "Commands for HDFS",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9ee86ffe-400e-40ca-baaf-81ad238e3cb6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of these are valid HDFS commands that you can use? (may be more than one answer)",
+                "answers": [
+                  {
+                    "id": "rbk1",
+                    "text": "`hdfs ls`: shows the files",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk2",
+                    "text": "`hadoop fs mkdir`: makes a directory",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "rbk3",
+                    "text": "`hadoop fs -text` : views raw files",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "rbk4",
+                    "text": "`hdfs dfs -copyToLocal` : copies files to local (like your laptop)",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 701928,
+          "key": "dfc84e23-3ba1-4b66-a0eb-be5d4d570f8b",
+          "title": "Recap Local Mode to Cluster Mode",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "dfc84e23-3ba1-4b66-a0eb-be5d4d570f8b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827607,
+              "key": "b7149a64-783b-4961-afc3-d3d4123fa21d",
+              "title": "L3 02 05 Recap Local Mode To Cluster Mode V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "W434NZOxrhk",
+                "china_cdn_id": "W434NZOxrhk.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,1712 @@
+{
+  "data": {
+    "lesson": {
+      "id": 858607,
+      "key": "53e6c5d3-c9bb-4938-9133-bf8c6bfad3da",
+      "title": "Introduction to Cloud Computing and AWS",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson, you'll be offered an introduction to cloud computing, and guided in setting up an AWS account and credits.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/53e6c5d3-c9bb-4938-9133-bf8c6bfad3da/858607/1612429584029/Introduction+to+Cloud+Computing+and+AWS+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/53e6c5d3-c9bb-4938-9133-bf8c6bfad3da/858607/1612429581978/Introduction+to+Cloud+Computing+and+AWS+Subtitles.zip"
+          },
+          {
+            "name": "log_data",
+            "uri": "https://video.udacity-data.com/topher/2019/July/5d1ce922_log-data/log-data.zip"
+          },
+          {
+            "name": "AWS Best Practices Guide",
+            "uri": "https://video.udacity-data.com/topher/2020/December/5fd9ac13_aws-best-practices-guide/aws-best-practices-guide.pdf"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 830851,
+          "key": "9c82db07-1934-4a2f-9f7e-8ea48b857e17",
+          "title": "Lesson Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9c82db07-1934-4a2f-9f7e-8ea48b857e17",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 830852,
+              "key": "e198050c-f75c-4222-9ec1-e4fc15026fec",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Introduction to the Cloud and AWS\n\nWelcome to this lesson on Introduction to the Cloud and AWS. You'll learn about the cloud infrastructure ecosystem and understand how to use essential tools for computing, storage, and analytics through one of the biggest providers of cloud computing, Amazon Web Services.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 841981,
+              "key": "2835ea40-bfa1-4bca-b46e-fb0d1a4c8717",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/April/5ca381e3_18060895474-b7759242c2-b/18060895474-b7759242c2-b.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2835ea40-bfa1-4bca-b46e-fb0d1a4c8717",
+              "caption": "",
+              "alt": "",
+              "width": 900,
+              "height": 600,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 830709,
+          "key": "169bf0af-f873-47be-9a28-654a983f7bc5",
+          "title": "Cloud Computing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "169bf0af-f873-47be-9a28-654a983f7bc5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 841990,
+              "key": "17bf454d-ca76-45da-9ee7-4975bd21e4bc",
+              "title": "Cloud Computing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Eq3nFasSiqA",
+                "china_cdn_id": "Eq3nFasSiqA.mp4"
+              }
+            },
+            {
+              "id": 830722,
+              "key": "12310eb0-c4c1-42ba-bfd2-5d48846ac1cc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# What is Cloud Computing?\n\n> **Cloud computing: ** the practice of using a network of remote servers hosted on the Internet to store, manage, and process data, rather than a local server or a personal computer.\n\nThe arrival of cloud computing completely changed the way we deploy our technology, providing powerful access to instant and scalable computing power to enterprises, startups, and developers alike. Whether you need servers to host a web application, reliable storage for your data, or machines to train machine learning models, it's easy to see the advantage of relying on the cloud rather than utilizing your personal computer or local servers.\n\nFor one, you no longer have to invest in lots of hardware upfront. No need to worry about whether you are paying for more than you'll need or what to do if you need to scale a lot more later on. Cloud computing makes this as easy and clicking a few buttons to scale your resources up or down.\n\nIt's significantly faster provisioning the resources you need through the cloud versus the time it would take to gather and build up the hardware you'd need to provide the same support. This allows you and your team, or company, to develop and experiment at a much faster rate. \n\nLastly, you can provide efficient access to your applications around the world by spreading your deployments to multiple regions.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 830725,
+          "key": "9a5bf23f-c8a2-48bf-9b4a-ab06f8c8850f",
+          "title": "Amazon Web Services",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9a5bf23f-c8a2-48bf-9b4a-ab06f8c8850f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 839495,
+              "key": "4fbfaa1c-9615-4ab0-894a-64f54cd32f10",
+              "title": "Intro Aws",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "06IxCvhMhPw",
+                "china_cdn_id": "06IxCvhMhPw.mp4"
+              }
+            },
+            {
+              "id": 830730,
+              "key": "96b8a8e5-e358-48ee-b2a2-dbe2eeed72fd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Amazon Web Services\n\nAmazon Web Services is one of the largest providers in the cloud computing industry, with over 140 services in  compute, storage, databases, networking, developer tools, security, and more. In this lesson, we'll learn about a few essential tools and services in AWS and practice using them. These services can be accessed in three different ways: the AWS Management Console, the Command Line Interface (CLI), or Software Development Kits (SDKs), which can be used in combination.\n\nWe'll start with the AWS Management Console, which is the web user interface. The AWS CLI is a useful way to control and automate your services with code, and SDKs allow you to easily integrate services with your applications through APIs built around specific languages and platforms.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 967252,
+          "key": "88eb12c5-56ba-4b81-810a-91583e7eea51",
+          "title": "AWS Account Setup",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "88eb12c5-56ba-4b81-810a-91583e7eea51",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 967253,
+              "key": "66032e67-b1d4-45a1-9d44-060eff75d494",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Step 1. Create an AWS Account\n\nOpen a regular AWS account (if you don't already have one) following the instructions via the <a href=\"https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/\" target=\"_blank\">Amazon Web Service Help Center</a>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1103074,
+              "key": "e79c924a-3399-4169-a841-a0e5eac12efd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Step 2. Get Promo Codes",
+              "instructor_notes": ""
+            },
+            {
+              "id": 967254,
+              "key": "be622beb-d9de-4760-a882-c01e755701bd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Udacity has partnered with AWS to provide nominal credits for learners whose coursework requires AWS services to complete. To request a promo code, you can submit a Support ticket <a href=\"https://udacity.zendesk.com/hc/en-us/requests/new?ticket_form_id=110806\" target=\"_blank\">here</a>.\n\n1. Under the **\"Reason for Contact\"** field, choose ** \"Third-Party Access, Promo Codes & License keys**\", then choose ** \"AWS\"** in the dropdown.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1103080,
+              "key": "6f2a1bd9-fc3b-45c9-85ec-1d26f517d178",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/November/5fbb4c2e_screenshot-2020-11-23-at-11.13.32-am/screenshot-2020-11-23-at-11.13.32-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6f2a1bd9-fc3b-45c9-85ec-1d26f517d178",
+              "caption": "Snapshot: **Reason for Contact** field. ",
+              "alt": "",
+              "width": 500,
+              "height": 428,
+              "instructor_notes": null
+            },
+            {
+              "id": 1103079,
+              "key": "2753e472-b296-4246-a245-56da1b9d4179",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. Please note that a regular AWS account will receive a promo code from Udacity with a fixed amount of AWS credits.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1103075,
+              "key": "c041a382-26a8-49ff-81e6-03003b7fb1a6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Step 3. Apply Promo Code to Your AWS Account",
+              "instructor_notes": ""
+            },
+            {
+              "id": 967255,
+              "key": "ddcc4369-b228-413a-8484-08791197f6b4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "To apply your promo code, follow below:\n\n1. Go to the [AWS Billing Dashboard](https://console.aws.amazon.com/billing/home#/). \n1. Click **\"Credits\"** on the left side of the screen, and click on the **Redeem credit** button. Enter the promo-code you have received. \n1. Credits will automatically be applied to your bill. Refresh the page and you will be able to view your credits under the **Credits** page. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 967256,
+              "key": "a50fd0c5-f930-4b67-bd53-b9bb1a48e55b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/November/5fbb4a3b_screenshot-2020-11-23-at-11.02.59-am/screenshot-2020-11-23-at-11.02.59-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a50fd0c5-f930-4b67-bd53-b9bb1a48e55b",
+              "caption": "Snapshot: **Credits** page on the **Billing Dashboard**",
+              "alt": "",
+              "width": 1000,
+              "height": 1380,
+              "instructor_notes": null
+            },
+            {
+              "id": 1103081,
+              "key": "ce4c313a-0bad-4500-b685-d0df8fef6c14",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### AWS Free Tier\n\nIt is an offering from AWS that allows you to use *most* of the AWS services free of cost up to a certain usage limit for one year. In addition to the promo codes provided by Udacity, you can also leverage the <a href=\"https://aws.amazon.com/premiumsupport/knowledge-center/what-is-free-tier/\" target=\"_blank\">AWS Free Tier Access</a>. \n\nAccording to AWS:\n\n> The AWS Free Tier is automatically activated on each new AWS account.   \n>\n\n\nCheck the list of services covered under Free Tier <a href=\"https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc&amp;awsf.Free%20Tier%20Types=*all\" target=\"_blank\">here</a>. \n\n> **Note** - You will be responsible for charges incurred from usage that exceeds the AWS Free Tier limits and credits provided by Udacity.  \n>",
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 1027937,
+          "key": "a55de3a4-1b3c-4c27-a453-7dbf7159568f",
+          "title": "Monitor your AWS Costs and Credits",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a55de3a4-1b3c-4c27-a453-7dbf7159568f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1027960,
+              "key": "ef2790e2-be1e-40b1-bca3-b55d273c95e0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Monitoring your AWS Costs and Credits\nAll AWS services are a pay-as-you-go service, so we urge our students to closely monitor their usage costs and if they have adequate credits available to complete their project/task.  Follow the instructions below to do that:\n\n### Step 1. Log into your [AWS account](https://console.aws.amazon.com/).\n\n### Step 2.  Examine your costs \nGo to https://console.aws.amazon.com/billing/\n\nYou should see the following billing dashboard where it will show your costs.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1027965,
+              "key": "e91352f8-4800-465e-bfb6-02939fcaec79",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/May/5ec71862_screen-shot-2020-05-21-at-5.07.48-pm/screen-shot-2020-05-21-at-5.07.48-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e91352f8-4800-465e-bfb6-02939fcaec79",
+              "caption": "Snapshot: [AWS Billing Dashboard](https://console.aws.amazon.com/billing/home#/)",
+              "alt": "",
+              "width": 700,
+              "height": 1366,
+              "instructor_notes": null
+            },
+            {
+              "id": 1103097,
+              "key": "0d7bfb12-e471-40da-a0fa-ba95da6e5965",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If your account has been created within one year from the current date, your [AWS Billing Dashboard](https://console.aws.amazon.com/billing/home#/) will also show the resource usage statistics for the free tier services. See the snapshot below: ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1103098,
+              "key": "3166f33e-f5c1-4ca8-8986-c60e65dda28e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/November/5fbb70d9_screenshot-2020-11-23-at-12.54.53-pm/screenshot-2020-11-23-at-12.54.53-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3166f33e-f5c1-4ca8-8986-c60e65dda28e",
+              "caption": "Snapshot: Resource usage statistics for top-free tier services.",
+              "alt": "",
+              "width": 500,
+              "height": 1056,
+              "instructor_notes": null
+            },
+            {
+              "id": 1027966,
+              "key": "10b55d99-ee91-4201-845d-84aae7b96772",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Step 3 (optional). Check the value of your credits. \nClick on the \"Credits\" from the left navigation menu, and the following screen will show your available credits.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1027967,
+              "key": "e7c50a8b-c962-4666-b6a4-8404ba736bff",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/May/5ec71a62_screen-shot-2020-05-21-at-5.13.56-pm/screen-shot-2020-05-21-at-5.13.56-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e7c50a8b-c962-4666-b6a4-8404ba736bff",
+              "caption": "Snapshot: Track credit (promo-code) balance",
+              "alt": "",
+              "width": 1000,
+              "height": 1092,
+              "instructor_notes": null
+            },
+            {
+              "id": 1027968,
+              "key": "ec0bafd3-5b49-474a-9bc8-c6a8d504b67e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<em>**Note:  For student learning, Udacity has partnered with Amazon to provide nominal credits for the student to complete their course work.  Please understand that these credits are limited and available for you to use judiciously. You are responsible for any additional costs beyond the given credits.**</em>\n\n## When will I be charged?\nThere are no tools to limit usage to what’s covered by the AWS Free Tier. This means that you are responsible for the services that you launch. You will be charged standard [pay-as-you-go service rates](https://aws.amazon.com/pricing/) for using AWS resources that exceed the AWS Free Tier limits and the credits provided by Udacity.\n\n\n## <font color=\"red\"> Shut Down your Resources, if not in use </font>\nThe Free Tier benefits and the credit amount provided by the Udacity Support team will be sufficient for you to complete your Nanodegree program.\n\n>####  <span>Note: <font color=\"red\">We recommend you shut down every resource (e.g., EC2 instances, or any other hosted service) on the AWS cloud immediately after the usage, otherwise you will run out of your free promo credits. </font></span>\n\nRemember, even if you are in the middle of the project and need to step away, PLEASE SHUT DOWN YOUR RESOURCES. You can re-instantiate later.\n\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 827263,
+          "key": "ef0f5bdf-d5e2-461c-b375-fc0dd89ccb79",
+          "title": "Create an IAM Role",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ef0f5bdf-d5e2-461c-b375-fc0dd89ccb79",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827264,
+              "key": "112ccf4a-f1dd-43e3-996f-1c9e179de57c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Create an IAM Role\nHere, you'll create an IAM role that you will later attach to your Redshift cluster to enable your cluster to load data from Amazon S3 buckets. Read more about IAM roles and Redshift [here](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-create-an-iam-role.html).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827266,
+              "key": "e048f76b-6ede-4de2-ba58-9b83ee5992c1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "1. Once you have signed into the AWS management console, navigate to the [IAM service dashboard](https://console.aws.amazon.com/iam/).\n2. In the left navigation pane, choose **Roles**.\n3. Choose **Create role**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827267,
+              "key": "0b0c15d3-d3ff-4a49-af22-51b1739adfe8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d4a73_screenshot-2021-03-26-at-8.08.09-am/screenshot-2021-03-26-at-8.08.09-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0b0c15d3-d3ff-4a49-af22-51b1739adfe8",
+              "caption": "IAM Roles dashbaord",
+              "alt": "",
+              "width": 700,
+              "height": 1240,
+              "instructor_notes": null
+            },
+            {
+              "id": 827268,
+              "key": "4568f06e-9238-4caa-97b8-654d39647fec",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "4. In the **AWS Service** group as the trusted entity, and choose **Redshift** service.\n5. Under **Select your use case**, choose **Redshift - Customizable**, and then **Next: Permissions**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163683,
+              "key": "20d20fd2-2b90-4420-9702-4274c864a7b7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d4b83_screenshot-2021-03-26-at-8.16.06-am/screenshot-2021-03-26-at-8.16.06-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/20d20fd2-2b90-4420-9702-4274c864a7b7",
+              "caption": "",
+              "alt": "",
+              "width": 700,
+              "height": 582,
+              "instructor_notes": null
+            },
+            {
+              "id": 827269,
+              "key": "9af2ab21-2278-4d39-838a-4d973043d780",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6c41c9_redshift-customizable/redshift-customizable.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9af2ab21-2278-4d39-838a-4d973043d780",
+              "caption": "Select Redshift service, and *Redshift - Customizable* use case",
+              "alt": "",
+              "width": 700,
+              "height": 840,
+              "instructor_notes": null
+            },
+            {
+              "id": 827270,
+              "key": "9b6f84fa-6e30-4723-bf9f-029aeabafb3f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "6. On the **Attach permissions policies** page, search for and select the **AmazonS3ReadOnlyAccess** policy, and then click on the **Next: Tags** button.\n7. Tags are optional. Click on the **Next: Review** button.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827271,
+              "key": "409f21e0-b2e1-4e2b-b6ff-a7138b8bb57d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6c41e2_s3policy/s3policy.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/409f21e0-b2e1-4e2b-b6ff-a7138b8bb57d",
+              "caption": "Select a policy to attach to the new role",
+              "alt": "",
+              "width": 700,
+              "height": 901,
+              "instructor_notes": null
+            },
+            {
+              "id": 827272,
+              "key": "6514afc9-7530-4305-93f4-62ef81cbdd2f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "8. For **Role name**, enter `myRedshiftRole`, and then choose **Create Role**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827273,
+              "key": "3c730fac-08a3-44ef-a139-658b030a652c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6c41fb_name-redshift-role/name-redshift-role.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3c730fac-08a3-44ef-a139-658b030a652c",
+              "caption": "Provide role name and description",
+              "alt": "",
+              "width": 700,
+              "height": 896,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163684,
+              "key": "52518637-a266-4a93-94f7-1a79c8bcc840",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "9. You will see a success message when the new role will be created. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163685,
+              "key": "04a6891a-4d3f-43c4-b957-548fa38394a4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d4d33_screenshot-2021-03-26-at-8.24.15-am/screenshot-2021-03-26-at-8.24.15-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/04a6891a-4d3f-43c4-b957-548fa38394a4",
+              "caption": "Role created successfully ",
+              "alt": "",
+              "width": 600,
+              "height": 596,
+              "instructor_notes": null
+            },
+            {
+              "id": 827274,
+              "key": "a43347fe-c14b-429e-8d8f-2ec16d329793",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": ">That's great! On the next page, you'll learn to **attach this role to a new/existing cluster**",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 827275,
+          "key": "2609fcec-122e-4780-bfff-510713320800",
+          "title": "Create Security Group",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2609fcec-122e-4780-bfff-510713320800",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827276,
+              "key": "cd4a8ad8-c035-47e3-b0be-6982bab2e09d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Create Security Group\nHere, you'll create a security group you will later use to authorize access to your Redshift cluster.\n>A security group will act as firewall rules for your Redshift cluster to control inbound and outbound traffic. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827277,
+              "key": "9ff5219e-a192-49e8-a8a5-6584e7724660",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "1. Navigate to the [EC2 service](https://console.aws.amazon.com/ec2)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163687,
+              "key": "2f2e676d-b996-4bfe-b886-46ba5ab771da",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d4e81_screenshot-2021-03-26-at-8.29.42-am/screenshot-2021-03-26-at-8.29.42-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2f2e676d-b996-4bfe-b886-46ba5ab771da",
+              "caption": "Navigate to any service",
+              "alt": "",
+              "width": 700,
+              "height": 840,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163686,
+              "key": "4cb16e80-398a-4730-afef-af15269f0472",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. Under **Network and Security** in the left navigation pane, select **Security Groups**. Click the **Create Security Group** button to launch a wizard.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827278,
+              "key": "54fb53f5-5d0a-4341-8d86-5fce286d17ed",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d4f21_screenshot-2021-03-26-at-8.33.27-am/screenshot-2021-03-26-at-8.33.27-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/54fb53f5-5d0a-4341-8d86-5fce286d17ed",
+              "caption": "Create a new security group",
+              "alt": "",
+              "width": 700,
+              "height": 1052,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163688,
+              "key": "5cce0fcf-27bb-476f-9fd4-f82f4b3880fe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. In the *Create security group* wizard, enter the basic details.\n\n<center>\n\n|**Section**|**Field**|**Value**|\n|---|---|---|\n|Basic details|Security group name |`redshift_security_group`|\n||Description|`Authorise redshift cluster access`|\n||VPC|Choose the default VPC<br>It is a VPC in a default region, <br>and has a public subnet in each Availability Zone.<br>If a default VPC doesn't show up, [create a default VPC](https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-vpc)|\n<center>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163689,
+              "key": "3c42ea43-6b01-4309-b3f4-bb6c3687eef8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/January/600695f3_screenshot-2021-01-19-at-12.58.53-pm/screenshot-2021-01-19-at-12.58.53-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3c42ea43-6b01-4309-b3f4-bb6c3687eef8",
+              "caption": "Create a default VPC, if not available already",
+              "alt": "",
+              "width": 600,
+              "height": 560,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163690,
+              "key": "cf266109-3c5d-4eab-818b-0242b7bf3afe",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/January/6006d5c6_screenshot-2021-01-19-at-6.20.22-pm/screenshot-2021-01-19-at-6.20.22-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cf266109-3c5d-4eab-818b-0242b7bf3afe",
+              "caption": "Info about a default VPC",
+              "alt": "",
+              "width": 600,
+              "height": 476,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163691,
+              "key": "4e05ae52-cd33-4997-b886-a827107db680",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d552c_screenshot-2021-03-26-at-8.58.11-am/screenshot-2021-03-26-at-8.58.11-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4e05ae52-cd33-4997-b886-a827107db680",
+              "caption": "Basic details",
+              "alt": "",
+              "width": 600,
+              "height": 678,
+              "instructor_notes": null
+            },
+            {
+              "id": 827279,
+              "key": "8e924ef9-c7cb-48b6-949f-7e63c3d8a247",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n4. In the *Inbound rules* section, click on **Add Rule** and enter the following values:\n\n<center>\n\n|**Section**|**Field**|**Value**|\n|---|---|---|\n|Inbound rules|Type|Custom TCP Rule|\n|| Protocol |TCP|\n||Port range|5439<br>The default port for Amazon Redshift is 5439, <br>but your port might be different. |\n||Source type|Custom|\n||Source|`0.0.0.0/0`<br>*(Anywhere in the world)*|\n</center>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \n>**Important: Using `0.0.0.0/0` is not recommended for anything other than demonstration purposes because it allows access from any computer on the internet.** In a real environment, you would create inbound rules based on your own network settings.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163692,
+              "key": "d9b55350-3d73-46b7-bba0-e40850066596",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d5555_screenshot-2021-03-26-at-8.58.03-am/screenshot-2021-03-26-at-8.58.03-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d9b55350-3d73-46b7-bba0-e40850066596",
+              "caption": "Inbound rules",
+              "alt": "",
+              "width": 600,
+              "height": 800,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163693,
+              "key": "a395dd2a-0093-49a3-bdff-f22671d89a16",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "5. Outbound rules allow traffic to anywhere by default.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163694,
+              "key": "90db72be-77c6-43d1-a15a-89be582fb526",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d559a_screenshot-2021-03-26-at-8.58.46-am/screenshot-2021-03-26-at-8.58.46-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/90db72be-77c6-43d1-a15a-89be582fb526",
+              "caption": "Outbound rules",
+              "alt": "",
+              "width": 600,
+              "height": 794,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163695,
+              "key": "2996e0c8-c40d-46d9-825a-5616cda8bc9d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "6. Click on the *Create security group* button at the bottom. You will see a success message. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163696,
+              "key": "35deee89-50f5-4574-bfc3-4693ee164214",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d5641_screenshot-2021-03-26-at-9.03.54-am/screenshot-2021-03-26-at-9.03.54-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/35deee89-50f5-4574-bfc3-4693ee164214",
+              "caption": "Details of a security group ",
+              "alt": "",
+              "width": 600,
+              "height": 1392,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 827281,
+          "key": "55b62249-6441-4e74-92bb-e38610e7b1c9",
+          "title": "Launch a Redshift Cluster",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "55b62249-6441-4e74-92bb-e38610e7b1c9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827284,
+              "key": "cc1e2ec0-b590-4395-a0bc-c73f03a3eea6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Launch a Redshift Cluster\n>**WARNING:** The cluster that you are about to launch will be live, and you will be charged the standard Amazon Redshift usage fees for the cluster until you delete it. **Make sure to delete your cluster each time you're finished working to avoid large, unexpected costs for yourself.** Instructions on deleting your cluster are included on the last page in this lesson. You can always launch a new cluster, so don't leave your Redshift cluster running overnight or throughout the week if you don't need to.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827285,
+              "key": "0ae8c257-5c44-469c-80de-2a5492c99dd5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "1. Sign in to the AWS Management Console and open the Amazon Redshift console at https://console.aws.amazon.com/redshift/.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163703,
+              "key": "db439b5d-2754-40e5-afb5-636eb822f4d7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d8c81_screenshot-2021-03-26-at-12.55.05-pm/screenshot-2021-03-26-at-12.55.05-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/db439b5d-2754-40e5-afb5-636eb822f4d7",
+              "caption": "Navigate to a new service",
+              "alt": "",
+              "width": 600,
+              "height": 632,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163702,
+              "key": "9bb1c849-85eb-4f04-9413-eb06aeb6c505",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. On the Amazon Redshift Dashboard, choose **Create cluster**. It will launch the *Create cluster* wizard.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827286,
+              "key": "a3b85d0c-b2ca-452e-92bb-3505bbacb1ea",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d8d28_screenshot-2021-03-26-at-12.57.40-pm/screenshot-2021-03-26-at-12.57.40-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a3b85d0c-b2ca-452e-92bb-3505bbacb1ea",
+              "caption": "Amazon Redshift dashboard",
+              "alt": "Amazon Redshift dashboard",
+              "width": 600,
+              "height": 712,
+              "instructor_notes": null
+            },
+            {
+              "id": 827287,
+              "key": "290bfc7a-f215-4e16-bfc0-bfffa5b5c528",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. **Cluster configuration**<br>Provide a unique identifier, such as `redshift-cluster-1`, and choose the **Free trial** option.  It will automatically, choose the following configuration:\n - 1 node of `dc2.large` hardware type. It is a high performance with fixed local SSD storage\n - 2 vCPUs\n - 160 GB storage capacity\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163708,
+              "key": "46a8d160-6280-4948-84af-3e16f2ed1d92",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d9461_screenshot-2021-03-26-at-1.28.49-pm/screenshot-2021-03-26-at-1.28.49-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/46a8d160-6280-4948-84af-3e16f2ed1d92",
+              "caption": "Cluster's basic configuration",
+              "alt": "",
+              "width": 600,
+              "height": 1446,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163706,
+              "key": "d738a8bf-41e7-4438-8d65-00f9bc4a7790",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n4. **Database configurations**<br>\nA few fields will be already filled up by default. Ensure to have to the following values:\n\n\n<center>\n\n|**Field**|**Value**|\n|---|---|\n|Database name|`dev`|\n|Database port|`5439`|\n|Master user name|`awsuser`|\n|Master user password|Enter a password of your choice|\n</center>\n >__Please note:__ We __strongly advise__ you to keep these passwords closely guarded, including not putting them in your GitHub public repo, etc. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163713,
+              "key": "72f4e587-5f42-494f-9f49-9f77dd5453a0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d9600_screenshot-2021-03-26-at-1.06.48-pm/screenshot-2021-03-26-at-1.06.48-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/72f4e587-5f42-494f-9f49-9f77dd5453a0",
+              "caption": "Database configurations",
+              "alt": "Database configurations",
+              "width": 600,
+              "height": 1316,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163715,
+              "key": "1184aac4-ee9d-46c2-8ea3-b61796848baa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "5. **Cluster permissions (optional)**<br>\nChoose the IAM role created earlier, *myRedshiftRole*, from the drop-down and click on the *Associate IAM role* button.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163716,
+              "key": "74134ea2-7b37-4d7b-8a5a-d2c033420453",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d973e_screenshot-2021-03-26-at-1.07.07-pm/screenshot-2021-03-26-at-1.07.07-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/74134ea2-7b37-4d7b-8a5a-d2c033420453",
+              "caption": "Cluster permissions ",
+              "alt": "",
+              "width": 600,
+              "height": 846,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163717,
+              "key": "e745440e-d33f-46eb-b385-34e3704972cc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "6. **Additional configurations**<br>\nToggle the button to turn off the \"use defaults\" feature, and expand the **Network and security** section. Choose the following values:\n\n\n <center>\n\n|**Field**|**Value**|\n|---|---|\n|Virtual private cloud (VPC)|Default VPC<br> If you are not able to view/select the default VPC, <br>refer to the resolution given [here](https://aws.amazon.com/premiumsupport/knowledge-center/vpc-redshift-associate/). <br>You will have to [create a cluster subnet group](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-cluster-subnet-group-console.html#create-cluster-subnet-group). <br>*(It's easy, see the snapshots below)*|\n|VPC security groups|Choose the *redshift_security_group* created earlier.|\n|Cluster subnet group|Choose the default<br>It is the one you have just created.|\n|Availability Zone|No preference|\n|Enhanced VPC routing|Disabled|\n| Publicly accessible |Enable|\n</center>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Leave the rest of the values as default.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163719,
+              "key": "a9a5a9ea-22c3-4dd3-86d5-21c7a3f3a285",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d9ae2_screenshot-2021-03-26-at-1.20.29-pm/screenshot-2021-03-26-at-1.20.29-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a9a5a9ea-22c3-4dd3-86d5-21c7a3f3a285",
+              "caption": "Network and security section",
+              "alt": "",
+              "width": 600,
+              "height": 1628,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163718,
+              "key": "9b09122e-367d-4a12-9480-26d9bb8b9196",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d9a3a_screenshot-2021-03-26-at-1.13.54-pm/screenshot-2021-03-26-at-1.13.54-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9b09122e-367d-4a12-9480-26d9bb8b9196",
+              "caption": "Amazon Redshift &#8594;\t Configurations &#8594;\t Subnet groups",
+              "alt": "",
+              "width": 600,
+              "height": 1006,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163720,
+              "key": "ace0f0a5-ddea-470b-8b49-b22b15f47ace",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d9bb4_screenshot-2021-03-26-at-1.16.21-pm/screenshot-2021-03-26-at-1.16.21-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ace0f0a5-ddea-470b-8b49-b22b15f47ace",
+              "caption": "Create a cluster subnet group from a default VPC",
+              "alt": "",
+              "width": 600,
+              "height": 1474,
+              "instructor_notes": null
+            },
+            {
+              "id": 827295,
+              "key": "52170603-4292-4a37-8184-ca6955a8125d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "6. Review your Cluster configuration and click on the **Create cluster** button at the bottom. It will take a few minutes to finish and show you a **Complete** status.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163721,
+              "key": "2c6ec08c-eeb9-4a51-9d09-a9545bf990b7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d9ce9_screenshot-2021-03-26-at-1.56.22-pm/screenshot-2021-03-26-at-1.56.22-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2c6ec08c-eeb9-4a51-9d09-a9545bf990b7",
+              "caption": "Success message/Complete status",
+              "alt": "",
+              "width": 600,
+              "height": 570,
+              "instructor_notes": null
+            },
+            {
+              "id": 827300,
+              "key": "ad17d9be-0e51-4980-b7d1-550829ad8815",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "8. Click on the **Clusters** menu item from the left navigation pane, and look at the cluster that you just launched. Make sure that the **Status** is **Available** before you try to connect to the database later. You can expect this to take 5-10 minutes.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163722,
+              "key": "a642fd51-d0e9-4153-a693-687a206dd03e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605d9e10_screenshot-2021-03-26-at-2.10.06-pm/screenshot-2021-03-26-at-2.10.06-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a642fd51-d0e9-4153-a693-687a206dd03e",
+              "caption": "Cluster is ready to be connectedd",
+              "alt": "",
+              "width": 700,
+              "height": 692,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 827282,
+          "key": "0436985e-ead1-42ce-b8c4-982ab5ca2178",
+          "title": "Create an IAM User",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0436985e-ead1-42ce-b8c4-982ab5ca2178",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827303,
+              "key": "b8b888e9-f01c-4fdc-913b-2ce2a986b4bc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Create an IAM User\nHere, you'll create an IAM user that you will use to access your Redshift cluster.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827304,
+              "key": "11706995-714d-4910-8f7a-db4e3b46cd66",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "1. Navigate to the [IAM console](https://console.aws.amazon.com/iam/). In the left navigation pane, choose **Users**, and click on the **Add User** button. It will launch a new wizard. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827305,
+              "key": "47f3c57f-60b9-4def-adde-287d58bd999e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605db6d9_screenshot-2021-03-26-at-3.47.21-pm/screenshot-2021-03-26-at-3.47.21-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/47f3c57f-60b9-4def-adde-287d58bd999e",
+              "caption": "IAM Users dashboard",
+              "alt": "",
+              "width": 600,
+              "height": 650,
+              "instructor_notes": null
+            },
+            {
+              "id": 827306,
+              "key": "8c6cca1f-6c29-4773-b101-97f63d7e7481",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. **Set user details**<br> Enter a name for your user , say *airflow_redshift_user*, and choose **Programmatic access**. Then click on the **Next: Permissions** button.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827307,
+              "key": "b0515a44-c797-4960-99f7-2297ebf24907",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aa6bd_user-specifications/user-specifications.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b0515a44-c797-4960-99f7-2297ebf24907",
+              "caption": "Create IAM users &#8594; Set user details",
+              "alt": "",
+              "width": 600,
+              "height": 809,
+              "instructor_notes": null
+            },
+            {
+              "id": 827308,
+              "key": "dce90d8f-8a8e-4139-aff7-82780cbabd62",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. **Set permissions**<br> Choose **Attach existing policies directly** option.\n - Search for redshift and select **AmazonRedshiftFullAccess**. \n - Then, search for S3 and select **AmazonS3ReadOnlyAccess**. \n\n After selecting both policies, choose **Next: Tags**. Skip this page and choose **Next: Review**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827309,
+              "key": "70272c03-6a21-4e7d-b7d7-1113ca66cbc3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aa7b7_redshift-policy/redshift-policy.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/70272c03-6a21-4e7d-b7d7-1113ca66cbc3",
+              "caption": "Create IAM user &#8594; Set permissions &#8594; Select *AmazonRedshiftFullAccess*",
+              "alt": "",
+              "width": 600,
+              "height": 806,
+              "instructor_notes": null
+            },
+            {
+              "id": 827310,
+              "key": "db1083e1-2824-49e0-b467-cad8c183c1e3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aa7bf_s3-policy/s3-policy.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/db1083e1-2824-49e0-b467-cad8c183c1e3",
+              "caption": "Create IAM user &#8594; Set permissions &#8594; Select * AmazonS3ReadOnlyAccess*",
+              "alt": "",
+              "width": 600,
+              "height": 806,
+              "instructor_notes": null
+            },
+            {
+              "id": 827311,
+              "key": "e4d34e0d-8433-4033-83a3-a3e84bb95808",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "4. **Review** your choices and finally click on the **Create user** button.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827312,
+              "key": "644e8031-2d78-48af-ad00-4cae578f812b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aa90a_review-user/review-user.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/644e8031-2d78-48af-ad00-4cae578f812b",
+              "caption": "Review the new IAM user details",
+              "alt": "",
+              "width": 600,
+              "height": 829,
+              "instructor_notes": null
+            },
+            {
+              "id": 827313,
+              "key": "b2baf7a9-ed68-438b-8c8d-97e062e3f824",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "5. **Save your credentials!**<br> This is the only time you can view or download these credentials on AWS. Choose **Download .csv** to download these credentials and then save this file to a safe location. You'll need to copy and paste this **Access key ID** and **Secret access key** in the next step.\n\n>We **strongly advise** you to keep this  **Access key ID** and **Secret access key** closely guarded, including not putting them in a GitHub public repo, etc.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827314,
+              "key": "fbd5024a-c76e-49f4-899b-a697ed2fadbf",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c5aa94b_credentials/credentials.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fbd5024a-c76e-49f4-899b-a697ed2fadbf",
+              "caption": "User created successfully. <br>**Copy the Access key Is and Secret access key.**",
+              "alt": "",
+              "width": 600,
+              "height": 820,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 827283,
+          "key": "97c74cce-8f6f-41f1-828b-9220f640d739",
+          "title": "Delete a Redshift Cluster",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "97c74cce-8f6f-41f1-828b-9220f640d739",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 827317,
+              "key": "2d33a52c-362f-407c-a255-46a71ebf46e4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Delete a Redshift Cluster\n>Make sure to delete your cluster each time you're finished working to avoid large, unexpected costs. You can always launch a new cluster, so don't leave it running overnight or throughout the week if you don't need to.\n\nSteps to delete a cluster are:\n1. On the **Clusters** page of your Amazon Redshift console, click on the check-box next to your cluster name. Then click on the **Actions** drop-down button on top &#8594; select **Delete**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827318,
+              "key": "cb924c0b-e5fc-4001-b0bd-53bd475a2a99",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605db994_screenshot-2021-03-26-at-4.06.53-pm/screenshot-2021-03-26-at-4.06.53-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cb924c0b-e5fc-4001-b0bd-53bd475a2a99",
+              "caption": "Delete a cluster",
+              "alt": "",
+              "width": 700,
+              "height": 1356,
+              "instructor_notes": null
+            },
+            {
+              "id": 827319,
+              "key": "39b02a53-9f1b-49c6-9f30-a6afcc308221",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. You can choose to not **Create final snapshot**, and click on the **Delete cluster** button.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 827320,
+              "key": "90742917-c772-4ad4-9f32-ca6265217cab",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605dba3e_screenshot-2021-03-26-at-4.10.50-pm/screenshot-2021-03-26-at-4.10.50-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/90742917-c772-4ad4-9f32-ca6265217cab",
+              "caption": "Prompt before deleting the cluster",
+              "alt": "",
+              "width": 400,
+              "height": 878,
+              "instructor_notes": null
+            },
+            {
+              "id": 827321,
+              "key": "c5d42238-08c7-46d3-9e1f-a75627a98474",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. Your cluster will change it's status to **deleting**, and then disappear from your Cluster list once it's finished deleting. You'll no longer be charged for this cluster.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 830673,
+          "key": "6e828ca4-2950-4794-b804-b5bf25af3562",
+          "title": "RDS - Create PostgreSQL Database",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6e828ca4-2950-4794-b804-b5bf25af3562",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1163725,
+              "key": "0f9ac83d-e9c0-4283-9cf7-b4366c9a92f1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "According to AWS:\n\n> <a href=\"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html\" target=\"_blank\">Amazon RDS</a> is a relational database service that manages common database administration tasks, resizes automatically, and is cost-friendly.  \n>\n\n\nLet's see how to create a PostgresSQL database, and view the details of an existing database.\n\n## RDS Dashboard\n\nNavigate to the <a href=\"https://console.aws.amazon.com/rds/home\" target=\"_blank\">RDS dashboard</a>. \nIt shows the database-resources summary, such as the count of database instances, the health of the database service, reserved instances, snapshots. You can also view the portion of the allocated storage. You can launch the **Create database** wizard from here.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163726,
+              "key": "4cf5de81-ea51-4222-b606-27a83c4905cf",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/November/5fbe80f9_screenshot-2020-11-25-at-8.43.57-pm/screenshot-2020-11-25-at-8.43.57-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4cf5de81-ea51-4222-b606-27a83c4905cf",
+              "caption": "RDS dashboard",
+              "alt": "",
+              "width": 600,
+              "height": 1454,
+              "instructor_notes": null
+            },
+            {
+              "id": 830689,
+              "key": "c5b0785d-f711-4750-8a68-c6fdaa2bfbb4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Create a PostgreSQL DB\n\nIf you haven't launched already, choose the **Databases** menu item on the left navigation pane, and click on the **Create Database** button.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 830687,
+              "key": "511faec9-6b06-477e-8a21-df2ca4094d84",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6ce3ce_02-rds-postgres/02-rds-postgres.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/511faec9-6b06-477e-8a21-df2ca4094d84",
+              "caption": "Amazon RDS service &#8594; Databases dashboard",
+              "alt": "",
+              "width": 600,
+              "height": 566,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163728,
+              "key": "e30facef-ec56-47c7-b1cb-a0454cd88ed5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "1. **Choose a database creation method**<br>AWS provides two options to choose from:\n\n  * **Standard create** - You have set all of the configuration options, including ones for availability, security, backups, and maintenance.\n  * **Easy create** - You use the industry best-practice configurations. All configuration options, except the Encryption and VPC details, can be changed after the database is created.\n\n The steps below will show you the **Standard create** fields/options.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163734,
+              "key": "9bcc60ee-1bd6-4cf1-a5ae-ab4bb8f15187",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605dcfee_screenshot-2021-03-26-at-5.42.42-pm/screenshot-2021-03-26-at-5.42.42-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9bcc60ee-1bd6-4cf1-a5ae-ab4bb8f15187",
+              "caption": "Choose a database creation method",
+              "alt": "",
+              "width": 500,
+              "height": 606,
+              "instructor_notes": null
+            },
+            {
+              "id": 830690,
+              "key": "0cc9424c-ef44-4465-8767-8dd0e9cff2ea",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "2. **Engine options**<br>Select **PostgreSQL** option. It will pick up the latest stable release by default, though you can select a version of your choice as well. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163736,
+              "key": "b197b6ff-9fa9-46ca-98f5-1104da5fe3c5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605dd063_screenshot-2021-03-26-at-5.44.33-pm/screenshot-2021-03-26-at-5.44.33-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b197b6ff-9fa9-46ca-98f5-1104da5fe3c5",
+              "caption": "Engine options",
+              "alt": "",
+              "width": 500,
+              "height": 978,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163737,
+              "key": "52b374b0-3864-4fc0-8dd3-f6e6ab85c784",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "3. ** Templates**<br>\nUse either the **RDS Free Tier **or **Dev/Test **template. On free-tier resources, you can develop and test applications to gain hands-on experience with Amazon RDS.  \nThe free tier will offer you 750 hrs of Amazon RDS in a Single-AZ `db.t2.micro` Instance, 20 GB of General Purpose Storage (SSD), and 20 GB for automated backup storage and any user-initiated DB Snapshots.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163738,
+              "key": "22a780c8-b975-4aa3-9371-3b6856476770",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605dd3b4_screenshot-2021-03-26-at-5.57.51-pm/screenshot-2021-03-26-at-5.57.51-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/22a780c8-b975-4aa3-9371-3b6856476770",
+              "caption": "Templates",
+              "alt": "",
+              "width": 600,
+              "height": 514,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163731,
+              "key": "81266bee-3170-443a-9617-b7a03285dd8b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "4. **Settings**<br>\nProvide a *DB instance identifier*, such as *postgreSQL-test*, and master credentials (username and a password). Take note of this password, as it is useful for future steps. You will be able to find this password and change it later in the console.  \n\n Alternatively, you can auto-generate the password. In this case, AWS will show you the password once you create the database successfully. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163739,
+              "key": "751d685a-f450-4d04-83dd-52edb5243c28",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605dd755_screenshot-2021-03-26-at-6.02.43-pm/screenshot-2021-03-26-at-6.02.43-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/751d685a-f450-4d04-83dd-52edb5243c28",
+              "caption": "Settings",
+              "alt": "",
+              "width": 600,
+              "height": 1266,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163740,
+              "key": "c7aeeeff-fdeb-4efd-9496-ec674209a24e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "5. **DB instance class**<br>\nThe options here present the options for processing power and memory requirements. Since we have selected the Free tier option above, the only available option is `db.t2.micro`, which has 1 vCPU, and 1 GiB RAM.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163741,
+              "key": "d2a27ce4-14bf-4a4e-8707-cfa43b2f6cf4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605dd83d_screenshot-2021-03-26-at-6.18.41-pm/screenshot-2021-03-26-at-6.18.41-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d2a27ce4-14bf-4a4e-8707-cfa43b2f6cf4",
+              "caption": "DB instance class",
+              "alt": "",
+              "width": 600,
+              "height": 788,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163743,
+              "key": "41c19280-d973-4fea-9bf6-ad18e482cbcb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "6. ** Storage** and **Availability & durability**<br>\nChoose the default values for both these sections. It will offer you 20 GiB SSD storage, expandable up to 1000 GiB, by default. \nFor *Availability & durability* section, it will not offer us to have a Multi-AZ deployment.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163744,
+              "key": "81a0b2b2-5b56-4a78-bbb2-2a98cdfa97d4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605dd953_screenshot-2021-03-26-at-6.23.29-pm/screenshot-2021-03-26-at-6.23.29-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/81a0b2b2-5b56-4a78-bbb2-2a98cdfa97d4",
+              "caption": "Storage and Availability & durability",
+              "alt": "",
+              "width": 600,
+              "height": 1452,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163745,
+              "key": "80c35ea6-149f-4278-a9a6-91089fb1934d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "7. ** Connectivity** <br>\nChoose/ensure the following values:\n\n<center>\n\n|**Field**|**Value**|\n|---|---|\n| VPC |Default VPC|\n|Subnet group|default|\n|Public access|YES<br>Once you get familiar, choose NO next time.<br>You will need additional configuration to do so.|\n|VPC security group|Either choose default or <br>create a new one|\n| Availability Zone|No preferencce|\n|Database port|`5432` (default)|\n</center>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Leave the values default for the Database authentication section.**",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163747,
+              "key": "9e425968-8322-4dc0-a8f1-1de7415024d9",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605ddc0f_screenshot-2021-03-26-at-6.35.07-pm/screenshot-2021-03-26-at-6.35.07-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9e425968-8322-4dc0-a8f1-1de7415024d9",
+              "caption": "Connectivity",
+              "alt": "",
+              "width": 600,
+              "height": 1604,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163746,
+              "key": "7e9a7d80-e157-489a-939e-1e25ce364b04",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "8. **Additional configuration**<br>\n - Provide the database name. If you do not specify a database name, Amazon RDS will not create a database.\n - In the *Backup* section and select *1 day*, since this is for demonstration purposes.\n - Leave the default values for the rest and click on the **Create database** button on the bottom right.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1163748,
+              "key": "4dad1b73-3f79-4b10-a816-ad0185ea68b9",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605de3d6_screenshot-2021-03-26-at-7.01.27-pm/screenshot-2021-03-26-at-7.01.27-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4dad1b73-3f79-4b10-a816-ad0185ea68b9",
+              "caption": "",
+              "alt": "",
+              "width": 600,
+              "height": 1556,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163749,
+              "key": "323ea0dc-3615-485d-860b-1428d1a4b4f2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605de3f0_screenshot-2021-03-26-at-7.01.40-pm/screenshot-2021-03-26-at-7.01.40-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/323ea0dc-3615-485d-860b-1428d1a4b4f2",
+              "caption": "Additional configuration",
+              "alt": "",
+              "width": 600,
+              "height": 1492,
+              "instructor_notes": null
+            },
+            {
+              "id": 830698,
+              "key": "1114b452-be9e-4975-9e71-2e597023c70c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "9. **Success** <br>You should land on a confirmation page. It will take a few minutes to launch the database. Wait a few minutes for the status to change to **Available**.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 830677,
+              "key": "cfde7b03-d393-4a86-8782-908f7648da80",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c6ce3d4_11-rds-postgres/11-rds-postgres.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cfde7b03-d393-4a86-8782-908f7648da80",
+              "caption": "",
+              "alt": "",
+              "width": 700,
+              "height": 645,
+              "instructor_notes": null
+            },
+            {
+              "id": 830674,
+              "key": "5afee779-3eea-47fc-9780-2c05fc641f9b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2021/March/605de596_screenshot-2021-03-26-at-7.15.31-pm/screenshot-2021-03-26-at-7.15.31-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5afee779-3eea-47fc-9780-2c05fc641f9b",
+              "caption": "Wait a few minutes for the status to change to **Available**.",
+              "alt": "",
+              "width": 700,
+              "height": 696,
+              "instructor_notes": null
+            },
+            {
+              "id": 1163750,
+              "key": "80e59e98-5842-4d84-b7ff-bf7cc38d8f8a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "> For each database in the list above,  you can see the Region and availability zone it's running in, the size, and the status that it's up and running. You can also see the percentage utilization of the underlying CPU.   \n>",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 859325,
+          "key": "2f36b1ae-4a87-4607-a561-5e845f145b90",
+          "title": "Avoid Paying Unexpected Costs for AWS",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2f36b1ae-4a87-4607-a561-5e845f145b90",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 859326,
+              "key": "894516de-f1fc-45ec-a61b-0c83bd745fb9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Important Note \n\nWe believe that the amount of AWS Educate promotional credits we have arranged for Udacity students to receive for free from AWS is sufficient to allow you to complete all of your work in the Data Engineering ND, *if you follow the guidelines we provide in this lesson for using your credits wisely*. \n\n#### Key recommendations for using your AWS credits wisely:\n- Delete your Amazon Redshift cluster each time you're finished working.\n- Use a smaller subset of your data while you code and debug on AWS, and only execute with the full dataset on AWS as a final test of your code.\n\n**If you exceed the AWS credits that you are provided, you will be responsible for purchasing any additional credits necessary to complete the Nanodegree.** Students are solely responsible for monitoring usage charges on the AWS account you use.\n\nIf you believe there is an error or problem with your usage of AWS credits, please contact AWS Support at https://console.aws.amazon.com/support/home.\n\nFor more information or inquiries, please refer to the [AWS Educate Terms and Conditions](https://www.awseducate.com/registrationtandc).\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

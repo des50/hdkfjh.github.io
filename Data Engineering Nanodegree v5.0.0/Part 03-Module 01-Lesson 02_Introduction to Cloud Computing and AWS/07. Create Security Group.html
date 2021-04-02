@@ -1,0 +1,442 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Create Security Group</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Introduction to Cloud Computing and AWS</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Introduction.html">01. Lesson Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Cloud Computing.html">02. Cloud Computing</a>
+    </li>
+    <li class="">
+      <a href="03. Amazon Web Services.html">03. Amazon Web Services</a>
+    </li>
+    <li class="">
+      <a href="04. AWS Account Setup.html">04. AWS Account Setup</a>
+    </li>
+    <li class="">
+      <a href="05. Monitor your AWS Costs and Credits.html">05. Monitor your AWS Costs and Credits</a>
+    </li>
+    <li class="">
+      <a href="06. Create an IAM Role.html">06. Create an IAM Role</a>
+    </li>
+    <li class="">
+      <a href="07. Create Security Group.html">07. Create Security Group</a>
+    </li>
+    <li class="">
+      <a href="08. Launch a Redshift Cluster.html">08. Launch a Redshift Cluster</a>
+    </li>
+    <li class="">
+      <a href="09. Create an IAM User.html">09. Create an IAM User</a>
+    </li>
+    <li class="">
+      <a href="10. Delete a Redshift Cluster.html">10. Delete a Redshift Cluster</a>
+    </li>
+    <li class="">
+      <a href="11. RDS - Create PostgreSQL Database.html">11. RDS - Create PostgreSQL Database</a>
+    </li>
+    <li class="">
+      <a href="12. Avoid Paying Unexpected Costs for AWS.html">12. Avoid Paying Unexpected Costs for AWS</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">07. Create Security Group</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h1 id="create-security-group">Create Security Group</h1>
+<p>Here, you'll create a security group you will later use to authorize access to your Redshift cluster.</p>
+<blockquote>
+  <p>A security group will act as firewall rules for your Redshift cluster to control inbound and outbound traffic. </p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol>
+<li>Navigate to the <a href="https://console.aws.amazon.com/ec2" rel="noopener noreferrer" target="_blank">EC2 service</a></li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-8.29.42-am.png" alt="Navigate to any service" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Navigate to any service</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="2">
+<li>Under <strong>Network and Security</strong> in the left navigation pane, select <strong>Security Groups</strong>. Click the <strong>Create Security Group</strong> button to launch a wizard.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-8.33.27-am.png" alt="Create a new security group" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Create a new security group</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="3">
+<li>In the <em>Create security group</em> wizard, enter the basic details.</li>
+</ol>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th id="**section**"><strong>Section</strong></th>
+<th id="**field**"><strong>Field</strong></th>
+<th id="**value**"><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic details</td>
+<td>Security group name</td>
+<td><code>redshift_security_group</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Description</td>
+<td><code>Authorise redshift cluster access</code></td>
+</tr>
+<tr>
+<td></td>
+<td>VPC</td>
+<td>Choose the default VPC<br>It is a VPC in a default region, <br>and has a public subnet in each Availability Zone.<br>If a default VPC doesn't show up, <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-vpc" rel="noopener noreferrer" target="_blank">create a default VPC</a></td>
+</tr>
+<tr>
+<td><center></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-01-19-at-12.58.53-pm.png" alt="Create a default VPC, if not available already" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Create a default VPC, if not available already</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-01-19-at-6.20.22-pm.png" alt="Info about a default VPC" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Info about a default VPC</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-8.58.11-am.png" alt="Basic details" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Basic details</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="4">
+<li>In the <em>Inbound rules</em> section, click on <strong>Add Rule</strong> and enter the following values:</li>
+</ol>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th id="**section**"><strong>Section</strong></th>
+<th id="**field**"><strong>Field</strong></th>
+<th id="**value**"><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inbound rules</td>
+<td>Type</td>
+<td>Custom TCP Rule</td>
+</tr>
+<tr>
+<td></td>
+<td>Protocol</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td></td>
+<td>Port range</td>
+<td>5439<br>The default port for Amazon Redshift is 5439, <br>but your port might be different.</td>
+</tr>
+<tr>
+<td></td>
+<td>Source type</td>
+<td>Custom</td>
+</tr>
+<tr>
+<td></td>
+<td>Source</td>
+<td><code>0.0.0.0/0</code><br><em>(Anywhere in the world)</em></td>
+</tr>
+<tr>
+<td></center></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+  <p><strong>Important: Using <code>0.0.0.0/0</code> is not recommended for anything other than demonstration purposes because it allows access from any computer on the internet.</strong> In a real environment, you would create inbound rules based on your own network settings.</p>
+</blockquote>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-8.58.03-am.png" alt="Inbound rules" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Inbound rules</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="5">
+<li>Outbound rules allow traffic to anywhere by default.</li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-8.58.46-am.png" alt="Outbound rules" class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Outbound rules</p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <ol start="6">
+<li>Click on the <em>Create security group</em> button at the bottom. You will see a success message. </li>
+</ol>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <figure class="figure">
+    <img src="img/screenshot-2021-03-26-at-9.03.54-am.png" alt="Details of a security group " class="img img-fluid">
+    <figcaption class="figure-caption">
+      <p>Details of a security group </p>
+    </figcaption>
+  </figure>
+</div>
+
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="08. Launch a Redshift Cluster.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Create Security Group')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

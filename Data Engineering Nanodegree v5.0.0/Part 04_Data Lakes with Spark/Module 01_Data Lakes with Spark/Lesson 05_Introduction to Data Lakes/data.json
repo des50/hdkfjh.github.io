@@ -1,0 +1,1411 @@
+{
+  "data": {
+    "lesson": {
+      "id": 1128174,
+      "key": "1f8f1b41-f5aa-4276-93f7-ec4916a74ed5",
+      "title": "Introduction to Data Lakes",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": null,
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/1f8f1b41-f5aa-4276-93f7-ec4916a74ed5/1128174/1611251925620/Introduction+to+Data+Lakes+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/1f8f1b41-f5aa-4276-93f7-ec4916a74ed5/1128174/1611251917853/Introduction+to+Data+Lakes+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 1111833,
+          "key": "b1c8986b-6846-4b8b-bc53-c2662d171656",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b1c8986b-6846-4b8b-bc53-c2662d171656",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113344,
+              "key": "3307ee35-5482-4cee-b8ef-4f35b4b1e669",
+              "title": "L04-00-Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kv08_VWQ2Ho",
+                "china_cdn_id": "kv08_VWQ2Ho.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111821,
+          "key": "18af12fd-31eb-4d5e-bb64-7f85ec5e5ac6",
+          "title": "Lesson Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "18af12fd-31eb-4d5e-bb64-7f85ec5e5ac6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113332,
+              "key": "f78e89e5-28ef-4ae0-af4d-9b27f609c49a",
+              "title": "L04-01 1 Lesson Overview",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fLzYJsJozvM",
+                "china_cdn_id": "fLzYJsJozvM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111845,
+          "key": "8022f4a0-5e3f-4f33-86f6-267ffc3d8ebd",
+          "title": "Why Data Lakes: Evolution of the Data Warehouse",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8022f4a0-5e3f-4f33-86f6-267ffc3d8ebd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113356,
+              "key": "fc54127f-f3b1-4190-8c30-466384966971",
+              "title": "L04-01 2 Why Data Lakes- Evolution Of The Data Warehouse",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3KSt8-nFUo0",
+                "china_cdn_id": "3KSt8-nFUo0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111842,
+          "key": "a72db5c7-899c-40b8-b0b6-1febe2b20f67",
+          "title": "Why Data Lakes: Unstructured & Big Data",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a72db5c7-899c-40b8-b0b6-1febe2b20f67",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113353,
+              "key": "23f5a391-9461-4a27-bc77-bf1301e50c30",
+              "title": "L04-01 3 Why Data Lakes- Unstructured   Big Data",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "niF5i3qsagM",
+                "china_cdn_id": "niF5i3qsagM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111848,
+          "key": "665804ea-b46f-4f1b-b206-613bbe94aff0",
+          "title": "Why Data Lakes: New Roles & Advanced Analytics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "665804ea-b46f-4f1b-b206-613bbe94aff0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113359,
+              "key": "ff19b19b-e2b4-4804-92dd-63a0d3421009",
+              "title": "L04-01 4 Why Data Lakes- New Roles   Advanced Analytics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3B7iv1GRaAw",
+                "china_cdn_id": "3B7iv1GRaAw.mp4"
+              }
+            },
+            {
+              "id": 1113360,
+              "key": "dbcc2cb6-e0a9-49e7-8c0a-32a0872a57c6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Typo in the second slide: in the first bullet point, \"day-today\" should be \"day-to-day\".",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1111844,
+          "key": "651ae899-6260-4017-ad83-7fbc8b87c939",
+          "title": "Big Data Effects: Low Costs, ETL Offloading",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "651ae899-6260-4017-ad83-7fbc8b87c939",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113355,
+              "key": "4314e2cf-13fa-4b97-82fe-31c4e99cef6a",
+              "title": "L04-02 1 Big Data Effects- Low Costs, ETL Offloading",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-snvU7S3wZo",
+                "china_cdn_id": "-snvU7S3wZo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111840,
+          "key": "481c1b45-b57d-4564-80ce-213da3fe0235",
+          "title": "Big Data Effects: Schema-on-Read",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "481c1b45-b57d-4564-80ce-213da3fe0235",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113351,
+              "key": "b8435586-0e88-4231-9618-1932fadb8f9f",
+              "title": "L04-02 2 Big Data Effects- Schema-On-Read",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cBvKpHfTLTA",
+                "china_cdn_id": "cBvKpHfTLTA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111825,
+          "key": "6a168bde-a457-430e-a414-27b90b3ac5b8",
+          "title": "Big Data Effects: (Un-/Semi-)Structured support",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6a168bde-a457-430e-a414-27b90b3ac5b8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113336,
+              "key": "0ae2f9dd-f031-43c0-ab11-74b135a954d1",
+              "title": "L04-02 3 Big Data Effects- (Un--Semi-)Structured Support",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5R8y9Xa8izs",
+                "china_cdn_id": "5R8y9Xa8izs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111836,
+          "key": "8c8f4f67-31e0-45a6-bb2f-b2f2b187a1da",
+          "title": "Demo: Schema On Read Pt 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8c8f4f67-31e0-45a6-bb2f-b2f2b187a1da",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113347,
+              "key": "28b55251-433f-41cc-8031-f8a2526af7a8",
+              "title": "L04-02.1 1 Demo- Schema On Read Pt 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_clMPKkFytg",
+                "china_cdn_id": "_clMPKkFytg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111815,
+          "key": "e27b3b51-40ee-4db7-be39-5d3feeff4636",
+          "title": "Demo: Schema On Read Pt 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e27b3b51-40ee-4db7-be39-5d3feeff4636",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113326,
+              "key": "11b894f3-c0b4-4643-b607-618b52a3c390",
+              "title": "L04-02.1 2 Demo- Schema On Read Pt 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_GUDMCEaX0Y",
+                "china_cdn_id": "_GUDMCEaX0Y.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111826,
+          "key": "3bc3d19f-e4e8-4bd0-8931-e98c616092a2",
+          "title": "Demo: Schema On Read Pt 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3bc3d19f-e4e8-4bd0-8931-e98c616092a2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113337,
+              "key": "0fef1b2c-8e9c-44d9-b0bc-81ac3f322e13",
+              "title": "L04-02.1 3 Demo- Schema On Read Pt 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EN0AJPNjyeE",
+                "china_cdn_id": "EN0AJPNjyeE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111837,
+          "key": "7d036f7d-0335-4552-a7aa-13a91441c389",
+          "title": "Demo: Schema On Read Pt 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7d036f7d-0335-4552-a7aa-13a91441c389",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113348,
+              "key": "c1833f7b-5f97-4a9c-93ae-0636a2ece149",
+              "title": "L04-02.1 4 Demo- Schema On Read Pt 4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "m1kD8EyFPH0",
+                "china_cdn_id": "m1kD8EyFPH0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111829,
+          "key": "0f4fc161-75b7-44ea-acab-ca364ae40958",
+          "title": "Exercise 1: Schema On Read",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0f4fc161-75b7-44ea-acab-ca364ae40958",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113340,
+              "key": "6e41b7d1-81c4-456f-9774-19eff7b6d28c",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766466c831929xJUPYTERL4e4ha1t6",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-1fpop",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Exercise 1 - Schema On Read.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 1111847,
+          "key": "e13eef26-e16e-4a82-a2e6-5ecebeaf2628",
+          "title": "Demo: Advanced Analytics NLP Pt 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e13eef26-e16e-4a82-a2e6-5ecebeaf2628",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113358,
+              "key": "45c5f957-e683-46d2-83d2-685335d3b6a5",
+              "title": "L04-02.2 1 Demo- Advanced Analytics NLP Pt 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_ZMWq5cZjzI",
+                "china_cdn_id": "_ZMWq5cZjzI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111813,
+          "key": "1d196da1-cc5b-451b-a885-726672e1fb19",
+          "title": "Demo: Advanced Analytics NLP Pt 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1d196da1-cc5b-451b-a885-726672e1fb19",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113324,
+              "key": "b40bc4ae-0489-4e2a-bf8d-cf36a0208a29",
+              "title": "L04-02.2 2 Demo- Advanced Analytics NLP Pt 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gx3JYVDitiE",
+                "china_cdn_id": "gx3JYVDitiE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111835,
+          "key": "e21b08c3-392c-4a08-b734-18f3c84eb69f",
+          "title": "Demo: Advanced Analytics NLP Pt 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e21b08c3-392c-4a08-b734-18f3c84eb69f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113346,
+              "key": "ea912f37-61b8-4389-94cd-70061f2f34df",
+              "title": "L04-02.2 3 Demo- Advanced Analytics NLP Pt 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ymgj8KetT14",
+                "china_cdn_id": "Ymgj8KetT14.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111819,
+          "key": "896ac5e4-61bb-4bb7-b630-8134e8ea8059",
+          "title": "Exercise 2: Advanced Analytics NLP",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "896ac5e4-61bb-4bb7-b630-8134e8ea8059",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113330,
+              "key": "46615de6-50e8-4d84-bf49-093d724b145d",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766466c831929xJUPYTERL4e4ha1t6",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-e5e7y",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Exercise 2 - Advanced Analytics NLP.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 1111843,
+          "key": "04d9173b-3098-4cab-b050-b3b1712cf1f4",
+          "title": "Data Lake Implementation Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "04d9173b-3098-4cab-b050-b3b1712cf1f4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113354,
+              "key": "a30f6dd3-643e-499c-92fc-e18ea910d1b2",
+              "title": "L04-03 1 Data Lake Implementation Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wi0OXQpr81U",
+                "china_cdn_id": "wi0OXQpr81U.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111827,
+          "key": "603c585c-1a1b-490c-add0-3818ff07aa08",
+          "title": "Data Lake Concepts",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "603c585c-1a1b-490c-add0-3818ff07aa08",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113338,
+              "key": "5121eec2-547c-4012-8a3c-ae835fab3b03",
+              "title": "L04-03 2-Data Lake Concepts",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DozXTpjZjas",
+                "china_cdn_id": "DozXTpjZjas.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111820,
+          "key": "293c4114-3d2c-4c9d-a709-8158b85ea806",
+          "title": "Data Lake vs Data Warehouse",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "293c4114-3d2c-4c9d-a709-8158b85ea806",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113331,
+              "key": "ada670f0-1045-407e-9799-8532c7cde292",
+              "title": "L04-03 3-Data Lake Vs Data Warehouse",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2YkwP4jw8ig",
+                "china_cdn_id": "2YkwP4jw8ig.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111830,
+          "key": "eeb14dea-f0cc-4140-a142-d1e7c0d7cc50",
+          "title": "Data Lake Options on AWS",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eeb14dea-f0cc-4140-a142-d1e7c0d7cc50",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113341,
+              "key": "8875a30f-49e9-4d64-aa19-c510830bbc61",
+              "title": "L04-04 1 Data Lake Options On AWS",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AMdFTlYWmp8",
+                "china_cdn_id": "AMdFTlYWmp8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111814,
+          "key": "dce2891f-0037-4338-988b-6215f138013c",
+          "title": "AWS Options: EMR (HDFS + Spark)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "dce2891f-0037-4338-988b-6215f138013c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113325,
+              "key": "9925b64b-d7d1-4230-a36b-8acb2332e2b8",
+              "title": "L04-04 2 AWS Options- EMR (HDFS + Spark)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "m88kdMKB4qs",
+                "china_cdn_id": "m88kdMKB4qs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111846,
+          "key": "47144ef9-f28a-4861-b58d-a189b143c439",
+          "title": "AWS Options: EMR: S3 + Spark",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "47144ef9-f28a-4861-b58d-a189b143c439",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113357,
+              "key": "9a23bef8-8261-4c45-bea3-c8e8886fa41b",
+              "title": "L04-04 3 AWS Options- EMR- S3 + Spark",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ur1clGbA0Rw",
+                "china_cdn_id": "ur1clGbA0Rw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111841,
+          "key": "01e19fe6-0d65-4f09-87d9-78cc5d578b8d",
+          "title": "AWS Options: Athena",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "01e19fe6-0d65-4f09-87d9-78cc5d578b8d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113352,
+              "key": "5a03e230-ffc3-4d35-befb-51a2079e42bb",
+              "title": "L04-04 4 AWS Options- Athena",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XNEczLKSISw",
+                "china_cdn_id": "XNEczLKSISw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111839,
+          "key": "47794e28-e608-4009-abf2-377ebf99117e",
+          "title": "Demo: Data Lake on S3 Pt 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "47794e28-e608-4009-abf2-377ebf99117e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113350,
+              "key": "28fd8da5-9eff-4de3-97f5-85be0a3a189d",
+              "title": "L04-04.1 1-Demo- Data Lake On S3 Pt 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "phZ2irpPtMM",
+                "china_cdn_id": "phZ2irpPtMM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111816,
+          "key": "c83f40a4-f12e-4bed-9193-87a778f75bf9",
+          "title": "Demo: Data Lake on S3 Pt 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c83f40a4-f12e-4bed-9193-87a778f75bf9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113327,
+              "key": "bbc0f03c-0703-4fc9-a79e-a58ce1ab741d",
+              "title": "L04-04.1 2-Demo- Data Lake On S3 Pt 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kqy6w6kat58",
+                "china_cdn_id": "kqy6w6kat58.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111838,
+          "key": "35a6d835-c2bb-426f-a114-60c0940d8238",
+          "title": "Exercise 3: Data Lake on S3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "35a6d835-c2bb-426f-a114-60c0940d8238",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113349,
+              "key": "40281e14-03e0-47da-bb01-8dd3d03dfc79",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766466c831929xJUPYTERL4e4ha1t6",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-6bgxn",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Exercise 3 - Data Lake on S3.ipynb",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 1111831,
+          "key": "8c7928ad-256a-43df-8666-3569af9d1f61",
+          "title": "Demo: Data Lake on EMR Pt 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8c7928ad-256a-43df-8666-3569af9d1f61",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113342,
+              "key": "69e964bf-f222-446a-bea2-030aafd46a2d",
+              "title": "L04-04.2 1 Demo- Data Lake On EMR Pt 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "539RnL05fGQ",
+                "china_cdn_id": "539RnL05fGQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111828,
+          "key": "13aad36d-7f4f-4112-93e1-ec813a9f634b",
+          "title": "Demo: Data Lake on EMR Pt 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "13aad36d-7f4f-4112-93e1-ec813a9f634b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113339,
+              "key": "2065dbf4-0b90-4da7-8f16-fa1a813c0cff",
+              "title": "L04-04.2 2 Demo- Data Lake On EMR Pt 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lr-6oUkzs2w",
+                "china_cdn_id": "lr-6oUkzs2w.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111834,
+          "key": "103c8915-860c-455b-a6f9-90c4ef336cb6",
+          "title": "Demo: Data Lake on Athena Pt 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "103c8915-860c-455b-a6f9-90c4ef336cb6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113345,
+              "key": "1991c257-2191-4b5b-aa01-01c6cfe346e7",
+              "title": "L04-04.3 1 Demo- Data Lake On Athena Pt 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Cy-kJEc5oKE",
+                "china_cdn_id": "Cy-kJEc5oKE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111817,
+          "key": "1f8d5073-8bd6-4b4c-9651-93bb8c5531b0",
+          "title": "Demo: Data Lake on Athena Pt 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1f8d5073-8bd6-4b4c-9651-93bb8c5531b0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113328,
+              "key": "881a6eab-08d1-493a-b704-a8cd7fc0d1e9",
+              "title": "L04-04.3 2 Demo- Data Lake On Athena Pt 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LWOTnS2wS9U",
+                "china_cdn_id": "LWOTnS2wS9U.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111818,
+          "key": "0f137de4-ead5-492f-a36f-845c5c89112c",
+          "title": "Data Lake Issues",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0f137de4-ead5-492f-a36f-845c5c89112c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113329,
+              "key": "5d16f893-50f4-4db7-a9dc-7e54e67bc940",
+              "title": "L04-05 DataLakeIssues",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FCXdgt-IkTE",
+                "china_cdn_id": "FCXdgt-IkTE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1111811,
+          "key": "eac5c2be-645d-4d58-b7ac-a2dc02268e7e",
+          "title": "[AWS] Launch EMR Cluster and Notebook",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eac5c2be-645d-4d58-b7ac-a2dc02268e7e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113308,
+              "key": "d9772d5d-5170-4984-876a-c59164e6e199",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Launch EMR Cluster and Notebook\nFollow the instructions below to launch your EMR cluster and notebook.\n\n* Open a regular AWS account (if you don't already have one) following the instructions via the [Amazon Web Service Help Center](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)\n* Go to the [Amazon EMR Console](https://console.aws.amazon.com/elasticmapreduce/)\n* Select \"Clusters\" in the menu on the left, and click the \"Create cluster\" button.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113318,
+              "key": "d717e394-eb8b-42df-9627-8d03ba544ba1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a2242_create-cluster-button/create-cluster-button.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d717e394-eb8b-42df-9627-8d03ba544ba1",
+              "caption": "",
+              "alt": "",
+              "width": 480,
+              "height": 182,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113305,
+              "key": "7760f6a6-a145-4af6-839b-dc4dfb0d0d4f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Step 1: Configure your cluster with the following settings:\n- Release: `emr-5.20.0` or later\n- Applications: `Spark`: Spark 2.4.0 on Hadoop 2.8.5 YARN with Ganglia 3.7.2 and Zeppelin 0.8.0\n- Instance type: `m3.xlarge`\n- Number of instance: `3`\n- EC2 key pair: `Proceed without an EC2 key pair` or feel free to use one if you'd like\n\nYou can keep the remaining default setting and click \"Create cluster\" on the bottom right.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113322,
+              "key": "65df64bd-5a8b-4d71-afbf-3e72ef0fb3fc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a2f1a_configure-cluster/configure-cluster.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/65df64bd-5a8b-4d71-afbf-3e72ef0fb3fc",
+              "caption": "",
+              "alt": "",
+              "width": 660,
+              "height": 833,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113315,
+              "key": "68f5396c-89c6-424e-8bc5-577b88364c7c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Step 2: Wait for Cluster  \"Waiting\" Status\nOnce you create the cluster, you'll see a status next to your cluster name that says *Starting*. Wait a short time for this status to change to *Waiting* before moving on to the next step.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113311,
+              "key": "05f27830-986d-4015-9fd3-b2b011fd26a0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a25e5_cluster-waiting/cluster-waiting.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/05f27830-986d-4015-9fd3-b2b011fd26a0",
+              "caption": "",
+              "alt": "",
+              "width": 1111,
+              "height": 312,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113310,
+              "key": "09a838d1-bcd8-47b8-99be-1368212bf0a4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Step 3: Create Notebook\nNow that you launched your cluster successfully, let's create a notebook to run Spark on that cluster.\n\nSelect \"Notebooks\" in the menu on the left, and click the \"Create notebook\" button.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113321,
+              "key": "1392e6b6-1f56-4a20-8c89-3c0af9b0131c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a265e_create-notebook-button/create-notebook-button.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1392e6b6-1f56-4a20-8c89-3c0af9b0131c",
+              "caption": "",
+              "alt": "",
+              "width": 585,
+              "height": 214,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113314,
+              "key": "105302db-5ab9-4a56-a767-5c75fd13ced9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Step 4: Configure your notebook\n- Enter a name for your notebook\n- Select \"Choose an existing cluster\" and choose the cluster you just created\n- Use the default setting for \"AWS service role\" - this should be \"EMR_Notebooks_DefaultRole\" or \"Create default role\" if you haven't done this before.\n\nYou can keep the remaining default settings and click \"Create notebook\" on the bottom right.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113313,
+              "key": "88f50c40-28be-4ca8-863e-3e1999f04b9d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a26f1_configure-notebook/configure-notebook.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/88f50c40-28be-4ca8-863e-3e1999f04b9d",
+              "caption": "",
+              "alt": "",
+              "width": 952,
+              "height": 723,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113306,
+              "key": "859807cb-c7de-4fa8-9a5a-2ae937a70b23",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Step 5: Wait for Notebook  \"Ready\" Status, Then Open\nOnce you create an EMR notebook, you'll need to wait a short time before the notebook status changes from *Starting* or *Pending* to *Ready.* Once your notebook status is *Ready*, click the \"Open\" button to open the notebook.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113317,
+              "key": "58d853ba-49b5-451a-8963-16a473ffbbf1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a28e2_notebook-ready/notebook-ready.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/58d853ba-49b5-451a-8963-16a473ffbbf1",
+              "caption": "",
+              "alt": "",
+              "width": 786,
+              "height": 219,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113307,
+              "key": "d0dbba15-9dee-4885-aabf-a1eada76b6be",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Start Coding!\nNow you can run Spark code for your project in this notebook, which EMR will run on your cluster. In the next page, you'll find starter code to create a spark session and read in the full 12GB dataset for the DSND Capstone project.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113319,
+              "key": "b786abe2-d31d-45d7-9729-043ecf2bf393",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a30d3_empty-notebook/empty-notebook.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b786abe2-d31d-45d7-9729-043ecf2bf393",
+              "caption": "",
+              "alt": "",
+              "width": 1195,
+              "height": 234,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113320,
+              "key": "391ca4ee-4105-402c-a3d1-b3a065561623",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Download Notebook\nWhen you are finished with your notebook, click `File` > `Download as` > `Notebook` to download it to your computer. On your local computer, create a git repository including this notebook and a README file. Submit the URL to your github repository to submit this project. See more details in the [Sparkify Project Overview page](https://classroom.udacity.com/nanodegrees/nd025/parts/84260e1f-2926-4127-895f-cc4432b05059/modules/80c955ce-72f2-403a-9bf5-cc58636dab9d/lessons/d6285247-6bc0-4783-b118-6f41981b9469/concepts/47d96c80-82da-4640-9fff-54415f2a21df).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113312,
+              "key": "dc116060-1f31-4294-baf6-cc1d28d64302",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a3858_download-notebook/download-notebook.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dc116060-1f31-4294-baf6-cc1d28d64302",
+              "caption": "",
+              "alt": "",
+              "width": 869,
+              "height": 265,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113309,
+              "key": "02dae12c-68c1-453e-96b2-6ac4d5455e4f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "For more information on EMR notebooks, click [here](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113316,
+              "key": "a2fe27c9-6ec7-4a4d-bba8-55a6a01ed2cf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Pricing - Be Careful!\n\nFrom this point on, AWS will charge you for running your EMR cluster. See details on this and how to manage your resources to avoid unexpected costs in the \"Managing Resources\" section at the end of this lesson.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 1111851,
+          "key": "e618f810-247b-4b73-bc9b-60e059a620be",
+          "title": "[AWS] Avoid Paying Unexpected Costs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e618f810-247b-4b73-bc9b-60e059a620be",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1113373,
+              "key": "a6bd432f-8082-4dba-a25a-13eca7f3f6ca",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Pricing - Be Careful!\n\nFrom this point on, AWS will charge you for running your EMR cluster. You can find the details on the [EMR Pricing here](https://aws.amazon.com/emr/pricing/). If you run your cluster for a week with the settings specified earlier (3 instances of `m3.xlarge`), you should expect costs to be around $30, which should be covered in the amount of free promotional credits you have received from AWS as a Udacity student.\n\nMost importantly, remember to terminate your cluster when you are done. Otherwise, your cluster might run for a day, week, month, or longer without you remembering, and you’ll wind up with a large bill!\n\n# Terminate Your Cluster\nYou can terminate your cluster while still keeping the Jupyter notebook you created. In EMR, your EMR cluster and EMR notebook are decoupled (so you can reattach your notebook to a different cluster at any time)! To terminate your cluster, click \"Clusters\" in the menu on the left, check the box next to your cluster to select, and click the \"Terminate\" button.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113364,
+              "key": "0ac60b8c-06e5-47ed-92f0-497a17dc3c4a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a1f63_terminate-cluster/terminate-cluster.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0ac60b8c-06e5-47ed-92f0-497a17dc3c4a",
+              "caption": "",
+              "alt": "",
+              "width": 1158,
+              "height": 185,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113365,
+              "key": "10ce81d5-dc68-4f0c-ba12-20e405482ba6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Change Cluster for Notebook\nIf you still have a notebook on EMR and terminated the cluster it was connected to, you can still run that notebook at any time by creating another cluster (following the instructions in the previous section). Once you have the new cluster launched and in \"waiting\" status, click \"Notebooks\" in the menu on the left and click on the name of your notebook. Then click the \"Change cluster\" button.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113366,
+              "key": "2e50ec5c-ec34-4188-8337-b90170aa6cc2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a3015_change-cluster-button/change-cluster-button.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2e50ec5c-ec34-4188-8337-b90170aa6cc2",
+              "caption": "",
+              "alt": "",
+              "width": 687,
+              "height": 153,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113369,
+              "key": "afd37c4b-0e63-4456-aac0-fa9617ad7b49",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Select your new cluster. Once your notebook reaches \"Ready\" status, you can now run this notebook on your new cluster.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113367,
+              "key": "43f1967d-700c-4229-aac9-78fdcc009cc0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a305f_change-cluster/change-cluster.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/43f1967d-700c-4229-aac9-78fdcc009cc0",
+              "caption": "",
+              "alt": "",
+              "width": 861,
+              "height": 397,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113371,
+              "key": "54774d81-e5e9-40af-af90-280b3614afc5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Delete Your Notebook\nWhen you've finished with your project and downloaded your notebook, you can delete your notebook from EMR by selecting \"Notebooks\" in the menu on the left, selecting your notebook, and then clicking \"Delete.\" Make sure to terminate the clusters you launched for this as well.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113363,
+              "key": "608f636b-48f9-41fa-9977-ff8c6a4a9211",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a29ae_delete-notebook/delete-notebook.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/608f636b-48f9-41fa-9977-ff8c6a4a9211",
+              "caption": "",
+              "alt": "",
+              "width": 908,
+              "height": 255,
+              "instructor_notes": null
+            },
+            {
+              "id": 1113370,
+              "key": "ebb71aa6-b4ce-4749-a9b7-b979908f3038",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Delete S3 buckets\nAWS charges primarily for running instances, so most of the charges will cease once you stop the cluster. However, there are smaller storage charges that continue to accrue if you don't delete your buckets. To delete your buckets, go to the [Amazon S3 console](https://console.aws.amazon.com/s3/). Choose the bucket you want to delete from the list, so that the whole bucket row is selected. Choose delete bucket, type the name of the bucket, and click \"Confirm.\"\n\nFor more information about deleting folders and buckets, go to [How Do I Delete an S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/delete-bucket.html) in the *Amazon Simple Storage Service Getting Started Guide*.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113368,
+              "key": "95a3cb03-7fae-460f-8022-9a3c7b2039b3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can view your billing information at any time by clicking on your account name on the upper right corner of the console and go to **My Billing Dashboard**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 1113372,
+              "key": "415f4362-5f2b-41bb-849b-0db698606326",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/December/5c1a1eb8_aws-billing/aws-billing.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/415f4362-5f2b-41bb-849b-0db698606326",
+              "caption": "",
+              "alt": "",
+              "width": 672,
+              "height": 302,
+              "instructor_notes": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}
