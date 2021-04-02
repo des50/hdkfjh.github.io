@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.790
+Airflow was built with the intention of allowing it to users to
+
+00:00:02.790 --> 00:00:05.835
+extend and customize its functionality through plugins.
+
+00:00:05.835 --> 00:00:10.949
+The most common types of user-creator plug-ins for airflow are operators and hooks.
+
+00:00:10.949 --> 00:00:13.094
+As we review in lesson one;
+
+00:00:13.095 --> 00:00:17.234
+operators define the atomic steps of work that make up a DAG.
+
+00:00:17.234 --> 00:00:21.314
+If we think about the bike share DAG we've been working on over the past few lessons,
+
+00:00:21.315 --> 00:00:25.275
+there are a couple of functions in our code that we may want to reuse.
+
+00:00:25.274 --> 00:00:29.640
+First, we're using a Python operator in two places.
+
+00:00:29.640 --> 00:00:33.899
+Both uses of this operator load data from S3 into Redshift,
+
+00:00:33.899 --> 00:00:36.539
+both of the loading functions we've written are very similar and are
+
+00:00:36.539 --> 00:00:39.945
+likely a great candidate to be replaced by a custom operator.
+
+00:00:39.945 --> 00:00:44.375
+So again, we have two functions that load our trips data and stations data.
+
+00:00:44.375 --> 00:00:48.170
+You may have noticed the code for those two functions are almost identical,
+
+00:00:48.170 --> 00:00:50.030
+we can probably take
+
+00:00:50.030 --> 00:00:53.719
+these two nearly identical functions and turn it into a reusable operator.
+
+00:00:53.719 --> 00:00:56.960
+Second, when we add a data quality checks to our DAG
+
+00:00:56.960 --> 00:01:00.094
+to verify the presence of data we built a pretty useful function.
+
+00:01:00.094 --> 00:01:02.254
+There's a good chance that many future DAGs
+
+00:01:02.255 --> 00:01:04.715
+are going to need exactly this kind of functionality.
+
+00:01:04.715 --> 00:01:08.420
+This is another good candidate to be replaced by custom operator.
+
+00:01:08.420 --> 00:01:12.530
+Replacing those usages of Python operator in our DAGs
+
+00:01:12.530 --> 00:01:16.489
+with custom operators can simplify the code and our DAG definition.
+
+00:01:16.489 --> 00:01:19.459
+Another big benefit is the next time we or somebody else in
+
+00:01:19.459 --> 00:01:22.309
+your organization needs to perform the same function,
+
+00:01:22.310 --> 00:01:23.900
+they only need to use the operator we
+
+00:01:23.900 --> 00:01:27.094
+defined rather than duplicating work we've already done.
+
+00:01:27.094 --> 00:01:31.609
+So here you can see I've replaced the usage of Python operator with
+
+00:01:31.609 --> 00:01:36.305
+an S3 to Redshift operator and this is something we're going to define here shortly.
+
+00:01:36.305 --> 00:01:38.315
+Same deal with has rows operator.
+
+00:01:38.314 --> 00:01:40.399
+You can see we've replaced Python operator with
+
+00:01:40.400 --> 00:01:42.530
+a has rows operator and we've actually
+
+00:01:42.530 --> 00:01:45.424
+removed some of the description of what was happening here.
+
+00:01:45.424 --> 00:01:50.840
+This used to say S3 to Redshift and this used to say data quality check.
+
+00:01:50.840 --> 00:01:54.320
+What we've done is we've actually taken the logic that we were defining
+
+00:01:54.319 --> 00:01:58.439
+in the Python operator and moved it into our custom operator.
+

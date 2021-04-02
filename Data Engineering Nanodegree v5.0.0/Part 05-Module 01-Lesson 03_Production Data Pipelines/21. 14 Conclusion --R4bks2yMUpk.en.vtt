@@ -1,0 +1,19 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.004
+Throughout this course, we've reviewed the concepts of data pipelines.
+
+00:00:04.004 --> 00:00:08.099
+We saw how to use Apache Airflow to create robust and reasonable DAGs which
+
+00:00:08.099 --> 00:00:12.449
+codified these ideas into a reliable and easy to understand interface.
+
+00:00:12.449 --> 00:00:17.384
+With these skills, you too are now ready to start building production data pipelines.
+
+00:00:17.385 --> 00:00:22.570
+Thanks again for joining with me on this data pipeline journey. I hope you enjoyed it.
+

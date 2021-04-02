@@ -1,0 +1,346 @@
+<!-- udacity2.0 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Solution 4: Building a Full Pipeline</title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/plyr.css">
+  <link rel="stylesheet" href="../assets/css/katex.min.css">
+  <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="shortcut icon" type="image/png" href="../assets/img/udacimak.png" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Production Data Pipelines</h3>
+  </div>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled components">
+    <li class="">
+      <a href="01. Lesson Introduction.html">01. Lesson Introduction</a>
+    </li>
+    <li class="">
+      <a href="02. Extending Airflow with Plugins.html">02. Extending Airflow with Plugins</a>
+    </li>
+    <li class="">
+      <a href="03. Extending Airflow Hooks &amp; Contrib.html">03. Extending Airflow Hooks &amp; Contrib</a>
+    </li>
+    <li class="">
+      <a href="04. Demo 1 Operator Plugins.html">04. Demo 1: Operator Plugins</a>
+    </li>
+    <li class="">
+      <a href="05. Exercise 1 Operator Plugins.html">05. Exercise 1: Operator Plugins</a>
+    </li>
+    <li class="">
+      <a href="06. Solution 1 Operator Plugins.html">06. Solution 1: Operator Plugins</a>
+    </li>
+    <li class="">
+      <a href="07. Best Practices for Data Pipeline Steps - Task Boundaries.html">07. Best Practices for Data Pipeline Steps - Task Boundaries</a>
+    </li>
+    <li class="">
+      <a href="08. Demo 2 Task Boundaries.html">08. Demo 2: Task Boundaries</a>
+    </li>
+    <li class="">
+      <a href="09. Exercise 2 Refactor a DAG.html">09. Exercise 2: Refactor a DAG</a>
+    </li>
+    <li class="">
+      <a href="10. Solution 2 Refactor a DAG.html">10. Solution 2: Refactor a DAG</a>
+    </li>
+    <li class="">
+      <a href="11. Subdags Introduction and When to Use Them.html">11. Subdags: Introduction and When to Use Them</a>
+    </li>
+    <li class="">
+      <a href="12. SubDAGs Drawbacks of SubDAGs.html">12. SubDAGs: Drawbacks of SubDAGs</a>
+    </li>
+    <li class="">
+      <a href="13. Quiz Subdags.html">13. Quiz: Subdags</a>
+    </li>
+    <li class="">
+      <a href="14. Demo 3 SubDAGs.html">14. Demo 3: SubDAGs</a>
+    </li>
+    <li class="">
+      <a href="15. Exercise 3 SubDAGs.html">15. Exercise 3: SubDAGs</a>
+    </li>
+    <li class="">
+      <a href="16. Solution 3 Subdags.html">16. Solution 3: Subdags</a>
+    </li>
+    <li class="">
+      <a href="17. Monitoring.html">17. Monitoring</a>
+    </li>
+    <li class="">
+      <a href="18. Monitoring.html">18. Monitoring</a>
+    </li>
+    <li class="">
+      <a href="19. Exercise 4 Building a Full DAG.html">19. Exercise 4: Building a Full DAG</a>
+    </li>
+    <li class="">
+      <a href="20. Solution 4 Building a Full Pipeline.html">20. Solution 4: Building a Full Pipeline</a>
+    </li>
+    <li class="">
+      <a href="21. Conclusion.html">21. Conclusion</a>
+    </li>
+    <li class="">
+      <a href="22. Additional Resources Data Pipeline Orchestrators.html">22. Additional Resources: Data Pipeline Orchestrators</a>
+    </li>
+  </ul>
+
+  <ul class="sidebar-list list-unstyled CTAs">
+    <li>
+      <a href="../index.html" class="article">Back to Home</a>
+    </li>
+  </ul>
+</nav>
+
+    <div id="content">
+      <header class="container-fluild header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="align-items-middle">
+                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+
+                <h1 style="display: inline-block">20. Solution 4: Building a Full Pipeline</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h2 id="here-is-the-solution-for-exercise-4-building-a-full-pipeline">Here is the Solution for Exercise 4: Building a Full Pipeline</h2>
+<h3 id="this-is-the-solution-code-for-exercise4py">This is the solution code for exercise4.py</h3>
+<pre><code class="python language-python">import datetime
+
+from airflow import DAG
+
+from airflow.operators import (
+    FactsCalculatorOperator,
+    HasRowsOperator,
+    S3ToRedshiftOperator
+)
+
+#
+# The following DAG performs the following functions:
+#
+#       1. Loads Trip data from S3 to RedShift
+#       2. Performs a data quality check on the Trips table in RedShift
+#       3. Uses the FactsCalculatorOperator to create a Facts table in Redshift
+#           a. **NOTE**: to complete this step you must complete the FactsCalcuatorOperator
+#              skeleton defined in plugins/operators/facts_calculator.py
+#
+dag = DAG("lesson3.exercise4", start_date=datetime.datetime.utcnow())
+
+#
+# The following code will load trips data from S3 to RedShift. Use the s3_key
+#       "data-pipelines/divvy/unpartitioned/divvy_trips_2018.csv"
+#       and the s3_bucket "udacity-dend"
+#
+copy_trips_task = S3ToRedshiftOperator(
+    task_id="load_trips_from_s3_to_redshift",
+    dag=dag,
+    table="trips",
+    redshift_conn_id="redshift",
+    aws_credentials_id="aws_credentials",
+    s3_bucket="udacity-dend",
+    s3_key="data-pipelines/divvy/unpartitioned/divvy_trips_2018.csv"
+)
+
+#
+#  Data quality check on the Trips table
+#
+check_trips = HasRowsOperator(
+    task_id="check_trips_data",
+    dag=dag,
+    redshift_conn_id="redshift",
+    table="trips"
+)
+
+#
+# We use the FactsCalculatorOperator to create a Facts table in RedShift. The fact column is
+#  `tripduration` and the groupby_column is `bikeid`
+#
+calculate_facts = FactsCalculatorOperator(
+    task_id="calculate_facts_trips",
+    dag=dag,
+    redshift_conn_id="redshift",
+    origin_table="trips",
+    destination_table="trips_facts",
+    fact_column="tripduration",
+    groupby_column="bikeid"
+)
+
+#
+# Task ordering for the DAG tasks 
+#
+copy_trips_task &gt;&gt; check_trips
+check_trips &gt;&gt; calculate_facts</code></pre>
+</div>
+
+</div>
+<div class="divider"></div><div class="ud-atom">
+  <h3></h3>
+  <div>
+  <h3 id="this-is-the-solution-code-for-the--custom-operator-facts_calculator">This is the solution code for the  Custom Operator: <strong><code>facts_calculator</code></strong></h3>
+<pre><code class="python language-python">import logging
+
+from airflow.hooks.postgres_hook import PostgresHook
+from airflow.models import BaseOperator
+from airflow.utils.decorators import apply_defaults
+
+
+class FactsCalculatorOperator(BaseOperator):
+    facts_sql_template = """
+    DROP TABLE IF EXISTS {destination_table};
+    CREATE TABLE {destination_table} AS
+    SELECT
+        {groupby_column},
+        MAX({fact_column}) AS max_{fact_column},
+        MIN({fact_column}) AS min_{fact_column},
+        AVG({fact_column}) AS average_{fact_column}
+    FROM {origin_table}
+    GROUP BY {groupby_column};
+    """
+
+    @apply_defaults
+    def __init__(self,
+                 redshift_conn_id="",
+                 origin_table="",
+                 destination_table="",
+                 fact_column="",
+                 groupby_column="",
+                 *args, **kwargs):
+
+        super(FactsCalculatorOperator, self).__init__(*args, **kwargs)
+        self.redshift_conn_id = redshift_conn_id
+        self.origin_table = origin_table
+        self.destination_table = destination_table
+        self.fact_column = fact_column
+        self.groupby_column = groupby_column
+
+    def execute(self, context):
+        redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
+        facts_sql = FactsCalculatorOperator.facts_sql_template.format(
+            origin_table=self.origin_table,
+            destination_table=self.destination_table,
+            fact_column=self.fact_column,
+            groupby_column=self.groupby_column
+        )
+        redshift.run(facts_sql)</code></pre>
+</div>
+
+</div>
+<div class="divider"></div>
+          </div>
+
+          <div class="col-12">
+            <p class="text-right">
+              <a href="21. Conclusion.html" class="btn btn-outline-primary mt-4" role="button">Next Concept</a>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center">
+                <a href="https://us-udacity.github.io/" target="_blank">【udacity2.0 】If you need more courses, please add wechat：udacity6</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../assets/js/plyr.polyfilled.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/js/katex.min.js"></script>
+  <script>
+    // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('20. Solution 4: Building a Full Pipeline')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+</body>
+
+</html>

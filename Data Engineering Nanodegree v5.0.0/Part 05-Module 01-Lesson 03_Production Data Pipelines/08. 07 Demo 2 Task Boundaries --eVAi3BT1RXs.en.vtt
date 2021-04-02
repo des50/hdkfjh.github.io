@@ -1,0 +1,373 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.089
+In this demonstration, we're going to look at a DAG that has
+
+00:00:03.089 --> 00:00:05.894
+a single task with poorly defined boundaries.
+
+00:00:05.894 --> 00:00:08.669
+We're going to see how we might refactor it into a cleaner,
+
+00:00:08.669 --> 00:00:10.859
+simpler to understand series of tasks.
+
+00:00:10.859 --> 00:00:14.939
+So, first, we're going to turn off lesson3.solution1.
+
+00:00:14.939 --> 00:00:18.225
+We're going to return to the DAG's menu,
+
+00:00:18.225 --> 00:00:22.304
+and then we're going to open up our demo2.
+
+00:00:22.304 --> 00:00:25.754
+So, in demo2, we have one giant function.
+
+00:00:25.754 --> 00:00:27.899
+We have this load_and_analyze function,
+
+00:00:27.899 --> 00:00:31.779
+which you can see is grabbing our redshift connection,
+
+00:00:31.789 --> 00:00:35.024
+running some code against redshift,
+
+00:00:35.024 --> 00:00:40.129
+getting some records from redshift and checking to see what the oldest rider is,
+
+00:00:40.130 --> 00:00:43.820
+then creating another table in redshift,
+
+00:00:43.820 --> 00:00:48.770
+and then again checking to see who the youngest rider was.
+
+00:00:48.770 --> 00:00:53.105
+Then there are even more SQL statements down here.
+
+00:00:53.104 --> 00:00:55.529
+One is for lifetime_rides.
+
+00:00:55.530 --> 00:00:58.274
+One is for city_station_counts.
+
+00:00:58.274 --> 00:00:59.820
+Again, just to reiterate,
+
+00:00:59.820 --> 00:01:01.100
+this is one function.
+
+00:01:01.100 --> 00:01:03.939
+We have a single load_and_analyze function here.
+
+00:01:03.939 --> 00:01:07.289
+So, in this DAG, we have DAG defined here.
+
+00:01:07.290 --> 00:01:10.300
+We have this load_and_analyze function.
+
+00:01:10.700 --> 00:01:13.695
+What would happen if something failed?
+
+00:01:13.694 --> 00:01:16.679
+How would we know what failed and why?
+
+00:01:16.680 --> 00:01:20.500
+If I were to have run this task, and we got, say,
+
+00:01:20.500 --> 00:01:23.784
+to this lifetime_rides SQL statement,
+
+00:01:23.784 --> 00:01:25.789
+and it failed, it wouldn't be immediately
+
+00:01:25.790 --> 00:01:28.475
+obvious that that was the reason that the DAG had failed.
+
+00:01:28.474 --> 00:01:32.794
+I'd have to actually open up the logs and read the logs to figure out what was going on.
+
+00:01:32.795 --> 00:01:36.769
+So, a better way of doing this would be to actually create
+
+00:01:36.769 --> 00:01:41.170
+PythonOperators and PostgresOperators for each one of these tasks.
+
+00:01:41.170 --> 00:01:43.219
+So, I'm going to go ahead and get started with this,
+
+00:01:43.219 --> 00:01:46.939
+and then I'm going to ask you to pick up where I left off to finish the refactor.
+
+00:01:46.939 --> 00:01:51.200
+So, we'll start by looking at all the separate pieces of functionality in here.
+
+00:01:51.200 --> 00:01:53.945
+So, we know that our SQL statements can be run
+
+00:01:53.944 --> 00:01:57.769
+independently from the actual analysis function that we're running.
+
+00:01:57.769 --> 00:02:02.329
+So, here, we have a redshift_hook that's running a CREATE TABLE.
+
+00:02:02.329 --> 00:02:04.370
+This could be its own task.
+
+00:02:04.370 --> 00:02:06.588
+After that task is completed,
+
+00:02:06.588 --> 00:02:10.234
+then we could actually go ahead and get the records and perform some analysis,
+
+00:02:10.235 --> 00:02:12.140
+figuring out who the oldest rider was.
+
+00:02:12.139 --> 00:02:14.389
+So, let's go ahead and give that a shot.
+
+00:02:14.389 --> 00:02:16.939
+So, I'm going to start by taking this code,
+
+00:02:16.939 --> 00:02:19.224
+just taking the SQL code,
+
+00:02:19.224 --> 00:02:21.585
+and copy it to the bottom.
+
+00:02:21.585 --> 00:02:29.250
+I'm going to make an oldest_rider_ table task.
+
+00:02:33.009 --> 00:02:42.179
+We're going to give it a task_id, we'll call it oldest_riders_table,
+
+00:02:44.270 --> 00:02:47.590
+we're going to assign it a DAG,
+
+00:02:47.750 --> 00:02:51.819
+and we're going to give it a SQL statement.
+
+00:02:57.650 --> 00:03:07.159
+Then, of course, we also need to tell it postgres_connection_id. All right.
+
+00:03:07.159 --> 00:03:10.569
+With that, we should be all set to go to actually remove
+
+00:03:10.569 --> 00:03:13.979
+this from our load_and_analyze task.
+
+00:03:13.979 --> 00:03:16.750
+So, I'm going to remove this code.
+
+00:03:17.300 --> 00:03:21.130
+Next, we have this analysis function here,
+
+00:03:21.129 --> 00:03:23.049
+where we're actually trying to get the birth year of
+
+00:03:23.050 --> 00:03:25.719
+the oldest rider and then log it out.
+
+00:03:25.719 --> 00:03:29.409
+So, we're going to make a new function to do that.
+
+00:03:29.409 --> 00:03:35.414
+So, we're going to say we're going to write an oldest_rider function,
+
+00:03:35.414 --> 00:03:42.155
+and we're actually just going to copy this code and paste it in here.
+
+00:03:42.155 --> 00:03:45.699
+So, now we have an oldest writer function.
+
+00:03:45.699 --> 00:03:47.634
+We've got our redshift_hook.
+
+00:03:47.634 --> 00:03:50.349
+We're actually selecting the birth year from the oldest_riders.
+
+00:03:50.349 --> 00:03:51.625
+We're taking those records,
+
+00:03:51.625 --> 00:03:53.974
+and then we're logging the oldest rider.
+
+00:03:53.974 --> 00:03:58.689
+So, I'm going to define the new PythonOperator here,
+
+00:04:02.900 --> 00:04:11.849
+going to give it a task_id, going to assign it a DAG,
+
+00:04:11.849 --> 00:04:15.900
+I'm going to give it a python_callable,
+
+00:04:15.900 --> 00:04:18.970
+and I need to check what I named that function.
+
+00:04:18.970 --> 00:04:21.910
+On line 12, we call it oldest_rider.
+
+00:04:21.910 --> 00:04:24.970
+So, we'll go to the bottom of our code again,
+
+00:04:24.970 --> 00:04:28.455
+and then I think that's everything.
+
+00:04:28.454 --> 00:04:31.060
+We don't need to give it context because we didn't use context.
+
+00:04:31.060 --> 00:04:33.470
+Let's double-check that real quick.
+
+00:04:35.899 --> 00:04:38.504
+So, let's take a look.
+
+00:04:38.504 --> 00:04:40.064
+Did we use context here?
+
+00:04:40.064 --> 00:04:41.259
+It doesn't look like we did.
+
+00:04:41.259 --> 00:04:43.834
+So, we don't need to provide context to this function.
+
+00:04:43.834 --> 00:04:45.319
+If we were to provide context,
+
+00:04:45.319 --> 00:04:47.884
+we would need to give this args and kwargs.
+
+00:04:47.884 --> 00:04:49.784
+So, now that we've done that,
+
+00:04:49.785 --> 00:04:55.200
+we can actually go ahead and delete this code that's been refactored into its own task.
+
+00:04:55.879 --> 00:04:59.730
+So, one of the things that's really nice about this is now
+
+00:04:59.730 --> 00:05:04.650
+load_and_analyze can run independently of oldest_riders_table,
+
+00:05:06.019 --> 00:05:11.319
+and the oldest_riders_table needs to run before we print the oldest_rider.
+
+00:05:11.629 --> 00:05:14.389
+So, we've gone ahead and save this file.
+
+00:05:14.389 --> 00:05:18.959
+We've defined task ordering of our two new operators.
+
+00:05:19.100 --> 00:05:21.439
+Then we're going to go in here, and we're going to
+
+00:05:21.439 --> 00:05:24.509
+double-check that the code was picked up correctly.
+
+00:05:24.649 --> 00:05:29.444
+So, you can see we have a log_oldest function here.
+
+00:05:29.444 --> 00:05:32.129
+Excuse me, I pulled up the solution.
+
+00:05:32.129 --> 00:05:33.839
+Didn't want to pull that up yet.
+
+00:05:33.839 --> 00:05:36.875
+So, we're going to come to the main DAG menu.
+
+00:05:36.875 --> 00:05:39.295
+We're going to look at lesson3.demo2.
+
+00:05:39.295 --> 00:05:41.955
+We're going to look at the code.
+
+00:05:41.954 --> 00:05:46.810
+You can see that we have an oldest_rider function.
+
+00:05:47.199 --> 00:05:50.539
+You can see the code that we define is deleted.
+
+00:05:50.540 --> 00:05:52.670
+We now only have the younger_riders code,
+
+00:05:52.670 --> 00:05:55.160
+which you'll work on in your solution.
+
+00:05:55.160 --> 00:05:57.350
+Then at the bottom here, we have
+
+00:05:57.350 --> 00:06:01.585
+our older_riders_table task and our print_oldest_rider task,
+
+00:06:01.584 --> 00:06:03.569
+and those two things line up.
+
+00:06:03.569 --> 00:06:06.125
+So, we're going to go ahead and give this a shot.
+
+00:06:06.125 --> 00:06:07.959
+Go back to DAGs,
+
+00:06:07.959 --> 00:06:10.709
+and we're going to turn on lesson3.demo2.
+
+00:06:10.709 --> 00:06:12.699
+Now, I didn't assign this a schedule.
+
+00:06:12.699 --> 00:06:15.689
+So, you need to go ahead and click the Run button.
+
+00:06:20.240 --> 00:06:23.355
+So, we're going to go back to lesson3.demo2,
+
+00:06:23.355 --> 00:06:25.860
+and we're going to watch the progression.
+
+00:06:31.220 --> 00:06:35.940
+All right. So, you can see load_and_analyze is actually running independently,
+
+00:06:35.939 --> 00:06:38.509
+and this was the big bloated function that we're refactoring,
+
+00:06:38.509 --> 00:06:41.719
+is running independently from the two tasks that we defined.
+
+00:06:41.720 --> 00:06:45.815
+Already you can see that we have much, much improved visibility.
+
+00:06:45.814 --> 00:06:52.199
+We have a better idea of what's happening instead of just this one giant function.
+
+00:06:52.220 --> 00:06:55.210
+So, our older_riders_table has been created.
+
+00:06:55.209 --> 00:06:58.379
+So, our PostgresOperator that we created is now complete,
+
+00:06:58.379 --> 00:07:02.175
+and you can see it completed before the load_and_analyze function completed.
+
+00:07:02.175 --> 00:07:06.639
+So, you've already seen the benefits of parallelization,
+
+00:07:06.639 --> 00:07:09.389
+and then we printed the oldest_rider as well.
+
+00:07:09.389 --> 00:07:10.620
+So, now that's completed.
+
+00:07:10.620 --> 00:07:12.889
+Again, these two functions were able to
+
+00:07:12.889 --> 00:07:15.875
+complete while other work was happening in load_and_analyze.
+
+00:07:15.875 --> 00:07:21.115
+So, let's go see how old our oldest rider was,
+
+00:07:21.115 --> 00:07:24.939
+and our oldest rider was apparently born in 1900.
+

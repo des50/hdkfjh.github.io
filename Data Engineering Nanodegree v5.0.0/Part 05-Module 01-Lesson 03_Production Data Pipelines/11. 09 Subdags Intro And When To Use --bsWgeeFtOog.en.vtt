@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.080 --> 00:00:06.509
+Commonly repeated series of tasks within DAGs can be captured as reusable subDAGs.
+
+00:00:06.509 --> 00:00:09.390
+A subDAG is similar to a normal DAG,
+
+00:00:09.390 --> 00:00:11.880
+except that it's created by a factory function that
+
+00:00:11.880 --> 00:00:14.850
+parameterizes and returns the DAG configuration.
+
+00:00:14.849 --> 00:00:18.169
+SubDAGs are always used as a piece of another DAG.
+
+00:00:18.170 --> 00:00:20.595
+They do not stand on their own.
+
+00:00:20.594 --> 00:00:25.500
+Let's revisit our bike share DAG for an example of where we can make use of a subDAG.
+
+00:00:25.500 --> 00:00:28.050
+As we continue to add DAGs to Airflow,
+
+00:00:28.050 --> 00:00:30.870
+we'll find functional overlap between our pipelines.
+
+00:00:30.870 --> 00:00:34.500
+In this example, let's pretend that we wanted to try and correlate
+
+00:00:34.500 --> 00:00:38.715
+weather patterns in our service area with any bike repairs that occurred.
+
+00:00:38.715 --> 00:00:42.375
+To do that, we'll add another DAG to perform that analysis.
+
+00:00:42.375 --> 00:00:46.445
+On the left here, you see the DAG that we've been working on through much of this class.
+
+00:00:46.445 --> 00:00:50.359
+We have trips data and stations data going from S3ToRedshift.
+
+00:00:50.359 --> 00:00:54.579
+We're checking that the data is high-quality, they HasRowsOperator.
+
+00:00:54.579 --> 00:00:59.795
+Then, finally, we're using the PostgresOperator to execute station traffic analysis.
+
+00:00:59.795 --> 00:01:01.774
+So, in the example I just mentioned,
+
+00:01:01.774 --> 00:01:04.054
+we want to correlate repairs and weather data,
+
+00:01:04.055 --> 00:01:06.350
+so we're going to load that data from S3ToRedshift.
+
+00:01:06.349 --> 00:01:10.009
+Now, we're going to check to see if there are rows, and finally,
+
+00:01:10.010 --> 00:01:15.050
+we are going to run our actual weather repair analysis using the PostgresOperator.
+
+00:01:15.049 --> 00:01:18.719
+We may have a hunch that repairs go up when the weather is bad,
+
+00:01:18.719 --> 00:01:21.594
+and repairs go down when the weather is good.
+
+00:01:21.594 --> 00:01:24.019
+To prove that out, we'll build a DAG that
+
+00:01:24.019 --> 00:01:26.435
+loads repairs and weather data from S3ToRedshift.
+
+00:01:26.435 --> 00:01:29.915
+Then, we'll verify that data is present in our Redshift tables.
+
+00:01:29.915 --> 00:01:33.425
+Finally, we'll perform our weather repair analysis.
+
+00:01:33.424 --> 00:01:35.780
+Here's what our DAGs would look like if we replaced
+
+00:01:35.780 --> 00:01:38.420
+our repeated S3ToRedshift copy operations with
+
+00:01:38.420 --> 00:01:42.935
+the subDAG that was parameterizable and performed the same work.
+
+00:01:42.935 --> 00:01:46.504
+So, see here, we have S3ToRedshift subDAG.
+
+00:01:46.504 --> 00:01:51.659
+We've parameterized it with stations trips and repairs weather.
+
+00:01:51.659 --> 00:01:54.619
+As you can see, it's much simpler to reason about
+
+00:01:54.620 --> 00:01:58.550
+the high level goals of each one of these DAGs than it was in the previous slide.
+
+00:01:58.549 --> 00:02:01.399
+It's important to notice that the specific details each one of
+
+00:02:01.400 --> 00:02:04.055
+these DAGs is now harder to into it as well.
+
+00:02:04.055 --> 00:02:07.550
+Replacing those related operations with a subDAG allows us to
+
+00:02:07.549 --> 00:02:11.314
+decrease the amount of code we need to write and to maintain to create a new DAG.
+
+00:02:11.314 --> 00:02:14.074
+There are additional benefits to subDAGs as well.
+
+00:02:14.074 --> 00:02:17.089
+If we use a subDAG to perform common operation,
+
+00:02:17.090 --> 00:02:22.460
+that means that bug fixes speedups and other enhancements can be made much more quickly.
+
+00:02:22.460 --> 00:02:28.175
+That's because the code that you see here is actually shared between these two subDAGs.
+
+00:02:28.175 --> 00:02:31.130
+It also means that those same changes can be distributed to
+
+00:02:31.129 --> 00:02:35.409
+all DAGs that use the subDAG as soon as the update occurs.
+

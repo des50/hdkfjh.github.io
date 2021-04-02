@@ -1,0 +1,256 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.800
+As we reviewed in lesson one,
+
+00:00:01.800 --> 00:00:06.344
+Hooks provide a reusable interface to external systems and databases.
+
+00:00:06.344 --> 00:00:09.509
+Many companies will have in-house systems or datastores,
+
+00:00:09.509 --> 00:00:12.779
+that need to be accessed during execution of data pipelines.
+
+00:00:12.779 --> 00:00:15.899
+In these cases, you should consider creating a custom hook.
+
+00:00:15.900 --> 00:00:18.810
+For example, a [inaudible] share pipelines would
+
+00:00:18.809 --> 00:00:22.320
+eventually need to integrate with analytics information from our email provider.
+
+00:00:22.320 --> 00:00:25.515
+Here, let's pretend that our email provider is MailChimp.
+
+00:00:25.515 --> 00:00:30.030
+Since we can query our accounts email data over an HTTP API,
+
+00:00:30.030 --> 00:00:34.260
+we might build a custom hook that interfaces with our email provider.
+
+00:00:34.259 --> 00:00:39.629
+This would allow us to avoid rewriting the same API access code in many different places.
+
+00:00:39.630 --> 00:00:42.995
+We could build similar hooks to interface with other common analytics tools,
+
+00:00:42.994 --> 00:00:45.799
+such as GoogleAnalytics or Segment.
+
+00:00:45.799 --> 00:00:49.998
+The key idea is that we want to consolidate common interactions
+
+00:00:49.999 --> 00:00:54.560
+with datastores and systems in a reasonable fashion through custom hooks.
+
+00:00:54.560 --> 00:00:57.890
+Airflow has a rich and vibrant open-source community,
+
+00:00:57.890 --> 00:01:00.679
+this community is constantly adding new functionality,
+
+00:01:00.679 --> 00:01:02.945
+and extending the capabilities of Airflow.
+
+00:01:02.945 --> 00:01:04.385
+As an Airflow user,
+
+00:01:04.385 --> 00:01:08.550
+you should always check Airflow contrib before building your own Airflow plug-ins,
+
+00:01:08.549 --> 00:01:11.869
+to see if what you need already exists.
+
+00:01:11.870 --> 00:01:13.100
+So before we continue,
+
+00:01:13.099 --> 00:01:14.944
+I'm actually going to leave the slides here for a moment,
+
+00:01:14.944 --> 00:01:17.689
+and show you what we have in Airflow contrib.
+
+00:01:17.689 --> 00:01:22.295
+So in this tab, I'm going to zoom in here.
+
+00:01:22.295 --> 00:01:26.799
+In this tab, you can see that we're in the Apache Airflow repository.
+
+00:01:26.799 --> 00:01:30.280
+I'm in the folder Airflow, Airflow contrib.
+
+00:01:30.280 --> 00:01:33.125
+You'll see a link for this in the classroom.
+
+00:01:33.125 --> 00:01:36.150
+Within this, we'll see a number of folders,
+
+00:01:36.150 --> 00:01:38.020
+the two that we're going to focus on right now,
+
+00:01:38.019 --> 00:01:40.179
+are hooks and operators.
+
+00:01:40.180 --> 00:01:42.550
+First we're going to look at operators.
+
+00:01:42.549 --> 00:01:48.004
+So we're looking at here are list of community contributed operators,
+
+00:01:48.004 --> 00:01:49.854
+that's why it's in the contrib folder.
+
+00:01:49.855 --> 00:01:53.155
+It's not necessarily considered part of the core of Airflow,
+
+00:01:53.155 --> 00:01:58.855
+but these are operators custom plug-ins that have been provided by the community.
+
+00:01:58.855 --> 00:02:01.920
+So I'll allow you to peruse this yourself,
+
+00:02:01.920 --> 00:02:04.719
+but I'll point out a couple that might be very useful to you.
+
+00:02:04.719 --> 00:02:07.545
+So if we scroll down,
+
+00:02:07.545 --> 00:02:11.490
+you can see a number of operators.
+
+00:02:14.000 --> 00:02:17.729
+Something like Mongo to S3 can be really useful,
+
+00:02:17.729 --> 00:02:21.034
+if you want to dump records directly out of Mongo to S3.
+
+00:02:21.034 --> 00:02:26.074
+Likewise, there are a number of S3 operators defined here.
+
+00:02:26.074 --> 00:02:28.594
+If you just want to list an S3 bucket,
+
+00:02:28.594 --> 00:02:30.620
+in fact this is something we did in the first lesson.
+
+00:02:30.620 --> 00:02:32.735
+So if we had used this operator,
+
+00:02:32.735 --> 00:02:37.410
+you theoretically wouldn't have had to have written any code at all.
+
+00:02:38.180 --> 00:02:41.189
+Likewise, we have one here for Segment.
+
+00:02:41.189 --> 00:02:45.604
+On the previous slide, we talked a little bit about using a set custom Segment hook,
+
+00:02:45.604 --> 00:02:47.719
+you could also write a custom Segment operator,
+
+00:02:47.719 --> 00:02:51.120
+if you had a specific type of work that you had in mind.
+
+00:02:51.409 --> 00:02:54.854
+Likewise, if you want to start with Spark,
+
+00:02:54.854 --> 00:02:58.159
+if you wanted to do something with Spark JDBC, or SQL,
+
+00:02:58.159 --> 00:02:59.495
+or submit a job to Spark,
+
+00:02:59.495 --> 00:03:02.240
+you can use these operators and parameterize them
+
+00:03:02.240 --> 00:03:05.525
+to actually leverage Spark within your Airflow installation.
+
+00:03:05.525 --> 00:03:08.025
+So if I click into this real quick,
+
+00:03:08.025 --> 00:03:10.425
+and we scroll down just a little bit,
+
+00:03:10.425 --> 00:03:12.370
+you can see that,
+
+00:03:12.370 --> 00:03:14.090
+the documentation here is pretty good.
+
+00:03:14.090 --> 00:03:17.090
+You can go to the Airflow website to actually see more,
+
+00:03:17.090 --> 00:03:19.310
+but you can actually see that there are
+
+00:03:19.310 --> 00:03:22.699
+a number of options that you can provide to this operator.
+
+00:03:22.699 --> 00:03:26.435
+So now we're back in Airflow, Airflow contrib,
+
+00:03:26.435 --> 00:03:28.729
+the very top level where we started,
+
+00:03:28.729 --> 00:03:31.054
+we're going to jump into the hooks folder.
+
+00:03:31.055 --> 00:03:33.534
+Here, we have a number of hooks,
+
+00:03:33.534 --> 00:03:37.400
+again community contributed hooks that are incredibly useful.
+
+00:03:37.400 --> 00:03:42.485
+If you work in Amazon or AWS, Microsoft Azure,
+
+00:03:42.485 --> 00:03:44.854
+or in Google Cloud Platform,
+
+00:03:44.854 --> 00:03:49.695
+there are a number of integrated hooks for the systems that those Clouds provide.
+
+00:03:49.694 --> 00:03:56.373
+You'll also see that we have integrations for tools like Redshift,
+
+00:03:56.373 --> 00:04:00.129
+Segment, and even Slack.
+
+00:04:00.129 --> 00:04:02.669
+As an Airflow user, you should always check
+
+00:04:02.669 --> 00:04:05.509
+Airflow contrib before building your own Airflow plug-ins,
+
+00:04:05.509 --> 00:04:07.939
+to see if what you need already exists.
+
+00:04:07.939 --> 00:04:10.294
+Operators and hooks for common data tools,
+
+00:04:10.294 --> 00:04:12.578
+like Apache Spark and Cassandra,
+
+00:04:12.579 --> 00:04:16.009
+as well as vendor-specific integrations for Amazon Web Services,
+
+00:04:16.009 --> 00:04:17.914
+Azure, and Google Cloud Platform,
+
+00:04:17.915 --> 00:04:19.730
+can be found in Airflow contrib.
+
+00:04:19.730 --> 00:04:21.439
+If the functionality exists,
+
+00:04:21.439 --> 00:04:23.540
+and it's not quite what you wanted,
+
+00:04:23.540 --> 00:04:28.379
+that's a great opportunity to add that functionality through an open source contribution.
+

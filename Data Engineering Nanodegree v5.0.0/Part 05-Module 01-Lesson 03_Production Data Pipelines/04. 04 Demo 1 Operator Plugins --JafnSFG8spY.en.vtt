@@ -1,0 +1,499 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.145
+In this demonstration, we're going to walk through
+
+00:00:02.145 --> 00:00:04.814
+how to define and use your own operators.
+
+00:00:04.815 --> 00:00:07.995
+So, we're going to be doing lesson 3 demo 1.
+
+00:00:07.995 --> 00:00:10.349
+So, the first thing I'm going do is,
+
+00:00:10.349 --> 00:00:14.500
+open up lesson3 demo1.
+
+00:00:15.259 --> 00:00:18.539
+In this demonstration, we're going to
+
+00:00:18.539 --> 00:00:24.299
+replace some of our existing code with new custom operators.
+
+00:00:24.300 --> 00:00:26.625
+So, you can see here on line 75,
+
+00:00:26.625 --> 00:00:29.475
+we now have an S3ToRedshiftOperator.
+
+00:00:29.475 --> 00:00:32.789
+I'm going to show you how we define an operator.
+
+00:00:32.789 --> 00:00:35.579
+So first, I'm actually going to exit out of the dags folder.
+
+00:00:35.579 --> 00:00:39.134
+So, we're in dags lesson 3 demo 1.
+
+00:00:39.134 --> 00:00:41.839
+I'm going to close this up, and we're going to
+
+00:00:41.840 --> 00:00:44.810
+look at a new folder that we haven't used yet in this class,
+
+00:00:44.810 --> 00:00:46.685
+and that folder is the plugins folder.
+
+00:00:46.685 --> 00:00:49.955
+This is where we're going to define our custom plugins.
+
+00:00:49.954 --> 00:00:52.129
+So, now we've opened the plugins folder,
+
+00:00:52.130 --> 00:00:54.594
+we're going to open another folder inside of this,
+
+00:00:54.594 --> 00:00:55.949
+which is our operators folder.
+
+00:00:55.950 --> 00:00:58.715
+This is where we placed our custom operators.
+
+00:00:58.715 --> 00:01:02.490
+We're going to start by looking at the HasRowsCustomOperator.
+
+00:01:03.700 --> 00:01:09.469
+So, this is a freely fairly good example of a basic custom operator.
+
+00:01:09.469 --> 00:01:12.724
+The code on line 21 to 28,
+
+00:01:12.724 --> 00:01:14.390
+should look really familiar.
+
+00:01:14.390 --> 00:01:19.444
+This is the same code that you wrote for the previous exercise in lesson two.
+
+00:01:19.444 --> 00:01:21.875
+So that would be, lesson two, exercise four,
+
+00:01:21.875 --> 00:01:25.165
+where we add a data quality checks to our DAG.
+
+00:01:25.165 --> 00:01:27.440
+So, you can see here, what we've done is,
+
+00:01:27.439 --> 00:01:31.159
+we've moved this code into an execute function.
+
+00:01:31.159 --> 00:01:33.739
+We'll come back to this in just a moment.
+
+00:01:33.739 --> 00:01:38.679
+At the top here, we've imported a base operator from the Airflow Models File.
+
+00:01:38.680 --> 00:01:42.025
+All airflow operators, custom or not,
+
+00:01:42.025 --> 00:01:45.005
+inherit from the base operator.
+
+00:01:45.004 --> 00:01:49.265
+So, in this class, we have the HasRowsOperator, which we've defined.
+
+00:01:49.265 --> 00:01:52.010
+We've also defined this init function.
+
+00:01:52.010 --> 00:01:54.915
+We've added two explicit arguments here,
+
+00:01:54.915 --> 00:01:58.390
+redshift connection ID and table.
+
+00:01:58.390 --> 00:02:01.129
+These are the two arguments that we absolutely have to
+
+00:02:01.129 --> 00:02:04.449
+have to run the execute function below.
+
+00:02:04.450 --> 00:02:06.680
+You can see here that we instantiate
+
+00:02:06.680 --> 00:02:10.265
+the base class or call it base class constructor and then,
+
+00:02:10.264 --> 00:02:14.689
+we set the table and redshift connection ID attributes on our object.
+
+00:02:14.689 --> 00:02:18.139
+Next, we defined our execute function.
+
+00:02:18.139 --> 00:02:21.694
+Every operator has an execute function.
+
+00:02:21.694 --> 00:02:24.739
+Airflow calls the execute function to
+
+00:02:24.740 --> 00:02:28.580
+actually execute the operator when it's time for that task to run.
+
+00:02:28.580 --> 00:02:33.155
+You can see in here, that we've made use of self.table,
+
+00:02:33.155 --> 00:02:36.090
+which we set on line 17,
+
+00:02:36.099 --> 00:02:39.979
+and we've gone through and actually use
+
+00:02:39.979 --> 00:02:45.599
+the redshift connection ID which we defined on line 18.
+
+00:02:45.610 --> 00:02:48.425
+So, that's really all there is to it.
+
+00:02:48.425 --> 00:02:54.680
+We could go ahead and actually instrument our DAG with this updated custom operator,
+
+00:02:54.680 --> 00:02:57.575
+which you'll actually do in the exercise here shortly.
+
+00:02:57.574 --> 00:03:00.530
+Before we go back, I'm going to show you a second example.
+
+00:03:00.530 --> 00:03:02.844
+This is our S3ToRedshiftOperator.
+
+00:03:02.844 --> 00:03:05.905
+You can see there's a few more arguments to this.
+
+00:03:05.905 --> 00:03:07.949
+And just on line seven,
+
+00:03:07.949 --> 00:03:10.019
+you can see just like the HasRowsOperator,
+
+00:03:10.020 --> 00:03:12.395
+we've inherited from the base operator.
+
+00:03:12.395 --> 00:03:15.784
+We again, we have an init class,
+
+00:03:15.784 --> 00:03:19.250
+and we've taken a number of arguments,
+
+00:03:19.250 --> 00:03:23.014
+and we've set the attributes on our class,
+
+00:03:23.014 --> 00:03:26.549
+and again we've defined an execute function.
+
+00:03:27.229 --> 00:03:31.905
+You can see here that we've take a number of arguments. Excuse me.
+
+00:03:31.905 --> 00:03:35.705
+You can see here that our execute function performs a number of tasks.
+
+00:03:35.705 --> 00:03:37.930
+These tasks should look familiar to you.
+
+00:03:37.930 --> 00:03:40.909
+Essentially, what you're seeing here is the same as what you saw in
+
+00:03:40.909 --> 00:03:44.419
+previous steps when we did the S3ToRedshift copy operation.
+
+00:03:44.419 --> 00:03:47.579
+We've just made the code a little more generic.
+
+00:03:47.710 --> 00:03:51.680
+You can see on line 48 that we're actually
+
+00:03:51.680 --> 00:03:55.085
+taking the S3 key and formatting it or templating it.
+
+00:03:55.085 --> 00:03:58.474
+So, you can see up here on line eight,
+
+00:03:58.474 --> 00:04:01.129
+that we've told airflow that we want
+
+00:04:01.129 --> 00:04:05.669
+the S3 key parameter to be templatable. What does that mean?
+
+00:04:05.669 --> 00:04:10.454
+So, if we go back down to line 23 in our init, excuse me,
+
+00:04:10.455 --> 00:04:12.825
+line 25 in our are init,
+
+00:04:12.824 --> 00:04:16.454
+you can see that we take an S3 key parameter for our operator.
+
+00:04:16.454 --> 00:04:19.129
+By saying on line eight,
+
+00:04:19.129 --> 00:04:22.685
+that the S3 key field is templatable,
+
+00:04:22.685 --> 00:04:25.050
+airflow would be use air for, excuse me,
+
+00:04:25.050 --> 00:04:28.895
+airflow will use context variables to render that template.
+
+00:04:28.894 --> 00:04:32.199
+So, this is important. If you think back to lesson one and lesson
+
+00:04:32.199 --> 00:04:35.324
+two when we used say the execution date,
+
+00:04:35.324 --> 00:04:37.784
+the previous DES or the next DES,
+
+00:04:37.785 --> 00:04:40.855
+those are examples of using template variables.
+
+00:04:40.855 --> 00:04:44.050
+So, this tells airflow that it needs to actually
+
+00:04:44.050 --> 00:04:48.055
+render out that key before it gets passed into your operator.
+
+00:04:48.055 --> 00:04:50.514
+So, down here on line 48,
+
+00:04:50.514 --> 00:04:55.435
+we're actually taking that key and we're passing in the context to render it.
+
+00:04:55.435 --> 00:05:02.250
+Finally, rendering that the actual SQL and then running it against redshift.
+
+00:05:03.629 --> 00:05:07.759
+So, those are the two custom operators that we discussed.
+
+00:05:07.759 --> 00:05:12.784
+If you want to see the explicit instructions for setting up your own operator,
+
+00:05:12.785 --> 00:05:16.715
+we're going to add a link to the airflow instructions in the classroom.
+
+00:05:16.714 --> 00:05:18.484
+There are a number of steps involved.
+
+00:05:18.485 --> 00:05:20.270
+But once you've done it a few times,
+
+00:05:20.269 --> 00:05:24.365
+it really isn't so bad and it's a great way to share code with your colleagues.
+
+00:05:24.365 --> 00:05:27.665
+One final thing before we jump back into our dag,
+
+00:05:27.665 --> 00:05:30.485
+you can see the init file under plugins.
+
+00:05:30.485 --> 00:05:33.379
+So, we went to plugins init.py.
+
+00:05:33.379 --> 00:05:36.139
+You can see that we've got one more class defined here.
+
+00:05:36.139 --> 00:05:40.430
+We've imported from the Airflow.Plugins_ manager the airflow plugin class.
+
+00:05:40.430 --> 00:05:41.915
+We've defined our own,
+
+00:05:41.915 --> 00:05:45.035
+Udacityplugin inheriting from that Airflowplugin.
+
+00:05:45.035 --> 00:05:48.515
+There are two things that you need to do to define a custom plugin.
+
+00:05:48.514 --> 00:05:50.485
+You must always give it a name.
+
+00:05:50.485 --> 00:05:53.240
+This actually determines how you import the code.
+
+00:05:53.240 --> 00:05:54.605
+So, we would say,
+
+00:05:54.605 --> 00:06:01.310
+from airflow.operators.Udacity plugin, import HasRowsOperator.
+
+00:06:01.310 --> 00:06:04.144
+The next thing we've done is actually told airflow,
+
+00:06:04.144 --> 00:06:05.734
+what operators we've created.
+
+00:06:05.735 --> 00:06:07.384
+So, we created two operators,
+
+00:06:07.384 --> 00:06:11.615
+HasRowsOperator and the S3ToRedshiftOperator.
+
+00:06:11.615 --> 00:06:16.620
+So now, airflow will register and recognize both of these custom operators.
+
+00:06:16.970 --> 00:06:20.895
+That under our belt, we're going to return to the dags folder,
+
+00:06:20.894 --> 00:06:23.939
+go to lesson 3 demo 1,
+
+00:06:23.939 --> 00:06:28.990
+and we're going to actually use the two of our S3ToRedshiftOperators.
+
+00:06:28.990 --> 00:06:33.379
+So because these functions have been replaced with the custom operator,
+
+00:06:33.379 --> 00:06:35.209
+we can actually go ahead and delete them.
+
+00:06:35.209 --> 00:06:37.769
+But we'll wait just a moment to do that.
+
+00:06:40.069 --> 00:06:43.165
+On line 75, you can see,
+
+00:06:43.165 --> 00:06:48.720
+I've actually replaced our copy trips task with the S3ToRedshift Operator.
+
+00:06:50.329 --> 00:06:58.564
+We've passed in, named parameters to actually get our S3ToRedshiftOperator configured.
+
+00:06:58.564 --> 00:07:03.620
+So, instead of passing in a dictionary of arguments that we have to get out of context,
+
+00:07:03.620 --> 00:07:05.930
+we can actually use name parameters.
+
+00:07:05.930 --> 00:07:09.560
+So here, we're going to replace this with the trips table,
+
+00:07:09.560 --> 00:07:13.019
+our redshiftconnection ID is redshift,
+
+00:07:15.829 --> 00:07:20.479
+and our AWS credentials ID is AWS credentials.
+
+00:07:20.480 --> 00:07:22.415
+One more thing I want to point out here,
+
+00:07:22.415 --> 00:07:26.240
+we talked a little bit about template fields and our S3ToRedshiftOperator.
+
+00:07:26.240 --> 00:07:28.340
+You can see us using templating here.
+
+00:07:28.339 --> 00:07:33.909
+Execution date.year and execution date.Month.
+
+00:07:34.459 --> 00:07:38.930
+Next, we'll take a look at our stations table.
+
+00:07:38.930 --> 00:07:40.819
+So here, you can see again,
+
+00:07:40.819 --> 00:07:43.819
+we're using the S3To Redshift Operator.
+
+00:07:43.819 --> 00:07:48.175
+We're going to replace this table with the station's table,
+
+00:07:48.175 --> 00:07:50.480
+the redshift connection ID and
+
+00:07:50.480 --> 00:07:57.080
+the redshift and the AWS credentials id with AWS credentials.
+
+00:07:57.079 --> 00:08:00.560
+You can see that we passed in the bucket name and the S3 key.
+
+00:08:00.560 --> 00:08:06.199
+Now, since we've defined these with custom operators,
+
+00:08:06.199 --> 00:08:08.500
+we can actually delete this code.
+
+00:08:12.259 --> 00:08:16.670
+So, we have our task ordering is exactly the same as the past.
+
+00:08:16.670 --> 00:08:20.074
+You can see, we still have our create and then copy task.
+
+00:08:20.074 --> 00:08:23.029
+And with that completed, we're actually ready to go ahead and run our dag.
+
+00:08:23.029 --> 00:08:26.924
+So, we're going to go ahead and refresh,
+
+00:08:26.925 --> 00:08:31.439
+then we'll go to lesson3.demo1, verify the code.
+
+00:08:31.439 --> 00:08:33.600
+So, you can see here, we've imported
+
+00:08:33.600 --> 00:08:38.475
+HasRows Operator and we've imported S3ToRedshiftOperator.
+
+00:08:38.475 --> 00:08:41.659
+We've removed those duplicated functions.
+
+00:08:41.659 --> 00:08:46.745
+And we have our S3ToRedshift Operator defined here and here.
+
+00:08:46.745 --> 00:08:50.345
+With that done, let's turn on our DAG and watch it run.
+
+00:08:50.345 --> 00:08:53.450
+This DAG still has a monthly schedule.
+
+00:08:54.860 --> 00:08:58.375
+So, we'll give this just a minute to run.
+
+00:08:58.375 --> 00:09:08.424
+So,we can see, we already have a success on the creation on a table.
+
+00:09:08.424 --> 00:09:10.754
+We're back to our graph view.
+
+00:09:10.754 --> 00:09:13.279
+Now, we're loading the data from s3_ to_ redshift.
+
+00:09:13.279 --> 00:09:14.779
+So, this is where we're actually using
+
+00:09:14.779 --> 00:09:17.684
+our custom operator and you can see, when I hover here,
+
+00:09:17.684 --> 00:09:19.259
+in this black box,
+
+00:09:19.259 --> 00:09:23.559
+you can see Operator s3_ to_ redshift operator.
+
+00:09:24.259 --> 00:09:27.720
+So, we'll give this just a moment to run.
+
+00:09:30.590 --> 00:09:35.009
+All right. So, we've finished our load of stations data from S3ToRedshift.
+
+00:09:35.009 --> 00:09:37.054
+We'll see if our trips data's completed yet.
+
+00:09:37.054 --> 00:09:40.339
+So, our loading of trip from s3_ to_ redshift was completed.
+
+00:09:40.340 --> 00:09:43.420
+A load of our trips is complete.
+
+00:09:43.419 --> 00:09:48.779
+Great. So, now we've completed our execution of lesson3.demo1.
+
