@@ -1,0 +1,186 @@
+{
+  "data": {
+    "lesson": {
+      "id": 825723,
+      "key": "111b82aa-f94b-4158-901d-764bdc7d12d7",
+      "title": "Capstone Project",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this Capstone project, students will define the scope of the project and the data they will be working with to demonstrate what they have learned in this Data Engineering Nanodegree.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Capstone Project project template",
+            "uri": "https://video.udacity-data.com/topher/2019/June/5d0aea72_capstone-project-template.ipynb/capstone-project-template.ipynb.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "92bc73a9-d261-44a9-9d45-f10d815ec375",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 40320,
+        "semantic_type": "Project",
+        "title": "Data Engineering Capstone Project",
+        "description": "## Data Engineering Capstone Project\n### Overview\nThe purpose of the data engineering capstone project is to give you a chance to combine what you've learned throughout the program. This project will be an important part of your portfolio that will help you achieve your data engineering-related career goals. In this project, you can choose to complete the project provided for you, or define the scope and data for a project of your own design. Either way, you'll be expected to go through the same steps outlined below.\n\n### Instructions\nTo help guide your project, we've broken it down into a series of steps. Detailed steps are included in the project instructions page.\n\n* Step 1: Scope the Project and Gather Data\n* Step 2: Explore and Assess the Data\n* Step 3: Define the Data Model\n* Step 4: Run ETL to Model the Data \n* Step 5: Complete Project Write Up\n\nAnd make sure to review your own project using the [Project Rubric](https://review.udacity.com/#!/rubrics/2497/view).",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "2497",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": null
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 825724,
+          "key": "e9f4e2a3-e2a9-4b7d-8e83-d4d263ee7d90",
+          "title": "Project Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e9f4e2a3-e2a9-4b7d-8e83-d4d263ee7d90",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 825736,
+              "key": "3f4ec5ee-20ed-4015-8199-804f77f2d71b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Data Engineering Capstone Project\n### Overview\nThe purpose of the data engineering capstone project is to give you a chance to combine what you've learned throughout the program. This project will be an important part of your portfolio that will help you achieve your data engineering-related career goals.\n\nIn this project, you can choose to complete the project provided for you, or define the scope and data for a project of your own design. Either way, you'll be expected to go through the same steps outlined below.\n\n##### Udacity Provided Project\nIn the Udacity provided project, you'll work with four datasets to complete the project. The main dataset will include data on immigration to the United States, and supplementary datasets will include data on airport codes, U.S. city demographics, and temperature data. You're also welcome to enrich the project with additional data if you'd like to set your project apart.\n\n##### Open-Ended Project\nIf you decide to design your own project, you can find useful information in the Project Resources section. Rather than go through steps below with the data Udacity provides, you'll gather your own data, and go through the same process.\n\n### Instructions\nTo help guide your project, we've broken it down into a series of steps.\n\n#### Step 1: Scope the Project and Gather Data\nSince the scope of the project will be highly dependent on the data, these two things happen simultaneously. In this step, you’ll:\n* Identify and gather the data you'll be using for your project (at least two sources and more than 1 million rows). See Project Resources for ideas of what data you can use.\n* Explain what end use cases you'd like to prepare the data for (e.g., analytics table, app back-end, source-of-truth database, etc.)\n\n#### Step 2: Explore and Assess the Data\n* Explore the data to identify data quality issues, like missing values, duplicate data, etc.\n* Document steps necessary to clean the data\n\n#### Step 3: Define the Data Model\n* Map out the conceptual data model and explain why you chose that model\n* List the steps necessary to pipeline the data into the chosen data model\n\n#### Step 4: Run ETL to Model the Data \n* Create the data pipelines and the data model\n* Include a data dictionary \n* Run data quality checks to ensure the pipeline ran as expected \n * Integrity constraints on the relational database (e.g., unique key, data type, etc.)\n * Unit tests for the scripts to ensure they are doing the right thing\n * Source/count checks to ensure completeness\n\n#### Step 5: Complete Project Write Up\n* What's the goal? What queries will you want to run? How would Spark or Airflow be incorporated? Why did you choose the model you chose?\n* Clearly state the rationale for the choice of tools and technologies for the project.\n* Document the steps of the process.\n* Propose how often the data should be updated and why.\n* Post your write-up and final data model in a GitHub repo.\n* Include a description of how you would approach the problem differently under the following scenarios:\n * If the data was increased by 100x.\n * If the pipelines were run on a daily basis by 7am.\n * If the database needed to be accessed by 100+ people.\n\n### Rubric\nIn the [Project Rubric](https://review.udacity.com/#!/rubrics/2497/view), you'll see more detail about the requirements. Use the rubric to assess your own project before you submit to Udacity for review. As with other projects, Udacity reviewers will use this rubric to assess your project and provide feedback. If your project does not meet specifications, you can make changes and resubmit. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 825725,
+          "key": "9cf75820-9e7d-480d-8dad-8a3d4521fd2f",
+          "title": "Project Resources",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9cf75820-9e7d-480d-8dad-8a3d4521fd2f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 826482,
+              "key": "5025bf30-e7d1-4976-87ee-459fef053f01",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Datasets\nGathering the right data is one of the most important task for data engineers. If you are looking for data for your own, self-directed project, or for data to enrich the data for the Udacity provided project, below are some good resources to find interesting datasets.\n\n##### Analytics\n* [Google: Dataset Search](https://toolbox.google.com/datasetsearch)\n* [Kaggle Datasets](https://www.kaggle.com/datasets)\n* [Github: Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets)\n* [Data.gov](https://catalog.data.gov/dataset)\n* [Dataquest: 18 places to find data sets for data science projects](https://www.dataquest.io/blog/free-datasets-for-projects/)\n* [KDnuggets: Datasets for Data Mining and Data Science](https://www.kdnuggets.com/datasets/index.html)\n* [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets.php)\n* [Reddit: r/datasets/](https://www.reddit.com/r/datasets/)\n\n##### Software Development\n* [Github: Public APIs](https://github.com/toddmotto/public-apis)\n* [Last Call: Top 50 Most Popular APIs on RapidAPI (2018)](https://blog.rapidapi.com/most-popular-apis/)\n* [Facebook: Graph API](https://developers.facebook.com/docs/graph-api)\n\n### Example\n[This Kaggle dataset](https://www.kaggle.com/hugomathien/soccer/home) is a good example of someone who found disparate datasets and combined them to provide an even more valuable dataset for others to analyze. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 840276,
+          "key": "e0fbcdf3-662c-4565-a05a-bfb2ba7c76f7",
+          "title": "Udacity Provided Project",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e0fbcdf3-662c-4565-a05a-bfb2ba7c76f7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 840283,
+              "key": "298a09ee-05af-40fd-82e6-fb61c0f82634",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Udacity Provided Project\nIf you decide not to create your own capstone project, you can use the one we've provided. For this project, we have some datasets available to you and some ideas for the project. However, it's still open-ended in nature and you'll have to define the data model and the corresponding use cases for your final deliverable.\n\n### Datasets\nThe following datasets are included in the project workspace. We purposely did not include a lot of detail about the data and instead point you to the sources. This is to help you get experience doing a self-guided project and researching the data yourself. If something about the data is unclear, make an assumption, document it, and move on. Feel free to enrich your project by gathering and including additional data sources.\n* __I94 Immigration Data:__ This data comes from the US National Tourism and Trade Office. A data dictionary is included in the workspace. [This](https://travel.trade.gov/research/reports/i94/historical/2016.html) is where the data comes from. There's a sample file so you can take a look at the data in csv format before reading it all in. You do not have to use the entire dataset, just use what you need to accomplish the goal you set at the beginning of the project. \n* __World Temperature Data:__ This dataset came from Kaggle. You can read more about it [here](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data).\n* __U.S. City Demographic Data:__ This data comes from OpenSoft. You can read more about it [here](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/).\n* __Airport Code Table:__ This is a simple table of airport codes and corresponding cities. It comes from [here](https://datahub.io/core/airport-codes#data).\n\n### Accessing the Data\nSome of the data is already uploaded to the workspace, which you'll see in the navigation pane within Jupyter Lab. The immigration data and the global temperate data is in an attached disk. \n\n##### Immigration Data\n\nYou can access the immigration data in a folder with the following path: `../../data/18-83510-I94-Data-2016/`. There's a file for each month of the year. An example file name is `i94_apr16_sub.sas7bdat`.  Each file has a three-letter abbreviation for the month name. So a full file path for June would look like this: `../../data/18-83510-I94-Data-2016/i94_jun16_sub.sas7bdat`. Below is what it would look like to import this file into pandas. Note: these files are large, so you'll have to think about how to process and aggregate them efficiently.\n\n```\nfname = '../../data/18-83510-I94-Data-2016/i94_apr16_sub.sas7bdat'\ndf = pd.read_sas(fname, 'sas7bdat', encoding=\"ISO-8859-1\")\n```\n\nThe most important decision for modeling with this data is thinking about the level of aggregation. Do you want to aggregate by airport by month? Or by city by year? This level of aggregation will influence how you join the data with other datasets. There isn't a right answer, it all depends on what you want your final dataset to look like.\n\n##### Temperature Data\n\nYou can access the temperature data in a folder with the following path: `../../data2/`. There's just one file in that folder, called `GlobalLandTemperaturesByCity.csv`. Below is how you would read the file into a pandas dataframe.\n \n```\nfname = '../../data2/GlobalLandTemperaturesByCity.csv'\ndf = pd.read_csv(fname)\n```\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 839826,
+          "key": "05c2da4a-5db0-4824-a68e-cc1e8355abdc",
+          "title": "Project Workspace",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "05c2da4a-5db0-4824-a68e-cc1e8355abdc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 839827,
+              "key": "d97eca2a-9ff7-40c2-bbd7-1dfc88b054d3",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r766466c839826xJUPYTERLnnfq3jud",
+              "pool_id": "spark",
+              "view_id": "jupyter-lab-egaqz",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "data-science-datasets",
+                      "paths": [
+                        {
+                          "src": "/ND027/ImmigrationData",
+                          "dest": "/data/"
+                        },
+                        {
+                          "src": "/ND027/TemperatureData",
+                          "dest": "/data2/"
+                        }
+                      ],
+                      "warnUntil": 0,
+                      "warningMsg": ""
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "allowSubmit": true,
+                    "defaultPath": "/",
+                    "actionButtonText": "Preview"
+                  },
+                  "kind": "jupyter-lab"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "starter_files",
+      "reason": "prefer master_archive_id"
+    }
+  ]
+}
